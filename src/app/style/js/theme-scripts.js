@@ -2,7 +2,7 @@
  * Title:   Travelo | Responsive HTML5 Travel Template - Main Javascript file
  * Author:  http://themeforest.net/user/soaptheme
  */
-
+tjq = jQuery.noConflict();
 var stGlobals = {};
 stGlobals.isMobile = (/(Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|windows phone)/.test(navigator.userAgent));
 stGlobals.isMobileWebkit = /WebKit/.test(navigator.userAgent) && /Mobile/.test(navigator.userAgent);
