@@ -18,7 +18,6 @@ gulp.task('styles', function () {
 
   var injectFiles = gulp.src([
     path.join(conf.paths.src, '/app/**/*.scss'),
-    path.join(conf.paths.src, '/app/**/*.css'),
     path.join('!' + conf.paths.src, '/app/index.scss')
   ], { read: false });
 
