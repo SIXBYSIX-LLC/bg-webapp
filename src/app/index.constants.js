@@ -2,10 +2,6 @@
 (function() {
   'use strict';
 
-  angular
-    .module('BG')
-    .constant('malarkey', malarkey)
-    .constant('toastr', toastr)
-    .constant('moment', moment);
+  angular.module('BG')
 
 })();
