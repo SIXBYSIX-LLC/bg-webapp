@@ -8,24 +8,27 @@
   /** @ngInject */
   function routeConfig($stateProvider, $urlRouterProvider) {
     $stateProvider
-      .state('app',{
-        abstract:true,
-        views:{
-          header:{
-            templateUrl:'app/components/header/header.html'
+      .state('main',{
+          views:{
+            "@": { templateUrl:'app/main/main.html' },
+            "top@main": { templateUrl:'app/components/header/header.html' },
+            "search@main": { templateUrl:'app/components/search-bar/search-bar.html' }
           }
-        }
       })
-      .state('app.home', {
-        url: '/',
-        views:{
-          "main@":{
-            templateUrl:'app/main/main.html'
-          }
-        }
+      .state('main.account',{
+        url:'/account',
+        templateUrl:'app/account/account.html'
+      })
+      .state('main.account.dashboard',{
+        url:'/dashboard',
+        templateUrl:'app/account/dashboard/dashboard.html'
+      })
+      .state('main.account.equipments',{
+        url:'/equipments',
+        templateUrl:'app/account/equipments/equipments.html'
       });
 
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/account/equipments');
   }
 
 })();
