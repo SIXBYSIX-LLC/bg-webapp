@@ -2,6 +2,6 @@
   'use strict';
 
   angular
-    .module('BG', ['ngAnimate', 'ngSanitize', 'ngResource', 'ui.router', 'ui.bootstrap']);
+    .module('BG', ['ngAnimate', 'ngSanitize', 'ngResource', 'ui.router', 'ui.bootstrap','pascalprecht.translate']);
 
 })();

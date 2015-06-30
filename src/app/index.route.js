@@ -8,6 +8,10 @@
   /** @ngInject */
   function routeConfig($stateProvider, $urlRouterProvider) {
     $stateProvider
+      .state('home',{
+         url:'/',
+         templateUrl:'app/home/home.html'
+      })
       .state('main',{
           views:{
             "@": { templateUrl:'app/main/main.html' },
@@ -28,7 +32,7 @@
         templateUrl:'app/account/equipments/equipments.html'
       });
 
-    $urlRouterProvider.otherwise('/account/equipments');
+    $urlRouterProvider.otherwise('/');
   }
 
 })();
