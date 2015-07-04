@@ -6,8 +6,8 @@
 /* Icons */
 @font-face {
   font-family: 'soap-icons';
-  src: url("../fonts/soap-icons.eot?26664784");
-  src: url("../fonts/soap-icons.eot?26664784#iefix") format("embedded-opentype"), url("../fonts/soap-icons.woff?26664784") format("woff"), url("../fonts/soap-icons.ttf?26664784") format("truetype"), url("../fonts/soap-icons.svg?26664784#soap-icons") format("svg");
+  src: url("/app/style/fonts/soap-icons.eot?26664784");
+  src: url("/app/style/fonts/soap-icons.eot?26664784#iefix") format("embedded-opentype"), url("/app/style/fonts/soap-icons.woff?26664784") format("woff"), url("/app/style/fonts/soap-icons.ttf?26664784") format("truetype"), url("/app/style/fonts/soap-icons.svg?26664784#soap-icons") format("svg");
   font-weight: normal;
   font-style: normal; }
 /* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */

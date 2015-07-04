@@ -1,0 +1,172 @@
+<header id="header" class="navbar-static-top style2">
+    <div class="topnav">
+        <div class="container">
+            <nav id="main-menu" role="navigation">
+                <ul class="menu">
+                    <li class="menu-item-has-children">
+                        <a href="index.html">Home</a>
+                    </li>
+                </ul>
+            </nav>
+            <ul class="quick-menu pull-right clearfix">
+                <li class="ribbon">
+                    <a href="#">English</a>
+                    <ul class="menu mini">
+                        <li><a href="#" title="Dansk">Dansk</a></li>
+                        <li><a href="#" title="Deutsch">Deutsch</a></li>
+                        <li class="active"><a href="#" title="English">English</a></li>
+                        <li><a href="#" title="Español">Español</a></li>
+                        <li><a href="#" title="Français">Français</a></li>
+                        <li><a href="#" title="Italiano">Italiano</a></li>
+                        <li><a href="#" title="Magyar">Magyar</a></li>
+                        <li><a href="#" title="Nederlands">Nederlands</a></li>
+                        <li><a href="#" title="Norsk">Norsk</a></li>
+                        <li><a href="#" title="Polski">Polski</a></li>
+                        <li><a href="#" title="Português">Português</a></li>
+                        <li><a href="#" title="Suomi">Suomi</a></li>
+                        <li><a href="#" title="Svenska">Svenska</a></li>
+                    </ul>
+                </li>
+                <li class="ribbon currency">
+                    <a href="#" title="">USD</a>
+                    <ul class="menu mini">
+                        <li><a href="#" title="AUD">AUD</a></li>
+                        <li><a href="#" title="BRL">BRL</a></li>
+                        <li class="active"><a href="#" title="USD">USD</a></li>
+                        <li><a href="#" title="CAD">CAD</a></li>
+                        <li><a href="#" title="CHF">CHF</a></li>
+                        <li><a href="#" title="CNY">CNY</a></li>
+                        <li><a href="#" title="CZK">CZK</a></li>
+                        <li><a href="#" title="DKK">DKK</a></li>
+                        <li><a href="#" title="EUR">EUR</a></li>
+                        <li><a href="#" title="GBP">GBP</a></li>
+                        <li><a href="#" title="HKD">HKD</a></li>
+                        <li><a href="#" title="HUF">HUF</a></li>
+                        <li><a href="#" title="IDR">IDR</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#travelo-signup" class="soap-popupbox">ACCOUNT</a></li>
+
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <h1 class="logo navbar-brand">
+            <a href="javascript:void(0)" title="Travelo - home">
+                <img src="assets/images/logo.png" alt="Travelo HTML5 Template" />
+            </a>
+        </h1>
+        <div class="header-search col-sm-offset-4 col-md-offset-2 hidden-mobile">
+            <form method="post" role="form">
+                <div class="col-xs-6">
+                    <input type="text" name="where" value="" placeholder="Equipment Name, Part Name, etc.." class="input-text white-bg full-width where" />
+                </div>
+                <div class="col-xs-6">
+                    <div class="col-xs-3">
+                        <div class="datepicker-wrap transparent">
+                            <input type="text" class="input-text white-bg full-width check-in" datepicker-popup="{{dateFormat}}" ng-model="dt"
+                                   is-open="openedStart" min-date="minDate" datepicker-options="dateOptions"
+                                   ng-focus="open($event,'Start')"
+                                   date-disabled="disabled(date, mode)" ng-required="true" close-text="Close"/>
+                        </div>
+                    </div>
+                    <div class="col-xs-3">
+                        <div class="datepicker-wrap transparent">
+                            <input type="text" class="input-text white-bg full-width check-in" datepicker-popup="{{dateFormat}}" ng-model="dt"
+                                   is-open="openedEnd" min-date="minDate" datepicker-options="dateOptions"
+                                   ng-focus="open($event,'End')"
+                                   date-disabled="disabled(date, mode)" ng-required="true" close-text="Close"/>
+                        </div>
+
+
+                    </div>
+                    <div class="col-xs-3">
+
+                            <select class="form-control full-width white-bg">
+                                <option>Rent</option>
+                                <option>Buy</option>
+                            </select>
+
+                    </div>
+                    <div class="col-xs-3">
+                        <button type="submit" class="btn-medium uppercase full-width">search</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+<div id="travelo-signup" class="travelo-signup-box travelo-box">
+    <div class="login-social">
+        <a href="#" class="button login-facebook"><i class="soap-icon-facebook"></i>Login with Facebook</a>
+        <a href="#" class="button login-googleplus"><i class="soap-icon-googleplus"></i>Login with Google+</a>
+    </div>
+    <div class="seperator"><label>OR</label></div>
+    <div class="simple-signup">
+        <div class="text-center signup-email-section">
+            <a href="#" class="signup-email"><i class="soap-icon-letter"></i>Sign up with Email</a>
+        </div>
+        <p class="description">By signing up, I agree to Travelo's Terms of Service, Privacy Policy, Guest Refund olicy, and Host Guarantee Terms.</p>
+    </div>
+    <div class="email-signup">
+        <form>
+            <div class="form-group">
+                <input type="text" class="input-text full-width" placeholder="first name">
+            </div>
+            <div class="form-group">
+                <input type="text" class="input-text full-width" placeholder="last name">
+            </div>
+            <div class="form-group">
+                <input type="text" class="input-text full-width" placeholder="email address">
+            </div>
+            <div class="form-group">
+                <input type="password" class="input-text full-width" placeholder="password">
+            </div>
+            <div class="form-group">
+                <input type="password" class="input-text full-width" placeholder="confirm password">
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox"> Tell me about Travelo news
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <p class="description">By signing up, I agree to Travelo's Terms of Service, Privacy Policy, Guest Refund Policy, and Host Guarantee Terms.</p>
+            </div>
+            <button type="submit" class="full-width btn-medium">SIGNUP</button>
+        </form>
+    </div>
+    <div class="seperator"></div>
+    <p>Already a Travelo member? <a href="#travelo-login" class="goto-login soap-popupbox">Login</a></p>
+</div>
+<div id="travelo-login" class="travelo-login-box travelo-box">
+    <div class="login-social">
+        <a href="#" class="button login-facebook"><i class="soap-icon-facebook"></i>Login with Facebook</a>
+        <a href="#" class="button login-googleplus"><i class="soap-icon-googleplus"></i>Login with Google+</a>
+    </div>
+    <div class="seperator"><label>OR</label></div>
+    <form>
+        <div class="form-group">
+            <input type="text" class="input-text full-width" placeholder="email address">
+        </div>
+        <div class="form-group">
+            <input type="password" class="input-text full-width" placeholder="password">
+        </div>
+        <div class="form-group">
+            <a href="#" class="forgot-password pull-right">Forgot password?</a>
+            <div class="checkbox checkbox-inline">
+                <label>
+                    <input type="checkbox"> Remember me
+                </label>
+            </div>
+        </div>
+    </form>
+    <div class="seperator"></div>
+    <p>Don't have an account? <a href="#travelo-signup" class="goto-signup soap-popupbox">Sign up</a></p>
+</div>
+</header>
