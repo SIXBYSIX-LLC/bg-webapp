@@ -1,6 +1,7 @@
-angular.module('BG').controller('HeaderCtrl',[
-  '$scope',
-  function($scope){
+angular.module('BG').controller('HeaderCtrl',
+  /** @ngInject */
+  function($scope,Dialog){
+
 
 
     $scope.open = function($event,type) {
@@ -18,4 +19,4 @@ angular.module('BG').controller('HeaderCtrl',[
       startingDay: 1
     };
   }
-]);
+);

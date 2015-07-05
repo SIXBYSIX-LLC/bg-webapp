@@ -1,4 +1,6 @@
-angular.module('BG').directive("validateForm",function($translate){
+angular.module('BG').directive("validateForm",
+  /** @ngInject */
+  function($translate){
   return {
     scope:false,
     restrict:"A",

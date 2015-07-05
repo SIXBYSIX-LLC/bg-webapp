@@ -135,11 +135,20 @@
 /* font */
 @font-face {
   font-family: 'NexaBlack';
-  src: url('../fonts/NexaBlack.eot?') format('eot'), 
-       url('../fonts/NexaBlack.otf')  format('opentype'),
-       url('../fonts/NexaBlack.woff') format('woff'), 
-       url('../fonts/NexaBlack.ttf')  format('truetype'),
-       url('../fonts/NexaBlack.svg#NexaBlack') format('svg');
+  src: url('style/fonts/NexaBlack.eot?') format('eot'),
+       url('style/fonts/NexaBlack.otf')  format('opentype'),
+       url('style/fonts/NexaBlack.woff') format('woff'),
+       url('style/fonts/NexaBlack.ttf')  format('truetype'),
+       url('style/fonts/NexaBlack.svg#NexaBlack') format('svg');
+}
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('style/fonts/fontawesome-webfont.eot') format('eot'),
+  url('style/fonts/FontAwesome.otf')  format('opentype'),
+  url('style/fonts/fontawesome-webfont.woff') format('woff'),
+  url('style/fonts/fontawesome-webfont.ttf')  format('truetype'),
+  url('style/fonts/fontawesome-webfont.svg#NexaBlack') format('svg');
 }
 
 /* 1.2. Layout ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -762,7 +771,7 @@ blockquote {
 
 /* 2.6. Unordered lists ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 ul.arrow, ul.triangle, ul.circle, ul.check, ul.chevron, ul.arrow-square, ul.check-square, ul.check-circle, ul.decimal, ul.upper-roman, ul.lower-latin, ul.upper-latin {
-  line-height: 2em; font-size: /*1.0833em;*/1em;
+  line-height: 2em; font-size: 1em;/*1.0833em;*/
   li.active, li.active:before, &.hover li:hover, &.hover li:hover:before { color: $skin-active-color; }
   &.hover li { cursor: default; }
 }
@@ -2101,7 +2110,7 @@ body.pace-running {  }
     ul.quick-menu > li { 
       float: left; margin-left: 20px; 
       &:first-child { margin-left: 0; }
-      > a { color: #fff; line-height: 30px; display: block; font-size: 0.8333em; text-transform: uppercase; }
+      > a { color: #fff; line-height: 30px; display: block; font-size: 1em; text-transform: uppercase; }
     }
   }
   .ribbon { 
@@ -2795,7 +2804,7 @@ ul.menu.mini {
 
 /* 3.2.0. Sign up & Login box */
 .travelo-signup-box, .travelo-login-box {
-  border: 2px solid $skin-active-color; width: 300px; margin: 0 auto; display: none;
+  border: 2px solid $skin-active-color; width: 300px; margin: 0 auto;
   .login-social .button {
     width: 100%; height: 36px; line-height: 36px; margin-bottom: 10px; font-size: 1.3333em; font-weight: 400; text-align: left; padding-left: 20px; letter-spacing: 0.04em;
     i { font-size: 1.5em; margin-right: 36px; width: 20px; float: left; display: block; }
