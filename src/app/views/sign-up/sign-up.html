@@ -11,15 +11,13 @@
         <p class="description">By signing up, I agree to Travelo's Terms of Service, Privacy Policy, Guest Refund olicy, and Host Guarantee Terms.</p>
     </div>
     <div ng-show="emailSignUp" class="email-signup">
-        <form>
+        <form validate-form name="signUpMdl.form" novalidate="">
             <div class="form-group">
-                <input type="text" class="input-text full-width" placeholder="first name">
+                <input name="name" type="text" required class="input-text full-width" placeholder="first and last name">
             </div>
+
             <div class="form-group">
-                <input type="text" class="input-text full-width" placeholder="last name">
-            </div>
-            <div class="form-group">
-                <input type="text" class="input-text full-width" placeholder="email address">
+                <input name="email" required type="text" class="input-text full-width" placeholder="email address">
             </div>
             <div class="form-group">
                 <input type="password" class="input-text full-width" placeholder="password">
@@ -37,7 +35,7 @@
             <div class="form-group">
                 <p class="description">By signing up, I agree to Travelo's Terms of Service, Privacy Policy, Guest Refund Policy, and Host Guarantee Terms.</p>
             </div>
-            <button type="submit" class="full-width btn-medium">SIGNUP</button>
+            <button type="submit" class="full-width btn-medium" ng-click="signUpMdl.signUp()">SIGNUP</button>
         </form>
     </div>
     <div class="seperator"></div>

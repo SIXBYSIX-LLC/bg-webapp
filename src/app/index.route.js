@@ -38,7 +38,7 @@
         url:'/search',
         templateUrl:'app/views/search/search.html',
         controller:'SearchCtrl'
-      })
+      });
 
 
 

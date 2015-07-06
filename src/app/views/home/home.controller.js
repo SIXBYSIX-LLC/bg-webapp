@@ -15,7 +15,8 @@ angular.module('BG').controller('HomeCtrl',[
     $scope.minDate = $scope.minDate ? null : new Date();
     $scope.dateOptions = {
       formatYear: 'yy',
-      startingDay: 1
+      startingDay: 1,
+      class: 'datepicker'
     };
   }
 ]);

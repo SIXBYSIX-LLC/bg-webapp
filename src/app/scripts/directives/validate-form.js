@@ -23,10 +23,10 @@ angular.module('BG').directive("validateForm",
       });
 
 
-      scope.$on("validation",function(ev,value) {
-        validate = !!value;
-        checkAll(scope.$eval(attrs.name));
-      });
+//      scope.$on("validation",function(ev,value) {
+//        validate = !!value;
+//        checkAll(scope.$eval(attrs.name));
+//      });
 
       var watchStr="["+valuestoWatch.toString()+"]";
       scope.$on("validation",function(ev,value){

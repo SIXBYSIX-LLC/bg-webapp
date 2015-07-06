@@ -15,6 +15,7 @@
       Dialog.open({
         animation:false,
         templateUrl: 'app/views/sign-up/sign-up.html',
+        controller:'SignUpCtrl',
         size:'sm'
       })
     };
