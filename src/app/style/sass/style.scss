@@ -163,7 +163,7 @@
   }
 }
 section#content {
-  min-height: 400px; padding-top: 40px; text-align: left; background: #f5f5f5;
+  min-height: 700px; padding-top: 90px; text-align: left; background: #f5f5f5; margin-top: -78px;
   &:after { display: table; content: ""; clear: both; }
 }
 .sm-section { padding-top: 30px; padding-bottom: 20px; }
@@ -1046,7 +1046,7 @@ ol {  }
 
 /* 2.11. Photo Gallery ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-.flexslider .slides > li { display: none; }
+.flexslider .slides > li { display: block; }
 
 .photo-gallery, .image-carousel.style2 {
   .flex-direction-nav {
@@ -2204,7 +2204,7 @@ body.pace-running {  }
       margin-top: 28px;
       a {
         background-size: auto 22px;
-        img { width: auto; height: 22px; }
+        img { /*width: auto; height: 22px;*/ }
       }
     }
     .header-search {
@@ -2222,7 +2222,7 @@ body.pace-running {  }
         > li {
           padding-left: 0; padding-right: 0px; margin-right: 10px;
           > a { padding-left: 15px; padding-right: 15px; height: 50px; line-height: 50px; color: $light-blue-theme-color; }
-          &.active > a, & > a:hover { color: #fff; background: #263546; }
+          &.active > a, & > a:hover { color: #fff; background: #E37F1F; }
           &:hover > ul, &:hover > .megamenu-wrapper { top: 47px; }
         }
       }
@@ -2384,7 +2384,7 @@ body.pace-running {  }
 #header, #footer, .chaser {
   .logo {
     a { background: url($skin-logo) no-repeat 0 0; display: block; }
-    img { @include opacity(0); }
+    img { @include opacity(1); }
   }
 }
 
@@ -3105,7 +3105,7 @@ ul.search-tabs {
 /* 4.3. Style2 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 .search-box-wrapper.style2 {
   background: none;
-  .search-box { margin: 0 auto; background: rgba(0, 0, 0, 0.5); padding: 5px; }
+  .search-box { margin: 0 auto; background: rgba(0, 0, 0, 0.3); padding: 5px; }
   .search-box > ul.search-tabs {
     display: table; width: 100%;
     li {
