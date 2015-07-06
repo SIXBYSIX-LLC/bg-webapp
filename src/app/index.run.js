@@ -10,6 +10,7 @@
 
     $log.debug('runBlock end');
     $translate.use("en");
+    $rootScope.rmodel = {};
     $rootScope.openSignUp = function(){
       Dialog.open({
         animation:false,

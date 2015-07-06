@@ -128,20 +128,22 @@
                 <div class="form-group col-sm-6 col-md-4">
                     <div class="row">
                         <div class="col-xs-6">
-                            <p class="input-group">
-                                <input type="text" class="form-control" datepicker-popup="{{dateFormat}}" ng-model="dt" is-open="openedStart" min-date="minDate"  datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
-                                <span class="input-group-btn">
-                                        <button type="button" class="btn btn-default" ng-click="open($event,'Start')"><i class="glyphicon glyphicon-calendar"></i></button>
-                                </span>
-                            </p>
+                            <div class="datepicker-wrap transparent" ng-click="open($event,'Start')">
+                                <input type="text" class="input-text white-bg full-width check-in" datepicker-popup="{{dateFormat}}" ng-model="dt"
+                                       is-open="openedStart" min-date="minDate" datepicker-options="dateOptions"
+                                       ng-focus="open($event,'Start')"
+
+                                       date-disabled="disabled(date, mode)" ng-required="true" close-text="Close"/>
+                            </div>
                         </div>
                         <div class="col-xs-6">
-                            <p class="input-group">
-                                <input type="text" class="form-control" datepicker-popup="{{dateFormat}}" ng-model="dt" is-open="openedEnd" min-date="minDate"  datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
-                                <span class="input-group-btn">
-                                        <button type="button" class="btn btn-default" ng-click="open($event,'End')"><i class="glyphicon glyphicon-calendar"></i></button>
-                                </span>
-                            </p>
+                            <div class="datepicker-wrap transparent" ng-click="open($event,'End')">
+                                <input type="text" class="input-text white-bg full-width check-in" datepicker-popup="{{dateFormat}}" ng-model="dt"
+                                       is-open="openedEnd" min-date="minDate" datepicker-options="dateOptions"
+                                       ng-focus="open($event,'End')"
+
+                                       date-disabled="disabled(date, mode)" ng-required="true" close-text="Close"/>
+                            </div>
                         </div>
                     </div>
                 </div>
