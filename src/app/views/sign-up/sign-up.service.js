@@ -4,7 +4,7 @@ angular.module('BG').factory('SignUpService',
   function (API,$http) {
     return {
       signUp:function(data){
-        return 4
+        return $http.post(API.baseURL+"users",data);
       }
     }
   }

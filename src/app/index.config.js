@@ -21,9 +21,9 @@
             counter++;
             $rootScope.rmodel.loader=true;
           }
-          if(localStorage.userToken){
-            config.headers.AUTHORIZATION='Token '+localStorage.userToken
-          }
+          //if(localStorage.userToken){
+          config.headers.AUTHORIZATION='Token 09761fba3677fe0edbd211efb79c1af882b88e48';
+          //}
 
           return config;
         },
