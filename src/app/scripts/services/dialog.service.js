@@ -6,12 +6,6 @@ angular.module('BG').factory("Dialog",
         conf = angular.extend({
 //          backdrop:"static",
 //          keyboard: false,
-          scope:$rootScope,
-          controller:['$scope','$modalInstance','$timeout',function($scope,$modalInstance,$timeout){
-            $scope.cancel = function () {
-              $modalInstance.close();
-            };
-          }]
         },conf);
         console.log("conf",conf);
         var mi=$modal.open(conf);
