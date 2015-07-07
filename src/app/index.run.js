@@ -23,7 +23,9 @@
     $rootScope.openLogin = function(){
       Dialog.open({
         animation:true,
-        templateUrl: 'app/views/login/login.html'
+        templateUrl: 'app/views/login/login.html',
+        controller:'LoginCtrl',
+        size:'sm'
       })
     };
 

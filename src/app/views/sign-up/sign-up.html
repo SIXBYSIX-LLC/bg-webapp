@@ -13,18 +13,28 @@
     <div ng-show="emailSignUp" class="email-signup">
         <form validate-form name="signUpMdl.form" novalidate="">
             <div class="form-group">
-                <input name="name" type="text" required class="input-text full-width" placeholder="first and last name">
+                <input name="name" ng-model="signUpMdl.data.fullname" type="text" required class="input-text full-width" placeholder="first and last name">
             </div>
 
             <div class="form-group">
-                <input name="email" required type="text" class="input-text full-width" placeholder="email address">
+                <input name="email" ng-model="signUpMdl.data.email" required type="text" class="input-text full-width" placeholder="email address">
             </div>
             <div class="form-group">
-                <input type="password" class="input-text full-width" placeholder="password">
+                <input type="text"  name="phone" ng-model="signUpMdl.data.phone" required class="input-text full-width" placeholder="phone">
+            </div>
+
+            <div class="form-group">
+                <input type="text"  name="zipcode" ng-model="signUpMdl.data.zip_code" required class="input-text full-width" placeholder="zipcode">
+            </div>
+
+            <div class="form-group">
+                <input type="password" name="password" ng-model="signUpMdl.data.password" required class="input-text full-width" placeholder="password">
             </div>
             <div class="form-group">
-                <input type="password" class="input-text full-width" placeholder="confirm password">
+                <input type="password" name="confirmPassword" ng-model="signUpMdl.data.confirmPassword" required class="input-text full-width" placeholder="confirm password">
             </div>
+
+
             <div class="form-group">
                 <div class="checkbox">
                     <label>
