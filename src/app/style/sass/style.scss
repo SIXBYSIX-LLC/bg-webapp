@@ -175,7 +175,7 @@ section#content {
 .block { margin-bottom: 40px; }
 .large-block { margin-bottom: 70px; }
 article { margin-bottom: 20px; }
-#main { margin-bottom: 40px; }
+#main { margin-bottom: 40px; margin-top: 72px; }
 
 .body-blank { display: table; height: 100%; left: 0; margin: 0; overflow-x: hidden; position: absolute; top: 0; width: 100%; }
 .wrapper-blank { display: table-cell; float: none; vertical-align: middle; width: 100%; }
@@ -2106,7 +2106,7 @@ body.pace-running {  }
 #header {
   position: relative; z-index: 999;
   .topnav { 
-    height: 30px; background: $skin-bg-color; width: 100%;
+    height: 30px; background: $skin-bg-color; width: 100%; opacity: 0.7;
     ul.quick-menu > li { 
       float: left; margin-left: 20px; 
       &:first-child { margin-left: 0; }
@@ -2188,10 +2188,10 @@ body.pace-running {  }
   &.style2 {
     z-index: 99;
     .topnav {
-      height: auto; background: $dark-blue-theme-color;
+      height: auto; background: $dark-blue-theme-color; opacity: 0.7;
       ul.quick-menu > li { 
         > a {
-          color: $light-blue-theme-color; height: 50px; line-height: 50px;
+          color: #ffffff; height: 50px; line-height: 50px;
           &:hover { color: #fff; }
         }
         &.ribbon {
