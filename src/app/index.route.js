@@ -35,7 +35,7 @@
         templateUrl:'app/views/account/equipments/equipments.html'
       })
       .state('main.search',{
-        url:'/search',
+        url:'/search/{query:.*}',
         templateUrl:'app/views/search/search.html',
         controller:'SearchCtrl'
       });

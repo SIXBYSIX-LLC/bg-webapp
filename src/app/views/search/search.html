@@ -41,8 +41,8 @@
                             </h4>
 
                             <div  ng-class="{'collapse':filterEx[1]}" class="panel-collapse  filters-container">
-                                <div class="panel-content">
-                                    <div class="five-stars-container editable-rating"></div>
+                                <div  class="panel-content">
+                                    <div id="rating" class="five-stars-container editable-rating"></div>
                                     <br/>
                                     <small>2458 REVIEWS</small>
                                 </div>
@@ -185,14 +185,16 @@
                         </ul>
                     </div>
                     <div ng-show="searchMdl.display=='list'" class="hotel-list listing-style3 hotel">
-                        <article class="box" ng-repeat="i in [0,1,2]">
+                        <article class="box" ng-repeat="pro in searchMdl.products track by pro.id">
                             <figure class="col-sm-5 col-md-4">
-                                <a title="" href="ajax/slideshow-popup.html" class="hover-effect popup-gallery"><img width="270" height="160" alt="" src="http://placehold.it/270x160"></a>
+                                <a title="" href="ajax/slideshow-popup.html" class="hover-effect popup-gallery">
+                                    <img width="270" height="160" alt="" src="http://placehold.it/270x160">
+                                </a>
                             </figure>
                             <div class="details col-sm-7 col-md-8">
                                 <div>
                                     <div>
-                                        <h4 class="box-title">Caterpillar Track Excavator 330CL<small><i class="soap-icon-departure yellow-color"></i> Nobleiron HQ, Houston</small></h4>
+                                        <h4 class="box-title">{{pro.name}}<small><i class="soap-icon-departure yellow-color"></i></small></h4>
                                         <div class="amenities">
                                             <i class="soap-icon-wifi circle"></i>
                                             <i class="soap-icon-fitnessfacility circle"></i>
@@ -208,9 +210,9 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <p>Nunc cursus libero purus ac congue ar lorem cursus ut sed vitae pulvinar massa idend porta nequetiam elerisque mi id, consectetur adipi deese cing elit maus fringilla bibe endum.</p>
+                                    <p>{{pro.description}}</p>
                                     <div>
-                                        <span class="price"><small>Daily</small>$620</span>
+                                        <span class="price"><small>Daily</small>{{pro.daily_price}}</span>
                                         <a class="button btn-small full-width text-center" title="">Reserve</a>
                                     </div>
                                 </div>
@@ -219,19 +221,21 @@
                     </div>
                     <div class="hotel-list" ng-show="searchMdl.display=='grid'">
                         <div class="row image-box hotel listing-style1">
-                            <div class="col-sm-6 col-md-4" ng-repeat="i in [0,1,2,3,4,5,6,7,8]">
+                            <div class="col-sm-6 col-md-4" ng-repeat="pro in searchMdl.products track by pro.id">
                         <article class="box">
                             <figure>
-                                <a href="ajax/slideshow-popup.html" class="hover-effect popup-gallery"><img width="270" height="160" alt="" src="http://placehold.it/270x160"></a>
+                                <a href="ajax/slideshow-popup.html" class="hover-effect popup-gallery">
+                                    <img width="270" height="160" alt="" src="http://placehold.it/270x160">
+                                </a>
                             </figure>
                             <div class="details">
-                                <span class="price"><small>avg/night</small>$120</span>
-                                <h4 class="box-title">Forte Do Vale<small>Albufeira</small></h4>
+                                <span class="price"><small>Daily</small>{{pro.daily_price}}</span>
+                                <h4 class="box-title">{{pro.name}}</h4>
                                 <div class="feedback">
                                     <div data-placement="bottom" data-toggle="tooltip" class="five-stars-container" title="4 stars"><span style="width: 80%;" class="five-stars"></span></div>
                                     <span class="review">170 reviews</span>
                                 </div>
-                                <p class="description">Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar massa idporta nequetiam.</p>
+                                <p class="description">{{pro.description}}</p>
                                 <div class="action">
                                     <a class="button btn-small" href="hotel-detailed.html">SELECT</a>
                                     <a class="button btn-small yellow popup-map" href="#" data-box="37.089072, -8.247880">VIEW ON MAP</a>
@@ -243,7 +247,7 @@
                     </div>
 
 
-                    <a href="#" class="uppercase full-width button btn-large">load more listing</a>
+                    <a ng-click="searchMdl.next()" class="uppercase full-width button btn-large" ng-show="searchMdl.nextAvailable">load more listing</a>
                 </div>
             </div>
         </div>
