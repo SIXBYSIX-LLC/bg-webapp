@@ -8,7 +8,7 @@
         <div class="text-center signup-email-section">
             <a ng-click="emailSignUp=1" class="signup-email"><i class="soap-icon-letter"></i>Sign up with Email</a>
         </div>
-        <p class="description">By signing up, I agree to Travelo's Terms of Service, Privacy Policy, Guest Refund olicy, and Host Guarantee Terms.</p>
+        <p class="description">By signing up, I agree to Marketplace Terms of Service &amp; Privacy Policy.</p>
     </div>
     <div ng-show="emailSignUp" class="email-signup">
         <form validate-form name="signUpMdl.form" novalidate="">
@@ -38,16 +38,16 @@
             <div class="form-group">
                 <div class="checkbox">
                     <label>
-                        <input type="checkbox"> Tell me about Travelo news
+                        <input type="checkbox"> Tell me about Marketplace news
                     </label>
                 </div>
             </div>
             <div class="form-group">
-                <p class="description">By signing up, I agree to Travelo's Terms of Service, Privacy Policy, Guest Refund Policy, and Host Guarantee Terms.</p>
+                <p class="description">By signing up, I agree to Marketplace Terms of Service &amp; Privacy Policy.</p>
             </div>
             <button type="submit" class="full-width btn-medium" ng-click="signUpMdl.signUp()">SIGNUP</button>
         </form>
     </div>
     <div class="seperator"></div>
-    <p>Already a Travelo member? <a class="goto-login soap-popupbox" ng-click="signUpMdl.login()">Login</a></p>
+    <p>Already a Marketplace member? <a class="goto-login soap-popupbox" ng-click="signUpMdl.login()">Login</a></p>
 </div>
