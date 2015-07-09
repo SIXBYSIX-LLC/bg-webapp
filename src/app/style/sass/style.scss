@@ -175,7 +175,7 @@ section#content {
 .block { margin-bottom: 40px; }
 .large-block { margin-bottom: 70px; }
 article { margin-bottom: 20px; }
-#main { margin-bottom: 40px; margin-top: 72px; }
+#main { margin-bottom: 40px; margin-top: 132px; }
 
 .body-blank { display: table; height: 100%; left: 0; margin: 0; overflow-x: hidden; position: absolute; top: 0; width: 100%; }
 .wrapper-blank { display: table-cell; float: none; vertical-align: middle; width: 100%; }
@@ -316,7 +316,7 @@ button {
   &:hover { background: #E37F1F; }
 }
 a.button {
-  display: inline-block; background: #d9d9d9; font-size: 0.8333em; line-height: 1.8333em; white-space: nowrap; text-align: center;
+  display: inline-block; background: #797979; font-size: 0.8333em; line-height: 1.8333em; white-space: nowrap; text-align: center;
   &:hover { background: $green-theme-color; }
   &.btn-mini { padding-left: 10px; padding-right: 10px; }
   &.btn-large, &.btn-medium, &.btn-small, &.full-width { font-weight: bold; }
@@ -580,8 +580,8 @@ blockquote {
 
 /* 2.2.11. Price section */
 .price {
-  color: #E37F1F; font-size: 1.6667em; text-transform: uppercase; float: right; text-align: right; line-height: 1; display: block;
-  small { display: block; color: $primary-color; font-size: 0.5em; }
+  color: #E37F1F; font-size: 1.5em; text-transform: uppercase; float: left; text-align: center; line-height: 1; display: block; margin:9px; margin-bottom: 20px;
+  small { display: block; color: $primary-color; font-size: 0.6em; margin-bottom: 3px;}
 }
 
 .price-wrapper {
