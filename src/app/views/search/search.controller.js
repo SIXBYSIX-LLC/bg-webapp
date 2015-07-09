@@ -3,13 +3,30 @@ angular.module('BG').controller('SearchCtrl',
     function ($scope, SearchService, $stateParams) {
     var searchMdl = $scope.searchMdl = {};
     searchMdl.display = "list";
-    var search= SearchService.search($stateParams.query);
+    var search;
+
+
+
+    window.r=$scope;
+    window.p=searchMdl;
     searchMdl.products=[];
     searchMdl.nextAvailable=true;
-    search.next().then(function (response) {
-      searchMdl.products=response.data.data;
-      searchMdl.nextAvailable=search.isAvail();
-    });
+
+
+    searchMdl.search=function(){
+      if(searchMdl.searchText){
+        search=SearchService.search(searchMdl.searchText);
+        search.next().then(function (response) {
+          searchMdl.products=response.data.data;
+          searchMdl.nextAvailable=search.isAvail();
+        });
+      }
+    };
+
+    if($stateParams.query){
+      searchMdl.searchText=$stateParams.query;
+      searchMdl.search();
+    }
 
     searchMdl.next=function(){
       if(search.isAvail()){
@@ -24,6 +41,7 @@ angular.module('BG').controller('SearchCtrl',
     };
 
     $scope.$on("$viewContentLoaded", function () {
+      console.log("View Content Loaded");
       tjq("#price-range").slider({
         range: true,
         min: 0,

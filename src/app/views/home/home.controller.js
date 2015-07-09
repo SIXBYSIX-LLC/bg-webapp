@@ -1,6 +1,6 @@
-angular.module('BG').controller('HomeCtrl',[
-  '$scope',
-  function($scope){
+angular.module('BG').controller('HomeCtrl',
+  /** @ngInject */
+  function($scope,$state){
     var mdl = $scope.mdl = {};
     mdl.tab="rent";
     $scope.open = function($event,type) {
@@ -18,5 +18,11 @@ angular.module('BG').controller('HomeCtrl',[
       startingDay: 1,
       class: 'datepicker'
     };
+
+    mdl.search=function(){
+        if(mdl.searchText){
+            $state.go("main.search",{query:mdl.searchText});
+        }
+    };
   }
-]);
+);
