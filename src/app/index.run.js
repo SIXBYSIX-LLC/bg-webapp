@@ -6,8 +6,8 @@
     .run(runBlock);
 
   /** @ngInject */
-  function runBlock($log,$translate,$rootScope,Dialog) {
-
+  function runBlock($log,$translate,$rootScope,Dialog,$animate) {
+    $animate.enabled(false);
     $log.debug('runBlock end');
     $translate.use("en");
     $rootScope.rmodel = {};

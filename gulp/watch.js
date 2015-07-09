@@ -23,6 +23,7 @@ gulp.task('watch', ['inject'], function () {
     } else {
       gulp.start('inject');
     }
+    browserSync.reload(event.path);
   });
 
   gulp.watch(path.join(conf.paths.src, '/app/**/*.js'), function(event) {
