@@ -201,7 +201,7 @@ article { margin-bottom: 20px; }
 
 /* box title */
 .box-title {
-  margin-bottom: 0; line-height: 1em;
+  margin-bottom: 0; line-height: 1.33em;
   small {
     font-size: 10px; color: $primary-color; text-transform: uppercase; display: block; margin-top: 4px; /*letter-spacing: normal;*/
     [class^="soap-icon"] { color: $yellow-theme-color; font-size: 1.3333em; }
