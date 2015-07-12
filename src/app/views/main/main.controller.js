@@ -29,6 +29,10 @@
 
     $scope.popBreadcrumb=function(){
       return mainMdl.breadcrumbs.pop();
+    };
+
+    mainMdl.search=function(){
+
     }
   }
 

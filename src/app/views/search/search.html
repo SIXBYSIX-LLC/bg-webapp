@@ -6,7 +6,7 @@
                 <div class="col-sm-4 col-md-3">
                     <h4 class="search-results-title"><i class="soap-icon-search"></i><b>{{searchMdl.resultCount}}</b> results found.</h4>
 
-                    <div ng-init="filterEx=[true,true,true,true,true]" class="toggle-container filters-container">
+                    <div ng-init="filterEx=[false,false,false,false]" class="toggle-container filters-container">
                         <div class="panel style1 arrow-right">
                             <h4 class="panel-title">
                                 <a data-toggle="collapse"  ng-click="filterEx[0]=!filterEx[0]" ng-class="{'collapsed':filterEx[0]}">Price</a>
@@ -110,52 +110,16 @@
                             </div>
                         </div>
 
-                        <div class="panel style1 arrow-right">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" ng-click="filterEx[4]=!filterEx[4]" ng-class="{'collapsed':filterEx[4]}" class="collapsed">Modify
-                                    Search</a>
-                            </h4>
-
-                            <div ng-class="{'collapse':filterEx[4]}" class="panel-collapse">
-                                <div class="panel-content">
-                                    <form method="post">
-                                        <div class="form-group">
-                                            <label>Which Equipment you want to rent?</label>
-                                            <input type="text" class="input-text full-width" placeholder=""
-                                                   value="Caterpillar Track Excavator"/>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>From</label>
-
-                                            <div class="datepicker-wrap">
-                                                <input type="text" name="date_from" class="input-text full-width"
-                                                       placeholder="mm/dd/yy"/>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>To</label>
-
-                                            <div class="datepicker-wrap">
-                                                <input type="text" name="date_to" class="input-text full-width"
-                                                       placeholder="mm/dd/yy"/>
-                                            </div>
-                                        </div>
-                                        <br/>
-                                        <button class="btn-medium icon-check uppercase full-width">search again</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <div class="col-sm-8 col-md-9">
                     <div class="sort-by-section clearfix">
                         <h4 class="sort-by-title block-sm">Sort results by:</h4>
                         <ul class="sort-bar clearfix block-sm">
-                            <li class="sort-by-name"><a class="sort-by-container" ><span>name</span></a></li>
-                            <li class="sort-by-price"><a class="sort-by-container" ><span>price</span></a></li>
+                            <li ng-class="{'active':searchMdl.sortBy=='name'}"  ng-click="searchMdl.sort('name')" class="sort-by-name"><a class="sort-by-container" ><span>name</span></a></li>
+                            <li ng-class="{'active':searchMdl.sortBy=='daily_price'}" ng-click="searchMdl.sort('daily_price')" class="sort-by-price"><a class="sort-by-container" ><span>price</span></a></li>
                             <li class="clearer visible-sms"></li>
-                            <li class="sort-by-rating active"><a class="sort-by-container" ><span>rating</span></a>
+                            <li class="sort-by-rating"><a class="sort-by-container" ><span>rating</span></a>
                             </li>
                             <li class="sort-by-popularity"><a class="sort-by-container" ><span>popularity</span></a>
                             </li>
@@ -201,9 +165,9 @@
                                 </div>
                                 <div>
                                     <div class="price-slot">
-                                        <span class="price"><small>Daily</small>{{pro.daily_price}}</span>
-                                        <span class="price"><small>Weekly</small>{{pro.weekly_price}}</span>
-                                        <span class="price"><small>Monthly</small>{{pro.monthly_price}}</span>
+                                        <span class="price"><small>Daily</small>${{pro.daily_price}}</span>
+                                        <span class="price"><small>Weekly</small>${{pro.weekly_price}}</span>
+                                        <span class="price"><small>Monthly</small>${{pro.monthly_price}}</span>
                                     </div>
                                     <div>
 
