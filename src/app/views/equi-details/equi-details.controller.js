@@ -12,5 +12,9 @@ angular.module('BG').controller('EquiDetailsCtrl',
         mdl.equi = response.data.data;
       });
     }
+
+    mdl.tab1="photos";
+    mdl.tab2="description";
+
   }
 );
