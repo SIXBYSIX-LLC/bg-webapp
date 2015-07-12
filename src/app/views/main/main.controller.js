@@ -21,6 +21,15 @@
       formatYear: 'yy',
       startingDay: 1
     };
+
+    mainMdl.breadcrumbs=[];
+    $scope.addBreadcrumb=function(value){
+      mainMdl.breadcrumbs.push(value);
+    };
+
+    $scope.popBreadcrumb=function(){
+      return mainMdl.breadcrumbs.pop();
+    }
   }
 
 })();

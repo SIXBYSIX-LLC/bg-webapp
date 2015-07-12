@@ -2,10 +2,14 @@ angular.module('BG').controller('SearchCtrl',
   /** @ngInject */
     function ($scope, SearchService, $stateParams) {
     var searchMdl = $scope.searchMdl = {};
+    $scope.mainMdl.title="Search Results";
+    $scope.addBreadcrumb({title: "Search"});
+    $scope.$on("$destroy", function () {
+      $scope.popBreadcrumb();
+    });
     searchMdl.display = "list";
-    var search;
 
-
+    var search=null;
 
     window.r=$scope;
     window.p=searchMdl;
@@ -18,6 +22,7 @@ angular.module('BG').controller('SearchCtrl',
         search=SearchService.search(searchMdl.searchText || "");
         search.next().then(function (response) {
           searchMdl.products=response.data.data;
+          searchMdl.resultCount=response.data.meta.count;
           searchMdl.nextAvailable=search.isAvail();
         });
       //}

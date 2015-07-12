@@ -35,7 +35,7 @@
         controller:'SearchCtrl'
       })
       .state('main.equiDetails',{
-        url:'/equipment',
+        url:'/equipment/{id}',
         templateUrl:'app/views/equi-details/equi-details.html',
         controller:'EquiDetailsCtrl'
       });
