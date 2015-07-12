@@ -14,17 +14,19 @@ angular.module('BG').controller('SearchCtrl',
 
 
     searchMdl.search=function(){
-      if(searchMdl.searchText){
-        search=SearchService.search(searchMdl.searchText);
+      //if(searchMdl.searchText){
+        search=SearchService.search(searchMdl.searchText || "");
         search.next().then(function (response) {
           searchMdl.products=response.data.data;
           searchMdl.nextAvailable=search.isAvail();
         });
-      }
+      //}
     };
 
     if($stateParams.query){
       searchMdl.searchText=$stateParams.query;
+      searchMdl.search();
+    }else{
       searchMdl.search();
     }
 
