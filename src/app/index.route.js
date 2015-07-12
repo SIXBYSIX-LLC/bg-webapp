@@ -14,13 +14,8 @@
          controller:'HomeCtrl'
       })
       .state('main',{
-          views:{
-            "@": { templateUrl:'app/views/main/main.html' },
-            "header@main": {
-              templateUrl:'app/components/header2/header2.html',
-              controller:"HeaderCtrl"
-            }
-          }
+          templateUrl:'app/views/main/main.html',
+          controller:"MainController"
       })
       .state('main.account',{
         url:'/account',
@@ -38,6 +33,11 @@
         url:'/search/{query:.*}',
         templateUrl:'app/views/search/search.html',
         controller:'SearchCtrl'
+      })
+      .state('main.equiDetails',{
+        url:'/equipment/{id}',
+        templateUrl:'app/views/equi-details/equi-details.html',
+        controller:'EquiDetailsCtrl'
       });
 
 

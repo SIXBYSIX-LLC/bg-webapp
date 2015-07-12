@@ -20,9 +20,9 @@ angular.module('BG').controller('HomeCtrl',
     };
 
     mdl.search=function(){
-        if(mdl.searchText){
-            $state.go("main.search",{query:mdl.searchText});
-        }
+        //if(mdl.searchText){
+        $state.go("main.search",{query:mdl.searchText || ""});
+        //}
     };
   }
 );
