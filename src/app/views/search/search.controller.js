@@ -2,24 +2,26 @@ angular.module('BG').controller('SearchCtrl',
   /** @ngInject */
     function ($scope, SearchService, $stateParams) {
     var searchMdl = $scope.searchMdl = {};
-    $scope.mainMdl.title="Search Results";
+    var mainMdl = $scope.mainMdl;
+
+    mainMdl.title="Search Results";
+
     $scope.addBreadcrumb({title: "Search"});
     $scope.$on("$destroy", function () {
       $scope.popBreadcrumb();
     });
+
     searchMdl.display = "list";
 
     var search=null;
-
-    window.r=$scope;
-    window.p=searchMdl;
     searchMdl.products=[];
     searchMdl.nextAvailable=true;
+    searchMdl.sortBy='name';
 
 
     searchMdl.search=function(){
       //if(searchMdl.searchText){
-        search=SearchService.search(searchMdl.searchText || "");
+        search=SearchService.search({search:mainMdl.searchText || "",order_by:[searchMdl.sortBy]});
         search.next().then(function (response) {
           searchMdl.products=response.data.data;
           searchMdl.resultCount=response.data.meta.count;
@@ -28,8 +30,13 @@ angular.module('BG').controller('SearchCtrl',
       //}
     };
 
+    searchMdl.sort=function(sortBy){
+      searchMdl.sortBy=sortBy;
+      searchMdl.search();
+    };
+
     if($stateParams.query){
-      searchMdl.searchText=$stateParams.query;
+      mainMdl.searchText=$stateParams.query;
       searchMdl.search();
     }else{
       searchMdl.search();
