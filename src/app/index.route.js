@@ -22,6 +22,7 @@
       .state('main.account',{
         url:'/account',
         abstract:true,
+        controller:'AccountCtrl',
         templateUrl:'app/views/account/account.html'
       })
       .state('main.account.bookings',{
@@ -46,7 +47,8 @@
       })
       .state('main.account.profile',{
         url:'/profile',
-        templateUrl:'app/views/account/profile/profile.html'
+        templateUrl:'app/views/account/profile/profile.html',
+        controller:'ProfileCtrl'
       })
       .state('main.account.requests',{
         url:'/requests',

@@ -1,14 +1,15 @@
 angular.module('BG').controller('LoginCtrl',
 
   /** @ngInject */
-    function($scope,LoginService,$modalInstance,$state){
+    function($scope,LoginService,$modalInstance,$state,$rootScope){
     var loginMdl = $scope.loginMdl = {};
     loginMdl.login=function(){
       $scope.$broadcast("validation",true);
       if(loginMdl.form.$valid){
         LoginService.login(loginMdl.data).then(function(response){
           if(response.data){
-            localStorage.userToken=response.data.data.token;
+            localStorage.user=JSON.stringify(response.data.data);
+            $rootScope.user=response.data.data;
             $modalInstance.close();
             $state.go("main.account.dashboard");
           }

@@ -10,6 +10,7 @@
     $animate.enabled(false);
     $translate.use("en");
     $rootScope.rmodel = {};
+
     $rootScope.openSignUp = function(){
       return Dialog.open({
         animation:false,
@@ -29,11 +30,11 @@
     };
 
     $rootScope.logout = function(){
-      localStorage.removeItem("userToken");
+      localStorage.removeItem("user");
     };
 
     $rootScope.isLoggedIn=function(){
-      return !!localStorage.userToken;
+      return !!localStorage.user;
     };
 
     $rootScope.accountClick=function(){
@@ -42,7 +43,17 @@
       } else{
         $rootScope.openSignUp();
       }
+    };
+
+    if(localStorage.user){
+      try{
+        $rootScope.user=JSON.parse(localStorage.user)
+      }catch(e){}
     }
+
+    console.log($rootScope.user);
+
+
 
   }
 
