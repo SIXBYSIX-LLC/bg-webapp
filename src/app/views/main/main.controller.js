@@ -6,7 +6,7 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($scope) {
+  function MainController($scope,$state) {
     var mainMdl=$scope.mainMdl={};
     mainMdl.open = function($event,type) {
       mainMdl.openedStart = false;
@@ -32,7 +32,9 @@
     };
 
     mainMdl.search=function(){
-
+      if(mainMdl.searchText){
+        $state.go("main.search",{query:mainMdl.searchText || ""},{ reload: true });
+      }
     }
 
 

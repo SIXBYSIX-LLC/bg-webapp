@@ -25,7 +25,7 @@
                 </a>
             </h1>
             <div class="header-search col-sm-offset-4 col-md-offset-2 hidden-mobile">
-                <form method="post" role="form">
+                <form ng-submit="mainMdl.search()">
                     <div class="col-xs-6">
                         <input type="text" ng-model="mainMdl.searchText" name="where" value="" placeholder="Equipment Name, Part Name, etc.." class="input-text white-bg full-width where" />
                     </div>
@@ -35,7 +35,7 @@
                                 <input type="text" class="input-text white-bg full-width check-in" datepicker-popup="{{dateFormat}}" ng-model="mainMdl.startDate"
                                        is-open="mainMdl.openedStart" min-date="mainMdl.minDate" datepicker-options="mainMdl.dateOptions"
                                        ng-focus="mainMdl.open($event,'Start')"
-                                       ng-required="true" close-text="Close"/>
+                                        close-text="Close"/>
                             </div>
                         </div>
                         <div class="col-xs-3">
@@ -43,7 +43,7 @@
                                 <input type="text" class="input-text white-bg full-width check-in" datepicker-popup="{{dateFormat}}" ng-model="mainMdl.endDate"
                                        is-open="mainMdl.openedEnd" min-date="mainMdl.minDate" datepicker-options="mainMdl.dateOptions"
                                        ng-focus="mainMdl.open($event,'End')"
-                                       ng-required="true" close-text="Close"/>
+                                        close-text="Close"/>
                             </div>
 
 
