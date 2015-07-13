@@ -17,9 +17,16 @@
           templateUrl:'app/views/main/main.html',
           controller:"MainController"
       })
+
+
       .state('main.account',{
         url:'/account',
+        abstract:true,
         templateUrl:'app/views/account/account.html'
+      })
+      .state('main.account.bookings',{
+        url:'/bookings',
+        templateUrl:'app/views/account/bookings/bookings.html'
       })
       .state('main.account.dashboard',{
         url:'/dashboard',
@@ -29,6 +36,27 @@
         url:'/equipments',
         templateUrl:'app/views/account/equipments/equipments.html'
       })
+      .state('main.account.favourites',{
+        url:'/favourites',
+        templateUrl:'app/views/account/favourites/favourites.html'
+      })
+      .state('main.account.jobsites',{
+        url:'/jobsites',
+        templateUrl:'app/views/account/jobsites/jobsites.html'
+      })
+      .state('main.account.profile',{
+        url:'/profile',
+        templateUrl:'app/views/account/profile/profile.html'
+      })
+      .state('main.account.requests',{
+        url:'/requests',
+        templateUrl:'app/views/account/requests/requests.html'
+      })
+      .state('main.account.settings',{
+        url:'/settings',
+        templateUrl:'app/views/account/settings/settings.html'
+      })
+
       .state('main.search',{
         url:'/search/{query:.*}',
         templateUrl:'app/views/search/search.html',
