@@ -1,215 +1,226 @@
+<div style="margin-top: 45px;">
+<div class="row">
+<div class="col-sm-4 col-md-3">
+    <h4 class="search-results-title"><i class="soap-icon-search"></i><b>{{searchMdl.resultCount}}</b> results found.
+    </h4>
 
-<section id="content">
-    <div class="container">
-        <div id="main" style="margin-top: 45px;">
-            <div class="row">
-                <div class="col-sm-4 col-md-3">
-                    <h4 class="search-results-title"><i class="soap-icon-search"></i><b>{{searchMdl.resultCount}}</b> results found.</h4>
+    <div ng-init="filterEx=[false,false,false,false]" class="toggle-container filters-container">
+        <div class="panel style1 arrow-right">
+            <h4 class="panel-title">
+                <a ng-click="filterEx[0]=!filterEx[0]"
+                   ng-class="{'collapsed':filterEx[0]}">Price</a>
+            </h4>
 
-                    <div ng-init="filterEx=[false,false,false,false]" class="toggle-container filters-container">
-                        <div class="panel style1 arrow-right">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse"  ng-click="filterEx[0]=!filterEx[0]" ng-class="{'collapsed':filterEx[0]}">Price</a>
-                            </h4>
+            <div class="panel-collapse" ng-class="{'collapse':filterEx[0]}">
+                <div class="panel-content">
+                    <div id="price-range"></div>
+                    <br/>
+                    <span class="min-price-label pull-left"></span>
+                    <span class="max-price-label pull-right"></span>
 
-                            <div  class="panel-collapse" ng-class="{'collapse':filterEx[0]}">
-                                <div class="panel-content">
-                                    <div id="price-range"></div>
-                                    <br/>
-                                    <span class="min-price-label pull-left"></span>
-                                    <span class="max-price-label pull-right"></span>
-
-                                    <div class="clearer"></div>
-                                </div>
-                                <!-- end content -->
-                            </div>
-                        </div>
-
-                        <div class="panel style1 arrow-right">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" ng-click="filterEx[1]=!filterEx[1]" ng-class="{'collapsed':filterEx[1]}">User Rating</a>
-                            </h4>
-
-                            <div  ng-class="{'collapse':filterEx[1]}" class="panel-collapse  filters-container">
-                                <div  class="panel-content">
-                                    <div id="rating" class="five-stars-container editable-rating"></div>
-                                    <br/>
-                                    <small>2458 REVIEWS</small>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="panel style1 arrow-right">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" ng-click="filterEx[2]=!filterEx[2]" ng-class="{'collapsed':filterEx[2]}">Availability
-                                    Locations</a>
-                            </h4>
-
-                            <div ng-class="{'collapse':filterEx[2]}" class="panel-collapse">
-                                <div class="panel-content">
-                                    <ul class="check-square filters-option">
-                                        <li><a href="#">All
-                                            <small>(722)</small>
-                                        </a></li>
-                                        <li><a href="#">Location Name
-                                            <small>(982)</small>
-                                        </a></li>
-                                        <li><a href="#">Location Name
-                                            <small>(127)</small>
-                                        </a></li>
-                                        <li class="active"><a href="#">Location Name
-                                            <small>(222)</small>
-                                        </a></li>
-                                        <li><a href="#">Location Name
-                                            <small>(158)</small>
-                                        </a></li>
-                                        <li><a href="#">Location Name
-                                            <small>(439)</small>
-                                        </a></li>
-                                        <li><a href="#">Location Name
-                                            <small>(52)</small>
-                                        </a></li>
-                                    </ul>
-                                    <!--<a class="button btn-mini">MORE</a>-->
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="panel style1 arrow-right">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" ng-click="filterEx[3]=!filterEx[3]" ng-class="{'collapsed':filterEx[3]}" class="collapsed">Features</a>
-                            </h4>
-
-                            <div ng-class="{'collapse':filterEx[3]}" class="panel-collapse">
-                                <div class="panel-content">
-                                    <ul class="check-square filters-option">
-                                        <li><a href="#">Show All
-                                            <small>(722)</small>
-                                        </a></li>
-                                        <li><a href="#">Feature name
-                                            <small>(982)</small>
-                                        </a></li>
-                                        <li class="active"><a href="#">Feature name
-                                            <small>(127)</small>
-                                        </a></li>
-                                        <li class="active"><a href="#">Feature name
-                                            <small>(222)</small>
-                                        </a></li>
-                                        <li><a href="#">Feature name
-                                            <small>(158)</small>
-                                        </a></li>
-                                        <li><a href="#">Feature name
-                                            <small>(439)</small>
-                                        </a></li>
-                                        <li><a href="#">Feature name
-                                            <small>(52)</small>
-                                        </a></li>
-                                    </ul>
-                                    <!--<a class="button btn-mini">MORE</a>-->
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
+                    <div class="clearer"></div>
                 </div>
-                <div class="col-sm-8 col-md-9">
-                    <div class="sort-by-section clearfix">
-                        <h4 class="sort-by-title block-sm">Sort results by:</h4>
-                        <ul class="sort-bar clearfix block-sm">
-                            <li ng-class="{'active':searchMdl.sortBy=='name'}"  ng-click="searchMdl.sort('name')" class="sort-by-name"><a class="sort-by-container" ><span>name</span></a></li>
-                            <li ng-class="{'active':searchMdl.sortBy=='daily_price'}" ng-click="searchMdl.sort('daily_price')" class="sort-by-price"><a class="sort-by-container" ><span>price</span></a></li>
-                            <li class="clearer visible-sms"></li>
-                            <li class="sort-by-rating"><a class="sort-by-container" ><span>rating</span></a>
-                            </li>
-                            <li class="sort-by-popularity"><a class="sort-by-container" ><span>popularity</span></a>
-                            </li>
-                        </ul>
+                <!-- end content -->
+            </div>
+        </div>
 
-                        <ul class="swap-tiles clearfix block-sm">
+        <div class="panel style1 arrow-right">
+            <h4 class="panel-title">
+                <a   ng-click="filterEx[1]=!filterEx[1]" ng-class="{'collapsed':filterEx[1]}">User
+                    Rating</a>
+            </h4>
 
-                            <li class="swap-list" ng-class="{'active':searchMdl.display=='list'}">
-                                <a ng-click="searchMdl.display='list'"><i class="soap-icon-list"></i></a>
-                            </li>
-                            <li class="swap-grid" ng-class="{'active':searchMdl.display=='grid'}">
-                                <a ng-click="searchMdl.display='grid'"><i class="soap-icon-grid"></i></a>
-                            </li>
-                            <li class="swap-block" ng-class="{'active':searchMdl.display=='map'}">
-                                <a ng-click="searchMdl.display='map'"><i class="soap-icon-departure"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div ng-show="searchMdl.display=='list'" class="hotel-list listing-style3 hotel">
-                        <article class="box" ng-repeat="pro in searchMdl.products track by pro.id">
-                            <figure class="col-sm-5 col-md-4">
-                                <a ui-sref="main.equiDetails({id:pro.id})" class="hover-effect">
-                                    <img width="270" height="160" alt="" src="http://placehold.it/270x160">
-                                </a>
-                            </figure>
-                            <div class="details col-sm-7 col-md-8">
-                                <div>
-                                    <div>
-                                        <h4 class="box-title">{{pro.name}}<small><i class="soap-icon-departure yellow-color"></i> Bay Area, CA</small></h4>
-                                        <!--<div class="amenities">
-                                            <i class="soap-icon-wifi circle"></i>
-                                            <i class="soap-icon-fitnessfacility circle"></i>
-                                            <i class="soap-icon-fork circle"></i>
-                                            <i class="soap-icon-television circle"></i>
-                                        </div>-->
-                                    </div>
-                                    <div>
-                                        <div class="five-stars-container">
-                                            <span class="five-stars" style="width: 80%;"></span>
-                                        </div>
-                                        <span class="review">270 reviews</span>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="price-slot">
-                                        <span class="price"><small>Daily</small>${{pro.daily_price}}</span>
-                                        <span class="price"><small>Weekly</small>${{pro.weekly_price}}</span>
-                                        <span class="price"><small>Monthly</small>${{pro.monthly_price}}</span>
-                                    </div>
-                                    <div>
-
-                                        <a class="button btn-small full-width text-center" title="">Reserve</a>
-                                        <a class="button btn-small full-width text-center" title="">View on Map <Map></Map></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="hotel-list" ng-show="searchMdl.display=='grid'">
-                        <div class="row image-box hotel listing-style1">
-                            <div class="col-sm-6 col-md-4" ng-repeat="pro in searchMdl.products track by pro.id">
-                        <article class="box">
-                            <figure>
-                                <a href="ajax/slideshow-popup.html" class="hover-effect popup-gallery">
-                                    <img width="270" height="160" alt="" src="http://placehold.it/270x160">
-                                </a>
-                            </figure>
-                            <div class="details">
-                                <h4 class="box-title">{{pro.name}}</h4>
-                                <div class="feedback">
-                                    <div data-placement="bottom" data-toggle="tooltip" class="five-stars-container" title="4 stars"><span style="width: 80%;" class="five-stars"></span></div>
-                                    <span class="review">170 reviews</span>
-                                </div>
-                                <span class="price"><small>Daily</small>${{pro.daily_price| number : 0}}</span>
-                                <span class="price"><small>Weekly</small>${{pro.weekly_price | number : 0}}</span>
-                                <span class="price"><small>Monthly</small>${{pro.monthly_price | number : 0}}</span>
-                                <div class="action">
-                                    <a class="button btn-small" href="hotel-detailed.html">SELECT</a>
-                                    <a class="button btn-small yellow popup-map" href="#" data-box="37.089072, -8.247880">VIEW ON MAP</a>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                        </div>
-                    </div>
-
-
-                    <a ng-click="searchMdl.next()" class="uppercase full-width button btn-large" ng-show="searchMdl.nextAvailable">load more listing</a>
+            <div ng-class="{'collapse':filterEx[1]}" class="panel-collapse  filters-container">
+                <div class="panel-content">
+                    <div id="rating" class="five-stars-container editable-rating"></div>
+                    <br/>
+                    <small>2458 REVIEWS</small>
                 </div>
             </div>
         </div>
+
+        <div class="panel style1 arrow-right">
+            <h4 class="panel-title">
+                <a   ng-click="filterEx[2]=!filterEx[2]" ng-class="{'collapsed':filterEx[2]}">Availability
+                    Locations</a>
+            </h4>
+
+            <div ng-class="{'collapse':filterEx[2]}" class="panel-collapse">
+                <div class="panel-content">
+                    <ul class="check-square filters-option">
+                        <li><a href="#">All
+                            <small>(722)</small>
+                        </a></li>
+                        <li><a href="#">Location Name
+                            <small>(982)</small>
+                        </a></li>
+                        <li><a href="#">Location Name
+                            <small>(127)</small>
+                        </a></li>
+                        <li class="active"><a href="#">Location Name
+                            <small>(222)</small>
+                        </a></li>
+                        <li><a href="#">Location Name
+                            <small>(158)</small>
+                        </a></li>
+                        <li><a href="#">Location Name
+                            <small>(439)</small>
+                        </a></li>
+                        <li><a href="#">Location Name
+                            <small>(52)</small>
+                        </a></li>
+                    </ul>
+                    <!--<a class="button btn-mini">MORE</a>-->
+                </div>
+            </div>
+        </div>
+
+        <div class="panel style1 arrow-right">
+            <h4 class="panel-title">
+                <a   ng-click="filterEx[3]=!filterEx[3]" ng-class="{'collapsed':filterEx[3]}"
+                   class="collapsed">Features</a>
+            </h4>
+
+            <div ng-class="{'collapse':filterEx[3]}" class="panel-collapse">
+                <div class="panel-content">
+                    <ul class="check-square filters-option">
+                        <li><a href="#">Show All
+                            <small>(722)</small>
+                        </a></li>
+                        <li><a href="#">Feature name
+                            <small>(982)</small>
+                        </a></li>
+                        <li class="active"><a href="#">Feature name
+                            <small>(127)</small>
+                        </a></li>
+                        <li class="active"><a href="#">Feature name
+                            <small>(222)</small>
+                        </a></li>
+                        <li><a href="#">Feature name
+                            <small>(158)</small>
+                        </a></li>
+                        <li><a href="#">Feature name
+                            <small>(439)</small>
+                        </a></li>
+                        <li><a href="#">Feature name
+                            <small>(52)</small>
+                        </a></li>
+                    </ul>
+                    <!--<a class="button btn-mini">MORE</a>-->
+                </div>
+            </div>
+        </div>
+
     </div>
-</section>
+</div>
+<div class="col-sm-8 col-md-9">
+    <div class="sort-by-section clearfix">
+        <h4 class="sort-by-title block-sm">Sort results by:</h4>
+        <ul class="sort-bar clearfix block-sm">
+            <li ng-class="{'active':searchMdl.sortBy=='name'}" ng-click="searchMdl.sort('name')" class="sort-by-name"><a
+                    class="sort-by-container"><span>name</span></a></li>
+            <li ng-class="{'active':searchMdl.sortBy=='daily_price'}" ng-click="searchMdl.sort('daily_price')"
+                class="sort-by-price"><a class="sort-by-container"><span>price</span></a></li>
+            <li class="clearer visible-sms"></li>
+            <li class="sort-by-rating"><a class="sort-by-container"><span>rating</span></a>
+            </li>
+            <li class="sort-by-popularity"><a class="sort-by-container"><span>popularity</span></a>
+            </li>
+        </ul>
+
+        <ul class="swap-tiles clearfix block-sm">
+
+            <li class="swap-list" ng-class="{'active':searchMdl.display=='list'}">
+                <a ng-click="searchMdl.display='list'"><i class="soap-icon-list"></i></a>
+            </li>
+            <li class="swap-grid" ng-class="{'active':searchMdl.display=='grid'}">
+                <a ng-click="searchMdl.display='grid'"><i class="soap-icon-grid"></i></a>
+            </li>
+            <li class="swap-block" ng-class="{'active':searchMdl.display=='map'}">
+                <a ng-click="searchMdl.display='map'"><i class="soap-icon-departure"></i></a>
+            </li>
+        </ul>
+    </div>
+    <div ng-show="searchMdl.display=='list'" class="hotel-list listing-style3 hotel">
+        <article class="box" ng-repeat="pro in searchMdl.products track by pro.id">
+            <figure class="col-sm-5 col-md-4">
+                <a ui-sref="main.equiDetails({id:pro.id})" class="hover-effect">
+                    <img width="270" height="160" alt="" src="http://placehold.it/270x160">
+                </a>
+            </figure>
+            <div class="details col-sm-7 col-md-8">
+                <div>
+                    <div>
+                        <h4 class="box-title">{{pro.name}}
+                            <small><i class="soap-icon-departure yellow-color"></i> Bay Area, CA</small>
+                        </h4>
+                        <!--<div class="amenities">
+                            <i class="soap-icon-wifi circle"></i>
+                            <i class="soap-icon-fitnessfacility circle"></i>
+                            <i class="soap-icon-fork circle"></i>
+                            <i class="soap-icon-television circle"></i>
+                        </div>-->
+                    </div>
+                    <div>
+                        <div class="five-stars-container">
+                            <span class="five-stars" style="width: 80%;"></span>
+                        </div>
+                        <span class="review">270 reviews</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="price-slot">
+                        <span class="price"><small>Daily</small>${{pro.daily_price}}</span>
+                        <span class="price"><small>Weekly</small>${{pro.weekly_price}}</span>
+                        <span class="price"><small>Monthly</small>${{pro.monthly_price}}</span>
+                    </div>
+                    <div>
+
+                        <a class="button btn-small full-width text-center" title="">Reserve</a>
+                        <a class="button btn-small full-width text-center" title="">View on Map
+                            <Map></Map>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+    <div class="hotel-list" ng-show="searchMdl.display=='grid'">
+        <div class="row image-box hotel listing-style1">
+            <div class="col-sm-6 col-md-4" ng-repeat="pro in searchMdl.products track by pro.id">
+                <article class="box">
+                    <figure>
+                        <a href="ajax/slideshow-popup.html" class="hover-effect popup-gallery">
+                            <img width="270" height="160" alt="" src="http://placehold.it/270x160">
+                        </a>
+                    </figure>
+                    <div class="details">
+                        <h4 class="box-title">{{pro.name}}</h4>
+
+                        <div class="feedback">
+                            <div data-placement="bottom" data-toggle="tooltip" class="five-stars-container"
+                                 title="4 stars"><span style="width: 80%;" class="five-stars"></span></div>
+                            <span class="review">170 reviews</span>
+                        </div>
+                        <span class="price"><small>Daily</small>${{pro.daily_price| number : 0}}</span>
+                        <span class="price"><small>Weekly</small>${{pro.weekly_price | number : 0}}</span>
+                        <span class="price"><small>Monthly</small>${{pro.monthly_price | number : 0}}</span>
+
+                        <div class="action">
+                            <a class="button btn-small" href="hotel-detailed.html">SELECT</a>
+                            <a class="button btn-small yellow popup-map" href="#" data-box="37.089072, -8.247880">VIEW
+                                ON MAP</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+
+
+    <a ng-click="searchMdl.next()" class="uppercase full-width button btn-large" ng-show="searchMdl.nextAvailable">load
+        more listing</a>
+</div>
+</div>
+</div>
+

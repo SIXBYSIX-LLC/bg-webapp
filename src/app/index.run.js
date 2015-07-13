@@ -6,9 +6,8 @@
     .run(runBlock);
 
   /** @ngInject */
-  function runBlock($log,$translate,$rootScope,Dialog,$animate) {
+  function runBlock($log,$translate,$rootScope,Dialog,$animate,$state) {
     $animate.enabled(false);
-    $log.debug('runBlock end');
     $translate.use("en");
     $rootScope.rmodel = {};
     $rootScope.openSignUp = function(){
@@ -33,7 +32,17 @@
       localStorage.removeItem("userToken");
     };
 
+    $rootScope.isLoggedIn=function(){
+      return !!localStorage.userToken;
+    };
 
+    $rootScope.accountClick=function(){
+      if($rootScope.isLoggedIn()){
+        $state.go("main.account.dashboard");
+      } else{
+        $rootScope.openSignUp();
+      }
+    }
 
   }
 

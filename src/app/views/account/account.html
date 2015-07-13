@@ -1,13 +1,13 @@
 <div class="tab-container full-width-style arrow-left dashboard">
     <ul class="tabs">
-        <li class="active"><a data-toggle="tab" href="#dashboard"><i class="soap-icon-anchor circle"></i>Dashboard</a></li>
-        <li class=""><a data-toggle="tab" href="#profile"><i class="soap-icon-user circle"></i>Profile</a></li>
-        <li class=""><a data-toggle="tab" href="#booking"><i class="soap-icon-businessbag circle"></i>Manage Equipments</a></li>
-        <li class=""><a data-toggle="tab" href="#wishlist"><i class="soap-icon-wishlist circle"></i>Manage Jobsites</a></li>
-        <li class=""><a data-toggle="tab" href="#travel-stories"><i class="soap-icon-conference circle"></i>Favourited</a></li>
-        <li class=""><a data-toggle="tab" href="#travel-stories"><i class="soap-icon-conference circle"></i>Bookings</a></li>
-        <li class=""><a data-toggle="tab" href="#travel-stories"><i class="soap-icon-conference circle"></i>Requests</a></li>
-        <li class=""><a data-toggle="tab" href="#settings"><i class="soap-icon-settings circle"></i>Settings</a></li>
+        <li ui-sref-active="active"><a ui-sref="main.account.dashboard"><i class="soap-icon-anchor circle"></i>Dashboard</a></li>
+        <li ui-sref-active="active"><a ui-sref="main.account.profile"><i class="soap-icon-user circle"></i>Profile</a></li>
+        <li ui-sref-active="active"><a ui-sref="main.account.equipments"><i class="soap-icon-businessbag circle"></i>Manage Equipments</a></li>
+        <li ui-sref-active="active"><a ui-sref="main.account.jobsites"><i class="soap-icon-wishlist circle"></i>Manage Jobsites</a></li>
+        <li ui-sref-active="active"><a ui-sref="main.account.favourites"><i class="soap-icon-conference circle"></i>Favourited</a></li>
+        <li ui-sref-active="active"><a ui-sref="main.account.bookings"><i class="soap-icon-conference circle"></i>Bookings</a></li>
+        <li ui-sref-active="active"><a ui-sref="main.account.requests"><i class="soap-icon-conference circle"></i>Requests</a></li>
+        <li ui-sref-active="active"><a ui-sref="main.account.settings"><i class="soap-icon-settings circle"></i>Settings</a></li>
     </ul>
 <div class="tab-content">
     <ui-view/>
