@@ -1,6 +1,10 @@
 angular.module('BG').controller('SearchCtrl',
   /** @ngInject */
-    function ($scope, SearchService, $stateParams) {
+    function ($scope, SearchService, $stateParams, $timeout) {
+
+    var waitingForUpdate=false;
+    var waitingForResponse=false;
+
     var searchMdl = $scope.searchMdl = {};
     var mainMdl = $scope.mainMdl;
 
@@ -17,15 +21,26 @@ angular.module('BG').controller('SearchCtrl',
     searchMdl.products=[];
     searchMdl.nextAvailable=true;
     searchMdl.sortBy='name';
+    searchMdl.priceMin=0;
+    searchMdl.priceMax=10000;
+
+    searchMdl.locationFacets=[];
 
 
     searchMdl.search=function(){
       //if(searchMdl.searchText){
-        search=SearchService.search({search:mainMdl.searchText || "",order_by:[searchMdl.sortBy]});
+        var conf={
+          search:mainMdl.searchText || "",
+          order_by:[searchMdl.sortBy],
+          daily_price__gte:searchMdl.priceMin,
+          daily_price__lte:searchMdl.priceMax
+        };
+        search=SearchService.search(conf);
         search.next().then(function (response) {
           searchMdl.products=response.data.data;
           searchMdl.resultCount=response.data.meta.count;
           searchMdl.nextAvailable=search.isAvail();
+          searchMdl.locationFacets=response.data.meta.facets;
         });
       //}
     };
@@ -55,13 +70,24 @@ angular.module('BG').controller('SearchCtrl',
     };
 
     $scope.$on("$viewContentLoaded", function () {
-      console.log("View Content Loaded");
+
       tjq("#price-range").slider({
         range: true,
         min: 0,
-        max: 1000,
-        values: [ 100, 800 ],
+        max: 10000,
+        values: [ 0, 10000 ],
         slide: function (event, ui) {
+
+          searchMdl.priceMin=ui.values[0];
+          searchMdl.priceMax=ui.values[1];
+          if(waitingForUpdate==false){
+            waitingForUpdate=true;
+            $timeout(function(){
+              searchMdl.search();
+              waitingForUpdate=false;
+            },3000);
+          }
+
           tjq(".min-price-label").html("$" + ui.values[ 0 ]);
           tjq(".max-price-label").html("$" + ui.values[ 1 ]);
         }

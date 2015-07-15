@@ -3191,8 +3191,13 @@ ul.search-tabs {
   margin-bottom: 10px;
   li {
     margin-bottom: 1px; background: #f5f5f5; padding: 0 15px;
-    a { color: inherit; display: block; padding: 8px 0; text-transform: uppercase; font-size: 11px; }
+    a {
+      color: inherit; display: block; padding: 8px 0 8px 20px; text-transform: uppercase; font-size: 11px; }
     small { float: right; }
+    input {
+      float: left;
+      padding: 8px 0 8px 0px;
+    }
     &:before { float: left; width: 15px; height: 16px; display: block; line-height: 14px; text-align: center; margin-top: 12px; }
     &:after { display: table; clear: both; content: ""; }
     &.active { background: $skin-bg-color; a { color: #fff; } }

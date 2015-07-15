@@ -47,28 +47,24 @@
 
             <div ng-class="{'collapse':filterEx[2]}" class="panel-collapse">
                 <div class="panel-content">
-                    <ul class="check-square filters-option">
-                        <li><a href="#">All
-                            <small>(722)</small>
-                        </a></li>
-                        <li><a href="#">Location Name
-                            <small>(982)</small>
-                        </a></li>
-                        <li><a href="#">Location Name
-                            <small>(127)</small>
-                        </a></li>
-                        <li class="active"><a href="#">Location Name
-                            <small>(222)</small>
-                        </a></li>
-                        <li><a href="#">Location Name
-                            <small>(158)</small>
-                        </a></li>
-                        <li><a href="#">Location Name
-                            <small>(439)</small>
-                        </a></li>
-                        <li><a href="#">Location Name
-                            <small>(52)</small>
-                        </a></li>
+                    <ul class="filters-option">
+                        <li>
+                            <label>
+                                <input type="checkbox">
+                                <a href="#">All</a>
+                            </label>
+
+                        </li>
+                        <li ng-repeat="lf in searchMdl.locationFacets">
+                            <label>
+                                <input type="checkbox">
+                                <a href="#">{{lf.location.city.name}},{{lf.location.state.name}}
+                                    <small>({{lf.count}})</small>
+                                </a>
+                            </label>
+
+                        </li>
+
                     </ul>
                     <!--<a class="button btn-mini">MORE</a>-->
                 </div>
