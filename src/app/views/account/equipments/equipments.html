@@ -1,7 +1,7 @@
 <div id="booking" class="tab-pane fade in">
 <div class="row block">
     <div class="col-sm-6 col-md-3">
-        <a href="hotel-list-view.html">
+        <a>
             <div class="fact blue">
                 <div class="numbers counters-box">
                     <dl>
@@ -18,7 +18,7 @@
         </a>
     </div>
     <div class="col-sm-6 col-md-3">
-        <a href="flight-list-view.html">
+        <a >
             <div class="fact yellow">
                 <div class="numbers counters-box">
                     <dl>
@@ -27,7 +27,7 @@
                     </dl>
                     <i class="icon soap-icon-departure"></i>
                 </div>
-                <div class="description">
+                <div class="description" ui-sref="main.account.jobsites">
                     <i class="icon soap-icon-longarrow-right"></i>
                     <span>Manage Jobsites</span>
                 </div>
@@ -35,7 +35,7 @@
         </a>
     </div>
     <div class="col-sm-6 col-md-3">
-        <a href="car-list-view.html">
+        <a>
             <div class="fact red">
                 <div class="numbers counters-box">
                     <dl>
@@ -44,7 +44,7 @@
                     </dl>
                     <i class="icon soap-icon-wishlist"></i>
                 </div>
-                <div class="description">
+                <div class="description" ui-sref="main.account.favourites">
                     <i class="icon soap-icon-longarrow-right"></i>
                     <span>View Favourited Equipments</span>
                 </div>
@@ -52,7 +52,7 @@
         </a>
     </div>
     <div class="col-sm-6 col-md-3">
-        <a href="cruise-list-view.html">
+        <a >
             <div class="fact green">
                 <div class="numbers counters-box">
                     <dl>
@@ -72,26 +72,29 @@
 <h2>Equipments You have Rented! <button class="btn-mini status pull-right add-button">Add New Equipment</button></h2>
 <div class="filter-section gray-area clearfix">
     <form>
-        <label class="radio radio-inline">
-            <input type="radio" name="filter" checked="checked" />
+        <label class="radio radio-inline" ng-class="{'checked':equiMdl.filter=='all'}" ng-click="equiMdl.updateFilter('all')">
+            <input type="radio" name="filter" />
             All Equipments
         </label>
-        <label class="radio radio-inline">
+        <label class="radio radio-inline" ng-class="{'checked':equiMdl.filter=='rent'}" ng-click="equiMdl.updateFilter('rent')">
             <input type="radio" name="filter" />
             On Rent
         </label>
-        <label class="radio radio-inline">
+        <label class="radio radio-inline" ng-class="{'checked':equiMdl.filter=='vacant'}" ng-click="equiMdl.updateFilter('vacant')">
             <input type="radio" name="filter" />
             Vacant
         </label>
     </form>
 </div>
 <div class="booking-history">
-    <div class="booking-info clearfix">
+    <div class="booking-info clearfix" ng-repeat="pro in equiMdl.products">
         <div class="date">
-            <a href="ajax/slideshow-popup.html" class="hover-effect popup-gallery"><img width="72" height="72" alt="" src="images/shortcodes/listings/style01/hotel/1.png"></a>
+            <a class="hover-effect popup-gallery"><img width="72" height="72" alt="" src=""></a>
         </div>
-        <h4 class="box-title"><i class="icon soap-icon-departure takeoff-effect yellow-color circle"></i>Equipment Name Here<small>Job site Location</small></h4>
+        <h4 class="box-title">
+            <i class="icon soap-icon-departure takeoff-effect yellow-color circle"></i>{{pro.name}}
+            <small>{{pro.location.city.name}},{{pro.location.state.name}}</small>
+        </h4>
         <dl class="info">
             <dt>Time Utilization</dt>
             <dd>47%</dd>
@@ -99,26 +102,12 @@
             <dd>82%</dd>
         </dl>
 
-        <button class="btn-mini status">Delete</button>
-        <button class="btn-mini status">Edit</button>
-        <button class="btn-mini status">View</button>
+        <button class="btn-mini status" ng-click="equiMdl.delete(pro)">Delete</button>
+        <button class="btn-mini status" ng-click="equiMdl.edit(pro)">Edit</button>
+        <button class="btn-mini status" ui-sref="main.equiDetails({id:pro.id})">View</button>
     </div>
-    <div class="booking-info clearfix cancelled">
-        <div class="date">
-            <a href="ajax/slideshow-popup.html" class="hover-effect popup-gallery"><img width="72" height="72" alt="" src="images/shortcodes/listings/style01/hotel/1.png"></a>
-        </div>
-        <h4 class="box-title"><i class="icon soap-icon-departure takeoff-effect yellow-color circle"></i>Equipment Name Here<small>Job site Location</small></h4>
-        <dl class="info">
-            <dt>Time Utilization</dt>
-            <dd>47%</dd>
-            <dt>Dollar Utilization</dt>
-            <dd>82%</dd>
-        </dl>
-
-        <button class="btn-mini status">Delete</button>
-        <button class="btn-mini status">Edit</button>
-        <button class="btn-mini status">View</button>
-    </div>
+    <a ng-click="equiMdl.next()" class="uppercase full-width button btn-large" ng-show="equiMdl.nextAvailable">load
+        more </a>
 </div>
 
 </div>

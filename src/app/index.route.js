@@ -35,7 +35,8 @@
       })
       .state('main.account.equipments',{
         url:'/equipments',
-        templateUrl:'app/views/account/equipments/equipments.html'
+        templateUrl:'app/views/account/equipments/equipments.html',
+        controller:'EquipmentsCtrl'
       })
       .state('main.account.favourites',{
         url:'/favourites',

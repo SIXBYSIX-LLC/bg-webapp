@@ -53,6 +53,10 @@
 
     console.log($rootScope.user);
 
+    $rootScope.foo=function(){
+      console.log("Not Implemented");
+    }
+
 
 
   }
