@@ -3,6 +3,6 @@
  * Author:  http://themeforest.net/user/soaptheme
  */
 
-tjq(document).ready(function() {
-    // UI Form Element
-});
+//tjq(document).ready(function() {
+//    // UI Form Element
+//});

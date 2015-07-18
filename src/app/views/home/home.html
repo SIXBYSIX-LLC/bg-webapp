@@ -31,7 +31,6 @@
     </div>
     </div>
 
-
 </div>
 
 </header>
@@ -70,6 +69,13 @@
         <a ng-click="mdl.tab='search'" ><span>Advanced Search</span></a>
     </li>
 </ul>
+<div class="visible-mobile">
+        <ul id="mobile-search-tabs" class="search-tabs clearfix">
+            <li ng-class="{'active':mdl.tab=='rent'}"><a ng-click="mdl.tab='rent'">RENT</a></li>
+            <li ng-class="{'active':mdl.tab=='buy'}"> <a ng-click="mdl.tab='buy'">BUY</a></li>
+            <li ng-class="{'active':mdl.tab=='search'}"><a ng-click="mdl.tab='search'">Advanced Search</a></li>
+        </ul>
+</div>
 
 
 <div class="search-tab-content">
@@ -95,7 +101,7 @@
     </div>
     <div ng-class="{'active fade in':mdl.tab=='buy'}" class="tab-pane" >
         <form method="post">
-            <h4 class="title">Which Equipment you want to rent?</h4>
+            <h4 class="title">Which Equipment you want to buy?</h4>
 
             <div class="row">
                 <div class="form-group col-sm-12 col-md-10">
@@ -118,7 +124,7 @@
 
     <div ng-class="{'active fade in':mdl.tab=='search'}" class="tab-pane">
         <form>
-            <h4 class="title">Which Equipment you want to rent?</h4>
+            <h4 class="title">Which Equipment you want to search?</h4>
 
             <div class="row">
                 <div class="form-group col-sm-7 col-md-5">
