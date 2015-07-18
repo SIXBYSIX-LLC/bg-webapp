@@ -23,12 +23,15 @@ angular.module('BG').controller('SearchCtrl',
     searchMdl.sortBy='name';
     searchMdl.priceMin=0;
     searchMdl.priceMax=10000;
+    searchMdl.working=false;
 
     searchMdl.locationFacets=[];
 
 
     searchMdl.search=function(){
       //if(searchMdl.searchText){
+        searchMdl.products=[];
+        searchMdl.nextAvailable=true;
         var conf={
           search:mainMdl.searchText || "",
           order_by:[searchMdl.sortBy],
@@ -36,7 +39,9 @@ angular.module('BG').controller('SearchCtrl',
           daily_price__lte:searchMdl.priceMax
         };
         search=SearchService.search(conf);
+        searchMdl.working=true;
         search.next().then(function (response) {
+          searchMdl.working=false;
           searchMdl.products=response.data.data;
           searchMdl.resultCount=response.data.meta.count;
           searchMdl.nextAvailable=search.isAvail();
@@ -59,7 +64,9 @@ angular.module('BG').controller('SearchCtrl',
 
     searchMdl.next=function(){
       if(search.isAvail()){
+        searchMdl.working=true;
         search.next().then(function (response) {
+          searchMdl.working=false;
           console.log("Products",searchMdl.products.length,response.data.data);
           Array.prototype.push.apply(searchMdl.products,response.data.data);
           console.log("Products",searchMdl.products);
@@ -70,7 +77,7 @@ angular.module('BG').controller('SearchCtrl',
     };
 
     $scope.$on("$viewContentLoaded", function () {
-
+      var lastTimeout=null;
       tjq("#price-range").slider({
         range: true,
         min: 0,
@@ -82,10 +89,14 @@ angular.module('BG').controller('SearchCtrl',
           searchMdl.priceMax=ui.values[1];
           if(waitingForUpdate==false){
             waitingForUpdate=true;
-            $timeout(function(){
+            if(lastTimeout){
+              $timeout.cancel(lastTimeout);
+            }
+            lastTimeout=$timeout(function(){
+              lastTimeout=null;
               searchMdl.search();
               waitingForUpdate=false;
-            },3000);
+            },2000);
           }
 
           tjq(".min-price-label").html("$" + ui.values[ 0 ]);

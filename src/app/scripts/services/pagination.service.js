@@ -11,8 +11,8 @@ angular.module('BG').factory("PaginationService",
             page_size:page_size || 10,
             next:function(){
               if(!obj.working){
-                obj.page++;
                 if(obj.last_count>(obj.page*obj.page_size)){
+                  obj.page++;
                   return $http({
                     url:url+(hasQueryParams ? "&" : "?" )+"page="+obj.page+"&page_size="+obj.page_size,
                     method:method,

@@ -214,8 +214,10 @@
     </div>
 
 
-    <a ng-click="searchMdl.next()" class="uppercase full-width button btn-large" ng-show="searchMdl.nextAvailable">load
-        more listing</a>
+    <a ng-click="searchMdl.next()" class="uppercase full-width button btn-large" ng-show="searchMdl.nextAvailable">
+        <span ng-show="searchMdl.working" class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>
+        load more listing
+    </a>
 </div>
 </div>
 </div>

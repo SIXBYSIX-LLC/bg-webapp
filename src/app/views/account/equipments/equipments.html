@@ -106,8 +106,9 @@
         <button class="btn-mini status" ng-click="equiMdl.edit(pro)">Edit</button>
         <button class="btn-mini status" ui-sref="main.equiDetails({id:pro.id})">View</button>
     </div>
-    <a ng-click="equiMdl.next()" class="uppercase full-width button btn-large" ng-show="equiMdl.nextAvailable">load
-        more </a>
+    <a ng-click="equiMdl.next()" class="uppercase full-width button btn-large" ng-show="equiMdl.nextAvailable">
+        <span ng-show="equiMdl.working" class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>
+        load more </a>
 </div>
 
 </div>
