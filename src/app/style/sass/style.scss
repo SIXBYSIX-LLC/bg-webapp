@@ -240,7 +240,7 @@ select { height: 34px; padding: 8px 0 8px 8px; }
 select option { padding: 2px 10px; }
 .selector {
   position: relative; min-width: 60px; line-height: 0;
-  select { position: absolute; z-index: 1; @include opacity(0); width: 100%; -webkit-appearance: menulist-button; line-height: 30px; }
+  select { position: absolute; z-index: 1; @include opacity(1); width: 100%; -webkit-appearance: menulist-button; line-height: 30px; }
   span.custom-select {
     display: inline-block; line-height: 32px; padding: 0 10px; position: relative; width: 100%; overflow: hidden; white-space: nowrap;
     &:before { position: absolute; right: 0; top: 0; content: ''; background: $skin-select-color; width: 24px; height: 100%; }
