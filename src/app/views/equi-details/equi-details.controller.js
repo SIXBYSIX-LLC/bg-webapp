@@ -1,6 +1,6 @@
 angular.module('BG').controller('EquiDetailsCtrl',
   /** @ngInject */
-    function ($scope, $state, $stateParams, EquiDetailsService) {
+    function ($scope, $state, $timeout, $stateParams, EquiDetailsService) {
     var mdl = $scope.mdl = {};
     $scope.mainMdl.title = "Equipment Details";
     $scope.addBreadcrumb({title: "Equipment Details"});
@@ -13,25 +13,26 @@ angular.module('BG').controller('EquiDetailsCtrl',
       });
     }
 
-    mdl.tab1="photos";
+    mdl.tab1="map";
     mdl.tab2="description";
     mdl.map = {
-      center:{latitude: 40.47,longitude: -73.85},
-      zoom: 8,
+      center:{latitude: 39.47014384191681, longitude: -79.45778808593752},
+      zoom: 10,
+      control:{},
       markers: [
-        {id: 0,coords: {latitude: 41,longitude: -75},title: "Marker 1"},
-        {id: 1,coords: {latitude: 40,longitude: -74.5},title: "Marker 2"}],
-      polyline: {
-        path: [{latitude: 41,longitude: -75},
-          {latitude: 40,longitude: -74.5},
-          {latitude: 40.47,longitude: -73.85},
-          {latitude: 41.2,longitude: -74.2}],
-        clickable: !0,
-        editable: !0,
-        geodesic: !0,
-        draggable: !0
-      }
+        {id: 0,coords: {latitude: 39.456706494450006,longitude: -79.75751953125002},title: "Marker 1"},
+        {id: 1,coords: {latitude: 39.586706494450006,longitude: -79.05751953125002},title: "Marker 2"}]
     };
+    $scope.$watch("mdl.tab1",function(newVal,oldVal){
+      if(newVal=="map"){
+        $timeout(function(){
+          window.k=mdl.map.control;
+          mdl.map.center={latitude: 39.47014384191681, longitude: -79.45778808593752};
+          mdl.map.control.refresh && mdl.map.control.refresh() ;
+        },50);
+
+      }
+    });
 
   }
 );
