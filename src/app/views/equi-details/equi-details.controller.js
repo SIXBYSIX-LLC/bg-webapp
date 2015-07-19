@@ -34,5 +34,25 @@ angular.module('BG').controller('EquiDetailsCtrl',
       }
     });
 
+    $scope.$on("$viewContentLoaded",function(){
+      var cal = new Calendar();
+      var unavailable_days = [17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
+      var price_arr = {3: '$170', 4: '$170', 5: '$170', 6: '$170', 7: '$170', 8: '$170', 9: '$170', 10: '$170', 11: '$170', 12: '$170', 13: '$170', 14: '$170', 15: '$170', 16: '$170', 17: '$170'};
+
+      var current_date = new Date();
+      var current_year_month = (1900 + current_date.getYear()) + "-" + (current_date.getMonth() + 1);
+      tjq("#select-month").find("[value='" + current_year_month + "']").prop("selected", "selected");
+      cal.generateHTML(current_date.getMonth(), (1900 + current_date.getYear()), unavailable_days, price_arr);
+      tjq(".calendar").html(cal.getHTML());
+
+      tjq("#select-month").change(function() {
+        var selected_year_month = tjq("#select-month option:selected").val();
+        var year = parseInt(selected_year_month.split("-")[0], 10);
+        var month = parseInt(selected_year_month.split("-")[1], 10);
+        cal.generateHTML(month - 1, year, unavailable_days, price_arr);
+        tjq(".calendar").html(cal.getHTML());
+      });
+    })
+
   }
 );

@@ -1,7 +1,7 @@
 
 <div class="row">
 <div class="col-md-9">
-<div class="tab-container style1">
+<div id="hotel-main-content" class="tab-container style1">
     <ul class="tabs">
         <li ng-class="{'active':mdl.tab1=='photos'}"><a ng-click="mdl.tab1='photos'">photos</a></li>
         <li ng-class="{'active':mdl.tab1=='map'}"><a ng-click="mdl.tab1='map'">Location on Map</a></li>
@@ -44,7 +44,7 @@
 
             </ui-gmap-google-map>
         </div>
-        <div ng-show="mdl.tab1=='calendar'" ng-class="{'fade in active':mdl.tab1=='calendar'}" class="tab-pane">
+        <div ng-show="mdl.tab1=='calendar'" id="calendar-tab" ng-class="{'fade in active':mdl.tab1=='calendar'}" class="tab-pane">
             <label>SELECT MONTH</label>
 
             <div class="col-sm-6 col-md-4 no-float no-padding">
