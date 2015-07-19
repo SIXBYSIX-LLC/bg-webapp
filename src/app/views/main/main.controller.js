@@ -32,9 +32,9 @@
     };
 
     mainMdl.search=function(){
-      if(mainMdl.searchText){
-        $state.go("main.search",{query:mainMdl.searchText || ""},{ reload: true });
-      }
+      //if(mainMdl.searchText){
+      $state.go("main.search",{query:mainMdl.searchText || ""},{ reload: true });
+      //}
     }
 
 

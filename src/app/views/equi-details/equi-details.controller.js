@@ -34,6 +34,20 @@ angular.module('BG').controller('EquiDetailsCtrl',
       }
     });
 
+    mdl.open = function($event,type) {
+      mdl.openedStart = false;
+      mdl.openedEnd = false;
+      $event.preventDefault();
+      $event.stopPropagation();
+
+      mdl['opened'+type] = true;
+    };
+    mdl.minDate = mdl.minDate ? null : new Date();
+    mdl.dateOptions = {
+      formatYear: 'yy',
+      startingDay: 1
+    };
+
     $scope.$on("$viewContentLoaded",function(){
       var cal = new Calendar();
       var unavailable_days = [17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
