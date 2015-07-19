@@ -4983,4 +4983,10 @@ button.ui-button::-moz-focus-inner { border: 0; padding: 0; }
   font-size: 0.6em !important;
   height: 25px !important;
 }
+.details {
+  .price {
+    margin-bottom: 0px !important;
+    line-height: 1.15em !important;
+  }
+}
 /* custom style ends*/

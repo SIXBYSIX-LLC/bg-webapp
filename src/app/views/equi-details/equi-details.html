@@ -849,7 +849,23 @@
                         class="five-stars" style="width: 80%;"></span></div>
                 <span class="review pull-right">270 reviews</span>
             </div>
-            <p class="description">{{mdl.equi.description}}</p>
+            <div class="panel-content">
+                <form method="post">
+                    <div class="form-group">
+                        <label>From</label>
+                        <div class="datepicker-wrap">
+                            <input type="text" name="date_from" class="input-text full-width" placeholder="mm/dd/yy" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>To</label>
+                        <div class="datepicker-wrap">
+                            <input type="text" name="date_to" class="input-text full-width" placeholder="mm/dd/yy" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!--<p class="description">{{mdl.equi.description}}</p>-->
             <a class="button yellow full-width uppercase btn-small">Reserve Equipment</a>
 
             <p></p>
