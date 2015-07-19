@@ -1,6 +1,6 @@
 angular.module('BG').factory("Dialog",
   /** @ngInject */
-  function($modal,$rootScope){
+  function($modal){
     var Dialog = {
       open:function(conf){
         conf = angular.extend({

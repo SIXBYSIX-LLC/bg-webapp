@@ -74,18 +74,19 @@
                 </div>
             </div>
             <div class="row form-group">
+
                 <div class="col-sms-6 col-sm-6">
-                    <label>City</label>
+                    <label>Country</label>
                     <div class="selector">
-                        <select class="full-width">
+                        <select ng-model="addEquiMdl.countryId" ng-options="id as name for (id,name) in addEquiMdl.countries" class="full-width">
                             <option value="">Select...</option>
                         </select>
                     </div>
                 </div>
                 <div class="col-sms-6 col-sm-6">
-                    <label>Country</label>
+                    <label>Region State</label>
                     <div class="selector">
-                        <select class="full-width">
+                        <select ng-model="addEquiMdl.stateId" ng-options="id as name for (id,name) in addEquiMdl.states" class="full-width">
                             <option value="">Select...</option>
                         </select>
                     </div>
@@ -93,13 +94,14 @@
             </div>
             <div class="row form-group">
                 <div class="col-sms-6 col-sm-6">
-                    <label>Region State</label>
+                    <label>City</label>
                     <div class="selector">
-                        <select class="full-width">
+                        <select ng-model="addEquiMdl.cityId" ng-options="id as name for (id,name) in addEquiMdl.cities" class="full-width">
                             <option value="">Select...</option>
                         </select>
                     </div>
                 </div>
+
             </div>
             <hr>
             <h2>Upload Profile Photo</h2>
