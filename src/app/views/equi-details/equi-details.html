@@ -10,41 +10,16 @@
     </ul>
     <div class="tab-content">
         <div ng-show="mdl.tab1=='photos'" ng-class="{'fade in active':mdl.tab1=='photos'}" class="tab-pane">
-            <div class="photo-gallery style1" data-animation="slide" data-sync="image-carousel">
-                <ul class="slides">
-                    <li><img src="http://placehold.it/900x500" alt=""/></li>
-                    <li><img src="http://placehold.it/900x500" alt=""/></li>
-                    <li><img src="http://placehold.it/900x500" alt=""/></li>
-                    <li><img src="http://placehold.it/900x500" alt=""/></li>
-                    <li><img src="http://placehold.it/900x500" alt=""/></li>
-                    <li><img src="http://placehold.it/900x500" alt=""/></li>
-                    <li><img src="http://placehold.it/900x500" alt=""/></li>
-                    <li><img src="http://placehold.it/900x500" alt=""/></li>
-                    <li><img src="http://placehold.it/900x500" alt=""/></li>
-                    <li><img src="http://placehold.it/900x500" alt=""/></li>
-                    <li><img src="http://placehold.it/900x500" alt=""/></li>
-                    <li><img src="http://placehold.it/900x500" alt=""/></li>
-                    <li><img src="http://placehold.it/900x500" alt=""/></li>
-                </ul>
-            </div>
-            <div class="image-carousel style1" data-animation="slide" data-item-width="70" data-item-margin="10"
-                 data-sync="#photos-tab .photo-gallery">
-                <ul class="slides">
-                    <li><img src="http://placehold.it/70x70" alt=""/></li>
-                    <li><img src="http://placehold.it/70x70" alt=""/></li>
-                    <li><img src="http://placehold.it/70x70" alt=""/></li>
-                    <li><img src="http://placehold.it/70x70" alt=""/></li>
-                    <li><img src="http://placehold.it/70x70" alt=""/></li>
-                    <li><img src="http://placehold.it/70x70" alt=""/></li>
-                    <li><img src="http://placehold.it/70x70" alt=""/></li>
-                    <li><img src="http://placehold.it/70x70" alt=""/></li>
-                    <li><img src="http://placehold.it/70x70" alt=""/></li>
-                    <li><img src="http://placehold.it/70x70" alt=""/></li>
-                    <li><img src="http://placehold.it/70x70" alt=""/></li>
-                    <li><img src="http://placehold.it/70x70" alt=""/></li>
-                    <li><img src="http://placehold.it/70x70" alt=""/></li>
-                </ul>
-            </div>
+            <carousel ng-init="interval=1000" class="photo-gallery style1" interval="interval">
+
+                    <slide ng-repeat="slide in [0,1,2,3,4,5,6]">
+                        <img src="http://placehold.it/900x500" alt=""/>
+                        <div class="carousel-caption">
+                            <h4>Slide {{$index}}</h4>
+                        </div>
+                    </slide>
+
+            </carousel>
         </div>
         <div ng-show="mdl.tab1=='map'" ng-class="{'fade in active':mdl.tab1=='map'}" class="tab-pane">
 
