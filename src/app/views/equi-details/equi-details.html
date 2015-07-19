@@ -8,7 +8,7 @@
         <li ng-class="{'active':mdl.tab1=='calendar'}"><a ng-click="mdl.tab1='calendar'">Availability Calendar</a></li>
         <li class="pull-right"><a class="button btn-small yellow-bg white-color">Download Brochure</a></li>
     </ul>
-    <div class="tab-content">
+    <div class="tab-content" style="height: 500px;">
         <div ng-show="mdl.tab1=='photos'" ng-class="{'fade in active':mdl.tab1=='photos'}" class="tab-pane">
             <carousel ng-init="interval=1000" class="photo-gallery style1" interval="interval">
 
@@ -22,7 +22,8 @@
             </carousel>
         </div>
         <div ng-show="mdl.tab1=='map'" ng-class="{'fade in active':mdl.tab1=='map'}" class="tab-pane">
-
+            <ui-gmap-google-map center="mdl.map.center" zoom="mdl.map.zoom" draggable="true"  options="mdl.map.options">
+            </ui-gmap-google-map>
         </div>
         <div ng-show="mdl.tab1=='calendar'" ng-class="{'fade in active':mdl.tab1=='calendar'}" class="tab-pane">
             <label>SELECT MONTH</label>
