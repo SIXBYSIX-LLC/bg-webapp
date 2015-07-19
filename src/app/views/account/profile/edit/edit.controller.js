@@ -1,12 +1,11 @@
-angular.module('BG').controller('ProfileCtrl',
+angular.module('BG').controller('EditProfileCtrl',
   /** @ngInject */
-    function ($scope,Upload,API) {
-    var profileMdl = $scope.profileMdl = {};
-    profileMdl.edit = true;
-    profileMdl.fileToUpload=null;
+    function ($scope,Upload,API,$state) {
+    var editProfileMdl = $scope.editProfileMdl = {};
+    editProfileMdl.fileToUpload=null;
 
 
-    $scope.$watch("profileMdl.fileToUpload",function(newV,oldV){
+    $scope.$watch("editProfileMdl.fileToUpload",function(newV,oldV){
       if(newV && newV[0]){
         $scope.upload(newV);
       }
@@ -15,7 +14,11 @@ angular.module('BG').controller('ProfileCtrl',
       if(files && files[0]){
         console.log("files",files);
         Upload.upload({
-          url: API.baseURL+'staticfile',
+          url: API.baseURL+'staticfiles',
+          fields:{
+            target:"catalog.Product.images",
+            target_id:5
+          },
           file: files[0]
         }).progress(function (evt) {
           var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
@@ -29,16 +32,10 @@ angular.module('BG').controller('ProfileCtrl',
 
     };
 
-    $scope.editProfile = function () {
-      profileMdl.edit = true;
-    };
 
-    $scope.cancelEdit = function () {
-      profileMdl.edit = false;
-    };
 
     $scope.updateProfile = function () {
-      profileMdl.edit = false;
+      $state.go("");
     }
   }
 );

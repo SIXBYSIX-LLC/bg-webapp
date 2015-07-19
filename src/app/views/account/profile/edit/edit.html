@@ -1,0 +1,134 @@
+
+<div class="edit-profile">
+    <form validate-form name="editProfileMdl.form" novalidate class="edit-profile-form">
+        <h2>Personal Details</h2>
+        <div class="col-sm-9 no-padding no-float">
+            <div class="row form-group">
+                <div class="col-sms-6 col-sm-6">
+                    <label>First Name</label>
+                    <input type="text" name="firstname" required class="input-text full-width" placeholder="first name">
+                </div>
+                <div class="col-sms-6 col-sm-6">
+                    <label>Last Name</label>
+                    <input type="text" name="lastname" required class="input-text full-width" placeholder="last name">
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-sms-6 col-sm-6">
+                    <label>Email Address</label>
+                    <input type="text" name="email" required class="input-text full-width" placeholder="email address">
+                </div>
+                <div class="col-sms-6 col-sm-6">
+                    <label>Verify Email Address</label>
+                    <input type="text" class="input-text full-width" placeholder="verify email">
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-sms-6 col-sm-6">
+                    <label>Country Code</label>
+                    <div class="selector">
+                        <select class="full-width">
+                            <option>United Kingdom (+44)</option>
+                            <option>United States (+1)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sms-6 col-sm-6">
+                    <label>Phone Number</label>
+                    <input type="text" name="phone" required class="input-text full-width" placeholder="">
+                </div>
+            </div>
+            <div class="row form-group">
+                <label class="col-xs-12">Date of Birth</label>
+                <div class="col-xs-4 col-sm-2">
+                    <div class="selector">
+                        <select class="full-width">
+                            <option value="">date</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-xs-4 col-sm-2">
+                    <div class="selector">
+                        <select class="full-width">
+                            <option value="">month</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-xs-4 col-sm-2">
+                    <div class="selector">
+                        <select class="full-width">
+                            <option value="">year</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <h2>Contact Details</h2>
+            <div class="row form-group">
+                <div class="col-sms-6 col-sm-6">
+                    <label>Street Name</label>
+                    <input type="text" class="input-text full-width">
+                </div>
+                <div class="col-sms-6 col-sm-6">
+                    <label>Address</label>
+                    <input type="text" class="input-text full-width">
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-sms-6 col-sm-6">
+                    <label>City</label>
+                    <div class="selector">
+                        <select class="full-width">
+                            <option value="">Select...</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sms-6 col-sm-6">
+                    <label>Country</label>
+                    <div class="selector">
+                        <select class="full-width">
+                            <option value="">Select...</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-sms-6 col-sm-6">
+                    <label>Region State</label>
+                    <div class="selector">
+                        <select class="full-width">
+                            <option value="">Select...</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <h2>Upload Profile Photo</h2>
+            <div class="row form-group">
+                <div class="col-sms-12 col-sm-6 no-float">
+                    <div>Select Photo</div>
+                    <div class="fileinput button" ngf-select ngf-change="upload($files)">Upload on file change</div>
+
+                    <br/>
+                    <div ngf-drop ng-model="editProfileMdl.fileToUpload" class="upload-drop-zone"
+                         ngf-drag-over-class="drop" ngf-multiple="false" ngf-allow-dir="false"
+                            >Drop Images or PDFs files here</div>
+                    <div ng-if="editProfileMdl.fileToUpload[0]">
+                        Selected File:{{editProfileMdl.fileToUpload[0].name}}
+                    </div>
+                    <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+                </div>
+            </div>
+            <hr>
+            <h2>Describe Yourself</h2>
+            <div class="form-group">
+                <textarea rows="5" class="input-text full-width" placeholder="please tell us about you"></textarea>
+            </div>
+            <div class="from-group">
+                <button type="submit" ui-sref="main.account.profile.view" class="btn-medium col-sms-6 col-sm-4">UPDATE</button>
+                <button ui-sref="main.account.profile.view" class="btn-medium btn-default col-sms-6 col-sm-4">CANCEL</button>
+            </div>
+
+        </div>
+    </form>
+</div>

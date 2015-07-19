@@ -35,8 +35,19 @@
       })
       .state('main.account.equipments',{
         url:'/equipments',
+        abstract:true,
         templateUrl:'app/views/account/equipments/equipments.html',
         controller:'EquipmentsCtrl'
+      })
+      .state('main.account.equipments.list',{
+        url:'/list',
+        templateUrl:'app/views/account/equipments/list/list.html',
+        controller:'ListEquipmentsCtrl'
+      })
+      .state('main.account.equipments.add',{
+        url:'/add',
+        templateUrl:'app/views/account/equipments/add/add.html',
+        controller:'AddEquipmentsCtrl'
       })
       .state('main.account.favourites',{
         url:'/favourites',
@@ -47,9 +58,20 @@
         templateUrl:'app/views/account/jobsites/jobsites.html'
       })
       .state('main.account.profile',{
+        abstract:true,
         url:'/profile',
         templateUrl:'app/views/account/profile/profile.html',
         controller:'ProfileCtrl'
+      })
+      .state('main.account.profile.edit',{
+        url:'/edit',
+        templateUrl:'app/views/account/profile/edit/edit.html',
+        controller:'EditProfileCtrl'
+      })
+      .state('main.account.profile.view',{
+        url:'/view',
+        templateUrl:'app/views/account/profile/view/view.html',
+        controller:'ViewProfileCtrl'
       })
       .state('main.account.requests',{
         url:'/requests',

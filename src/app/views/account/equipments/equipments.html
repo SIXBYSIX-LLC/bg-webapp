@@ -1,238 +1,73 @@
 <div id="booking" class="tab-pane fade in">
-<div class="row block">
-    <div class="col-sm-6 col-md-3">
-        <a>
-            <div class="fact blue">
-                <div class="numbers counters-box">
-                    <dl>
-                        <dt class="display-counter" data-value="3200">0</dt>
-                        <dd>Equipments You Own</dd>
-                    </dl>
-                    <i class="icon soap-icon-calendar-check"></i>
+    <div class="row block">
+        <div class="col-sm-6 col-md-3">
+            <a>
+                <div class="fact blue">
+                    <div class="numbers counters-box">
+                        <dl>
+                            <dt class="display-counter" data-value="3200">0</dt>
+                            <dd>Equipments You Own</dd>
+                        </dl>
+                        <i class="icon soap-icon-calendar-check"></i>
+                    </div>
+                    <div class="description">
+                        <i class="icon soap-icon-longarrow-right"></i>
+                        <span>View Equipments</span>
+                    </div>
                 </div>
-                <div class="description">
-                    <i class="icon soap-icon-longarrow-right"></i>
-                    <span>View Equipments</span>
-                </div>
-            </div>
-        </a>
-    </div>
-    <div class="col-sm-6 col-md-3">
-        <a >
-            <div class="fact yellow">
-                <div class="numbers counters-box">
-                    <dl>
-                        <dt class="display-counter" data-value="4509">0</dt>
-                        <dd>Your Jobsites</dd>
-                    </dl>
-                    <i class="icon soap-icon-departure"></i>
-                </div>
-                <div class="description" ui-sref="main.account.jobsites">
-                    <i class="icon soap-icon-longarrow-right"></i>
-                    <span>Manage Jobsites</span>
-                </div>
-            </div>
-        </a>
-    </div>
-    <div class="col-sm-6 col-md-3">
-        <a>
-            <div class="fact red">
-                <div class="numbers counters-box">
-                    <dl>
-                        <dt class="display-counter" data-value="3250">0</dt>
-                        <dd>Favourited</dd>
-                    </dl>
-                    <i class="icon soap-icon-wishlist"></i>
-                </div>
-                <div class="description" ui-sref="main.account.favourites">
-                    <i class="icon soap-icon-longarrow-right"></i>
-                    <span>View Favourited Equipments</span>
-                </div>
-            </div>
-        </a>
-    </div>
-    <div class="col-sm-6 col-md-3">
-        <a >
-            <div class="fact green">
-                <div class="numbers counters-box">
-                    <dl>
-                        <dt class="display-counter" data-value="1570">0</dt>
-                        <dd>Service Tickets</dd>
-                    </dl>
-                    <i class="icon soap-icon-stories flip-effect"></i>
-                </div>
-                <div class="description">
-                    <i class="icon soap-icon-longarrow-right"></i>
-                    <span>Manage Requests</span>
-                </div>
-            </div>
-        </a>
-    </div>
-</div>
-<h2>Equipments You have Rented! <button class="btn-mini status pull-right add-button">Add New Equipment</button></h2>
-<div class="filter-section gray-area clearfix">
-    <form>
-        <label class="radio radio-inline" ng-class="{'checked':equiMdl.filter=='all'}" ng-click="equiMdl.updateFilter('all')">
-            <input type="radio" name="filter" />
-            All Equipments
-        </label>
-        <label class="radio radio-inline" ng-class="{'checked':equiMdl.filter=='rent'}" ng-click="equiMdl.updateFilter('rent')">
-            <input type="radio" name="filter" />
-            On Rent
-        </label>
-        <label class="radio radio-inline" ng-class="{'checked':equiMdl.filter=='vacant'}" ng-click="equiMdl.updateFilter('vacant')">
-            <input type="radio" name="filter" />
-            Vacant
-        </label>
-    </form>
-</div>
-<div class="booking-history ng-hide">
-    <div class="booking-info clearfix" ng-repeat="pro in equiMdl.products">
-        <div class="date">
-            <a class="hover-effect popup-gallery"><img width="72" height="72" alt="" src=""></a>
+            </a>
         </div>
-        <h4 class="box-title">
-            <i class="icon soap-icon-departure takeoff-effect yellow-color circle"></i>{{pro.name}}
-            <small>{{pro.location.city.name}},{{pro.location.state.name}}</small>
-        </h4>
-        <dl class="info">
-            <dt>Time Utilization</dt>
-            <dd>47%</dd>
-            <dt>Dollar Utilization</dt>
-            <dd>82%</dd>
-        </dl>
-
-        <button class="btn-mini status" ng-click="equiMdl.delete(pro)">Delete</button>
-        <button class="btn-mini status" ng-click="equiMdl.edit(pro)">Edit</button>
-        <button class="btn-mini status" ui-sref="main.equiDetails({id:pro.id})">View</button>
-    </div>
-    <a ng-click="equiMdl.next()" class="uppercase full-width button btn-large" ng-show="equiMdl.nextAvailable">
-        <span ng-show="equiMdl.working" class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>
-        load more </a>
-</div>
-<div class="edit-profile">
-    <form validate-form name="profileMdl.form" novalidate ng-submit="updateProfile()" class="edit-profile-form">
-        <h2>Add New Equipment</h2>
-        <div class="col-sm-9 no-padding no-float">
-            <div class="row form-group">
-                <div class="col-sms-6 col-sm-6">
-                    <label>First Name</label>
-                    <input type="text" name="firstname" required class="input-text full-width" placeholder="first name">
-                </div>
-                <div class="col-sms-6 col-sm-6">
-                    <label>Last Name</label>
-                    <input type="text" name="lastname" required class="input-text full-width" placeholder="last name">
-                </div>
-            </div>
-            <div class="row form-group">
-                <div class="col-sms-6 col-sm-6">
-                    <label>Email Address</label>
-                    <input type="text" name="email" required class="input-text full-width" placeholder="email address">
-                </div>
-                <div class="col-sms-6 col-sm-6">
-                    <label>Verify Email Address</label>
-                    <input type="text" class="input-text full-width" placeholder="verify email">
-                </div>
-            </div>
-            <div class="row form-group">
-                <div class="col-sms-6 col-sm-6">
-                    <label>Country Code</label>
-                    <div class="selector">
-                        <select class="full-width">
-                            <option>United Kingdom (+44)</option>
-                            <option>United States (+1)</option>
-                        </select>
+        <div class="col-sm-6 col-md-3">
+            <a >
+                <div class="fact yellow">
+                    <div class="numbers counters-box">
+                        <dl>
+                            <dt class="display-counter" data-value="4509">0</dt>
+                            <dd>Your Jobsites</dd>
+                        </dl>
+                        <i class="icon soap-icon-departure"></i>
+                    </div>
+                    <div class="description" ui-sref="main.account.jobsites">
+                        <i class="icon soap-icon-longarrow-right"></i>
+                        <span>Manage Jobsites</span>
                     </div>
                 </div>
-                <div class="col-sms-6 col-sm-6">
-                    <label>Phone Number</label>
-                    <input type="text" name="phone" required class="input-text full-width" placeholder="">
-                </div>
-            </div>
-            <div class="row form-group">
-                <label class="col-xs-12">Date of Birth</label>
-                <div class="col-xs-4 col-sm-2">
-                    <div class="selector">
-                        <select class="full-width">
-                            <option value="">date</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-xs-4 col-sm-2">
-                    <div class="selector">
-                        <select class="full-width">
-                            <option value="">month</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-xs-4 col-sm-2">
-                    <div class="selector">
-                        <select class="full-width">
-                            <option value="">year</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <hr>
-            <h2>Contact Details</h2>
-            <div class="row form-group">
-                <div class="col-sms-6 col-sm-6">
-                    <label>Street Name</label>
-                    <input type="text" class="input-text full-width">
-                </div>
-                <div class="col-sms-6 col-sm-6">
-                    <label>Address</label>
-                    <input type="text" class="input-text full-width">
-                </div>
-            </div>
-            <div class="row form-group">
-                <div class="col-sms-6 col-sm-6">
-                    <label>City</label>
-                    <div class="selector">
-                        <select class="full-width">
-                            <option value="">Select...</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-sms-6 col-sm-6">
-                    <label>Country</label>
-                    <div class="selector">
-                        <select class="full-width">
-                            <option value="">Select...</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="row form-group">
-                <div class="col-sms-6 col-sm-6">
-                    <label>Region State</label>
-                    <div class="selector">
-                        <select class="full-width">
-                            <option value="">Select...</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <hr>
-            <h2>Upload Profile Photo</h2>
-            <div class="row form-group">
-                <div class="col-sms-12 col-sm-6 no-float">
-                    <div class="fileinput full-width">
-                        <input type="file" class="input-text" data-placeholder="select image/s">
-                    </div>
-                </div>
-            </div>
-            <hr>
-            <h2>Describe Yourself</h2>
-            <div class="form-group">
-                <textarea rows="5" class="input-text full-width" placeholder="please tell us about you"></textarea>
-            </div>
-            <div class="from-group">
-                <button type="submit" ng-click="updateProfile()" class="btn-medium col-sms-6 col-sm-4">UPDATE</button>
-                <button ng-click="cancelEdit()" class="btn-medium btn-default col-sms-6 col-sm-4">CANCEL</button>
-            </div>
-
+            </a>
         </div>
-    </form>
-</div>
+        <div class="col-sm-6 col-md-3">
+            <a>
+                <div class="fact red">
+                    <div class="numbers counters-box">
+                        <dl>
+                            <dt class="display-counter" data-value="3250">0</dt>
+                            <dd>Favourited</dd>
+                        </dl>
+                        <i class="icon soap-icon-wishlist"></i>
+                    </div>
+                    <div class="description" ui-sref="main.account.favourites">
+                        <i class="icon soap-icon-longarrow-right"></i>
+                        <span>View Favourited Equipments</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-6 col-md-3">
+            <a >
+                <div class="fact green">
+                    <div class="numbers counters-box">
+                        <dl>
+                            <dt class="display-counter" data-value="1570">0</dt>
+                            <dd>Service Tickets</dd>
+                        </dl>
+                        <i class="icon soap-icon-stories flip-effect"></i>
+                    </div>
+                    <div class="description">
+                        <i class="icon soap-icon-longarrow-right"></i>
+                        <span>Manage Requests</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+<ui-view></ui-view>
 </div>
