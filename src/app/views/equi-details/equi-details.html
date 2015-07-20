@@ -10,51 +10,38 @@
     </ul>
     <div class="tab-content" style="height: 500px;">
         <div ng-show="mdl.tab1=='photos'" ng-class="{'fade in active':mdl.tab1=='photos'}" class="tab-pane">
-            <carousel ng-init="interval=2000" class="photo-gmainMdl.open = function($event,type) {
-      mainMdl.openedStart = false;
-      mainMdl.openedEnd = false;
-      $event.preventDefault();
-      $event.stopPropagation();
-
-      mainMdl['opened'+type] = true;
-    };
-    mainMdl.minDate = mainMdl.minDate ? null : new Date();
-    mainMdl.dateOptions = {
-      formatYear: 'yy',
-      startingDay: 1
-    };allery style1" interval="interval">
-
+            <carousel ng-init="interval=2000" class="photo-gallery style1" interval="interval">
                     <slide ng-repeat="slide in [0,1,2,3,4,5,6]">
                         <img src="http://placehold.it/900x500" alt=""/>
                         <div class="carousel-caption">
                             <h4>Slide {{$index}}</h4>
                         </div>
                     </slide>
-
             </carousel>
         </div>
         <div ng-show="mdl.tab1=='map'" ng-class="{'fade in active':mdl.tab1=='map'}" class="tab-pane">
 
-            <ui-gmap-google-map class="col-md-6"
-                                center="mdl.map.center"
-                                zoom="mdl.map.zoom"
-                                options="mdl.map.options"
-                                dragging="mdl.map.dragging"
-                                control="mdl.map.control"
-                                markers="mdl.map.markers"
-                                ng-cloak
-                    >
-                <ui-gmap-marker ng-repeat="m in mdl.map.markers" icon="m.icon" coords="m.coords" click="map2.onMarkerClick(m)" idkey="m.id">
-                    <ui-gmap-window show="m.show" ng-cloak>
-                        <p>
-                            <img src="http://placehold.it/100x100" alt=""/><br/>
-                            LL: {{m.coords.latitude}} &nbsp;<br/> {{m.coords.longitude}}
+            <map style="height: 450px;"></map>
+            <!--<ui-gmap-google-map class="col-md-6"-->
+                                <!--center="mdl.map.center"-->
+                                <!--zoom="mdl.map.zoom"-->
+                                <!--options="mdl.map.options"-->
+                                <!--dragging="mdl.map.dragging"-->
+                                <!--control="mdl.map.control"-->
+                                <!--markers="mdl.map.markers"-->
+                                <!--ng-cloak-->
+                    <!-->
+                <!--<ui-gmap-marker ng-repeat="m in mdl.map.markers" icon="m.icon" coords="m.coords" click="map2.onMarkerClick(m)" idkey="m.id">-->
+                    <!--<ui-gmap-window show="m.show" ng-cloak>-->
+                        <!--<p>-->
+                            <!--<img src="http://placehold.it/100x100" alt=""/><br/>-->
+                            <!--LL: {{m.coords.latitude}} &nbsp;<br/> {{m.coords.longitude}}-->
 
-                        </p>
-                    </ui-gmap-window>
-                </ui-gmap-marker>
+                        <!--</p>-->
+                    <!--</ui-gmap-window>-->
+                <!--</ui-gmap-marker>-->
 
-            </ui-gmap-google-map>
+            <!--</ui-gmap-google-map>-->
         </div>
         <div ng-show="mdl.tab1=='calendar'" id="calendar-tab" ng-class="{'fade in active':mdl.tab1=='calendar'}" class="tab-pane">
             <label>SELECT MONTH</label>

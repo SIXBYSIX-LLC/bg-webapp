@@ -9,6 +9,7 @@
       'ui.router',
       'ui.bootstrap',
       'uiGmapgoogle-maps',
+      'ngMap',
       'pascalprecht.translate'])
     .run(["$rootScope",function($rootScope){
       $rootScope.dateFormat = 'dd-MMMM-yyyy';

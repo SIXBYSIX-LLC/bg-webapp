@@ -15,24 +15,66 @@ angular.module('BG').controller('EquiDetailsCtrl',
 
     mdl.tab1="map";
     mdl.tab2="description";
-    mdl.map = {
-      center:{latitude: 39.47014384191681, longitude: -79.45778808593752},
-      zoom: 10,
-      control:{},
-      markers: [
-        {id: 0,coords: {latitude: 39.456706494450006,longitude: -79.75751953125002},title: "Marker 1"},
-        {id: 1,coords: {latitude: 39.586706494450006,longitude: -79.05751953125002},title: "Marker 2"}]
-    };
-    $scope.$watch("mdl.tab1",function(newVal,oldVal){
-      if(newVal=="map"){
-        $timeout(function(){
-          window.k=mdl.map.control;
-          mdl.map.center={latitude: 39.47014384191681, longitude: -79.45778808593752};
-          mdl.map.control.refresh && mdl.map.control.refresh() ;
-        },50);
+    var gmap=null;
+    $scope.$on('mapInitialized', function(event, map) {
+      //alert("Map Initialized");
+      gmap = map;
+      map.setZoom(12);
+      var lastMarker = new google.maps.Marker({
+        position: {lat: -34, lng: 151},
+        map: map,
+        draggable: true,
+        animation: google.maps.Animation.DROP
+      });
+      map.setCenter({lat: -34, lng: 151});
+      google.maps.event.addListener(map, 'click', function(event) {
+        placeMarker(event.latLng);
+      });
 
+      var input = document.createElement("input");
+      input.className="pac-input";
+      map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+      var searchBox = new google.maps.places.SearchBox((input));
+
+      google.maps.event.addListener(searchBox, 'places_changed', function() {
+        var place = searchBox.getPlaces()[0];
+
+        if (!place.geometry) return;
+
+        if (place.geometry.viewport) {
+          map.fitBounds(place.geometry.viewport);
+        } else {
+          map.setCenter(place.geometry.location);
+          map.setZoom(16);
+        }
+      });
+
+      function placeMarker(location) {
+        if(lastMarker){
+          lastMarker.setPosition(location);
+          lastMarker.setAnimation(google.maps.Animation.DROP);
+        }
       }
     });
+//    mdl.map = {
+//      center:[39.47014384191681, -79.45778808593752],
+//      zoom: 10,
+//      control:{},
+//      markers: [
+//        {id: 0,coords: {latitude: 39.456706494450006,longitude: -79.75751953125002},title: "Marker 1"},
+//        {id: 1,coords: {latitude: 39.586706494450006,longitude: -79.05751953125002},title: "Marker 2"}]
+//    };
+//    $scope.$watch("mdl.tab1",function(newVal,oldVal){
+//      if(newVal=="map"){
+//        $timeout(function(){
+//          window.k=mdl.map.control;
+//          mdl.map.center={latitude: 39.47014384191681, longitude: -79.45778808593752};
+//          mdl.map.control.refresh && mdl.map.control.refresh() ;
+//        },50);
+//
+//      }
+//    });
 
     mdl.open = function($event,type) {
       mdl.openedStart = false;
