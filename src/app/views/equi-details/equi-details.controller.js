@@ -17,15 +17,28 @@ angular.module('BG').controller('EquiDetailsCtrl',
     mdl.tab2="description";
     var gmap=null;
     $scope.$on('mapInitialized', function(event, map) {
-      //alert("Map Initialized");
       gmap = map;
       map.setZoom(12);
-      var lastMarker = new google.maps.Marker({
+
+
+      var infowindow = new google.maps.InfoWindow({
+        content: '<h1>Equipment Name</h1>' +
+          '<img style="height:100px;" src="http://pixabay.com/static/uploads/photo/2015/06/26/19/01/heavy-equipment-822833_640.jpg"/>'+
+          '<br/><b>Sample Content</b> <i>We can add anything here</i>'
+      });
+
+
+      var marker = new google.maps.Marker({
         position: {lat: -34, lng: 151},
         map: map,
         draggable: true,
         animation: google.maps.Animation.DROP
       });
+
+      google.maps.event.addListener(marker, 'click', function() {
+        infowindow.open(map,marker);
+      });
+
       map.setCenter({lat: -34, lng: 151});
       google.maps.event.addListener(map, 'click', function(event) {
         placeMarker(event.latLng);
@@ -51,10 +64,8 @@ angular.module('BG').controller('EquiDetailsCtrl',
       });
 
       function placeMarker(location) {
-        if(lastMarker){
-          lastMarker.setPosition(location);
-          lastMarker.setAnimation(google.maps.Animation.DROP);
-        }
+          marker.setPosition(location);
+          marker.setAnimation(google.maps.Animation.DROP);
       }
     });
 //    mdl.map = {
