@@ -8,7 +8,6 @@
       'ngResource',
       'ui.router',
       'ui.bootstrap',
-      'uiGmapgoogle-maps',
       'ngMap',
       'pascalprecht.translate'])
     .run(["$rootScope",function($rootScope){
