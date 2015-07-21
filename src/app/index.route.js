@@ -17,8 +17,6 @@
           templateUrl:'app/views/main/main.html',
           controller:"MainController"
       })
-
-
       .state('main.account',{
         url:'/account',
         abstract:true,
@@ -91,6 +89,11 @@
         url:'/equipment/{id}',
         templateUrl:'app/views/equi-details/equi-details.html',
         controller:'EquiDetailsCtrl'
+      })
+      .state('main.cart',{
+        url:'/cart/{id}',
+        templateUrl:'app/views/cart/cart.html',
+        controller:'CartCtrl'
       });
 
 
