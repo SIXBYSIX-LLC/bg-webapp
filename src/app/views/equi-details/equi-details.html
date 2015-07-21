@@ -20,9 +20,7 @@
             </carousel>
         </div>
         <div ng-show="mdl.tab1=='map'" ng-class="{'fade in active':mdl.tab1=='map'}" class="tab-pane">
-
             <map style="height: 450px;"></map>
-
         </div>
         <div ng-show="mdl.tab1=='calendar'" id="calendar-tab" ng-class="{'fade in active':mdl.tab1=='calendar'}" class="tab-pane">
             <label>SELECT MONTH</label>
@@ -40,7 +38,7 @@
                     </select>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" style="margin-top: 30px;">
                 <div class="col-sm-8">
                     <div class="calendar"></div>
                     <div class="calendar-legend">
@@ -66,7 +64,7 @@
     </div>
 </div>
 
-<div class="tab-container">
+<div class="tab-container" style="margin-top:80px;">
 <ul class="tabs">
     <li ng-class="{'active':mdl.tab2=='description'}"><a ng-click="mdl.tab2='description'">Description</a></li>
     <li ng-class="{'active':mdl.tab2=='similar'}"><a ng-click="mdl.tab2='similar'">Similar Equipments</a></li>
