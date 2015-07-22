@@ -3749,8 +3749,19 @@ ul.search-tabs {
 
   .intro2 {
     width: 100%; padding: 20px 10px;
-    .table-cell { padding: 10px 20px; }
+    .table-cell { /*padding: 10px 20px; */}
     .image-container { width: 150px; padding-right: 10px; }
+    .description {
+        width: 400px; padding-right: 10px;
+        .form-control {width: 30%; margin-right: 2%; float: left;}
+    }
+    .make-postpaid {
+      clear: both;
+      margin-top: 25px;
+      label {
+        padding-left: 30px;
+      }
+    }
     .term-description {
       margin-bottom: 0; font-size: 0.8333em;
       dt { border-right: none; width: 110px; }
