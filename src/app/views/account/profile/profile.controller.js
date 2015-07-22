@@ -29,16 +29,5 @@ angular.module('BG').controller('ProfileCtrl',
 
     };
 
-    $scope.editProfile = function () {
-      profileMdl.edit = true;
-    };
-
-    $scope.cancelEdit = function () {
-      profileMdl.edit = false;
-    };
-
-    $scope.updateProfile = function () {
-      profileMdl.edit = false;
-    }
   }
 );

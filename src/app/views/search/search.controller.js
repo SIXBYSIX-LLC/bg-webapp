@@ -27,6 +27,14 @@ angular.module('BG').controller('SearchCtrl',
 
     searchMdl.locationFacets=[];
 
+    searchMdl.features=[];
+    for(var i=0;i<10;i++){
+      searchMdl.features.push({
+        name:"Feature "+(i+1),
+        count:i*10
+      })
+    }
+
 
     searchMdl.search=function(){
       //if(searchMdl.searchText){

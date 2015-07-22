@@ -47,21 +47,14 @@
 
             <div ng-class="{'collapse':filterEx[2]}" class="panel-collapse">
                 <div class="panel-content">
-                    <ul class="filters-option">
-                        <li>
-                            <label>
-                                <input type="checkbox">
-                                <a href="#">All</a>
-                            </label>
-
+                    <ul class="check-square filters-option">
+                        <li ng-class="{'active':searchMdl.locationFacets.allSelected}">
+                            <a ng-click="searchMdl.locationFacets.allSelected=!searchMdl.locationFacets.allSelected">All</a>
                         </li>
-                        <li ng-repeat="lf in searchMdl.locationFacets">
-                            <label>
-                                <input type="checkbox">
-                                <a href="#">{{lf.location.city.name}},{{lf.location.state.name}}
+                        <li ng-class="{'active':lf.selected}" ng-repeat="lf in searchMdl.locationFacets">
+                            <a ng-click="lf.selected=!lf.selected">{{lf.location.city.name}},{{lf.location.state.name}}
                                     <small>({{lf.count}})</small>
-                                </a>
-                            </label>
+                            </a>
 
                         </li>
 
@@ -74,33 +67,18 @@
         <div class="panel style1 arrow-right">
             <h4 class="panel-title">
                 <a   ng-click="filterEx[3]=!filterEx[3]" ng-class="{'collapsed':filterEx[3]}"
-                   class="collapsed">Features</a>
+                   >Features</a>
             </h4>
 
             <div ng-class="{'collapse':filterEx[3]}" class="panel-collapse">
                 <div class="panel-content">
                     <ul class="check-square filters-option">
-                        <li><a href="#">Show All
-                            <small>(722)</small>
-                        </a></li>
-                        <li><a href="#">Feature name
-                            <small>(982)</small>
-                        </a></li>
-                        <li class="active"><a href="#">Feature name
-                            <small>(127)</small>
-                        </a></li>
-                        <li class="active"><a href="#">Feature name
-                            <small>(222)</small>
-                        </a></li>
-                        <li><a href="#">Feature name
-                            <small>(158)</small>
-                        </a></li>
-                        <li><a href="#">Feature name
-                            <small>(439)</small>
-                        </a></li>
-                        <li><a href="#">Feature name
-                            <small>(52)</small>
-                        </a></li>
+                        <li ng-class="{'active':feature.selected}" ng-repeat="feature in searchMdl.features">
+                            <a ng-click="feature.selected=!feature.selected">{{feature.name}}
+                             <small>({{feature.count}})</small>
+                            </a>
+                        </li>
+
                     </ul>
                     <!--<a class="button btn-mini">MORE</a>-->
                 </div>
