@@ -5,15 +5,11 @@
         </figure>
         <div class="details">
             <a ui-sref="main.account.profile.edit" class="button btn-mini pull-right edit-profile-btn">EDIT PROFILE</a>
-            <h2 class="box-title fullname">{{user.fullname}}</h2>
+            <h2 class="box-title fullname">{{mdl.user.fullname}}</h2>
             <dl class="term-description">
-                <dt>user name:</dt><dd>{{user.email}}</dd>
-                <dt>phone number:</dt><dd>{{user.phone}}</dd>
-                <dt>Date of birth:</dt><dd>21 May 1988</dd>
-                <dt>Street Address and number:</dt><dd>353 Third floor Avenue</dd>
-                <dt>Town / City:</dt><dd>Houston, texas</dd>
-                <dt>ZIP code:</dt><dd>{{user.zip_code}}</dd>
-                <dt>Country:</dt><dd>United States of America</dd>
+                <dt>user name:</dt><dd>{{mdl.user.email}}</dd>
+                <dt>phone number:</dt><dd>{{mdl.user.phone}}</dd>
+                <dt>ZIP code:</dt><dd>{{mdl.user.zip_code}}</dd>
             </dl>
         </div>
     </article>
