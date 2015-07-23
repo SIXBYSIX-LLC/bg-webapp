@@ -1,6 +1,6 @@
 angular.module('BG').controller('EquiDetailsCtrl',
   /** @ngInject */
-    function ($scope, $state, $timeout, $stateParams, EquiDetailsService) {
+    function ($scope, $state, $timeout, $stateParams, EquiDetailsService, CartService) {
     var mdl = $scope.mdl = {};
     $scope.mainMdl.title = "Equipment Details";
     $scope.addBreadcrumb({title: "Equipment Details"});
@@ -15,6 +15,22 @@ angular.module('BG').controller('EquiDetailsCtrl',
 
     mdl.tab1="map";
     mdl.tab2="description";
+
+    $scope.addToCart = function(){
+      var data={
+        date_start:mdl.startDate,
+        date_end:mdl.endDate,
+        product:mdl.equi.id,
+        shipping_kind:"pickup"
+      };
+      CartService.getCurrent().then(function(resp){
+        CartService.addToCart(resp.data.data.id,data).then(function(response){
+          console.log("Response");
+        })
+      });
+    };
+
+
     var gmap=null;
     $scope.$on('mapInitialized', function(event, map) {
       gmap = map;

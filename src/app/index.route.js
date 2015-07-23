@@ -55,6 +55,14 @@
         url:'/jobsites',
         templateUrl:'app/views/account/jobsites/jobsites.html'
       })
+      .state('main.account.jobsites.add',{
+        url:'/add',
+        templateUrl:'app/views/account/jobsites/add/add.html'
+      })
+      .state('main.account.jobsites.list',{
+        url:'/list',
+        templateUrl:'app/views/account/jobsites/list/list.html'
+      })
       .state('main.account.profile',{
         abstract:true,
         url:'/profile',
