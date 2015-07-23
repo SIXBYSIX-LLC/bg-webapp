@@ -828,7 +828,7 @@
                 <span class="review pull-right">270 reviews</span>
             </div>
             <div class="panel-content">
-                <form method="post">
+                <form name="reserveForm">
                     <div class="form-group">
                         <label>From</label>
                         <div class="datepicker-wrap" ng-click="mdl.open($event,'Start')">
@@ -842,7 +842,7 @@
                     <div class="form-group">
                         <label>To</label>
                         <div class="datepicker-wrap" ng-click="mdl.open($event,'End')">
-                            <input type="text" class="input-text  full-width" datepicker-popup="{{dateFormat}}" ng-model="mdl.startDate"
+                            <input type="text" class="input-text  full-width" datepicker-popup="{{dateFormat}}" ng-model="mdl.endDate"
                                    is-open="mdl.openedEnd" min-date="mdl.minDate" datepicker-options="mdl.dateOptions"
                                    ng-focus="mdl.open($event,'End')"
                                    close-text="Close"/>
@@ -851,7 +851,7 @@
                 </form>
             </div>
             <!--<p class="description">{{mdl.equi.description}}</p>-->
-            <a class="button yellow full-width uppercase btn-small">Reserve Equipment</a>
+            <a class="button yellow full-width uppercase btn-small" ng-click="addToCart()">Reserve Equipment</a>
 
             <p></p>
             <a class="button yellow full-width uppercase btn-small">Add to Favourites</a>

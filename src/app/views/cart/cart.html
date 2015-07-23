@@ -1,22 +1,22 @@
 
 <div id="tour-details" class="travelo-box">
-    <div class="intro2 small-box border-box table-wrapper hidden-table-sms">
+    <div ng-repeat="item in mdl.rental_products" class="intro2 small-box border-box table-wrapper hidden-table-sms">
         <div class="image-container table-cell"><img src="http://placehold.it/166x150" alt=""></div>
         <div class="description">
-            <h4>Equipment Name Here Equipment Name Here</h4>
+            <h4>{{item.product.name}}</h4>
         </div>
         <div class="description">
-            <select ng-model="mdl.qty" ng-options="qty for qty in mdl.qtys" class="form-control white-bg">
+            <select ng-model="item.qty" ng-options="qty for qty in mdl.qtys" class="form-control white-bg">
                 <option value="">Select</option>
             </select>
-            <select ng-model="mdl.ot" ng-options="key as value for (key,value) in mdl.shippingKinds" class="form-control white-bg">
+            <select ng-model="item.shipping_kind" ng-options="key as value for (key,value) in mdl.shippingKinds" class="form-control white-bg">
                 <option value="">Order Type</option>
             </select>
         </div>
         <br />
         <div class="checkbox make-postpaid">
             <label>
-                <input type="checkbox">Make this Postpaid
+                <input ng-model="item.is_postpaid" type="checkbox">Make this Postpaid
             </label>
         </div>
 
@@ -24,13 +24,16 @@
         <div class="table-cell">
             <dl class="term-description">
                 <dt>Operation</dt><dd>Rented</dd>
-                <dt>From</dt><dd>Nov 21, 2015</dd>
-                <dt>To</dt><dd>Nov 24, 2015</dd>
+                <dt>From</dt><dd>{{item.date_start | date}}</dd>
+                <dt>To</dt><dd>{{item.end_date | date}}</dd>
                 <dt>Payment Type</dt><dd>Prepaid</dd>
             </dl>
         </div>
         <div class="price-section table-cell">
-            <div class="price"><small>4 Days on Rent</small><div class="price-per-unit">$534</div></div>
+            <div class="price">
+                <small>{{item.cost_breakup.subtotal.num_days}} Days on Rent</small>
+                <div class="price-per-unit">${{item.sub_total}}</div>
+            </div>
             <a class="button green btn-small uppercase">Remove</a>
         </div>
     </div>
