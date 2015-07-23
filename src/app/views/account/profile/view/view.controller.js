@@ -3,8 +3,8 @@ angular.module('BG').controller('ViewProfileCtrl',
     function ($scope,ProfileService,$rootScope) {
     var mdl = $scope.mdl = {};
     mdl.user=angular.copy($rootScope.user);
-//    ProfileService.getUser($rootScope.user.id).then(function(response){
-//      mdl.user = response.data.data;
-//    });
+    ProfileService.getUser($rootScope.user.id).then(function(response){
+      mdl.user = response.data.data;
+    });
   }
 );
