@@ -1,7 +1,7 @@
 angular.module('BG').factory('EquipmentsService',
 
   /** @ngInject */
-    function (API,PaginationService) {
+    function (API,PaginationService,$http) {
     return {
       getEquipments:function(id,page,page_size){
         return PaginationService.get("GET",
@@ -10,6 +10,9 @@ angular.module('BG').factory('EquipmentsService',
             true,
             page,
             page_size);
+      },
+      getCategories:function(parentId){
+        return $http.get( API.baseURL+"categories"+(parentId ? "?parent="+parentId : "?parent__isnull=True"));
       }
     }
   }

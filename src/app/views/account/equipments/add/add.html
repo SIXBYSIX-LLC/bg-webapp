@@ -5,70 +5,66 @@
             <div class="row form-group">
                 <div class="col-sms-6 col-sm-6">
                     <label>Equipment Name</label>
-                    <input type="text" name="equipmentname" required class="input-text full-width" placeholder="Enter Equipment Name">
+                    <input type="text" ng-model="addEquiMdl.data.name" name="equipmentname" required class="input-text full-width" placeholder="Enter Equipment Name">
                 </div>
                 <div class="col-sms-6 col-sm-6">
                     <label>Brand Name</label>
-                    <input type="text" name="brand" required class="input-text full-width" placeholder="Brand Name">
+                    <input type="text" ng-model="addEquiMdl.data.brand" name="brand" required class="input-text full-width" placeholder="Brand Name">
                 </div>
             </div>
             <div class="row form-group">
                 <div class="col-sms-12 col-sm-12">
                     <label>Description</label>
-                    <textarea rows="5" class="input-text full-width" placeholder="please tell us about equipment in detail"></textarea>
+                    <textarea rows="5" ng-model="addEquiMdl.data.description" name="description" required class="input-text full-width" placeholder="please tell us about equipment in detail"></textarea>
                 </div>
             </div>
             <div class="row form-group">
                 <div class="col-sms-12 col-sm-12">
                     <label>Tags</label>
-                    <textarea rows="5" class="input-text full-width" placeholder="please put tag values separated by Comma (,)"></textarea>
+                    <span>please put tag values separated by Comma (,)</span>
+                    <tags-input ng-model="addEquiMdl.tags">
+                    </tags-input>
                 </div>
             </div>
             <div class="row form-group">
                 <div class="col-sms-6 col-sm-6">
                     <label>Daily Price</label>
-                    <input type="text" name="daily price" required class="input-text full-width" placeholder="Daily Rent Price">
+                    <input type="text" name="dailyprice" ng-model="addEquiMdl.data.daily_price" required class="input-text full-width" placeholder="Daily Rent Price">
                 </div>
                 <div class="col-sms-6 col-sm-6">
                     <label>Weekly Price</label>
-                    <input type="text" class="input-text full-width" placeholder="Weekly Rent Price">
+                    <input type="text" name="weeklyprice" ng-model="addEquiMdl.data.weekly_price" class="input-text full-width" placeholder="Weekly Rent Price">
                 </div>
             </div>
             <div class="row form-group">
                 <div class="col-sms-6 col-sm-6">
                     <label>Monthly Price</label>
-                    <input type="text" name="monthlyprice" required class="input-text full-width" placeholder="Monthly Rent Price ">
+                    <input type="text" name="monthlyprice" ng-model="addEquiMdl.data.monthly_price" required class="input-text full-width" placeholder="Monthly Rent Price ">
                 </div>
                 <div class="col-sms-6 col-sm-6">
                     <label>Selling Price</label>
-                    <input type="text" class="input-text full-width" placeholder="Selling Price for Equipment">
+                    <input type="text" class="input-text full-width" ng-model="addEquiMdl.data.selling_price" required placeholder="Selling Price for Equipment">
                 </div>
             </div>
             <div class="row form-group">
                 <div class="col-sms-4 col-sm-4">
                     <label>Category</label>
                     <div class="selector">
-                        <select class="full-width">
-                            <option>list name</option>
-                            <option>list name</option>
+                        <select ng-model="addEquiMdl.category1" ng-options="cat.id as cat.name for cat in addEquiMdl.categories1 " class="full-width">
                         </select>
                     </div>
                 </div>
-                <div class="col-sms-4 col-sm-4">
+                <div ng-show="addEquiMdl.categories2.length" class="col-sms-4 col-sm-4">
                     <label>Sub Category</label>
                     <div class="selector">
-                        <select class="full-width">
-                            <option>list name</option>
-                            <option>list name</option>
+                        <select ng-model="addEquiMdl.category2" ng-options="cat.id as cat.name for cat in addEquiMdl.categories2 " class="full-width">
                         </select>
                     </div>
                 </div>
-                <div class="col-sms-4 col-sm-4">
+                <div ng-show="addEquiMdl.categories3.length" class="col-sms-4 col-sm-4">
                     <label>Super Sub-category</label>
                     <div class="selector">
-                        <select class="full-width">
-                            <option>list name</option>
-                            <option>list name</option>
+                        <select ng-model="addEquiMdl.category3" ng-options="cat.id as cat.name for cat in addEquiMdl.categories3 " class="full-width">
                         </select>
                     </div>
                 </div>
@@ -80,15 +76,15 @@
                 <div class="col-sms-6 col-sm-6">
                     <label>Equipment Condition</label>
                     <div class="selector">
-                        <select class="full-width">
-                            <option>New</option>
-                            <option>Old</option>
+                        <select ng-model="addEquiMdl.data.condition" class="full-width">
+                            <option value="'used'">Used</option>
+                            <option value="'new'">Old</option>
                         </select>
                     </div>
                 </div>
                 <div class="col-sms-6 col-sm-6">
                     <label>SKU</label>
-                    <input type="text" class="input-text full-width">
+                    <input ng-model="addEquiMdl.data.sku" type="text" class="input-text full-width">
                 </div>
             </div>
             <div class="row form-group">
@@ -104,21 +100,27 @@
                 </div>
                 <div class="col-sms-6 col-sm-6">
                     <label>Quantity</label>
-                    <div class="selector">
-                        <select class="full-width">
-                            <option>list name</option>
-                            <option>list name</option>
-                        </select>
-                    </div>
+                    <input type="text" ng-model="addEquiMdl.data.qty" name="brand" class="input-text full-width" placeholder="Quantaty">
                 </div>
             </div>
             <hr>
             <h2>Upload Profile Photo</h2>
             <div class="row form-group">
                 <div class="col-sms-12 col-sm-6 no-float">
-                    <div class="fileinput full-width">
-                        <input type="file" class="input-text" data-placeholder="select image/s">
+                    <div class="fileinput button" ngf-select ngf-change="upload($files)">Upload on file change</div>
+
+                    <br/>
+                    <div ngf-drop ng-model="addEquiMdl.fileToUpload" class="upload-drop-zone"
+                         ngf-drag-over-class="drop" ngf-multiple="true" ngf-allow-dir="false"
+                            >Drop Images here</div>
+                    <div ng-if="addEquiMdl.fileToUpload.length">
+                        Selected File:
+                        <div ng-repeat="file in addEquiMdl.fileToUpload">
+                            {{file.name}}
+                        </div>
+
                     </div>
+                    <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
                 </div>
             </div>
             <hr>
