@@ -1,6 +1,6 @@
-angular.module('BG').controller('AddEquipmentsCtrl',
+angular.module('BG').controller('AddEquipmentCtrl',
   /** @ngInject */
-    function ($scope,EquipmentsService,SystemService) {
+    function ($scope,EquipmentsService,SystemService,Upload) {
 
     var addEquiMdl = $scope.addEquiMdl = {
       data:{
@@ -60,5 +60,45 @@ angular.module('BG').controller('AddEquipmentsCtrl',
 
       }
     });
+
+    $scope.add=function(){
+      $scope.$broadcast("validation",true);
+
+      if(addEquiMdl.tags){
+        addEquiMdl.data.tags=[];
+        angular.forEach(addEquiMdl.tags,function(obj){
+          addEquiMdl.data.tags.push(obj.text);
+        })
+      }
+      console.log(addEquiMdl.data);
+      if(addEquiMdl.form.$valid){
+        console.log("Valid");
+      }
+    };
+
+    function upload(files){
+      if(files && files[0]){
+        console.log("files",files);
+        angular.forEach(files,function(file){
+          Upload.upload({
+            url: API.baseURL+'staticfiles',
+            fields:{
+              target:"catalog.Product.images",
+              target_id:5
+            },
+            file: files
+          }).progress(function (evt) {
+            var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
+            console.log('progress: ' + progressPercentage + '% ' + evt.config.file.name);
+          }).success(function (data, status, headers, config) {
+            console.log('file ' + config.file.name + 'uploaded. Response: ' + data);
+          }).error(function (data, status, headers, config) {
+            console.log('error status: ' + status);
+          })
+        });
+
+      }
+
+    };
   }
 );

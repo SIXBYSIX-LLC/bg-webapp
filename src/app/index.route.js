@@ -45,7 +45,7 @@
       .state('main.account.equipments.add',{
         url:'/add',
         templateUrl:'app/views/account/equipments/add/add.html',
-        controller:'AddEquipmentsCtrl'
+        controller:'AddEquipmentCtrl'
       })
       .state('main.account.favourites',{
         url:'/favourites',
@@ -57,11 +57,13 @@
       })
       .state('main.account.jobsites.add',{
         url:'/add',
-        templateUrl:'app/views/account/jobsites/add/add.html'
+        templateUrl:'app/views/account/jobsites/add/add.html',
+        controller:'AddJobsiteCtrl'
       })
       .state('main.account.jobsites.list',{
         url:'/list',
-        templateUrl:'app/views/account/jobsites/list/list.html'
+        templateUrl:'app/views/account/jobsites/list/list.html',
+        controller:'ListJobsitesCtrl'
       })
       .state('main.account.profile',{
         abstract:true,

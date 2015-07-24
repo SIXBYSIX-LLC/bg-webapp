@@ -3,19 +3,24 @@
         <h2>Add New Equipment</h2>
         <div class="col-sm-9 no-padding no-float">
             <div class="row form-group">
+
                 <div class="col-sms-6 col-sm-6">
-                    <label>Equipment Name</label>
-                    <input type="text" ng-model="addEquiMdl.data.name" name="equipmentname" required class="input-text full-width" placeholder="Enter Equipment Name">
-                </div>
+                    <div>
+                        <label>Equipment Name</label>
+                        <input type="text" ng-model="addEquiMdl.data.name" name="equipmentname" required class="input-text full-width" placeholder="Enter Equipment Name">
+                    </div>
+                 </div>
                 <div class="col-sms-6 col-sm-6">
-                    <label>Brand Name</label>
-                    <input type="text" ng-model="addEquiMdl.data.brand" name="brand" required class="input-text full-width" placeholder="Brand Name">
+                    <div>
+                        <label>Brand Name</label>
+                        <input type="text" ng-model="addEquiMdl.data.brand" name="brand" required class="input-text full-width" placeholder="Brand Name">
+                    </div>
                 </div>
             </div>
             <div class="row form-group">
                 <div class="col-sms-12 col-sm-12">
                     <label>Description</label>
-                    <textarea rows="5" ng-model="addEquiMdl.data.description" name="description" required class="input-text full-width" placeholder="please tell us about equipment in detail"></textarea>
+                    <textarea rows="5" ng-model="addEquiMdl.data.description" name="description" class="input-text full-width" placeholder="please tell us about equipment in detail"></textarea>
                 </div>
             </div>
             <div class="row form-group">
@@ -28,22 +33,30 @@
             </div>
             <div class="row form-group">
                 <div class="col-sms-6 col-sm-6">
-                    <label>Daily Price</label>
-                    <input type="text" name="dailyprice" ng-model="addEquiMdl.data.daily_price" required class="input-text full-width" placeholder="Daily Rent Price">
+                    <div>
+                        <label>Daily Price</label>
+                        <input type="text" name="dailyprice" ng-model="addEquiMdl.data.daily_price" required class="input-text full-width" placeholder="Daily Rent Price">
+                    </div>
                 </div>
                 <div class="col-sms-6 col-sm-6">
-                    <label>Weekly Price</label>
-                    <input type="text" name="weeklyprice" ng-model="addEquiMdl.data.weekly_price" class="input-text full-width" placeholder="Weekly Rent Price">
+                    <div>
+                        <label>Weekly Price</label>
+                        <input type="text" name="weeklyprice" ng-model="addEquiMdl.data.weekly_price" class="input-text full-width" placeholder="Weekly Rent Price">
+                    </div>
                 </div>
             </div>
             <div class="row form-group">
                 <div class="col-sms-6 col-sm-6">
-                    <label>Monthly Price</label>
-                    <input type="text" name="monthlyprice" ng-model="addEquiMdl.data.monthly_price" required class="input-text full-width" placeholder="Monthly Rent Price ">
+                    <div>
+                        <label>Monthly Price</label>
+                        <input type="text" name="monthlyprice" ng-model="addEquiMdl.data.monthly_price" required class="input-text full-width" placeholder="Monthly Rent Price ">
+                    </div>
                 </div>
                 <div class="col-sms-6 col-sm-6">
-                    <label>Selling Price</label>
-                    <input type="text" class="input-text full-width" ng-model="addEquiMdl.data.selling_price" required placeholder="Selling Price for Equipment">
+                    <div>
+                        <label>Selling Price</label>
+                        <input type="text" class="input-text full-width" ng-model="addEquiMdl.data.selling_price" required placeholder="Selling Price for Equipment">
+                    </div>
                 </div>
             </div>
             <div class="row form-group">
@@ -100,7 +113,7 @@
                 </div>
                 <div class="col-sms-6 col-sm-6">
                     <label>Quantity</label>
-                    <input type="text" ng-model="addEquiMdl.data.qty" name="brand" class="input-text full-width" placeholder="Quantaty">
+                    <input type="text" ng-model="addEquiMdl.data.qty" name="qty" class="input-text full-width" placeholder="Quantaty">
                 </div>
             </div>
             <hr>
@@ -126,8 +139,8 @@
             <hr>
 
             <div class="from-group">
-                <button type="submit" class="btn-medium col-sms-6 col-sm-4">ADD EQUIPMENT</button>
-                <button class="btn-medium btn-default col-sms-6 col-sm-4">CANCEL</button>
+                <button type="submit" class="btn-medium col-sms-6 col-sm-4" ng-click="add()">ADD EQUIPMENT</button>
+                <button class="btn-medium btn-default col-sms-6 col-sm-4" ui-sref="main.account.equipments.list">CANCEL</button>
             </div>
 
         </div>
