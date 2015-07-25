@@ -55,7 +55,7 @@
                 <div class="col-sms-6 col-sm-6">
                     <div>
                         <label>Selling Price</label>
-                        <input type="text" class="input-text full-width" ng-model="addEquiMdl.data.selling_price" required placeholder="Selling Price for Equipment">
+                        <input type="text" class="input-text full-width" ng-model="addEquiMdl.data.sell_price" required placeholder="Selling Price for Equipment">
                     </div>
                 </div>
             </div>
@@ -63,7 +63,7 @@
                 <div class="col-sms-4 col-sm-4">
                     <label>Category</label>
                     <div class="selector">
-                        <select ng-model="addEquiMdl.category1" ng-options="cat.id as cat.name for cat in addEquiMdl.categories1 " class="full-width">
+                        <select ng-model="addEquiMdl.category1" name="catgory1" required ng-options="cat.id as cat.name for cat in addEquiMdl.categories1 " class="full-width">
                         </select>
                     </div>
                 </div>
@@ -90,8 +90,8 @@
                     <label>Equipment Condition</label>
                     <div class="selector">
                         <select ng-model="addEquiMdl.data.condition" class="full-width">
-                            <option value="'used'">Used</option>
-                            <option value="'new'">Old</option>
+                            <option value="used">Used</option>
+                            <option value="new">New</option>
                         </select>
                     </div>
                 </div>
@@ -105,9 +105,7 @@
                 <div class="col-sms-6 col-sm-6">
                     <label>Location</label>
                     <div class="selector">
-                        <select class="full-width">
-                            <option>list name</option>
-                            <option>list name</option>
+                        <select name="location" ng-model="addEquiMdl.data.locatopm" required class="full-width" ng-options="site.id as site.name for site in addEquiMdl.sites">
                         </select>
                     </div>
                 </div>

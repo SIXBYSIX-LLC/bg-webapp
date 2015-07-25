@@ -1,16 +1,16 @@
 <div class="add-equipment">
-    <form validate-form name="addEquiMdl.form" novalidate ng-submit="updateProfile()" class="edit-profile-form">
+    <form validate-form name="mdl.form" novalidate ng-submit="updateProfile()" class="edit-profile-form">
         <h2>Add New Jobsite</h2>
         <div class="col-sm-9 no-padding no-float">
             <div class="row form-group">
                 <div class="col-sms-6 col-sm-6">
                     <label>Jobsite Name</label>
-                    <input type="text" ng-model="addEquiMdl.data.name" name="jobsitename" required class="input-text full-width" placeholder="Enter Jobsite Name">
+                    <input type="text" ng-model="mdl.data.name" name="jobsitename" required class="input-text full-width" placeholder="Enter Jobsite Name">
                 </div>
                 <div class="col-sms-6 col-sm-6">
                     <label>Kind</label>
                     <div class="selector">
-                        <select ng-model="addEquiMdl.category1" ng-options="cat.id as cat.name for cat in addEquiMdl.categories1 " class="full-width">
+                        <select ng-model="mdl.data.kind" name="kind" required ng-options="key as value for (key,value) in mdl.kinds " class="full-width">
                         </select>
                     </div>
                 </div>
@@ -18,25 +18,25 @@
             <div class="row form-group">
                 <div class="col-sms-6 col-sm-6">
                     <label>Address Line 1</label>
-                    <input type="text" name="address line 1" required class="input-text full-width" placeholder="Address Line 1">
+                    <input type="text" name="address_line_1" ng-model="mdl.data.address1" required class="input-text full-width" placeholder="Address Line 1">
                 </div>
                 <div class="col-sms-6 col-sm-6">
                     <label>Address Line 2</label>
-                    <input type="text" name="address line 2" class="input-text full-width" placeholder="Address Line 2">
+                    <input type="text" name="address_line_2" ng-model="mdl.data.address2" class="input-text full-width" placeholder="Address Line 2">
                 </div>
             </div>
             <div class="row form-group">
                 <div class="col-sms-6 col-sm-6">
                     <label>Country</label>
                     <div class="selector">
-                        <select class="full-width">
+                        <select ng-model="mdl.data.country"  name="country" required class="full-width" ng-options="key as value for (key,value) in mdl.countries">
                         </select>
                     </div>
                 </div>
                 <div class="col-sms-6 col-sm-6">
                     <label>State</label>
                     <div class="selector">
-                        <select class="full-width">
+                        <select ng-model="mdl.data.state" name="state" required class="full-width" ng-options="key as value for (key,value) in mdl.states">
                         </select>
                     </div>
                 </div>
@@ -46,22 +46,20 @@
                 <div class="col-sms-6 col-sm-6">
                     <label>City</label>
                     <div class="selector">
-                        <select class="full-width">
-                            <option value="'1'">cityname</option>
-                            <option value="'2'">cityname</option>
+                        <select ng-model="mdl.data.city" name="city" required class="full-width" ng-options="key as value for (key,value) in mdl.cities">
                         </select>
                     </div>
                 </div>
                 <div class="col-sms-6 col-sm-6">
                     <label>Zip Code</label>
-                    <input type="text" class="input-text full-width">
+                    <input ng-model="mdl.data.zip_code" name="zipcode" required type="text" class="input-text full-width">
                 </div>
             </div>
 
 
 
             <div class="from-group">
-                <button type="submit" class="btn-medium col-sms-6 col-sm-4">ADD JOBSITE</button>
+                <button type="submit" class="btn-medium col-sms-6 col-sm-4" ng-click="add()">ADD JOBSITE</button>
                 <button class="btn-medium btn-default col-sms-6 col-sm-4" ui-sref="main.account.jobsites.list">CANCEL</button>
             </div>
 

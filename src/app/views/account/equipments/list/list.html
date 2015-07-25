@@ -32,8 +32,8 @@
             <dd>82%</dd>
         </dl>
 
-        <button class="btn-mini status" ng-click="listEquiMdl.delete(pro)">Delete</button>
-        <button class="btn-mini status" ng-click="listEquiMdl.edit(pro)">Edit</button>
+        <button class="btn-mini status" ng-click="delete(pro)">Delete</button>
+        <button class="btn-mini status" ng-click="edit(pro)">Edit</button>
         <button class="btn-mini status" ui-sref="main.equiDetails({id:pro.id})">View</button>
     </div>
     <a ng-click="listEquiMdl.next()" class="uppercase full-width button btn-large" ng-show="listEquiMdl.nextAvailable">

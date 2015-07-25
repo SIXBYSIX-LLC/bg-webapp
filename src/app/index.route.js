@@ -47,6 +47,11 @@
         templateUrl:'app/views/account/equipments/add/add.html',
         controller:'AddEquipmentCtrl'
       })
+      .state('main.account.equipments.edit',{
+        url:'/edit/{id}',
+        templateUrl:'app/views/account/equipments/add/add.html',
+        controller:'AddEquipmentCtrl'
+      })
       .state('main.account.favourites',{
         url:'/favourites',
         templateUrl:'app/views/account/favourites/favourites.html'

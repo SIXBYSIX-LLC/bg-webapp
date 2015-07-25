@@ -1,6 +1,6 @@
 angular.module('BG').controller('ListEquipmentsCtrl',
   /** @ngInject */
-    function ($scope,EquipmentsService) {
+    function ($scope,$state, EquipmentsService) {
 
     var listEquiMdl = $scope.listEquiMdl = {};
     var equis=null;
@@ -33,6 +33,14 @@ angular.module('BG').controller('ListEquipmentsCtrl',
     listEquiMdl.filter="all";
     listEquiMdl.updateFilter=function(value){
       listEquiMdl.filter=value;
+    };
+
+    $scope.delete = function(pro){
+        EquipmentsService.deleteEquipment(pro.id);
+    };
+
+    $scope.edit = function(pro){
+      $state.go("main.account.equipments.edit",{id:pro.id});
     }
 
   }

@@ -17,13 +17,13 @@
     </form>
 </div>-->
 <div class="booking-history">
-    <div class="booking-info clearfix">
+    <div class="booking-info clearfix" ng-repeat="site in mdl.sites">
         <div class="date">
             <a class="hover-effect popup-gallery"><img width="72" height="72" alt="" src=""></a>
         </div>
         <h4 class="box-title">
-            <i class="icon soap-icon-departure yellow-color circle">{{'Jobsite Name'}}</i>
-            <small>{{'jobsite city'}},{{'jobsite state'}},{{'jobsite country'}}</small>
+            <i class="icon soap-icon-departure yellow-color circle">{{site.name}}</i>
+            <small>{{site.city.name}},{{site.state.name}},{{site.country.name}}</small>
         </h4>
         <dl class="info">
             <dt>Used This Jobsite</dt>
@@ -32,11 +32,8 @@
             <dd>3</dd>
         </dl>
 
-        <button class="btn-mini status" ng-click="listEquiMdl.delete(pro)">Delete</button>
-        <button class="btn-mini status" ng-click="listEquiMdl.edit(pro)">Edit</button>
-        <button class="btn-mini status" ui-sref="main.equiDetails({id:pro.id})">View</button>
+        <button class="btn-mini status" ng-click="delete(site)">Delete</button>
+        <button class="btn-mini status" ng-click="edit(site)">Edit</button>
     </div>
-    <a ng-click="listEquiMdl.next()" class="uppercase full-width button btn-large" ng-show="listEquiMdl.nextAvailable">
-        <span ng-show="listEquiMdl.working" class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>
-        load more </a>
+
 </div>
