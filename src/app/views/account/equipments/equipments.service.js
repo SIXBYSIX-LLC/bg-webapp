@@ -20,8 +20,15 @@ angular.module('BG').factory('EquipmentsService',
       addEquipment:function(data){
         return $http.post(API.baseURL+"products",data);
       },
+      updateEquipment:function(id,data){
+        return $http.patch(API.baseURL+"products/"+id,data);
+      },
       deleteEquipment:function(id){
         return $http.delete(API.baseURL+"products/"+id);
+      },
+      deleteImage:function(id){
+        return $http.delete(API.baseURL+"staticfiles/"+id);
+
       }
     }
   }

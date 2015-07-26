@@ -5,4 +5,6 @@ angular.module('BG').controller('ListJobsitesCtrl',
     JobsitesService.getSites($scope.user.id).then(function(response){
       mdl.sites=response.data.data;
     });
+
+
   });

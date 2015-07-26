@@ -105,7 +105,7 @@
                 <div class="col-sms-6 col-sm-6">
                     <label>Location</label>
                     <div class="selector">
-                        <select name="location" ng-model="addEquiMdl.data.locatopm" required class="full-width" ng-options="site.id as site.name for site in addEquiMdl.sites">
+                        <select name="location" ng-model="addEquiMdl.data.location" required class="full-width" ng-options="site.id as site.name for site in addEquiMdl.sites">
                         </select>
                     </div>
                 </div>
@@ -121,23 +121,39 @@
                     <div class="fileinput button" ngf-select ngf-change="upload($files)">Upload on file change</div>
 
                     <br/>
-                    <div ngf-drop ng-model="addEquiMdl.fileToUpload" class="upload-drop-zone"
+                    <div ngf-drop ng-model="addEquiMdl.filesToUpload" class="upload-drop-zone"
                          ngf-drag-over-class="drop" ngf-multiple="true" ngf-allow-dir="false"
                             >Drop Images here</div>
-                    <div ng-if="addEquiMdl.fileToUpload.length">
+                    <div ng-if="addEquiMdl.filesToUpload.length">
                         Selected File:
-                        <div ng-repeat="file in addEquiMdl.fileToUpload">
-                            {{file.name}}
+                        <div ng-repeat="file in addEquiMdl.filesToUpload">
+                            <div>
+                                <div>{{file.name}}</div>
+                                <div>
+                                    <progress max="100" value="{{file.progress || 0}}">{{file.status}}</progress>
+                                </div>
+                            </div>
                         </div>
 
                     </div>
                     <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
                 </div>
             </div>
+            <div ng-if="editMode">
+                <div class="row" ng-repeat="img in addEquiMdl.data.images">
+                    <div class="col-sms-6 col-sm-6">
+                        <img ng-src="{{img.url}}" style="height: 100px;width:100px">
+                    </div>
+                    <div class="col-sms-6 col-sm-6">
+                        <button ng-click="deleteImage(img.id)">Remove</button>
+                    </div>
+
+                </div>
+            </div>
             <hr>
 
             <div class="from-group">
-                <button type="submit" class="btn-medium col-sms-6 col-sm-4" ng-click="add()">ADD EQUIPMENT</button>
+                <button type="submit" class="btn-medium col-sms-6 col-sm-4" ng-click="add()">{{editMode ? 'SAVE' : 'ADD EQUIPMENT'}}</button>
                 <button class="btn-medium btn-default col-sms-6 col-sm-4" ui-sref="main.account.equipments.list">CANCEL</button>
             </div>
 

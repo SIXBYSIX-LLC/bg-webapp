@@ -1,104 +1,124 @@
 angular.module('BG').controller('AddEquipmentCtrl',
   /** @ngInject */
-    function ($scope,$state,$stateParams,EquipmentsService,JobsitesService,SystemService,Upload) {
+    function ($scope, API, $state, $stateParams, EquipmentsService, JobsitesService, SystemService, Upload) {
+
+    $scope.editMode = $state.current.name == "main.account.equipments.edit";
+    var addEquiMdl = $scope.addEquiMdl = {};
+
+    addEquiMdl.category1 = addEquiMdl.category2 = addEquiMdl.category3 = null;
 
 
-    var addEquiMdl = $scope.addEquiMdl = {
-      data:{
-        daily_price:0,
-        weekly_price:0,
-        monthly_price:0,
-        selling_price:0,
-        condition:"new",
-        location:7
-      }
-    };
-
-
-
-    if($state.current.name=="main.account.equipments.edit"){
-      EquipmentsService.getEquipment($stateParams.id).then(function(response){
+    if ($scope.editMode) {
+      EquipmentsService.getEquipment($stateParams.id).then(function (response) {
+        console.log(response.data.data);
         addEquiMdl.data = response.data.data;
-        addEquiMdl.tags=[];
-        angular.forEach(addEquiMdl.data.tags,function(tag){
-          addEquiMdl.tags.push({text:tag});
-        })
+        addEquiMdl.tags = [];
+        angular.forEach(addEquiMdl.data.tags, function (tag) {
+          addEquiMdl.tags.push({text: tag});
+        });
+        var count = 1;
+        angular.forEach(addEquiMdl.data.category.hierarchy, function (value) {
+          addEquiMdl["category" + count] = value;
+          count++;
+        });
+        addEquiMdl["category" + count] = addEquiMdl.data.category.id;
+        addEquiMdl.data.location=addEquiMdl.data.location.id;
       })
+    } else {
+      addEquiMdl.data = {
+        daily_price: 0,
+        weekly_price: 0,
+        monthly_price: 0,
+        selling_price: 0,
+        condition: "new",
+        location: 7
+      };
+
     }
 
-
-    addEquiMdl.category1=addEquiMdl.category2=addEquiMdl.category3=null;
-
-
-    EquipmentsService.getCategories().then(function(response){
-      addEquiMdl.categories1=response.data.data;
-      addEquiMdl.categories2=null;
-      addEquiMdl.categories3=null;
-      addEquiMdl.category1=addEquiMdl.category2=addEquiMdl.category3=null;
+    EquipmentsService.getCategories().then(function (response) {
+      addEquiMdl.categories1 = response.data.data;
+      addEquiMdl.categories2 = null;
+      addEquiMdl.categories3 = null;
+      $scope.editMode || (addEquiMdl.category1 = addEquiMdl.category2 = addEquiMdl.category3 = null);
+    });
+    JobsitesService.getSitesLimited($scope.user.id).then(function (response) {
+      addEquiMdl.sites = response.data.data;
     });
 
-    JobsitesService.getSitesLimited($scope.user.id).then(function(response){
-      addEquiMdl.sites=response.data.data;
-    });
 
-    $scope.$watch("addEquiMdl.category1",function(newValue){
-      if(newValue){
-        EquipmentsService.getCategories(newValue).then(function(response){
-          addEquiMdl.categories2=response.data.data;
+    $scope.$watch("addEquiMdl.category1", function (newValue) {
+      if (newValue) {
+        EquipmentsService.getCategories(newValue).then(function (response) {
+          addEquiMdl.categories2 = response.data.data;
         });
-        addEquiMdl.categories3=null;
-        addEquiMdl.category2=addEquiMdl.category3=null;
+        addEquiMdl.categories3 = null;
+        $scope.editMode || (addEquiMdl.category2 = addEquiMdl.category3 = null);
       }
     });
-    $scope.$watch("addEquiMdl.category2",function(newValue){
-      if(newValue){
-        EquipmentsService.getCategories(newValue).then(function(response){
-          addEquiMdl.categories3=response.data.data;
-          addEquiMdl.category3=null;
+    $scope.$watch("addEquiMdl.category2", function (newValue) {
+      if (newValue) {
+        EquipmentsService.getCategories(newValue).then(function (response) {
+          addEquiMdl.categories3 = response.data.data;
+          $scope.editMode || (addEquiMdl.category3 = null);
         });
 
       }
     });
 
-    $scope.add=function(){
-      $scope.$broadcast("validation",true);
+    $scope.deleteImage=function(id){
 
-      if(addEquiMdl.tags){
-        addEquiMdl.data.tags=[];
-        angular.forEach(addEquiMdl.tags,function(obj){
+    };
+
+    $scope.add = function () {
+      $scope.$broadcast("validation", true);
+
+      if (addEquiMdl.tags) {
+        addEquiMdl.data.tags = [];
+        angular.forEach(addEquiMdl.tags, function (obj) {
           addEquiMdl.data.tags.push(obj.text);
         })
       }
-      addEquiMdl.data.category = addEquiMdl.category3  ? addEquiMdl.category3 : (addEquiMdl.category2 ? addEquiMdl.category2 : addEquiMdl.category1);
-      console.log(addEquiMdl.data);
-      if(addEquiMdl.form.$valid){
-        EquipmentsService.addEquipment(addEquiMdl.data);
-      }
-    };
+      addEquiMdl.data.category = addEquiMdl.category3 ? addEquiMdl.category3 : (addEquiMdl.category2 ? addEquiMdl.category2 : addEquiMdl.category1);
+      if (addEquiMdl.form.$valid) {
 
-    function upload(files){
-      if(files && files[0]){
-        console.log("files",files);
-        angular.forEach(files,function(file){
-          Upload.upload({
-            url: API.baseURL+'staticfiles',
-            fields:{
-              target:"catalog.Product.images",
-              target_id:5
-            },
-            file: files
-          }).progress(function (evt) {
-            var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
-            console.log('progress: ' + progressPercentage + '% ' + evt.config.file.name);
-          }).success(function (data, status, headers, config) {
-            console.log('file ' + config.file.name + 'uploaded. Response: ' + data);
-          }).error(function (data, status, headers, config) {
-            console.log('error status: ' + status);
+        if ($scope.editMode) {
+          EquipmentsService.updateEquipment(addEquiMdl.data.id, addEquiMdl.data).then(function (response) {
+            angular.forEach(addEquiMdl.filesToUpload,function(file){
+              upload(addEquiMdl.data.id,file);
+            })
+          });
+        } else {
+
+          EquipmentsService.addEquipment(addEquiMdl.data).then(function (response) {
+            //$state.go('main.account.equipments.list');
+            angular.forEach(addEquiMdl.filesToUpload,function(file){
+              upload(response.data.data.id,file);
+            })
           })
-        });
-
+        }
       }
 
     };
+
+    function upload(id,file) {
+      Upload.upload({
+        url: API.baseURL + 'staticfiles',
+        fields: {
+          target: "catalog.Product.images",
+          target_id: id
+        },
+        file: file
+      }).progress(function (evt) {
+        file.progress=parseInt(100.0 * evt.loaded / evt.total);
+        file.status="Uploaing";
+      }).success(function (data, status, headers, config) {
+        file.status="Uploaded";
+      }).error(function (data, status, headers, config) {
+        file.status="Error";
+        file.progress=0;
+      })
+
+    }
   }
 );

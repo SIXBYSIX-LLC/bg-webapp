@@ -65,10 +65,41 @@
         templateUrl:'app/views/account/jobsites/add/add.html',
         controller:'AddJobsiteCtrl'
       })
+      .state('main.account.jobsites.edit',{
+        url:'/edit/{id}',
+        templateUrl:'app/views/account/jobsites/add/add.html',
+        controller:'AddJobsiteCtrl'
+      })
       .state('main.account.jobsites.list',{
         url:'/list',
         templateUrl:'app/views/account/jobsites/list/list.html',
         controller:'ListJobsitesCtrl'
+      })
+      .state('main.account.inventory',{
+        url:'/inventory',
+        abstract:true,
+        templateUrl:'app/views/account/inventory/inventory.html'
+      })
+      .state('main.account.inventory.list',{
+        url:'/list',
+        templateUrl:'app/views/account/inventory/list/list.html'
+      })
+      .state('main.account.inventory.add',{
+        url:'/add',
+        templateUrl:'app/views/account/inventory/add/add.html'
+      })
+      .state('main.account.orders',{
+        url:'/orders',
+        abstract:true,
+        templateUrl:'app/views/account/orders/orders.html'
+      })
+      .state('main.account.orders.list',{
+        url:'/list',
+        templateUrl:'app/views/account/orders/list/list.html'
+      })
+      .state('main.account.orders.view',{
+        url:'/view',
+        templateUrl:'app/views/account/orders/view/view.html'
       })
       .state('main.account.profile',{
         abstract:true,
@@ -99,6 +130,10 @@
         url:'/search/{query:.*}',
         templateUrl:'app/views/search/search.html',
         controller:'SearchCtrl'
+      })
+      .state('main.orderConfirmation',{
+        url:'/order-confirmation',
+        templateUrl:'app/views/order-confirmation/order-confirmation.html'
       })
       .state('main.equiDetails',{
         url:'/equipment/{id}',

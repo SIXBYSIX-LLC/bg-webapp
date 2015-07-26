@@ -1,6 +1,7 @@
 <div class="add-equipment">
     <form validate-form name="mdl.form" novalidate ng-submit="updateProfile()" class="edit-profile-form">
         <h2>Add New Jobsite</h2>
+        {{mdl.data|json}}
         <div class="col-sm-9 no-padding no-float">
             <div class="row form-group">
                 <div class="col-sms-6 col-sm-6">
@@ -59,7 +60,7 @@
 
 
             <div class="from-group">
-                <button type="submit" class="btn-medium col-sms-6 col-sm-4" ng-click="add()">ADD JOBSITE</button>
+                <button type="submit" class="btn-medium col-sms-6 col-sm-4" ng-click="add()">{{editMode ? 'ADD JOBSITE' : 'SAVE'}</button>
                 <button class="btn-medium btn-default col-sms-6 col-sm-4" ui-sref="main.account.jobsites.list">CANCEL</button>
             </div>
 
