@@ -908,7 +908,7 @@ ol {  }
     li {
       float: left; padding-right: 4px;
       &:last-child { padding-right: 0; }
-      a { color: #fff; display: block; padding: 0 20px; background: #d9d9d9; font-size: 1em; font-weight: bold; height: 40px; line-height: 40px; text-decoration: none; text-transform: uppercase; white-space: nowrap; }
+      a { color: #fff; display: block; padding: 0 10px; background: #d9d9d9; font-size: 1em; font-weight: bold; height: 40px; line-height: 40px; text-decoration: none; text-transform: uppercase; white-space: nowrap; }
       a:hover { }
       &.active > a, &:hover > a { color: $skin-active-color; background: #fff; }
     }
@@ -985,8 +985,8 @@ ol {  }
       li {
         float: none; margin: 0; padding-right: 0;
         a {
-          height: 100px; display: block; border-bottom: 3px solid #f5f5f5; border-right: 3px solid #f5f5f5; background: #fff; color: inherit; font-size: 1.1667em; text-transform: none; font-weight: normal; text-align: center; padding-top: 20px; line-height: 2em;
-          > i { color: #d9d9d9; display: block; font-size: 18px; margin: 0 auto; width: 1.6em; height: 1.6em; line-height: 1.5em; overflow: hidden; }
+          height: 48px; display: block; border-bottom: 3px solid #f5f5f5; border-right: 3px solid #f5f5f5; background: #fff; color: inherit; font-size: 1.1667em; text-transform: none; font-weight: normal; text-align: center; padding-top: 10px; line-height: 2em;
+          > i { color: #d9d9d9; display: block; font-size: 18px; margin: 0 auto; width: 1.6em; height: 1.6em; line-height: 1.5em; overflow: hidden; float: left; }
           &:hover i:before { @include animation(toTopFromBottom, 0.3s, forwards); }
         }
         &.active a, a:hover { color: $heading-color; }
