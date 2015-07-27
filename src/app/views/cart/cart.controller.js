@@ -6,7 +6,7 @@ angular.module('BG').controller('CartCtrl',
       CartService.getCurrent().then(function(response){
         if(response && response.data && response.data.data){
           currentCartId=response.data.data.id;
-          mdl.rental_products = response.data.data.rental_products;
+          mdl.data= response.data.data;
         }
       });
 

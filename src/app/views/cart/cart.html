@@ -1,6 +1,6 @@
 
 <div id="tour-details" class="travelo-box">
-    <div ng-repeat="item in mdl.rental_products" class="intro2 small-box border-box table-wrapper hidden-table-sms">
+    <div ng-repeat="item in mdl.data.rental_products" class="intro2 small-box border-box table-wrapper hidden-table-sms">
         <div class="image-container table-cell"><img src="http://placehold.it/166x150" alt=""></div>
         <div class="description">
             <h4>{{item.product.name}}</h4>
@@ -25,14 +25,14 @@
             <dl class="term-description">
                 <dt>Operation</dt><dd>Rented</dd>
                 <dt>From</dt><dd>{{item.date_start | date}}</dd>
-                <dt>To</dt><dd>{{item.end_date | date}}</dd>
+                <dt>To</dt><dd>{{item.date_end | date}}</dd>
                 <dt>Payment Type</dt><dd>Prepaid</dd>
             </dl>
         </div>
         <div class="price-section table-cell">
             <div class="price">
                 <small>{{item.cost_breakup.subtotal.num_days}} Days on Rent</small>
-                <div class="price-per-unit">${{item.sub_total}}</div>
+                <div class="price-per-unit">${{item.cost_breakup.subtotal.amt}}</div>
             </div>
             <a class="button green btn-small uppercase">Remove</a>
         </div>
@@ -45,19 +45,17 @@
         <br />
         <div class="table-cell">
             <dl class="term-description">
-                <dt>Shipping Cost</dt><dd>$280</dd>
-                <dt>Service Tax </dt><dd>$896</dd>
+                <dt>Shipping Cost</dt><dd>${{data.total.shipping}}</dd>
+                <dt>Service Tax </dt><dd>${{data.total.sales_tax}}</dd>
 
             </dl>
         </div>
         <div class="price-section table-cell" style="padding: 0; padding-left: 25px;">
-            <div class="price"><div class="price-per-unit">$5134</div></div>
+            <div class="price"><div class="price-per-unit">${{data.total.total}}</div></div>
             <a  class="button green btn-small uppercase">Checkout</a>
         </div>
     </div>
 
     <div class="tour-google-map block"></div>
 
-    <h2>General Information About Rome</h2>
-    <p>Sed aliquam nunc eget velit imperdiet, in rutrum mauris malesuada. Quisque ullamcorper vulputate nisi, et fringilla ante convallis quis. Nullam vel tellus non elit suscipit volutpat. Integer id felis et nibh rutrum dignissim ut non risus. In tincidunt urna quis sem luctus, sed accumsan magna pellentesque. Donec et iaculis tellus. Vestibulum ut iaculis justo, auctor sodales lectus. Donec et tellus tempus, dignissim maurornare, consequat lacus. Integer dui neque, scelerisque nec sollicitudin sit amet, sodales a erat. Duis vitae condimentum ligula. Integer eu mi nisl. Donec massa dui, commodo id arcu quis, venenatis scelerisque velit.</p>
 </div>
