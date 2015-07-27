@@ -1,54 +1,48 @@
 <div class="add-equipment">
-    <form validate-form name="mdl.form" novalidate ng-submit="updateProfile()" class="edit-profile-form">
+    <form validate-form name="mdl.form" novalidate ng-submit="add()" class="edit-profile-form">
         <h2>Add Inventory</h2>
-        {{mdl.data|json}}
         <div class="col-sm-9 no-padding no-float">
             <div class="row form-group">
                 <div class="col-sms-6 col-sm-6">
                     <label>Select Product</label>
                     <div class="selector">
-                        <select name="select-product" required class="full-width">
+                        <select name="select-product" ng-model="invMdl.equiId" class="full-width" ng-options="e.id as e.name for e in invMdl.equis">
                         </select>
                     </div>
                 </div>
                 <div class="col-sms-6 col-sm-6">
                     <label>Availability</label>
                     <div class="selector">
-                        <select name="availability" required class="full-width">
+                        <select ng-model="mdl.data.is_active" name="availability" required class="full-width">
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
                         </select>
                     </div>
                 </div>
             </div>
             <div class="row form-group" style="margin-top: 50px;">
                 <div class="col-sms-6 col-sm-6">
-                    <label>Product Name</label>
-                    <input type="text" name="product-name" required class="input-text full-width" placeholder="Enter Product Name">
-                </div>
-                <div class="col-sms-6 col-sm-6">
-                    <label>Serial Number</label>
-                    <input type="text" name="serial_number" class="input-text full-width" placeholder="Enter Serial Number">
-                </div>
-            </div>
-            <div class="row form-group">
-                <div class="col-sms-6 col-sm-6">
                     <label>Source of Equipment</label>
                     <div class="selector">
-                        <select name="source-of-equipment" required class="full-width">
+                        <select ng-model="mdl.data.source" name="source-of-equipment" required class="full-width">
+                            <option value="purchased">Purchased</option>
+                            <option value="rented">Rented</option>
                         </select>
                     </div>
                 </div>
+
                 <div class="col-sms-6 col-sm-6">
-                    <label>State</label>
-                    <div class="selector">
-                        <select ng-model="mdl.data.state" name="state" required class="full-width" ng-options="key as value for (key,value) in mdl.states">
-                        </select>
-                    </div>
+                    <label>Serial Number</label>
+                    <input ng-model="mdl.data.serial_no" required type="text" name="serial_number" class="input-text full-width" placeholder="Enter Serial Number">
                 </div>
+
+
             </div>
+
             <hr>
             <br />
             <div class="from-group">
-                <button type="submit" class="btn-medium col-sms-6 col-sm-4" ng-click="add()">Save Inventory</button>
+                <button type="submit" class="btn-medium col-sms-6 col-sm-4">Save Inventory</button>
                 <button class="btn-medium btn-default col-sms-6 col-sm-4" ui-sref="main.account.inventory.list">CANCEL</button>
             </div>
 

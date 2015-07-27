@@ -78,15 +78,23 @@
       .state('main.account.inventory',{
         url:'/inventory',
         abstract:true,
-        templateUrl:'app/views/account/inventory/inventory.html'
+        templateUrl:'app/views/account/inventory/inventory.html',
+        controller:'InventoryCtrl'
       })
       .state('main.account.inventory.list',{
         url:'/list',
-        templateUrl:'app/views/account/inventory/list/list.html'
+        templateUrl:'app/views/account/inventory/list/list.html',
+        controller:'ListInventoryCtrl'
       })
       .state('main.account.inventory.add',{
         url:'/add',
-        templateUrl:'app/views/account/inventory/add/add.html'
+        templateUrl:'app/views/account/inventory/add/add.html',
+        controller:'AddInventoryCtrl'
+      })
+      .state('main.account.inventory.edit',{
+        url:'/edit/{id}',
+        templateUrl:'app/views/account/inventory/add/add.html',
+        controller:'AddInventoryCtrl'
       })
       .state('main.account.orders',{
         url:'/orders',
