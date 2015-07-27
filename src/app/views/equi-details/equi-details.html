@@ -11,10 +11,10 @@
     <div class="tab-content" style="height: 500px;">
         <div ng-show="mdl.tab1=='photos'" ng-class="{'fade in active':mdl.tab1=='photos'}" class="tab-pane">
             <carousel ng-init="interval=2000" class="photo-gallery style1" interval="interval">
-                    <slide ng-repeat="slide in [0,1,2,3,4,5,6]">
-                        <img src="http://placehold.it/900x500" alt=""/>
+                    <slide ng-repeat="img in mdl.equi.images">
+                        <img ng-src="{{img.url}}" alt="" style="height:500px;"/>
                         <div class="carousel-caption">
-                            <h4>Slide {{$index}}</h4>
+                            <h4>{{$index}}</h4>
                         </div>
                     </slide>
             </carousel>
@@ -96,7 +96,7 @@
                             equipments always available for all my construction needs. Thanks for great experience.</p>
 
                         <div class="author clearfix">
-                            <a href="#"><img src="http://placehold.it/270x270" alt="" width="74" height="74"/></a>
+                            <a  ><img src="http://placehold.it/270x270" alt="" width="74" height="74"/></a>
                             <h5 class="name">Jessica Brown
                                 <small>guest</small>
                             </h5>
@@ -107,7 +107,7 @@
                             equipments always available for all my construction needs. Thanks for great experience.</p>
 
                         <div class="author clearfix">
-                            <a href="#"><img src="http://placehold.it/270x270" alt="" width="74" height="74"/></a>
+                            <a  ><img src="http://placehold.it/270x270" alt="" width="74" height="74"/></a>
                             <h5 class="name">Lisa Kimberly
                                 <small>guest</small>
                             </h5>
@@ -118,7 +118,7 @@
                             equipments always available for all my construction needs. Thanks for great experience.</p>
 
                         <div class="author clearfix">
-                            <a href="#"><img src="http://placehold.it/270x270" alt="" width="74" height="74"/></a>
+                            <a  ><img src="http://placehold.it/270x270" alt="" width="74" height="74"/></a>
                             <h5 class="name">Jessica Brown
                                 <small>guest</small>
                             </h5>
@@ -166,8 +166,9 @@
     <div class="room-list listing-style3 hotel">
         <article class="box">
             <figure class="col-sm-4 col-md-3">
-                <a class="hover-effect popup-gallery" href="ajax/slideshow-popup.html" title=""><img width="230"
-                                                                                                     height="160"
+                <a class="hover-effect popup-gallery"  title="">
+                    <img width="230"
+                                                                                                   height="160"
                                                                                                      src="http://placehold.it/230x160"
                                                                                                      alt=""></a>
             </figure>
@@ -195,14 +196,14 @@
                         nequetiam elerisque mi id, consectetur adipi deese cing elit maus fringilla bibe endum.</p>
 
                     <div class="action-section">
-                        <a href="#" title="" class="button btn-small full-width text-center">View Details</a>
+                        <a   title="" class="button btn-small full-width text-center">View Details</a>
                     </div>
                 </div>
             </div>
         </article>
         <article class="box">
             <figure class="col-sm-4 col-md-3">
-                <a class="hover-effect popup-gallery" href="ajax/slideshow-popup.html" title=""><img width="230"
+                <a class="hover-effect popup-gallery"  title=""><img width="230"
                                                                                                      height="160"
                                                                                                      src="http://placehold.it/230x160"
                                                                                                      alt=""></a>
@@ -231,14 +232,14 @@
                         nequetiam elerisque mi id, consectetur adipi deese cing elit maus fringilla bibe endum.</p>
 
                     <div class="action-section">
-                        <a href="#" title="" class="button btn-small full-width text-center">View Details</a>
+                        <a   title="" class="button btn-small full-width text-center">View Details</a>
                     </div>
                 </div>
             </div>
         </article>
         <article class="box">
             <figure class="col-sm-4 col-md-3">
-                <a class="hover-effect popup-gallery" href="ajax/slideshow-popup.html" title=""><img width="230"
+                <a class="hover-effect popup-gallery"  title=""><img width="230"
                                                                                                      height="160"
                                                                                                      src="http://placehold.it/230x160"
                                                                                                      alt=""></a>
@@ -267,14 +268,14 @@
                         nequetiam elerisque mi id, consectetur adipi deese cing elit maus fringilla bibe endum.</p>
 
                     <div class="action-section">
-                        <a href="#" title="" class="button btn-small full-width text-center">View Details</a>
+                        <a   title="" class="button btn-small full-width text-center">View Details</a>
                     </div>
                 </div>
             </div>
         </article>
         <article class="box">
             <figure class="col-sm-4 col-md-3">
-                <a class="hover-effect popup-gallery" href="ajax/slideshow-popup.html" title=""><img width="230"
+                <a class="hover-effect popup-gallery"  title=""><img width="230"
                                                                                                      height="160"
                                                                                                      src="http://placehold.it/230x160"
                                                                                                      alt=""></a>
@@ -303,12 +304,12 @@
                         nequetiam elerisque mi id, consectetur adipi deese cing elit maus fringilla bibe endum.</p>
 
                     <div class="action-section">
-                        <a href="#" title="" class="button btn-small full-width text-center">View Details</a>
+                        <a   title="" class="button btn-small full-width text-center">View Details</a>
                     </div>
                 </div>
             </div>
         </article>
-        <a href="#" class="load-more button full-width btn-large fourty-space">LOAD MORE EQUIPMENTS</a>
+        <a   class="load-more button full-width btn-large fourty-space">LOAD MORE EQUIPMENTS</a>
     </div>
 
 </div>
@@ -367,7 +368,7 @@
             <div class="five-stars-container">
                 <div class="five-stars" style="width: 78%;"></div>
             </div>
-            <a href="#" class="goto-writereview-pane button green btn-small full-width">WRITE A REVIEW</a>
+            <a   class="goto-writereview-pane button green btn-small full-width">WRITE A REVIEW</a>
         </div>
         <div class="table-cell col-sm-8">
             <div class="detailed-rating">
@@ -445,7 +446,7 @@
 
         <div class="guest-review table-wrapper">
             <div class="col-xs-3 col-md-2 author table-cell">
-                <a href="#"><img src="http://placehold.it/270x263" alt="" width="270" height="263"/></a>
+                <a  ><img src="http://placehold.it/270x263" alt="" width="270" height="263"/></a>
 
                 <p class="name">Jessica Brown</p>
 
@@ -471,7 +472,7 @@
         </div>
         <div class="guest-review table-wrapper">
             <div class="col-xs-3 col-md-2 author table-cell">
-                <a href="#"><img src="http://placehold.it/270x263" alt="" width="270" height="263"/></a>
+                <a  ><img src="http://placehold.it/270x263" alt="" width="270" height="263"/></a>
 
                 <p class="name">Jessica Brown</p>
 
@@ -497,7 +498,7 @@
         </div>
         <div class="guest-review table-wrapper">
             <div class="col-xs-3 col-md-2 author table-cell">
-                <a href="#"><img src="http://placehold.it/270x263" alt="" width="270" height="263"/></a>
+                <a  ><img src="http://placehold.it/270x263" alt="" width="270" height="263"/></a>
 
                 <p class="name">Jessica Brown</p>
 
@@ -522,19 +523,19 @@
             </div>
         </div>
     </div>
-    <a href="#" class="button full-width btn-large">LOAD MORE REVIEWS</a>
+    <a   class="button full-width btn-large">LOAD MORE REVIEWS</a>
 </div>
 <div ng-show="mdl.tab2=='faqs'" ng-class="{'fade in active':mdl.tab2=='faqs'}" class="tab-pane" >
     <h2>Frquently Asked Questions</h2>
 
     <div class="topics">
         <ul class="check-square clearfix">
-            <li class="col-sm-6 col-md-4"><a href="#">address &amp; map</a></li>
-            <li class="col-sm-6 col-md-4"><a href="#">messaging</a></li>
-            <li class="col-sm-6 col-md-4"><a href="#">refunds</a></li>
-            <li class="col-sm-6 col-md-4"><a href="#">pricing</a></li>
-            <li class="col-sm-6 col-md-4 active"><a href="#">reservation requests</a></li>
-            <li class="col-sm-6 col-md-4"><a href="#">your reservation</a></li>
+            <li class="col-sm-6 col-md-4"><a  >address &amp; map</a></li>
+            <li class="col-sm-6 col-md-4"><a  >messaging</a></li>
+            <li class="col-sm-6 col-md-4"><a  >refunds</a></li>
+            <li class="col-sm-6 col-md-4"><a  >pricing</a></li>
+            <li class="col-sm-6 col-md-4 active"><a  >reservation requests</a></li>
+            <li class="col-sm-6 col-md-4"><a  >your reservation</a></li>
         </ul>
     </div>
     <p>Maecenas vitae turpis condimentum metus tincidunt semper bibendum ut orci. Donec eget accumsan est. Duis laoreet
@@ -546,7 +547,7 @@
 
         <div class="panel style1 arrow-right">
             <h4 class="panel-title">
-                <a class="collapsed" href="#question2" data-toggle="collapse">Question for the FAQ related to particular
+                <a class="collapsed"  data-toggle="collapse">Question for the FAQ related to particular
                     product goes here?</a>
             </h4>
 
@@ -563,7 +564,7 @@
         </div>
         <div class="panel style1 arrow-right">
             <h4 class="panel-title">
-                <a class="" href="#question3" data-toggle="collapse">Question for the FAQ related to particular product
+                <a class=""  data-toggle="collapse">Question for the FAQ related to particular product
                     goes here?</a>
             </h4>
 
@@ -580,7 +581,7 @@
         </div>
         <div class="panel style1 arrow-right">
             <h4 class="panel-title">
-                <a class="collapsed" href="#question4" data-toggle="collapse">Question for the FAQ related to particular
+                <a class="collapsed"  data-toggle="collapse">Question for the FAQ related to particular
                     product goes here?</a>
             </h4>
 
@@ -592,7 +593,7 @@
         </div>
         <div class="panel style1 arrow-right">
             <h4 class="panel-title">
-                <a class="collapsed" href="#question5" data-toggle="collapse">Question for the FAQ related to particular
+                <a class="collapsed"  data-toggle="collapse">Question for the FAQ related to particular
                     product goes here?</a>
             </h4>
 
@@ -604,7 +605,7 @@
         </div>
         <div class="panel style1 arrow-right">
             <h4 class="panel-title">
-                <a class="collapsed" href="#question6" data-toggle="collapse">Question for the FAQ related to particular
+                <a class="collapsed"  data-toggle="collapse">Question for the FAQ related to particular
                     product goes here?</a>
             </h4>
 
@@ -616,7 +617,7 @@
         </div>
         <div class="panel style1 arrow-right">
             <h4 class="panel-title">
-                <a class="collapsed" href="#question7" data-toggle="collapse">Question for the FAQ related to particular
+                <a class="collapsed"  data-toggle="collapse">Question for the FAQ related to particular
                     product goes here?</a>
             </h4>
 
@@ -633,7 +634,7 @@
     <div class="main-rating table-wrapper full-width hidden-table-sms intro">
         <article class="image-box box hotel listing-style1 photo table-cell col-sm-4">
             <figure>
-                <a class="hover-effect" title="" href="#"><img width="270" height="160" alt=""
+                <a class="hover-effect" title=""  ><img width="270" height="160" alt=""
                                                                src="http://placehold.it/270x160"></a>
             </figure>
             <div class="details">
@@ -742,11 +743,11 @@
         <div class="form-group">
             <h4 class="title">What was best thing you like in Renting Journey with us?</h4>
             <ul class="sort-trip clearfix">
-                <li><a href="#"><i class="soap-icon-businessbag circle"></i></a><span>Payment Process</span></li>
-                <li><a href="#"><i class="soap-icon-couples circle"></i></a><span>Quick Delivery</span></li>
-                <li><a href="#"><i class="soap-icon-family circle"></i></a><span>Care & Support</span></li>
-                <li><a href="#"><i class="soap-icon-friends circle"></i></a><span>Order Handling</span></li>
-                <li><a href="#"><i class="soap-icon-user circle"></i></a><span>Ease of Ordering</span></li>
+                <li><a  ><i class="soap-icon-businessbag circle"></i></a><span>Payment Process</span></li>
+                <li><a  ><i class="soap-icon-couples circle"></i></a><span>Quick Delivery</span></li>
+                <li><a  ><i class="soap-icon-family circle"></i></a><span>Care & Support</span></li>
+                <li><a  ><i class="soap-icon-friends circle"></i></a><span>Order Handling</span></li>
+                <li><a  ><i class="soap-icon-user circle"></i></a><span>Ease of Ordering</span></li>
             </ul>
         </div>
         <div class="form-group col-md-5 no-float no-padding">
@@ -779,13 +780,13 @@
             </h4>
             <p>Share your review with your friends on different social media networks.</p>
             <ul class="social-icons icon-circle clearfix">
-                <li class="twitter"><a title="Twitter" href="#" data-toggle="tooltip"><i class="soap-icon-twitter"></i></a>
+                <li class="twitter"><a title="Twitter"   data-toggle="tooltip"><i class="soap-icon-twitter"></i></a>
                 </li>
-                <li class="facebook"><a title="Facebook" href="#" data-toggle="tooltip"><i
+                <li class="facebook"><a title="Facebook"   data-toggle="tooltip"><i
                         class="soap-icon-facebook"></i></a></li>
-                <li class="googleplus"><a title="GooglePlus" href="#" data-toggle="tooltip"><i
+                <li class="googleplus"><a title="GooglePlus"   data-toggle="tooltip"><i
                         class="soap-icon-googleplus"></i></a></li>
-                <li class="pinterest"><a title="Pinterest" href="#" data-toggle="tooltip"><i
+                <li class="pinterest"><a title="Pinterest"   data-toggle="tooltip"><i
                         class="soap-icon-pinterest"></i></a></li>
             </ul>
         </div>
@@ -865,7 +866,7 @@
         <address class="contact-details">
             <span class="contact-phone"><i class="soap-icon-phone"></i> 1-800-123-MKTPLACE</span>
             <br>
-            <a class="contact-email" href="#">help@marketplace.com</a>
+            <a class="contact-email"  >help@marketplace.com</a>
         </address>
     </div>
     <div class="travelo-box">
@@ -874,10 +875,10 @@
         <div class="image-box style14">
             <article class="box">
                 <figure>
-                    <a href="#"><img src="http://placehold.it/63x59" alt=""/></a>
+                    <a  ><img src="http://placehold.it/63x59" alt=""/></a>
                 </figure>
                 <div class="details">
-                    <h5 class="box-title"><a href="#">Caterpillar Track Excavator 310C</a></h5>
+                    <h5 class="box-title"><a  >Caterpillar Track Excavator 310C</a></h5>
                     <label class="price-wrapper">
                         <span class="price-per-unit">$170</span>avg/day
                     </label>
@@ -885,10 +886,10 @@
             </article>
             <article class="box">
                 <figure>
-                    <a href="#"><img src="http://placehold.it/63x59" alt=""/></a>
+                    <a  ><img src="http://placehold.it/63x59" alt=""/></a>
                 </figure>
                 <div class="details">
-                    <h5 class="box-title"><a href="#">Caterpillar Track Excavator 310C</a></h5>
+                    <h5 class="box-title"><a  >Caterpillar Track Excavator 310C</a></h5>
                     <label class="price-wrapper">
                         <span class="price-per-unit">$620</span>avg/day
                     </label>
@@ -896,10 +897,10 @@
             </article>
             <article class="box">
                 <figure>
-                    <a href="#"><img src="http://placehold.it/63x59" alt=""/></a>
+                    <a  ><img src="http://placehold.it/63x59" alt=""/></a>
                 </figure>
                 <div class="details">
-                    <h5 class="box-title"><a href="#">Caterpillar Track Excavator 310C</a></h5>
+                    <h5 class="box-title"><a  >Caterpillar Track Excavator 310C</a></h5>
                     <label class="price-wrapper">
                         <span class="price-per-unit">$322</span>avg/day
                     </label>
@@ -912,19 +913,19 @@
         <ul>
             <li>
                 <i class="soap-icon-hotel-1 circle"></i>
-                <h5 class="title"><a href="#">135,00+ Equipments</a></h5>
+                <h5 class="title"><a  >135,00+ Equipments</a></h5>
 
                 <p>Nunc cursus libero pur congue arut nimspnty.</p>
             </li>
             <li>
                 <i class="soap-icon-savings circle"></i>
-                <h5 class="title"><a href="#">Low Rates &amp; Savings</a></h5>
+                <h5 class="title"><a  >Low Rates &amp; Savings</a></h5>
 
                 <p>Nunc cursus libero pur congue arut nimspnty.</p>
             </li>
             <li>
                 <i class="soap-icon-support circle"></i>
-                <h5 class="title"><a href="#">Excellent Support</a></h5>
+                <h5 class="title"><a  >Excellent Support</a></h5>
 
                 <p>Nunc cursus libero pur congue arut nimspnty.</p>
             </li>

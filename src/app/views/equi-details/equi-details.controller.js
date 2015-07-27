@@ -1,6 +1,6 @@
 angular.module('BG').controller('EquiDetailsCtrl',
   /** @ngInject */
-    function ($scope, $state, $timeout, $stateParams, EquiDetailsService, CartService) {
+    function ($scope, $state, $timeout, $stateParams, EquipmentsService, CartService) {
     var mdl = $scope.mdl = {};
     $scope.mainMdl.title = "Equipment Details";
     $scope.addBreadcrumb({title: "Equipment Details"});
@@ -8,12 +8,12 @@ angular.module('BG').controller('EquiDetailsCtrl',
       $scope.popBreadcrumb();
     });
     if ($stateParams.id) {
-      EquiDetailsService.getDetails($stateParams.id).then(function (response) {
+      EquipmentsService.getEquipment($stateParams.id).then(function (response) {
         mdl.equi = response.data.data;
       });
     }
 
-    mdl.tab1="map";
+    mdl.tab1="photos";
     mdl.tab2="description";
 
     $scope.addToCart = function(){

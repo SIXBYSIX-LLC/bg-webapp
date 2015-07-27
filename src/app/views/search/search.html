@@ -119,21 +119,16 @@
         <article class="box" ng-repeat="pro in searchMdl.products track by pro.id">
             <figure class="col-sm-5 col-md-4">
                 <a ui-sref="main.equiDetails({id:pro.id})" class="hover-effect">
-                    <img width="270" height="160" alt="" src="http://placehold.it/270x160">
+                    <img width="270" height="160" alt="" ng-src="{{(pro.images[0].url) || 'http://placehold.it/270x160'}}">
                 </a>
             </figure>
             <div class="details col-sm-7 col-md-8">
                 <div>
                     <div>
                         <h4 class="box-title">{{pro.name}}
-                            <small><i class="soap-icon-departure yellow-color"></i> Bay Area, CA</small>
+                            <small><i class="soap-icon-departure yellow-color"></i> {{pro.location.city.name}},{{pro.location.state.name}}</small>
                         </h4>
-                        <!--<div class="amenities">
-                            <i class="soap-icon-wifi circle"></i>
-                            <i class="soap-icon-fitnessfacility circle"></i>
-                            <i class="soap-icon-fork circle"></i>
-                            <i class="soap-icon-television circle"></i>
-                        </div>-->
+
                     </div>
                     <div>
                         <div class="five-stars-container">
@@ -163,8 +158,8 @@
             <div class="col-sm-6 col-md-4" ng-repeat="pro in searchMdl.products track by pro.id">
                 <article class="box">
                     <figure>
-                        <a href="ajax/slideshow-popup.html" class="hover-effect popup-gallery">
-                            <img width="270" height="160" alt="" src="http://placehold.it/270x160">
+                        <a  class="hover-effect popup-gallery">
+                            <img width="270" height="160" alt="" ng-src="{{(pro.images[0].url) || 'http://placehold.it/270x160'}}">
                         </a>
                     </figure>
                     <div class="details">
@@ -180,8 +175,8 @@
                         <span class="price"><small>Monthly</small>${{pro.monthly_price | number : 0}}</span>
 
                         <div class="action">
-                            <a class="button btn-small" href="hotel-detailed.html">SELECT</a>
-                            <a class="button btn-small yellow popup-map" href="#" data-box="37.089072, -8.247880">VIEW
+                            <a class="button btn-small" >SELECT</a>
+                            <a class="button btn-small yellow popup-map"  data-box="37.089072, -8.247880">VIEW
                                 ON MAP</a>
                         </div>
                     </div>

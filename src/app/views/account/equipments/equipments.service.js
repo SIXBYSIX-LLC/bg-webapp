@@ -31,7 +31,6 @@ angular.module('BG').factory('EquipmentsService',
       },
       deleteImage:function(id){
         return $http.delete(API.baseURL+"staticfiles/"+id);
-
       }
     }
   }

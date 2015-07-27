@@ -1,6 +1,6 @@
 angular.module('BG').controller('AddEquipmentCtrl',
   /** @ngInject */
-    function ($scope, API, $state, $stateParams, EquipmentsService, JobsitesService, SystemService, Upload) {
+    function ($scope, $q, API, $state, $stateParams, EquipmentsService, JobsitesService, SystemService, Upload) {
 
     $scope.editMode = $state.current.name == "main.account.equipments.edit";
     var addEquiMdl = $scope.addEquiMdl = {};
@@ -66,8 +66,11 @@ angular.module('BG').controller('AddEquipmentCtrl',
       }
     });
 
-    $scope.deleteImage=function(id){
-
+    $scope.deleteImage=function(i){
+        var img=addEquiMdl.data.images[i];
+        EquipmentsService.deleteImage(img.id).then(function(){
+          addEquiMdl.data.images.splice(i,1);
+        })
     };
 
     $scope.add = function () {
@@ -84,16 +87,14 @@ angular.module('BG').controller('AddEquipmentCtrl',
 
         if ($scope.editMode) {
           EquipmentsService.updateEquipment(addEquiMdl.data.id, addEquiMdl.data).then(function (response) {
-            angular.forEach(addEquiMdl.filesToUpload,function(file){
-              upload(addEquiMdl.data.id,file);
+            uploadImages().then(function(){
+              $state.go('main.account.equipments.list');
             })
           });
         } else {
-
           EquipmentsService.addEquipment(addEquiMdl.data).then(function (response) {
-            //$state.go('main.account.equipments.list');
-            angular.forEach(addEquiMdl.filesToUpload,function(file){
-              upload(response.data.data.id,file);
+            uploadImages().then(function(){
+              $state.go('main.account.equipments.list');
             })
           })
         }
@@ -101,7 +102,19 @@ angular.module('BG').controller('AddEquipmentCtrl',
 
     };
 
+    function uploadImages(){
+      var deferred=$q.defer();
+      var promises=[];
+      angular.forEach(addEquiMdl.filesToUpload,function(file){
+        promises.push(upload(addEquiMdl.data.id,file));
+      });
+      $q.all(promises).then(function(){
+        deferred.resolve();
+      });
+      return deferred.promise;
+    }
     function upload(id,file) {
+      var deferred=$q.defer();
       Upload.upload({
         url: API.baseURL + 'staticfiles',
         fields: {
@@ -111,13 +124,16 @@ angular.module('BG').controller('AddEquipmentCtrl',
         file: file
       }).progress(function (evt) {
         file.progress=parseInt(100.0 * evt.loaded / evt.total);
-        file.status="Uploaing";
+        file.status="Uploading";
       }).success(function (data, status, headers, config) {
         file.status="Uploaded";
+        deferred.resolve();
       }).error(function (data, status, headers, config) {
         file.status="Error";
         file.progress=0;
-      })
+        deferred.resolve();
+      });
+      return deferred.promise;
 
     }
   }

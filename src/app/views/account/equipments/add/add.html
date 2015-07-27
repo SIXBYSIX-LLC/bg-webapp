@@ -1,6 +1,6 @@
 <div class="add-equipment">
     <form validate-form name="addEquiMdl.form" novalidate ng-submit="updateProfile()" class="edit-profile-form">
-        <h2>Add New Equipment</h2>
+        <h2>{{editMode ? 'Edit Equipment' :'Add New Equipment'}}</h2>
         <div class="col-sm-9 no-padding no-float">
             <div class="row form-group">
 
@@ -142,11 +142,12 @@
             <div ng-if="editMode">
                 <div class="row" ng-repeat="img in addEquiMdl.data.images">
                     <div class="col-sms-6 col-sm-6">
-                        <img ng-src="{{img.url}}" style="height: 100px;width:100px">
+                        <img ng-src="{{img.url}}" style="width:100px">
                     </div>
-                    <div class="col-sms-6 col-sm-6">
-                        <button ng-click="deleteImage(img.id)">Remove</button>
+                    <div class="col-sms-3 col-sm-3">
+                        <button ng-click="deleteImage($index)">Remove</button>
                     </div>
+                    <hr/>
 
                 </div>
             </div>
