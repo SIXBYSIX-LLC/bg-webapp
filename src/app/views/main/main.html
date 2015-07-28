@@ -21,7 +21,7 @@
         <div class="container">
             <h1 class="logo navbar-brand">
                 <a class="pointerhover">
-                    <img src="assets/images/logo.png"  />
+                    <img ui-sref="home" src="assets/images/logo.png"  />
                 </a>
             </h1>
             <div class="header-search col-sm-offset-4 col-md-offset-2 hidden-mobile">
@@ -30,6 +30,7 @@
                         <angucomplete-alt
                                           placeholder="Equipment Name, Part Name, etc.."
                                           pause="400"
+                                          initial-value="mainMdl.searchText"
                                           selected-object="mainMdl.searchObj"
                                           remote-api-handler="mainMdl.searchHelper"
                                           remote-url-data-field="data"

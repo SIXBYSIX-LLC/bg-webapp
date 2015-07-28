@@ -1,6 +1,6 @@
 angular.module('BG').controller('HomeCtrl',
   /** @ngInject */
-  function($scope,$state){
+  function($scope,$state,SearchService){
     var mdl = $scope.mdl = {};
     mdl.tab="rent";
     $scope.open = function($event,type) {
@@ -19,11 +19,7 @@ angular.module('BG').controller('HomeCtrl',
       class: 'datepicker'
     };
 
-    mdl.search=function(){
-        //if(mdl.searchText){
-        $state.go("main.search",{query:mdl.searchText || ""});
-        //}
-    };
+   
     $scope.$on("$viewContentLoaded", function () {
       if (tjq('#mobile-search-tabs').length > 0) {
         var mobile_search_tabs_slider = tjq('#mobile-search-tabs').bxSlider({
@@ -44,6 +40,25 @@ angular.module('BG').controller('HomeCtrl',
         });
       }
     });
+
+    $scope.$watch("mdl.searchObj",function(){
+      if(mdl.searchObj){
+        $state.go("main.search",{query:mdl.searchObj.title},{ reload: true });
+      }
+    });
+    mdl.search=function(){
+      //if(mdl.searchText){
+      $state.go("main.search",{query:(mdl.searchObj ? mdl.searchObj.title :mdl.searchText ) || ""},{ reload: true });
+      //}
+    };
+    mdl.searchHelper = function(userInputString, timeoutPromise){
+      return SearchService.searchHelper(userInputString).then(function(response){
+        return response;
+      });
+    };
+    mdl.inputChanged = function(text){
+      mdl.searchText=text;
+    }
 
   }
 );
