@@ -54,10 +54,32 @@ angular.module('BG').controller('SearchCtrl',
           searchMdl.resultCount=response.data.meta.count;
           searchMdl.nextAvailable=search.isAvail();
           searchMdl.locationFacets=response.data.meta.facets;
+          searchMdl.locationFacets.allSelected=true;
         });
       //}
     };
 
+    $scope.locationFilterChanged=function(lf){
+      var lfs=searchMdl.locationFacets;
+      if(lf=='all'){
+        angular.forEach(lfs,function(l){
+          l.selected=false;
+        });
+        lfs.allSelected=true;
+      }else{
+        if(!lf.selected){
+          var oneSelected=false;
+          angular.forEach(lfs,function(l){
+            if(l.selected){oneSelected=true;}
+          });
+          if(!oneSelected){
+            lfs.allSelected=true;
+          }
+        }else{
+          lfs.allSelected=false;
+        }
+      }
+    };
     searchMdl.sort=function(sortBy){
       searchMdl.sortBy=sortBy;
       searchMdl.search();

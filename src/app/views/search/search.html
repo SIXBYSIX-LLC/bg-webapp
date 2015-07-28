@@ -49,10 +49,10 @@
                 <div class="panel-content">
                     <ul class="check-square filters-option">
                         <li ng-class="{'active':searchMdl.locationFacets.allSelected}">
-                            <a ng-click="searchMdl.locationFacets.allSelected=!searchMdl.locationFacets.allSelected">All</a>
+                            <a ng-click="searchMdl.locationFacets.allSelected=!searchMdl.locationFacets.allSelected;locationFilterChanged('all')">All</a>
                         </li>
                         <li ng-class="{'active':lf.selected}" ng-repeat="lf in searchMdl.locationFacets">
-                            <a ng-click="lf.selected=!lf.selected">{{lf.location.city.name}},{{lf.location.state.name}}
+                            <a ng-click="lf.selected=!lf.selected;locationFilterChanged(lf)">{{lf.location.city.name}},{{lf.location.state.name}}
                                     <small>({{lf.count}})</small>
                             </a>
 
@@ -125,7 +125,7 @@
             <div class="details col-sm-7 col-md-8">
                 <div>
                     <div>
-                        <h4 class="box-title">{{pro.name}}
+                        <h4 ui-sref="main.equiDetails({id:pro.id})" class="pointerhover box-title">{{pro.name}}
                             <small><i class="soap-icon-departure yellow-color"></i> {{pro.location.city.name}},{{pro.location.state.name}}</small>
                         </h4>
 
@@ -145,8 +145,8 @@
                     </div>
                     <div>
 
-                        <a class="button btn-small full-width text-center" title="">Reserve</a>
-                        <a class="button btn-small full-width text-center" title="">View on Map
+                        <a class="button btn-small full-width text-center" ui-sref="main.equiDetails({id:pro.id})" title="">Reserve</a>
+                        <a class="button btn-small full-width text-center" ui-sref="main.equiDetails({id:pro.id})" title="">View on Map
                         </a>
                     </div>
                 </div>
@@ -158,12 +158,12 @@
             <div class="col-sm-6 col-md-4" ng-repeat="pro in searchMdl.products track by pro.id">
                 <article class="box">
                     <figure>
-                        <a  class="hover-effect popup-gallery">
+                        <a ui-sref="main.equiDetails({id:pro.id})" class="hover-effect popup-gallery">
                             <img width="270" height="160" alt="" ng-src="{{(pro.images[0].url) || 'http://placehold.it/270x160'}}">
                         </a>
                     </figure>
                     <div class="details">
-                        <h4 class="box-title">{{pro.name}}</h4>
+                        <h4 class="box-title" ui-sref="main.equiDetails({id:pro.id})">{{pro.name}}</h4>
 
                         <div class="feedback">
                             <div data-placement="bottom" data-toggle="tooltip" class="five-stars-container"
@@ -175,8 +175,8 @@
                         <span class="price"><small>Monthly</small>${{pro.monthly_price | number : 0}}</span>
 
                         <div class="action">
-                            <a class="button btn-small" >SELECT</a>
-                            <a class="button btn-small yellow popup-map"  data-box="37.089072, -8.247880">VIEW
+                            <a class="button btn-small" ui-sref="main.equiDetails({id:pro.id})">RESERVE</a>
+                            <a class="button btn-small yellow popup-map"  ui-sref="main.equiDetails({id:pro.id})">VIEW
                                 ON MAP</a>
                         </div>
                     </div>
