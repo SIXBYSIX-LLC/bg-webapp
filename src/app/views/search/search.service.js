@@ -1,8 +1,11 @@
 angular.module('BG').factory('SearchService',
 
   /** @ngInject */
-    function (API,PaginationService) {
+    function (API,PaginationService,$http) {
     return {
+      searchHelper:function(searchText){
+        return $http.get(API.baseURL+"products?search="+searchText+"&fields=name");
+      },
       search:function(conf,page,page_size){
         var enc=encodeURIComponent;
         var values=[];

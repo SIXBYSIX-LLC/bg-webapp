@@ -118,7 +118,7 @@
             <h2>Upload Profile Photo</h2>
             <div class="row form-group">
                 <div class="col-sms-12 col-sm-6 no-float">
-                    <div class="fileinput button" ngf-select ngf-change="upload($files)">Upload on file change</div>
+                    <div class="fileinput button" ngf-multiple="true" ngf-select ngf-change="addEquiMdl.filesToUpload=$files">Upload on file change</div>
 
                     <br/>
                     <div ngf-drop ng-model="addEquiMdl.filesToUpload" class="upload-drop-zone"
@@ -147,8 +147,6 @@
                     <div class="col-sms-3 col-sm-3">
                         <button ng-click="deleteImage($index)">Remove</button>
                     </div>
-                    <hr/>
-
                 </div>
             </div>
             <hr>
