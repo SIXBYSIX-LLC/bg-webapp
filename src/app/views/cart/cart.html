@@ -1,5 +1,4 @@
-
-<div id="tour-details" class="travelo-box">
+<div id="tour-details" class="travelo-box" xmlns="http://www.w3.org/1999/html">
     <div ng-repeat="item in mdl.data.rental_products" class="intro2 small-box border-box table-wrapper hidden-table-sms">
         <div class="image-container table-cell"><img src="http://placehold.it/166x150" alt=""></div>
         <div class="description">
@@ -34,7 +33,10 @@
                 <small>{{item.cost_breakup.subtotal.num_days}} Days on Rent</small>
                 <div class="price-per-unit">${{item.cost_breakup.subtotal.amt}}</div>
             </div>
-            <a class="button green btn-small uppercase">Remove</a>
+
+            <button  class="button green btn-small uppercase"  ng-click="update(item)">Save</button>
+            <hr/>
+            <button class="button green btn-small uppercase" ng-click="remove(item)">Remove</button>
         </div>
     </div>
     <div class="intro2 small-box border-box table-wrapper hidden-table-sms">
@@ -45,13 +47,13 @@
         <br />
         <div class="table-cell">
             <dl class="term-description">
-                <dt>Shipping Cost</dt><dd>${{data.total.shipping}}</dd>
-                <dt>Service Tax </dt><dd>${{data.total.sales_tax}}</dd>
+                <dt>Shipping Cost</dt><dd>${{mdl.data.total.shipping}}</dd>
+                <dt>Service Tax </dt><dd>${{mdl.data.total.sales_tax}}</dd>
 
             </dl>
         </div>
         <div class="price-section table-cell" style="padding: 0; padding-left: 25px;">
-            <div class="price"><div class="price-per-unit">${{data.total.total}}</div></div>
+            <div class="price"><div class="price-per-unit">${{mdl.data.total.total}}</div></div>
             <a  class="button green btn-small uppercase">Checkout</a>
         </div>
     </div>
