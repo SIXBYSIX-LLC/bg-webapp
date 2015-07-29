@@ -125,6 +125,11 @@
         templateUrl:'app/views/account/profile/view/view.html',
         controller:'ViewProfileCtrl'
       })
+      .state('main.account.profile.changePassword',{
+        url:'/change-password',
+        templateUrl:'app/views/account/profile/change-password/change-password.html',
+        controller:'ChangePasswordCtrl'
+      })
       .state('main.account.requests',{
         url:'/requests',
         templateUrl:'app/views/account/requests/requests.html'

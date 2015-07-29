@@ -1,8 +1,8 @@
 angular.module('BG').controller('EditProfileCtrl',
   /** @ngInject */
-    function ($scope,Upload,API,$state,ProfileService) {
+    function ($scope,$state,ProfileService) {
     var editProfileMdl = $scope.editProfileMdl = {};
-    editProfileMdl.fileToUpload=null;
+
 
     ProfileService.getUser($scope.user.id).then(function(response){
       editProfileMdl.user = response.data.data;
