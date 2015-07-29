@@ -13,7 +13,7 @@ angular.module('BG').controller('EquiDetailsCtrl',
       });
     }
 
-    mdl.tab1="photos";
+    mdl.tab1="map";
     mdl.tab2="description";
 
     $scope.addToCart = function(){
@@ -45,7 +45,7 @@ angular.module('BG').controller('EquiDetailsCtrl',
 
 
       var marker = new google.maps.Marker({
-        position: {lat: -34, lng: 151},
+        position: new google.maps.LatLng(-34, 151),
         map: map,
         draggable: true,
         animation: google.maps.Animation.DROP
@@ -55,8 +55,9 @@ angular.module('BG').controller('EquiDetailsCtrl',
         infowindow.open(map,marker);
       });
 
-      map.setCenter({lat: -34, lng: 151});
+      map.setCenter(new google.maps.LatLng(-34, 151));
       google.maps.event.addListener(map, 'click', function(event) {
+        console.log("zoom",map.getZoom());
         placeMarker(event.latLng);
       });
 
