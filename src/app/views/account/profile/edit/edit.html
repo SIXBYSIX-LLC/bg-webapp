@@ -6,46 +6,46 @@
             <div class="row form-group">
                 <div class="col-sms-6 col-sm-6">
                     <label>Name</label>
-                    <input type="text" name="name" required class="input-text full-width" placeholder="name">
-                </div>
-            </div>
-            <div class="row form-group">
-                <div class="col-sms-6 col-sm-6">
-                    <label>Email Address</label>
-                    <input type="text" name="email" required class="input-text full-width" placeholder="email address">
+                    <input type="text" name="name" ng-model="editProfileMdl.user.fullname" required class="input-text full-width" placeholder="name">
                 </div>
             </div>
 
             <div class="row form-group">
-                <label class="col-xs-12">Date of Birth</label>
-                <div class="col-xs-4 col-sm-2">
-                    <div class="selector">
-                        <select class="full-width">
-                            <option value="">date</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-xs-4 col-sm-2">
-                    <div class="selector">
-                        <select class="full-width">
-                            <option value="">month</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-xs-4 col-sm-2">
-                    <div class="selector">
-                        <select class="full-width">
-                            <option value="">year</option>
-                        </select>
-                    </div>
+                <div class="col-sms-6 col-sm-6">
+                    <label>Phone</label>
+                    <input type="text" name="phone" ng-model="editProfileMdl.user.phone" required class="input-text full-width" placeholder="phone">
                 </div>
             </div>
+
+            <div class="row form-group">
+                <div class="col-sms-6 col-sm-6">
+                    <label>Store name</label>
+                    <input type="text" name="storename" ng-model="editProfileMdl.user.store_name" required class="input-text full-width" placeholder="store name">
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <div class="col-sms-6 col-sm-6">
+                    <label>Zip code</label>
+                    <input type="text" name="zipcode" ng-model="editProfileMdl.user.zip_code" required class="input-text full-width" placeholder="zip code">
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <div class="col-sms-6 col-sm-6">
+                    <label>Time zone</label>
+                    <input type="text" name="timezone" disabled ng-model="editProfileMdl.user.timezone" required class="input-text full-width" placeholder="zip code">
+                </div>
+            </div>
+
+
+
             <hr>
 
 
 
             <div class="from-group">
-                <button type="submit" ui-sref="main.account.profile.view" class="btn-medium col-sms-6 col-sm-4">UPDATE</button>
+                <button type="submit"  ng-click="updateProfile()" class="btn-medium col-sms-6 col-sm-4">UPDATE</button>
                 <button ui-sref="main.account.profile.view" class="btn-medium btn-default col-sms-6 col-sm-4">CANCEL</button>
             </div>
 
