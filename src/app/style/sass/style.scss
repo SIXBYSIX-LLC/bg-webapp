@@ -2100,7 +2100,10 @@ ol {  }
   .topnav { 
     height: 30px; background: $skin-bg-color; width: 100%;
     ul.quick-menu > li { 
-      float: left; margin-left: 20px; 
+      float: left; margin-left: 20px; padding-left:10px; padding-right:10px;
+      &:hover {
+       background-color: $light-blue-color;
+      }
       &:first-child { margin-left: 0; }
       > a { color: #fff; line-height: 30px; display: block; font-size: 1em; text-transform: uppercase; }
     }
@@ -4998,6 +5001,15 @@ button.ui-button::-moz-focus-inner { border: 0; padding: 0; }
   .price {
     margin-bottom: 0px !important;
     line-height: 1.15em !important;
+  }
+}
+.cart-count {
+  span {
+    font-size: 1.8em;
+    position: absolute;
+    margin-top: 13px;
+    margin-left: -29px;
+    color: $light-blue-color;
   }
 }
 /* custom style ends*/

@@ -5,15 +5,30 @@
                 <nav id="main-menu" role="navigation">
                     <ul class="menu">
                         <li class="menu-item-has-children">
-                            <a ui-sref="home">Home</a>
+                            <a>Need Help?</a>
                         </li>
                     </ul>
                 </nav>
                 <ul class="quick-menu pull-right clearfix">
                     <li>
-                        <a class="pointerhover" ui-sref="main.cart">CART(3 items)</a>
+                        <a ng-click="accountClick()" class="soap-popupbox pointerhover">Login</a>
                     </li>
-                    <li><a ng-click="accountClick()" class="soap-popupbox">ACCOUNT</a></li>
+                    <li>
+                        <a ng-click="accountClick()" class="soap-popupbox pointerhover">Register</a>
+                    </li>
+                    <li></li>
+                    <li class="ribbon currency">
+                        <a ng-click="accountClick()" class="soap-popupbox">ACCOUNT</a>
+                        <ul class="menu mini">
+                            <li><a href="#" title="dashboard">Dashboard</a></li>
+                            <li><a href="#" title="profile-settings">Profile Settings</a></li>
+                            <li><a href="#" title="signout">Signout</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="pointerhover cart-count" ui-sref="main.cart"><i class="soap-icon-shopping" style="font-size: 6em;"></i><span>3</span></a>
+                    </li>
+
 
                 </ul>
             </div>
@@ -156,6 +171,7 @@
                         </ul>
                     </div>
                 </div>
+
             </div>
         </div>
         <div class="bottom gray-area">
