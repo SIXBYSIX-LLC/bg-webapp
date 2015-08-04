@@ -12,10 +12,10 @@
             <input type="password" name="password" ng-model="loginMdl.data.password" required class="input-text full-width" placeholder="password">
         </div>
         <div class="form-group">
-            <a class="forgot-password pull-right">Forgot password?</a>
+            <a class="forgot-password pull-right pointerhover">Forgot password?</a>
             <div class="checkbox checkbox-inline">
                 <label>
-                    <input type="checkbox"> Remember me
+                    <input type="checkbox">Remember me
                 </label>
             </div>
         </div>
@@ -23,5 +23,5 @@
         <button process-indicator type="submit" class="full-width btn-medium" ng-click="loginMdl.login()">Login</button>
     </form>
     <div class="seperator"></div>
-    <p>Don't have an account? <a class="goto-signup soap-popupbox" ng-click="loginMdl.signUp()">Sign up</a></p>
+    <p>Don't have an account? <a class="goto-signup soap-popupbox pointerhover" ng-click="loginMdl.signUp()">Sign up</a></p>
 </div>
