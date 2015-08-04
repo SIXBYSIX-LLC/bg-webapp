@@ -1,6 +1,6 @@
 angular.module('BG').controller('SearchCtrl',
   /** @ngInject */
-    function ($scope, SearchService, $stateParams, $timeout) {
+    function ($scope, SearchService, $stateParams, $timeout,$rootScope) {
 
     var waitingForUpdate=false;
     var waitingForResponse=false;
@@ -48,7 +48,9 @@ angular.module('BG').controller('SearchCtrl',
         };
         search=SearchService.search(conf);
         searchMdl.working=true;
+        $rootScope.$broadcast("PI:SearchProcess",true);
         search.next().then(function (response) {
+          $rootScope.$broadcast("PI:SearchProcess",false);
           searchMdl.working=false;
           searchMdl.products=response.data.data;
           searchMdl.resultCount=response.data.meta.count;

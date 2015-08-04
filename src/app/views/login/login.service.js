@@ -5,6 +5,9 @@ angular.module('BG').factory('LoginService',
     return {
       login:function(data){
         return $http.post(API.baseURL+"login",data);
+      },
+      logout:function(){
+        return $http.get(API.baseURL+"logout");
       }
     }
   }

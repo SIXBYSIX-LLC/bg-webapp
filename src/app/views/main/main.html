@@ -10,19 +10,19 @@
                     </ul>
                 </nav>
                 <ul class="quick-menu pull-right clearfix">
-                    <li>
-                        <a ng-click="accountClick()" class="soap-popupbox pointerhover">Login</a>
+                    <li ng-if="!isLoggedIn()">
+                        <a ng-click="openLogin()" class="soap-popupbox pointerhover">Login</a>
                     </li>
-                    <li>
-                        <a ng-click="accountClick()" class="soap-popupbox pointerhover">Register</a>
+                    <li ng-if="!isLoggedIn()">
+                        <a ng-click="openSignUp()" class="soap-popupbox pointerhover">Register</a>
                     </li>
                     <li></li>
-                    <li class="ribbon currency">
+                    <li ng-if="isLoggedIn()" class="ribbon currency">
                         <a ng-click="accountClick()" class="soap-popupbox pointerhover">ACCOUNT</a>
                         <ul class="menu mini">
-                            <li><a href="#" title="dashboard">Dashboard</a></li>
-                            <li><a href="#" title="profile-settings">Profile Settings</a></li>
-                            <li><a href="#" title="signout">Signout</a></li>
+                            <li><a ui-sref="main.account.dashboard" title="dashboard">Dashboard</a></li>
+                            <li><a ui-sref="main.account.profile.view" title="profile-settings">Profile Settings</a></li>
+                            <li><a ng-click="logout()" title="signout">Signout</a></li>
                         </ul>
                     </li>
                     <li>
@@ -83,7 +83,7 @@
 
                         </div>
                         <div class="col-xs-3">
-                            <button type="submit" ng-click="mainMdl.search()" class="btn-medium uppercase full-width">search</button>
+                            <button type="submit" process-indicator="PI:SearchProcess" ng-click="mainMdl.search()" class="btn-medium uppercase full-width">search</button>
                         </div>
                     </div>
                 </form>

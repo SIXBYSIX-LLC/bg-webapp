@@ -6,10 +6,22 @@
     .run(runBlock);
 
   /** @ngInject */
-  function runBlock($log,$translate,$rootScope,Dialog,$animate,$state) {
+  function runBlock($log,$translate,$rootScope,Dialog,$animate,$state,LoginService) {
     //$animate.enabled(false);
     $translate.use("en");
     $rootScope.rmodel = {};
+
+    $rootScope.$on('$stateChangeStart',
+      function(event, toState, toParams, fromState, fromParams){
+        if(toState && toState.name){
+          if(toState.name.indexOf("main.account")==0){
+            if(!$rootScope.isLoggedIn()){
+              event.preventDefault();
+              $state.go("home")
+            }
+          }
+        }
+      });
 
     $rootScope.openSignUp = function(){
       return Dialog.open({
@@ -31,6 +43,8 @@
 
     $rootScope.logout = function(){
       localStorage.removeItem("user");
+      LoginService.logout();
+      $state.go("home")
     };
 
     $rootScope.isLoggedIn=function(){

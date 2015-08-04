@@ -19,7 +19,8 @@
                 </label>
             </div>
         </div>
-        <button type="submit" class="full-width btn-medium" ng-click="loginMdl.login()">Login</button>
+        <div class="error">{{loginMdl.errorMessage}}</div>
+        <button process-indicator type="submit" class="full-width btn-medium" ng-click="loginMdl.login()">Login</button>
     </form>
     <div class="seperator"></div>
     <p>Don't have an account? <a class="goto-signup soap-popupbox" ng-click="loginMdl.signUp()">Sign up</a></p>
