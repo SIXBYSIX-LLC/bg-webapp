@@ -98,8 +98,8 @@
             <li class="clearer visible-sms"></li>
             <li class="sort-by-rating"><a class="sort-by-container"><span>rating</span></a>
             </li>
-            <li class="sort-by-popularity"><a class="sort-by-container"><span>popularity</span></a>
-            </li>
+            <!--<li class="sort-by-popularity"><a class="sort-by-container"><span>popularity</span></a>
+            </li>-->
         </ul>
 
         <ul class="swap-tiles clearfix block-sm">
@@ -170,10 +170,11 @@
                                  title="4 stars"><span style="width: 80%;" class="five-stars"></span></div>
                             <span class="review">170 reviews</span>
                         </div>
-                        <span class="price"><small>Daily</small>${{pro.daily_price| number : 0}}</span>
-                        <span class="price"><small>Weekly</small>${{pro.weekly_price | number : 0}}</span>
-                        <span class="price"><small>Monthly</small>${{pro.monthly_price | number : 0}}</span>
-
+                        <div class="grid-price-panel">
+                            <span class="price"><small>Daily</small>${{pro.daily_price| number : 0}}</span>
+                            <span class="price"><small>Weekly</small>${{pro.weekly_price | number : 0}}</span>
+                            <span class="price"><small>Monthly</small>${{pro.monthly_price | number : 0}}</span>
+                        </div>
                         <div class="action">
                             <a class="button btn-small" ui-sref="main.equiDetails({id:pro.id})">RESERVE</a>
                             <a class="button btn-small yellow popup-map"  ui-sref="main.equiDetails({id:pro.id})">VIEW
