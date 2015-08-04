@@ -9,8 +9,25 @@
             </ul>
         </nav>
         <ul class="quick-menu pull-right clearfix">
+            <li ng-if="!isLoggedIn()">
+                <a ng-click="openLogin()" class="soap-popupbox pointerhover">Login</a>
+            </li>
+            <li ng-if="!isLoggedIn()">
+                <a ng-click="openSignUp()" class="soap-popupbox pointerhover">Register</a>
+            </li>
+            <li></li>
+            <li ng-if="isLoggedIn()" class="ribbon currency">
+                <a ng-click="accountClick()" class="soap-popupbox pointerhover">ACCOUNT</a>
+                <ul class="menu mini">
+                    <li><a ui-sref="main.account.dashboard" title="dashboard">Dashboard</a></li>
+                    <li><a ui-sref="main.account.profile.view" title="profile-settings">Profile Settings</a></li>
+                    <li><a ng-click="logout()" title="signout">Signout</a></li>
+                </ul>
+            </li>
+            <li ng-if="isLoggedIn()">
+                <a class="pointerhover cart-count" ui-sref="main.cart"><i class="soap-icon-shopping" style="font-size: 6em;"></i><span>3</span></a>
+            </li>
 
-            <li><a  class="soap-popupbox" ng-click="accountClick()">ACCOUNT</a></li>
 
         </ul>
     </div>

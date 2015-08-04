@@ -1,6 +1,6 @@
-<div class="add-equipment">
+<div class="add-equipment" load-indicator>
     <form validate-form name="mdl.form" novalidate ng-submit="updateProfile()" class="edit-profile-form">
-        <h2>Add New Jobsite</h2>
+        <h2>{{editMode ? 'Edit Jobsite' :'Add New Jobsite'}}</h2>
         <div class="col-sm-9 no-padding no-float">
             <div class="row form-group">
                 <div class="col-sms-6 col-sm-6">

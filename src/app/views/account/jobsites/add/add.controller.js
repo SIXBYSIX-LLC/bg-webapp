@@ -1,6 +1,6 @@
 angular.module('BG').controller('AddJobsiteCtrl',
   /** @ngInject */
-    function ($scope, $state, $stateParams, JobsitesService, SystemService) {
+    function ($scope, $state, $timeout, $stateParams, JobsitesService, SystemService) {
     var mdl = $scope.mdl = {};
     mdl.data = {
       kind: "job_site"
@@ -18,7 +18,11 @@ angular.module('BG').controller('AddJobsiteCtrl',
     mdl.cities = [];
 
     if ($scope.editMode) {
+      $timeout(function(){
+        $scope.$broadcast("LI:Loading",true);
+      });
       JobsitesService.getSite($scope.user.id, $stateParams.id).then(function (response) {
+        $scope.$broadcast("LI:Loading",false);
         var data = mdl.data = response.data.data;
         data.country = ""+data.country.id;
         data.state = ""+data.state.id;

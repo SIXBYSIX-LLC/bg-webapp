@@ -23,6 +23,9 @@
           }
           if($rootScope.user){
             config.headers.AUTHORIZATION='Token '+$rootScope.user.token;
+          }else{
+            //TODO:remove this is production mode
+            config.headers.AUTHORIZATION='Token 09761fba3677fe0edbd211efb79c1af882b88e48';
           }
 
           return config;
