@@ -340,7 +340,7 @@ button, a.button {
   }
   &.red { background: #e44049; }
   &.light-brown { background: #e6c687; }
-  &.orange { background: #ff6000; }
+  &.orange { background: #E37F1F; }
   &.dull-blue { background: #12a0c3; }
   &.light-orange { background: #f5a77d; }
   &.light-purple { background: #db8df6; }
@@ -1785,6 +1785,7 @@ ol {  }
 
 /* 2.17. Post ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 .border-box { border: 15px solid #f5f5f5; }
+#tour-details .border-box {border: 2px solid #f5f5f5; }
 .post {
   position: relative;
   figure img { width: 100%; height: auto; }
@@ -3753,7 +3754,7 @@ ul.search-tabs {
   .tour-google-map { height: 250px; }
 
   .intro2 {
-    width: 100%; padding: 20px 10px;
+    width: 100%; padding: 4px;
     .table-cell { /*padding: 10px 20px; */}
     .image-container { width: 150px; padding-right: 10px; }
     .description {
@@ -5018,5 +5019,8 @@ button.ui-button::-moz-focus-inner { border: 0; padding: 0; }
   .price {
     height: 60px;
   }
+}
+.cart-total {
+  border: 15px solid #3E3E3E;
 }
 /* custom style ends*/
