@@ -5,17 +5,17 @@
             <h4>{{item.product.name}}</h4>
         </div>
         <div class="description">
-            <select ng-model="item.qty" ng-options="qty for qty in mdl.qtys" class="form-control white-bg">
+            <select ng-change="update(item)" ng-model="item.qty" ng-options="qty for qty in mdl.qtys" class="form-control white-bg">
                 <option value="">Select</option>
             </select>
-            <select ng-model="item.shipping_kind" ng-options="key as value for (key,value) in mdl.shippingKinds" class="form-control white-bg">
+            <select ng-change="update(item)" ng-model="item.shipping_kind" ng-options="key as value for (key,value) in mdl.shippingKinds" class="form-control white-bg">
                 <option value="">Order Type</option>
             </select>
         </div>
         <br />
-        <div class="checkbox make-postpaid">
+        <div class="checkbox make-postpaid checked">
             <label>
-                <input ng-model="item.is_postpaid" type="checkbox">Make this Postpaid
+                <input ng-model="item.is_postpaid" disabled type="checkbox">Postpaid
             </label>
         </div>
 
@@ -33,9 +33,6 @@
                 <small>{{item.cost_breakup.subtotal.num_days}} Days on Rent</small>
                 <div class="price-per-unit">${{item.cost_breakup.subtotal.amt}}</div>
             </div>
-
-            <button  class="button green btn-small uppercase"  ng-click="update(item)">Save</button>
-            <hr/>
             <button class="button green btn-small uppercase" ng-click="remove(item)">Remove</button>
         </div>
     </div>

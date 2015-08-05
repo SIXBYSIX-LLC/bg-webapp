@@ -1,6 +1,7 @@
 angular.module('BG').controller('CartCtrl',
   /** @ngInject */
     function ($scope, CartService) {
+    $scope.mainMdl.title = "Shopping Cart";
     var currentCartId;
     var mdl = $scope.mdl = {};
     function getCart(){
@@ -26,7 +27,13 @@ angular.module('BG').controller('CartCtrl',
     };
 
     $scope.update = function (item) {
-      CartService.updateItem(currentCartId, item.id, item).then(getCart);
+      if(item.qty && item.shipping_kind){
+        var data={
+          qty:item.qty,
+          shipping_kind:item.shipping_kind
+        };
+        CartService.updateItem(currentCartId, item.id, data).then(getCart);
+      }
     }
 
 

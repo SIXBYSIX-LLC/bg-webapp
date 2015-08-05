@@ -1,6 +1,6 @@
 angular.module('BG').controller('EquiDetailsCtrl',
   /** @ngInject */
-    function ($scope, $state, $timeout, $stateParams, EquipmentsService, CartService) {
+    function ($scope, $state, $timeout, $stateParams, EquipmentsService, CartService,Dialog) {
     var mdl = $scope.mdl = {};
     $scope.mainMdl.title = "Equipment Details";
     $scope.addBreadcrumb({title: "Equipment Details"});
@@ -10,7 +10,7 @@ angular.module('BG').controller('EquiDetailsCtrl',
     if ($stateParams.id) {
       $timeout(function(){
         $scope.$broadcast("LI:Loading",true);
-      },10)
+      },5);
       EquipmentsService.getEquipment($stateParams.id).then(function (response) {
         $scope.$broadcast("LI:Loading",false);
         mdl.equi = response.data.data;
@@ -32,6 +32,7 @@ angular.module('BG').controller('EquiDetailsCtrl',
         if(resp.data && resp.data.data && resp.data.data.id){
           CartService.addToCart(resp.data.data.id,data).then(function(response){
             $scope.$broadcast('PI:Process',false);
+            Dialog.info("Equipment added to cart")
           })
         }else{
           $scope.$broadcast('PI:Process',false);
