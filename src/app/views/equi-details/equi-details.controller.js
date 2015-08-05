@@ -29,7 +29,8 @@ angular.module('BG').controller('EquiDetailsCtrl',
           date_start: mdl.startDate,
           date_end: mdl.endDate,
           product: mdl.equi.id,
-          shipping_kind: "pickup"
+          shipping_kind: "pickup",
+          is_postpaid:true
         };
         CartService.getCurrent().then(function (resp) {
           if (resp.data && resp.data.data && resp.data.data.id) {

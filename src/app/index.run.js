@@ -12,7 +12,7 @@
     $rootScope.rmodel = {
       message:{
         text:"Sample",
-        show:true,
+        show:false,
         type:'help'
       }
     };

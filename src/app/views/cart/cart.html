@@ -44,18 +44,18 @@
         <br />
         <div class="table-cell">
             <dl class="term-description">
-                <dt>Shipping Cost</dt><dd>${{mdl.data.total.shipping}}</dd>
-                <dt>Service Tax </dt><dd>${{mdl.data.total.sales_tax}}</dd>
+                <dt>Shipping Cost</dt><dd>${{mdl.data.shipping_charge}}</dd>
+                <dt>Service Tax </dt><dd>${{0}}</dd>
 
             </dl>
         </div>
         <div class="price-section table-cell" style="padding: 0; padding-left: 25px;">
-            <div class="price"><div class="price-per-unit">${{mdl.data.total.total}}</div></div>
+            <div class="price"><div class="price-per-unit">${{mdl.data.total}}</div></div>
 
         </div>
     </div>
 
-    <a class="button green btn-large uppercase pull-right">Proceed to Checkout</a>
+    <a class="button green btn-large uppercase pull-right" ui-sref="main.orderConfirmation">Proceed to Checkout</a>
     <a class="button dark-blue1 btn-large uppercase pull-left">Continue Renting Equipments</a>
     <div class="tour-google-map block"></div>
 
