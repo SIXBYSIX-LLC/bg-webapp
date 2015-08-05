@@ -1001,6 +1001,7 @@ ol {  }
       ul.tabs {
         li {
           margin-bottom: 4px;
+          cursor: pointer;
           a { border: none; margin-right: 4px; }
           &.active a {
             margin-right: 0; border-left: 2px solid $yellow-theme-color; position: relative;
