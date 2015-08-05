@@ -8,7 +8,11 @@ angular.module('BG').controller('EquiDetailsCtrl',
       $scope.popBreadcrumb();
     });
     if ($stateParams.id) {
+      $timeout(function(){
+        $scope.$broadcast("LI:Loading",true);
+      },10)
       EquipmentsService.getEquipment($stateParams.id).then(function (response) {
+        $scope.$broadcast("LI:Loading",false);
         mdl.equi = response.data.data;
       });
     }
@@ -17,6 +21,7 @@ angular.module('BG').controller('EquiDetailsCtrl',
     mdl.tab2="description";
 
     $scope.addToCart = function(){
+      $scope.$broadcast('PI:Process',true);
       var data={
         date_start:mdl.startDate,
         date_end:mdl.endDate,
@@ -24,9 +29,14 @@ angular.module('BG').controller('EquiDetailsCtrl',
         shipping_kind:"pickup"
       };
       CartService.getCurrent().then(function(resp){
-        CartService.addToCart(resp.data.data.id,data).then(function(response){
-          console.log("Response");
-        })
+        if(resp.data && resp.data.data && resp.data.data.id){
+          CartService.addToCart(resp.data.data.id,data).then(function(response){
+            $scope.$broadcast('PI:Process',false);
+          })
+        }else{
+          $scope.$broadcast('PI:Process',false);
+        }
+
       });
     };
 

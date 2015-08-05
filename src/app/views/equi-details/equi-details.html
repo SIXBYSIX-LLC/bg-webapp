@@ -1,5 +1,5 @@
 
-<div class="row">
+<div class="row" load-indicator>
 <div class="col-md-9">
 <div id="hotel-main-content" class="tab-container style1">
     <ul class="tabs">
@@ -75,89 +75,7 @@
 </ul>
 <div class="tab-content">
 <div ng-show="mdl.tab2=='description'" ng-class="{'fade in active':mdl.tab2=='description'}" class="tab-pane" >
-    <div class="intro table-wrapper full-width hidden-table-sms">
-        <div class="col-sm-5 col-lg-4 features table-cell">
-            <ul>
-                <li><label>Feature Title</label>feature title</li>
-                <li><label>Feature Title</label>feature title</li>
-                <li><label>Feature Title</label>feature title</li>
-                <li><label>Feature Title</label>feature title</li>
-                <li><label>Feature Title</label>feature title</li>
-                <li><label>Feature Title</label>feature title</li>
-                <li><label>Feature Title</label>feature title</li>
-                <li><label>Feature Title</label>feature title</li>
-            </ul>
-        </div>
-        <div class="col-sm-7 col-lg-8 table-cell testimonials">
-            <div class="testimonial style1">
-                <ul class="slides ">
-                    <li>
-                        <p class="description">Always enjoyed renting top class equipments and have wide range of
-                            equipments always available for all my construction needs. Thanks for great experience.</p>
-
-                        <div class="author clearfix">
-                            <a  ><img src="http://placehold.it/270x270" alt="" width="74" height="74"/></a>
-                            <h5 class="name">Jessica Brown
-                                <small>guest</small>
-                            </h5>
-                        </div>
-                    </li>
-                    <li>
-                        <p class="description">Always enjoyed renting top class equipments and have wide range of
-                            equipments always available for all my construction needs. Thanks for great experience.</p>
-
-                        <div class="author clearfix">
-                            <a  ><img src="http://placehold.it/270x270" alt="" width="74" height="74"/></a>
-                            <h5 class="name">Lisa Kimberly
-                                <small>guest</small>
-                            </h5>
-                        </div>
-                    </li>
-                    <li>
-                        <p class="description">Always enjoyed renting top class equipments and have wide range of
-                            equipments always available for all my construction needs. Thanks for great experience.</p>
-
-                        <div class="author clearfix">
-                            <a  ><img src="http://placehold.it/270x270" alt="" width="74" height="74"/></a>
-                            <h5 class="name">Jessica Brown
-                                <small>guest</small>
-                            </h5>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="long-description">
-        <h2>About Equipment</h2>
-
-        <p>
-            Sed aliquam nunc eget velit imperdiet, in rutrum mauris malesuada. Quisque ullamcorper vulputate nisi, et
-            fringilla ante convallis quis. Nullam vel tellus non elit suscipit volutpat. Integer id felis et nibh rutrum
-            dignissim ut non risus. In tincidunt urna quis sem luctus, sed accumsan magna pellentesque. Donec et iaculis
-            tellus. Vestibulum ut iaculis justo, auctor sodales lectus. Donec et tellus tempus, dignissim maurornare,
-            consequat lacus. Integer dui neque, scelerisque nec sollicitudin sit amet, sodales a erat. Duis vitae
-            condimentum ligula. Integer eu mi nisl. Donec massa dui, commodo id arcu quis, venenatis scelerisque velit.
-            <br/><br/>
-            Praesent eros turpis, commodo vel justo at, pulvinar mollis eros. Mauris aliquet eu quam id ornare. Morbi ac
-            quam enim. Cras vitae nulla condimentum, semper dolor non, faucibus dolor. Vivamus adipiscing eros quis orci
-            fringilla, sed pretium lectus viverra. Pellentesque habitant morbi tristique senectus et netus et malesuada
-            fames ac turpis egestas. Donec nec velit non odio aliquam suscipit. Sed non neque faucibus, condimentum
-            lectus at, accumsan enim. Fusce pretium egestas cursus. Etiam consectetur, orci vel rutrum volutpat, odio
-            odio pretium nisiodo tellus libero et urna. Sed commodo ipsum ligula, id volutpat risus vehicula in.
-            Pellentesque non massa eu nibh posuere bibendum non sed enim. Maecenas lobortis nulla sem, vel egestas dui
-            ullamcorper ac.
-            <br/><br/>
-            Sed scelerisque lectus sit amet faucibus sodales. Proin ut risus tortor. Etiam fermentum tellus auctor,
-            fringilla sapien et, congue quam. In a luctus tortor. Suspendisse eget tempor libero, ut sollicitudin
-            ligula. Nulla vulputate tincidunt est non congue. Class aptent taciti sociosqu ad litora torquent per
-            conubia nostra, per inceptos himenaeos. Phasellus at est imperdiet, dapibus ipsum vel, lacinia nulla.
-            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus id
-            interdum lectus, ut elementum elit. Nullam a molestie magna. Praesent eros turpis, commodo vel justo at,
-            pulvinar mollis eros. Mauris aliquet eu quam id ornare. Morbi ac quam enim. Cras vitae nulla condimentum,
-            semper dolor non, faucibus dolor. Vivamus adipiscing eros quis orci fringilla, sed pretium lectus viverra.
-        </p>
-    </div>
+    {{mdl.equi.description}}
 </div>
 <div ng-show="mdl.tab2=='similar'" ng-class="{'fade in active':mdl.tab2=='similar'}" class="tab-pane" >
 
@@ -852,7 +770,7 @@
                 </form>
             </div>
             <!--<p class="description">{{mdl.equi.description}}</p>-->
-            <a class="button yellow full-width uppercase btn-small" ng-click="addToCart()">Reserve Equipment</a>
+            <a process-indicator class="button yellow full-width uppercase btn-small" ng-click="addToCart()">Reserve Equipment</a>
 
             <p></p>
             <a class="button yellow full-width uppercase btn-small">Add to Favourites</a>
