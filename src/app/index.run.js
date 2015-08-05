@@ -11,7 +11,7 @@
     $translate.use("en");
     $rootScope.rmodel = {
       message:{
-        text:"Sample",
+        text:"Equipment added successfully !",
         show:true,
         type:'help'
       }

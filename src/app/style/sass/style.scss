@@ -175,7 +175,7 @@ section#content {
 .block { margin-bottom: 40px; }
 .large-block { margin-bottom: 70px; }
 article { margin-bottom: 20px; }
-#main { margin-bottom: 40px; margin-top: 25px; }
+#main { margin-bottom: 40px; margin-top: 10px; }
 
 .body-blank { display: table; height: 100%; left: 0; margin: 0; overflow-x: hidden; position: absolute; top: 0; width: 100%; }
 .wrapper-blank { display: table-cell; float: none; vertical-align: middle; width: 100%; }
@@ -5022,5 +5022,18 @@ button.ui-button::-moz-focus-inner { border: 0; padding: 0; }
 }
 .cart-total {
   border: 15px solid #3E3E3E;
+}
+.alert {
+  margin: 10px 0px !important;
+  color: #3E3E3E !important;
+}
+.alert:before {
+  border: 1px solid #3E3E3E !important;
+}
+.alert .close, .info-box .close {
+  color: #3E3E3E !important;
+  font-size: 16px;
+  top: 14px;
+  right: 11px;
 }
 /* custom style ends*/

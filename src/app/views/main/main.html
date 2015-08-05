@@ -105,7 +105,7 @@
     </div>
     <section id="content" class="gray-area">
         <div class="container">
-            <div ng-show="rmodel.message.show" class="alert alert-{{rmodel.message.type || 'help'}}" style="z-index: 4000">
+            <div ng-show="rmodel.message.show" class="alert alert-success">
                 {{rmodel.message.text}}
                 <span class="close" ng-click="rmodel.message.show=false"></span>
             </div>
