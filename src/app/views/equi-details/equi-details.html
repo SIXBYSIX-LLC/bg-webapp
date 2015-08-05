@@ -747,11 +747,11 @@
                 <span class="review pull-right">270 reviews</span>
             </div>
             <div class="panel-content">
-                <form name="reserveForm">
+                <form validate-form="mdl.reserveForm" name="mdl.reserveForm">
                     <div class="form-group">
                         <label>From</label>
                         <div class="datepicker-wrap" ng-click="mdl.open($event,'Start')">
-                            <input type="text" class="input-text  full-width" datepicker-popup="{{dateFormat}}" ng-model="mdl.startDate"
+                            <input name="startDate" required type="text" class="input-text  full-width" datepicker-popup="{{dateFormat}}" ng-model="mdl.startDate"
                                    is-open="mdl.openedStart" min-date="mdl.minDate" datepicker-options="mdl.dateOptions"
                                    ng-focus="mdl.open($event,'Start')"
                                    close-text="Close"/>
@@ -761,7 +761,7 @@
                     <div class="form-group">
                         <label>To</label>
                         <div class="datepicker-wrap" ng-click="mdl.open($event,'End')">
-                            <input type="text" class="input-text  full-width" datepicker-popup="{{dateFormat}}" ng-model="mdl.endDate"
+                            <input name="endDate" required type="text" class="input-text  full-width" datepicker-popup="{{dateFormat}}" ng-model="mdl.endDate"
                                    is-open="mdl.openedEnd" min-date="mdl.minDate" datepicker-options="mdl.dateOptions"
                                    ng-focus="mdl.open($event,'End')"
                                    close-text="Close"/>

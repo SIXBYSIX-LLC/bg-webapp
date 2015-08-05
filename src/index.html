@@ -9,6 +9,7 @@
 
 
 
+
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
     <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
@@ -28,6 +29,10 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     <div id="page-wrapper">
+        <div ng-show="rmodel.message.show" class="alert alert-{{rmodel.message.type || 'help'}}" style="z-index: 4000">
+            {{rmodel.message.text}}
+            <span class="close" ng-click="rmodel.message.show=false"></span>
+        </div>
     <div ui-view></div>
     </div>
 

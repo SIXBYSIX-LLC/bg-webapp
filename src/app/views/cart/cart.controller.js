@@ -1,11 +1,15 @@
 angular.module('BG').controller('CartCtrl',
   /** @ngInject */
-    function ($scope, CartService) {
+    function ($scope, CartService, $timeout) {
     $scope.mainMdl.title = "Shopping Cart";
     var currentCartId;
     var mdl = $scope.mdl = {};
     function getCart(){
+      $timeout(function(){
+        $scope.$broadcast("LI:Loading",true);
+      });
       CartService.getCurrent().then(function (response) {
+        $scope.$broadcast("LI:Loading",false);
         if (response && response.data && response.data.data) {
           currentCartId = response.data.data.id;
           mdl.data = response.data.data;
@@ -23,7 +27,11 @@ angular.module('BG').controller('CartCtrl',
     };
 
     $scope.remove = function (item) {
-      CartService.removeItem(currentCartId, item.id).then(getCart)
+      $scope.$broadcast("PI:RemoveItem"+item.id,true);
+      CartService.removeItem(currentCartId, item.id).then(function(){
+        $scope.$broadcast("PI:RemoveItem"+item.id,false);
+        getCart();
+      })
     };
 
     $scope.update = function (item) {

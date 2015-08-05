@@ -6,11 +6,23 @@
     .run(runBlock);
 
   /** @ngInject */
-  function runBlock($log,$translate,$rootScope,Dialog,$animate,$state,LoginService) {
+  function runBlock($log,$translate,$rootScope,Dialog,$animate,$state,LoginService,CartService) {
     //$animate.enabled(false);
     $translate.use("en");
-    $rootScope.rmodel = {};
+    $rootScope.rmodel = {
+      message:{
+        text:"Sample",
+        show:true,
+        type:'help'
+      }
+    };
 
+    $rootScope.$on("BG:System:TopMessage",function(event,data){
+      var rm=$rootScope.rmodel.message;
+      rm.text=data.text;
+      rm.type=data.type || help;
+      rm.show=true;
+    });
     $rootScope.$on('$stateChangeStart',
       function(event, toState, toParams, fromState, fromParams){
         if(toState && toState.name){
@@ -31,6 +43,8 @@
         size:'sm'
       })
     };
+
+
 
     $rootScope.openLogin = function(){
       return Dialog.open({
@@ -68,9 +82,20 @@
       }
     };
 
+
+    $rootScope.$on("BG:System:UserLoggedIn",function(){
+
+    });
+    $rootScope.$on("BG:System:CartCount",function(event,value){
+      $rootScope.rmodel.cartCount=value;
+    });
+
     if(localStorage.user){
       try{
-        $rootScope.user=JSON.parse(localStorage.user)
+        $rootScope.user=JSON.parse(localStorage.user);
+        CartService.getCurrent().then(function(response){
+
+        });
       }catch(e){}
     }
 

@@ -1,4 +1,4 @@
-<div id="tour-details" class="travelo-box" xmlns="http://www.w3.org/1999/html">
+<div id="tour-details" class="travelo-box" load-indicator>
     <div ng-repeat="item in mdl.data.rental_products" class="intro2 small-box border-box table-wrapper hidden-table-sms">
         <div class="image-container table-cell"><img src="http://placehold.it/166x150" alt=""></div>
         <div class="description">
@@ -33,7 +33,7 @@
                 <small>{{item.cost_breakup.subtotal.num_days}} Days on Rent</small>
                 <div class="price-per-unit">${{item.cost_breakup.subtotal.amt}}</div>
             </div>
-            <button class="button green btn-small uppercase" ng-click="remove(item)">Remove</button>
+            <button process-indicator="{{'PI:RemoveItem'+item.id}}" class="button green btn-small uppercase" ng-click="remove(item)">Remove</button>
         </div>
     </div>
     <div class="intro2 small-box border-box table-wrapper hidden-table-sms cart-total">
