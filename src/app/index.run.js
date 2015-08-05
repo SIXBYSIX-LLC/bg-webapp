@@ -41,6 +41,15 @@
       })
     };
 
+    $rootScope.openForgotPassword = function(){
+      return Dialog.open({
+        animation:false,
+        templateUrl: 'app/views/forgot-password/forgot-password.html',
+        controller:'ForgotPasswordCtrl',
+        size:'sm'
+      })
+    };
+
     $rootScope.logout = function(){
       localStorage.removeItem("user");
       LoginService.logout();

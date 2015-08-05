@@ -61,6 +61,7 @@ angular.module('BG').directive("validateForm",
               if(obj[key] && !currentErrors[key]) {
                 hasError = true;
                 var transKey=name + "_" + key;
+                console.log("K",transKey);
                 var message=$translate.instant(transKey);
                 if(message==transKey && defaults.hasOwnProperty(key)){
                   message=defaults[key];

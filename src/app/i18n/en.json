@@ -1,4 +1,9 @@
 {
   "username_required":"Username is required",
-  "password_required":"Password is required"
+  "name_required":"Name is required",
+  "password_required":"Password is required",
+  "email_required":"Email is required",
+  "phone_required":"Phone is required",
+  "zipcode_required":"Zipcode is required",
+  "confirmPassword_required":"Confirm password is required"
 }

@@ -4,13 +4,13 @@
         <a class="button login-googleplus"><i class="soap-icon-googleplus"></i>Login with Google+</a>
     </div>
     <div class="seperator"><label>OR</label></div>
-    <div ng-init="emailSignUp=0" class="simple-signup">
+    <div class="simple-signup">
         <div class="text-center signup-email-section">
-            <a ng-click="emailSignUp=1" class="signup-email pointerhover"><i class="soap-icon-letter"></i>Sign up with Email</a>
+            <a ng-click="signUpMdl.emailSignUp=!signUpMdl.emailSignUp" class="signup-email pointerhover"><i class="soap-icon-letter"></i>Sign up with Email</a>
         </div>
         <p class="description">By signing up, I agree to Marketplace Terms of Service &amp; Privacy Policy.</p>
     </div>
-    <div ng-show="emailSignUp" class="email-signup">
+    <div ng-show="signUpMdl.emailSignUp" style="display: block;" class="email-signup">
         <form validate-form name="signUpMdl.form" novalidate="">
             <div class="form-group">
                 <input name="name" ng-model="signUpMdl.data.fullname" type="text" required class="input-text full-width" placeholder="first and last name">
@@ -36,9 +36,9 @@
 
 
             <div class="form-group">
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox"> Tell me about Marketplace news
+                <div class="checkbox" ng-click="signUpMdl.tellAboutMarketPlace=!signUpMdl.tellAboutMarketPlace" ng-class="{'checked':signUpMdl.tellAboutMarketPlace}">
+                    <label >
+                        <input  type="checkbox"> Tell me about Marketplace news
                     </label>
                 </div>
             </div>
@@ -46,7 +46,7 @@
                 <p class="description">By signing up, I agree to Marketplace Terms of Service &amp; Privacy Policy.</p>
             </div>
             <div class="error">{{signUpMdl.errorMessage}}</div>
-            <button type="submit" class="full-width btn-medium" ng-click="signUpMdl.signUp()">SIGNUP</button>
+            <button type="submit" process-indicator class="full-width btn-medium" ng-click="signUpMdl.signUp()">SIGNUP</button>
         </form>
     </div>
     <div class="seperator"></div>

@@ -27,6 +27,10 @@ angular.module('BG').controller('LoginCtrl',
       $modalInstance.close();
       $scope.openSignUp();
     };
+    loginMdl.forgotPassword=function(){
+      $modalInstance.close();
+      $scope.openForgotPassword();
+    };
     loginMdl.data ={};
   }
 );

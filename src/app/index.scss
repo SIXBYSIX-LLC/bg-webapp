@@ -40,6 +40,30 @@ $icon-font-path: "../../bower_components/bootstrap-sass-official/assets/fonts/bo
   color:red;
 }
 
+.loading *{
+  display: none !important;
+}
+.loading::before{
+  font-family: 'Glyphicons Halflings';
+  content: "\e031";
+  font-style: normal;
+  font-weight: normal;
+  margin-left: 50%;
+  font-size:20px;
+  line-height: 1;
+  color: #ffa61b;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -animation: spin .7s infinite linear;
+  -webkit-animation: spin2 .7s infinite linear;
+}
+button span.glyphicon-refresh-animate{
+  display: none;
+}
+button.process span.glyphicon-refresh-animate{
+  display:inline;
+}
+
 .glyphicon-refresh-animate {
   -animation: spin .7s infinite linear;
   -webkit-animation: spin2 .7s infinite linear;
