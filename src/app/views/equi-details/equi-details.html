@@ -8,7 +8,7 @@
         <li ng-class="{'active':mdl.tab1=='calendar'}"><a ng-click="mdl.tab1='calendar'">Availability Calendar</a></li>
         <li class="pull-right"><a class="button btn-small yellow-bg white-color">Download Brochure</a></li>
     </ul>
-    <div class="tab-content" style="height: 500px;">
+    <div class="tab-content">
         <div ng-show="mdl.tab1=='photos'" ng-class="{'fade in active':mdl.tab1=='photos'}" class="tab-pane">
             <carousel ng-init="interval=2000" class="photo-gallery style1" interval="interval">
                     <slide ng-repeat="img in mdl.equi.images">
@@ -75,59 +75,7 @@
 </ul>
 <div class="tab-content">
 <div ng-show="mdl.tab2=='description'" ng-class="{'fade in active':mdl.tab2=='description'}" class="tab-pane" >
-    <div class="intro table-wrapper full-width hidden-table-sms">
-        <div class="col-sm-5 col-lg-4 features table-cell">
-            <ul>
-                <li><label>Feature Title</label>feature title</li>
-                <li><label>Feature Title</label>feature title</li>
-                <li><label>Feature Title</label>feature title</li>
-                <li><label>Feature Title</label>feature title</li>
-                <li><label>Feature Title</label>feature title</li>
-                <li><label>Feature Title</label>feature title</li>
-                <li><label>Feature Title</label>feature title</li>
-                <li><label>Feature Title</label>feature title</li>
-            </ul>
-        </div>
-        <div class="col-sm-7 col-lg-8 table-cell testimonials">
-            <div class="testimonial style1">
-                <ul class="slides ">
-                    <li>
-                        <p class="description">Always enjoyed renting top class equipments and have wide range of
-                            equipments always available for all my construction needs. Thanks for great experience.</p>
 
-                        <div class="author clearfix">
-                            <a  ><img src="http://placehold.it/270x270" alt="" width="74" height="74"/></a>
-                            <h5 class="name">Jessica Brown
-                                <small>guest</small>
-                            </h5>
-                        </div>
-                    </li>
-                    <li>
-                        <p class="description">Always enjoyed renting top class equipments and have wide range of
-                            equipments always available for all my construction needs. Thanks for great experience.</p>
-
-                        <div class="author clearfix">
-                            <a  ><img src="http://placehold.it/270x270" alt="" width="74" height="74"/></a>
-                            <h5 class="name">Lisa Kimberly
-                                <small>guest</small>
-                            </h5>
-                        </div>
-                    </li>
-                    <li>
-                        <p class="description">Always enjoyed renting top class equipments and have wide range of
-                            equipments always available for all my construction needs. Thanks for great experience.</p>
-
-                        <div class="author clearfix">
-                            <a  ><img src="http://placehold.it/270x270" alt="" width="74" height="74"/></a>
-                            <h5 class="name">Jessica Brown
-                                <small>guest</small>
-                            </h5>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
     <div class="long-description">
         <h2>About Equipment</h2>
 

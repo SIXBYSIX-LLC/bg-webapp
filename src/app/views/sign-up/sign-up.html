@@ -8,7 +8,6 @@
         <div class="text-center signup-email-section">
             <a ng-click="signUpMdl.emailSignUp=!signUpMdl.emailSignUp" class="signup-email pointerhover"><i class="soap-icon-letter"></i>Sign up with Email</a>
         </div>
-        <p class="description">By signing up, I agree to Marketplace Terms of Service &amp; Privacy Policy.</p>
     </div>
     <div ng-show="signUpMdl.emailSignUp" style="display: block;" class="email-signup">
         <form validate-form name="signUpMdl.form" novalidate="">
@@ -46,9 +45,9 @@
                 <p class="description">By signing up, I agree to Marketplace Terms of Service &amp; Privacy Policy.</p>
             </div>
             <div class="error">{{signUpMdl.errorMessage}}</div>
-            <button type="submit" process-indicator class="full-width btn-medium" ng-click="signUpMdl.signUp()">SIGNUP</button>
+            <button type="submit" process-indicator class="full-width btn-medium" ng-click="signUpMdl.signUp()"> SIGNUP</button>
         </form>
     </div>
     <div class="seperator"></div>
-    <p>Already a Marketplace member? <a class="goto-login soap-popupbox pointerhover" ng-click="signUpMdl.login()">Login</a></p>
+    <p>Already a Marketplace member? <a class="goto-login soap-popupbox pointerhover" ng-click="signUpMdl.login()"> Login</a></p>
 </div>
