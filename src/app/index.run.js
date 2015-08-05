@@ -12,7 +12,7 @@
     $rootScope.rmodel = {
       message:{
         text:"Equipment added successfully !",
-        show:true,
+        show:false,
         type:'help'
       }
     };
