@@ -2,6 +2,10 @@ angular.module('BG').controller('CartCtrl',
   /** @ngInject */
     function ($scope, CartService, $timeout) {
     $scope.mainMdl.title = "Shopping Cart";
+    $scope.addBreadcrumb({title: "Shopping Cart"});
+    $scope.$on("$destroy", function () {
+      $scope.popBreadcrumb();
+    });
     var currentCartId;
     var mdl = $scope.mdl = {};
     function getCart(){

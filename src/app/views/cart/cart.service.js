@@ -16,6 +16,7 @@ angular.module('BG').factory('CartService',
           if(response.data && response.data.data){
             $rootScope.$broadcast("BG:System:CartCount",response.data.data.rental_products.length);
           }
+          return response;
         });
       },
       removeItem:function(cartId,id){

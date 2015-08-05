@@ -6,13 +6,13 @@
     .run(runBlock);
 
   /** @ngInject */
-  function runBlock($log,$translate,$rootScope,Dialog,$animate,$state,LoginService,CartService) {
+  function runBlock($log,$timeout,$translate,$rootScope,Dialog,$animate,$state,LoginService,CartService) {
     //$animate.enabled(false);
     $translate.use("en");
     $rootScope.rmodel = {
       message:{
         text:"Equipment added successfully !",
-        show:true,
+        show:false,
         type:'help'
       }
     };
@@ -22,6 +22,9 @@
       rm.text=data.text;
       rm.type=data.type || help;
       rm.show=true;
+      $timeout(function(){
+        rm.show=false;
+      },data.delay || 3000);
     });
     $rootScope.$on('$stateChangeStart',
       function(event, toState, toParams, fromState, fromParams){
