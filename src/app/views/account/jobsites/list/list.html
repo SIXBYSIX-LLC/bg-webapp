@@ -18,19 +18,19 @@
 </div>-->
 <div class="booking-history">
     <div class="booking-info clearfix" ng-repeat="site in mdl.sites">
-        <div class="date">
+        <!--<div class="date">
             <a class="hover-effect popup-gallery"><img width="72" height="72" alt="" src=""></a>
-        </div>
+        </div>-->
         <h4 class="box-title">
             <i class="icon soap-icon-departure yellow-color circle"></i>{{site.name}}
             <small>{{site.city.name}},{{site.state.name}},{{site.country.name}}</small>
         </h4>
-        <dl class="info">
+        <!--<dl class="info">
             <dt>Used This Jobsite</dt>
             <dd>12 times</dd>
             <dt>Popularity Level</dt>
             <dd>3</dd>
-        </dl>
+        </dl>-->
 
         <button class="btn-mini status" ng-click="delete(site)">Archive</button>
         <button class="btn-mini status" ui-sref="main.account.jobsites.edit({id:site.id})">Edit</button>
