@@ -87,7 +87,8 @@
 
 
     $rootScope.$on("BG:System:UserLoggedIn",function(){
-
+      $rootScope.user=response.data.data;
+      CartService.getCurrent();
     });
     $rootScope.$on("BG:System:CartCount",function(event,value){
       $rootScope.rmodel.cartCount=value;
@@ -96,9 +97,7 @@
     if(localStorage.user){
       try{
         $rootScope.user=JSON.parse(localStorage.user);
-        CartService.getCurrent().then(function(response){
-
-        });
+        CartService.getCurrent();
       }catch(e){}
     }
 

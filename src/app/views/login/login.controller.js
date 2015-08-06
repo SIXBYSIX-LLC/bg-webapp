@@ -15,9 +15,8 @@ angular.module('BG').controller('LoginCtrl',
             loginMdl.errorMessage=response.data.error.detail;
           }else{
             localStorage.user=JSON.stringify(response.data.data);
-            $rootScope.user=response.data.data;
             $modalInstance.close();
-            $state.go("main.account.dashboard");
+            $rootScope.$broadcast("BG:System:UserLoggedIn");
           }
         })
       }
