@@ -148,6 +148,10 @@
         url:'/order-confirmation',
         templateUrl:'app/views/order-confirmation/order-confirmation.html'
       })
+      .state('main.checkoutAddress',{
+        url:'/checkout-address',
+        templateUrl:'app/views/checkout-address/checkout-address.html'
+      })
       .state('main.equiDetails',{
         url:'/equipment/{id}',
         templateUrl:'app/views/equi-details/equi-details.html',
