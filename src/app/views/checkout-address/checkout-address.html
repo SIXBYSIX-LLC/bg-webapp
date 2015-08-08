@@ -3,51 +3,176 @@
 
         <form class="booking-form" method="post" action="booking-handler.php">
             <div class="person-information">
-                <h2>Your Personal Information</h2>
-                <div class="form-group row">
-                    <div class="col-sm-6 col-md-5">
-                        <label>first name</label>
-                        <input type="text" name="first_name" class="input-text full-width" value="" placeholder="" />
+                <h2>Enter Shipping Address</h2>
+                <div class="row form-group">
+                    <div class="col-sms-6 col-sm-6">
+                        <label>First Name</label>
+                        <input type="text" name="firstname" required class="input-text full-width" placeholder="Enter First Name">
                     </div>
-                    <div class="col-sm-6 col-md-5">
-                        <label>last name</label>
-                        <input type="text" name="last_name" class="input-text full-width" value="" placeholder="" />
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <div class="col-sm-6 col-md-5">
-                        <label>email address</label>
-                        <input type="text" name="email_address" class="input-text full-width" value="" placeholder="" />
-                    </div>
-                    <div class="col-sm-6 col-md-5">
-                        <label>Verify E-mail Address</label>
-                        <input type="text" name="r_email_address" class="input-text full-width" value="" placeholder="" />
+                    <div class="col-sms-6 col-sm-6">
+                        <label>Last Name</label>
+                        <input type="text" name="lastname" required class="input-text full-width" placeholder="Enter Last Name">
                     </div>
                 </div>
-                <div class="form-group row">
-                    <div class="col-sm-6 col-md-5">
-                        <label>Country code</label>
+                <div class="row form-group">
+                    <div class="col-sms-6 col-sm-6">
+                        <label>Company Name</label>
+                        <input type="text" name="companyname" required class="input-text full-width" placeholder="Enter Company Name">
+                    </div>
+                    <div class="col-sms-6 col-sm-6">
+                        <label>Phone Number</label>
+                        <input type="text" name="phonenumber" required class="input-text full-width" placeholder="Enter Phone Name">
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-sms-6 col-sm-6">
+                        <label>Jobsite Name</label>
+                        <input type="text" ng-model="mdl.data.name" name="jobsitename" required class="input-text full-width" placeholder="Enter Jobsite Name">
+                    </div>
+                    <div class="col-sms-6 col-sm-6">
+                        <label>Kind</label>
                         <div class="selector">
-                            <select name="country_code" class="full-width">
-                                <option>United Kingdom (+44)</option>
-                                <option>United States (+1)</option>
+                            <select ng-model="mdl.data.kind" name="kind" required ng-options="key as value for (key,value) in mdl.kinds " class="full-width">
                             </select>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-md-5">
-                        <label>Phone number</label>
-                        <input type="text" name="phone_number" class="input-text full-width" value="" placeholder="" />
+                </div>
+                <div class="row form-group">
+                    <div class="col-sms-6 col-sm-6">
+                        <label>Address Line 1</label>
+                        <input type="text" name="address_line_1" ng-model="mdl.data.address1" required class="input-text full-width" placeholder="Address Line 1">
+                    </div>
+                    <div class="col-sms-6 col-sm-6">
+                        <label>Address Line 2</label>
+                        <input type="text" name="address_line_2" ng-model="mdl.data.address2" class="input-text full-width" placeholder="Address Line 2">
                     </div>
                 </div>
+                <div class="row form-group">
+                    <div class="col-sms-6 col-sm-6">
+                        <label>Country</label>
+                        <div class="selector">
+                            <select ng-model="mdl.data.country"  name="country" required class="full-width" ng-options="key as value for (key,value) in mdl.countries">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sms-6 col-sm-6">
+                        <label>State</label>
+                        <div class="selector">
+                            <select ng-model="mdl.data.state" name="state" required class="full-width" ng-options="key as value for (key,value) in mdl.states">
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div class="row form-group">
+                    <div class="col-sms-6 col-sm-6">
+                        <label>City</label>
+                        <div class="selector">
+                            <select ng-model="mdl.data.country"  name="country" required class="full-width" ng-options="key as value for (key,value) in mdl.countries">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sms-6 col-sm-6">
+                        <label>Zip Code</label>
+                        <div class="selector">
+                            <select ng-model="mdl.data.state" name="state" required class="full-width" ng-options="key as value for (key,value) in mdl.states">
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <br /><br />
                 <div class="form-group">
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox" name="is_receive_promotion" value="1"> I want to receive <span class="skin-color">Travelo</span> promotional offers in the future
+                            <input type="checkbox" name="shipping_same_as_billing" value="1"><span class="skin-color">&nbsp; Shipping Address</span> is same as <span class="skin-color">Billing Address</span>
                         </label>
                     </div>
                 </div>
             </div>
             <hr />
+            <div class="person-information">
+                <h2>Enter Billing Address</h2>
+                <div class="row form-group">
+                    <div class="col-sms-6 col-sm-6">
+                        <label>First Name</label>
+                        <input type="text" name="firstname" required class="input-text full-width" placeholder="Enter First Name">
+                    </div>
+                    <div class="col-sms-6 col-sm-6">
+                        <label>Last Name</label>
+                        <input type="text" name="lastname" required class="input-text full-width" placeholder="Enter Last Name">
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-sms-6 col-sm-6">
+                        <label>Company Name</label>
+                        <input type="text" name="companyname" required class="input-text full-width" placeholder="Enter Company Name">
+                    </div>
+                    <div class="col-sms-6 col-sm-6">
+                        <label>Phone Number</label>
+                        <input type="text" name="phonenumber" required class="input-text full-width" placeholder="Enter Phone Name">
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-sms-6 col-sm-6">
+                        <label>Kind</label>
+                        <div class="selector">
+                            <select ng-model="mdl.data.kind" name="kind" required ng-options="key as value for (key,value) in mdl.kinds " class="full-width">
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-sms-6 col-sm-6">
+                        <label>Address Line 1</label>
+                        <input type="text" name="address_line_1" ng-model="mdl.data.address1" required class="input-text full-width" placeholder="Address Line 1">
+                    </div>
+                    <div class="col-sms-6 col-sm-6">
+                        <label>Address Line 2</label>
+                        <input type="text" name="address_line_2" ng-model="mdl.data.address2" class="input-text full-width" placeholder="Address Line 2">
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-sms-6 col-sm-6">
+                        <label>Country</label>
+                        <div class="selector">
+                            <select ng-model="mdl.data.country"  name="country" required class="full-width" ng-options="key as value for (key,value) in mdl.countries">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sms-6 col-sm-6">
+                        <label>State</label>
+                        <div class="selector">
+                            <select ng-model="mdl.data.state" name="state" required class="full-width" ng-options="key as value for (key,value) in mdl.states">
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div class="row form-group">
+                    <div class="col-sms-6 col-sm-6">
+                        <label>City</label>
+                        <div class="selector">
+                            <select ng-model="mdl.data.country"  name="country" required class="full-width" ng-options="key as value for (key,value) in mdl.countries">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sms-6 col-sm-6">
+                        <label>Zip Code</label>
+                        <div class="selector">
+                            <select ng-model="mdl.data.state" name="state" required class="full-width" ng-options="key as value for (key,value) in mdl.states">
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <br /><br />
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="shipping_same_as_billing" value="1"><span class="skin-color">&nbsp; Shipping Address</span> is same as <span class="skin-color">Billing Address</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
             <div class="card-information">
                 <h2>Your Card Information</h2>
                 <div class="form-group row">
