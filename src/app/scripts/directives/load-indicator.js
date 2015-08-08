@@ -7,17 +7,13 @@ angular.module('BG').directive("loadIndicator",
       restrict: "A",
       link: function (scope, elem, attrs) {
 
-
         scope.$on(attrs.loadIndicator || "LI:Loading", function (event, data) {
-          console.log("LI ",data);
           if(data){
             elem.addClass("loading");
           } else{
             elem.removeClass("loading");
           }
         });
-
-
 
       }
     }
