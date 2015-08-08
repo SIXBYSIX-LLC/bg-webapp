@@ -8,7 +8,7 @@ angular.module('BG').factory('JobsitesService',
         return $http.post(API.baseURL+"users/"+id+"/addresses",data);
       },
       updateSite:function(userId,id,data){
-        return $http.patch(API.baseURL+"users/"+id+"/addresses",data);
+        return $http.patch(API.baseURL+"users/"+userId+"/addresses/"+id,data);
       },
       deleteSite:function(userId,id){
         return $http.delete(API.baseURL+"users/"+userId+"/addresses/"+id);
