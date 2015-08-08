@@ -27,6 +27,10 @@
         url:'/bookings',
         templateUrl:'app/views/account/bookings/bookings.html'
       })
+      .state('main.account.invoices',{
+        url:'/invoices',
+        templateUrl:'app/views/account/invoices/invoices.html'
+      })
       .state('main.account.dashboard',{
         url:'/dashboard',
         templateUrl:'app/views/account/dashboard/dashboard.html'
