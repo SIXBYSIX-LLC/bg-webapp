@@ -152,6 +152,10 @@
         url:'/checkout-address',
         templateUrl:'app/views/checkout-address/checkout-address.html'
       })
+      .state('main.cardDetails',{
+        url:'/card-details',
+        templateUrl:'app/views/card-details/card-details.html'
+      })
       .state('main.equiDetails',{
         url:'/equipment/{id}',
         templateUrl:'app/views/equi-details/equi-details.html',
