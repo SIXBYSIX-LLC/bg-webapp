@@ -3813,6 +3813,11 @@ ul.search-tabs {
 }
 .booking-details .tour-detail {
   border-bottom: 1px solid #f5f5f5; margin-bottom: 20px;
+  figure {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-bottom: 1px solid #f5f5f5;
+  }
   .icon-box {
     padding-bottom: 10px; padding-top: 10px;
     border-top: 1px solid #f5f5f5;
