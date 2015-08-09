@@ -188,7 +188,7 @@
     <div class="booking-details travelo-box">
         <h4>Cart Summary</h4>
         <article class="tour-detail">
-            <figure ng-repeat="item in mdl.cartData.rental_products" class="clearfix">
+            <figure ui-sref="main.equiDetails({id:item.product.id})" ng-repeat="item in mdl.cartData.rental_products" class="clearfix">
                 <a title="" class="middle-block">
                     <img ng-src="{{(item.product.image) || 'http://placehold.it/124x78'}}" alt="">
                 </a>
