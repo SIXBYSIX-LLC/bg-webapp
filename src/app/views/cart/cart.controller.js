@@ -1,6 +1,6 @@
 angular.module('BG').controller('CartCtrl',
   /** @ngInject */
-    function ($scope, CartService, $timeout) {
+    function ($scope, CartService, $timeout, $state) {
     $scope.mainMdl.title = "Shopping Cart";
     $scope.addBreadcrumb({title: "Shopping Cart"});
     $scope.$on("$destroy", function () {
@@ -46,7 +46,14 @@ angular.module('BG').controller('CartCtrl',
         };
         CartService.updateItem(currentCartId, item.id, data).then(getCart);
       }
-    }
+    };
+
+    $scope.checkout = function(){
+      $state.go("main.checkoutAddress");
+      //CartService.checkout(currentCartId).then(function(){
+
+      //});
+    };
 
 
   });

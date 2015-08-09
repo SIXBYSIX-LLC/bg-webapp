@@ -11,6 +11,9 @@ angular.module('BG').factory('CartService',
           return response;
         });
       },
+      update:function(cartId,data){
+        return $http.patch(API.baseURL+"carts/"+cartId,data);
+      },
       addToCart:function(cartId,data){
         return $http.post(API.baseURL+"carts/"+cartId+"/rentals",data).then(function(response){
           if(response.data && response.data.data){
@@ -25,6 +28,10 @@ angular.module('BG').factory('CartService',
       },
       updateItem:function(cartId,id,data){
         return $http.patch(API.baseURL+"carts/"+cartId+"/rentals/"+id,data)
+      },
+      checkout:function(cartId){
+        //https://api.marketplace.com/v1/cart/cart_id/actions/checkout
+        return $http.put(API.baseURL+"carts/"+cartId+"/actions/checkout");
       }
     }
   }
