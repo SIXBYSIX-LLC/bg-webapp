@@ -3505,7 +3505,7 @@ ul.search-tabs {
     > .icon { color: $skin-select-color; font-size: 1.5em; float: left; margin-right: 12px; margin-top: 4px; }
     > .message { float: left; }
     .main-message { color: $skin-active-color; margin-bottom: 0; letter-spacing: 0.04em; }
-    .print-button { float: right; button { text-transform: uppercase; } }
+    .print-button { float: right; margin-left:5px; button { text-transform: uppercase; } }
     p { margin-bottom: 0; }
   }
   .view-link { font-size: 1.1667em; }
