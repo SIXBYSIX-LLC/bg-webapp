@@ -24,7 +24,8 @@
       rm.show=true;
       $timeout(function(){
         rm.show=false;
-      },data.delay || 3000);
+      },data.delay || 15000);
+      $rootScope.$broadcast("BG:System:ScrollTop");
     });
     $rootScope.$on('$stateChangeStart',
       function(event, toState, toParams, fromState, fromParams){
