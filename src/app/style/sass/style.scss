@@ -3757,9 +3757,9 @@ ul.search-tabs {
   .intro2 {
     width: 100%; padding: 4px;
     .table-cell { /*padding: 10px 20px; */}
-    .image-container { width: 66px; padding-right: 10px; }
+    .image-container { width: 150px; padding-right: 10px; }
     .description {
-        width: 250px; padding-right: 10px;
+        width: 400px; padding-right: 10px;
         .form-control {width: 30%; margin-right: 2%; float: left;}
     }
     .make-postpaid {
@@ -5051,4 +5051,13 @@ button.ui-button::-moz-focus-inner { border: 0; padding: 0; }
   top: 14px;
   right: 11px;
 }
+.order-details {
+  .intro2 {
+    .image-container { width: 66px; padding-right: 10px; }
+    .description {
+      width: 250px;
+    }
+  }
+}
+
 /* custom style ends*/
