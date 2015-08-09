@@ -9,6 +9,7 @@
     </div>
     <div class="col-sms-6 col-sm-6">
         <button class=" status pull-right add-button" ui-sref="main.account.inventory.add">Add Inventory</button>
+        <button class="btn-mini status pull-right add-button" ui-sref="main.account.jobsites.add" href="#/account/jobsites/add">Add Jobsite</button>
     </div>
 </div>
 <br/>
@@ -16,17 +17,17 @@
 
 <div class="booking-history">
     <div class="booking-info clearfix" ng-repeat="inv in mdl.inventories">
-        <h4 class="box-title">
+        <h4 class="box-title col-md-2">
             <i class="icon soap-icon-card yellow-color circle"></i>{{inv.product.name}}
             <small>ID : {{inv.id}}</small>
         </h4>
-        <h4 class="box-title col-lg-offset-1">
+        <h4 class="box-title col-md-2 col-lg-offset-1">
             <i class="icon yellow-color circle"></i>{{inv.serial_no || "XXX-XXX-XXX"}}
         </h4>
-        <h4 class="box-title col-lg-offset-1">
+        <h4 class="box-title col-md-1 col-lg-offset-1">
             <i class="icon yellow-color circle"></i>{{inv.source}}
         </h4>
-        <h4 class="box-title col-lg-offset-1">
+        <h4 class="box-title col-md-2 col-lg-offset-1">
             <i class="icon yellow-color circle"></i>{{inv.is_active? 'Available' : 'Not Available'}}
         </h4>
 
