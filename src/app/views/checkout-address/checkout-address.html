@@ -1,38 +1,38 @@
 <div class="col-md-9">
     <div class="booking-section travelo-box">
 
-        <form class="booking-form" method="post" action="booking-handler.php">
-            <div class="person-information">
+        <div class="booking-form" >
+            <form validate-form name="mdl.shipping.form"  class="person-information">
                 <h2>Enter Shipping Address</h2>
                 <div class="row form-group">
                     <div class="col-sms-6 col-sm-6">
                         <label>First Name</label>
-                        <input type="text" name="firstname" required class="input-text full-width" placeholder="Enter First Name">
+                        <input ng-model="mdl.shipping.data.first_name" type="text" name="firstname" required class="input-text full-width" placeholder="Enter First Name">
                     </div>
                     <div class="col-sms-6 col-sm-6">
                         <label>Last Name</label>
-                        <input type="text" name="lastname" required class="input-text full-width" placeholder="Enter Last Name">
+                        <input ng-model="mdl.shipping.data.last_name" type="text" name="lastname" required class="input-text full-width" placeholder="Enter Last Name">
                     </div>
                 </div>
                 <div class="row form-group">
                     <div class="col-sms-6 col-sm-6">
                         <label>Company Name</label>
-                        <input type="text" name="companyname" required class="input-text full-width" placeholder="Enter Company Name">
+                        <input ng-model="mdl.shipping.data.company_name" type="text" name="companyname" required class="input-text full-width" placeholder="Enter Company Name">
                     </div>
                     <div class="col-sms-6 col-sm-6">
                         <label>Phone Number</label>
-                        <input type="text" name="phonenumber" required class="input-text full-width" placeholder="Enter Phone Name">
+                        <input ng-model="mdl.shipping.data.phone" type="text" name="phonenumber" required class="input-text full-width" placeholder="Enter Phone Name">
                     </div>
                 </div>
                 <div class="row form-group">
                     <div class="col-sms-6 col-sm-6">
                         <label>Jobsite Name</label>
-                        <input type="text" ng-model="mdl.data.name" name="jobsitename" required class="input-text full-width" placeholder="Enter Jobsite Name">
+                        <input type="text" ng-model="mdl.shipping.data.name" name="jobsitename" required class="input-text full-width" placeholder="Enter Jobsite Name">
                     </div>
                     <div class="col-sms-6 col-sm-6">
                         <label>Kind</label>
                         <div class="selector">
-                            <select ng-model="mdl.data.kind" name="kind" required ng-options="key as value for (key,value) in mdl.kinds " class="full-width">
+                            <select ng-model="mdl.shipping.data.kind" name="kind" required ng-options="key as value for (key,value) in mdl.kinds " class="full-width">
                             </select>
                         </div>
                     </div>
@@ -40,25 +40,25 @@
                 <div class="row form-group">
                     <div class="col-sms-6 col-sm-6">
                         <label>Address Line 1</label>
-                        <input type="text" name="address_line_1" ng-model="mdl.data.address1" required class="input-text full-width" placeholder="Address Line 1">
+                        <input type="text" name="address_line_1" ng-model="mdl.shipping.data.address1" required class="input-text full-width" placeholder="Address Line 1">
                     </div>
                     <div class="col-sms-6 col-sm-6">
                         <label>Address Line 2</label>
-                        <input type="text" name="address_line_2" ng-model="mdl.data.address2" class="input-text full-width" placeholder="Address Line 2">
+                        <input type="text" name="address_line_2" ng-model="mdl.shipping.data.address2" class="input-text full-width" placeholder="Address Line 2">
                     </div>
                 </div>
                 <div class="row form-group">
                     <div class="col-sms-6 col-sm-6">
                         <label>Country</label>
                         <div class="selector">
-                            <select ng-model="mdl.data.country"  name="country" required class="full-width" ng-options="key as value for (key,value) in mdl.countries">
+                            <select ng-model="mdl.shipping.data.country"  name="country" required class="full-width" ng-options="key as value for (key,value) in mdl.countries">
                             </select>
                         </div>
                     </div>
                     <div class="col-sms-6 col-sm-6">
                         <label>State</label>
                         <div class="selector">
-                            <select ng-model="mdl.data.state" name="state" required class="full-width" ng-options="key as value for (key,value) in mdl.states">
+                            <select ng-model="mdl.shipping.data.state" name="state" required class="full-width" ng-options="key as value for (key,value) in mdl.shipping.states">
                             </select>
                         </div>
                     </div>
@@ -68,55 +68,58 @@
                     <div class="col-sms-6 col-sm-6">
                         <label>City</label>
                         <div class="selector">
-                            <select ng-model="mdl.data.country"  name="country" required class="full-width" ng-options="key as value for (key,value) in mdl.countries">
+                            <select ng-model="mdl.shipping.data.city"  name="city" required class="full-width" ng-options="key as value for (key,value) in mdl.shipping.cities">
                             </select>
                         </div>
                     </div>
                     <div class="col-sms-6 col-sm-6">
                         <label>Zip Code</label>
-                        <div class="selector">
-                            <select ng-model="mdl.data.state" name="state" required class="full-width" ng-options="key as value for (key,value) in mdl.states">
-                            </select>
-                        </div>
+                        <input ng-model="mdl.shipping.data.zip_code" type="text" name="zipcode" class="input-text full-width" placeholder="Zipcode">
+
+
                     </div>
                 </div>
                 <br /><br />
                 <div class="form-group">
-                    <div class="checkbox">
-                        <label>
+                    <div class="checkbox" ng-class="{'checked':mdl.sameAsShipping}">
+                        <label ng-click="mdl.sameAsShipping=!mdl.sameAsShipping">
                             <input type="checkbox" name="shipping_same_as_billing" value="1"><span class="skin-color">&nbsp; Shipping Address</span> is same as <span class="skin-color">Billing Address</span>
                         </label>
                     </div>
                 </div>
-            </div>
+            </form>
             <hr />
-            <div class="person-information">
+            <form validate-form name="mdl.billing.form" class="person-information">
                 <h2>Enter Billing Address</h2>
                 <div class="row form-group">
                     <div class="col-sms-6 col-sm-6">
                         <label>First Name</label>
-                        <input type="text" name="firstname" required class="input-text full-width" placeholder="Enter First Name">
+                        <input ng-disabled="mdl.sameAsShipping" ng-model="mdl.billing.data.first_name" type="text" name="firstname" required class="input-text full-width" placeholder="Enter First Name">
                     </div>
                     <div class="col-sms-6 col-sm-6">
                         <label>Last Name</label>
-                        <input type="text" name="lastname" required class="input-text full-width" placeholder="Enter Last Name">
+                        <input ng-disabled="mdl.sameAsShipping" ng-model="mdl.billing.data.last_name" type="text" name="lastname" required class="input-text full-width" placeholder="Enter Last Name">
                     </div>
                 </div>
                 <div class="row form-group">
                     <div class="col-sms-6 col-sm-6">
                         <label>Company Name</label>
-                        <input type="text" name="companyname" required class="input-text full-width" placeholder="Enter Company Name">
+                        <input ng-disabled="mdl.sameAsShipping" ng-model="mdl.billing.data.company_name" type="text" name="companyname" required class="input-text full-width" placeholder="Enter Company Name">
                     </div>
                     <div class="col-sms-6 col-sm-6">
                         <label>Phone Number</label>
-                        <input type="text" name="phonenumber" required class="input-text full-width" placeholder="Enter Phone Name">
+                        <input ng-disabled="mdl.sameAsShipping" ng-model="mdl.billing.data.phone" type="text" name="phonenumber" required class="input-text full-width" placeholder="Enter Phone Name">
                     </div>
                 </div>
                 <div class="row form-group">
                     <div class="col-sms-6 col-sm-6">
+                        <label>Jobsite Name</label>
+                        <input ng-disabled="mdl.sameAsShipping" type="text" ng-model="mdl.billing.data.name" name="jobsitename" required class="input-text full-width" placeholder="Enter Jobsite Name">
+                    </div>
+                    <div class="col-sms-6 col-sm-6">
                         <label>Kind</label>
                         <div class="selector">
-                            <select ng-model="mdl.data.kind" name="kind" required ng-options="key as value for (key,value) in mdl.kinds " class="full-width">
+                            <select ng-disabled="mdl.sameAsShipping" ng-model="mdl.billing.data.kind" name="kind" required ng-options="key as value for (key,value) in mdl.kinds " class="full-width">
                             </select>
                         </div>
                     </div>
@@ -124,25 +127,25 @@
                 <div class="row form-group">
                     <div class="col-sms-6 col-sm-6">
                         <label>Address Line 1</label>
-                        <input type="text" name="address_line_1" ng-model="mdl.data.address1" required class="input-text full-width" placeholder="Address Line 1">
+                        <input ng-disabled="mdl.sameAsShipping"  type="text" name="address_line_1" ng-model="mdl.billing.data.address1" required class="input-text full-width" placeholder="Address Line 1">
                     </div>
                     <div class="col-sms-6 col-sm-6">
                         <label>Address Line 2</label>
-                        <input type="text" name="address_line_2" ng-model="mdl.data.address2" class="input-text full-width" placeholder="Address Line 2">
+                        <input ng-disabled="mdl.sameAsShipping" type="text" name="address_line_2" ng-model="mdl.billing.data.address2" class="input-text full-width" placeholder="Address Line 2">
                     </div>
                 </div>
                 <div class="row form-group">
                     <div class="col-sms-6 col-sm-6">
                         <label>Country</label>
                         <div class="selector">
-                            <select ng-model="mdl.data.country"  name="country" required class="full-width" ng-options="key as value for (key,value) in mdl.countries">
+                            <select ng-disabled="mdl.sameAsShipping"  ng-model="mdl.billing.data.country"  name="country" required class="full-width" ng-options="key as value for (key,value) in mdl.countries">
                             </select>
                         </div>
                     </div>
                     <div class="col-sms-6 col-sm-6">
                         <label>State</label>
                         <div class="selector">
-                            <select ng-model="mdl.data.state" name="state" required class="full-width" ng-options="key as value for (key,value) in mdl.states">
+                            <select ng-disabled="mdl.sameAsShipping" ng-model="mdl.billing.data.state" name="state" required class="full-width" ng-options="key as value for (key,value) in mdl.billing.states">
                             </select>
                         </div>
                     </div>
@@ -152,98 +155,52 @@
                     <div class="col-sms-6 col-sm-6">
                         <label>City</label>
                         <div class="selector">
-                            <select ng-model="mdl.data.country"  name="country" required class="full-width" ng-options="key as value for (key,value) in mdl.countries">
+                            <select ng-disabled="mdl.sameAsShipping" ng-model="mdl.billing.data.city"  name="city" required class="full-width" ng-options="key as value for (key,value) in mdl.billing.cities">
                             </select>
                         </div>
                     </div>
                     <div class="col-sms-6 col-sm-6">
-                        <label>Zip Code</label>
-                        <div class="selector">
-                            <select ng-model="mdl.data.state" name="state" required class="full-width" ng-options="key as value for (key,value) in mdl.states">
-                            </select>
+                        <div class="col-sms-6 col-sm-6">
+                            <label>Zip Code</label>
+                            <input ng-model="mdl.billing.data.zip_code" type="text" name="zipcode" class="input-text full-width" placeholder="Zipcode">
                         </div>
                     </div>
                 </div>
-                <br /><br />
 
-            </div>
+            </form>
             <hr />
             <div class="form-group">
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox"> By continuing, you agree to the <a href="#"><span class="skin-color">Terms and Conditions</span></a>.
+                <div class="checkbox" ng-class="{checked:mdl.termsAccepted}">
+                    <label ng-click="mdl.termsAccepted=!mdl.termsAccepted">
+                        <input type="checkbox"> By continuing, you agree to the <a><span class="skin-color">Terms and Conditions</span></a>.
                     </label>
                 </div>
             </div>
             <div class="form-group row">
                 <div class="col-sm-6 col-md-5">
-                    <button type="submit" class="full-width btn-large" ui-sref="main.cardDetails">Continue with Payment</button>
+                    <button type="submit" ng-click="continueWithPayment()" class="full-width btn-large">Continue with Payment</button>
                 </div>
             </div>
-        </form>
+        </div>
     </div>
 </div>
 <div class="sidebar col-sms-6 col-sm-4 col-md-3">
     <div class="booking-details travelo-box">
         <h4>Cart Summary</h4>
         <article class="tour-detail">
-            <figure class="clearfix">
-                <a title="" href="tour-detailed1.html" class="middle-block"><img class="middle-item" alt="" src="http://placehold.it/124x78"></a>
+            <figure ng-repeat="item in mdl.cartData.rental_products" class="clearfix">
+                <a title="" class="middle-block">
+                    <img ng-src="{{(item.product.image) || 'http://placehold.it/124x78'}}" alt="">
+                </a>
                 <div class="travel-title">
-                    <h5 class="box-title">Product Details <small>Location name</small><small>$ 3546.41</small></h5>
-                    <a href="tour-detailed1.html" class="button green">EDIT</a>
+                    <h5 class="box-title">{{item.product.name}} <small>${{item.cost_breakup.subtotal.amt}}</small></h5>
                 </div>
             </figure>
-            <figure class="clearfix">
-                <a title="" href="tour-detailed1.html" class="middle-block"><img class="middle-item" alt="" src="http://placehold.it/124x78"></a>
-                <div class="travel-title">
-                    <h5 class="box-title">Product Details <small>Location name</small><small>$ 3546.41</small></h5>
-                    <a href="tour-detailed1.html" class="button green">EDIT</a>
-                </div>
-            </figure>
-            <figure class="clearfix">
-                <a title="" href="tour-detailed1.html" class="middle-block"><img class="middle-item" alt="" src="http://placehold.it/124x78"></a>
-                <div class="travel-title">
-                    <h5 class="box-title">Product Details <small>Location name</small><small>$ 3546.41</small></h5>
-                    <a href="tour-detailed1.html" class="button green">EDIT</a>
-                </div>
-            </figure>
-
-
-            <!--<div class="details">
-                <div class="icon-box style11 full-width">
-                    <div class="icon-wrapper">
-                        <i class="soap-icon-calendar"></i>
-                    </div>
-                    <dl class="details">
-                        <dt class="skin-color">Date</dt>
-                        <dd>27 jan 2015 to 30 jan 2015</dd>
-                    </dl>
-                </div>
-                <div class="icon-box style11 full-width">
-                    <div class="icon-wrapper">
-                        <i class="soap-icon-clock"></i>
-                    </div>
-                    <dl class="details">
-                        <dt class="skin-color">Duration</dt>
-                        <dd>1 day 3 hours</dd>
-                    </dl>
-                </div>
-                <div class="icon-box style11 full-width">
-                    <div class="icon-wrapper">
-                        <i class="soap-icon-departure"></i>
-                    </div>
-                    <dl class="details">
-                        <dt class="skin-color">Location</dt>
-                        <dd>Rome</dd>
-                    </dl>
-                </div>
-            </div>-->
         </article>
         <dl class="other-details">
-            <dt class="feature" style="border-top: none;">Shipping Cost</dt><dd class="value" style="border-top: none;">$ 100</dd>
-            <dt class="feature">Service Tax</dt><dd class="value">$50</dd>
-            <dt class="total-price">Total Price</dt><dd class="total-price-value">$534.00</dd>
+            <dt class="feature" style="border-top: none;">Shipping Cost</dt><dd class="value" style="border-top: none;">${{mdl.carData.shipping_charge || 0}}</dd>
+            <dt class="feature">Service Tax</dt><dd class="value">${{0}}</dd>
+            <dt class="total-price">Total Price</dt><dd class="total-price-value">${{mdl.cartData.total}}</dd>
         </dl>
     </div>
 

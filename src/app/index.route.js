@@ -154,6 +154,7 @@
       })
       .state('main.checkoutAddress',{
         url:'/checkout-address',
+        controller:'CheckoutAddressCtrl',
         templateUrl:'app/views/checkout-address/checkout-address.html'
       })
       .state('main.cardDetails',{
