@@ -14,14 +14,14 @@
     <hr />
     <h2>Order Details</h2>
     <dl class="term-description">
-        <dt>Order number:</dt><dd>5784-BD245</dd>
-        <dt>First name:</dt><dd>Fawad</dd>
-        <dt>Last name:</dt><dd>Hasan</dd>
-        <dt>E-mail address:</dt><dd>fawad.hasan@gmail.com</dd>
-        <dt>Street Address and number:</dt><dd>353 Third floor Avenue</dd>
-        <dt>Town / City:</dt><dd>Houston,Texas</dd>
-        <dt>ZIP code:</dt><dd>22480</dd>
-        <dt>Country:</dt><dd>United States of America</dd>
+        <dt>Order number:</dt><dd>{{mdl.order.id}}</dd>
+        <dt>First name:</dt><dd>{{mdl.order.billing_address.first_name}}</dd>
+        <dt>Last name:</dt><dd>{{mdl.order.billing_address.last_name}}</dd>
+        <dt>Phone:</dt><dd>{{mdl.order.billing_address.phone}}</dd>
+        <dt>Street Address and number:</dt><dd>{{mdl.order.billing_address.address1+' '+order.billing_address.address2}}</dd>
+        <dt>Town / City:</dt><dd>{{mdl.order.billing_address.city.name}}</dd>
+        <dt>ZIP code:</dt><dd>{{mdl.order.billing_address.zip_code}}</dd>
+        <dt>Country:</dt><dd>{{mdl.order.billing_address.country.name}}</dd>
     </dl>
 
     <hr />

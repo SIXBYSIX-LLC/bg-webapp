@@ -151,7 +151,9 @@
       })
       .state('main.account.settings',{
         url:'/settings',
-        templateUrl:'app/views/account/settings/settings.html'
+        templateUrl:'app/views/account/settings/settings.html',
+        controller:'SettingsCtrl'
+
       })
 
       .state('main.search',{
