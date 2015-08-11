@@ -31,6 +31,15 @@
         url:'/invoices',
         templateUrl:'app/views/account/invoices/invoices.html'
       })
+      .state('main.account.invoices.list',{
+        url:'/list',
+        templateUrl:'app/views/account/invoices/list/list.html',
+        controller:'ListInvoicesCtrl'
+      })
+      .state('main.account.invoices.view',{
+        url:'/view/{id}',
+        templateUrl:'app/views/account/invoices/view/view.html'
+      })
       .state('main.account.dashboard',{
         url:'/dashboard',
         templateUrl:'app/views/account/dashboard/dashboard.html'
@@ -107,11 +116,13 @@
       })
       .state('main.account.orders.list',{
         url:'/list',
-        templateUrl:'app/views/account/orders/list/list.html'
+        templateUrl:'app/views/account/orders/list/list.html',
+        controller:'ListOrdersCtrl'
       })
       .state('main.account.orders.view',{
-        url:'/view',
-        templateUrl:'app/views/account/orders/view/view.html'
+        url:'/view/{id}',
+        templateUrl:'app/views/account/orders/view/view.html',
+        controller:'ViewOrderCtrl'
       })
       .state('main.account.profile',{
         abstract:true,
