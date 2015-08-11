@@ -5059,5 +5059,10 @@ button.ui-button::-moz-focus-inner { border: 0; padding: 0; }
     }
   }
 }
-
+#settings .tab-content .tab-container.full-width-style.arrow-left .tab-content .tab-pane {
+    padding-left: 0px !important;
+}
+.set-top-button {
+  margin-top: 27px;
+}
 /* custom style ends*/

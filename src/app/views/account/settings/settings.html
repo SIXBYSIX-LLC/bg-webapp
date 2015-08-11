@@ -1,36 +1,85 @@
 <div id="settings" class="tab-pane">
     <h2>Account Settings</h2>
-    <div >
-        <p>Select a tab by setting active binding to true:</p>
-        <p>
-            <button type="button" class="btn btn-default btn-sm" ng-click="tabs[0].active = true">Select second tab</button>
-            <button type="button" class="btn btn-default btn-sm" ng-click="tabs[1].active = true">Select third tab</button>
-        </p>
-        <p>
-            <button type="button" class="btn btn-default btn-sm" ng-click="tabs[1].disabled = ! tabs[1].disabled">Enable / Disable third tab</button>
-        </p>
+    <div>
         <hr />
-
         <tabset>
-            <tab heading="Static title">Static content</tab>
-            <tab heading="Static title1"><h1>Static content</h1></tab>
-            <tab heading="Static title2">Static content</tab>
+            <tab heading="General Settings">
+                <form>
+                    <div class="row form-group">
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                            <label>Minimum Contract Period</label>
+                            <input type="text" class="input-text full-width" placeholder="number of days">
+                        </div>
+                    </div>
+                </form>
+            </tab>
+            <tab heading="Shipping">
+                <h5 class="skin-color">Standard Method</h5>
+                <div class="row form-group">
+                    <div class="col-xs-8 col-sm-4 col-md-3">
+                        <label>Source Location</label>
+                        <input type="text" class="input-text full-width">
+                    </div>
+                    <div class="col-xs-8 col-sm-4 col-md-3">
+                        <label>Destination</label>
+                        <input type="text" class="input-text full-width">
+                    </div>
+                    <div class="col-xs-6 col-sm-3 col-md-2">
+                        <label>Charges</label>
+                        <input type="text" class="input-text full-width">
+                    </div>
+                    <div class="col-xs-6 col-sm-3 col-md-2">
+                        <button class="btn-small uppercase set-top-button">Add More</button>
+                    </div>
+                    <div class="col-xs-6 col-sm-3 col-md-2">
+                        <button class="btn-small uppercase red set-top-button">Remove</button>
+                    </div>
+                </div>
+                <hr>
+                <div class="row form-group">
+                    <div class="col-xs-8 col-sm-4 col-md-3">
+                        <label>Source Location</label>
+                        <input type="text" class="input-text full-width">
+                    </div>
+                    <div class="col-xs-8 col-sm-4 col-md-3">
+                        <label>Destination</label>
+                        <input type="text" class="input-text full-width">
+                    </div>
+                    <div class="col-xs-6 col-sm-3 col-md-2">
+                        <label>Charges</label>
+                        <input type="text" class="input-text full-width">
+                    </div>
+                    <div class="col-xs-6 col-sm-3 col-md-2">
+                        <button class="btn-small uppercase set-top-button">Add More</button>
+                    </div>
+                    <div class="col-xs-6 col-sm-3 col-md-2">
+                        <button class="btn-small uppercase red set-top-button">Remove</button>
+                    </div>
+                </div>
+                <hr>
+                <div class="row form-group">
+                    <div class="col-xs-8 col-sm-4 col-md-3">
+                        <label>Source Location</label>
+                        <input type="text" class="input-text full-width">
+                    </div>
+                    <div class="col-xs-8 col-sm-4 col-md-3">
+                        <label>Destination</label>
+                        <input type="text" class="input-text full-width">
+                    </div>
+                    <div class="col-xs-6 col-sm-3 col-md-2">
+                        <label>Charges</label>
+                        <input type="text" class="input-text full-width">
+                    </div>
+                    <div class="col-xs-6 col-sm-3 col-md-2">
+                        <button class="btn-small uppercase set-top-button">Add More</button>
+                    </div>
+
+                </div>
+                <hr>
+            </tab>
+            <tab heading="Additional Charges">addidional charges</tab>
         </tabset>
 
-        <hr />
-
-        <tabset vertical="true" type="pills">
-            <tab heading="Vertical 1">Vertical content 1</tab>
-            <tab heading="Vertical 2">Vertical content 2</tab>
-        </tabset>
-
-        <hr />
-
-        <tabset justified="true">
-            <tab heading="Justified">Justified content</tab>
-            <tab heading="SJ">Short Labeled Justified content</tab>
-            <tab heading="Long Justified">Long Labeled Justified content</tab>
-        </tabset>
     </div>
     <!--<h5 class="skin-color">Change Your Password</h5>
     <form>
