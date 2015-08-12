@@ -19,6 +19,11 @@ angular.module('BG').factory('JobsitesService',
       getSites:function(id){
         return $http.get(API.baseURL+"users/"+id+"/addresses?kind=job_site");
       },
+      getSitesCount:function(id){
+        return $http.get(API.baseURL+"users/"+id+"/addresses?kind=job_site&page_size=1&fields=id").then(function(response){
+          return response.data.meta.count;
+        });
+      },
       getSitesLimited:function(id){
         return $http.get(API.baseURL+"users/"+id+"/addresses?kind=job_site&fields=id,name");
       }
