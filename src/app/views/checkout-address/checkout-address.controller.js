@@ -6,58 +6,66 @@ angular.module('BG').controller('CheckoutAddressCtrl',
       "job_site": "Job site",
       "billing": "Billing"
     };
-    mdl.shipping = {data:{
-      kind:'job_site',
-      country:"6252001"
+    mdl.shipping = {data: {
+      kind: 'job_site',
+      country: "6252001"
     }};
-    mdl.billing = {data:{
-      kind:'billing',
-      country:"6252001"
+    mdl.billing = {data: {
+      kind: 'billing',
+      country: "6252001"
     }};
     mdl.termsAccepted = false;
     mdl.sameAsShipping = false;
+    mdl.sites = [];
 
     var currentCartId;
+    JobsitesService.getAllSites($scope.user.id).then(function (response) {
+      mdl.allSites = response.data.data;
+    });
 
     CartService.getCurrent().then(function (response) {
-      $scope.$broadcast("LI:Loading",false);
+      $scope.$broadcast("LI:Loading", false);
       if (response && response.data && response.data.data) {
         currentCartId = response.data.data.id;
         mdl.cartData = response.data.data;
-        if(mdl.cartData.billing_address && mdl.cartData.location){
+        if (mdl.cartData.billing_address && mdl.cartData.location) {
           var promises;
-          if(mdl.cartData.billing_address==mdl.cartData.location){
-            promises=[JobsitesService.getSite($scope.user.id,mdl.cartData.billing_address)];
-          }else{
-            promises=[JobsitesService.getSite($scope.user.id,mdl.cartData.billing_address),
-              JobsitesService.getSite($scope.user.id,mdl.cartData.location)];
+          if (mdl.cartData.billing_address == mdl.cartData.location) {
+            mdl.sameAsShipping = true;
+            promises = [JobsitesService.getSite($scope.user.id, mdl.cartData.billing_address)];
+          } else {
+            promises = [JobsitesService.getSite($scope.user.id, mdl.cartData.billing_address),
+              JobsitesService.getSite($scope.user.id, mdl.cartData.location)];
           }
-          $q.all(promises).then(function(responses){
-            mdl.shipping.data=responses[0].data.data;
-            if(mdl.cartData.billing_address==mdl.cartData.location){
-              mdl.billing.data=angular.copy(mdl.shipping.data);
-            }else{
-              mdl.billing.data=responses[1].data.data;
+          $q.all(promises).then(function (responses) {
+            mdl.shipping.data = responses[0].data.data;
+            if (mdl.cartData.billing_address == mdl.cartData.location) {
+              mdl.billing.data = angular.copy(mdl.shipping.data);
+            } else {
+              mdl.billing.data = responses[1].data.data;
             }
-            var data=mdl.shipping.data;
-            data.country = ""+data.country.id;
-            data.state = ""+data.state.id;
-            data.city = ""+data.city.id;
+            var data = mdl.shipping.data;
+            data.country = "" + data.country.id;
+            data.state = "" + data.state.id;
+            data.city = "" + data.city.id;
 
-            data=mdl.billing.data;
-            data.country = ""+data.country.id;
-            data.state = ""+data.state.id;
-            data.city = ""+data.city.id;
+            data = mdl.billing.data;
+            data.country = "" + data.country.id;
+            data.state = "" + data.state.id;
+            data.city = "" + data.city.id;
           });
+
+          mdl.selectedBilling = mdl.cartData.billing_address || "";
+          mdl.selectedShipping = mdl.cartData.location || "";
 
         }
       }
     });
 
-    $scope.$watch("mdl.sameAsShipping",function(newValue){
-      if(newValue==true){
-        angular.copy(mdl.shipping,mdl.billing);
-        mdl.billing.data.kind="billing";
+    $scope.$watch("mdl.sameAsShipping", function (newValue) {
+      if (newValue == true) {
+        angular.copy(mdl.shipping, mdl.billing);
+        mdl.billing.data.kind = "billing";
       }
     });
 
@@ -96,48 +104,107 @@ angular.module('BG').controller('CheckoutAddressCtrl',
       }
     });
 
+    $scope.$watch("mdl.selectedShipping", function () {
+      if (mdl.sameAsShipping) {
+        mdl.selectedBilling = mdl.selectedShipping;
+      }
+      if(!mdl.selectedShipping){
+        mdl.shipping = {data: {
+          kind: 'job_site',
+          country: "6252001"
+        }};
+      }
+    });
+
+    $scope.$watch("mdl.selectedBilling",function(){
+      if(!mdl.selectedBilling){
+        mdl.billing = {data: {
+          kind: 'billing',
+          country: "6252001"
+        }};
+      }
+    });
+
+    $scope.$watch("mdl.shipping.data", function () {
+      if (mdl.sameAsShipping) {
+        mdl.billing.data = angular.copy(mdl.shipping.data);
+      }
+    }, true);
+
+    $scope.$watch("mdl.sameAsShipping", function () {
+      if (mdl.sameAsShipping) {
+        mdl.selectedBilling = mdl.selectedShipping;
+        mdl.billing.data = angular.copy(mdl.shipping.data);
+      }
+    });
+
     function add() {
       $scope.$broadcast("validation", true);
+      if ((!mdl.shipping.form || mdl.shipping.form.$valid ) && (!mdl.billing.form || mdl.billing.form.$valid)) {
+        var data = {
+          billing_address: 0,
+          location: 0
+        };
 
-      if(mdl.shipping.form.$valid && (mdl.sameAsShipping || mdl.billing.form.$valid)) {
-          var promises=[JobsitesService.addSite($scope.user.id, mdl.shipping.data)];
-          if(!mdl.sameAsShipping){
+        if (mdl.selectedBilling) {
+          data.billing_address = mdl.selectedBilling;
+        }
+        if (mdl.selectedShipping) {
+          data.location = mdl.selectedShipping;
+        }
+        var promises = [];
+        if (!data.billing_address || !data.location) {
+          if (!data.location) {
+            promises.push(JobsitesService.addSite($scope.user.id, mdl.shipping.data));
+          }
+          if (!mdl.sameAsShipping && !data.billing_address) {
             promises.push(JobsitesService.addSite($scope.user.id, mdl.billing.data));
           }
 
-
           $q.all(promises).then(function (responses) {
-                var shippingId=responses[0].data.data.id;
-                var billingId;
-                if(mdl.sameAsShipping){
-                  billingId=shippingId;
-                }else{
-                  billingId=responses[1].data.data.id;
-                }
 
-                var data={
-                  billing_address:billingId,
-                  location:shippingId
-                };
-                CartService.update(currentCartId, data).then(function(){
-                  checkout();
-                });
+            if (!data.location) {
+              data.location = responses[0].data.data.id
+            }
+            if(!data.billing_address){
+              data.billing_address = mdl.sameAsShipping ?
+                data.location
+                :
+                responses[1].data.data.id;
+            }
+
+
+
+            CartService.update(currentCartId, data).then(function () {
+              checkout();
+            });
           });
+        } else {
+          if (mdl.cartData.billing_address != data.billing_address || mdl.cartData.location != data.location) {
+            CartService.update(currentCartId, data).then(function () {
+              checkout();
+            });
+          } else {
+            checkout();
+          }
+        }
       }
-    };
 
-    function checkout(){
+    }
+
+    function checkout() {
+      console.log("Ready To Checkout");
       CartService.checkout(currentCartId).then(function(){
-        alert("Success");
+        $state.go()
       });
     }
 
-    $scope.continueWithPayment = function(){
-        if(mdl.cartData.location==null){
-          add();
-        }else{
-          checkout();
-        }
+    $scope.continueWithPayment = function () {
+      //if(mdl.cartData.location==null || mdl.cartData.billing_address==null){
+      add();
+      //}else{
+      //checkout();
+      //}
     };
   }
 );
