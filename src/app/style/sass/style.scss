@@ -5061,8 +5061,17 @@ button.ui-button::-moz-focus-inner { border: 0; padding: 0; }
 }
 #settings .tab-content .tab-container.full-width-style.arrow-left .tab-content .tab-pane {
     padding-left: 0px !important;
+    width: 100%;
+  .tab-content {
+    width: 100% !important;
+  }
 }
 .set-top-button {
   margin-top: 27px;
+}
+.light-fonts {
+  label {
+    font-weight: normal;
+  }
 }
 /* custom style ends*/

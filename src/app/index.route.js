@@ -42,7 +42,8 @@
       })
       .state('main.account.dashboard',{
         url:'/dashboard',
-        templateUrl:'app/views/account/dashboard/dashboard.html'
+        templateUrl:'app/views/account/dashboard/dashboard.html',
+        controller:'DashboardCtrl'
       })
       .state('main.account.equipments',{
         url:'/equipments',
