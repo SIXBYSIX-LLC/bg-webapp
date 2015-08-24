@@ -1,9 +1,9 @@
-angular.module('BG').controller('PaymentController',
+angular.module('BG').controller('PaymentCtrl',
 
   /** @ngInject */
     function ($scope, InvoicesService, $stateParams) {
     var mdl = $scope.mdl = {};
-    InvoicesService.getInvoice($stateParams.id).then(function(response){
+    InvoicesService.getInvoice($stateParams.invoiceId).then(function(response){
       mdl.invoice=response.data.data;
     });
 

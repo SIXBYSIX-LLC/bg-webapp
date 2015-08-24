@@ -15,7 +15,7 @@
       })
       .state('main',{
           templateUrl:'app/views/main/main.html',
-          controller:"MainController"
+          controller:"MainCtrl"
       })
       .state('main.account',{
         url:'/account',
