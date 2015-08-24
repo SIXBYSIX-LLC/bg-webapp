@@ -5074,4 +5074,9 @@ button.ui-button::-moz-focus-inner { border: 0; padding: 0; }
     font-weight: normal;
   }
 }
+.settings {
+  .tab-content {
+    width: 100% !important;
+  }
+}
 /* custom style ends*/
