@@ -1,1 +1,54 @@
-<h1>View</h1>
+<div class="booking-information travelo-box" style="margin-bottom: 0px;">
+
+    <h2>Invoice Details</h2>
+    <dl class="term-description">
+        <dt>Order number:</dt><dd>{{mdl.invoice.order.id}}</dd>
+        <dt>First name:</dt><dd>{{mdl.invoice.order.billing_address.first_name}}</dd>
+        <dt>Last name:</dt><dd>{{mdl.invoice.order.billing_address.last_name}}</dd>
+        <dt>Phone:</dt><dd>{{mdl.invoice.order.billing_address.phone}}</dd>
+        <dt>Street Address and number:</dt><dd>{{mdl.invoice.order.billing_address.address1+' '+order.billing_address.address2}}</dd>
+        <dt>Town / City:</dt><dd>{{mdl.invoice.order.billing_address.city.name}}</dd>
+        <dt>ZIP code:</dt><dd>{{mdl.invoice.order.billing_address.zip_code}}</dd>
+        <dt>Country:</dt><dd>{{mdl.invoice.order.billing_address.country.name}}</dd>
+    </dl>
+
+    <hr />
+
+</div>
+<div id="tour-details" class="travelo-box order-details" load-indicator>
+    <div ng-repeat="item in mdl.invoice.items" class="intro2 small-box border-box table-wrapper hidden-table-sms">
+        <div class="image-container table-cell"><img src="http://placehold.it/80x80" alt=""></div>
+        <div class="description">
+            <h4>{{item.detail.name}}</h4>
+        </div>
+        <div class="table-cell">
+            <dl class="term-description">
+                <dt>Rented For</dt><dd>{{item.cost_breakup.subtotal.rent_unit_days}} days</dd>
+                <dt>Order Type</dt><dd>{{item.shipping_kind}}</dd>
+            </dl>
+        </div>
+        <div class="price-section table-cell">
+            <div class="price">
+                <div class="price-per-unit">${{item.subtotal | number}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="intro2 small-box border-box table-wrapper hidden-table-sms cart-total">
+        <div class="description">
+            <h4>Cart Total</h4>
+        </div>
+
+        <br />
+        <div class="table-cell">
+            <dl class="term-description">
+                <dt>Shipping Cost</dt><dd>${{mdl.invoice.shipping_charge | number}}</dd>
+
+            </dl>
+        </div>
+        <div class="price-section table-cell">
+            <div class="price"><div class="price-per-unit">${{mdl.invoice.total | number}}</div></div>
+        </div>
+    </div>
+    <button class="button green btn-large uppercase pull-right" ui-sref="main.account.invoices.list">Back to Invoice List</button>
+    <button style="margin-right:4px;" class="button green btn-large uppercase pull-right"  process-indicator ng-click="invoicesMdl.pay(mdl.invoice)">Pay</button>
+</div>

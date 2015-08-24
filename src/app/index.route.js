@@ -38,7 +38,8 @@
       })
       .state('main.account.invoices.view',{
         url:'/view/{id}',
-        templateUrl:'app/views/account/invoices/view/view.html'
+        templateUrl:'app/views/account/invoices/view/view.html',
+        controller:'ViewInvoiceCtrl'
       })
       .state('main.account.dashboard',{
         url:'/dashboard',
@@ -161,6 +162,11 @@
         url:'/search/{query:.*}',
         templateUrl:'app/views/search/search.html',
         controller:'SearchCtrl'
+      })
+      .state('main.payment',{
+        url:'/pay/{invoiceId}',
+        templateUrl:'app/views/payment/payment.html',
+        controller:'PaymentCtrl'
       })
       .state('main.orderConfirmation',{
         url:'/order-confirmation',
