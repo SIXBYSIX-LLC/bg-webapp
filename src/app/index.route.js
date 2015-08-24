@@ -29,7 +29,8 @@
       })
       .state('main.account.invoices',{
         url:'/invoices',
-        templateUrl:'app/views/account/invoices/invoices.html'
+        templateUrl:'app/views/account/invoices/invoices.html',
+        controller:'InvoicesCtrl'
       })
       .state('main.account.invoices.list',{
         url:'/list',
