@@ -18,7 +18,8 @@
             <i class="icon yellow-color circle"></i>${{inv.total}}
         </h4>
 
-        <button class="btn-mini status">Pay Now</button>
+
+        <button class="btn-mini status" process-indicator  ng-click="invoicesMdl.pay(inv)">Pay Now</button>
         <button class="btn-mini status" ui-sref="main.account.invoices.view({id:inv.id})">View Details</button>
     </div>
 </div>

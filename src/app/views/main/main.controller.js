@@ -3,7 +3,7 @@
 
   angular
     .module('BG')
-    .controller('MainController', MainController);
+    .controller('MainCtrl', MainController);
 
   /** @ngInject */
   function MainController($scope,$state,SearchService) {
