@@ -434,7 +434,7 @@ button, a.button {
 /* 2.2.4. Term Description */
 dl.term-description {
   text-transform: uppercase; font-size: 0.9167em;
-  dt, dd { line-height: 1.3333em; float: left; width: 50%; padding-top: 0.5em; padding-bottom: 0.5em; }
+  dt, dd { line-height: 1.3333em; float: left; width: 35%; padding-top: 0.5em; padding-bottom: 0.5em; }
   dt { border-right: 1px solid #f5f5f5; color: $skin-active-color; font-weight: 400; padding-right: 5px; clear: both; }
   dd { padding-left: 20px; color: #797979; }
   &:after { content: ""; display: table; clear: both; }
@@ -3970,7 +3970,7 @@ ul.search-tabs {
         .day { font-size: 0.8333em; font-weight: normal; line-height: 1.25em; }
       }
     }
-    .box-title, .status { margin-top: 20px; }
+    .box-title, .status { margin-top: 7px; }
     .icon { font-size: 1.0833em; float: left; margin-right: 10px; }
     .box-title { float: left; small { padding-left: 43px; } }
     .status { float: right; margin-right: 7px; background: $green-theme-color; }
@@ -5096,5 +5096,10 @@ button.ui-button::-moz-focus-inner { border: 0; padding: 0; }
     background-color: #E37F1F;
   }
 }
-
+.invoice-address {
+  dl.term-description dt, dl.term-description dd {
+    float: none;
+    padding-left: 0px;
+  }
+}
 /* custom style ends*/
