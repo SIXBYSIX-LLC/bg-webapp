@@ -29,7 +29,7 @@
         </h4>
         <h4 class="box-title col-md-2 col-lg-offset-1">
             <!--<i class="icon yellow-color circle"></i>{{inv.is_active? 'Available' : 'Not Available'}}-->
-            <toggle-switch ng-model="switchStatus" on-label="Available" off-label="Not-Available"></toggle-switch>
+            <toggle-switch ng-click="valueChanged(inv)" ng-model="inv.is_active" on-label="Available" off-label="Not-Available"></toggle-switch>
         </h4>
 
         <button class="btn-mini status" ui-sref="main.account.inventory.edit({id:inv.id})">Edit</button>

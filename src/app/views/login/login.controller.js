@@ -5,6 +5,7 @@ angular.module('BG').controller('LoginCtrl',
     var loginMdl = $scope.loginMdl = {
       errorMessage:""
     };
+    loginMdl.rememberMe = true;
     loginMdl.login=function(){
       $scope.$broadcast("validation",true);
       if(loginMdl.form.$valid){
