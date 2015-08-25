@@ -11,7 +11,8 @@
       'ngMap',
       'ngTagsInput',
       'angucomplete-alt',
-      'pascalprecht.translate'])
+      'pascalprecht.translate',
+      'toggle-switch'])
     .run(["$rootScope",function($rootScope){
       $rootScope.dateFormat = 'dd-MMMM-yyyy';
     }])

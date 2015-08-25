@@ -14,5 +14,4 @@ angular.module('BG').controller('ListInventoryCtrl',
     });
 
 
-
   });
