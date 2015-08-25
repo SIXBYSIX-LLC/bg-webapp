@@ -12,7 +12,9 @@
       'ngTagsInput',
       'angucomplete-alt',
       'pascalprecht.translate',
-      'toggle-switch'])
+      'braintree-angular',
+      'toggle-switch'
+    ])
     .run(["$rootScope",function($rootScope){
       $rootScope.dateFormat = 'dd-MMMM-yyyy';
     }])

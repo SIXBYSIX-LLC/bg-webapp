@@ -1,16 +1,20 @@
 <h1>Braintree Payment Form</h1>
 <div>
-    <form id="braintree-payment-form">
-        <p><label>Card Number</label>
-            <input type="text" size="20" autocomplete="off" data-encrypted-name="number" />
-        </p>
-        <p><label>CVV</label>
-            <input type="text" size="4" autocomplete="off" data-encrypted-name="cvv" />
-        </p>
-        <p><label>Expiration (MM/YYYY)</label>
-            <input type="text" size="2" data-encrypted-name="month" /> /
-            <input type="text" size="4" data-encrypted-name="year" />
-        </p>
-        <input type="submit" id="submit" />
+    <form name="payment" id="braintree-payment-form">
+        <input
+                ng-model="creditCard.number"
+                placeholder="4111111111111111"
+                />
+
+        <input
+                ng-model="creditCard.expirationDate"
+                placeholder="10/18"
+                />
+
+        <input
+                type="submit"
+                value="Purchase"
+                ng-click="payButtonClicked()"
+                />
     </form>
 </div>
