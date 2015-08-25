@@ -5079,4 +5079,22 @@ button.ui-button::-moz-focus-inner { border: 0; padding: 0; }
     width: 100% !important;
   }
 }
+.toggle-switch .knob {
+  width: 6% !important;
+}
+.toggle-switch {
+  span {
+    width: 44%;
+  }
+  > div {
+    width: 187%;
+  }
+  .switch-left, .switch-right {
+    font-size: 12px;
+  }
+  .switch-left {
+    background-color: #E37F1F;
+  }
+}
+
 /* custom style ends*/
