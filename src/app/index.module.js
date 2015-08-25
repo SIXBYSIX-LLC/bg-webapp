@@ -2,7 +2,8 @@
   'use strict';
 
   angular
-    .module('BG', ['ngAnimate',
+    .module('BG', [
+      'ngAnimate',
       'ngSanitize',
       'ngFileUpload',
       'ngResource',
@@ -11,7 +12,9 @@
       'ngMap',
       'ngTagsInput',
       'angucomplete-alt',
-      'pascalprecht.translate'])
+      'pascalprecht.translate',
+      'braintree-angular'
+    ])
     .run(["$rootScope",function($rootScope){
       $rootScope.dateFormat = 'dd-MMMM-yyyy';
     }])
