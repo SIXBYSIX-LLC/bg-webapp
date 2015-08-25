@@ -11,8 +11,8 @@
       prefix: '/app/i18n/',
       suffix: '.json'
     });
-
-    $httpProvider.interceptors.push(function($rootScope,API) {
+    /** @ngInject */
+    function interceptor($rootScope,API) {
       var counter=0;
       return {
         'request': function(config) {
@@ -55,7 +55,8 @@
           return response;
         }
       };
-    });
+    }
+    $httpProvider.interceptors.push(interceptor);
   }
 
 })();
