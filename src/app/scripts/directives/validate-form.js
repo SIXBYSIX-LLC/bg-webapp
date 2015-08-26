@@ -29,7 +29,7 @@ angular.module('BG').directive("validateForm",
 //      });
 
       var watchStr="["+valuestoWatch.toString()+"]";
-      scope.$on("validation",function(ev,value){
+      scope.$on(attrs.validateForm || "validation",function(ev,value){
         validate = !!value;
         if(validate){
           checkAll(scope.$eval(watchStr));

@@ -20,7 +20,7 @@
     $rootScope.$on("BG:System:TopMessage",function(event,data){
       var rm=$rootScope.rmodel.message;
       rm.text=data.text;
-      rm.type=data.type || help;
+      rm.type=data.type || 'help';
       rm.show=true;
       $timeout(function(){
         rm.show=false;

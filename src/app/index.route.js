@@ -158,6 +158,21 @@
         controller:'SettingsCtrl'
 
       })
+      .state('main.account.settings.general',{
+        url:'/general',
+        templateUrl:'app/views/account/settings/general/general.html',
+        controller:'SettingsGeneralCtrl'
+      })
+      .state('main.account.settings.additionalCharges',{
+        url:'/additional-charges',
+        templateUrl:'app/views/account/settings/additional-charges/additional-charges.html',
+        controller:'SettingsAdditionalChargesCtrl'
+      })
+      .state('main.account.settings.shipping',{
+        url:'/shipping',
+        templateUrl:'app/views/account/settings/shipping/shipping.html',
+        controller:'SettingsShippingCtrl'
+      })
 
       .state('main.search',{
         url:'/search/{query:.*}',
