@@ -5083,8 +5083,9 @@ button.ui-button::-moz-focus-inner { border: 0; padding: 0; }
   width: 6% !important;
 }
 .toggle-switch {
+  width: 130px;
   span {
-    width: 44%;
+    width: 37%;
   }
   > div {
     width: 187%;
