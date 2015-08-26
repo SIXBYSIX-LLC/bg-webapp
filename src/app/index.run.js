@@ -88,7 +88,7 @@
 
 
     $rootScope.$on("BG:System:UserLoggedIn",function(){
-      $rootScope.user=response.data.data;
+      $rootScope.user=JSON.parse(localStorage.user);
       CartService.getCurrent();
     });
     $rootScope.$on("BG:System:CartCount",function(event,value){

@@ -13,5 +13,11 @@ angular.module('BG').controller('ListInventoryCtrl',
       }
     });
 
+    $scope.valueChanged=function(inv){
+      InventoryService.updateInventory($scope.invMdl.equiId,inv.id,{is_active:inv.is_active}).then(function(data){
+        console.log("Updated");
+      })
+    }
+
 
   });
