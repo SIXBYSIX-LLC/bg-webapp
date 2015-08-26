@@ -11,7 +11,9 @@ angular.module('BG').factory('PaymentService',
         return $http.post(API.baseURL+"invoices/"+id+"/actions/pay",{
           gateway:'postpaid',
           return_url:document.URL+"?123",
-          nonce:nonce
+          nonce:{
+            token:nonce
+          }
         });
       }
     }
