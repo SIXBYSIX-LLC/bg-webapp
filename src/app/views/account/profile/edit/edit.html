@@ -37,6 +37,30 @@
                     <input type="text" name="timezone" disabled ng-model="editProfileMdl.user.timezone" required class="input-text full-width" placeholder="zip code">
                 </div>
             </div>
+            <h5 class="skin-color">Credit Form</h5>
+            <div class="row form-group">
+                <div class="col-sms-12 col-sm-6 no-float">
+                    <div class="fileinput button" ngf-multiple="true" ngf-select ngf-change="">  Credit Form</div>
+
+                    <br/>
+                    <div ngf-drop ng-model="" class="upload-drop-zone"
+                         ngf-drag-over-class="drop" ngf-multiple="true" ngf-allow-dir="false"
+                            >Drop Form here</div>
+                    <div ng-if="addEquiMdl.filesToUpload.length">
+                        Selected File:
+                        <div ng-repeat="file in addEquiMdl.filesToUpload">
+                            <div>
+                                <div>{{file.name}}</div>
+                                <div>
+                                    <progress max="100" value="{{file.progress || 0}}">{{file.status}}</progress>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+                </div>
+            </div>
             <hr>
             <div class="from-group block">
                 <button type="submit"  ng-click="updateProfile()" class="button btn-medium orange">UPDATE</button>

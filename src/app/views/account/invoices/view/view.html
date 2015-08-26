@@ -1,7 +1,7 @@
 <div class="booking-information travelo-box" style="margin-bottom: 0px; padding: 20px 30px 1px;">
 
     <h2>Invoice Details</h2>
-    <p class="bg-danger">This invoice is not paid. Please pay to get order processed.</p>
+    <p class="bg-danger" style="padding: 5px;">This invoice is not paid. Please pay to get order processed.</p>
     <dl class="term-description">
         <dt>Order number:</dt><dd>{{mdl.invoice.order.id}}</dd>
         <dt>First name:</dt><dd>{{mdl.invoice.order.billing_address.first_name}}</dd>
@@ -33,17 +33,23 @@
 </div>
 <div id="tour-details" class="travelo-box order-details" style="padding-top: 0px;" load-indicator>
     <div ng-repeat="item in mdl.invoice.items" class="intro2 small-box border-box table-wrapper hidden-table-sms">
-        <div class="image-container table-cell"><img src="http://placehold.it/80x80" alt=""></div>
-        <div class="description">
-            <h4>{{item.detail.name}}</h4>
+        <div class="image-container table-cell" style="width: 100px;"><img src="http://placehold.it/80x80" alt=""></div>
+        <div class="description" style="width: 250px;">
+            <h4><!--{{item.detail.name}}--> Hiren product</h4>
         </div>
-        <div class="table-cell">
-            <dl class="term-description">
+        <div class="table-cell" style="width: 400px;">
+            <dl class="term-description" style="width: 49%; float: left;">
                 <dt>Rented For</dt><dd>12 days</dd>
                 <dt>Order Type</dt><dd>Postpaid</dd>
                 <dt>Quantity</dt><dd>3</dd>
             </dl>
+            <dl class="term-description" style="width: 49%; float: left;">
+                <dt>Shipping</dt><dd>$100</dd>
+                <dt>Overuse</dt><dd>$178</dd>
+                <dt>Additional</dt><dd>$230</dd>
+            </dl>
         </div>
+
         <div class="price-section table-cell">
             <div class="price">
                 <div class="price-per-unit">${{item.subtotal | number}}</div>
@@ -59,13 +65,15 @@
         <div class="table-cell">
             <dl class="term-description">
                 <dt>Shipping Cost</dt><dd>${{mdl.invoice.shipping_charge | number}}</dd>
-
+                <dt>Overusage</dt><dd>${{mdl.invoice.shipping_charge | number}}</dd>
+                <dt>Additional</dt><dd>${{mdl.invoice.shipping_charge | number}}</dd>
             </dl>
         </div>
         <div class="price-section table-cell">
             <div class="price"><div class="price-per-unit">${{mdl.invoice.total | number}}</div></div>
         </div>
     </div>
-    <button class="button green btn-large uppercase pull-right" ui-sref="main.account.invoices.list">Back to Invoice List</button>
-    <button style="margin-right:4px;" class="button green btn-large uppercase pull-right"  process-indicator ng-click="invoicesMdl.pay(mdl.invoice)">Pay</button>
+    <button class="button green btn-large uppercase pull-left" ui-sref="main.account.invoices.list">Back to Invoice List</button>
+    <button class="button green btn-large uppercase pull-right">Download PDF</button>
+    <button style="margin-right:4px;" class="button green btn-large uppercase pull-right dark-blue2"  process-indicator ng-click="invoicesMdl.pay(mdl.invoice)">Pay</button>
 </div>
