@@ -25,12 +25,13 @@
                 <dt>Operation</dt><dd>Rented</dd>
                 <dt>From</dt><dd>{{item.date_start | date}}</dd>
                 <dt>To</dt><dd>{{item.date_end | date}}</dd>
-                <dt>Payment Type</dt><dd>Prepaid</dd>
+                <dt>Shipping</dt><dd>$120</dd>
+                <dt>Additional</dt><dd>$20</dd>
             </dl>
         </div>
         <div class="price-section table-cell">
             <div class="price">
-                <small>{{item.cost_breakup.subtotal.num_days}} Days on Rent</small>
+                <small>{{item.cost_breakup.subtotal.num_days}} Estimated Rent</small>
                 <div class="price-per-unit">${{item.cost_breakup.subtotal.amt}}</div>
             </div>
             <button process-indicator="{{'PI:RemoveItem'+item.id}}" class="button green btn-small uppercase" ng-click="remove(item)">Remove</button>
