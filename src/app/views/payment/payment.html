@@ -1,20 +1,26 @@
-<h1>Braintree Payment Form</h1>
+
 <div>
     <form name="payment" id="braintree-payment-form">
-        <input
-                ng-model="creditCard.number"
-                placeholder="4111111111111111"
-                />
-
-        <input
-                ng-model="creditCard.expirationDate"
-                placeholder="10/18"
-                />
-
-        <input
-                type="submit"
-                value="Purchase"
-                ng-click="payButtonClicked()"
-                />
+        <h2>Braintree Payment Form</h2>
+        <div class="col-sm-9 no-padding no-float shortcode">
+            <div class="row form-group">
+                <div class="col-sms-6 col-sm-6">
+                    <label>Card Details</label>
+                    <input ng-model="creditCard.number" placeholder="4111111111111111" />
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-sms-6 col-sm-6">
+                    <label>Date of Expiry</label>
+                    <input ng-model="creditCard.expirationDate" placeholder="10/18"/>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-sms-6 col-sm-6">
+                    <button type="submit" value="Purchase"  ng-click="payButtonClicked()" class="button btn-medium orange">Purchase</button>
+                </div>
+            </div>
+        </div>
     </form>
+
 </div>
