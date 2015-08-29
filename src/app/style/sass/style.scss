@@ -5107,4 +5107,7 @@ button.ui-button::-moz-focus-inner { border: 0; padding: 0; }
   width: auto !important;
   padding: 0 12px !important;
 }
+.nav-tabs > li > a {
+  cursor: pointer;
+}
 /* custom style ends*/
