@@ -83,6 +83,14 @@ angular.module('BG').controller('SettingsAdditionalChargesCtrl',
           $scope.$emit('BG:System:TopMessage',{
             text:'Charge Added'
           });
+          chargesMdl.addData={
+            name:'',
+            value:0,
+            unit:'flat',//pct
+            item_kind:'rental',
+            categories:[]
+          };
+          chargesMdl.selectedCatsToAdd=[];
           getCharges();
         })
       }

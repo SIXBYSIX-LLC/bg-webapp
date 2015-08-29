@@ -40,15 +40,15 @@
             <h5 class="skin-color">Credit Form</h5>
             <div class="row form-group">
                 <div class="col-sms-12 col-sm-6 no-float">
-                    <div class="fileinput button" ngf-multiple="true" ngf-select ngf-change="">  Credit Form</div>
+                    <div class="fileinput button" ngf-select ngf-change="editProfileMdl.fileToUpload=$files">  Credit Form</div>
 
                     <br/>
-                    <div ngf-drop ng-model="" class="upload-drop-zone"
+                    <div ngf-drop ng-model="editProfileMdl.fileToUpload" class="upload-drop-zone"
                          ngf-drag-over-class="drop" ngf-multiple="true" ngf-allow-dir="false"
                             >Drop Form here</div>
-                    <div ng-if="addEquiMdl.filesToUpload.length">
+                    <div ng-if="editProfileMdl.fileToUpload">
                         Selected File:
-                        <div ng-repeat="file in addEquiMdl.filesToUpload">
+                        <div ng-repeat="file in editProfileMdl.fileToUpload">
                             <div>
                                 <div>{{file.name}}</div>
                                 <div>
@@ -56,6 +56,7 @@
                                 </div>
                             </div>
                         </div>
+
 
                     </div>
                     <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
