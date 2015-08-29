@@ -41,10 +41,30 @@ angular.module('BG').controller('SettingsShippingCtrl',
     shippingMdl.cancelEdit = function (rule) {
       rule.edit = false;
     };
+
+    shippingMdl.getJobsiteName=function(id){
+      for(var i=0;i<shippingMdl.jobSites.length;i++){
+        if(shippingMdl.jobSites[i].id==id){
+          return shippingMdl.jobSites[i].name;
+        }
+      }
+      return "N/A";
+    };
+
+//    shippingMdl.getCountryName=function(id){
+//      for(var i=0;i<shippingMdl.countries.length;i++){
+//        if(shippingMdl.countries[i].id==id){
+//          return shippingMdl.countries[i].name;
+//        }
+//      }
+//      return "N/A";
+//    };
+
     shippingMdl.add = function (rule) {
       $scope.$broadcast("validateAddForm", true);
       if(shippingMdl.addForm.$valid){
         shippingMdl.addData.user = $scope.user.id;
+        shippingMdl.addData.delivery_days=2;
         SettingsService.addShippingRule(shippingMdl.addData).then(function(){
           $scope.$emit('BG:System:TopMessage',{
             text:'Shipping method added successfully !'

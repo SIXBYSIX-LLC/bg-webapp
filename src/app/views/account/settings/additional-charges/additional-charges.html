@@ -31,7 +31,7 @@
             <label>{{charge.item_kind}}</label>
         </div>
         <div class="col-xs-6 col-sm-3 col-md-2">
-            <label>{{charge.categoryNames.join()}}</label>
+            <label>{{charge.categoryNames.join(',\n')}}</label>
         </div>
         <div class="col-xs-6 col-sm-3 col-md-1">
             <button class="button btn-mini uppercase green" ng-click="chargesMdl.edit(charge)">Edit</button>
