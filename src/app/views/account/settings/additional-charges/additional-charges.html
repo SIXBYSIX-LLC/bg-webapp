@@ -17,30 +17,30 @@
     </div>
 </div>
 <div ng-repeat="charge in chargesMdl.charges" class="row form-group light-fonts">
-    <div  ng-if="!charge.edit">
-    <div class="col-xs-6 col-sm-2 col-md-2">
-        <label>{{charge.name}}</label>
-    </div>
-    <div class="col-xs-6 col-sm-2 col-md-2">
-        <label>{{charge.value}}</label>
-    </div>
-    <div class="col-xs-6 col-sm-2 col-md-2">
-        <label>{{charge.unit}}</label>
-    </div>
-    <div class="col-xs-6 col-sm-2 col-md-2">
-        <label>{{charge.item_kind}}</label>
-    </div>
-    <div class="col-xs-6 col-sm-3 col-md-2">
-        <label>{{charge.categoryNames.join()}}</label>
-    </div>
-    <div class="col-xs-6 col-sm-3 col-md-1">
-        <button class="button btn-mini uppercase green" ng-click="chargesMdl.edit(charge)">Edit</button>
-    </div>
-    <div class="col-xs-6 col-sm-3 col-md-1">
-        <button class="button btn-mini uppercase red" ng-click="chargesMdl.delete(charge)">Delete</button>
-    </div>
+    <div ng-if="!charge.edit">
+        <div class="col-xs-6 col-sm-2 col-md-2">
+            <label>{{charge.name}}</label>
         </div>
-    <div  ng-if="charge.edit">
+        <div class="col-xs-6 col-sm-2 col-md-2">
+            <label>{{charge.value}}</label>
+        </div>
+        <div class="col-xs-6 col-sm-2 col-md-2">
+            <label>{{charge.unit}}</label>
+        </div>
+        <div class="col-xs-6 col-sm-2 col-md-2">
+            <label>{{charge.item_kind}}</label>
+        </div>
+        <div class="col-xs-6 col-sm-3 col-md-2">
+            <label>{{charge.categoryNames.join(',\n')}}</label>
+        </div>
+        <div class="col-xs-6 col-sm-3 col-md-1">
+            <button class="button btn-mini uppercase green" ng-click="chargesMdl.edit(charge)">Edit</button>
+        </div>
+        <div class="col-xs-6 col-sm-3 col-md-1">
+            <button class="button btn-mini uppercase red" ng-click="chargesMdl.delete(charge)">Delete</button>
+        </div>
+    </div>
+    <div ng-if="charge.edit">
         <form novalidate validate-form="validateEditForm" name="chargesMdl.editForm">
 
             <div class="col-xs-6 col-sm-2 col-md-2">
@@ -54,11 +54,14 @@
             <div class="col-xs-6 col-sm-2 col-md-2">
                 <select ng-model="chargesMdl.editData.unit" name="unit">
                     <option value="flat">Flat</option>
+                    <option value="pct">Percentage</option>
                 </select>
             </div>
             <div class="col-xs-6 col-sm-2 col-md-2">
                 <select ng-model="chargesMdl.editData.item_kind" name="kind">
-                    <option value="rental">rental</option>
+                    <option value="rental">Rental</option>
+                    <option value="purchase">Purchase</option>
+                    <option value="all">All</option>
                 </select>
             </div>
             <div class="col-xs-6 col-sm-3 col-md-2">

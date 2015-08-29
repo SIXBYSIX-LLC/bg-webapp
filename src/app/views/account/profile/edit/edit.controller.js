@@ -1,6 +1,6 @@
 angular.module('BG').controller('EditProfileCtrl',
   /** @ngInject */
-    function ($scope,$state,ProfileService) {
+    function ($scope,$state,ProfileService,Upload,$q,API) {
     var editProfileMdl = $scope.editProfileMdl = {};
 
 
@@ -10,6 +10,28 @@ angular.module('BG').controller('EditProfileCtrl',
 
 
 
+    function upload(id,file) {
+      var deferred=$q.defer();
+      Upload.upload({
+        url: API.baseURL + 'staticfiles',
+        fields: {
+          target: "usr.Profile.credit_form",
+          target_id: id
+        },
+        file: file
+      }).progress(function (evt) {
+        file.progress=parseInt(100.0 * evt.loaded / evt.total);
+        file.status="Uploading";
+      }).success(function (data, status, headers, config) {
+        file.status="Uploaded";
+        deferred.resolve();
+      }).error(function (data, status, headers, config) {
+        file.status="Error";
+        file.progress=0;
+        deferred.resolve();
+      });
+      return deferred.promise;
+    }
 
     $scope.updateProfile = function () {
       $scope.$broadcast("validation", true);
@@ -23,7 +45,13 @@ angular.module('BG').controller('EditProfileCtrl',
           timezone:usr.timezone
         };
         ProfileService.updateUser($scope.user.id,data).then(function(){
-          $state.go("main.account.profile.view");
+          if(editProfileMdl.fileToUpload){
+            upload(usr.id,editProfileMdl.fileToUpload).then(function(){
+              $state.go("main.account.profile.view");
+            });
+          }else{
+            $state.go("main.account.profile.view");
+          }
         });
       }
     }

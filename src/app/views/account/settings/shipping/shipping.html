@@ -19,16 +19,18 @@
 <div ng-repeat="rule in shippingMdl.rules" class="row form-group light-fonts">
     <div ng-if="!rule.edit">
         <div class="col-xs-6 col-sm-2 col-md-2">
-            <div class="selector">
-                <select disabled name="location" ng-model="rule.origin" required class="full-width" ng-options="site.id as site.name for site in shippingMdl.jobSites">
-                </select>
-            </div>
+            <label>{{shippingMdl.getJobsiteName(rule.origin)}}</label>
+            <!--<div class="selector">-->
+                <!--<select disabled name="location" ng-model="rule.origin" required class="full-width" ng-options="site.id as site.name for site in shippingMdl.jobSites">-->
+                <!--</select>-->
+            <!--</div>-->
         </div>
         <div class="col-xs-6 col-sm-2 col-md-2">
-            <div class="selector">
-                <select disabled ng-model="rule.country"  name="country" required class="full-width" ng-options="key as value for (key,value) in shippingMdl.countries">
-                </select>
-            </div>
+            <label>{{shippingMdl.countries[rule.country]}}</label>
+            <!--<div class="selector">-->
+                <!--<select disabled ng-model="rule.country"  name="country" required class="full-width" ng-options="key as value for (key,value) in shippingMdl.countries">-->
+                <!--</select>-->
+            <!--</div>-->
         </div>
 
         <div class="col-xs-6 col-sm-2 col-md-2">
