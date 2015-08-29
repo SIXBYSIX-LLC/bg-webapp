@@ -47,7 +47,7 @@ angular.module('BG').controller('SettingsShippingCtrl',
         shippingMdl.addData.user = $scope.user.id;
         SettingsService.addShippingRule(shippingMdl.addData).then(function(){
           $scope.$emit('BG:System:TopMessage',{
-            text:'Rule Added'
+            text:'Shipping method added successfully !'
           });
           getRules();
         })
@@ -59,7 +59,7 @@ angular.module('BG').controller('SettingsShippingCtrl',
       if(shippingMdl.updateForm.$valid){
         SettingsService.updateShippingRule(rule.id,shippingMdl.editData).then(function(){
           $scope.$emit('BG:System:TopMessage',{
-            text:'Rule updated'
+            text:'Shipping Method updated successfully !'
           });
           getRules();
         })

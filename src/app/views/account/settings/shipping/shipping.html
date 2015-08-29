@@ -67,17 +67,17 @@
             <div class="col-xs-6 col-sm-2 col-md-2">
                 <input name="zipcode_end" ng-model="shippingMdl.editData.zipcode_end" type="text" required class="input-text full-width" placeholder="Zipcode To">
             </div>
-            <div class="col-xs-6 col-sm-3 col-md-2">
+            <!--<div class="col-xs-6 col-sm-3 col-md-2">
                 <input name="days" ng-model="shippingMdl.editData.delivery_days" type="text" required class="input-text full-width" placeholder="Delivery days">
-            </div>
+            </div>-->
             <div class="col-xs-6 col-sm-3 col-md-2">
                 <input name="cost" ng-model="shippingMdl.editData.cost" type="text" required class="input-text full-width" placeholder="cost">
             </div>
             <div class="col-xs-6 col-sm-3 col-md-1">
-                <button class="button btn-mini uppercase green" ng-click="shippingMdl.update(rule)">Update</button>
+                <button class="button btn-mini uppercase green width-auto" ng-click="shippingMdl.update(rule)">Update</button>
             </div>
             <div class="col-xs-6 col-sm-3 col-md-1">
-                <button class="button btn-mini uppercase red" ng-click="shippingMdl.cancelEdit(rule)">Cancel</button>
+                <button class="button btn-mini uppercase red width-auto" ng-click="shippingMdl.cancelEdit(rule)">Cancel</button>
             </div>
         </form>
     </div>
@@ -105,14 +105,14 @@
         <div class="col-xs-6 col-sm-2 col-md-2">
             <input name="zipcode_end" ng-model="shippingMdl.addData.zipcode_end" type="text" required class="input-text full-width" placeholder="Zipcode To">
         </div>
-        <div class="col-xs-6 col-sm-3 col-md-2">
+        <!--<div class="col-xs-6 col-sm-3 col-md-2">
             <input name="days" ng-model="shippingMdl.addData.delivery_days" type="text" required class="input-text full-width" placeholder="Delivery days">
-        </div>
+        </div>-->
         <div class="col-xs-6 col-sm-3 col-md-2">
             <input name="cost" ng-model="shippingMdl.addData.cost" type="text" required class="input-text full-width" placeholder="cost">
         </div>
-        <div class="col-xs-12 col-sm-6 col-md-2">
-            <button class="btn-small uppercase" ng-click="shippingMdl.add()">Add More</button>
+        <div class="col-xs-12 col-sm-6 col-md-1">
+            <button class="button btn-mini uppercase green width-auto" style="width: auto;" ng-click="shippingMdl.add()">Add</button>
         </div>
     </form>
 </div>

@@ -67,7 +67,7 @@ angular.module('BG').directive("validateForm",
                   message=defaults[key];
                 }
                 var content = "<div class='" + name + " error'>" + message + "</div>";
-                el.parent().after(content);
+                el.after(content);
                 currentErrors[key]=true;
               }
 
