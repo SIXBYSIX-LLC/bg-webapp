@@ -18,7 +18,7 @@ angular.module('BG').controller('EquiDetailsCtrl',
     });
 
 
-    mdl.tab1 = "map";
+    mdl.tab1 = "photos";
     mdl.tab2 = "description";
 
     $scope.addToCart = function () {

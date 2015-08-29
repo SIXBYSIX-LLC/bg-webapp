@@ -10,9 +10,9 @@
     </ul>
     <div class="tab-content">
         <div ng-show="mdl.tab1=='photos'" ng-class="{'fade in active':mdl.tab1=='photos'}" class="tab-pane">
-            <carousel ng-init="interval=2000" class="photo-gallery style1" interval="interval">
+            <carousel  class="photo-gallery style1" interval="'200'">
                     <slide ng-repeat="img in mdl.equi.images">
-                        <img ng-src="{{img.url}}" alt="" style="height:500px;"/>
+                        <img ng-src="{{img.url || 'http://placehold.it/870x400'}}" alt="" style="min-height:200px;"/>
                         <div class="carousel-caption">
                             <h4>{{$index}}</h4>
                         </div>
