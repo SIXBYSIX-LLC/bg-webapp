@@ -16,96 +16,96 @@
         <label>Category</label>
     </div>
 </div>
-<div class="row form-group light-fonts">
+<div ng-repeat="charge in chargesMdl.charges" class="row form-group light-fonts">
+    <div  ng-if="!charge.edit">
     <div class="col-xs-6 col-sm-2 col-md-2">
-        <label>Charge Name</label>
+        <label>{{charge.name}}</label>
     </div>
     <div class="col-xs-6 col-sm-2 col-md-2">
-        <label>Value</label>
+        <label>{{charge.value}}</label>
     </div>
     <div class="col-xs-6 col-sm-2 col-md-2">
-        <label>Unit</label>
+        <label>{{charge.unit}}</label>
     </div>
     <div class="col-xs-6 col-sm-2 col-md-2">
-        <label>Item Kind</label>
+        <label>{{charge.item_kind}}</label>
     </div>
     <div class="col-xs-6 col-sm-3 col-md-2">
-        <label>Category</label>
+        <label>{{charge.categoryNames.join()}}</label>
     </div>
     <div class="col-xs-6 col-sm-3 col-md-1">
-        <button class="button btn-mini uppercase green">Edit</button>
+        <button class="button btn-mini uppercase green" ng-click="chargesMdl.edit(charge)">Edit</button>
     </div>
     <div class="col-xs-6 col-sm-3 col-md-1">
-        <button class="button btn-mini uppercase red">Delete</button>
+        <button class="button btn-mini uppercase red" ng-click="chargesMdl.delete(charge)">Delete</button>
     </div>
-</div>
-<div class="row form-group light-fonts">
-    <div class="col-xs-6 col-sm-2 col-md-2">
-        <label>Charge Name</label>
-    </div>
-    <div class="col-xs-6 col-sm-2 col-md-2">
-        <label>Value</label>
-    </div>
-    <div class="col-xs-6 col-sm-2 col-md-2">
-        <label>Unit</label>
-    </div>
-    <div class="col-xs-6 col-sm-2 col-md-2">
-        <label>Item Kind</label>
-    </div>
-    <div class="col-xs-6 col-sm-3 col-md-2">
-        <label>Category</label>
-    </div>
-    <div class="col-xs-6 col-sm-3 col-md-1">
-        <button class="button btn-mini uppercase green">Edit</button>
-    </div>
-    <div class="col-xs-6 col-sm-3 col-md-1">
-        <button class="button btn-mini uppercase red">Delete</button>
-    </div>
-</div>
-<div class="row form-group light-fonts">
-    <div class="col-xs-6 col-sm-2 col-md-2">
-        <label>Charge Name</label>
-    </div>
-    <div class="col-xs-6 col-sm-2 col-md-2">
-        <label>Value</label>
-    </div>
-    <div class="col-xs-6 col-sm-2 col-md-2">
-        <label>Unit</label>
-    </div>
-    <div class="col-xs-6 col-sm-2 col-md-2">
-        <label>Item Kind</label>
-    </div>
-    <div class="col-xs-6 col-sm-3 col-md-2">
-        <label>Category</label>
-    </div>
-    <div class="col-xs-6 col-sm-3 col-md-1">
-        <button class="button btn-mini uppercase green">Edit</button>
-    </div>
-    <div class="col-xs-6 col-sm-3 col-md-1">
-        <button class="button btn-mini uppercase red">Delete</button>
+        </div>
+    <div  ng-if="charge.edit">
+        <form novalidate validate-form="validateEditForm" name="chargesMdl.editForm">
+
+            <div class="col-xs-6 col-sm-2 col-md-2">
+                <input type="text" ng-model="chargesMdl.editData.name" name="name" class="input-text full-width"
+                       placeholder="Charge Name"> <!-- dropdown -->
+            </div>
+            <div class="col-xs-6 col-sm-2 col-md-2">
+                <input type="text" ng-model="chargesMdl.editData.value" name="value" class="input-text full-width"
+                       placeholder="Value">
+            </div>
+            <div class="col-xs-6 col-sm-2 col-md-2">
+                <select ng-model="chargesMdl.editData.unit" name="unit">
+                    <option value="flat">Flat</option>
+                </select>
+            </div>
+            <div class="col-xs-6 col-sm-2 col-md-2">
+                <select ng-model="chargesMdl.editData.item_kind" name="kind">
+                    <option value="rental">rental</option>
+                </select>
+            </div>
+            <div class="col-xs-6 col-sm-3 col-md-2">
+                <tags-input ng-model="chargesMdl.selectedCatsToEdit">
+                    <auto-complete min-length="1" load-on-focus="'true'" debounce-delay="'0'"
+                                   source="chargesMdl.categories"></auto-complete>
+                </tags-input>
+            </div>
+            <div class="col-xs-6 col-sm-3 col-md-1">
+                <button class="btn-small uppercase" ng-click="chargesMdl.update(charge)">Update</button>
+                <button class="btn-small uppercase" ng-click="chargesMdl.cancelEdit(charge)">Cancel</button>
+            </div>
+        </form>
     </div>
 </div>
 
 <div class="row form-group">
-    <div class="col-xs-6 col-sm-2 col-md-2">
-        <input type="text" class="input-text full-width" placeholder="Charge Name"> <!-- dropdown -->
-    </div>
-    <div class="col-xs-6 col-sm-2 col-md-2">
-        <input type="text" class="input-text full-width" placeholder="Value">
-    </div>
-    <div class="col-xs-6 col-sm-2 col-md-2">
-        <input type="text" class="input-text full-width" placeholder="Flat/%tage">
-    </div>
-    <div class="col-xs-6 col-sm-2 col-md-2">
-        <input type="text" class="input-text full-width" placeholder="Item Kind">
-    </div>
-    <div class="col-xs-6 col-sm-3 col-md-2">
-        <input type="text" class="input-text full-width" placeholder="category">
-    </div>
-    <div class="col-xs-6 col-sm-3 col-md-1">
-        <button class="btn-small uppercase">Add More</button>
-        <!--<button class="btn-small uppercase red">Remove</button>-->
-    </div>
+    <form novalidate validate-form="validateAddForm" name="chargesMdl.addForm">
+
+        <div class="col-xs-6 col-sm-2 col-md-2">
+            <input type="text" ng-model="chargesMdl.addData.name" name="name" class="input-text full-width"
+                   placeholder="Charge Name"> <!-- dropdown -->
+        </div>
+        <div class="col-xs-6 col-sm-2 col-md-2">
+            <input type="text" ng-model="chargesMdl.addData.value" name="value" class="input-text full-width"
+                   placeholder="Value">
+        </div>
+        <div class="col-xs-6 col-sm-2 col-md-2">
+            <select ng-model="chargesMdl.addData.unit" name="unit">
+                <option value="flat">Flat</option>
+            </select>
+        </div>
+        <div class="col-xs-6 col-sm-2 col-md-2">
+            <select ng-model="chargesMdl.addData.item_kind" name="kind">
+                <option value="rental">rental</option>
+            </select>
+        </div>
+        <div class="col-xs-6 col-sm-3 col-md-2">
+            <tags-input ng-model="chargesMdl.selectedCatsToAdd">
+                <auto-complete min-length="1" load-on-focus="'true'" debounce-delay="'0'"
+                               source="chargesMdl.categories"></auto-complete>
+            </tags-input>
+        </div>
+        <div class="col-xs-6 col-sm-3 col-md-1">
+            <button class="btn-small uppercase" ng-click="chargesMdl.add()">Add</button>
+        </div>
+    </form>
 
 </div>
 <hr>

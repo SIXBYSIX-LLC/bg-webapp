@@ -17,6 +17,9 @@ angular.module('BG').factory('EquipmentsService',
       getCategories:function(parentId){
         return $http.get( API.baseURL+"categories"+(parentId ? "?parent="+parentId : "?parent__isnull=True"));
       },
+      getAllCategories:function(){
+        return $http.get( API.baseURL+"categories");
+      },
       getEquipment:function(id){
         return $http.get(API.baseURL+"products/"+id);
       },

@@ -1,6 +1,6 @@
 angular.module('BG').controller('SettingsShippingCtrl',
   /** @ngInject */
-    function ($scope, SettingsService, SystemService, JobsitesService) {
+    function ($scope, SettingsService, SystemService, JobsitesService, $q) {
 
 
 
@@ -14,21 +14,28 @@ angular.module('BG').controller('SettingsShippingCtrl',
       });
     }
 
-    JobsitesService.getSites($scope.user.id).then(function(response){
+    $q.all([JobsitesService.getSites($scope.user.id).then(function(response){
       shippingMdl.jobSites=response.data.data;
-    });
+    }),
 
     SystemService.getCountries().then(function (response) {
       shippingMdl.countries = response.data.data;
-      //mdl.data.country=Object.keys(mdl.countries)[0];
-    });
-    getRules();
+    })]).then(function(){
+        getRules();
+      });
+
 
     shippingMdl.edit = function (rule) {
       rule.edit=true;
       shippingMdl.editData=angular.copy(rule);
     };
     shippingMdl.delete = function (rule) {
+      SettingsService.deleteShippingRule(rule.id).then(function(){
+        $scope.$emit('BG:System:TopMessage',{
+          text:'Rule Deleted'
+        });
+        getRules();
+      })
     };
 
     shippingMdl.cancelEdit = function (rule) {

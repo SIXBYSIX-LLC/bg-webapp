@@ -20,8 +20,22 @@ angular.module('BG').factory('SettingsService',
         return $http.patch(API.baseURL+"settings/shipping/standard/"+id,data);
       },
       deleteShippingRule:function(id){
-        //TODO:
+        return $http.delete(API.baseURL+"settings/shipping/standard/"+id);
+      },
+
+      getAdditionalChargesRules:function(){
+        return $http.get(API.baseURL+"charges/additional_charges");
+      },
+      addAdditionalCharge:function(data){
+        return $http.post(API.baseURL+"charges/additional_charges",data);
+      },
+      updateAdditionalCharge:function(id,data){
+        return $http.patch(API.baseURL+"charges/additional_charges/"+id,data);
+      },
+      deleteAdditionalCharge:function(id){
+        return $http.delete(API.baseURL+"charges/additional_charges/"+id);
       }
+
     }
   }
 );
