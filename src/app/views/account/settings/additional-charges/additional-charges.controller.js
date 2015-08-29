@@ -6,7 +6,7 @@ angular.module('BG').controller('SettingsAdditionalChargesCtrl',
       name:'',
       value:0,
       unit:'flat',//pct
-      item_kind:'rental',
+      item_kind:'all',
       categories:[]
     };
 
@@ -87,7 +87,7 @@ angular.module('BG').controller('SettingsAdditionalChargesCtrl',
             name:'',
             value:0,
             unit:'flat',//pct
-            item_kind:'rental',
+            item_kind:'all',
             categories:[]
           };
           chargesMdl.selectedCatsToAdd=[];
