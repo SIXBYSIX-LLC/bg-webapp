@@ -26,6 +26,8 @@ angular.module('BG').controller('SearchCtrl',
     searchMdl.working=false;
 
     searchMdl.locationFacets=[];
+    searchMdl.locationFacets.allSelected = true;
+    searchMdl.locationFacets.selectedId = null;
 
     searchMdl.features=[];
     for(var i=0;i<10;i++){
@@ -46,10 +48,14 @@ angular.module('BG').controller('SearchCtrl',
           daily_price__gte:searchMdl.priceMin,
           daily_price__lte:searchMdl.priceMax
         };
+        if(searchMdl.locationFacets.allSelected == false && searchMdl.locationFacets.selectedId){
+          conf.location = searchMdl.locationFacets.selectedId;
+        }
         search=SearchService.search(conf);
         searchMdl.working=true;
         $rootScope.$broadcast("PI:SearchProcess",true);
         search.next().then(function (response) {
+          var currentLocationId=searchMdl.locationFacets.selectedId;
           $rootScope.$broadcast("PI:SearchProcess",false);
           searchMdl.working=false;
           searchMdl.products=response.data.data;
@@ -57,6 +63,21 @@ angular.module('BG').controller('SearchCtrl',
           searchMdl.nextAvailable=search.isAvail();
           searchMdl.locationFacets=response.data.meta.facets;
           searchMdl.locationFacets.allSelected=true;
+
+          if(currentLocationId){
+
+            var lfs=searchMdl.locationFacets;
+            angular.forEach(lfs,function(l){
+              l.selected=false;
+              if(currentLocationId == l.location.id){
+                l.selected = true;
+                searchMdl.locationFacets.allSelected=false;
+                searchMdl.locationFacets.selectedId = currentLocationId;
+              }
+            });
+
+          }
+
         });
       //}
     };
@@ -72,15 +93,21 @@ angular.module('BG').controller('SearchCtrl',
         if(!lf.selected){
           var oneSelected=false;
           angular.forEach(lfs,function(l){
-            if(l.selected){oneSelected=true;}
+            if(l.selected){
+              oneSelected=true;
+            }
           });
           if(!oneSelected){
             lfs.allSelected=true;
+            searchMdl.locationFacets.selectedId = null;
           }
         }else{
           lfs.allSelected=false;
         }
+        searchMdl.locationFacets.selectedId= lf.location.id;
+        console.log("XX",lf);
       }
+      searchMdl.search();
     };
     searchMdl.sort=function(sortBy){
       searchMdl.sortBy=sortBy;
