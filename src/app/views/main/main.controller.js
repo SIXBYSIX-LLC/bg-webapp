@@ -22,6 +22,8 @@
       startingDay: 1
     };
 
+    mainMdl.showToggle = false;
+
     mainMdl.breadcrumbs=[];
     $scope.addBreadcrumb=function(value){
       mainMdl.breadcrumbs.push(value);

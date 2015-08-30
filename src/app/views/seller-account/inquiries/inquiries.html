@@ -1,0 +1,1 @@
+<h1>Inquiries</h1>

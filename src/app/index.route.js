@@ -174,6 +174,29 @@
         controller:'SettingsShippingCtrl'
       })
 
+
+      .state('main.sellerAccount',{
+        url:'/seller-account',
+        abstract:true,
+        controller:'SellerAccountCtrl',
+        templateUrl:'app/views/seller-account/seller-account.html'
+      })
+      .state('main.sellerAccount.orders',{
+        url:'/orders',
+        templateUrl:'app/views/seller-account/orders/orders.html'
+      })
+      .state('main.sellerAccount.invoices',{
+        url:'/invoices',
+        templateUrl:'app/views/seller-account/invoices/invoices.html'
+      })
+      .state('main.sellerAccount.inquiries',{
+        url:'/inquiries',
+        templateUrl:'app/views/seller-account/inquiries/inquiries.html'
+      })
+
+
+
+
       .state('main.search',{
         url:'/search/{query:.*}',
         templateUrl:'app/views/search/search.html',

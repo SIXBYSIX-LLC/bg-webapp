@@ -95,11 +95,21 @@
             <div class="page-title pull-left">
                 <h2 class="entry-title">{{mainMdl.title}}</h2>
             </div>
+
             <ul class="breadcrumbs pull-right">
+
                 <li><a ui-sref="home">HOME</a></li>
                 <li ng-repeat="bc in mainMdl.breadcrumbs">
                     {{bc.title}}
                 </li>
+                <li>
+                    <div class="btn-group" role="group" >
+                        <button active-state="main.sellerAccount" ui-sref="main.sellerAccount.orders" type="button" class="btn btn-default">Seller</button>
+                        <button active-state="main.account"    ui-sref="main.account.dashboard" type="button" class="btn btn-default">Buyer</button>
+                    </div>
+                </li>
+
+
             </ul>
         </div>
     </div>
