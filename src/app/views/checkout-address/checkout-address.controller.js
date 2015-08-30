@@ -193,9 +193,11 @@ angular.module('BG').controller('CheckoutAddressCtrl',
     }
 
     function checkout() {
-      console.log("Ready To Checkout");
-      CartService.checkout(currentCartId).then(function(){
-        $state.go()
+      CartService.checkout(currentCartId).then(function(response){
+        console.log("Res",response);
+        if(response.data.data.invoice){
+          $state.go("main.payment",{invoiceId:response.data.data.invoiceId});
+        }
       });
     }
 

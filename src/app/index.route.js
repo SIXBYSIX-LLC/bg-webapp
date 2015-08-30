@@ -212,7 +212,7 @@
         templateUrl:'app/views/order-confirmation/order-confirmation.html'
       })
       .state('main.checkoutAddress',{
-        url:'/checkout-address',
+        url:'/checkout-address/{carId}',
         controller:'CheckoutAddressCtrl',
         templateUrl:'app/views/checkout-address/checkout-address.html'
       })

@@ -41,7 +41,14 @@
             }
 
           }
-          return response;
+          if(response.config.url.indexOf("braintree/actions/generate_token")>0){
+            console.log("Response",response);
+            return {data: response.data.data.client_token,
+                    status: 200,
+                    statusText: "OK"};
+          }else{
+            return response;
+          }
         },
         'responseError': function(response) {
           if(response.config && response.config.url.indexOf(API.baseURL)==0){
