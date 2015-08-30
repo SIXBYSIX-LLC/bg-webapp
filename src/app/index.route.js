@@ -181,9 +181,22 @@
         controller:'SellerAccountCtrl',
         templateUrl:'app/views/seller-account/seller-account.html'
       })
+
       .state('main.sellerAccount.orders',{
         url:'/orders',
         templateUrl:'app/views/seller-account/orders/orders.html'
+      })
+      .state('main.sellerAccount.orders.list',{
+        url:'/list',
+        templateUrl:'app/views/seller-account/orders/list/list.html'
+      })
+      .state('main.sellerAccount.orders.view',{
+        url:'/view',
+        templateUrl:'app/views/seller-account/orders/view/view.html'
+      })
+      .state('main.sellerAccount.orders.process',{
+        url:'/process',
+        templateUrl:'app/views/seller-account/orders/process/process.html'
       })
       .state('main.sellerAccount.invoices',{
         url:'/invoices',

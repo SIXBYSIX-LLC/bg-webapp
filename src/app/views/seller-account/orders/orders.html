@@ -3,26 +3,6 @@
 
 <div class="booking-history">
 
-    <div ng-repeat="order in mdl.orders" class="booking-info clearfix">
-        <h4 class="box-title">
-            <i class="icon soap-icon-card yellow-color circle"></i>Order
-            <small>ID : {{order.id}}</small>
-        </h4>
-        <h4 class="box-title col-lg-offset-1">
-            <i class="icon yellow-color circle"></i>{{order.items.length}} items
-        </h4>
-        <!--<h4 class="box-title col-lg-offset-1">
-            <i class="icon soap-icon-departure yellow-color"></i>City,state,California
-        </h4>-->
-        <h4 class="box-title col-lg-offset-1">
-            <i class="icon yellow-color circle"></i>${{order.total | number}}
-        </h4>
-
-        <button class="btn-mini status" ui-sref="main.account.orders.view({id:order.id})">Details</button>
-        <button class="btn-mini status" ui-sref="main.account.orders.list">Cancel</button>
-        <button class="btn-mini status" ui-sref="main.account.orders.list">Return</button>
-    </div>
-
-
+    <ui-view></ui-view>
 
 </div>

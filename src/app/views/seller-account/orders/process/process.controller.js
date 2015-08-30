@@ -1,4 +1,4 @@
-angular.module('BG').controller('ListSellerOrdersCtrl',
+angular.module('BG').controller('ProcessSellerOrdersCtrl',
   /** @ngInject */
     function ($scope, OrdersService) {
 

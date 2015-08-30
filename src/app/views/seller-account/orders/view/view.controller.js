@@ -1,10 +1,7 @@
-angular.module('BG').controller('ViewOrderCtrl',
+angular.module('BG').controller('ViewSellerOrderCtrl',
   /** @ngInject */
     function ($scope, OrdersService, $stateParams) {
-    var mdl = $scope.mdl = {};
-    OrdersService.getOrder($stateParams.id).then(function(response){
-      mdl.order=response.data.data;
-    });
+
 
 
   });
