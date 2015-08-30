@@ -1,9 +1,9 @@
 
 <div>
-    <form name="payment" id="braintree-payment-form">
+    <form name="payment" id="braintree-payment-form" ng-submit="mdl.pay()">
         <h2>Braintree Payment Form</h2>
         <div class="col-sm-9 no-padding no-float shortcode">
-            <braintree-dropin></braintree-dropin>
+            <braintree-dropin options="mdl.options"></braintree-dropin>
             <!--<div class="row form-group">-->
                 <!--<div class="col-sms-6 col-sm-6">-->
                     <!--<label>Card Details</label>-->
@@ -18,7 +18,7 @@
             <!--</div>-->
             <div class="row form-group">
                 <div class="col-sms-6 col-sm-6">
-                    <button type="submit" value="Purchase"  ng-click="pay()" class="button btn-medium orange">Purchase</button>
+                    <button type="submit" value="Purchase" class="button btn-medium orange">Purchase</button>
                 </div>
             </div>
         </div>

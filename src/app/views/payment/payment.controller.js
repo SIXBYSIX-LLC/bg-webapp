@@ -8,12 +8,21 @@ angular.module('BG')
       mdl.invoice = response.data.data;
     });
 
+    mdl.options={
+      paymentMethodNonceReceived:function(event,nonce){
+        PaymentService.payInvoice($stateParams.invoiceId, nonce).then(function () {
+          $state.go("main.account.invoices.list");
+        });
+      },
+      onError:function(error,message){
+        $scope.$emit("BG:System:TopMessage", {
+          text: msg,
+          type: response.data.error ? 'error' : 'help'});
+      }
+    };
 
     mdl.pay=function(){
-      console.log(mdl.payment);
-//      PaymentService.payInvoice($stateParams.invoiceId, nonce).then(function () {
-//        $state.go("main.account.invoices.list");
-//      });
+      return false;
     }
 
 
