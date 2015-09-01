@@ -68,9 +68,10 @@
         templateUrl:'app/views/account/equipments/add/add.html',
         controller:'AddEquipmentCtrl'
       })
-      .state('main.account.favourites',{
-        url:'/favourites',
-        templateUrl:'app/views/account/favourites/favourites.html'
+      .state('main.account.favorites',{
+        url:'/favorites',
+        templateUrl:'app/views/account/favorites/favorites.html',
+        controller:'FavoritesCtrl'
       })
       .state('main.account.jobsites',{
         url:'/jobsites',
@@ -152,27 +153,8 @@
         url:'/requests',
         templateUrl:'app/views/account/requests/requests.html'
       })
-      .state('main.account.settings',{
-        url:'/settings',
-        templateUrl:'app/views/account/settings/settings.html',
-        controller:'SettingsCtrl'
 
-      })
-      .state('main.account.settings.general',{
-        url:'/general',
-        templateUrl:'app/views/account/settings/general/general.html',
-        controller:'SettingsGeneralCtrl'
-      })
-      .state('main.account.settings.additionalCharges',{
-        url:'/additional-charges',
-        templateUrl:'app/views/account/settings/additional-charges/additional-charges.html',
-        controller:'SettingsAdditionalChargesCtrl'
-      })
-      .state('main.account.settings.shipping',{
-        url:'/shipping',
-        templateUrl:'app/views/account/settings/shipping/shipping.html',
-        controller:'SettingsShippingCtrl'
-      })
+
 
 
       .state('main.sellerAccount',{
@@ -205,6 +187,26 @@
       .state('main.sellerAccount.inquiries',{
         url:'/inquiries',
         templateUrl:'app/views/seller-account/inquiries/inquiries.html'
+      })
+      .state('main.sellerAccount.settings',{
+        url:'/settings',
+        templateUrl:'app/views/seller-account/settings/settings.html',
+        controller:'SettingsCtrl'
+      })
+      .state('main.sellerAccount.settings.general',{
+        url:'/general',
+        templateUrl:'app/views/seller-account/settings/general/general.html',
+        controller:'SettingsGeneralCtrl'
+      })
+      .state('main.sellerAccount.settings.additionalCharges',{
+        url:'/additional-charges',
+        templateUrl:'app/views/seller-account/settings/additional-charges/additional-charges.html',
+        controller:'SettingsAdditionalChargesCtrl'
+      })
+      .state('main.sellerAccount.settings.shipping',{
+        url:'/shipping',
+        templateUrl:'app/views/seller-account/settings/shipping/shipping.html',
+        controller:'SettingsShippingCtrl'
       })
 
 

@@ -20,6 +20,12 @@ angular.module('BG').controller('EquiDetailsCtrl',
 
     mdl.tab1 = "photos";
     mdl.tab2 = "description";
+    $scope.addToFavorite=function(){
+      $scope.$broadcast("PI:AddToFavorite",true);
+      EquipmentsService.addToFavorite($scope.user.id,mdl.equi.id).then(function(){
+        $scope.$broadcast("PI:AddToFavorite",false);
+      });
+    };
 
     $scope.addToCart = function () {
       $scope.$broadcast("validation", true);
@@ -57,6 +63,12 @@ angular.module('BG').controller('EquiDetailsCtrl',
     ;
 
 
+    $scope.$watch("mdl.tab1",function(newValue){
+      if(newValue=="map" && gmap){
+        console.log("Resizing");
+        google.maps.event.trigger(gmap,'resize')
+      };
+    });
     var gmap = null;
     $scope.$on('mapInitialized', function (event, map) {
       gmap = map;
