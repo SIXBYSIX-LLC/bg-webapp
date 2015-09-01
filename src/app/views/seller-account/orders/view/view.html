@@ -14,16 +14,28 @@
     <h2>Order Details</h2>
     <dl class="term-description">
         <dt>Order number:</dt><dd>1234</dd>
-        <dt>Name</dt><dd>Hiren Kesariya</dd>
-        <dt>Phone:</dt><dd>{+91 9657061666</dd>
-        <dt>Shipping Address</dt><dd>Address Line here</dd>
-        <dt>Billing Address</dt><dd>Address Line here</dd>
-        <dt>Town / City:</dt><dd>California</dd>
-        <dt>ZIP code:</dt><dd>444002</dd>
-        <dt>Country:</dt><dd>USA</dd>
     </dl>
-
     <hr />
+    <div class="row invoice-address">
+        <div class="col-md-4">
+            <h2>Shipping Address</h2>
+            <dl class="term-description">
+                <dd>{{mdl.invoice.order.billing_address.first_name}} {{mdl.invoice.order.billing_address.last_name}}</dd>
+                <dd>{{mdl.invoice.order.billing_address.address1+' '+order.billing_address.address2}}</dd>
+                <dd>{{mdl.invoice.order.billing_address.city.name}}-{{mdl.invoice.order.billing_address.zip_code}}</dd>
+                <dd>{{mdl.invoice.order.billing_address.country.name}}</dd>
+            </dl>
+        </div>
+        <div class="col-md-4">
+            <h2>Billing Address</h2>
+            <dl class="term-description">
+                <dd>{{mdl.invoice.order.billing_address.first_name}} {{mdl.invoice.order.billing_address.last_name}}</dd>
+                <dd>{{mdl.invoice.order.billing_address.address1+' '+order.billing_address.address2}}</dd>
+                <dd>{{mdl.invoice.order.billing_address.city.name}}-{{mdl.invoice.order.billing_address.zip_code}}</dd>
+                <dd>{{mdl.invoice.order.billing_address.country.name}}</dd>
+            </dl>
+        </div>
+    </div>
 
 </div>
 <div id="tour-details" class="travelo-box order-details" load-indicator>
