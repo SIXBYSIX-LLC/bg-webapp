@@ -1,4 +1,48 @@
-<h1>Process</h1>
-<button ui-sref="main.sellerAccount.orders.view">View</button>
-<button ui-sref="main.sellerAccount.orders.process">Process</button>
-<button ui-sref="main.sellerAccount.orders.list">list</button>
+<h2>Process Order</h2>
+<ul class="progress-indicator">
+    <li class="completed">
+        <span class="bubble"></span>
+        <i class="fa fa-check-circle"></i>
+        Confirmed
+    </li>
+    <li class="completed">
+        <span class="bubble"></span>
+        <i class="fa fa-check-circle"></i>
+        Approved
+    </li>
+    <li>
+        <span class="bubble"></span>
+        Ready to Ship
+    </li>
+    <li>
+        <span class="bubble"></span>
+        Dispatched
+    </li>
+    <li>
+        <span class="bubble"></span>
+        Delivered
+    </li>
+    <li>
+        <span class="bubble"></span>
+        End Contract
+    </li>
+</ul>
+<div class="row form-group" style="margin-top: 40px;">
+    <div class="col-sms-6 col-sm-6">
+        <label>Change Order Status</label>
+        <div class="selector">
+            <select name="select-product" ng-model="" class="full-width" ng-options="">
+            </select>
+        </div>
+    </div>
+</div>
+<br/>
+<div class="row form-group" style="margin-top: 40px;">
+    <div class="col-sms-6 col-sm-6">
+        <textarea rows="10" cols="53" placeholder="Update user with your message here"></textarea>
+    </div>
+</div>
+
+<button ui-sref="main.sellerAccount.orders.view">Update Status</button>
+<!--<button ui-sref="main.sellerAccount.orders.process">Process</button>
+<button ui-sref="main.sellerAccount.orders.list">list</button>-->
