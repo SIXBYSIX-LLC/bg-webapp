@@ -6,43 +6,76 @@
             <h4 class="main-message">Your Recieved a new order !</h4>
             <p>Please find your order details below and start processing it.</p>
         </div>
-        <a  class="button print-button btn-small uppercase">Cancel Order</a>
-        <a  class="button print-button btn-small uppercase">Print Details</a>
+        <a class="button print-button btn-small uppercase">Cancel Order</a>
+        <a class="button print-button btn-small uppercase">Print Details</a>
 
     </div>
     <hr />
     <h2>Order Details</h2>
     <dl class="term-description">
-        <dt>Order number:</dt><dd>{{mdl.order.id}}</dd>
-        <dt>Name</dt><dd>{{mdl.order.billing_address.first_name}} {{mdl.order.billing_address.last_name}}</dd>
-        <dt>Phone:</dt><dd>{{mdl.order.billing_address.phone}}</dd>
-        <dt>Shipping Address</dt><dd>{{mdl.order.billing_address.address1+' '+order.billing_address.address2}}</dd>
-        <dt>Billing Address</dt><dd>{{mdl.order.billing_address.address1+' '+order.billing_address.address2}}</dd>
-        <dt>Town / City:</dt><dd>{{mdl.order.billing_address.city.name}}</dd>
-        <dt>ZIP code:</dt><dd>{{mdl.order.billing_address.zip_code}}</dd>
-        <dt>Country:</dt><dd>{{mdl.order.billing_address.country.name}}</dd>
+        <dt>Order number:</dt><dd>1234</dd>
+        <dt>Name</dt><dd>Hiren Kesariya</dd>
+        <dt>Phone:</dt><dd>{+91 9657061666</dd>
+        <dt>Shipping Address</dt><dd>Address Line here</dd>
+        <dt>Billing Address</dt><dd>Address Line here</dd>
+        <dt>Town / City:</dt><dd>California</dd>
+        <dt>ZIP code:</dt><dd>444002</dd>
+        <dt>Country:</dt><dd>USA</dd>
     </dl>
 
     <hr />
 
 </div>
 <div id="tour-details" class="travelo-box order-details" load-indicator>
-    <div ng-repeat="item in mdl.order.items" class="intro2 small-box border-box table-wrapper hidden-table-sms">
+    <div class="intro2 small-box border-box table-wrapper hidden-table-sms">
         <div class="image-container table-cell"><img src="http://placehold.it/80x80" alt=""></div>
-        <div class="description">
-            <h4>{{item.detail.name}}</h4>
+        <div class="description" style="width: 330px;">
+            <h4>Item Detail Name</h4>
         </div>
         <div class="table-cell">
             <dl class="term-description">
-                <dt>Rented For</dt><dd>{{item.cost_breakup.subtotal.rent_unit_days}} days</dd>
-                <dt>Order Type</dt><dd>{{item.shipping_kind}}</dd>
+                <dt>Rented For</dt><dd>5 days</dd>
+                <dt>Order Type</dt><dd>Pickup</dd>
                 <dt>Status</dt><dd>Approved</dd>
             </dl>
         </div>
-        <div class="price-section table-cell">
-            <div class="price">
-                <div class="price-per-unit">${{item.subtotal | number}}</div>
-            </div>
+        <div class="price-section table-cell" style="padding-right: 26px; padding-top: 0px;">
+            <div class="price"><small>3 days tour</small><div class="price-per-unit">$534</div></div>
+            <a href="tour-booking.html" class="button green btn-small uppercase">Process</a>
+        </div>
+    </div>
+    <div class="intro2 small-box border-box table-wrapper hidden-table-sms">
+        <div class="image-container table-cell"><img src="http://placehold.it/80x80" alt=""></div>
+        <div class="description" style="width: 330px;">
+            <h4>Item Detail Name</h4>
+        </div>
+        <div class="table-cell">
+            <dl class="term-description">
+                <dt>Rented For</dt><dd>5 days</dd>
+                <dt>Order Type</dt><dd>Pickup</dd>
+                <dt>Status</dt><dd>Approved</dd>
+            </dl>
+        </div>
+        <div class="price-section table-cell" style="padding-right: 26px; padding-top: 0px;">
+            <div class="price"><small>3 days tour</small><div class="price-per-unit">$534</div></div>
+            <a href="tour-booking.html" class="button green btn-small uppercase">Process</a>
+        </div>
+    </div>
+    <div class="intro2 small-box border-box table-wrapper hidden-table-sms">
+        <div class="image-container table-cell"><img src="http://placehold.it/80x80" alt=""></div>
+        <div class="description" style="width: 330px;">
+            <h4>Item Detail Name</h4>
+        </div>
+        <div class="table-cell">
+            <dl class="term-description">
+                <dt>Rented For</dt><dd>5 days</dd>
+                <dt>Order Type</dt><dd>Pickup</dd>
+                <dt>Status</dt><dd>Approved</dd>
+            </dl>
+        </div>
+        <div class="price-section table-cell" style="padding-right: 26px; padding-top: 0px;">
+            <div class="price"><small>3 days tour</small><div class="price-per-unit">$534</div></div>
+            <a href="tour-booking.html" class="button green btn-small uppercase">Process</a>
         </div>
     </div>
     <div class="intro2 small-box border-box table-wrapper hidden-table-sms cart-total">
