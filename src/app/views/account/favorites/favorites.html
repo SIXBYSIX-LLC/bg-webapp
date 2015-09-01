@@ -1,0 +1,18 @@
+<div id="booking" class="tab-pane fade in">
+    <h2>Favorites</h2>
+
+    <div class="booking-history">
+        <div class="booking-info clearfix" ng-repeat="pro in mdl.favorites">
+            <div class="date">
+                <a class="hover-effect popup-gallery">
+                    <img  height="72" ng-src="{{pro.image || 'http://placehold.it/72x72'}}" >
+                </a>
+            </div>
+            <h4 class="box-title">
+                <i class="icon soap-icon-departure takeoff-effect yellow-color circle"></i>{{pro.name}}
+            </h4>
+            <button class="btn-mini status" ui-sref="main.equiDetails({id:pro.id})">View</button>
+        </div>
+
+    </div>
+</div>
