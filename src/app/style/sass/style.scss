@@ -5120,4 +5120,25 @@ button.ui-button::-moz-focus-inner { border: 0; padding: 0; }
     }
   }
 }
+.edit-equipment-invoice {
+  dl.term-description {
+    dd {
+      input {
+        width: 55px;
+        border: 1px solid #ccc;
+        padding: 1px;
+      }
+    }
+  }
+  .price-section {
+    .price-per-unit {
+      input {
+        width: 66px;
+        font-size: 14px;
+        padding: 4px;
+        border: 1px solid #ccc;
+      }
+    }
+  }
+}
 /* custom style ends*/
