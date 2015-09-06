@@ -98,8 +98,8 @@
 
             <ul class="breadcrumbs pull-right">
 
-                <li><a ui-sref="home">HOME</a></li>
-                <li ng-repeat="bc in mainMdl.breadcrumbs">
+                <li ng-if="!mainMdl.showToggle"><a ui-sref="home">HOME</a></li>
+                <li ng-if="!mainMdl.showToggle" ng-repeat="bc in mainMdl.breadcrumbs">
                     {{bc.title}}
                 </li>
                 <li ng-if="mainMdl.showToggle">

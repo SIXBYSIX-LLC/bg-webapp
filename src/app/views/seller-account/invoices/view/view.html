@@ -1,31 +1,27 @@
 <div class="booking-information travelo-box" style="margin-bottom: 0px; padding: 20px 30px 1px;">
 
     <h2>Invoice Details</h2>
-    <!--<p class="bg-danger" style="padding: 5px;">This invoice is not paid. Please pay to get order processed.</p>-->
     <dl class="term-description">
-        <dt>Order number:</dt><dd> 1234567890</dd>
-        <!--<dt>First name:</dt><dd>{{mdl.invoice.order.billing_address.first_name}}</dd>
-        <dt>Last name:</dt><dd>{{mdl.invoice.order.billing_address.last_name}}</dd>
-        <dt>Phone:</dt><dd>{{mdl.invoice.order.billing_address.phone}}</dd>-->
+        <dt>Order number:</dt><dd>{{mdl.invoice.order.id}}</dd>
     </dl>
     <hr />
     <div class="row invoice-address align-address">
         <div class="col-md-4">
             <h2>Shipping Address</h2>
             <dl class="term-description">
-                <dd>Hiren Kesariya</dd>
-                <dd>Address Line 1, Address Line 2</dd>
-                <dd>California-44123</dd>
-                <dd>United States of America</dd>
+                <dd>{{mdl.item.invoice.order.shipping_address.first_name}} {{mdl.item.invoice.order.shipping_address.last_name}}</dd>
+                <dd>{{mdl.item.invoice.order.shipping_address.address1+' '+mdl.item.invoice.order.shipping_address.address2}}</dd>
+                <dd>{{mdl.item.invoice.order.shipping_address.city.name}}-{{mdl.item.invoice.order.shipping_address.zip_code}}</dd>
+                <dd>{{mdl.item.invoice.order.shipping_address.country.name}}</dd>
             </dl>
         </div>
         <div class="col-md-4">
             <h2>Billing Address</h2>
             <dl class="term-description">
-                <dd>Hiren Kesariya</dd>
-                <dd>Address Line 1, Address Line 2</dd>
-                <dd>California-44123</dd>
-                <dd>United States of America</dd>
+                <dd>{{mdl.item.invoice.order.billing_address.first_name}} {{mdl.item.invoice.order.billing_address.last_name}}</dd>
+                <dd>{{mdl.item.invoice.order.billing_address.address1+' '+mdl.item.invoice.order.billing_address.address2}}</dd>
+                <dd>{{mdl.item.invoice.order.billing_address.city.name}}-{{mdl.item.invoice.order.billing_address.zip_code}}</dd>
+                <dd>{{mdl.item.invoice.order.billing_address.country.name}}</dd>
             </dl>
         </div>
     </div>
@@ -66,11 +62,11 @@
             <dl class="term-description">
                 <dt>Shipping Cost</dt><dd>$50</dd>
                 <dt>Overusage</dt><dd>$215</dd>
-                <dt>Additional</dt><dd>$234</dd>
+                <dt>Additional</dt><dd>${{mdl.item.additional_charge}}</dd>
             </dl>
         </div>
         <div class="price-section table-cell">
-            <div class="price"><div class="price-per-unit">$2209</div></div>
+            <div class="price"><div class="price-per-unit">${{mdl.item.total}}</div></div>
         </div>
     </div>
     <button class="button green btn-large uppercase pull-left">Back to Invoice List</button>
@@ -78,7 +74,3 @@
     <button style="margin-right:4px;" class="button green btn-large uppercase pull-right green-bg" ui-sref="main.sellerAccount.invoices.edit({id:0})">Edit Invoice</button>
 </div>
 
-<!--
-<button ui-sref="main.sellerAccount.invoices.list">View</button>
-<button ui-sref="main.sellerAccount.invoices.edit({id:0})">Edit</button>
-<button ui-sref="main.sellerAccount.invoices.view({id:0})">View</button>-->
