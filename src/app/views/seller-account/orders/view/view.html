@@ -19,10 +19,10 @@
         <div class="col-md-4">
             <h2>Shipping Address</h2>
             <dl class="term-description">
-                <dd>{{mdl.order.order.billing_address.first_name}} {{mdl.order.order.billing_address.last_name}}</dd>
-                <dd>{{mdl.order.order.billing_address.address1+' '+mdl.order.order.billing_address.address2}}</dd>
-                <dd>{{mdl.order.order.billing_address.city.name}}-{{mdl.order.order.billing_address.zip_code}}</dd>
-                <dd>{{mdl.order.order.billing_address.country.name}}</dd>
+                <dd>{{mdl.order.order.shipping_address.first_name}} {{mdl.order.order.shipping_address.last_name}}</dd>
+                <dd>{{mdl.order.order.shipping_address.address1+' '+mdl.order.order.shipping_address.address2}}</dd>
+                <dd>{{mdl.order.order.shipping_address.city.name}}-{{mdl.order.order.shipping_address.zip_code}}</dd>
+                <dd>{{mdl.order.order.shipping_address.country.name}}</dd>
             </dl>
         </div>
         <div class="col-md-4">
@@ -37,93 +37,6 @@
     </div>
 
 </div>
-        <!--
-
-            "id":18,
-            "current_status":"not_confirmed",
-            "user":{
-               "fullname":"Deepak Patil",
-               "id":5
-            },
-            "rent_details":{
-               "date_start":"2015-08-24T18:30:00Z",
-               "date_end":"2015-08-30T18:30:00Z",
-               "is_postpaid":true
-            },
-            "detail":{
-               "sku":"6TES21438106745",
-               "category":6,
-               "daily_price":1.0,
-               "name":"test",
-               "tags":null,
-               "monthly_price":3.0,
-               "hourly_price":42.0,
-               "brand":"awefa",
-               "description":"awef",
-               "is_active":false,
-               "weekly_price":2.0,
-               "sell_price":4.0,
-               "date_created_at":"2015-07-28T18:05:45.630461Z",
-               "date_updated_at":"2015-07-28T18:05:45.630539Z",
-               "user":2,
-               "images":[
-
-               ],
-               "attributes":null,
-               "id":245,
-               "condition":"used",
-               "location":8
-            },
-            "subtotal":2.0,
-            "shipping_charge":0.0,
-            "additional_charge":0.0,
-            "cost_breakup":{
-               "additional_charge":[
-                  {
-                     "merged":true,
-                     "amt":0.0,
-                     "pct":0,
-                     "name":"Sales tax"
-                  }
-               ],
-               "subtotal":{
-                  "prices":{
-                     "monthly_price":3.0,
-                     "hourly_price":42.0,
-                     "daily_price":1.0,
-                     "weekly_price":2.0
-                  },
-                  "rent_period":{
-                     "adjusted":"6 days, 0:00:00",
-                     "actual":"6 days, 0:00:00",
-                     "final":{
-                        "hours":0,
-                        "weeks":1,
-                        "months":0,
-                        "days":0
-                     }
-                  },
-                  "subtotal":{
-                     "monthly":0.0,
-                     "hourly":0.0,
-                     "daily":0.0,
-                     "weekly":2.0
-                  },
-                  "amt":2.0,
-                  "unit_price":2.0
-               },
-               "shipping":{
-                  "amt":0.0
-               }
-            },
-            "qty":1,
-            "shipping_kind":"pickup",
-            "shipping_method":null
-         }
-      ],
-
-}
-        -->
 
 
 <div id="tour-details" class="travelo-box order-details" load-indicator>

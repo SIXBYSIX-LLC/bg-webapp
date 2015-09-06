@@ -13,10 +13,10 @@
         <div class="col-md-4">
             <h2>Shipping Address</h2>
             <dl class="term-description">
-                <dd>{{mdl.invoice.order.billing_address.first_name}} {{mdl.invoice.order.billing_address.last_name}}</dd>
-                <dd>{{mdl.invoice.order.billing_address.address1+' '+order.billing_address.address2}}</dd>
-                <dd>{{mdl.invoice.order.billing_address.city.name}}-{{mdl.invoice.order.billing_address.zip_code}}</dd>
-                <dd>{{mdl.invoice.order.billing_address.country.name}}</dd>
+                <dd>{{mdl.invoice.order.shipping_address.first_name}} {{mdl.invoice.order.shipping_address.last_name}}</dd>
+                <dd>{{mdl.invoice.order.shipping_address.address1+' '+mdl.invoice.order.shipping_address.address2}}</dd>
+                <dd>{{mdl.invoice.order.shipping_address.city.name}}-{{mdl.invoice.order.shipping_address.zip_code}}</dd>
+                <dd>{{mdl.invoice.order.shipping_address.country.name}}</dd>
             </dl>
         </div>
         <div class="col-md-4">
@@ -35,7 +35,7 @@
     <div ng-repeat="item in mdl.invoice.items" class="intro2 small-box border-box table-wrapper hidden-table-sms">
         <div class="image-container table-cell" style="width: 100px;"><img src="http://placehold.it/80x80" alt=""></div>
         <div class="description" style="width: 250px;">
-            <h4><!--{{item.detail.name}}--> Hiren product</h4>
+            <h4>{{item.detail.name}}</h4>
         </div>
         <div class="table-cell" style="width: 400px;">
             <dl class="term-description" style="width: 49%; float: left;">

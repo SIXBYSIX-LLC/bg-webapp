@@ -2,21 +2,27 @@
     <h2>Invoices</h2>
 
     <div class="booking-history">
-        <div class="booking-info clearfix">
+        <div  ng-repeat="item in mdl.items" class="booking-info clearfix">
             <h5 class="box-title col-md-3">
                 <i class="icon soap-icon-card yellow-color circle"></i>Invoice
-                <small>ID : 1234566789</small>
+                <small>ID : {{item.id}}</small>
             </h5>
             <h5 class="box-title col-md-2">
-                <i class="icon yellow-color circle"></i>Paid
+                <i class="icon yellow-color circle"></i>
+                {{
+                  item.invoice.is_paid ? 'Paid' : 'Not Paid'
+                }}
             </h5>
             <h5 class="box-title col-md-1">
-                <i class="icon yellow-color circle"></i>Approved
+                <i class="icon yellow-color circle"></i>
+                {{
+                  item.is_approve ? 'Approved' : 'Not Approved'
+                }}
             </h5>
             <h5 class="box-title col-md-2 col-lg-offset-1">
-                <i class="icon yellow-color circle"></i>$ 1200
+                <i class="icon yellow-color circle"></i>${{item.total}}
             </h5>
-            <button class="btn-mini status" ui-sref="main.sellerAccount.invoices.view({id:0})">View Details</button>
+            <button class="btn-mini status" ui-sref="main.sellerAccount.invoices.view({id:item.id})">View Details</button>
         </div>
     </div>
 </div>
