@@ -5113,4 +5113,11 @@ button.ui-button::-moz-focus-inner { border: 0; padding: 0; }
 .progress-indicator {
   font-size: 1.1em;
 }
+.align-address {
+  dl.term-description {
+    dd {
+      width: 100%;
+    }
+  }
+}
 /* custom style ends*/
