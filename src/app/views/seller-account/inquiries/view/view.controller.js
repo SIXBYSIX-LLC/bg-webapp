@@ -1,4 +1,4 @@
-angular.module('BG').controller('ViewInquiryCtrl',
+angular.module('BG').controller('InquiryViewCtrl',
   /** @ngInject */
     function ($scope) {
 

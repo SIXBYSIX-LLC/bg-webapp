@@ -219,7 +219,7 @@
       .state('main.sellerAccount.inquiries.view',{
         url:'/view/{id}',
         templateUrl:'app/views/seller-account/inquiries/view/view.html',
-        controller:'ViewInquiryCtrl'
+        controller:'InquiryViewCtrl'
       })
       .state('main.sellerAccount.settings',{
         url:'/settings',
