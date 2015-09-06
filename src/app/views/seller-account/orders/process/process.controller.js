@@ -1,6 +1,6 @@
 angular.module('BG').controller('ProcessSellerOrderCtrl',
   /** @ngInject */
-    function ($scope,$stateParams, SellerOrdersService) {
+    function ($scope,$state, $stateParams, SellerOrdersService) {
 
     var mdl = $scope.mdl = {};
     SellerOrdersService.getOrder($stateParams.id).then(function(response){
@@ -57,8 +57,16 @@ angular.module('BG').controller('ProcessSellerOrderCtrl',
       'delivered':'Delivered',
       'cancelled':'Cancelled',
       'end_contract':'End Contract'
-    }
+    };
 
+    mdl.update=function(){
+      if(mdl.changedStatus){
+        SellerOrdersService.updateStatus(mdl.item.id,$stateParams.itemIndex,mdl.changedStatus.id,mdl.comment).then(function(){
+          $state.go("main.sellerAccount.orders.view",{id:$stateParams.id});
+        });
+      }
+
+    };
 
 
 

@@ -8,6 +8,14 @@ angular.module('BG').factory('SellerOrdersService',
       },
       getOrder:function(id){
         return $http.get(API.baseURL+"orderlines/"+id);
+      },
+      updateStatus:function(orderId,itemId,status,comment){
+        return $http.put(API.baseURL+"orderlines/"+orderId+"/items/"+itemId+"/actions/change_status",{
+          status:status,
+          info:{
+            comment:comment
+          }
+        });
       }
     }
   }

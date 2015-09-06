@@ -206,6 +206,21 @@
         url:'/inquiries',
         templateUrl:'app/views/seller-account/inquiries/inquiries.html'
       })
+      .state('main.sellerAccount.inquiries.list',{
+        url:'/list',
+        templateUrl:'app/views/seller-account/inquiries/list/list.html',
+        controller:'InquiryListCtrl'
+      })
+      .state('main.sellerAccount.inquiries.history',{
+        url:'/history/{id}',
+        templateUrl:'app/views/seller-account/inquiries/history/history.html',
+        controller:'InquiryHistoryCtrl'
+      })
+      .state('main.sellerAccount.inquiries.view',{
+        url:'/view/{id}',
+        templateUrl:'app/views/seller-account/inquiries/view/view.html',
+        controller:'ViewInquiryCtrl'
+      })
       .state('main.sellerAccount.settings',{
         url:'/settings',
         templateUrl:'app/views/seller-account/settings/settings.html',

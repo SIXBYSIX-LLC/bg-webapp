@@ -41,10 +41,10 @@
 <br/>
 <div class="row form-group" style="margin-top: 40px;">
     <div class="col-sms-6 col-sm-6">
-        <textarea rows="10" cols="53" placeholder="Update user with your message here"></textarea>
+        <textarea rows="10" cols="53" ng-model="mdl.comment" placeholder="Update user with your message here"></textarea>
     </div>
 </div>
 
-<button>Update Status</button>
+<button ng-click="mdl.update()">Update Status</button>
 <!--<button ui-sref="main.sellerAccount.orders.process">Process</button>
 <button ui-sref="main.sellerAccount.orders.list">list</button>-->
