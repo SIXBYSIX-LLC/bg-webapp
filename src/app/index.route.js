@@ -187,6 +187,21 @@
         url:'/invoices',
         templateUrl:'app/views/seller-account/invoices/invoices.html'
       })
+      .state('main.sellerAccount.invoices.list',{
+        url:'/list',
+        templateUrl:'app/views/seller-account/invoices/list/list.html',
+        controller:'SellerInvoiceListCtrl'
+      })
+      .state('main.sellerAccount.invoices.edit',{
+        url:'/edit/{id}',
+        templateUrl:'app/views/seller-account/invoices/edit/edit.html',
+        controller:'SellerInvoiceEditCtrl'
+      })
+      .state('main.sellerAccount.invoices.view',{
+        url:'/view/{id}',
+        templateUrl:'app/views/seller-account/invoices/view/view.html',
+        controller:'SellerInvoiceViewCtrl'
+      })
       .state('main.sellerAccount.inquiries',{
         url:'/inquiries',
         templateUrl:'app/views/seller-account/inquiries/inquiries.html'
