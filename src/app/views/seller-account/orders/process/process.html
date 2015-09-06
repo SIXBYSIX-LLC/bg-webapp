@@ -33,7 +33,7 @@
     <div class="col-sms-6 col-sm-6">
         <label>Change Order Status</label>
         <div class="selector">
-            <select name="select-product" ng-model="" class="full-width" ng-options="">
+            <select name="select-product" ng-model="mdl.changedStatus" class="full-width" ng-options="opt.id as opt.text for opt in mdl.statusOptions">
             </select>
         </div>
     </div>
@@ -45,6 +45,6 @@
     </div>
 </div>
 
-<button ui-sref="main.sellerAccount.orders.view">Update Status</button>
+<button>Update Status</button>
 <!--<button ui-sref="main.sellerAccount.orders.process">Process</button>
 <button ui-sref="main.sellerAccount.orders.list">list</button>-->

@@ -12,81 +12,136 @@
     <hr />
     <h2>Order Details</h2>
     <dl class="term-description">
-        <dt>Order number:</dt><dd>1234</dd>
+        <dt>Order number:</dt><dd>{{mdl.order.id}}</dd>
     </dl>
     <hr />
     <div class="row invoice-address">
         <div class="col-md-4">
             <h2>Shipping Address</h2>
             <dl class="term-description">
-                <dd>{{mdl.invoice.order.billing_address.first_name}} {{mdl.invoice.order.billing_address.last_name}}</dd>
-                <dd>{{mdl.invoice.order.billing_address.address1+' '+order.billing_address.address2}}</dd>
-                <dd>{{mdl.invoice.order.billing_address.city.name}}-{{mdl.invoice.order.billing_address.zip_code}}</dd>
-                <dd>{{mdl.invoice.order.billing_address.country.name}}</dd>
+                <dd>{{mdl.order.order.billing_address.first_name}} {{mdl.order.order.billing_address.last_name}}</dd>
+                <dd>{{mdl.order.order.billing_address.address1+' '+mdl.order.order.billing_address.address2}}</dd>
+                <dd>{{mdl.order.order.billing_address.city.name}}-{{mdl.order.order.billing_address.zip_code}}</dd>
+                <dd>{{mdl.order.order.billing_address.country.name}}</dd>
             </dl>
         </div>
         <div class="col-md-4">
             <h2>Billing Address</h2>
             <dl class="term-description">
-                <dd>{{mdl.invoice.order.billing_address.first_name}} {{mdl.invoice.order.billing_address.last_name}}</dd>
-                <dd>{{mdl.invoice.order.billing_address.address1+' '+order.billing_address.address2}}</dd>
-                <dd>{{mdl.invoice.order.billing_address.city.name}}-{{mdl.invoice.order.billing_address.zip_code}}</dd>
-                <dd>{{mdl.invoice.order.billing_address.country.name}}</dd>
+                <dd>{{mdl.order.order.billing_address.first_name}} {{mdl.order.order.billing_address.last_name}}</dd>
+                <dd>{{mdl.order.order.billing_address.address1+' '+mdl.order.order.billing_address.address2}}</dd>
+                <dd>{{mdl.order.order.billing_address.city.name}}-{{mdl.order.order.billing_address.zip_code}}</dd>
+                <dd>{{mdl.order.order.billing_address.country.name}}</dd>
             </dl>
         </div>
     </div>
 
 </div>
+        <!--
+
+            "id":18,
+            "current_status":"not_confirmed",
+            "user":{
+               "fullname":"Deepak Patil",
+               "id":5
+            },
+            "rent_details":{
+               "date_start":"2015-08-24T18:30:00Z",
+               "date_end":"2015-08-30T18:30:00Z",
+               "is_postpaid":true
+            },
+            "detail":{
+               "sku":"6TES21438106745",
+               "category":6,
+               "daily_price":1.0,
+               "name":"test",
+               "tags":null,
+               "monthly_price":3.0,
+               "hourly_price":42.0,
+               "brand":"awefa",
+               "description":"awef",
+               "is_active":false,
+               "weekly_price":2.0,
+               "sell_price":4.0,
+               "date_created_at":"2015-07-28T18:05:45.630461Z",
+               "date_updated_at":"2015-07-28T18:05:45.630539Z",
+               "user":2,
+               "images":[
+
+               ],
+               "attributes":null,
+               "id":245,
+               "condition":"used",
+               "location":8
+            },
+            "subtotal":2.0,
+            "shipping_charge":0.0,
+            "additional_charge":0.0,
+            "cost_breakup":{
+               "additional_charge":[
+                  {
+                     "merged":true,
+                     "amt":0.0,
+                     "pct":0,
+                     "name":"Sales tax"
+                  }
+               ],
+               "subtotal":{
+                  "prices":{
+                     "monthly_price":3.0,
+                     "hourly_price":42.0,
+                     "daily_price":1.0,
+                     "weekly_price":2.0
+                  },
+                  "rent_period":{
+                     "adjusted":"6 days, 0:00:00",
+                     "actual":"6 days, 0:00:00",
+                     "final":{
+                        "hours":0,
+                        "weeks":1,
+                        "months":0,
+                        "days":0
+                     }
+                  },
+                  "subtotal":{
+                     "monthly":0.0,
+                     "hourly":0.0,
+                     "daily":0.0,
+                     "weekly":2.0
+                  },
+                  "amt":2.0,
+                  "unit_price":2.0
+               },
+               "shipping":{
+                  "amt":0.0
+               }
+            },
+            "qty":1,
+            "shipping_kind":"pickup",
+            "shipping_method":null
+         }
+      ],
+
+}
+        -->
+
+
 <div id="tour-details" class="travelo-box order-details" load-indicator>
-    <div class="intro2 small-box border-box table-wrapper hidden-table-sms">
-        <div class="image-container table-cell"><img src="http://placehold.it/80x80" alt=""></div>
+    <div ng-repeat="item in mdl.order.items" class="intro2 small-box border-box table-wrapper hidden-table-sms">
+        <div class="image-container table-cell"><img ng-src="{{item.images[0] || 'http://placehold.it/80x80'}}" alt=""></div>
         <div class="description" style="width: 330px;">
-            <h4>Item Detail Name</h4>
+            <h4>{{item.detail.name}}</h4>
         </div>
         <div class="table-cell">
             <dl class="term-description">
-                <dt>Rented For</dt><dd>5 days</dd>
-                <dt>Order Type</dt><dd>Pickup</dd>
-                <dt>Status</dt><dd>Approved</dd>
+                <dt>Rented For</dt><dd>{{mdl.getShippingPeriod(item)}}</dd>
+                <dt>Order Type</dt><dd>{{item.shipping_kind}}</dd>
+                <dt>Status</dt><dd>{{item.current_status}}</dd>
             </dl>
         </div>
         <div class="price-section table-cell" style="padding-right: 26px; padding-top: 0px;">
-            <div class="price"><small>3 days tour</small><div class="price-per-unit">$534</div></div>
-            <a ui-sref="main.sellerAccount.orders.process" class="button green btn-small uppercase">Process</a>
-        </div>
-    </div>
-    <div class="intro2 small-box border-box table-wrapper hidden-table-sms">
-        <div class="image-container table-cell"><img src="http://placehold.it/80x80" alt=""></div>
-        <div class="description" style="width: 330px;">
-            <h4>Item Detail Name</h4>
-        </div>
-        <div class="table-cell">
-            <dl class="term-description">
-                <dt>Rented For</dt><dd>5 days</dd>
-                <dt>Order Type</dt><dd>Pickup</dd>
-                <dt>Status</dt><dd>Approved</dd>
-            </dl>
-        </div>
-        <div class="price-section table-cell" style="padding-right: 26px; padding-top: 0px;">
-            <div class="price"><small>3 days tour</small><div class="price-per-unit">$534</div></div>
-            <a ui-sref="main.sellerAccount.orders.process" class="button green btn-small uppercase">Process</a>
-        </div>
-    </div>
-    <div class="intro2 small-box border-box table-wrapper hidden-table-sms">
-        <div class="image-container table-cell"><img src="http://placehold.it/80x80" alt=""></div>
-        <div class="description" style="width: 330px;">
-            <h4>Item Detail Name</h4>
-        </div>
-        <div class="table-cell">
-            <dl class="term-description">
-                <dt>Rented For</dt><dd>5 days</dd>
-                <dt>Order Type</dt><dd>Pickup</dd>
-                <dt>Status</dt><dd>Approved</dd>
-            </dl>
-        </div>
-        <div class="price-section table-cell" style="padding-right: 26px; padding-top: 0px;">
-            <div class="price"><small>3 days tour</small><div class="price-per-unit">$534</div></div>
-            <a ui-sref="main.sellerAccount.orders.process" class="button green btn-small uppercase">Process</a>
+            <div class="price"><div class="price-per-unit">${{item.cost_breakup.subtotal.amt}}</div></div>
+            <a ui-sref="main.sellerAccount.orders.process({id:mdl.order.id,itemIndex:$index})" class="button green btn-small uppercase">Process</a>
         </div>
     </div>
     <div class="intro2 small-box border-box table-wrapper hidden-table-sms cart-total">
@@ -98,14 +153,14 @@
         <div class="table-cell">
             <dl class="term-description">
                 <dt>Shipping Cost</dt><dd>${{mdl.order.shipping_charge | number}}</dd>
-                <dt>Additional Charges</dt><dd>${{mdl.order.shipping_charge | number}}</dd>
+                <dt>Additional Charges</dt><dd>${{mdl.order.additional_charge | number}}</dd>
             </dl>
         </div>
         <div class="price-section table-cell">
-            <div class="price"><div class="price-per-unit">${{mdl.order.total | number}}</div></div>
+            <div class="price"><div class="price-per-unit">${{mdl.order.subtotal | number}}</div></div>
         </div>
     </div>
-    <a class="button green btn-large uppercase pull-right" ui-sref="main.account.orders.list">Back to Order List</a>
+    <a class="button green btn-large uppercase pull-right" ui-sref="main.sellerAccount.orders.list">Back to Order List</a>
 </div>
 
 

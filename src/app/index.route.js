@@ -174,11 +174,12 @@
         controller:'ListSellerOrdersCtrl'
       })
       .state('main.sellerAccount.orders.view',{
-        url:'/view',
-        templateUrl:'app/views/seller-account/orders/view/view.html'
+        url:'/view/{id}',
+        templateUrl:'app/views/seller-account/orders/view/view.html',
+        controller:'ViewSellerOrderCtrl'
       })
       .state('main.sellerAccount.orders.process',{
-        url:'/process/:id',
+        url:'/process/:id/:itemIndex',
         templateUrl:'app/views/seller-account/orders/process/process.html',
         controller:'ProcessSellerOrderCtrl'
       })
