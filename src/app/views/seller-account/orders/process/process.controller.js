@@ -3,9 +3,21 @@ angular.module('BG').controller('ProcessSellerOrderCtrl',
     function ($scope,$state, $stateParams, SellerOrdersService) {
 
     var mdl = $scope.mdl = {};
+    var status=['not_confirmed',
+      'confirmed',
+      'approved',
+      'ready_to_ship',
+      'ready_to_pickup',
+      'dispatched',
+      'picked_up',
+      'delivered',
+      'cancelled',
+      'end_contract'];
     SellerOrdersService.getOrder($stateParams.id).then(function(response){
       mdl.orderLine = response.data.data;
       mdl.item=response.data.data.items[$stateParams.itemIndex];
+
+      mdl.currentStatusIndex = status.indexOf(mdl.item.current_status);
       getOptionStatus(mdl.item.current_status);
     });
 
@@ -49,6 +61,7 @@ angular.module('BG').controller('ProcessSellerOrderCtrl',
     };
 
     var optionNames = {
+      'not_confirmed':'Not Confirmed',
       'confirmed':'Confirmed',
       'approved':'Approved',
       'ready_to_ship':'Ready to Ship',

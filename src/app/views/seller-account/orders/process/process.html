@@ -1,31 +1,35 @@
 <h2>Process Order</h2>
 <ul class="progress-indicator">
-    <li class="completed">
+    <li ng-class="{'completed':mdl.currentStatusIndex>=1}">
         <span class="bubble"></span>
         <i class="fa fa-check-circle"></i>
         Confirmed<br/>
         <small class="select-color">21 Aug, 2015 03:44:44</small>
     </li>
-    <li class="completed">
+    <li ng-class="{'completed':mdl.currentStatusIndex>=2}">
         <span class="bubble"></span>
         <i class="fa fa-check-circle"></i>
         Approved<br/>
         <small class="select-color">21 Aug, 2015 03:44:44</small>
     </li>
-    <li>
+    <li ng-class="{'completed':mdl.currentStatusIndex>=4}">
         <span class="bubble"></span>
+        <i class="fa fa-check-circle"></i>
         Ready to Ship
     </li>
-    <li>
+    <li ng-class="{'completed':mdl.currentStatusIndex>=6}">
         <span class="bubble"></span>
+        <i class="fa fa-check-circle"></i>
         Dispatched
     </li>
-    <li>
+    <li ng-class="{'completed':mdl.currentStatusIndex>=7}">
         <span class="bubble"></span>
+        <i class="fa fa-check-circle"></i>
         Delivered
     </li>
-    <li>
+    <li ng-class="{'completed':mdl.currentStatusIndex>=8}">
         <span class="bubble"></span>
+        <i class="fa fa-check-circle"></i>
         End Contract
     </li>
 </ul>
