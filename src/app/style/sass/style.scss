@@ -5141,4 +5141,35 @@ button.ui-button::-moz-focus-inner { border: 0; padding: 0; }
     }
   }
 }
+.single-conversation {
+  .guest-review {
+    width: 100%;
+  }
+  .author {
+    a {
+      width: 45px;
+      height: 45px;
+    }
+  }
+}
+.my-message {
+  background-color: #f0f0f0;
+}
+.conversation-list {
+  .guest-review {
+    width: 100%;
+    .author {
+      text-align: left !important;
+    }
+    .comment-container {
+      .comment-header {
+        a.button {
+          padding-left: 5px;
+          padding-right: 5px;
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+}
 /* custom style ends*/
