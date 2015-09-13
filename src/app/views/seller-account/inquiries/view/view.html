@@ -1,82 +1,30 @@
 <div class="booking-information travelo-box" style="margin-bottom: 0px; padding: 20px 30px 1px;">
     <div class="guest-reviews single-conversation">
         <h2>Your Conversation with "Jessica Brown"</h2>
-
-        <div class="guest-review table-wrapper my-message">
+        <div  class="guest-review table-wrapper">
             <div class="col-xs-3 col-md-2 author table-cell">
                 <p class="name">Inquiry</p>
             </div>
             <div class="col-xs-9 col-md-10 table-cell comment-container">
                 <div class="comment-header clearfix">
-                    <h4 class="comment-title">Want to rent Excavator for 3 months on different locations.</h4>
+                    <h4 class="comment-title">{{mdl.inq.subject}}</h4>
                 </div>
             </div>
         </div>
-        <div class="guest-review table-wrapper">
+        <div ng-class="{'my-message':user.id==item.user}" ng-repeat="item in mdl.items" class="guest-review table-wrapper">
             <div class="col-xs-3 col-md-2 author table-cell">
                 <a href="#"><img src="http://placehold.it/270x263" alt="" width="270" height="263"/></a>
 
-                <p class="name">David Jhon</p>
+                <p class="name">{{user.id==item.user ? user.fullname : mdl.toUser.fullname}}</p>
 
-                <p class="date">NOV, 12, 2013</p>
+                <p class="date">{{item.date_updated_at | date}}</p>
             </div>
             <div class="col-xs-9 col-md-10 table-cell comment-container">
                 <div class="comment-content">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        the industry's stand dummy text ever since the 1500s, when an unknown printer took a galley of
-                        type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
+                    <p>{{item.text}}</p>
                 </div>
             </div>
 
-        </div>
-        <div class="guest-review table-wrapper my-message">
-            <div class="col-xs-3 col-md-2 author table-cell">
-                <a href="#"><img src="http://placehold.it/270x263" alt="" width="270" height="263"/></a>
-
-                <p class="name">Kyle Martin</p>
-
-                <p class="date">NOV, 12, 2013</p>
-            </div>
-            <div class="col-xs-9 col-md-10 table-cell comment-container">
-                <div class="comment-content">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        the industry's stand dummy text ever since the 1500s, when an unknown printer took a galley of
-                        type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
-                </div>
-            </div>
-        </div>
-        <div class="guest-review table-wrapper">
-            <div class="col-xs-3 col-md-2 author table-cell">
-                <a href="#"><img src="http://placehold.it/270x263" alt="" width="270" height="263"/></a>
-
-                <p class="name">David Jhon</p>
-
-                <p class="date">NOV, 12, 2013</p>
-            </div>
-            <div class="col-xs-9 col-md-10 table-cell comment-container">
-                <div class="comment-content">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        the industry's stand dummy text ever since the 1500s, when an unknown printer took a galley of
-                        type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
-                </div>
-            </div>
-
-        </div>
-        <div class="guest-review table-wrapper my-message">
-            <div class="col-xs-3 col-md-2 author table-cell">
-                <a href="#"><img src="http://placehold.it/270x263" alt="" width="270" height="263"/></a>
-
-                <p class="name">Kyle Martin</p>
-
-                <p class="date">NOV, 12, 2013</p>
-            </div>
-            <div class="col-xs-9 col-md-10 table-cell comment-container">
-                <div class="comment-content">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        the industry's stand dummy text ever since the 1500s, when an unknown printer took a galley of
-                        type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
-                </div>
-            </div>
         </div>
         <div class="guest-review table-wrapper my-message">
             <div class="col-xs-3 col-md-2 author table-cell">
@@ -88,8 +36,8 @@
             </div>
             <div class="col-xs-9 col-md-10 table-cell comment-container">
                 <div class="comment-content">
-                    <textarea class="reply-text-area"></textarea>
-                    <a class="button btn-medium green" style="margin-bottom: 20px; margin-top: 10px;">Send</a>
+                    <textarea ng-model="mdl.message" class="reply-text-area"></textarea>
+                    <a class="button btn-medium green" ng-click="mdl.sendMessage()" style="margin-bottom: 20px; margin-top: 10px;">Send</a>
                 </div>
             </div>
 

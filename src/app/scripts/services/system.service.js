@@ -10,6 +10,10 @@ angular.module('BG').factory("SystemService",
       },
       getCities:function(country_id,state_id){
         return $http.get(API.baseURL+"system/countries/"+country_id+"/regions/"+state_id+"/cities");
+      },
+      getUser:function(id){
+        //https://api.marketplace.com/v1/users/id
+        return $http.get(API.baseURL+"users/"+id);
       }
     }
    }

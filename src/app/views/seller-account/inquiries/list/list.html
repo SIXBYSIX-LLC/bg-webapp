@@ -2,138 +2,25 @@
     <div class="guest-reviews conversation-list">
         <h2>Inquiries</h2>
 
-        <div class="guest-review table-wrapper">
+        <div ng-repeat="item in mdl.items" class="guest-review table-wrapper">
             <div class="col-xs-3 col-md-3 author table-cell">
                 <p class="name">Jessica Brown</p>
             </div>
             <div class="col-xs-9 col-md-6 table-cell comment-container">
                 <div class="comment-header clearfix">
-                    <h4 class="comment-title">Subject Line goes here subject line here</h4>
+                    <h4 class="comment-title">{{item.subject}}</h4>
                 </div>
             </div>
             <div class="col-xs-9 col-md-3 table-cell comment-container">
                 <div class="comment-header clearfix">
                     <div class="review-score">
-                        <a class="button btn-mini green-bg pull-right" ui-sref="main.sellerAccount.inquiries.view({id:0})">View</a>
-                        <a class="button btn-mini green-bg pull-right">Reply</a>
-                        <a class="button btn-mini green-bg pull-right">Delete</a>
+                        <a class="button btn-mini green-bg pull-right" ui-sref="main.sellerAccount.inquiries.view({id:item.id})">View</a>
+                        <a class="button btn-mini green-bg pull-right" ui-sref="main.sellerAccount.inquiries.view({id:item.id})">Reply</a>
+                        <a class="button btn-mini green-bg pull-right" ng-click="mdl.delete(item)">Delete</a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="guest-review table-wrapper">
-            <div class="col-xs-3 col-md-3 author table-cell">
-                <p class="name">Jessica Brown</p>
-            </div>
-            <div class="col-xs-9 col-md-6 table-cell comment-container">
-                <div class="comment-header clearfix">
-                    <h4 class="comment-title">Subject Line goes here subject line here</h4>
-                </div>
-            </div>
-            <div class="col-xs-9 col-md-3 table-cell comment-container">
-                <div class="comment-header clearfix">
-                    <div class="review-score">
-                        <a class="button btn-mini green-bg pull-right">View</a>
-                        <a class="button btn-mini green-bg pull-right">Reply</a>
-                        <a class="button btn-mini green-bg pull-right">Delete</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="guest-review table-wrapper">
-            <div class="col-xs-3 col-md-3 author table-cell">
-                <p class="name">Jessica Brown</p>
-            </div>
-            <div class="col-xs-9 col-md-6 table-cell comment-container">
-                <div class="comment-header clearfix">
-                    <h4 class="comment-title">Subject Line goes here subject line here</h4>
-                </div>
-            </div>
-            <div class="col-xs-9 col-md-3 table-cell comment-container">
-                <div class="comment-header clearfix">
-                    <div class="review-score">
-                        <a class="button btn-mini green-bg pull-right">View</a>
-                        <a class="button btn-mini green-bg pull-right">Reply</a>
-                        <a class="button btn-mini green-bg pull-right">Delete</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="guest-review table-wrapper">
-            <div class="col-xs-3 col-md-3 author table-cell">
-                <p class="name">Jessica Brown</p>
-            </div>
-            <div class="col-xs-9 col-md-6 table-cell comment-container">
-                <div class="comment-header clearfix">
-                    <h4 class="comment-title">Subject Line goes here subject line here</h4>
-                </div>
-            </div>
-            <div class="col-xs-9 col-md-3 table-cell comment-container">
-                <div class="comment-header clearfix">
-                    <div class="review-score">
-                        <a class="button btn-mini green-bg pull-right">View</a>
-                        <a class="button btn-mini green-bg pull-right">Reply</a>
-                        <a class="button btn-mini green-bg pull-right">Delete</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="guest-review table-wrapper">
-            <div class="col-xs-3 col-md-3 author table-cell">
-                <p class="name">Jessica Brown</p>
-            </div>
-            <div class="col-xs-9 col-md-6 table-cell comment-container">
-                <div class="comment-header clearfix">
-                    <h4 class="comment-title">Subject Line goes here subject line here</h4>
-                </div>
-            </div>
-            <div class="col-xs-9 col-md-3 table-cell comment-container">
-                <div class="comment-header clearfix">
-                    <div class="review-score">
-                        <a class="button btn-mini green-bg pull-right">View</a>
-                        <a class="button btn-mini green-bg pull-right">Reply</a>
-                        <a class="button btn-mini green-bg pull-right">Delete</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="guest-review table-wrapper">
-            <div class="col-xs-3 col-md-3 author table-cell">
-                <p class="name">Jessica Brown</p>
-            </div>
-            <div class="col-xs-9 col-md-6 table-cell comment-container">
-                <div class="comment-header clearfix">
-                    <h4 class="comment-title">Subject Line goes here subject line here</h4>
-                </div>
-            </div>
-            <div class="col-xs-9 col-md-3 table-cell comment-container">
-                <div class="comment-header clearfix">
-                    <div class="review-score">
-                        <a class="button btn-mini green-bg pull-right">View</a>
-                        <a class="button btn-mini green-bg pull-right">Reply</a>
-                        <a class="button btn-mini green-bg pull-right">Delete</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="guest-review table-wrapper">
-            <div class="col-xs-3 col-md-3 author table-cell">
-                <p class="name">Jessica Brown</p>
-            </div>
-            <div class="col-xs-9 col-md-6 table-cell comment-container">
-                <div class="comment-header clearfix">
-                    <h4 class="comment-title">Subject Line goes here subject line here</h4>
-                </div>
-            </div>
-            <div class="col-xs-9 col-md-3 table-cell comment-container">
-                <div class="comment-header clearfix">
-                    <div class="review-score">
-                        <a class="button btn-mini green-bg pull-right">View</a>
-                        <a class="button btn-mini green-bg pull-right">Reply</a>
-                        <a class="button btn-mini green-bg pull-right">Delete</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+
     </div>
 </div>

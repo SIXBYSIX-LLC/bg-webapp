@@ -23,6 +23,10 @@
         controller:'AccountCtrl',
         templateUrl:'app/views/account/account.html'
       })
+      .state('main.contactUs',{
+        url:'/contact-us',
+        templateUrl:'app/views/contact-us/contact-us.html'
+      })
       .state('main.account.bookings',{
         url:'/bookings',
         templateUrl:'app/views/account/bookings/bookings.html'
@@ -222,8 +226,9 @@
         controller:'InquiryViewCtrl'
       })
       .state('main.sellerAccount.inquiries.new',{
-        url:'/new',
-        templateUrl:'app/views/seller-account/inquiries/new/new.html'
+        url:'/new/{id}',
+        templateUrl:'app/views/seller-account/inquiries/new/new.html',
+        controller:'InquiryNewCtrl'
       })
       .state('main.sellerAccount.settings',{
         url:'/settings',
