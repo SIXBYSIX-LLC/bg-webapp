@@ -11,7 +11,6 @@ angular.module('BG').controller('ProcessSellerOrderCtrl',
       'dispatched',
       'picked_up',
       'delivered',
-      'cancelled',
       'end_contract'];
     SellerOrdersService.getOrder($stateParams.id).then(function(response){
       mdl.orderLine = response.data.data;

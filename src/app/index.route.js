@@ -221,6 +221,10 @@
         templateUrl:'app/views/seller-account/inquiries/view/view.html',
         controller:'InquiryViewCtrl'
       })
+      .state('main.sellerAccount.inquiries.new',{
+        url:'/new',
+        templateUrl:'app/views/seller-account/inquiries/new/new.html'
+      })
       .state('main.sellerAccount.settings',{
         url:'/settings',
         templateUrl:'app/views/seller-account/settings/settings.html',

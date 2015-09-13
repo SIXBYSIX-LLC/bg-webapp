@@ -33,22 +33,25 @@
         End Contract
     </li>
 </ul>
-<div class="row form-group" style="margin-top: 40px;">
-    <div class="col-sms-6 col-sm-6">
-        <label>Change Order Status</label>
-        <div class="selector">
-            <select name="select-product" ng-model="mdl.changedStatus" class="full-width" ng-options="opt as opt.text for opt in mdl.statusOptions">
-            </select>
+<h3><label>Current Status:</label><span>{{mdl.item.current_status}}</span></h3>
+<form ng-show="mdl.item.current_status!='cancelled'">
+    <div class="row form-group" style="margin-top: 40px;">
+        <div class="col-sms-6 col-sm-6">
+            <label>Change Order Status</label>
+            <div class="selector">
+                <select name="select-product" ng-model="mdl.changedStatus" class="full-width" ng-options="opt as opt.text for opt in mdl.statusOptions">
+                </select>
+            </div>
         </div>
     </div>
-</div>
-<br/>
-<div class="row form-group" style="margin-top: 40px;">
-    <div class="col-sms-6 col-sm-6">
-        <textarea rows="10" cols="53" ng-model="mdl.comment" placeholder="Update user with your message here"></textarea>
+    <br/>
+    <div class="row form-group" style="margin-top: 40px;">
+        <div class="col-sms-6 col-sm-6">
+            <textarea rows="10" cols="53" ng-model="mdl.comment" placeholder="Update user with your message here"></textarea>
+        </div>
     </div>
-</div>
 
-<button ng-click="mdl.update()">Update Status</button>
+    <button ng-click="mdl.update()">Update Status</button>
+</form>
 <!--<button ui-sref="main.sellerAccount.orders.process">Process</button>
 <button ui-sref="main.sellerAccount.orders.list">list</button>-->
