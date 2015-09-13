@@ -5172,6 +5172,11 @@ button.ui-button::-moz-focus-inner { border: 0; padding: 0; }
     }
   }
 }
+.subject-line {
+  height: 30px;
+  width: 100%;
+  padding: 5px;
+}
 .reply-text-area {
   height: 250px;
   width: 100%;
