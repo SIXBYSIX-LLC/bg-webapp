@@ -1,6 +1,6 @@
 angular.module('BG').controller('ProcessSellerOrderCtrl',
   /** @ngInject */
-    function ($scope,$state, $stateParams, SellerOrdersService) {
+    function ($scope,$state, $stateParams, SellerOrdersService,InventoryService) {
 
     var mdl = $scope.mdl = {};
     var status=['not_confirmed',
@@ -18,7 +18,16 @@ angular.module('BG').controller('ProcessSellerOrderCtrl',
 
       mdl.currentStatusIndex = status.indexOf(mdl.item.current_status);
       getOptionStatus(mdl.item.current_status);
+
+      if(mdl.item.current_status=="confirmed"){
+        InventoryService.getInventoryList(mdl.item.detail.id).then(function (response) {
+          mdl.inventories = response.data.data;
+        });
+      }
+
     });
+
+
 
 
     /*
