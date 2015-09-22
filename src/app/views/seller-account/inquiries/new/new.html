@@ -1,13 +1,14 @@
 <div class="booking-information travelo-box" style="margin-bottom: 0px; padding: 20px 30px 1px;">
-    <div class="guest-reviews single-conversation">
-        <h2>Your Conversation with "Jessica Brown"</h2>
+    <form ng-submit="mdl.add()" name="mdl.form" load-indicator class="guest-reviews single-conversation">
+        <h2>Enquiry</h2>
+
         <div class="guest-review table-wrapper my-message">
             <div class="col-xs-3 col-md-2 author table-cell">
                 <p class="name">Inquiry for</p>
             </div>
             <div class="col-xs-9 col-md-10 table-cell comment-container">
                 <div class="comment-header clearfix">
-                    <h4 class="comment-title">Equipment Name</h4>
+                    <h4 class="comment-title">{{mdl.equi.name}}</h4>
                 </div>
             </div>
         </div>
@@ -18,7 +19,7 @@
             <div class="col-xs-9 col-md-10 table-cell comment-container">
                 <div class="comment-header clearfix">
                     <h4 class="comment-title" style="width: 100%; font-style: normal; font-size: 14px;">
-                        <input type="text" placeholder="Subject" class="subject-line" />
+                        <input required name="subject" ng-model="mdl.subject" type="text" placeholder="Subject" class="subject-line" />
                     </h4>
                 </div>
             </div>
@@ -33,12 +34,12 @@
             </div>
             <div class="col-xs-9 col-md-10 table-cell comment-container">
                 <div class="comment-content">
-                    <textarea class="reply-text-area"></textarea>
-                    <a class="button btn-medium green" style="margin-bottom: 20px; margin-top: 10px;">Send</a>
+                    <textarea required name="text" ng-model="mdl.text" class="reply-text-area"></textarea>
+                    <button class="button btn-medium green" style="margin-bottom: 20px; margin-top: 10px;">Send</button>
                 </div>
             </div>
 
         </div>
 
-    </div>
+    </form>
 </div>
