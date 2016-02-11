@@ -1,6 +1,6 @@
 <div class="booking-information travelo-box" style="margin-bottom: 0px; padding: 20px 30px 1px;">
     <div class="guest-reviews conversation-list">
-        <h2>Inquiries</h2>
+        <h2>Enquiries</h2>
 
         <div ng-repeat="item in mdl.items" class="guest-review table-wrapper">
             <div class="col-xs-3 col-md-3 author table-cell">
@@ -13,10 +13,10 @@
             </div>
             <div class="col-xs-9 col-md-3 table-cell comment-container">
                 <div class="comment-header clearfix">
-                    <div class="review-score">
-                        <a class="button btn-mini green-bg pull-right" ui-sref="main.sellerAccount.inquiries.view({id:item.id})">View</a>
-                        <a class="button btn-mini green-bg pull-right" ui-sref="main.sellerAccount.inquiries.view({id:item.id})">Reply</a>
-                        <a class="button btn-mini green-bg pull-right" ng-click="mdl.delete(item)">Delete</a>
+                    <div class="review-score enquiry-buttons">
+                        <button class="btn pull-right all-btn view-btn" ui-sref="main.sellerAccount.inquiries.view({id:item.id})">View</button>
+                        <button class="btn pull-right all-btn reply-btn" ui-sref="main.sellerAccount.inquiries.view({id:item.id})">Reply</button>
+                        <button class="btn all-btn " ng-click="mdl.delete(item)">Delete</a>
                     </div>
                 </div>
             </div>

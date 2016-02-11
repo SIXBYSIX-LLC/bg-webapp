@@ -42,12 +42,13 @@
         <div class="col-xs-6 col-sm-3 col-md-2">
             <label>${{rule.cost}}</label>
         </div>
-        <div class="col-xs-6 col-sm-3 col-md-1">
-            <button class="button btn-mini uppercase green" ng-click="shippingMdl.edit(rule)">Edit</button>
+        <div class="col-xs-12 col-sm-3 col-md-1 shipping-list-btn">
+            <button class="btn all-btn" ng-click="shippingMdl.edit(rule)">Edit</button>
+            <br>
+            <button class="btn all-btn" ng-click="shippingMdl.delete(rule)">Delete</button>
         </div>
-        <div class="col-xs-6 col-sm-3 col-md-1">
-            <button class="button btn-mini uppercase red" ng-click="shippingMdl.delete(rule)">Delete</button>
-        </div>
+        <!-- <div class="col-xs-6 col-sm-3 col-md-1">
+        </div> -->
     </div>
     <div ng-if="rule.edit">
         <form novalidate validate-form="validateEditForm" name="shippingMdl.updateForm">
@@ -75,12 +76,13 @@
             <div class="col-xs-6 col-sm-3 col-md-2">
                 <input name="cost" ng-model="shippingMdl.editData.cost" type="text" required class="input-text full-width" placeholder="cost">
             </div>
-            <div class="col-xs-6 col-sm-3 col-md-1">
-                <button class="button btn-mini uppercase green width-auto" ng-click="shippingMdl.update(rule)">Update</button>
+            <div class="col-xs-12 col-sm-3 col-md-1 shipping-list-btn">
+                <button class="btn all-btn width-auto" ng-click="shippingMdl.update(rule)">Update</button>
+                <br>
+                <button class="btn all-btn width-auto" ng-click="shippingMdl.cancelEdit(rule)">Cancel</button>
             </div>
-            <div class="col-xs-6 col-sm-3 col-md-1">
-                <button class="button btn-mini uppercase red width-auto" ng-click="shippingMdl.cancelEdit(rule)">Cancel</button>
-            </div>
+            <!-- <div class="col-xs-6 col-sm-3 col-md-1">
+            </div> -->
         </form>
     </div>
 
@@ -114,7 +116,7 @@
             <input name="cost" ng-model="shippingMdl.addData.cost" type="text" required class="input-text full-width" placeholder="cost">
         </div>
         <div class="col-xs-12 col-sm-6 col-md-1">
-            <button class="button btn-mini uppercase green width-auto" style="width: auto;" ng-click="shippingMdl.add()">Add</button>
+            <button class="btn width-auto all-btn" style="width: auto;" ng-click="shippingMdl.add()">Add</button>
         </div>
     </form>
 </div>

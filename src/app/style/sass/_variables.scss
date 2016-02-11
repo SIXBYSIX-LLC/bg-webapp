@@ -24,10 +24,13 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 /* 1. Global */
-$font-stack:    'Lato', Arial, Helvetica, sans-serif;
+$font-stack:    'Open Sans', Arial, Helvetica, sans-serif;
 $primary-color: #838383;
 $heading-color: #2d3e52;
 $button-color: #E37F1F;
+$primary-button-color: #FA5013;
+$primary-hover-color: #BF6E1F;
+$primary-border-color: #dddddd;
 
 /* 2. Skin colors */
 $light-blue-color: #E37F1F;
@@ -61,6 +64,7 @@ $blue-theme-color: #01b7f2;
 $dark-blue-theme-color: #3E3E3E;
 $red-theme-color: #e01a33;
 $light-blue-theme-color: #D7DCE2;
+$white-theme-color: #ffffff;
 
 /* 5. Skin1 (Light Blue) */
 $skin-logo: $skin1-logo;
@@ -71,6 +75,7 @@ $skin-hover-color: #40cbf8;
 $skin-mobile-menu-color: #04afe7;
 $skin-light-color: $light-blue-theme-color;
 $skin-dark-color: $dark-blue-theme-color;
+$skin-topnav-bg: #6A6F79;
 
 /* 6. Skin2 (Red) */
 /*$skin-logo: $skin2-logo;
@@ -161,3 +166,8 @@ $skin-hover-color: #bc6cd8;
 $skin-mobile-menu-color: #a749c8;
 $skin-light-color: #bc6cd8;
 $skin-dark-color: #873ba2;*/
+
+// button colors
+$back-btn-bg-color: #d9d9d9;
+$back-btn-hover-bg-color: #cccccc;
+$back-btn-hover-color: #666666;

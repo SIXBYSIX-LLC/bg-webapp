@@ -1,11 +1,14 @@
 <div class="tab-container full-width-style arrow-left dashboard">
-    <ul class="tabs">
-        <li active-state="main.sellerAccount.orders"    ui-sref="main.sellerAccount.orders.list">   <a><i class="soap-icon-user circle"></i>Orders  </a></li>
-        <li active-state="main.sellerAccount.inquiries" ui-sref="main.sellerAccount.inquiries.list"><a><i class="soap-icon-user circle"></i>Inquiries</a></li>
-        <li active-state="main.sellerAccount.invoices"  ui-sref="main.sellerAccount.invoices.list"> <a><i class="soap-icon-user circle"></i>Invoices</a></li>
-        <li active-state="main.sellerAccount.settings"  ui-sref="main.sellerAccount.settings.general"> <a><i class="soap-icon-user circle"></i>Settings</a></li>
-    </ul>
-    <div class="tab-content">
-        <ui-view/>
-    </div>
+  <ul class="tabs">
+  	<li active-state="main.sellerAccount.dashboard" ui-sref="main.sellerAccount.dashboard"><a>Dashboard</a></li>
+   	<li active-state="main.sellerAccount.equipments" ui-sref="main.sellerAccount.equipments"><a>Equipments</a></li>
+   	<li active-state="main.sellerAccount.inventory" ui-sref="main.sellerAccount.inventory"><a>Inventory</a></li>
+    <li active-state="main.sellerAccount.orders"    ui-sref="main.sellerAccount.orders.list"><a>Order Received </a></li>
+    <li active-state="main.sellerAccount.invoices"  ui-sref="main.sellerAccount.invoices.list"><a>Invoices</a></li>
+    <li active-state="main.sellerAccount.inquiries" ui-sref="main.sellerAccount.inquiries.list"><a>Enquiry</a></li>
+    <li active-state="main.sellerAccount.settings"  ui-sref="main.sellerAccount.settings.general"><a>Settings</a></li>
+  </ul>
+  <div class="tab-content">
+    <ui-view/>
+  </div>
 </div>

@@ -1,63 +1,128 @@
-<div id="tour-details" class="travelo-box" load-indicator>
-    <div ng-repeat="item in mdl.data.rental_products" class="intro2 small-box border-box table-wrapper hidden-table-sms">
-        <div class="image-container table-cell"><img ng-src="{{(item.product.image) || 'http://placehold.it/166x150'}}" alt=""></div>
-        <div class="description">
-            <h4>{{item.product.name}}</h4>
-        </div>
-        <div class="description">
-            <select ng-change="update(item)" ng-model="item.qty" ng-options="qty for qty in mdl.qtys" class="form-control white-bg">
-                <option value="">Select</option>
-            </select>
-            <select ng-change="update(item)" ng-model="item.shipping_kind" ng-options="key as value for (key,value) in mdl.shippingKinds" class="form-control white-bg">
-                <option value="">Order Type</option>
-            </select>
-        </div>
-        <br />
-        <div class="checkbox make-postpaid checked">
-            <label>
-                <input ng-model="item.is_postpaid" disabled type="checkbox">Postpaid
-            </label>
-        </div>
-            <!--<span class="icon-box style2"><i class="soap-icon-"></i>Remove</span>-->
-        <br />
-        <div class="table-cell">
-            <dl class="term-description">
-                <dt>Operation</dt><dd>Rented</dd>
-                <dt>From</dt><dd>{{item.date_start | date}}</dd>
-                <dt>To</dt><dd>{{item.date_end | date}}</dd>
-                <dt>Shipping</dt><dd>$120</dd>
-                <dt>Additional</dt><dd>$20</dd>
-            </dl>
-        </div>
-        <div class="price-section table-cell">
-            <div class="price">
-                <small>{{item.cost_breakup.subtotal.num_days}} Estimated Rent</small>
-                <div class="price-per-unit">${{item.cost_breakup.subtotal.amt}}</div>
-            </div>
-            <button process-indicator="{{'PI:RemoveItem'+item.id}}" class="button green btn-small uppercase" ng-click="remove(item)">Remove</button>
-        </div>
-    </div>
-    <div class="intro2 small-box border-box table-wrapper hidden-table-sms cart-total">
-        <div class="description">
-            <h4>Cart Total</h4>
-        </div>
+<!-- <div id="tour-details" class="travelo-box" load-indicator>
+		<div ng-repeat="item in mdl.data.rental_products" class="intro2 small-box border-box table-wrapper hidden-table-sms">
+				<div class="image-container table-cell"><img ng-src="{{(item.product.image) || 'http://placehold.it/166x150'}}" alt=""></div>
+				<div class="description">
+						<h4>{{item.product.name}}</h4>
+				</div>
+				<div class="description">
+						<select ng-change="update(item)" ng-model="item.qty" ng-options="qty for qty in mdl.qtys" class="form-control white-bg">
+								<option value="">Select</option>
+						</select>
+						<select ng-change="update(item)" ng-model="item.shipping_kind" ng-options="key as value for (key,value) in mdl.shippingKinds" class="form-control white-bg">
+								<option value="">Order Type</option>
+						</select>
+				</div>
+				<br />
+				<div class="checkbox make-postpaid checked">
+						<label>
+								<input ng-model="item.is_postpaid" disabled type="checkbox">Postpaid
+						</label>
+				</div>
+				<br />
+				<div class="table-cell">
+						<dl class="term-description">
+								<dt>Operation</dt><dd>Rented</dd>
+								<dt>From</dt><dd>{{item.date_start | date}}</dd>
+								<dt>To</dt><dd>{{item.date_end | date}}</dd>
+								<dt>Shipping</dt><dd>$120</dd>
+								<dt>Additional</dt><dd>$20</dd>
+						</dl>
+				</div>
+				<div class="price-section table-cell">
+						<div class="price">
+								<small>{{item.cost_breakup.subtotal.num_days}} Estimated Rent</small>
+								<div class="price-per-unit">${{item.cost_breakup.subtotal.amt}}</div>
+						</div>
+						<button process-indicator="{{'PI:RemoveItem'+item.id}}" class="button green btn-small uppercase" ng-click="remove(item)">Remove</button>
+				</div>
+		</div>
+		<div class="intro2 small-box border-box table-wrapper hidden-table-sms cart-total">
+				<div class="description">
+						<h4>Cart Total</h4>
+				</div>
 
-        <br />
-        <div class="table-cell">
-            <dl class="term-description">
-                <dt>Shipping Cost</dt><dd>${{mdl.data.shipping_charge}}</dd>
-                <dt>Additional</dt><dd>${{0}}</dd>
+				<br />
+				<div class="table-cell">
+						<dl class="term-description">
+								<dt>Shipping Cost</dt><dd>${{mdl.data.shipping_charge}}</dd>
+								<dt>Additional</dt><dd>${{0}}</dd>
 
-            </dl>
-        </div>
-        <div class="price-section table-cell">
-            <div class="price"><div class="price-per-unit">${{mdl.data.total}}</div></div>
+						</dl>
+				</div>
+				<div class="price-section table-cell">
+						<div class="price"><div class="price-per-unit">${{mdl.data.total}}</div></div>
 
-        </div>
-    </div>
+				</div>
+		</div>
 
-    <a class="button green btn-large uppercase pull-right" ng-click="checkout()">Proceed to Checkout</a>
-    <a class="button dark-blue1 btn-large uppercase pull-left">Continue Renting Equipments</a>
-    <div class="tour-google-map block"></div>
-
+		<a class="button green btn-large uppercase pull-right" ng-click="checkout()">Proceed to Checkout</a>
+		<a class="button dark-blue1 btn-large uppercase pull-left">Continue Renting Equipments</a>
+		<div class="tour-google-map block"></div>
+</div> -->
+<div class="container">
+	<div class="row">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<table class="table cart-table">
+				<thead>
+					<tr>
+						<th></th>
+						<th>Item</th>
+						<th>Qty</th>
+						<th>Details</th>
+						<th>Cost<th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="item in mdl.data.rental_products">
+						<td class="img-td">
+							<img ng-src="{{(item.product.image) || 'http://placehold.it/166x150'}}" alt="">
+							<p>
+								<a href="">Edit Item</a>
+							</p>
+						</td>
+						<td class="description-td">
+							<h4>{{item.product.name}}</h4>
+							<p>
+							{{item.date_start | date}} to
+							{{item.date_end | date}}
+							</p>
+							<p>
+							Operation: Rented
+							</p>
+							<p>
+								<a href="">Bookmark and Remove</a>
+								<a href="">Remove</a>
+							</p>
+						</td>
+						<td class="qty-td">
+							<select ng-change="update(item)" ng-model="item.qty" ng-options="qty for qty in mdl.qtys" class="form-control white-bg">
+								<option value="">Select</option>
+						</select>
+						</td>
+						<td class="details-td">
+							<p>
+								<input ng-model="item.is_postpaid" disabled type="checkbox"> Postpaid
+							</p>
+							<select ng-change="update(item)" ng-model="item.shipping_kind" ng-options="key as value for (key,value) in mdl.shippingKinds" class="form-control white-bg">
+								<option value="">Order Type</option>
+							</select>
+						</td>
+						<td class="cost-td">
+							<p>Cost: <span class="pull-right">$450.00</span></p>
+							<p>Shipping: <span class="pull-right">$120</span></p>
+							<p>Additional: <span class="pull-right">$20</span></p>
+							<p>Estimated Rent: <span class="pull-right">${{item.cost_breakup.subtotal.amt}}</span></p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 total-amount-col">
+			<p class="pull-right">Total Amount Payable: &nbsp<span>$3200.00</span></p>
+		</div>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<button class="btn all-btn pull-right primary-btn" ng-click="checkout()">Checkout</button>
+			<button class="btn all-btn pull-left primary-btn">Continue Renting Equipments</button>
+		</div>
+	</div>
 </div>

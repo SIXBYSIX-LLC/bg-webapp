@@ -73,8 +73,8 @@
             <div class="price"><div class="price-per-unit">${{mdl.invoice.total | number}}</div></div>
         </div>
     </div>
-    <button class="button green btn-large uppercase pull-left" ui-sref="main.account.invoices.list">Back to Invoice List</button>
-    <button class="button green btn-large uppercase pull-right">Approve Invoice</button>
-    <button class="button green btn-large uppercase pull-right">Download PDF</button>
-    <button style="margin-right:4px;" class="button green btn-large uppercase pull-right dark-blue2"  process-indicator ng-click="invoicesMdl.pay(mdl.invoice)">Pay</button>
+    <button class="btn all-btn pull-left" ui-sref="main.account.invoices.list">Back to Invoice List</button>
+    <button class="btn all-btn pull-right btn-right">Approve Invoice</button>
+    <button class="btn all-btn pull-right">Download PDF</button>
+    <button style="margin-right:4px;" class="btn btn-medium pull-right dark-blue2"  process-indicator ng-click="invoicesMdl.pay(mdl.invoice)">Pay</button>
 </div>

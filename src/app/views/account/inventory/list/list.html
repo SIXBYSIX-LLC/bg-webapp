@@ -9,7 +9,7 @@
     </div>
     <h2>
         <!--<button class="status pull-right add-button" ui-sref="main.account.inventory.add">Add Inventory</button>
-        --><button class="status btn-mini status pull-right add-button" ui-sref="main.account.inventory.add">Add Inventory</button>
+        --><button class="btn all-btn status pull-right" ui-sref="main.account.inventory.add">Add Inventory</button>
     </h2>
 </div>
 <br/>
@@ -32,7 +32,7 @@
             <toggle-switch ng-click="valueChanged(inv)" ng-model="inv.is_active" on-label="Available" off-label="Not-Available"></toggle-switch>
         </h4>
 
-        <button class="btn-mini status" ui-sref="main.account.inventory.edit({id:inv.id})">Edit</button>
+        <button class="btn all-btn status" ui-sref="main.account.inventory.edit({id:inv.id})">Edit</button>
     </div>
 
 </div>

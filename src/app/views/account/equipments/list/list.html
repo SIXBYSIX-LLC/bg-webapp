@@ -1,5 +1,5 @@
 
-<h2>My Equipments<button class="btn-mini status pull-right add-button" ui-sref="main.account.equipments.add">Add New Equipment</button></h2>
+<h2>My Equipments<button class="btn all-btn status pull-right" ui-sref="main.account.equipments.add">Add New Equipment</button></h2>
 <div class="filter-section gray-area clearfix">
     <form>
         <label class="radio radio-inline" ng-class="{'checked':listEquiMdl.filter=='all'}" ng-click="listEquiMdl.updateFilter('all')">
@@ -32,9 +32,9 @@
             <dd>82%</dd>
         </dl>
 
-        <button class="btn-mini status" ng-click="delete(pro)">Archive</button>
-        <button class="btn-mini status" ng-click="edit(pro)">Edit</button>
-        <button class="btn-mini status" ui-sref="main.equiDetails({id:pro.id})">View</button>
+        <button class="btn all-btn status" ng-click="delete(pro)">Archive</button>
+        <button class="btn all-btn status" ng-click="edit(pro)">Edit</button>
+        <button class="btn all-btn status" ui-sref="main.equiDetails({id:pro.id})">View</button>
     </div>
     <a ng-click="listEquiMdl.next()" class="uppercase full-width button btn-large" ng-show="listEquiMdl.nextAvailable">
         <span ng-show="listEquiMdl.working" class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>

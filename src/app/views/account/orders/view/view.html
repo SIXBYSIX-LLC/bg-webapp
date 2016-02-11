@@ -6,9 +6,9 @@
             <h4 class="main-message">Your Order is completed !</h4>
             <p>Please find your order details below.</p>
         </div>
-        <a  class="button print-button btn-small uppercase">Cancel Order</a>
-        <a  class="button print-button btn-small uppercase">Return</a>
-        <a  class="button print-button btn-small uppercase">Print Details</a>
+        <button class="btn all-btn pull-right btn-right">Cancel Order</button>
+        <button class="btn all-btn pull-right btn-right">Return</button>
+        <button class="btn all-btn pull-right">Print Details</button>
 
     </div>
     <hr />
@@ -62,5 +62,5 @@
             <div class="price"><div class="price-per-unit">${{mdl.order.total | number}}</div></div>
         </div>
     </div>
-    <a class="button green btn-large uppercase pull-right" ui-sref="main.account.orders.list">Back to Order List</a>
+    <button class="btn all-btn pull-right" ui-sref="main.account.orders.list">Back to Order List</button>
 </div>

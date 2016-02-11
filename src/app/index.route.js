@@ -168,6 +168,22 @@
         templateUrl:'app/views/seller-account/seller-account.html'
       })
 
+      .state('main.sellerAccount.dashboard', {
+        url:'/dashboard',
+        templateUrl: 'app/views/seller-account/dashboard/dashboard.html',
+        controller: 'DashboardCtrl'
+      })
+
+      .state('main.sellerAccount.equipments', {
+        url:'/equipments',
+        templateUrl: 'app/views/seller-account/equipments/equipments.html'
+      })
+
+      .state('main.sellerAccount.inventory', {
+        url:'/inventory',
+        templateUrl: 'app/views/seller-account/inventory/inventory.html'
+      })
+
       .state('main.sellerAccount.orders',{
         url:'/orders',
         templateUrl:'app/views/seller-account/orders/orders.html'

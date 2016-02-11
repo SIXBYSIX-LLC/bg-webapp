@@ -6,8 +6,8 @@
             <h4 class="main-message">Your Recieved a new order !</h4>
             <p>Please find your order details below and start processing it.</p>
         </div>
-        <a class="button print-button btn-small uppercase">Cancel Order</a>
-        <a class="button print-button btn-small uppercase">Print Details</a>
+        <button class="btn print-button all-btn">Cancel Order</button>
+        <button class="btn print-button all-btn">Print Details</button>
     </div>
     <hr />
     <h2>Order Details</h2>
@@ -54,7 +54,7 @@
         </div>
         <div class="price-section table-cell" style="padding-right: 26px; padding-top: 0px;">
             <div class="price"><div class="price-per-unit">${{item.cost_breakup.subtotal.amt}}</div></div>
-            <a ui-sref="main.sellerAccount.orders.process({id:mdl.order.id,itemIndex:$index})" class="button green btn-small uppercase">Process</a>
+            <button ui-sref="main.sellerAccount.orders.process({id:mdl.order.id,itemIndex:$index})" class="button btn all-btn">Process</button>
         </div>
     </div>
     <div class="intro2 small-box border-box table-wrapper hidden-table-sms cart-total">
@@ -73,7 +73,7 @@
             <div class="price"><div class="price-per-unit">${{mdl.order.subtotal | number}}</div></div>
         </div>
     </div>
-    <a class="button green btn-large uppercase pull-right" ui-sref="main.sellerAccount.orders.list">Back to Order List</a>
+    <button class="btn pull-right all-btn" ui-sref="main.sellerAccount.orders.list">Back to Order List</button>
 </div>
 
 
