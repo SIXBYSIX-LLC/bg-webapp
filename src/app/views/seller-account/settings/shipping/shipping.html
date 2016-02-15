@@ -43,9 +43,15 @@
             <label>${{rule.cost}}</label>
         </div>
         <div class="col-xs-12 col-sm-3 col-md-1 shipping-list-btn">
-            <button class="btn all-btn" ng-click="shippingMdl.edit(rule)">Edit</button>
-            <br>
-            <button class="btn all-btn" ng-click="shippingMdl.delete(rule)">Delete</button>
+            <!-- <button class="btn all-btn primary-btn" ng-click="shippingMdl.edit(rule)">Edit</button> -->
+            <a class="clickable-icon pointerhover" ng-click="shippingMdl.edit(rule)">
+                <i class="fa fa-pencil-square-o"></i>
+            </a>
+            <a class="clickable-icon pointerhover" ng-click="shippingMdl.delete(rule)">
+                <i class="fa fa-trash"></i>
+            </a>
+            <!-- <br> -->
+            <!-- <button class="btn all-btn primary-btn" ng-click="shippingMdl.delete(rule)">Delete</button> -->
         </div>
         <!-- <div class="col-xs-6 col-sm-3 col-md-1">
         </div> -->
@@ -77,9 +83,9 @@
                 <input name="cost" ng-model="shippingMdl.editData.cost" type="text" required class="input-text full-width" placeholder="cost">
             </div>
             <div class="col-xs-12 col-sm-3 col-md-1 shipping-list-btn">
-                <button class="btn all-btn width-auto" ng-click="shippingMdl.update(rule)">Update</button>
+                <button class="btn all-btn width-auto primary-btn" ng-click="shippingMdl.update(rule)">Update</button>
                 <br>
-                <button class="btn all-btn width-auto" ng-click="shippingMdl.cancelEdit(rule)">Cancel</button>
+                <button class="btn all-btn width-auto primary-btn" ng-click="shippingMdl.cancelEdit(rule)">Cancel</button>
             </div>
             <!-- <div class="col-xs-6 col-sm-3 col-md-1">
             </div> -->
@@ -92,31 +98,27 @@
 <div class="row form-group">
     <form novalidate validate-form="validateAddForm" name="shippingMdl.addForm">
         <div class="col-xs-6 col-sm-2 col-md-2">
-            <div class="selector">
-                <select name="location" ng-model="shippingMdl.addData.origin" required class="full-width" ng-options="site.id as site.name for site in shippingMdl.jobSites">
+                <select name="location" ng-model="shippingMdl.addData.origin" required class="form-control" ng-options="site.id as site.name for site in shippingMdl.jobSites">
                 </select>
-            </div>
         </div>
         <div class="col-xs-6 col-sm-2 col-md-2">
-            <div class="selector">
-                <select ng-model="shippingMdl.addData.country"  name="country" required class="full-width" ng-options="key as value for (key,value) in shippingMdl.countries">
+                <select ng-model="shippingMdl.addData.country"  name="country" required class="form-control" ng-options="key as value for (key,value) in shippingMdl.countries">
                 </select>
-            </div>
         </div>
         <div class="col-xs-6 col-sm-2 col-md-2">
-            <input name="zipcode_start" ng-model="shippingMdl.addData.zipcode_start" type="text" required class="input-text full-width" placeholder="Zipcode From">
+            <input name="zipcode_start" ng-model="shippingMdl.addData.zipcode_start" type="text" required class="form-control" placeholder="Zipcode From">
         </div>
         <div class="col-xs-6 col-sm-2 col-md-2">
-            <input name="zipcode_end" ng-model="shippingMdl.addData.zipcode_end" type="text" required class="input-text full-width" placeholder="Zipcode To">
+            <input name="zipcode_end" ng-model="shippingMdl.addData.zipcode_end" type="text" required class="form-control" placeholder="Zipcode To">
         </div>
         <!--<div class="col-xs-6 col-sm-3 col-md-2">
-            <input name="days" ng-model="shippingMdl.addData.delivery_days" type="text" required class="input-text full-width" placeholder="Delivery days">
+            <input name="days" ng-model="shippingMdl.addData.delivery_days" type="text" required class="input-text form-control" placeholder="Delivery days">
         </div>-->
         <div class="col-xs-6 col-sm-3 col-md-2">
-            <input name="cost" ng-model="shippingMdl.addData.cost" type="text" required class="input-text full-width" placeholder="cost">
+            <input name="cost" ng-model="shippingMdl.addData.cost" type="text" required class="form-control" placeholder="cost">
         </div>
         <div class="col-xs-12 col-sm-6 col-md-1">
-            <button class="btn width-auto all-btn" style="width: auto;" ng-click="shippingMdl.add()">Add</button>
+            <button class="btn width-auto all-btn primary-btn" style="width: auto;" ng-click="shippingMdl.add()">Add</button>
         </div>
     </form>
 </div>

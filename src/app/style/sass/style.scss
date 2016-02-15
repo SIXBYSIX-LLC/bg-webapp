@@ -3550,15 +3550,27 @@ ul.search-tabs {
 
 /* 5.1.6. Thankyou page */
 .booking-information {
-  padding: 20px 30px 30px;
+  padding: 0;
   > .booking-confirmation {
     > .icon { color: $skin-select-color; font-size: 1.5em; float: left; margin-right: 12px; margin-top: 4px; }
     > .message { float: left; }
-    .main-message { color: $skin-active-color; margin-bottom: 0; letter-spacing: 0.04em; }
-    .print-button { float: right; margin-left:5px; button { text-transform: uppercase; } }
+    .main-message { color: $skin-active-color; margin-bottom: 0;; }
+    .print-button { float: right; margin-left:5px; }
     p { margin-bottom: 0; }
   }
   .view-link { font-size: 1.1667em; }
+  .term-description {
+    dt,dd {
+      font-size: 13px;
+      text-transform: capitalize;
+    }
+  }
+  .order-head-bottom {
+    margin-bottom: 5px;
+  }
+  .invoice-address {
+    margin-bottom: 0;
+  }
 }
 
 /* 5.2. Flight ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -3798,7 +3810,7 @@ ul.search-tabs {
       &.take-off { @include transform(rotate(-30deg)); }
       &.landing { @include transform(rotate(25deg)); }
     }
-    dl { text-transform: uppercase; font-size: 0.8333em; display: inline-block; margin-bottom: 0; }
+    dl { font-size: 0.8333em; display: inline-block; margin-bottom: 0; }
     dt { color: $skin-active-color; }
   }
 
@@ -3807,10 +3819,14 @@ ul.search-tabs {
   .intro2 {
     width: 100%; padding: 4px;
     .table-cell { /*padding: 10px 20px; */}
-    .image-container { width: 150px; padding-right: 10px; }
+    .image-container { width: 100px; padding-right: 10px; }
     .description {
-        width: 400px; padding-right: 10px;
+        width: 250px; padding-right: 10px;
         .form-control {width: 30%; margin-right: 2%; float: left;}
+        h4 {
+          margin-top: 10px;
+          font-size: 16px;
+        }
     }
     .make-postpaid {
       clear: both;
@@ -3821,9 +3837,9 @@ ul.search-tabs {
     }
     .term-description {
       margin-bottom: 0; font-size: 0.8333em;
-      dt { border-right: none; width: 90px; }
-      dd { width: auto; }
-      dt, dd { padding-top: 0.5em; padding-bottom: 0.5em; line-height: 1.4em; }
+      dt { border-right: none; width: 150px; font-size: 13px; text-transform: capitalize; }
+      dd { width: auto; font-size: 13px; text-transform: capitalize; }
+      dt, dd { padding-top: 0.5em; padding-bottom: 0.5em; line-height: 1em; font-size: 13px; text-transform: capitalize; }
     }
     .price-section {
       text-align: center; width: 1%; border-left: 1px solid #f5f5f5; padding: 0; padding-left: 26px;padding-right: 45px;padding-top: 13px;
@@ -4042,6 +4058,12 @@ ul.search-tabs {
       .icon, .icon:before { border-color: #d9d9d9; color: #d9d9d9; }
       .status { background: #d9d9d9; }
       .info dt { color: inherit; }
+    }
+    a {
+      color: $primary-button-color;
+      font-size: 18px;
+      margin-right: 15px;
+      cursor: pointer;
     }
   }
 }
@@ -5262,8 +5284,8 @@ button.ui-button::-moz-focus-inner { border: 0; padding: 0; }
     > tr {
       > td {
         border-top: 0;
-        border-bottom: 1px solid #d9d9d9;
-        border-right: 1px solid #d9d9d9;
+        border-bottom: 1px solid $primary-border-color;
+        border-right: 1px solid $primary-border-color;
         padding-top: 15px;
         padding-bottom: 15px;
         h3 {
@@ -5305,7 +5327,18 @@ button.ui-button::-moz-focus-inner { border: 0; padding: 0; }
       }
       .equip-desc {
         h3 {
-          color: $button-color;
+          color: $primary-button-color;
+        }
+      }
+      .action-td {
+        vertical-align: middle;
+        i {
+          font-size: 18px;
+          margin-right: 15px;
+          color: $primary-button-color;
+          &:last-child {
+            margin-right: 0;
+          }
         }
       }
     }
@@ -5339,6 +5372,10 @@ button.btn {
   }
   .view-btn {
     margin-bottom: 10px;
+  }
+  a {
+    margin-top: 8px;
+    margin-left: 10px;
   }
 }
 
@@ -5434,6 +5471,7 @@ button.btn {
     > tr {
       > th {
         font-size: 14px;
+        font-weight: 400;
       }
     }
   }
@@ -5441,6 +5479,7 @@ button.btn {
     > tr {
       > td {
         font-size: 13px;
+        text-transform: capitalize;
         &.category {
           width: 25%;
         }
@@ -5453,6 +5492,12 @@ button.btn {
   button {
     &:first-child {
       margin-bottom: 10px;
+    }
+  }
+  a {
+    margin-right: 15px;
+    &:last-child {
+      margin-right: 0;
     }
   }
 }
@@ -5818,4 +5863,116 @@ button.btn {
 
 .devider-bottom {
   margin-bottom: 25px;
+}
+
+.breadcrumb-col {
+  padding: 20px 20px;
+  font-size: 14px;
+  background: #ffffff;
+  margin-bottom: 10px;
+  a {
+    color: #009ddc;
+  }
+}
+
+.form-control {
+  font-size: 13px;
+}
+
+.clickable-icon {
+  font-size: 18px;
+  color: $primary-button-color;
+}
+
+.order-details-col {
+  .travelo-box {
+    padding: 0;
+  }
+}
+
+.invoice-details {
+  h2 {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+}
+
+.invoice-details-col {
+  border: 1px solid $primary-border-color;
+  padding: 5px !important;
+  .term-description {
+    dt {
+      width: 90px !important;
+    }
+  }
+  .product-name {
+    h4 {
+      margin-top: 5px;
+      font-size: 16px;
+    }
+  }
+  .description-col {
+    p {
+      margin-bottom: 5px;
+      color: $primary-button-color;
+      span {
+        color: $primary-color;
+      }
+      input {
+        width: 50%;
+        display: inline-block;
+        margin-bottom: 10px;
+      }
+    }
+    .right-col {
+      border-right: 1px solid $primary-border-color;
+    }
+  }
+  .edit-desc-col {
+    p {
+      height: 40px;
+    }
+  }
+}
+
+.invoice-cart-total {
+  margin-top: 20px;
+  padding: 10px;
+  margin-bottom: 20px;
+  .description {
+    h4 {
+      font-size: 16px;
+    }
+  }
+  .add-cost {
+    border-right: 1px solid $white-theme-color;
+    p {
+      color: $primary-button-color;
+      margin-bottom: 5px;
+      span {
+        color: $white-theme-color;
+      }
+    }
+  }
+  .total-cost {
+    text-align: center;
+    color: $primary-button-color;
+    font-size: 16px;
+    margin-top: 28px;
+  }
+}
+
+.order-details-row {
+  margin: 0;
+  p {
+    margin-bottom: 8px;
+  }
+}
+
+.orange-text {
+  color: $skin-active-color;
+}
+
+button {
+  text-transform: capitalize;
 }

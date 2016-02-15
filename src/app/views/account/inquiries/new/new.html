@@ -1,30 +1,28 @@
 <div class="booking-information travelo-box" style="margin-bottom: 0px; padding: 20px 30px 1px;">
-    <div class="guest-reviews single-conversation">
-        <h2>Your Conversation with "Jessica Brown"</h2>
-        <div  class="guest-review table-wrapper">
+    <form ng-submit="mdl.add()" name="mdl.form" load-indicator class="guest-reviews single-conversation">
+        <h2>Enquiry</h2>
+
+        <div class="guest-review table-wrapper my-message">
             <div class="col-xs-3 col-md-2 author table-cell">
-                <p class="name">Inquiry</p>
+                <p class="name">Inquiry for</p>
             </div>
             <div class="col-xs-9 col-md-10 table-cell comment-container">
                 <div class="comment-header clearfix">
-                    <h4 class="comment-title">{{mdl.inq.subject}}</h4>
+                    <h4 class="comment-title">{{mdl.equi.name}}</h4>
                 </div>
             </div>
         </div>
-        <div ng-class="{'my-message':user.id==item.user}" ng-repeat="item in mdl.items" class="guest-review table-wrapper">
+        <div class="guest-review table-wrapper my-message">
             <div class="col-xs-3 col-md-2 author table-cell">
-                <a href="#"><img src="http://placehold.it/270x263" alt="" width="270" height="263"/></a>
-
-                <p class="name">{{user.id==item.user ? user.fullname : mdl.toUser.fullname}}</p>
-
-                <p class="date">{{item.date_updated_at | date}}</p>
+                <p class="name">Subject</p>
             </div>
             <div class="col-xs-9 col-md-10 table-cell comment-container">
-                <div class="comment-content">
-                    <p>{{item.text}}</p>
+                <div class="comment-header clearfix">
+                    <h4 class="comment-title" style="width: 100%; font-style: normal; font-size: 14px;">
+                        <input required name="subject" ng-model="mdl.subject" type="text" placeholder="Subject" class="subject-line" />
+                    </h4>
                 </div>
             </div>
-
         </div>
         <div class="guest-review table-wrapper my-message">
             <div class="col-xs-3 col-md-2 author table-cell">
@@ -36,12 +34,12 @@
             </div>
             <div class="col-xs-9 col-md-10 table-cell comment-container">
                 <div class="comment-content">
-                    <textarea ng-model="mdl.message" class="reply-text-area"></textarea>
-                    <a class="btn all-btn primary-btn" ng-click="mdl.sendMessage()" style="margin-bottom: 20px; margin-top: 10px;">Send</a>
+                    <textarea required name="text" ng-model="mdl.text" class="reply-text-area"></textarea>
+                    <button class="button btn-medium green" style="margin-bottom: 20px; margin-top: 10px;">Send</button>
                 </div>
             </div>
 
         </div>
 
-    </div>
+    </form>
 </div>

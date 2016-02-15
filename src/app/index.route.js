@@ -161,6 +161,54 @@
 
 
 
+
+
+
+
+
+
+
+      .state('main.account.inquiries',{
+        url:'/inquiries',
+        templateUrl:'app/views/account/inquiries/inquiries.html'
+      })
+      .state('main.account.inquiries.list',{
+        url:'/list',
+        templateUrl:'app/views/account/inquiries/list/list.html',
+        controller:'InquiryListCtrl'
+      })
+      .state('main.account.inquiries.history',{
+        url:'/history/{id}',
+        templateUrl:'app/views/account/inquiries/history/history.html',
+        controller:'InquiryHistoryCtrl'
+      })
+      .state('main.account.inquiries.view',{
+        url:'/view/{id}',
+        templateUrl:'app/views/account/inquiries/view/view.html',
+        controller:'InquiryViewCtrl'
+      })
+      .state('main.account.inquiries.new',{
+        url:'/new/{id}',
+        templateUrl:'app/views/account/inquiries/new/new.html',
+        controller:'InquiryNewCtrl'
+      })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       .state('main.sellerAccount',{
         url:'/seller-account',
         abstract:true,

@@ -18,9 +18,12 @@
             <i class="icon yellow-color circle"></i>${{order.total | number}}
         </h4>
 
-        <button class="btn all-btn status" ui-sref="main.account.orders.view({id:order.id})">Details</button>
-        <button class="btn all-btn status" ui-sref="main.account.orders.list">Cancel</button>
-        <button class="btn all-btn status" ui-sref="main.account.orders.list">Return</button>
+        <!-- <button class="btn all-btn status primary-btn" ui-sref="main.account.orders.view({id:order.id})">Details</button>
+        <button class="btn all-btn status primary-btn" ui-sref="main.account.orders.list">Cancel</button>
+        <button class="btn all-btn status primary-btn" ui-sref="main.account.orders.list">Return</button> -->
+        <a ui-sref="main.account.orders.view({id:order.id})" class="pull-right">
+            <i class="fa fa-eye" ui-sref="main.account.orders.view({id:order.id})"></i>
+        </a>
     </div>
 
 

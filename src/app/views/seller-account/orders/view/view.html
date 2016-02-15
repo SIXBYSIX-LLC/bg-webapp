@@ -1,84 +1,118 @@
 <div class="booking-information travelo-box" style="margin-bottom: 0px;">
-
-    <div class="booking-confirmation clearfix">
-        <i class="soap-icon-clock icon circle"></i>
-        <div class="message">
-            <h4 class="main-message">Your Recieved a new order !</h4>
-            <p>Please find your order details below and start processing it.</p>
-        </div>
-        <button class="btn print-button all-btn">Cancel Order</button>
-        <button class="btn print-button all-btn">Print Details</button>
-    </div>
-    <hr />
-    <h2>Order Details</h2>
-    <dl class="term-description">
-        <dt>Order number:</dt><dd>{{mdl.order.id}}</dd>
-    </dl>
-    <hr />
-    <div class="row invoice-address">
-        <div class="col-md-4">
-            <h2>Shipping Address</h2>
-            <dl class="term-description">
-                <dd>{{mdl.order.order.shipping_address.first_name}} {{mdl.order.order.shipping_address.last_name}}</dd>
-                <dd>{{mdl.order.order.shipping_address.address1+' '+mdl.order.order.shipping_address.address2}}</dd>
-                <dd>{{mdl.order.order.shipping_address.city.name}}-{{mdl.order.order.shipping_address.zip_code}}</dd>
-                <dd>{{mdl.order.order.shipping_address.country.name}}</dd>
-            </dl>
-        </div>
-        <div class="col-md-4">
-            <h2>Billing Address</h2>
-            <dl class="term-description">
-                <dd>{{mdl.order.order.billing_address.first_name}} {{mdl.order.order.billing_address.last_name}}</dd>
-                <dd>{{mdl.order.order.billing_address.address1+' '+mdl.order.order.billing_address.address2}}</dd>
-                <dd>{{mdl.order.order.billing_address.city.name}}-{{mdl.order.order.billing_address.zip_code}}</dd>
-                <dd>{{mdl.order.order.billing_address.country.name}}</dd>
-            </dl>
-        </div>
-    </div>
-
+	<div class="booking-confirmation clearfix">
+		<i class="soap-icon-clock icon circle"></i>
+		<div class="message">
+			<h4 class="main-message">Your Recieved a new order !</h4>
+			<p>Please find your order details below and start processing it.</p>
+		</div>
+		<button class="btn print-button all-btn primary-btn">Cancel Order</button>
+		<button class="btn print-button all-btn primary-btn">Print Details</button>
+	</div>
+	<hr />
+	<h2 class="heading-text order-head-bottom">Order Details</h2>
+	<dl class="term-description">
+		<dt>Order number:</dt><dd>{{mdl.order.id}}</dd>
+	</dl>
+	<hr />
+	<div class="row invoice-address" style="margin-bottom: 0;">
+		<div class="col-md-6">
+			<h2 class="heading-text order-head-bottom">Shipping Address</h2>
+			<dl class="term-description">
+				<dd>{{mdl.order.order.shipping_address.first_name}} {{mdl.order.order.shipping_address.last_name}}</dd>
+				<dd>{{mdl.order.order.shipping_address.address1+' '+mdl.order.order.shipping_address.address2}}</dd>
+				<dd>{{mdl.order.order.shipping_address.city.name}}-{{mdl.order.order.shipping_address.zip_code}}</dd>
+				<dd>{{mdl.order.order.shipping_address.country.name}}</dd>
+			</dl>
+		</div>
+		<div class="col-md-6">
+			<h2 class="heading-text order-head-bottom">Billing Address</h2>
+			<dl class="term-description">
+				<dd>{{mdl.order.order.billing_address.first_name}} {{mdl.order.order.billing_address.last_name}}</dd>
+				<dd>{{mdl.order.order.billing_address.address1+' '+mdl.order.order.billing_address.address2}}</dd>
+				<dd>{{mdl.order.order.billing_address.city.name}}-{{mdl.order.order.billing_address.zip_code}}</dd>
+				<dd>{{mdl.order.order.billing_address.country.name}}</dd>
+			</dl>
+		</div>
+	</div>
 </div>
-
-
-<div id="tour-details" class="travelo-box order-details" load-indicator>
-    <div ng-repeat="item in mdl.order.items" class="intro2 small-box border-box table-wrapper hidden-table-sms">
-        <div class="image-container table-cell"><img ng-src="{{item.images[0] || 'http://placehold.it/80x80'}}" alt=""></div>
-        <div class="description" style="width: 330px;">
-            <h4>{{item.detail.name}}</h4>
-        </div>
-        <div class="table-cell">
-            <dl class="term-description">
-                <dt>Rented For</dt><dd>{{mdl.getShippingPeriod(item)}}</dd>
-                <dt>Order Type</dt><dd>{{item.shipping_kind}}</dd>
-                <dt>Status</dt><dd>{{item.current_status}}</dd>
-            </dl>
-        </div>
-        <div class="price-section table-cell" style="padding-right: 26px; padding-top: 0px;">
-            <div class="price"><div class="price-per-unit">${{item.cost_breakup.subtotal.amt}}</div></div>
-            <button ui-sref="main.sellerAccount.orders.process({id:mdl.order.id,itemIndex:$index})" class="button btn all-btn">Process</button>
-        </div>
-    </div>
-    <div class="intro2 small-box border-box table-wrapper hidden-table-sms cart-total">
-        <div class="description">
-            <h4>Cart Total</h4>
-        </div>
-
-        <br />
-        <div class="table-cell">
-            <dl class="term-description">
-                <dt>Shipping Cost</dt><dd>${{mdl.order.shipping_charge | number}}</dd>
-                <dt>Additional Charges</dt><dd>${{mdl.order.additional_charge | number}}</dd>
-            </dl>
-        </div>
-        <div class="price-section table-cell">
-            <div class="price"><div class="price-per-unit">${{mdl.order.subtotal | number}}</div></div>
-        </div>
-    </div>
-    <button class="btn pull-right all-btn" ui-sref="main.sellerAccount.orders.list">Back to Order List</button>
+<!-- <div class="row">
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 order-details-col">
+		<div id="tour-details" class="travelo-box order-details" load-indicator>
+			<div ng-repeat="item in mdl.order.items" class="intro2 small-box border-box table-wrapper hidden-table-sms">
+				<div class="image-container table-cell"><img ng-src="{{item.images[0] || 'http://placehold.it/80x80'}}" alt=""></div>
+				<div class="description" style="width: 335px;">
+					<h4>{{item.detail.name}}</h4>
+				</div>
+				<div class="table-cell">
+					<dl class="term-description">
+						<dt>Rented For</dt><dd>{{mdl.getShippingPeriod(item)}}</dd>
+						<dt>Order Type</dt><dd>{{item.shipping_kind}}</dd>
+						<dt>Status</dt><dd>{{item.current_status}}</dd>
+					</dl>
+				</div>
+				<div class="price-section table-cell" style="padding-right: 26px; padding-top: 0px;">
+					<div class="price">
+						<div class="price-per-unit">${{item.cost_breakup.subtotal.amt}}</div>
+					</div>
+					<button ui-sref="main.sellerAccount.orders.process({id:mdl.order.id,itemIndex:$index})" class="button btn all-btn primary-btn">Process</button>
+				</div>
+			</div>
+			<div class="intro2 small-box border-box table-wrapper hidden-table-sms cart-total">
+				<div class="description">
+					<h4 style="margin-top: 15px;">Cart Total</h4>
+				</div>
+				<br />
+				<div class="table-cell">
+					<dl class="term-description">
+						<dt>Shipping Cost</dt><dd>${{mdl.order.shipping_charge | number}}</dd>
+						<dt>Additional Charges</dt><dd>${{mdl.order.additional_charge | number}}</dd>
+					</dl>
+				</div>
+				<div class="price-section table-cell">
+					<div class="price"><div class="price-per-unit">${{mdl.order.subtotal | number}}</div></div>
+				</div>
+			</div>
+			<button class="btn pull-right all-btn primary-btn" ui-sref="main.sellerAccount.orders.list">Back to Order List</button>
+		</div>
+	</div>
+</div> -->
+<div class="row">
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 invoice-details-col" ng-repeat="item in mdl.order.items">
+		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+			<img ng-src="{{item.images[0] || 'http://placehold.it/80x80'}}" alt="">
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 product-name">
+			<h4>{{item.detail.name}}</h4>
+		</div>
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 description-col">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 right-col">
+				<p>Rented For <span class="pull-right">{{mdl.getShippingPeriod(item)}}</span></p>
+				<p>Order Type <span class="pull-right">{{item.shipping_kind}}</span></p>
+				<p>Status <span class="pull-right">{{item.current_status}}</span></p>
+			</div>
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 product-name pull-center">
+			<h4>${{item.cost_breakup.subtotal.amt}}</h4>
+			<button ui-sref="main.sellerAccount.orders.process({id:mdl.order.id,itemIndex:$index})" class="button btn all-btn primary-btn">Process</button>
+		</div>
+	</div>
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 cart-total invoice-cart-total">
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+			<div class="description">
+				<h4 style="margin-top: 15px;">Cart Total</h4>
+			</div>
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 add-cost">
+			<p>Shipping Cost <span class="pull-right">${{mdl.order.shipping_charge | number}}</span></p>
+			<p>Additional Charges<span class="pull-right">${{mdl.order.additional_charge | number}}</span></p>
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 total-cost" style="margin-top: 15px;">
+			<div>
+				${{mdl.order.subtotal | number}}
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		<button class="btn pull-right all-btn primary-btn" ui-sref="main.sellerAccount.orders.list">Back to Order List</button>
+	</div>
 </div>
-
-
-
-<!--
-<button ui-sref="main.sellerAccount.orders.view">View</button>
-<button ui-sref="main.sellerAccount.orders.process">Process</button>
-<button ui-sref="main.sellerAccount.orders.list">list</button>-->

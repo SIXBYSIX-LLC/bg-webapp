@@ -1,66 +1,161 @@
 <div class="booking-information travelo-box" style="margin-bottom: 0px;">
-
-    <div class="booking-confirmation clearfix">
-        <i class="soap-icon-insurance icon circle"></i>
-        <div class="message">
-            <h4 class="main-message">Your Order is completed !</h4>
-            <p>Please find your order details below.</p>
-        </div>
-        <button class="btn all-btn pull-right btn-right">Cancel Order</button>
-        <button class="btn all-btn pull-right btn-right">Return</button>
-        <button class="btn all-btn pull-right">Print Details</button>
-
-    </div>
-    <hr />
-    <h2>Order Details</h2>
-    <dl class="term-description">
-        <dt>Order number:</dt><dd>{{mdl.order.id}}</dd>
-        <dt>Name</dt><dd>{{mdl.order.billing_address.first_name}} {{mdl.order.billing_address.last_name}}</dd>
-        <dt>Phone:</dt><dd>{{mdl.order.billing_address.phone}}</dd>
-        <dt>Shipping Address</dt><dd>{{mdl.order.billing_address.address1+' '+order.billing_address.address2}}</dd>
-        <dt>Billing Address</dt><dd>{{mdl.order.billing_address.address1+' '+order.billing_address.address2}}</dd>
-        <dt>Town / City:</dt><dd>{{mdl.order.billing_address.city.name}}</dd>
-        <dt>ZIP code:</dt><dd>{{mdl.order.billing_address.zip_code}}</dd>
-        <dt>Country:</dt><dd>{{mdl.order.billing_address.country.name}}</dd>
-    </dl>
-
-    <hr />
-
+	<div class="booking-confirmation clearfix">
+		<i class="soap-icon-insurance icon circle"></i>
+		<div class="message">
+			<h4 class="main-message">Your Order is completed !</h4>
+			<p>Please find your order details below.</p>
+		</div>
+		<button class="btn all-btn pull-right btn-right primary-btn">Cancel Order</button>
+		<button class="btn all-btn pull-right btn-right primary-btn">Return</button>
+		<button class="btn all-btn pull-right primary-btn">Print Details</button>
+	</div>
+	<hr />
+	<div class="row order-details-row">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<h2>Order Details</h2>
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+			<p class="orange-text">Order number:</p>
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+			<p ng-if="mdl.order.id">{{mdl.order.id}}</p>
+			<p ng-if="!mdl.order.id">--</p>
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+			<p class="orange-text">Name:</p>
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+			<p ng-if="mdl.order.billing_address.first_name && mdl.order.billing_address.last_name">{{mdl.order.billing_address.first_name}} {{mdl.order.billing_address.last_name}}</p>
+			<p ng-if="!mdl.order.billing_address.first_name && mdl.order.billing_address.last_name">--</p>
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+			<p class="orange-text">Phone:</p>
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+			<p ng-if="mdl.order.billing_address.phone">{{mdl.order.billing_address.phone}}</p>
+			<p ng-if="!mdl.order.billing_address.phone">--</p>
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+			<p class="orange-text">Shipping Address:</p>
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+			<p ng-if="mdl.order.billing_address.address1">{{mdl.order.billing_address.address1+' '+order.billing_address.address2}}</p>
+			<p ng-if="!mdl.order.billing_address.address1">--</p>
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+			<p class="orange-text">Billing Address:</p>
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+			<p ng-if="mdl.order.billing_address.address1">{{mdl.order.billing_address.address1+' '+order.billing_address.address2}}</p>
+			<p ng-if="!mdl.order.billing_address.address1">--</p>
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+			<p class="orange-text">Town / City:</p>
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+			<p ng-if="mdl.order.billing_address.city.name">{{mdl.order.billing_address.city.name}}</p>
+			<p ng-if="!mdl.order.billing_address.city.name">--</p>
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+			<p class="orange-text">Zip Code:</p>
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+			<p ng-if="mdl.order.billing_address.zip_code">{{mdl.order.billing_address.zip_code}}</p>
+			<p ng-if="!mdl.order.billing_address.zip_code">--</p>
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+			<p class="orange-text">Country:</p>
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+			<p ng-if="mdl.order.billing_address.country.name">{{mdl.order.billing_address.country.name}}</p>
+			<p ng-if="!mdl.order.billing_address.country.name">--</p>
+		</div>
+	</div>
+	<!-- <dl class="term-description">
+		<dt>Order number:</dt><dd>{{mdl.order.id}}</dd>
+		<dt>Name</dt><dd>{{mdl.order.billing_address.first_name}} {{mdl.order.billing_address.last_name}}</dd>
+		<dt>Phone:</dt><dd>{{mdl.order.billing_address.phone}}</dd>
+		<dt>Shipping Address</dt><dd>{{mdl.order.billing_address.address1+' '+order.billing_address.address2}}</dd>
+		<dt>Billing Address</dt><dd>{{mdl.order.billing_address.address1+' '+order.billing_address.address2}}</dd>
+		<dt>Town / City:</dt><dd>{{mdl.order.billing_address.city.name}}</dd>
+		<dt>ZIP code:</dt><dd>{{mdl.order.billing_address.zip_code}}</dd>
+		<dt>Country:</dt><dd>{{mdl.order.billing_address.country.name}}</dd>
+	</dl> -->
+	<hr />
 </div>
-<div id="tour-details" class="travelo-box order-details" load-indicator>
-    <div ng-repeat="item in mdl.order.items" class="intro2 small-box border-box table-wrapper hidden-table-sms">
-        <div class="image-container table-cell"><img src="http://placehold.it/80x80" alt=""></div>
-        <div class="description">
-            <h4>{{item.detail.name}}</h4>
-        </div>
-        <div class="table-cell">
-            <dl class="term-description">
-                <dt>Rented For</dt><dd>{{item.cost_breakup.subtotal.rent_unit_days}} days</dd>
-                <dt>Order Type</dt><dd>{{item.shipping_kind}}</dd>
-                <dt>Status</dt><dd>Approved</dd>
-            </dl>
-        </div>
-        <div class="price-section table-cell">
-            <div class="price">
-                <div class="price-per-unit">${{item.subtotal | number}}</div>
-            </div>
-        </div>
-    </div>
-    <div class="intro2 small-box border-box table-wrapper hidden-table-sms cart-total">
-        <div class="description">
-            <h4>Order Total</h4>
-        </div>
+<!-- <div id="tour-details" class="travelo-box order-details" load-indicator>
+		<div ng-repeat="item in mdl.order.items" class="intro2 small-box border-box table-wrapper hidden-table-sms">
+				<div class="image-container table-cell"><img src="http://placehold.it/80x80" alt=""></div>
+				<div class="description">
+						<h4>{{item.detail.name}}</h4>
+				</div>
+				<div class="table-cell">
+						<dl class="term-description">
+								<dt>Rented For</dt><dd>{{item.cost_breakup.subtotal.rent_unit_days}} days</dd>
+								<dt>Order Type</dt><dd>{{item.shipping_kind}}</dd>
+								<dt>Status</dt><dd>Approved</dd>
+						</dl>
+				</div>
+				<div class="price-section table-cell">
+						<div class="price">
+								<div class="price-per-unit">${{item.subtotal | number}}</div>
+						</div>
+				</div>
+		</div>
+		<div class="intro2 small-box border-box table-wrapper hidden-table-sms cart-total">
+				<div class="description">
+						<h4>Order Total</h4>
+				</div>
 
-        <br />
-        <div class="table-cell">
-            <dl class="term-description">
-                <dt>Shipping Cost</dt><dd>${{mdl.order.shipping_charge | number}}</dd>
-                <dt>Additional Charges</dt><dd>${{mdl.order.shipping_charge | number}}</dd>
-            </dl>
-        </div>
-        <div class="price-section table-cell">
-            <div class="price"><div class="price-per-unit">${{mdl.order.total | number}}</div></div>
-        </div>
-    </div>
-    <button class="btn all-btn pull-right" ui-sref="main.account.orders.list">Back to Order List</button>
+				<br />
+				<div class="table-cell">
+						<dl class="term-description">
+								<dt>Shipping Cost</dt><dd>${{mdl.order.shipping_charge | number}}</dd>
+								<dt>Additional Charges</dt><dd>${{mdl.order.shipping_charge | number}}</dd>
+						</dl>
+				</div>
+				<div class="price-section table-cell">
+						<div class="price"><div class="price-per-unit">${{mdl.order.total | number}}</div></div>
+				</div>
+		</div>
+		<button class="btn all-btn pull-right primary-btn" ui-sref="main.account.orders.list">Back to Order List</button>
+</div> -->
+<div class="row">
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 invoice-details-col" ng-repeat="item in mdl.order.items">
+		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+			<img src="http://placehold.it/80x80" alt="">
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 product-name">
+			<h4>{{item.detail.name}}</h4>
+		</div>
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 description-col">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 right-col">
+				<p>Rented For <span class="pull-right">{{item.cost_breakup.subtotal.rent_unit_days}} days</span></p>
+				<p>Order Type <span class="pull-right">{{item.shipping_kind}}</span></p>
+				<p>Status <span class="pull-right">Approved</span></p>
+			</div>
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 product-name pull-center">
+			<h4>${{item.subtotal | number}}</h4>
+		</div>
+	</div>
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 cart-total invoice-cart-total">
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+			<div class="description">
+				<h4 style="margin-top: 15px;">Order Total</h4>
+			</div>
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 add-cost">
+			<p>Shipping Cost <span class="pull-right">${{mdl.order.shipping_charge | number}}</span></p>
+			<p>Additional Charges<span class="pull-right">${{mdl.order.shipping_charge | number}}</span></p>
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 total-cost" style="margin-top: 15px;">
+			<div>
+				${{mdl.order.total | number}}
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		<button class="btn all-btn pull-right primary-btn" ui-sref="main.account.orders.list">Back to Order List</button>
+	</div>
 </div>

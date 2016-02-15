@@ -1,83 +1,76 @@
-<div class="booking-information travelo-box" style="margin-bottom: 0px; padding: 20px 30px 1px;">
-
-    <h2>Edit Invoice</h2>
-    <!--<p class="bg-danger" style="padding: 5px;">This invoice is not paid. Please pay to get order processed.</p>-->
-    <dl class="term-description">
-        <dt>Order number:</dt><dd> 1234567890</dd>
-        <!--<dt>First name:</dt><dd>{{mdl.invoice.order.billing_address.first_name}}</dd>
-        <dt>Last name:</dt><dd>{{mdl.invoice.order.billing_address.last_name}}</dd>
-        <dt>Phone:</dt><dd>{{mdl.invoice.order.billing_address.phone}}</dd>-->
-    </dl>
-    <hr />
-    <div class="row invoice-address align-address">
-        <div class="col-md-4">
-            <h2>Shipping Address</h2>
-            <dl class="term-description">
-                <dd>Hiren Kesariya</dd>
-                <dd>Address Line 1, Address Line 2</dd>
-                <dd>California-44123</dd>
-                <dd>United States of America</dd>
-            </dl>
-        </div>
-        <div class="col-md-4">
-            <h2>Billing Address</h2>
-            <dl class="term-description">
-                <dd>Hiren Kesariya</dd>
-                <dd>Address Line 1, Address Line 2</dd>
-                <dd>California-44123</dd>
-                <dd>United States of America</dd>
-            </dl>
-        </div>
-    </div>
+<div class="booking-information travelo-box invoice-details" style="margin-bottom: 0px; padding: 0">
+		<h2>Edit Invoice</h2>
+		<dl class="term-description">
+				<dt>Order number:</dt><dd> 1234567890</dd>
+		</dl>
+		<hr />
+		<div class="row invoice-address align-address" style="margin-bottom: 0;">
+				<div class="col-md-6">
+						<h2>Shipping Address</h2>
+						<dl class="term-description">
+								<dd>Hiren Kesariya</dd>
+								<dd>Address Line 1, Address Line 2</dd>
+								<dd>California-44123</dd>
+								<dd>United States of America</dd>
+						</dl>
+				</div>
+				<div class="col-md-6">
+						<h2>Billing Address</h2>
+						<dl class="term-description">
+								<dd>Hiren Kesariya</dd>
+								<dd>Address Line 1, Address Line 2</dd>
+								<dd>California-44123</dd>
+								<dd>United States of America</dd>
+						</dl>
+				</div>
+		</div>
 
 </div>
-<div id="tour-details" class="travelo-box order-details" style="padding-top: 0px;">
-    <div class="intro2 small-box border-box table-wrapper hidden-table-sms edit-equipment-invoice">
-        <div class="image-container table-cell" style="width: 100px;"><img src="http://placehold.it/80x80" alt=""></div>
-        <div class="description" style="width: 250px;">
-            <h4>Hiren product name</h4>
-        </div>
-        <div class="table-cell" style="width: 400px;">
-            <dl class="term-description" style="width: 49%; float: left;">
-                <dt>Rented For</dt><dd><input type="text" placeholder="12 days"/></dd>
-                <dt>Order Type</dt><dd>Postpaid</dd>
-                <dt>Quantity</dt><dd><input type="text" placeholder="3"/></dd>
-            </dl>
-            <dl class="term-description" style="width: 49%; float: left;">
-                <dt>Shipping</dt><dd><input type="text" placeholder="$100"/></dd>
-                <dt>Overuse</dt><dd><input type="text" placeholder="$220"/></dd>
-                <dt>Additional</dt><dd><input type="text" placeholder="$200"/></dd>
-            </dl>
-        </div>
-
-        <div class="price-section table-cell">
-            <div class="price">
-                <div class="price-per-unit"><input type="text" placeholder="$1200"/></div>
-            </div>
-        </div>
-    </div>
-    <div class="intro2 small-box border-box table-wrapper hidden-table-sms cart-total">
-        <div class="description">
-            <h4>Cart Total</h4>
-        </div>
-
-        <br />
-        <div class="table-cell">
-            <dl class="term-description">
-                <dt>Shipping Cost</dt><dd>$50</dd>
-                <dt>Overusage</dt><dd>$215</dd>
-                <dt>Additional</dt><dd>$234</dd>
-            </dl>
-        </div>
-        <div class="price-section table-cell">
-            <div class="price"><div class="price-per-unit">$2209</div></div>
-        </div>
-    </div>
-    <button class="button green btn-large uppercase pull-left">Back to Invoice</button>
-    <button class="button green btn-large uppercase pull-right">Save Invoice</button>
+<div class="row">
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 invoice-details-col">
+			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+				<img src="http://placehold.it/80x80" alt="">
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 product-name">
+				<h4>Hiren product name</h4>
+			</div>
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 description-col edit-desc-col">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<p>Rented For <input type="text" placeholder="12 days" class="pull-right form-control"> </p>
+					<p>Order Type <span class="pull-right">Postpaid</span></p>
+					<p>Quantity <input type="text" placeholder="3" class="pull-right form-control"/></p>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 right-col">
+					<p>Shipping <input type="text" placeholder="$100" class="pull-right form-control"/></p>
+					<p>Overuse <input type="text" placeholder="$220" class="pull-right form-control"/></p>
+					<p>Additional <input type="text" placeholder="$200" class="pull-right form-control"/></p>
+				</div>
+			</div>
+			<div class="col-lg-1 col-md-1 col-sm-1 col-xs-12 product-name pull-center">
+				<h4>$1200</h4>
+			</div>
+		</div>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 cart-total invoice-cart-total">
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+				<div class="description">
+					<h4 style="margin-top: 28px;">Cart Total</h4>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 add-cost">
+				<p>Shipping Cost <span class="pull-right">$50</span></p>
+				<p>Overusage <span class="pull-right">$215</span></p>
+				<p>Additional <span class="pull-right">$234</span></p>
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 total-cost">
+				<div>
+					$2209
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<button class="btn all-btn primary-btn pull-left" ui-sref="main.sellerAccount.invoices.list">Back to Invoice List</button>
+			<button class="btn all-btn primary-btn pull-right">Save Invoice</button>
+		</div>
+	</div>
 </div>
-
-<!--
-<button ui-sref="main.sellerAccount.invoices.list">View</button>
-<button ui-sref="main.sellerAccount.invoices.edit({id:0})">Edit</button>
-<button ui-sref="main.sellerAccount.invoices.view({id:0})">View</button>-->

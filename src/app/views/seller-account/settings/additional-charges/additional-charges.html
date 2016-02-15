@@ -19,10 +19,16 @@
       <td>{{charge.item_kind}}</td>
       <td class="category">{{charge.categoryNames.join(',\n')}}</td>
       <td>
-        <button class="btn all-btn" ng-click="chargesMdl.edit(charge)">Edit</button>
+        <a class="clickable-icon pointerhover" ng-click="chargesMdl.edit(charge)">
+          <i class="fa fa-pencil-square-o"></i>
+        </a>
+        <!-- <button class="btn all-btn primary-btn" ng-click="chargesMdl.edit(charge)">Edit</button> -->
       </td>
       <td>
-        <button class="btn all-btn" ng-click="chargesMdl.delete(charge)">Delete</button>
+        <a class="clickable-icon pointerhover" ng-click="chargesMdl.delete(charge)">
+          <i class="fa fa-trash"></i>
+        </a>
+        <!-- <button class="btn all-btn primary-btn" ng-click="chargesMdl.delete(charge)">Delete</button> -->
       </td>
     </tr>
   </tbody>
@@ -100,9 +106,9 @@
                 </tags-input>
             </div>
             <div class="col-xs-6 col-sm-3 col-md-1">
-                <button class="btn all-btn auto-width update-btn" ng-click="chargesMdl.update(charge)">Update</button>
+                <button class="btn all-btn auto-width update-btn primary-btn" ng-click="chargesMdl.update(charge)">Update</button>
                 <br>
-                <button class="btn all-btn auto-width" ng-click="chargesMdl.cancelEdit(charge)">Cancel</button>
+                <button class="btn all-btn auto-width primary-btn" ng-click="chargesMdl.cancelEdit(charge)">Cancel</button>
             </div>
         </form>
     </div>
@@ -112,31 +118,28 @@
     <form novalidate validate-form="validateAddForm" name="chargesMdl.addForm">
 
         <div class="col-xs-6 col-sm-2 col-md-2">
-            <input type="text" ng-model="chargesMdl.addData.name" name="name" class="input-text full-width"
-                   placeholder="Charge Name"> <!-- dropdown -->
+            <input type="text" ng-model="chargesMdl.addData.name" name="name" class="form-control" placeholder="Charge Name"> <!-- dropdown -->
         </div>
         <div class="col-xs-6 col-sm-2 col-md-2">
-            <input type="text" ng-model="chargesMdl.addData.value" name="value" class="input-text full-width"
-                   placeholder="Value">
+            <input type="text" ng-model="chargesMdl.addData.value" name="value" class="form-control" placeholder="Value">
         </div>
         <div class="col-xs-6 col-sm-2 col-md-2">
-            <select ng-model="chargesMdl.addData.unit" name="unit">
+            <select ng-model="chargesMdl.addData.unit" name="unit" class="form-control">
                 <option value="flat">Flat</option>
             </select>
         </div>
         <div class="col-xs-6 col-sm-2 col-md-2">
-            <select ng-model="chargesMdl.addData.item_kind" name="kind">
-                <option value="rental">rental</option>
+            <select ng-model="chargesMdl.addData.item_kind" name="kind" class="form-control">
+                <option value="rental">Rental</option>
             </select>
         </div>
         <div class="col-xs-6 col-sm-3 col-md-2">
             <tags-input ng-model="chargesMdl.selectedCatsToAdd" class="tags-directive form-control">
-                <auto-complete min-length="1" load-on-focus="'true'" debounce-delay="'0'"
-                               source="chargesMdl.categories"></auto-complete>
+                <auto-complete min-length="1" load-on-focus="'true'" debounce-delay="'0'" source="chargesMdl.categories"></auto-complete>
             </tags-input>
         </div>
         <div class="col-xs-6 col-sm-3 col-md-1">
-            <button class="btn all-btn auto-width" ng-click="chargesMdl.add()">Add</button>
+            <button class="btn all-btn auto-width primary-btn" ng-click="chargesMdl.add()">Add</button>
         </div>
     </form>
 

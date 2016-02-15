@@ -22,7 +22,10 @@
             <h5 class="box-title col-md-2 col-lg-offset-1">
                 <i class="icon yellow-color circle"></i>${{item.total}}
             </h5>
-            <button class="btn all-btn pull-right" ui-sref="main.sellerAccount.invoices.view({id:item.id})">View Details</button>
+            <!-- <button class="btn all-btn pull-right primary-btn" ui-sref="main.sellerAccount.invoices.view({id:item.id})">View Details</button> -->
+            <a class="pull-right clickable-icon" ui-sref="main.sellerAccount.invoices.view({id:item.id})">
+                <i class="fa fa-eye"></i>
+            </a>
         </div>
     </div>
 </div>
