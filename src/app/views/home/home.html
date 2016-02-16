@@ -51,31 +51,38 @@
 				<li class="menu-item-has-children pointerhover">
 					<a>Need Help ? Call (24X7): 1-800-123-0000</a>
 				</li>
-				<li ng-if="isLoggedIn()">
-										<a class="pointerhover cart-count" ui-sref="main.cart"><i class="soap-icon-shopping" style="font-size: 6em;"></i><span>{{rmodel.cartCount || 0}}</span></a>
-								</li>
+				<!-- <li ng-if="isLoggedIn()">
+					<a class="pointerhover cart-count" ui-sref="main.cart"><i class="soap-icon-shopping" style="font-size: 6em;"></i><span>{{rmodel.cartCount || 0}}</span></a>
+				</li> -->
 			</ul>
 		</div>
 	</div>
 	<div class="top-header">
 		<div class="container">
-			<h1 class="logo navbar-brand">
+			<h1 class="logo navbar-brand pull-left hidden-xs">
 				<a class="pointerhover">
 					<img ui-sref="home" src="assets/images/logo.png"  />
 				</a>
 			</h1>
-			<div class="header-search col-sm-offset-4 col-md-offset-2 hidden-mobile">
+			<div class="header-search col-lg-offset-2 col-md-offset-2 col-sm-offset-4">
 				<form ng-submit="mainMdl.search()">
-					<div class="col-md-10"></div>
-					<div class="col-md-2 pull-center not-user" ng-if="!isLoggedIn()">
+					<div class="col-lg-10 col-md-10 col-sm-8 hidden-xs"></div>
+					<div class="col-xs-4 visible-xs">
+						<h1 class="logo navbar-brand pull-left no-margin">
+							<a class="pointerhover">
+								<img ui-sref="home" src="assets/images/logo.png"  />
+							</a>
+						</h1>
+					</div>
+					<div class="col-lg-2 col-md-2 col-sm-4 col-xs-8 pull-center not-user" ng-if="!isLoggedIn()">
 						<a ng-click="openLogin()" class="soap-popupbox pointerhover">Login</a>
 						<a ng-click="openSignUp()" class="soap-popupbox pointerhover">Register</a>
 					</div>
-					<div class="col-md-2 my-acc-col pointerhover" ng-if="isLoggedIn()">
+					<div class="col-lg-2 col-md-2 col-sm-4 col-xs-8 my-acc-col pointerhover" ng-if="isLoggedIn()">
 						<ul class="quick-menu clearfix main-quick-menu">
 							<li ng-if="isLoggedIn()" class="ribbon currency equip-drop my-acc-drop">
 								<img src="/assets/images/avtar.png">
-								<a ng-click="accountClick()" class="soap-popupbox pointerhover">Account &nbsp</a>
+								<a class="soap-popupbox pointerhover">Account &nbsp</a>
 								<ul class="menu mini">
 									<li><a ui-sref="main.account.dashboard">My Buyer Dashboard</a></li>
 									<li><a ui-sref="main.sellerAccount.dashboard">My Seller Dashboard</a></li>
@@ -91,7 +98,7 @@
 	</div>
 </header>
 <!-- new landing header end -->
-<section id="content" class="slideshow-bg">
+<section id="content" class="slideshow-bg landing-content">
 	<div id="slideshow">
 		<div class="flexslider">
 			<ul class="slides">
@@ -102,7 +109,7 @@
 		</div>
 	</div>
 	<div class="container landing-top-content">
-		<div id="main" style="margin-top: 15%;">
+		<div id="main" style="margin-top: 15%; margin-bottom: 15%;">
 			<h1 class="page-title white-color pull-center">Buy or Rent Equipments with us in Comfort !</h1>
 			<h2 class="page-description col-md-12 no-float white-color pull-center">We're bringing you a modern, comfortable and easy way	to rent, buy and sell equipments online.
 			</h2>
@@ -110,217 +117,120 @@
 				<div class="search-box">
 					<form method="post">
 						<div class="row">
-							<div class="form-group col-sm-12 col-md-10">
+							<div class="form-group col-lg-10 col-md-10 col-sm-10 col-xs-12">
 								<angucomplete-alt placeholder="Equipment Name, Part Name, etc.." pause="400" selected-object="mdl.searchObj" remote-api-handler="mdl.searchHelper" remote-url-data-field="data" title-field="name" input-changed="mdl.inputChanged" input-class="input-text full-width"/>
 							</div>
 							<div class="form-group col-md-2">
 								<div class="row">
-									<div class="col-xs-12">
+									<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
 										<button type="submit" class="full-width btn all-btn search-button" ng-click="mdl.search()">Search Now</button>
 									</div>
 								</div>
 							</div>
 						</div>
 					</form>
-					<!-- <ul class="search-tabs clearfix">
-						<li ng-class="{'active':mdl.tab=='rent'}" class="advanced-search">
-							<a ng-click="mdl.tab='rent'" >
-								<i class="soap-icon-shopping-3"></i><span>RENT</span>
-							</a>
-						</li>
-						<li ng-class="{'active':mdl.tab=='buy'}" class="advanced-search">
-							<a ng-click="mdl.tab='buy'" >
-								<i class="soap-icon-shopping-1 takeoff-effect"></i><span>BUY</span>
-							</a>
-						</li>
-						<li ng-class="{'active':mdl.tab=='search'}" class="advanced-search visible-lg">
-							<a ng-click="mdl.tab='search'" ><span>Advanced Search</span></a>
-						</li>
-					</ul> -->
-					<!-- <div class="visible-mobile">
-						<ul id="mobile-search-tabs" class="search-tabs clearfix">
-							<li ng-class="{'active':mdl.tab=='rent'}"><a ng-click="mdl.tab='rent'">RENT</a></li>
-							<li ng-class="{'active':mdl.tab=='buy'}"> <a ng-click="mdl.tab='buy'">BUY</a></li>
-							<li ng-class="{'active':mdl.tab=='search'}"><a ng-click="mdl.tab='search'">Advanced Search</a></li>
-						</ul>
-					</div> -->
-					<!-- <div class="search-tab-content">
-						<div ng-class="{'active fade in':mdl.tab=='rent'}" class="tab-pane" >
-							<form method="post">
-								<h4 class="title">Which Equipment you want to rent?</h4>
-								<div class="row">
-									<div class="form-group col-sm-12 col-md-10">
-										<angucomplete-alt placeholder="Equipment Name, Part Name, etc.." pause="400" selected-object="mdl.searchObj" remote-api-handler="mdl.searchHelper" remote-url-data-field="data" title-field="name" input-changed="mdl.inputChanged" input-class="input-text full-width"/>
-									</div>
-									<div class="form-group col-md-2">
-										<div class="row">
-											<div class="col-xs-12">
-												<button type="submit" class="full-width btn all-btn" ng-click="mdl.search()">SEARCH NOW</button>
-											</div>
-										</div>
-									</div>
-								</div>
-							</form>
-						</div>
-						<div ng-class="{'active fade in':mdl.tab=='buy'}" class="tab-pane" >
-							<form method="post">
-																<h4 class="title">Which Equipment you want to buy?</h4>
-																<div class="row">
-																		<div class="form-group col-sm-12 col-md-10">
-																				<input type="text" class="input-text full-width"
-																							 placeholder="Equipment Name, Part Name, etc.." ng-model="mdl.searchText"/>
-																		</div>
-																		<div class="form-group col-md-2">
-																				<div class="row">
-																						<div class="col-xs-12">
-																								<button type="submit" class="full-width" ng-click="mdl.search()">SEARCH NOW</button>
-																						</div>
-																				</div>
-																		</div>
-																</div>
-														</form>
-												</div>
-												<div ng-class="{'active fade in':mdl.tab=='search'}" class="tab-pane">
-														<form>
-																<h4 class="title">Which Equipment you want to search?</h4>
-																<div class="row">
-																		<div class="form-group col-sm-7 col-md-5">
-																				<input type="text" class="input-text full-width" ng-model="mdl.searchText"
-																							 placeholder="Equipment Name, Part Name, etc.."/>
-																		</div>
-																		<div class="form-group col-sm-6 col-md-4">
-																				<div class="row">
-																						<div class="col-xs-6">
-																								<div class="datepicker-wrap transparent" ng-click="open($event,'Start')">
-																										<input type="text" class="input-text white-bg full-width check-in" datepicker-popup="{{dateFormat}}" ng-model="dt"
-																													 is-open="openedStart" min-date="minDate" datepicker-options="dateOptions"
-																													 ng-focus="open($event,'Start')"
-																													 date-disabled="disabled(date, mode)" ng-required="true" close-text="Close"/>
-																								</div>
-																						</div>
-																						<div class="col-xs-6">
-																								<div class="datepicker-wrap transparent" ng-click="open($event,'End')">
-																										<input type="text" class="input-text white-bg full-width check-in" datepicker-popup="{{dateFormat}}" ng-model="dt"
-																													 is-open="openedEnd" min-date="minDate" datepicker-options="dateOptions"
-																													 ng-focus="open($event,'End')"
-																													 date-disabled="disabled(date, mode)" ng-required="true" close-text="Close"/>
-																								</div>
-																						</div>
-																				</div>
-																		</div>
-																		<div class="form-group col-md-3">
-																				<div class="row">
-																						<div class="col-xs-6">
-																								<select class="form-control full-width white-bg">
-																										<option>Rent</option>
-																										<option>Buy</option>
-																								</select>
-																						</div>
-																						<div class="col-xs-6">
-																								<button type="submit" ng-click="mdl.search()" class="full-width">SEARCH NOW</button>
-																						</div>
-																				</div>
-																		</div>
-																</div>
-														</form>
-												</div>
-										</div>
-								</div>
-						</div>
-				</div> -->
-		</div>
-</section>
-<section id="content" class="no-padding">
-	<div class="container section">
-		<div class="pull-center">
-			<h2>Browse Equipments from our list</h2>
-			<div class="line"></div>
-		</div>
-		<div class="row image-box style10">
-			<div class="col-sms-6 col-sm-6 col-md-3 browse-equip-col">
-				<article class="box">
-					<figure class="animated fadeInDown" data-animation-type="fadeInDown" data-animation-duration="1">
-						<a href="hotel-list-view.html" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt="" width="270" height="160" /></a>
-					</figure>
-					<div class="details">
-						<h4 class="box-title">Aerial Lifts</h4>
-					</div>
-				</article>
-			</div>
-			<div class="col-sms-6 col-sm-6 col-md-3 browse-equip-col">
-				<article class="box">
-					<figure class="animated fadeInDown" data-animation-type="fadeInDown" data-animation-duration="1">
-						<a href="hotel-list-view.html" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt="" width="270" height="160" /></a>
-					</figure>
-					<div class="details">
-						<h4 class="box-title">Earth Moving</h4>
-					</div>
-				</article>
-			</div>
-			<div class="col-sms-6 col-sm-6 col-md-3 browse-equip-col">
-				<article class="box">
-					<figure class="animated fadeInDown" data-animation-type="fadeInDown" data-animation-duration="1">
-						<a href="hotel-list-view.html" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt="" width="270" height="160" /></a>
-					</figure>
-					<div class="details">
-						<h4 class="box-title">Forklifts & Material Handling </h4>
-					</div>
-				</article>
-			</div>
-			<div class="col-sms-6 col-sm-6 col-md-3 browse-equip-col">
-				<article class="box">
-					<figure class="animated fadeInDown" data-animation-type="fadeInDown" data-animation-duration="1">
-						<a href="hotel-list-view.html" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt="" width="270" height="160" /></a>
-					</figure>
-					<div class="details">
-						<h4 class="box-title">Concrete & Masonry</h4>
-					</div>
-				</article>
-			</div>
-			<div class="col-sms-6 col-sm-6 col-md-3 browse-equip-col">
-				<article class="box">
-					<figure class="animated fadeInDown" data-animation-type="fadeInDown" data-animation-duration="1">
-						<a href="hotel-list-view.html" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt="" width="270" height="160" /></a>
-					</figure>
-					<div class="details">
-						<h4 class="box-title">Aerial Lifts</h4>
-					</div>
-				</article>
-			</div>
-			<div class="col-sms-6 col-sm-6 col-md-3 browse-equip-col">
-				<article class="box">
-					<figure class="animated fadeInDown" data-animation-type="fadeInDown" data-animation-duration="1">
-						<a href="hotel-list-view.html" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt="" width="270" height="160" /></a>
-					</figure>
-					<div class="details">
-						<h4 class="box-title">Earth Moving</h4>
-					</div>
-				</article>
-			</div>
-			<div class="col-sms-6 col-sm-6 col-md-3 browse-equip-col">
-				<article class="box">
-					<figure class="animated fadeInDown" data-animation-type="fadeInDown" data-animation-duration="1">
-						<a href="hotel-list-view.html" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt="" width="270" height="160" /></a>
-					</figure>
-					<div class="details">
-						<h4 class="box-title">Forklifts & Material Handling</h4>
-					</div>
-				</article>
-			</div>
-			<div class="col-sms-6 col-sm-6 col-md-3 browse-equip-col">
-				<article class="box">
-					<figure class="animated fadeInDown" data-animation-type="fadeInDown" data-animation-duration="1">
-						<a href="hotel-list-view.html" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt="" width="270" height="160" /></a>
-					</figure>
-					<div class="details">
-						<h4 class="box-title">Concrete & Masonry</h4>
-					</div>
-				</article>
+				</div>
 			</div>
 		</div>
 	</div>
 </section>
-<section class="features-section">
+<section class="no-padding gray-area">
+	<div class="container section">
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-center">
+				<h2>Browse Equipments from our list</h2>
+				<div class="line"></div>
+			</div>
+		</div>
+		<div class="row image-box style10 browse-equip-row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding">
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 browse-equip-col">
+					<article class="box">
+						<figure class="animated fadeInDown" data-animation-type="fadeInDown" data-animation-duration="1">
+							<a href="hotel-list-view.html" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt="" width="270" height="160" /></a>
+						</figure>
+						<div class="details">
+							<h4 class="box-title">Aerial Lifts</h4>
+						</div>
+					</article>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 browse-equip-col">
+					<article class="box">
+						<figure class="animated fadeInDown" data-animation-type="fadeInDown" data-animation-duration="1">
+							<a href="hotel-list-view.html" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt="" width="270" height="160" /></a>
+						</figure>
+						<div class="details">
+							<h4 class="box-title">Earth Moving</h4>
+						</div>
+					</article>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 browse-equip-col">
+					<article class="box">
+						<figure class="animated fadeInDown" data-animation-type="fadeInDown" data-animation-duration="1">
+							<a href="hotel-list-view.html" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt="" width="270" height="160" /></a>
+						</figure>
+						<div class="details">
+							<h4 class="box-title">Forklifts & Material Handling </h4>
+						</div>
+					</article>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 browse-equip-col">
+					<article class="box">
+						<figure class="animated fadeInDown" data-animation-type="fadeInDown" data-animation-duration="1">
+							<a href="hotel-list-view.html" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt="" width="270" height="160" /></a>
+						</figure>
+						<div class="details">
+							<h4 class="box-title">Concrete & Masonry</h4>
+						</div>
+					</article>
+				</div>
+			</div>
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding">
+				<div class="col-lf-3 col-md-3 col-sm-3 col-xs-12 browse-equip-col">
+					<article class="box">
+						<figure class="animated fadeInDown" data-animation-type="fadeInDown" data-animation-duration="1">
+							<a href="hotel-list-view.html" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt="" width="270" height="160" /></a>
+						</figure>
+						<div class="details">
+							<h4 class="box-title">Aerial Lifts</h4>
+						</div>
+					</article>
+				</div>
+				<div class="col-lf-3 col-md-3 col-sm-3 col-xs-12 browse-equip-col">
+					<article class="box">
+						<figure class="animated fadeInDown" data-animation-type="fadeInDown" data-animation-duration="1">
+							<a href="hotel-list-view.html" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt="" width="270" height="160" /></a>
+						</figure>
+						<div class="details">
+							<h4 class="box-title">Earth Moving</h4>
+						</div>
+					</article>
+				</div>
+				<div class="col-lf-3 col-md-3 col-sm-3 col-xs-12 browse-equip-col">
+					<article class="box">
+						<figure class="animated fadeInDown" data-animation-type="fadeInDown" data-animation-duration="1">
+							<a href="hotel-list-view.html" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt="" width="270" height="160" /></a>
+						</figure>
+						<div class="details">
+							<h4 class="box-title">Forklifts & Material Handling</h4>
+						</div>
+					</article>
+				</div>
+				<div class="col-lf-3 col-md-3 col-sm-3 col-xs-12 browse-equip-col">
+					<article class="box">
+						<figure class="animated fadeInDown" data-animation-type="fadeInDown" data-animation-duration="1">
+							<a href="hotel-list-view.html" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt="" width="270" height="160" /></a>
+						</figure>
+						<div class="details">
+							<h4 class="box-title">Concrete & Masonry</h4>
+						</div>
+					</article>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="features-section hidden-sm hidden-xs">
 	<div class="section">
 		<div class="container description text-center">
 			<div class="pull-center">
@@ -461,7 +371,7 @@
 		</div>
 	</div>
 </section> -->
-<section>
+<section class="visible-xs">
 	<div class="container section">
 		<div class="row">
 			<div class="col-lg-12 col-md-12">
@@ -475,7 +385,7 @@
 			<div id="carousel-example-generic" class="carousel slide landing-carousel-slider" data-ride="carousel">
 				<div class="carousel-inner" role="listbox">
 					<div class="item active">
-						<div class="col-lg-3 col-md-3 landing-img-carousel">
+						<div class="col-xs-12 landing-img-carousel">
 							<article class="box">
 								<figure>
 									<a href="#" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt=""></a>
@@ -493,126 +403,15 @@
 										</p>
 									</div>
 									<div>
-										<div class="col-md-4 price-col">
+										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 price-col">
 											<p>Daily</p>
 											<h3>$12</h3>
 										</div>
-										<div class="col-md-4 price-col">
+										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 price-col">
 											<p>Weekly</p>
 											<h3>$120</h3>
 										</div>
-										<div class="col-md-4 price-col">
-											<p>Monthly</p>
-											<h3>$1200</h3>
-										</div>
-									</div>
-									<div class="action">
-										<a href="" class="btn all-btn primary-btn full-width">View & Reserve</a>
-									</div>
-								</div>
-							</article>
-						</div>
-						<div class="col-lg-3 col-md-3 landing-img-carousel">
-							<article class="box">
-								<figure>
-									<a href="#" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt=""></a>
-								</figure>
-								<div class="details">
-									<h4 class="box-title" style="margin-bottom: 5px;">Breaker</h4>
-									<div class="amenities">
-										<p class="text-left reviews-para">
-											<i class="soap-icon-star"></i>
-											<i class="soap-icon-star"></i>
-											<i class="soap-icon-star"></i>
-											<i class="soap-icon-star"></i>
-											<i class="soap-icon-star"></i>
-											<span class="pull-right">170 Reviews</span>
-										</p>
-									</div>
-									<div>
-										<div class="col-md-4 price-col">
-											<p>Daily</p>
-											<h3>$12</h3>
-										</div>
-										<div class="col-md-4 price-col">
-											<p>Weekly</p>
-											<h3>$120</h3>
-										</div>
-										<div class="col-md-4 price-col">
-											<p>Monthly</p>
-											<h3>$1200</h3>
-										</div>
-									</div>
-									<div class="action">
-										<a href="" class="btn all-btn primary-btn full-width">View & Reserve</a>
-									</div>
-								</div>
-							</article>
-						</div>
-						<div class="col-lg-3 col-md-3 landing-img-carousel">
-							<article class="box">
-								<figure>
-									<a href="#" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt=""></a>
-								</figure>
-								<div class="details">
-									<h4 class="box-title" style="margin-bottom: 5px;">Breaker</h4>
-									<div class="amenities">
-										<p class="text-left reviews-para">
-											<i class="soap-icon-star"></i>
-											<i class="soap-icon-star"></i>
-											<i class="soap-icon-star"></i>
-											<i class="soap-icon-star"></i>
-											<i class="soap-icon-star"></i>
-											<span class="pull-right">170 Reviews</span>
-										</p>
-									</div>
-									<div>
-										<div class="col-md-4 price-col">
-											<p>Daily</p>
-											<h3>$12</h3>
-										</div>
-										<div class="col-md-4 price-col">
-											<p>Weekly</p>
-											<h3>$120</h3>
-										</div>
-										<div class="col-md-4 price-col">
-											<p>Monthly</p>
-											<h3>$1200</h3>
-										</div>
-									</div>
-									<div class="action">
-										<a href="" class="btn all-btn primary-btn full-width">View & Reserve</a>
-									</div>
-								</div>
-							</article>
-						</div>
-						<div class="col-lg-3 col-md-3 landing-img-carousel">
-							<article class="box">
-								<figure>
-									<a href="#" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt=""></a>
-								</figure>
-								<div class="details">
-									<h4 class="box-title" style="margin-bottom: 5px;">Breaker</h4>
-									<div class="amenities">
-										<p class="text-left reviews-para">
-											<i class="soap-icon-star"></i>
-											<i class="soap-icon-star"></i>
-											<i class="soap-icon-star"></i>
-											<i class="soap-icon-star"></i>
-											<i class="soap-icon-star"></i>
-											<span class="pull-right">170 Reviews</span>
-										</p>
-									</div>
-									<div>
-										<div class="col-md-4 price-col">
-											<p>Daily</p>
-											<h3>$12</h3>
-										</div>
-										<div class="col-md-4 price-col">
-											<p>Weekly</p>
-											<h3>$120</h3>
-										</div>
-										<div class="col-md-4 price-col">
+										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 price-col">
 											<p>Monthly</p>
 											<h3>$1200</h3>
 										</div>
@@ -625,7 +424,7 @@
 						</div>
 					</div>
 					<div class="item">
-						<div class="col-lg-3 col-md-3 landing-img-carousel">
+						<div class="col-xs-12 landing-img-carousel">
 							<article class="box">
 								<figure>
 									<a href="#" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt=""></a>
@@ -643,126 +442,15 @@
 										</p>
 									</div>
 									<div>
-										<div class="col-md-4 price-col">
+										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 price-col">
 											<p>Daily</p>
 											<h3>$12</h3>
 										</div>
-										<div class="col-md-4 price-col">
+										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 price-col">
 											<p>Weekly</p>
 											<h3>$120</h3>
 										</div>
-										<div class="col-md-4 price-col">
-											<p>Monthly</p>
-											<h3>$1200</h3>
-										</div>
-									</div>
-									<div class="action">
-										<a href="" class="btn all-btn primary-btn full-width">View & Reserve</a>
-									</div>
-								</div>
-							</article>
-						</div>
-						<div class="col-lg-3 col-md-3 landing-img-carousel">
-							<article class="box">
-								<figure>
-									<a href="#" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt=""></a>
-								</figure>
-								<div class="details">
-									<h4 class="box-title" style="margin-bottom: 5px;">Breaker</h4>
-									<div class="amenities">
-										<p class="text-left reviews-para">
-											<i class="soap-icon-star"></i>
-											<i class="soap-icon-star"></i>
-											<i class="soap-icon-star"></i>
-											<i class="soap-icon-star"></i>
-											<i class="soap-icon-star"></i>
-											<span class="pull-right">170 Reviews</span>
-										</p>
-									</div>
-									<div>
-										<div class="col-md-4 price-col">
-											<p>Daily</p>
-											<h3>$12</h3>
-										</div>
-										<div class="col-md-4 price-col">
-											<p>Weekly</p>
-											<h3>$120</h3>
-										</div>
-										<div class="col-md-4 price-col">
-											<p>Monthly</p>
-											<h3>$1200</h3>
-										</div>
-									</div>
-									<div class="action">
-										<a href="" class="btn all-btn primary-btn full-width">View & Reserve</a>
-									</div>
-								</div>
-							</article>
-						</div>
-						<div class="col-lg-3 col-md-3 landing-img-carousel">
-							<article class="box">
-								<figure>
-									<a href="#" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt=""></a>
-								</figure>
-								<div class="details">
-									<h4 class="box-title" style="margin-bottom: 5px;">Breaker</h4>
-									<div class="amenities">
-										<p class="text-left reviews-para">
-											<i class="soap-icon-star"></i>
-											<i class="soap-icon-star"></i>
-											<i class="soap-icon-star"></i>
-											<i class="soap-icon-star"></i>
-											<i class="soap-icon-star"></i>
-											<span class="pull-right">170 Reviews</span>
-										</p>
-									</div>
-									<div>
-										<div class="col-md-4 price-col">
-											<p>Daily</p>
-											<h3>$12</h3>
-										</div>
-										<div class="col-md-4 price-col">
-											<p>Weekly</p>
-											<h3>$120</h3>
-										</div>
-										<div class="col-md-4 price-col">
-											<p>Monthly</p>
-											<h3>$1200</h3>
-										</div>
-									</div>
-									<div class="action">
-										<a href="" class="btn all-btn primary-btn full-width">View & Reserve</a>
-									</div>
-								</div>
-							</article>
-						</div>
-						<div class="col-lg-3 col-md-3 landing-img-carousel">
-							<article class="box">
-								<figure>
-									<a href="#" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt=""></a>
-								</figure>
-								<div class="details">
-									<h4 class="box-title" style="margin-bottom: 5px;">Breaker</h4>
-									<div class="amenities">
-										<p class="text-left reviews-para">
-											<i class="soap-icon-star"></i>
-											<i class="soap-icon-star"></i>
-											<i class="soap-icon-star"></i>
-											<i class="soap-icon-star"></i>
-											<i class="soap-icon-star"></i>
-											<span class="pull-right">170 Reviews</span>
-										</p>
-									</div>
-									<div>
-										<div class="col-md-4 price-col">
-											<p>Daily</p>
-											<h3>$12</h3>
-										</div>
-										<div class="col-md-4 price-col">
-											<p>Weekly</p>
-											<h3>$120</h3>
-										</div>
-										<div class="col-md-4 price-col">
+										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 price-col">
 											<p>Monthly</p>
 											<h3>$1200</h3>
 										</div>
@@ -775,7 +463,7 @@
 						</div>
 					</div>
 					<div class="item">
-						<div class="col-lg-3 col-md-3 landing-img-carousel">
+						<div class="col-xs-12 landing-img-carousel">
 							<article class="box">
 								<figure>
 									<a href="#" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt=""></a>
@@ -793,15 +481,15 @@
 										</p>
 									</div>
 									<div>
-										<div class="col-md-4 price-col">
+										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 price-col">
 											<p>Daily</p>
 											<h3>$12</h3>
 										</div>
-										<div class="col-md-4 price-col">
+										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 price-col">
 											<p>Weekly</p>
 											<h3>$120</h3>
 										</div>
-										<div class="col-md-4 price-col">
+										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 price-col">
 											<p>Monthly</p>
 											<h3>$1200</h3>
 										</div>
@@ -812,7 +500,35 @@
 								</div>
 							</article>
 						</div>
-						<div class="col-lg-3 col-md-3 landing-img-carousel">
+					</div>
+				</div>
+
+				<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+					<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+					<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
+			</div>
+		</div>
+</section>
+<section class="hidden-xs">
+	<div class="container section">
+		<div class="row">
+			<div class="col-lg-12 col-md-12">
+				<div class="pull-center">
+					<h2>Recently Added Equipments</h2>
+					<div class="line"></div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div id="carousel-example-generic" class="carousel slide landing-carousel-slider" data-ride="carousel">
+				<div class="carousel-inner" role="listbox">
+					<div class="item active">
+						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 landing-img-carousel">
 							<article class="box">
 								<figure>
 									<a href="#" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt=""></a>
@@ -830,15 +546,15 @@
 										</p>
 									</div>
 									<div>
-										<div class="col-md-4 price-col">
+										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 price-col">
 											<p>Daily</p>
 											<h3>$12</h3>
 										</div>
-										<div class="col-md-4 price-col">
+										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 price-col">
 											<p>Weekly</p>
 											<h3>$120</h3>
 										</div>
-										<div class="col-md-4 price-col">
+										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 price-col">
 											<p>Monthly</p>
 											<h3>$1200</h3>
 										</div>
@@ -849,7 +565,7 @@
 								</div>
 							</article>
 						</div>
-						<div class="col-lg-3 col-md-3 landing-img-carousel">
+						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 landing-img-carousel">
 							<article class="box">
 								<figure>
 									<a href="#" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt=""></a>
@@ -867,15 +583,15 @@
 										</p>
 									</div>
 									<div>
-										<div class="col-md-4 price-col">
+										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 price-col">
 											<p>Daily</p>
 											<h3>$12</h3>
 										</div>
-										<div class="col-md-4 price-col">
+										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 price-col">
 											<p>Weekly</p>
 											<h3>$120</h3>
 										</div>
-										<div class="col-md-4 price-col">
+										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 price-col">
 											<p>Monthly</p>
 											<h3>$1200</h3>
 										</div>
@@ -886,7 +602,7 @@
 								</div>
 							</article>
 						</div>
-						<div class="col-lg-3 col-md-3 landing-img-carousel">
+						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 landing-img-carousel">
 							<article class="box">
 								<figure>
 									<a href="#" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt=""></a>
@@ -904,15 +620,52 @@
 										</p>
 									</div>
 									<div>
-										<div class="col-md-4 price-col">
+										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 price-col">
 											<p>Daily</p>
 											<h3>$12</h3>
 										</div>
-										<div class="col-md-4 price-col">
+										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 price-col">
 											<p>Weekly</p>
 											<h3>$120</h3>
 										</div>
-										<div class="col-md-4 price-col">
+										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 price-col">
+											<p>Monthly</p>
+											<h3>$1200</h3>
+										</div>
+									</div>
+									<div class="action">
+										<a href="" class="btn all-btn primary-btn full-width">View & Reserve</a>
+									</div>
+								</div>
+							</article>
+						</div>
+						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 landing-img-carousel">
+							<article class="box">
+								<figure>
+									<a href="#" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt=""></a>
+								</figure>
+								<div class="details">
+									<h4 class="box-title" style="margin-bottom: 5px;">Breaker</h4>
+									<div class="amenities">
+										<p class="text-left reviews-para">
+											<i class="soap-icon-star"></i>
+											<i class="soap-icon-star"></i>
+											<i class="soap-icon-star"></i>
+											<i class="soap-icon-star"></i>
+											<i class="soap-icon-star"></i>
+											<span class="pull-right">170 Reviews</span>
+										</p>
+									</div>
+									<div>
+										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 price-col">
+											<p>Daily</p>
+											<h3>$12</h3>
+										</div>
+										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 price-col">
+											<p>Weekly</p>
+											<h3>$120</h3>
+										</div>
+										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 price-col">
 											<p>Monthly</p>
 											<h3>$1200</h3>
 										</div>
@@ -1264,7 +1017,7 @@
 	<div class="footer-wrapper landing-footer">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-6 col-md-3">
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 footer-content">
 					<h2>Discover</h2>
 					<ul class="discover triangle hover row">
 						<li class="col-xs-6"><a>Equipments</a></li>
@@ -1279,7 +1032,8 @@
 						<li class="col-xs-6"><a>Maintenance</a></li>
 					</ul>
 				</div>
-				<div class="col-sm-6 col-md-3">
+				<div class="col-xs-12 visible-xs devider"></div>
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 footer-content">
 					<h2>News and Events</h2>
 					<ul class="discover triangle hover row">
 						<li class="col-xs-6"><a>Announcements</a></li>
@@ -1288,7 +1042,8 @@
 						<li class="col-xs-6"><a>Trade shows</a></li>
 					</ul>
 				</div>
-				<div class="col-sm-6 col-md-3">
+				<div class="col-xs-12 visible-xs devider"></div>
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 footer-content">
 					<h2>Mailing List</h2>
 					<p>Sign up for our mailing list to get latest updates and offers.</p>
 					<br />
@@ -1298,7 +1053,8 @@
 					<br />
 					<span>We respect your privacy</span>
 				</div>
-				<div class="col-sm-6 col-md-3">
+				<div class="col-xs-12 visible-xs devider"></div>
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 footer-content">
 					<h2>About Marketplace</h2>
 					<p>Marketplace brings you a modern, comfortable and easy way to rent, buy and sell equipments online.</p>
 					<br />
@@ -1336,20 +1092,3 @@
 		</div>
 	</div>
 </footer>
-<!-- <footer id="footer">
-		<div class="bottom">
-				<div class="container">
-						<div class="logo pull-left">
-								<a  title="Travelo - home">
-										<img src="../assets/images/logo.png" alt="Marketplace">
-								</a>
-						</div>
-						<div class="pull-right">
-								<a id="back-to-top"  class="animated bounce" data-animation-type="bounce" style="animation-duration: 1s; -webkit-animation-duration: 1s; visibility: visible;"><i class="soap-icon-longarrow-up circle"></i></a>
-						</div>
-						<div class="copyright pull-right">
-								<p>© 2015 Marketplace</p>
-						</div>
-				</div>
-		</div>
-</footer> -->

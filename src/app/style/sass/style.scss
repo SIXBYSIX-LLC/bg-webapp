@@ -286,7 +286,7 @@ form {
   label { text-transform: uppercase; display: block; margin-bottom: 5px; font-weight: normal; font-size: 0.9167em; }
   .checkbox label, label.checkbox { font-size: 1.0833em; text-transform: none; }
   .radio label, label.radio { font-size: 0.9167em; }
-  .form-group { margin-bottom: 15px; }
+  .form-group { margin-bottom: 8px; }
 }
 .sidebar form {
   .form-group { margin-bottom: 10px; }
@@ -552,7 +552,7 @@ blockquote {
   li {
     float: left; text-align: center;
     a {
-      width: 32px; margin-right: 4px; height: 32px; display: inline-block; background: #d9d9d9; color: #fff; line-height: 32px; font-size: 1.3333em; @include transition(opacity, 0.3s, ease-in);
+      width: 30px; margin-right: 4px; height: 30px; display: inline-block; background: #d9d9d9; color: #fff; line-height: 30px; font-size: 1.3333em; @include transition(opacity, 0.3s, ease-in);
       &:hover { background: $skin-active-color; }
     }
     &:last-child { margin-right: 0; }
@@ -2125,7 +2125,7 @@ ol {  }
       &:after { display: inline-block; position: absolute; right: 0; /*top: 0; */content: "\f0d7"; font-family: FontAwesome; color: $white-theme-color; font-size: 16px; margin-top: -1px;}
     }
     &:hover > ul.menu { top: 50px; visibility: visible; @include opacity(1); }
-    > ul.menu { position: absolute; left: -84px; top: -9999px; z-index: 99; visibility: hidden; }
+    > ul.menu { position: absolute; left: -100px; top: -9999px; z-index: 99; visibility: hidden; }
     > ul.menu.left { left: auto; right: -10px; }
     &.currency > ul.menu li a { font-size: 13px; text-transform: none; font-weight: 600; }
   }
@@ -5517,6 +5517,11 @@ button.btn {
 }
 
 // landing page
+section {
+  &.landing-content {
+    min-height: auto !important;
+  }
+}
 .landing-top-content {
   .page-description {
     padding: 0 20%;
@@ -5607,9 +5612,19 @@ button.btn {
       margin-bottom: 10px;
     }
   }
+  figure {
+    > a {
+      > img {
+        width: 100%;
+      }
+    }
+  }
 }
 
 .landing-carousel-slider {
+  .carousel-inner {
+    padding: 0 20px;
+  }
   .carousel-control {
     &.left {
       background: none;
@@ -5620,11 +5635,11 @@ button.btn {
       width: auto;
     }
     .glyphicon-chevron-left {
-      left: -30px;
+      left: 15px;
       color: #ddd;
     }
     .glyphicon-chevron-right {
-      right: -30px;
+      right: 15px;
       color: #ddd;
     }
   }
@@ -5678,6 +5693,19 @@ button.btn {
         cursor: pointer;
       }
     }
+    .footer-content {
+      min-height: 210px;
+      max-height: 250px;
+    }
+  }
+}
+
+.browse-equip-row {
+  h4 {
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 }
 

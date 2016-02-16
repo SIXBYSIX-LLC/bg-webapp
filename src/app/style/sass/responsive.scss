@@ -289,6 +289,17 @@
 /* 3. Styles for devices(>=992px and <=1199px) */
 @media (min-width: 992px) and (max-width: 1199px) {
   .container { padding-left: 0; padding-right: 0; }
+  .landing-footer {
+    .footer-content {
+      padding-left: 0;
+      padding-right: 0;
+      &:first-child h2,
+      &:first-child ul {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+    }
+  }
 }
 
 /* 4. Styles for devices(<=1199px) */
@@ -311,15 +322,14 @@
   #header {
     padding-top: 0 !important; background: none !important;
     .logo {
-      float: none !important; position: static !important; padding-top: 19px; height: 66px; margin: 0 !important; display: block;
       a:after { display: none !important; }
       a { background-size: auto 30px; }
-      img { height: 30px; width: auto; @include opacity(0, true); }
+      img { height: 30px; width: auto; }
     }
     .main-navigation { background: #fff; }
     .mobile-menu-toggle { display: block; }
     #main-menu { display: none; }
-    .topnav { display: none; }
+    .topnav {}
   }
   .dashboard {
     &.style1, &.style2 {
@@ -403,6 +413,25 @@
 
   /* slider */
   .revolution-slider .tp-caption a.link { font-size: 12px !important; line-height: 24px !important; }
+  // landing page
+  .landing-img-carousel {
+    padding-left: 0;
+    .details {
+      > h4 {
+        font-size: 14px;
+      }
+      .amenities {
+        .reviews-para {
+          i {
+            font-size: 20px;
+          }
+        }
+      }
+      .price-col {
+        padding-left: 0;
+      }
+    }
+  }
 }
 
 /* 6. Styles for devices(>=768px and <= 991px) */
@@ -581,6 +610,28 @@
   }
 
   #content.tour .slideshow-bg { min-height: 800px; }
+  .browse-equip-col {
+    figure {
+      > a {
+        text-align: center;
+        padding-top: 15px;
+        > img {
+          max-width: 300px;
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  .landing-img-carousel {
+    padding-left: 15px;
+  }
+
+  .landing-top-content {
+   .page-description {
+    padding: 0 !important;
+   } 
+  }
 }
 
 /* 8. Styles for devices(<=480px ) */
