@@ -3516,7 +3516,7 @@ ul.search-tabs {
 .booking-details {
   figure {
     > a:first-child { width: 75px; height: 75px; float: left; }
-    img { width: auto; height: 100%; }
+    img { width: 100%; height: 100%; }
     .travel-title {
       margin-left: 90px;
       .box-title {
@@ -5825,6 +5825,46 @@ section {
     span {
       font-weight: 600;
     }
+  }
+}
+
+.mobile-cart {
+  border: 1px solid $primary-border-color;
+  padding: 10px 15px;
+  .price-col-mobile {
+    padding: 0;
+    p {
+      margin: 10px 0 5px;
+      font-size: 15px;
+      font-weight: 600;
+    }
+    h3 {
+      font-size: 13px;
+    }
+  }
+  .estim-rate {
+    p {
+      color: #333333;
+      font-weight: 600;
+      font-size: 15px;
+    }
+  }
+  .cart-action {
+    i {
+      font-size: 20px;
+      color: $button-color;
+    }
+    .text {
+      font-size: 13px;
+      color: $button-color;
+    }
+  }
+}
+
+.cart-button {
+  button {
+    float: none !important;
+    margin-bottom: 10px;
   }
 }
 

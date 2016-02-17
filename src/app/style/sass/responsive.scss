@@ -632,6 +632,33 @@
     padding: 0 !important;
    } 
   }
+
+  .progress-bar-col {
+    ul {
+      > li {
+        p {
+          font-size: 13px !important;
+        }
+      }
+    } 
+
+  }
+
+  .col-padding-small {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .jobsite-nav-tabs li {
+    width: 50%;
+  }
+
+  .cont-btn-col {
+    button {
+      float: none !important;
+      margin-top: 10px;
+    }
+  }
 }
 
 /* 8. Styles for devices(<=480px ) */
