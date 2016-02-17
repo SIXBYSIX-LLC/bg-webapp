@@ -13,5 +13,8 @@ angular.module('BG').controller('SellerAccountCtrl',
     $scope.dashboard = function() {
       $scope.isShow = !$scope.isShow;
     }
+    $scope.closeDashboard = function() {
+      $scope.isShow = false;
+    }
   }
 );
