@@ -76,9 +76,6 @@
 					<tr ng-repeat="item in mdl.data.rental_products">
 						<td class="img-td">
 							<img ng-src="{{(item.product.image) || 'http://placehold.it/166x150'}}" alt="">
-							<p>
-								<a href="">Edit Item</a>
-							</p>
 						</td>
 						<td class="description-td">
 							<h4>{{item.product.name}}</h4>
@@ -90,8 +87,13 @@
 							Operation: Rented
 							</p>
 							<p>
+								<a href="">
+									<i class="fa fa-pencil"></i>
+								</a>
 								<a href="">Bookmark and Remove</a>
-								<a href="">Remove</a>
+								<a href="">
+									<i class="fa fa-trash"></i>
+								</a>
 							</p>
 						</td>
 						<td class="qty-td">

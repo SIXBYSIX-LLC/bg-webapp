@@ -2,17 +2,22 @@
   <a ui-sref="home">Home /</a>
   <span>My Seller Dashboard</span>
 </div>
-<div class="tab-container full-width-style arrow-left dashboard">
-  <ul class="tabs">
-  	<li active-state="main.sellerAccount.dashboard" ui-sref="main.sellerAccount.dashboard"><a>Dashboard</a></li>
-   	<li active-state="main.sellerAccount.equipments" ui-sref="main.sellerAccount.equipments"><a>Equipments</a></li>
-   	<li active-state="main.sellerAccount.inventory" ui-sref="main.sellerAccount.inventory"><a>Inventory</a></li>
-    <li active-state="main.sellerAccount.orders"    ui-sref="main.sellerAccount.orders.list"><a>Order Received </a></li>
-    <li active-state="main.sellerAccount.invoices"  ui-sref="main.sellerAccount.invoices.list"><a>Invoices</a></li>
-    <li active-state="main.sellerAccount.inquiries" ui-sref="main.sellerAccount.inquiries.list"><a>Enquiry</a></li>
-    <li active-state="main.sellerAccount.settings"  ui-sref="main.sellerAccount.settings.general"><a>Settings</a></li>
-  </ul>
-  <div class="tab-content">
+<div class="tab-container seller-dash-container full-width-style arrow-left dashboard">
+  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 no-padding">
+    <div class="visible-xs">
+      <i class="fa fa-bars dashboard-button hotel-color" ng-click="dashboard()"></i>
+    </div>
+    <ul class="tabs hide-mobile" ng-class="{'visible-xs': isShow}">
+    	<li active-state="main.sellerAccount.dashboard" ui-sref="main.sellerAccount.dashboard" ng-click="dashboard()"><a>Dashboard</a></li>
+     	<li active-state="main.sellerAccount.equipments" ui-sref="main.sellerAccount.equipments" ng-click="dashboard()"><a>Equipments</a></li>
+     	<li active-state="main.sellerAccount.inventory" ui-sref="main.sellerAccount.inventory" ng-click="dashboard()"><a>Inventory</a></li>
+      <li active-state="main.sellerAccount.orders"    ui-sref="main.sellerAccount.orders.list" ng-click="dashboard()"><a>Order Received </a></li>
+      <li active-state="main.sellerAccount.invoices"  ui-sref="main.sellerAccount.invoices.list" ng-click="dashboard()"><a>Invoices</a></li>
+      <li active-state="main.sellerAccount.inquiries" ui-sref="main.sellerAccount.inquiries.list" ng-click="dashboard()"><a>Enquiry</a></li>
+      <li active-state="main.sellerAccount.settings"  ui-sref="main.sellerAccount.settings.general" ng-click="dashboard()"><a>Settings</a></li>
+    </ul>
+  </div>
+  <div class="tab-content col-lg-10 col-md-10 col-sm-10 col-xs-12">
     <ui-view/>
   </div>
 </div>

@@ -1,6 +1,7 @@
 angular.module('BG').controller('SellerAccountCtrl',
   /** @ngInject */
     function ($scope) {
+      $scope.isShow = false;
     var mdl = $scope.mdl = {};
     $scope.mainMdl.title = "Seller Account";
     $scope.mainMdl.showToggle = true;
@@ -9,5 +10,8 @@ angular.module('BG').controller('SellerAccountCtrl',
       $scope.mainMdl.showToggle = false;
       $scope.popBreadcrumb();
     });
+    $scope.dashboard = function() {
+      $scope.isShow = !$scope.isShow;
+    }
   }
 );

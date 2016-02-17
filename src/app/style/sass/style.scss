@@ -1019,7 +1019,7 @@ ol {  }
       .tab-content .tab-pane { padding: 30px; }
     }
     .tab-content {
-      float: left; width: 86%;
+      float: left; 
       .tab-content-title { color: $skin-active-color; }
     }
     &:after { display: table; content: ""; clear: both; }
@@ -3553,7 +3553,15 @@ ul.search-tabs {
   padding: 0;
   > .booking-confirmation {
     > .icon { color: $skin-select-color; font-size: 1.5em; float: left; margin-right: 12px; margin-top: 4px; }
-    > .message { float: left; }
+    > .message { float: left;
+      > i {
+          color: #E37F1F;
+          font-size: 1.5em;
+          float: left;
+          margin-right: 12px;
+          margin-top: 4px;
+        }
+     }
     .main-message { color: $skin-active-color; margin-bottom: 0;; }
     .print-button { float: right; margin-left:5px; }
     p { margin-bottom: 0; }
@@ -3947,11 +3955,11 @@ ul.search-tabs {
       padding: 32px 15px;
       dl { float: right; text-align: right; margin: 0; }
       dt { font-size: 2em; font-weight: 400; line-height: 1em; }
-      dd { font-size: 15px; }
-      .icon { font-size: 4em; }
+      dd { font-size: 14px; }
+      .icon { font-size: 3em; }
     }
     .description {
-      font-size: 12px; text-transform: uppercase; padding: 0 20px; font-weight: bold; line-height: 3.5em;
+      font-size: 11px; text-transform: uppercase; padding: 0 20px; font-weight: bold; line-height: 3.5em;
       > .icon { float: right; font-size: 2em; }
     }
     &.blue {
@@ -3974,8 +3982,8 @@ ul.search-tabs {
   
   .notifications {
     .icon-box { background: #f5f5f5; font-size: 1em; padding-right: 15px; margin-bottom: 10px; height: auto; &:after { display: table; content: ""; clear: both; } }
-    .box-title { line-height: 1em; text-transform: none; color: $heading-color; padding: 14px 5px 15px 57px; }
-    .price { color: $skin-active-color; float: none; text-align: left; display: inline; font-size: inherit; }
+    .box-title { line-height: 15px; text-transform: none; color: $heading-color; padding: 14px 5px 15px 57px; }
+    .price { color: $skin-active-color; float: none; text-align: left; display: inline-block; font-size: inherit; margin: 9px 0; }
     .time { line-height: inherit; }
     .load-more { font-size: 2.5em; text-align: center; color: #d9d9d9; }
   }
@@ -4029,6 +4037,9 @@ ul.search-tabs {
       h5 { width: auto; line-height: 28px; }
     }
   }
+  .booking-history {
+    margin-top: 15px;
+  }
   .booking-info {
     border-top: 1px solid #f5f5f5; padding: 10px;
     &:last-child { border-bottom: 1px solid #f5f5f5; }
@@ -4061,9 +4072,10 @@ ul.search-tabs {
     }
     a {
       color: $primary-button-color;
-      font-size: 18px;
-      margin-right: 15px;
+      font-size: 16px;
+      margin-right: -5px;
       cursor: pointer;
+      margin-top: 10px;
     }
   }
 }
@@ -5261,6 +5273,23 @@ button.ui-button::-moz-focus-inner { border: 0; padding: 0; }
 }
 /* custom style ends*/
 
+// seller dashboard
+
+.seller-dash-container {
+  &.full-width-style {
+    ul {
+      &.tabs {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.seller-heading-font {
+  font-size: 21px;
+}
+
+
 // seller dashboard equipments style
 
 .pull-center {
@@ -5343,6 +5372,11 @@ button.ui-button::-moz-focus-inner { border: 0; padding: 0; }
       }
     }
   }
+}
+
+.seller-mobile-equip {
+  margin-top: 15px;
+  margin-bottom: 0;
 }
 
 // seller dashboard inventory
@@ -5785,6 +5819,9 @@ section {
               &:last-child {
                 margin-left: 30px;
               }
+              &:first-child {
+                margin-right: 30px;
+              }
             }
           }
         }
@@ -6043,4 +6080,8 @@ section {
 
 button {
   text-transform: capitalize;
+}
+
+.hide-mobile {
+  display: none;
 }

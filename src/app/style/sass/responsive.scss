@@ -432,6 +432,15 @@
       }
     }
   }
+  .seller-dash-noti {
+    h2 {
+      margin-top: 15px;
+    }
+  }
+  .col-padding-sm {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
 }
 
 /* 6. Styles for devices(>=768px and <= 991px) */
@@ -479,7 +488,7 @@
     }
     &.full-width-style {
       ul.tabs { width: 25%; }
-      .tab-content { width: 75%; }
+      .tab-content {  }
     }
   }
   
@@ -659,13 +668,43 @@
       margin-top: 10px;
     }
   }
+  .invoice-details-col {
+    .description-col {
+      .right-col {
+        border-right: 0 !important;
+      }
+    }
+  }
+  .invoice-cart-total {
+    .description {
+      h4 {
+        margin: 0 !important;
+      }
+    }
+    .add-cost {
+      border-right: 0 !important;
+      margin-top: 10px;
+      border-bottom: 1px solid #ffffff;
+    }
+  }
+  .orders-top-button {
+    text-align: center;
+    button {
+      margin-top: 10px;
+      float: none !important;
+    }
+  }
+  .dashboard-button {
+    margin: 0 0 10px;
+    font-size: 21px !important;
+  }
 }
 
 /* 8. Styles for devices(<=480px ) */
 @media (max-width: 480px) {
   .tab-container.full-width-style {
     ul.tabs { width: 30%; }
-    .tab-content { width: 70%; }
+    .tab-content {  }
   }
   
   .image-box-style.style2 {
@@ -725,6 +764,16 @@
   /* Tour page */
   #tour-details .price-section {
     .details { float: none !important; }
+  }
+  .seller-header {
+    text-align: center;
+    h1 {
+      button {
+        margin-top: 10px;
+        margin-bottom: 15px;
+        float: none !important;
+      }
+    }
   }
 }
 

@@ -1,21 +1,32 @@
-<div class="booking-information travelo-box" style="margin-bottom: 0px;">
-	<div class="booking-confirmation clearfix">
-		<i class="soap-icon-clock icon circle"></i>
-		<div class="message">
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding booking-information travelo-box" style="margin-bottom: 0px;">
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding booking-confirmation clearfix">
+		<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 no-padding message">
+			<i class="soap-icon-clock icon circle"></i>
 			<h4 class="main-message">Your Recieved a new order !</h4>
 			<p>Please find your order details below and start processing it.</p>
 		</div>
-		<button class="btn print-button all-btn primary-btn">Cancel Order</button>
-		<button class="btn print-button all-btn primary-btn">Print Details</button>
+		<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 no-padding orders-top-button">
+			<button class="btn print-button all-btn primary-btn">Cancel Order</button>
+			<button class="btn print-button all-btn primary-btn">Print Details</button>
+		</div>
 	</div>
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
+		<hr />
+	</div>
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
+		<h2 class="heading-text order-head-bottom">Order Details</h2>
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 no-padding term-description">
+			<p class="hotel-color no-margin">Order number:</p>
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+			<p class="no-margin">{{mdl.order.id}}</p>
+		</div>
+	</div>
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
 	<hr />
-	<h2 class="heading-text order-head-bottom">Order Details</h2>
-	<dl class="term-description">
-		<dt>Order number:</dt><dd>{{mdl.order.id}}</dd>
-	</dl>
-	<hr />
+	</div>
 	<div class="row invoice-address" style="margin-bottom: 0;">
-		<div class="col-md-6">
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 			<h2 class="heading-text order-head-bottom">Shipping Address</h2>
 			<dl class="term-description">
 				<dd>{{mdl.order.order.shipping_address.first_name}} {{mdl.order.order.shipping_address.last_name}}</dd>
@@ -24,7 +35,7 @@
 				<dd>{{mdl.order.order.shipping_address.country.name}}</dd>
 			</dl>
 		</div>
-		<div class="col-md-6">
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 			<h2 class="heading-text order-head-bottom">Billing Address</h2>
 			<dl class="term-description">
 				<dd>{{mdl.order.order.billing_address.first_name}} {{mdl.order.order.billing_address.last_name}}</dd>
@@ -78,14 +89,14 @@
 </div> -->
 <div class="row">
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 invoice-details-col" ng-repeat="item in mdl.order.items">
-		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 pull-center">
 			<img ng-src="{{item.images[0] || 'http://placehold.it/80x80'}}" alt="">
 		</div>
-		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 product-name">
+		<div class="col-lg-3 col-md-3 col-sm-2 col-xs-12 product-name">
 			<h4>{{item.detail.name}}</h4>
 		</div>
-		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 description-col">
-			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 right-col">
+		<div class="col-lg-4 col-md-4 col-sm-5 col-xs-12 description-col">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 right-col col-padding-small">
 				<p>Rented For <span class="pull-right">{{mdl.getShippingPeriod(item)}}</span></p>
 				<p>Order Type <span class="pull-right">{{item.shipping_kind}}</span></p>
 				<p>Status <span class="pull-right">{{item.current_status}}</span></p>
@@ -97,16 +108,16 @@
 		</div>
 	</div>
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 cart-total invoice-cart-total">
-		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+		<div class="col-lg-6 col-md-6 col-sm-4 col-xs-12">
 			<div class="description">
 				<h4 style="margin-top: 15px;">Cart Total</h4>
 			</div>
 		</div>
-		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 add-cost">
+		<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 add-cost">
 			<p>Shipping Cost <span class="pull-right">${{mdl.order.shipping_charge | number}}</span></p>
 			<p>Additional Charges<span class="pull-right">${{mdl.order.additional_charge | number}}</span></p>
 		</div>
-		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 total-cost" style="margin-top: 15px;">
+		<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 total-cost" style="margin-top: 15px;">
 			<div>
 				${{mdl.order.subtotal | number}}
 			</div>
