@@ -64,5 +64,9 @@ angular.module('BG').controller('HomeCtrl',
       $scope.isMore = !$scope.isMore;
     }
 
+    $scope.closeEquipment = function() {
+      $scope.isMore = false;
+    }
+
   }
 );

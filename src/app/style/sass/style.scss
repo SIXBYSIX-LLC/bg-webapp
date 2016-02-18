@@ -6216,3 +6216,12 @@ section {
 button {
   text-transform: capitalize;
 }
+
+.more-equip-xs {
+  height: auto;
+  position: absolute;
+  width: 100%;
+  .more-equip-col {
+    text-align: left;
+  }
+}

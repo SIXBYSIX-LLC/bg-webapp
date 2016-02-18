@@ -31,6 +31,9 @@
 						<li class="not-user" ng-if="!isLoggedIn()">
 							<a ng-click="openSignUp()" class="soap-popupbox pointerhover">Register</a>
 						</li>
+						<li class="not-user visible-xs visible-sm" ng-click="moreEquipments()">
+							<a class="soap-popupbox pointerhover">Equipments</a>
+						</li>
 						<div class="visible-xs account-list-xs" ng-if="isLoggedIn()">
 							<li>
 								<a ui-sref="main.account.dashboard">My Buyer Dashboard</a>
@@ -101,82 +104,158 @@
 							</a>
 						</li>
 						<div class="container-fluid hide-more top-header more-equip-container" ng-class="{'visible-more': isMore}">
-						<div class="row hidden-sm hidden-xs">
-							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-center white-color more-equip-col">
-								<h3 class="heading-text">Aerial Lifts</h3>
-								<p>
-									<a href="">
-										Some Name
-									</a>
-								</p>
-								<p>
-									<a href="">
-										Some Name
-									</a>
-								</p>
-								<p>
-									<a href="">
-										Some Name
-									</a>
-								</p>
-								<p>
-									<a href="">
-										Some Name
-									</a>
-								</p>
-							</div>
-							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-center white-color more-equip-col">
-								<h3 class="heading-text">Aerial Lifts</h3>
-								<p>
-									<a href="">
-										Some Name
-									</a>
-								</p>
-								<p>
-									<a href="">
-										Some Name
-									</a>
-								</p>
-								<p>
-									<a href="">
-										Some Name
-									</a>
-								</p>
-								<p>
-									<a href="">
-										Some Name
-									</a>
-								</p>
-							</div>
-							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-center white-color more-equip-col">
-								<h3 class="heading-text">Aerial Lifts</h3>
-								<p>
-									<a href="">
-										Some Name
-									</a>
-								</p>
-								<p>
-									<a href="">
-										Some Name
-									</a>
-								</p>
-								<p>
-									<a href="">
-										Some Name
-									</a>
-								</p>
-								<p>
-									<a href="">
-										Some Name
-									</a>
-								</p>
+							<div class="row hidden-sm hidden-xs">
+								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-center white-color more-equip-col">
+									<h3 class="heading-text">Aerial Lifts</h3>
+									<p>
+										<a href="">
+											Some Name
+										</a>
+									</p>
+									<p>
+										<a href="">
+											Some Name
+										</a>
+									</p>
+									<p>
+										<a href="">
+											Some Name
+										</a>
+									</p>
+									<p>
+										<a href="">
+											Some Name
+										</a>
+									</p>
+								</div>
+								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-center white-color more-equip-col">
+									<h3 class="heading-text">Aerial Lifts</h3>
+									<p>
+										<a href="">
+											Some Name
+										</a>
+									</p>
+									<p>
+										<a href="">
+											Some Name
+										</a>
+									</p>
+									<p>
+										<a href="">
+											Some Name
+										</a>
+									</p>
+									<p>
+										<a href="">
+											Some Name
+										</a>
+									</p>
+								</div>
+								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-center white-color more-equip-col">
+									<h3 class="heading-text">Aerial Lifts</h3>
+									<p>
+										<a href="">
+											Some Name
+										</a>
+									</p>
+									<p>
+										<a href="">
+											Some Name
+										</a>
+									</p>
+									<p>
+										<a href="">
+											Some Name
+										</a>
+									</p>
+									<p>
+										<a href="">
+											Some Name
+										</a>
+									</p>
+								</div>
 							</div>
 						</div>
-					</div>
 					</ul>
 				</div>
 			</div>
 		</nav>
+	</div>
+	<div class="container-fluid hide-more top-header more-equip-container hidden-lg hidden-md more-equip-xs" ng-class="{'visible-more': isMore}">
+		<div class="row">
+			<div class="col-xs-12">
+				<i class="fa fa-times pull-right white-color" ng-click="closeEquipment()"></i>
+			</div>
+			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-center white-color more-equip-col">
+				<h3 class="heading-text">Aerial Lifts</h3>
+				<p>
+					<a href="">
+						Some Name
+					</a>
+				</p>
+				<p>
+					<a href="">
+						Some Name
+					</a>
+				</p>
+				<p>
+					<a href="">
+						Some Name
+					</a>
+				</p>
+				<p>
+					<a href="">
+						Some Name
+					</a>
+				</p>		
+			</div>
+			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-center white-color more-equip-col">
+				<h3 class="heading-text">Aerial Lifts</h3>
+				<p>
+					<a href="">
+						Some Name
+					</a>
+				</p>
+				<p>
+					<a href="">
+						Some Name
+					</a>
+				</p>
+				<p>
+					<a href="">
+						Some Name
+					</a>
+				</p>
+				<p>
+					<a href="">
+						Some Name
+					</a>
+				</p>		
+			</div>
+			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-center white-color more-equip-col">
+				<h3 class="heading-text">Aerial Lifts</h3>
+				<p>
+					<a href="">
+						Some Name
+					</a>
+				</p>
+				<p>
+					<a href="">
+						Some Name
+					</a>
+				</p>
+				<p>
+					<a href="">
+						Some Name
+					</a>
+				</p>
+				<p>
+					<a href="">
+						Some Name
+					</a>
+				</p>		
+			</div>
+		</div>
 	</div>
 </header>
 <!-- new landing header end -->
