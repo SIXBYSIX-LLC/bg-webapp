@@ -1,48 +1,3 @@
-<!-- old header -->
-<!-- <header id="header" class="navbar-static-top style2">
-		<div class="topnav">
-				<div class="container">
-						<nav id="main-menu" role="navigation">
-								<ul class="menu">
-										<li class="menu-item-has-children">
-												<a class="pointerhover">Need Help ? Call (24X7): 1-800-123-0000</a>
-										</li>
-								</ul>
-						</nav>
-						<ul class="quick-menu pull-right clearfix landing-quick-menu">
-								<li ng-if="!isLoggedIn()">
-										<a ng-click="openLogin()" class="soap-popupbox pointerhover heading">Login</a>
-								</li>
-								<li ng-if="!isLoggedIn()">
-										<a ng-click="openSignUp()" class="soap-popupbox pointerhover heading">Register</a>
-								</li>
-								<li></li>
-								<li ng-if="isLoggedIn()" class="ribbon currency">
-										<a ng-click="accountClick()" class="soap-popupbox pointerhover heading">ACCOUNT</a>
-										<ul class="menu mini">
-												<li><a ui-sref="main.account.dashboard" title="dashboard">Dashboard</a></li>
-												<li><a ui-sref="main.account.profile.view" title="profile-settings">Profile Settings</a></li>
-												<li><a href="" ng-click="logout()" title="signout">Signout</a></li>
-										</ul>
-								</li>
-								<li ng-if="isLoggedIn()">
-										<a class="pointerhover cart-count" ui-sref="main.cart"><i class="soap-icon-shopping" style="font-size: 6em;"></i><span>{{rmodel.cartCount || 0}}</span></a>
-								</li>
-						</ul>
-				</div>
-		</div>
-		<div class="main-header">
-				<div class="container">
-						<h1 class="logo navbar-brand">
-								<a ui-sref="home" >
-										<img ui-sref="home" src="assets/images/logo.png" alt="Marketplace"/>
-								</a>
-						</h1>
-						<div class="header-search col-sm-offset-4 col-md-offset-2 hidden-mobile">
-						</div>
-				</div>
-		</div>
-</header> -->
 <!-- new landing header start -->
 <header id="header" class="navbar-static-top style2">
 	<div class="topnav">
@@ -51,14 +6,11 @@
 				<li class="menu-item-has-children pointerhover">
 					<a>Need Help ? Call (24X7): 1-800-123-0000</a>
 				</li>
-				<!-- <li ng-if="isLoggedIn()">
-					<a class="pointerhover cart-count" ui-sref="main.cart"><i class="soap-icon-shopping" style="font-size: 6em;"></i><span>{{rmodel.cartCount || 0}}</span></a>
-				</li> -->
 			</ul>
 		</div>
 	</div>
-	<div class="top-header">
-		<div class="container">
+	<div class="top-header landing-top-header">
+		<!-- <div class="container">
 			<h1 class="logo navbar-brand pull-left hidden-xs">
 				<a class="pointerhover">
 					<img ui-sref="home" src="assets/images/logo.png"  />
@@ -94,7 +46,58 @@
 					</div>
 				</form>
 			</div>
-		</div>
+		</div> -->
+		<nav class="navbar">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand pointerhover">
+						<img ui-sref="home" src="assets/images/logo.png"  />
+					</a>
+				</div>
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right">
+						<li class="not-user" ng-if="!isLoggedIn()">
+							<a ng-click="openLogin()" class="soap-popupbox pointerhover">Login</a>
+						</li>
+						<li class="not-user" ng-if="!isLoggedIn()">
+							<a ng-click="openSignUp()" class="soap-popupbox pointerhover">Register</a>
+						</li>
+						<div class="visible-xs account-list-xs" ng-if="isLoggedIn()">
+							<li>
+								<a ui-sref="main.account.dashboard">My Buyer Dashboard</a>
+							</li>
+							<li>
+								<a ui-sref="main.sellerAccount.dashboard">My Seller Dashboard</a>
+							</li>
+							<li>
+								<a ui-sref="main.account.profile.view" title="profile-settings">Account & Setting</a>
+							</li>
+							<li>
+								<a href="" ng-click="logout()" title="signout">Signout</a>
+							</li>
+						</div>
+						<li class="dropdown hidden-xs" ng-if="isLoggedIn()">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+								<img src="/assets/images/avtar.png">&nbsp
+								Account <span class="caret"></span>
+							</a>
+							<ul class="menu mini dropdown-menu">
+								<li><a ui-sref="main.account.dashboard">My Buyer Dashboard</a></li>
+								<li><a ui-sref="main.sellerAccount.dashboard">My Seller Dashboard</a></li>
+								<li><a ui-sref="main.account.profile.view" title="profile-settings">Account & Setting</a></li>
+								<li><a href="" ng-click="logout()" title="signout">Signout</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
 	</div>
 </header>
 <!-- new landing header end -->
@@ -120,12 +123,8 @@
 							<div class="form-group col-lg-10 col-md-10 col-sm-10 col-xs-12">
 								<angucomplete-alt placeholder="Equipment Name, Part Name, etc.." pause="400" selected-object="mdl.searchObj" remote-api-handler="mdl.searchHelper" remote-url-data-field="data" title-field="name" input-changed="mdl.inputChanged" input-class="input-text full-width"/>
 							</div>
-							<div class="form-group col-md-2">
-								<div class="row">
-									<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-										<button type="submit" class="full-width btn all-btn search-button" ng-click="mdl.search()">Search Now</button>
-									</div>
-								</div>
+							<div class="form-group col-lg-2 col-md-2 col-sm-2 col-xs-12">
+								<button type="submit" class="full-width btn all-btn search-button" ng-click="mdl.search()">Search Now</button>
 							</div>
 						</div>
 					</form>
@@ -138,13 +137,13 @@
 	<div class="container section">
 		<div class="row">
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-center">
-				<h2>Browse Equipments from our list</h2>
+				<h2 class="landing-headings">Browse Equipments from our list</h2>
 				<div class="line"></div>
 			</div>
 		</div>
 		<div class="row image-box style10 browse-equip-row">
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding">
-				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 browse-equip-col">
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-padding-small browse-equip-col">
 					<article class="box">
 						<figure class="animated fadeInDown" data-animation-type="fadeInDown" data-animation-duration="1">
 							<a href="hotel-list-view.html" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt="" width="270" height="160" /></a>
@@ -154,7 +153,7 @@
 						</div>
 					</article>
 				</div>
-				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 browse-equip-col">
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-padding-small browse-equip-col">
 					<article class="box">
 						<figure class="animated fadeInDown" data-animation-type="fadeInDown" data-animation-duration="1">
 							<a href="hotel-list-view.html" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt="" width="270" height="160" /></a>
@@ -164,7 +163,7 @@
 						</div>
 					</article>
 				</div>
-				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 browse-equip-col">
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-padding-small browse-equip-col">
 					<article class="box">
 						<figure class="animated fadeInDown" data-animation-type="fadeInDown" data-animation-duration="1">
 							<a href="hotel-list-view.html" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt="" width="270" height="160" /></a>
@@ -174,7 +173,7 @@
 						</div>
 					</article>
 				</div>
-				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 browse-equip-col">
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-padding-small browse-equip-col">
 					<article class="box">
 						<figure class="animated fadeInDown" data-animation-type="fadeInDown" data-animation-duration="1">
 							<a href="hotel-list-view.html" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt="" width="270" height="160" /></a>
@@ -186,7 +185,7 @@
 				</div>
 			</div>
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding">
-				<div class="col-lf-3 col-md-3 col-sm-3 col-xs-12 browse-equip-col">
+				<div class="col-lf-3 col-md-3 col-sm-3 col-xs-12 col-padding-small browse-equip-col">
 					<article class="box">
 						<figure class="animated fadeInDown" data-animation-type="fadeInDown" data-animation-duration="1">
 							<a href="hotel-list-view.html" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt="" width="270" height="160" /></a>
@@ -196,7 +195,7 @@
 						</div>
 					</article>
 				</div>
-				<div class="col-lf-3 col-md-3 col-sm-3 col-xs-12 browse-equip-col">
+				<div class="col-lf-3 col-md-3 col-sm-3 col-xs-12 col-padding-small browse-equip-col">
 					<article class="box">
 						<figure class="animated fadeInDown" data-animation-type="fadeInDown" data-animation-duration="1">
 							<a href="hotel-list-view.html" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt="" width="270" height="160" /></a>
@@ -206,7 +205,7 @@
 						</div>
 					</article>
 				</div>
-				<div class="col-lf-3 col-md-3 col-sm-3 col-xs-12 browse-equip-col">
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-padding-small browse-equip-col">
 					<article class="box">
 						<figure class="animated fadeInDown" data-animation-type="fadeInDown" data-animation-duration="1">
 							<a href="hotel-list-view.html" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt="" width="270" height="160" /></a>
@@ -216,7 +215,7 @@
 						</div>
 					</article>
 				</div>
-				<div class="col-lf-3 col-md-3 col-sm-3 col-xs-12 browse-equip-col">
+				<div class="col-lf-3 col-md-3 col-sm-3 col-xs-12 col-padding-small browse-equip-col">
 					<article class="box">
 						<figure class="animated fadeInDown" data-animation-type="fadeInDown" data-animation-duration="1">
 							<a href="hotel-list-view.html" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt="" width="270" height="160" /></a>
@@ -234,7 +233,7 @@
 	<div class="section">
 		<div class="container description text-center">
 			<div class="pull-center">
-				<h2>Our Features</h2>
+				<h2 class="landing-headings">Our Features</h2>
 				<div class="line"></div>
 			</div>
 			<div class="travelo-process">
@@ -376,7 +375,7 @@
 		<div class="row">
 			<div class="col-lg-12 col-md-12">
 				<div class="pull-center">
-					<h2>Recently Added Equipments</h2>
+					<h2 class="landing-headings">Recently Added Equipments</h2>
 					<div class="line"></div>
 				</div>
 			</div>
@@ -519,7 +518,7 @@
 		<div class="row">
 			<div class="col-lg-12 col-md-12">
 				<div class="pull-center">
-					<h2>Recently Added Equipments</h2>
+					<h2 class="landing-headings">Recently Added Equipments</h2>
 					<div class="line"></div>
 				</div>
 			</div>
@@ -958,7 +957,7 @@
 		<div class="row">
 			<div class="col-lg-12 col-md-12 feedback-heading">
 				<div class="pull-center">
-					<h2>What our users are saying about the platform</h2>
+					<h2 class="landing-headings">What our users are saying about the platform</h2>
 					<div class="line"></div>
 				</div>
 			</div>

@@ -5451,16 +5451,6 @@ button.btn {
   }
 }
 
-.not-user {
-  padding-top: 32px !important;
-  a {
-    font-size: 13px;
-    &:first-child {
-      float: left;
-    }
-  }
-}
-
 .tags-directive {
   &.form-control {
     padding: 0;
@@ -5551,25 +5541,96 @@ button.btn {
 }
 
 // landing page
+
+.landing-top-header {
+  height: 78px;
+  .navbar {
+    margin: 0;
+    .navbar-header {
+      .navbar-brand {
+        padding: 24px 15px;
+      }
+      .navbar-toggle {
+        padding: 24px 10px;
+        &:hover {
+          background-color: transparent;
+        }
+        .icon-bar {
+          background-color: $white-theme-color;
+        }
+      }
+    }
+    .navbar-collapse {
+      box-shadow: none;
+      .not-user {
+        > a {
+          color: #ffffff;
+          font-size: 14px;
+          padding: 28px 15px;
+          &:hover {
+            background-color: #49443E;
+          }
+          &:focus {
+            background-color: #49443E;
+          }
+        }
+      }
+      .dropdown {
+        .dropdown-toggle {
+          color: #ffffff;
+          font-size: 14px;
+          padding: 24px 15px;
+          &:hover {
+            background-color: #49443E;
+          }
+          &:focus {
+            background-color: #49443E;
+          }
+        }
+        img {
+          width: 25px;
+          border-radius: 100%;
+        }
+      }
+    }
+  }
+}
+
+.landing-headings {
+  font-size: 21px;
+}
+
+
+
+
 section {
   &.landing-content {
     min-height: auto !important;
   }
 }
 .landing-top-content {
+  .page-title {
+    font-size: 3em;
+  }
   .page-description {
     padding: 0 20%;
     font-weight: 300;
+    font-size: 2em;
   }
   .search-box-wrapper {
     .search-box {
-      padding: 25px 15px 10px;
+      padding: 25px 15px 20px;
       margin-top: 5%;
     }
   }
   .form-group {
     input {
       border-radius: 4px;
+      height: 45px;
+      font-size: 15px;
+    }
+    button {
+      height: 45px;
     }
     .search-button {
       background-color: $primary-button-color;

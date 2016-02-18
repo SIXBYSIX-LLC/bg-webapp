@@ -701,6 +701,34 @@
   .hide-mobile {
     display: none;
   }
+
+  .landing-top-header {
+    .navbar-collapse {
+      .navbar-nav {
+        background-color: rgba(73,68,62,.8);
+        .account-list-xs {
+          > li {
+            padding: 10px 15px;
+            > a {
+              color: $white-theme-color;
+              font-size: 14px;
+            }
+          }
+        }
+        .not-user > a {
+          padding: 10px 15px !important;
+        }
+      }
+    }
+  }
+  .landing-top-content {
+    .page-title {
+      font-size: 2.09em !important;
+    }
+    .page-description {
+      font-size: 1.7em !important;
+    }
+  }
 }
 
 /* 8. Styles for devices(<=480px ) */
