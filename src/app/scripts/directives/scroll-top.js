@@ -25,4 +25,4 @@ angular.module('BG').directive("scrollTop",
                 });
             }
         };
-    });
+    })

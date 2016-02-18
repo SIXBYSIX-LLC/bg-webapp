@@ -729,6 +729,24 @@
       font-size: 1.7em !important;
     }
   }
+
+  .submenu-toggle-button {
+    margin: 0 15px;
+  }
+
+  .submenu-ul {
+    margin-top: 5px !important;
+  }
+
+  .landing-submenu {
+    .navbar-nav {
+      li {
+        display: block !important;
+        float: none;
+        text-align: left;
+      }
+    }
+  }
 }
 
 /* 8. Styles for devices(<=480px ) */

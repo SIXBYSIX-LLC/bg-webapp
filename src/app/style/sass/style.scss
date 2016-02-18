@@ -3059,7 +3059,7 @@ ul.menu.mini {
 /* 4. Search Form ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /* 4.1. Default Style ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 .search-box-wrapper { background: #fff; }
-.search-box { margin-top: -80px; position: relative; z-index: 99; }
+.search-box { margin-top: -80px; position: relative; z-index: 0; }
 
 ul.search-tabs {
   margin: 0; padding: 0;
@@ -5542,16 +5542,25 @@ button.btn {
 
 // landing page
 
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0,0,0,.3);
+}
+
 .landing-top-header {
-  height: 78px;
+  height: 55px;
   .navbar {
     margin: 0;
     .navbar-header {
       .navbar-brand {
-        padding: 24px 15px;
+        padding: 14px 15px;
       }
       .navbar-toggle {
-        padding: 24px 10px;
+        padding: 14px 10px;
         &:hover {
           background-color: transparent;
         }
@@ -5562,11 +5571,16 @@ button.btn {
     }
     .navbar-collapse {
       box-shadow: none;
+      .nav {
+        .open {
+          background-color: transparent;
+        }
+      }
       .not-user {
         > a {
           color: #ffffff;
           font-size: 14px;
-          padding: 28px 15px;
+          padding: 17px 15px;
           &:hover {
             background-color: #49443E;
           }
@@ -5579,7 +5593,8 @@ button.btn {
         .dropdown-toggle {
           color: #ffffff;
           font-size: 14px;
-          padding: 24px 15px;
+          padding: 14px 15px;
+          background-color: transparent;
           &:hover {
             background-color: #49443E;
           }
@@ -5600,7 +5615,65 @@ button.btn {
   font-size: 21px;
 }
 
+.landing-submenu {
+  background-color: #49443E !important;
+  height: 40px;
+  .navbar-nav {
+    li {
+      display: inline-block;
+      float: none;
+      a {
+        &:hover {
+          background-color: #3E3E3E !important;
+        }
+        &:focus {
+          background-color: #3E3E3E !important;
+        }
+      }
+    }
+  }
+  .navbar {
+    .navbar-collapse {
+      .dropdown {
+        .dropdown-toggle {
+          padding: 10px 15px;
+        }
+      }
+      .not-user {
+        > a {
+          padding: 10px 15px;
+        }
+      }
+    }
+  }
+}
 
+.hide-more {
+  display: none;
+}
+
+.visible-more {
+  display: block;
+}
+
+.more-equip-container {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  height: 210px;
+  h3 {
+    margin-top: 10px;
+    color: #ffffff;
+  }
+  p {
+    margin-bottom: 10px;
+  }
+  .more-equip-col {
+    border-right: 1px solid #49443E;
+    &:last-child {
+      border-right: 0;
+    }
+  }
+}
 
 
 section {
@@ -5610,7 +5683,8 @@ section {
 }
 .landing-top-content {
   .page-title {
-    font-size: 3em;
+    font-size: 42px;
+    font-weight: 300;
   }
   .page-description {
     padding: 0 20%;
@@ -5619,7 +5693,7 @@ section {
   }
   .search-box-wrapper {
     .search-box {
-      padding: 25px 15px 20px;
+      padding: 15px 15px 5px;
       margin-top: 5%;
     }
   }

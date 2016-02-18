@@ -10,44 +10,7 @@
 		</div>
 	</div>
 	<div class="top-header landing-top-header">
-		<!-- <div class="container">
-			<h1 class="logo navbar-brand pull-left hidden-xs">
-				<a class="pointerhover">
-					<img ui-sref="home" src="assets/images/logo.png"  />
-				</a>
-			</h1>
-			<div class="header-search col-lg-offset-2 col-md-offset-2 col-sm-offset-4">
-				<form ng-submit="mainMdl.search()">
-					<div class="col-lg-10 col-md-10 col-sm-8 hidden-xs"></div>
-					<div class="col-xs-4 visible-xs">
-						<h1 class="logo navbar-brand pull-left no-margin">
-							<a class="pointerhover">
-								<img ui-sref="home" src="assets/images/logo.png"  />
-							</a>
-						</h1>
-					</div>
-					<div class="col-lg-2 col-md-2 col-sm-4 col-xs-8 pull-center not-user" ng-if="!isLoggedIn()">
-						<a ng-click="openLogin()" class="soap-popupbox pointerhover">Login</a>
-						<a ng-click="openSignUp()" class="soap-popupbox pointerhover">Register</a>
-					</div>
-					<div class="col-lg-2 col-md-2 col-sm-4 col-xs-8 my-acc-col pointerhover" ng-if="isLoggedIn()">
-						<ul class="quick-menu clearfix main-quick-menu">
-							<li ng-if="isLoggedIn()" class="ribbon currency equip-drop my-acc-drop">
-								<img src="/assets/images/avtar.png">
-								<a class="soap-popupbox pointerhover">Account &nbsp</a>
-								<ul class="menu mini">
-									<li><a ui-sref="main.account.dashboard">My Buyer Dashboard</a></li>
-									<li><a ui-sref="main.sellerAccount.dashboard">My Seller Dashboard</a></li>
-									<li><a ui-sref="main.account.profile.view" title="profile-settings">Account & Setting</a></li>
-									<li><a href="" ng-click="logout()" title="signout">Signout</a></li>
-								</ul>
-							</li>
-						</ul>
-					</div>
-				</form>
-			</div>
-		</div> -->
-		<nav class="navbar">
+		<nav class="navbar no-border">
 			<div class="container">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -99,6 +62,122 @@
 			</div>
 		</nav>
 	</div>
+	<div class="top-header landing-top-header landing-submenu hidden-sm hidden-xs">
+		<nav class="navbar no-border">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed submenu-toggle-button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+					<ul class="nav navbar-nav no-float pull-center submenu-ul">
+						<li class="not-user">
+							<a class="soap-popupbox pointerhover">Aerial Lifts</a>
+						</li>
+						<li class="not-user">
+							<a class="soap-popupbox pointerhover">Earth Moving</a>
+						</li>
+						<li class="not-user">
+							<a class="soap-popupbox pointerhover">Power & HVAC</a>
+						</li>
+						<li class="not-user">
+							<a class="soap-popupbox pointerhover">Power tools</a>
+						</li>
+						<li class="not-user">
+							<a class="soap-popupbox pointerhover">Safety & Shoring</a>
+						</li>
+						<li class="not-user">
+							<a class="soap-popupbox pointerhover">Compaction</a>
+						</li>
+						<li class="not-user">
+							<a class="soap-popupbox pointerhover">Concrete & Mason</a>
+						</li>
+						<li class="dropdown" ng-click="moreEquipments()">
+							<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span>
+							</a>
+						</li>
+						<div class="container-fluid hide-more top-header more-equip-container" ng-class="{'visible-more': isMore}">
+						<div class="row hidden-sm hidden-xs">
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-center white-color more-equip-col">
+								<h3 class="heading-text">Aerial Lifts</h3>
+								<p>
+									<a href="">
+										Some Name
+									</a>
+								</p>
+								<p>
+									<a href="">
+										Some Name
+									</a>
+								</p>
+								<p>
+									<a href="">
+										Some Name
+									</a>
+								</p>
+								<p>
+									<a href="">
+										Some Name
+									</a>
+								</p>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-center white-color more-equip-col">
+								<h3 class="heading-text">Aerial Lifts</h3>
+								<p>
+									<a href="">
+										Some Name
+									</a>
+								</p>
+								<p>
+									<a href="">
+										Some Name
+									</a>
+								</p>
+								<p>
+									<a href="">
+										Some Name
+									</a>
+								</p>
+								<p>
+									<a href="">
+										Some Name
+									</a>
+								</p>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-center white-color more-equip-col">
+								<h3 class="heading-text">Aerial Lifts</h3>
+								<p>
+									<a href="">
+										Some Name
+									</a>
+								</p>
+								<p>
+									<a href="">
+										Some Name
+									</a>
+								</p>
+								<p>
+									<a href="">
+										Some Name
+									</a>
+								</p>
+								<p>
+									<a href="">
+										Some Name
+									</a>
+								</p>
+							</div>
+						</div>
+					</div>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</div>
 </header>
 <!-- new landing header end -->
 <section id="content" class="slideshow-bg landing-content">
@@ -107,16 +186,20 @@
 			<ul class="slides">
 				<li>
 					<div class="slidebg" style="background-image: url('../assets/images/bg.jpg');"></div>
+					<div class="overlay"></div>
 				</li>
 			</ul>
 		</div>
 	</div>
 	<div class="container landing-top-content">
-		<div id="main" style="margin-top: 15%; margin-bottom: 15%;">
+		<div id="main" style="margin-top: 20%;">
 			<h1 class="page-title white-color pull-center">Buy or Rent Equipments with us in Comfort !</h1>
 			<h2 class="page-description col-md-12 no-float white-color pull-center">We're bringing you a modern, comfortable and easy way	to rent, buy and sell equipments online.
 			</h2>
-			<div class="search-box-wrapper style2">
+		</div>
+		<div class="search-box-wrapper style2">
+			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12"></div>
+			<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12" style="margin-bottom: 20%;">
 				<div class="search-box">
 					<form method="post">
 						<div class="row">
@@ -130,6 +213,7 @@
 					</form>
 				</div>
 			</div>
+			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12"></div>
 		</div>
 	</div>
 </section>

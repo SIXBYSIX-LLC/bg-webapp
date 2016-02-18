@@ -60,5 +60,9 @@ angular.module('BG').controller('HomeCtrl',
       mdl.searchText=text;
     }
 
+    $scope.moreEquipments = function() {
+      $scope.isMore = !$scope.isMore;
+    }
+
   }
 );
