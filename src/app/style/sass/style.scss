@@ -6225,3 +6225,22 @@ button {
     text-align: left;
   }
 }
+
+// main header
+
+.main-header-search-bar {
+  float: left;
+  width: 40%;
+  background: #ffffff;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 5%;
+  i {
+    margin: 8px 10px;
+    font-size: 16px;
+  }
+  input {
+    width: 85%;
+    outline: none;
+  }
+}

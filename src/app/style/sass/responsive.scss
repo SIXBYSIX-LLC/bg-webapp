@@ -748,6 +748,12 @@
       }
     }
   }
+  .search-for-small {
+    padding: 0 15px;
+    .main-header-search-bar {
+      margin-left: 0;
+    }
+  }
 }
 
 /* 8. Styles for devices(<=480px ) */

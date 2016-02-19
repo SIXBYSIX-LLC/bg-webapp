@@ -52,6 +52,14 @@
       mainMdl.searchText=text;
     }
 
+    $scope.moreEquipments = function() {
+      $scope.isMore = !$scope.isMore;
+    }
+
+    $scope.closeEquipment = function() {
+      $scope.isMore = false;
+    }
+
 
   }
 
