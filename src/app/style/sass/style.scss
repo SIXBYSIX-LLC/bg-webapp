@@ -987,7 +987,7 @@ ol {  }
   /* 2.9.3. Full Width Tab */
   &.full-width-style {
     ul.tabs {
-      width: 14%; float: left;
+      width: 100%; float: left;
       &:after { display: none; clear: none; }
       li {
         float: none; margin: 0; padding-right: 0;
@@ -2109,7 +2109,7 @@ ol {  }
   .topnav { 
     height: 30px; background: $skin-bg-color; width: 100%;
     ul.quick-menu > li { 
-      float: left;/* margin-left: 20px;*/ padding-left:10px; padding-right:10px;
+      float: left;/* margin-left: 20px;*/ padding-left:0px; padding-right:0px;
       &:hover {
        // background-color: $light-blue-color;
       }
@@ -2193,10 +2193,10 @@ ol {  }
   &.style2 {
     z-index: 99;
     .topnav {
-      height: auto; background: $skin-topnav-bg;
+      height: 28px; background: $skin-topnav-bg;
       ul.quick-menu > li {
         > a {
-          color: #ffffff; height: 40px; line-height: 40px;
+          color: #ffffff; height: 28px; line-height: 28px;
           &:hover { color: #fff; }
         }
         &.ribbon {
@@ -5390,6 +5390,7 @@ button.ui-button::-moz-focus-inner { border: 0; padding: 0; }
     select {
       width: 50%;
       display: inline-block;
+      margin-left: 10px;
     }
 }
 
@@ -5559,6 +5560,11 @@ button.btn {
   background: rgba(0,0,0,.3);
 }
 
+.landing-section {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
 .landing-top-header {
   height: 55px;
   .navbar {
@@ -5668,6 +5674,7 @@ button.btn {
   padding-top: 20px;
   padding-bottom: 20px;
   height: 210px;
+  position: absolute;
   h3 {
     margin-top: 10px;
     color: #ffffff;
@@ -5679,6 +5686,16 @@ button.btn {
     border-right: 1px solid #49443E;
     &:last-child {
       border-right: 0;
+    }
+  }
+}
+
+.landing-browse-equip {
+  &:hover {
+    .details {
+      .box-title {
+        color: $primary-orange-color;
+      }
     }
   }
 }
@@ -5832,7 +5849,6 @@ section {
     width: 150px;
     border-radius: 100%;
     margin-bottom: 30px;
-    margin-top: 30px;
   }
   p {
     color: #333333;
@@ -5842,6 +5858,7 @@ section {
 #footer {
   .landing-footer {
     background-color: $dark-blue-theme-color;
+    padding: 25px 0;
     h2 {
       color: $primary-color;
     }
@@ -5902,18 +5919,20 @@ section {
 
 // cart page css start
 .cart-table {
-  margin-top: 60px;
+  margin-top: 25px;
+  margin-bottom: 0px;
   thead {
+    background: $white-theme-color;
     > tr {
       > th {
-        text-align: center;
-        border-right: 1px solid $primary-border-color;
+        // text-align: center;
+        // border-right: 1px solid $primary-border-color;
         font-size: 16px;
-        font-weight: 400;
-        border-top: 1px solid $primary-border-color !important;
+        font-weight: 600;
+        // border-top: 1px solid $primary-border-color !important;
         &:first-child {
           border-right: none;
-          border-left: 1px solid $primary-border-color;
+          // border-left: 1px solid $primary-border-color;
         }
         &:last-child {
           display: none;
@@ -5924,15 +5943,15 @@ section {
   tbody {
     > tr {
         &:last-child {
-          border-bottom: 1px solid $primary-border-color;
+          // border-bottom: 1px solid $primary-border-color;
         }
       > td {
-        border-right: 1px solid $primary-border-color;
+        // border-right: 1px solid $primary-border-color;
       }
       .img-td {
         width: 10%;
         border-right: none;
-        border-left: 1px solid $primary-border-color;
+        // border-left: 1px solid $primary-border-color;
         img {
           width: 100%;
         }
@@ -5998,6 +6017,9 @@ section {
 .total-amount-col {
   border-bottom: 1px solid $primary-border-color;
   margin-bottom: 20px;
+  padding-top: 10px;
+  background: $white-theme-color;
+  border-top: 1px solid $primary-border-color;
   p {
     text-align: right;
     font-size: 16px;

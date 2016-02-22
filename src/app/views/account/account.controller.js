@@ -9,5 +9,11 @@ angular.module('BG').controller('AccountCtrl',
       $scope.mainMdl.showToggle = false;
       $scope.popBreadcrumb();
     });
+    $scope.dashboard = function() {
+      $scope.isShow = !$scope.isShow;
+    }
+    $scope.closeDashboard = function() {
+      $scope.isShow = false;
+    }
   }
 );
