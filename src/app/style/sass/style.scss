@@ -6281,3 +6281,11 @@ section {
   z-index: 1000;
   top: 0;
 }
+
+.landing-dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+// .landing-dropdown:hover + .hide-more {
+//   display: block;
+// }
