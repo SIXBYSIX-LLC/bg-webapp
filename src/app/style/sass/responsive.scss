@@ -795,6 +795,15 @@
       float: left !important;
     }
   }
+  .landing-browse-equip {
+    .hover-effect {
+      &:hover {
+        &:after {
+          background: none
+        }
+      }
+    }
+  }
 }
 
 /* 8. Styles for devices(<=480px ) */

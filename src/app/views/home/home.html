@@ -1,5 +1,5 @@
 <!-- new landing header start -->
-<header id="header" class="navbar-static-top style2">
+<header scroll id="header" class="navbar-static-top style2">
 	<div class="topnav">
 		<div class="container">
 			<ul class="quick-menu pull-right clearfix">
@@ -9,179 +9,181 @@
 			</ul>
 		</div>
 	</div>
-	<div class="top-header landing-top-header">
-		<nav class="navbar no-border">
-			<div class="container">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand pointerhover">
-						<img ui-sref="home" src="assets/images/logo.png"  />
-					</a>
+	<div class="animated" ng-class="{'fadeInDown header-on-scroll': boolChangeClass}">
+		<div class="top-header landing-top-header">
+			<nav class="navbar no-border">
+				<div class="container">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand pointerhover">
+							<img ui-sref="home" src="assets/images/logo.png"  />
+						</a>
+					</div>
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav navbar-right">
+							<li class="not-user" ng-if="!isLoggedIn()">
+								<a ng-click="openLogin()" class="soap-popupbox pointerhover">Login</a>
+							</li>
+							<li class="not-user" ng-if="!isLoggedIn()">
+								<a ng-click="openSignUp()" class="soap-popupbox pointerhover">Register</a>
+							</li>
+							<li class="not-user visible-xs visible-sm" ng-click="moreEquipments()">
+								<a class="soap-popupbox pointerhover">Equipments</a>
+							</li>
+							<div class="visible-xs account-list-xs" ng-if="isLoggedIn()">
+								<li>
+									<a ui-sref="main.account.dashboard">My Buyer Dashboard</a>
+								</li>
+								<li>
+									<a ui-sref="main.sellerAccount.dashboard">My Seller Dashboard</a>
+								</li>
+								<li>
+									<a ui-sref="main.account.profile.view" title="profile-settings">Account & Setting</a>
+								</li>
+								<li>
+									<a href="" ng-click="logout()" title="signout">Signout</a>
+								</li>
+							</div>
+							<li class="dropdown hidden-xs" ng-if="isLoggedIn()">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+									<img src="/assets/images/avtar.png">&nbsp
+									Account <span class="caret"></span>
+								</a>
+								<ul class="menu mini dropdown-menu">
+									<li><a ui-sref="main.account.dashboard">My Buyer Dashboard</a></li>
+									<li><a ui-sref="main.sellerAccount.dashboard">My Seller Dashboard</a></li>
+									<li><a ui-sref="main.account.profile.view" title="profile-settings">Account & Setting</a></li>
+									<li><a href="" ng-click="logout()" title="signout">Signout</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
 				</div>
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-nav navbar-right">
-						<li class="not-user" ng-if="!isLoggedIn()">
-							<a ng-click="openLogin()" class="soap-popupbox pointerhover">Login</a>
-						</li>
-						<li class="not-user" ng-if="!isLoggedIn()">
-							<a ng-click="openSignUp()" class="soap-popupbox pointerhover">Register</a>
-						</li>
-						<li class="not-user visible-xs visible-sm" ng-click="moreEquipments()">
-							<a class="soap-popupbox pointerhover">Equipments</a>
-						</li>
-						<div class="visible-xs account-list-xs" ng-if="isLoggedIn()">
-							<li>
-								<a ui-sref="main.account.dashboard">My Buyer Dashboard</a>
+			</nav>
+		</div>
+		<div class="top-header landing-top-header landing-submenu hidden-sm hidden-xs">
+			<nav class="navbar no-border">
+				<div class="container">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed submenu-toggle-button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2" aria-expanded="false">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+						<ul class="nav navbar-nav no-float pull-center submenu-ul">
+							<li class="not-user">
+								<a class="soap-popupbox pointerhover">Aerial Lifts</a>
 							</li>
-							<li>
-								<a ui-sref="main.sellerAccount.dashboard">My Seller Dashboard</a>
+							<li class="not-user">
+								<a class="soap-popupbox pointerhover">Earth Moving</a>
 							</li>
-							<li>
-								<a ui-sref="main.account.profile.view" title="profile-settings">Account & Setting</a>
+							<li class="not-user">
+								<a class="soap-popupbox pointerhover">Power & HVAC</a>
 							</li>
-							<li>
-								<a href="" ng-click="logout()" title="signout">Signout</a>
+							<li class="not-user">
+								<a class="soap-popupbox pointerhover">Power tools</a>
 							</li>
-						</div>
-						<li class="dropdown hidden-xs" ng-if="isLoggedIn()">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-								<img src="/assets/images/avtar.png">&nbsp
-								Account <span class="caret"></span>
-							</a>
-							<ul class="menu mini dropdown-menu">
-								<li><a ui-sref="main.account.dashboard">My Buyer Dashboard</a></li>
-								<li><a ui-sref="main.sellerAccount.dashboard">My Seller Dashboard</a></li>
-								<li><a ui-sref="main.account.profile.view" title="profile-settings">Account & Setting</a></li>
-								<li><a href="" ng-click="logout()" title="signout">Signout</a></li>
-							</ul>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</nav>
-	</div>
-	<div class="top-header landing-top-header landing-submenu hidden-sm hidden-xs">
-		<nav class="navbar no-border">
-			<div class="container">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed submenu-toggle-button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2" aria-expanded="false">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-				</div>
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
-					<ul class="nav navbar-nav no-float pull-center submenu-ul">
-						<li class="not-user">
-							<a class="soap-popupbox pointerhover">Aerial Lifts</a>
-						</li>
-						<li class="not-user">
-							<a class="soap-popupbox pointerhover">Earth Moving</a>
-						</li>
-						<li class="not-user">
-							<a class="soap-popupbox pointerhover">Power & HVAC</a>
-						</li>
-						<li class="not-user">
-							<a class="soap-popupbox pointerhover">Power tools</a>
-						</li>
-						<li class="not-user">
-							<a class="soap-popupbox pointerhover">Safety & Shoring</a>
-						</li>
-						<li class="not-user">
-							<a class="soap-popupbox pointerhover">Compaction</a>
-						</li>
-						<li class="not-user">
-							<a class="soap-popupbox pointerhover">Concrete & Mason</a>
-						</li>
-						<li class="dropdown" ng-click="moreEquipments()">
-							<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span>
-							</a>
-						</li>
-						<div class="container hide-more top-header more-equip-container" ng-class="{'visible-more': isMore}">
-							<div class="row hidden-sm hidden-xs">
-								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-center white-color more-equip-col">
-									<h3 class="heading-text">Aerial Lifts</h3>
-									<p>
-										<a href="">
-											Some Name
-										</a>
-									</p>
-									<p>
-										<a href="">
-											Some Name
-										</a>
-									</p>
-									<p>
-										<a href="">
-											Some Name
-										</a>
-									</p>
-									<p>
-										<a href="">
-											Some Name
-										</a>
-									</p>
-								</div>
-								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-center white-color more-equip-col">
-									<h3 class="heading-text">Aerial Lifts</h3>
-									<p>
-										<a href="">
-											Some Name
-										</a>
-									</p>
-									<p>
-										<a href="">
-											Some Name
-										</a>
-									</p>
-									<p>
-										<a href="">
-											Some Name
-										</a>
-									</p>
-									<p>
-										<a href="">
-											Some Name
-										</a>
-									</p>
-								</div>
-								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-center white-color more-equip-col">
-									<h3 class="heading-text">Aerial Lifts</h3>
-									<p>
-										<a href="">
-											Some Name
-										</a>
-									</p>
-									<p>
-										<a href="">
-											Some Name
-										</a>
-									</p>
-									<p>
-										<a href="">
-											Some Name
-										</a>
-									</p>
-									<p>
-										<a href="">
-											Some Name
-										</a>
-									</p>
+							<li class="not-user">
+								<a class="soap-popupbox pointerhover">Safety & Shoring</a>
+							</li>
+							<li class="not-user">
+								<a class="soap-popupbox pointerhover">Compaction</a>
+							</li>
+							<li class="not-user">
+								<a class="soap-popupbox pointerhover">Concrete & Mason</a>
+							</li>
+							<li class="dropdown" ng-click="moreEquipments()">
+								<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span>
+								</a>
+							</li>
+							<div class="container hide-more top-header more-equip-container" ng-class="{'visible-more': isMore}">
+								<div class="row hidden-sm hidden-xs">
+									<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-center white-color more-equip-col">
+										<h3 class="heading-text">Aerial Lifts</h3>
+										<p>
+											<a href="">
+												Some Name
+											</a>
+										</p>
+										<p>
+											<a href="">
+												Some Name
+											</a>
+										</p>
+										<p>
+											<a href="">
+												Some Name
+											</a>
+										</p>
+										<p>
+											<a href="">
+												Some Name
+											</a>
+										</p>
+									</div>
+									<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-center white-color more-equip-col">
+										<h3 class="heading-text">Aerial Lifts</h3>
+										<p>
+											<a href="">
+												Some Name
+											</a>
+										</p>
+										<p>
+											<a href="">
+												Some Name
+											</a>
+										</p>
+										<p>
+											<a href="">
+												Some Name
+											</a>
+										</p>
+										<p>
+											<a href="">
+												Some Name
+											</a>
+										</p>
+									</div>
+									<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-center white-color more-equip-col">
+										<h3 class="heading-text">Aerial Lifts</h3>
+										<p>
+											<a href="">
+												Some Name
+											</a>
+										</p>
+										<p>
+											<a href="">
+												Some Name
+											</a>
+										</p>
+										<p>
+											<a href="">
+												Some Name
+											</a>
+										</p>
+										<p>
+											<a href="">
+												Some Name
+											</a>
+										</p>
+									</div>
 								</div>
 							</div>
-						</div>
-					</ul>
+						</ul>
+					</div>
 				</div>
-			</div>
-		</nav>
+			</nav>
+		</div>
 	</div>
-	<div class="container-fluid hide-more top-header more-equip-container hidden-lg hidden-md more-equip-xs" ng-class="{'visible-more': isMore}">
+	<div class="container-fluid hide-more top-header more-equip-container hidden-lg hidden-md more-equip-xs header-on-scroll" ng-class="{'visible-more': isMore}">
 		<div class="row">
 			<div class="col-xs-12">
 				<i class="fa fa-times pull-right white-color" ng-click="closeEquipment()"></i>
@@ -307,9 +309,9 @@
 		<div class="row image-box style10 browse-equip-row">
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding">
 				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-padding-small browse-equip-col">
-					<article class="box pointerhover landing-browse">
+					<article class="box pointerhover landing-browse-equip">
 						<figure class="animated fadeInDown" data-animation-type="fadeInDown" data-animation-duration="1">
-							<a href="hotel-list-view.html" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt="" width="270" height="160" /></a>
+							<a href="" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt="" width="270" height="160" /></a>
 						</figure>
 						<div class="details">
 							<h4 class="box-title">Aerial Lifts</h4>
@@ -317,9 +319,9 @@
 					</article>
 				</div>
 				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-padding-small browse-equip-col">
-					<article class="box pointerhover landing-browse">
+					<article class="box pointerhover landing-browse-equip">
 						<figure class="animated fadeInDown" data-animation-type="fadeInDown" data-animation-duration="1">
-							<a href="hotel-list-view.html" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt="" width="270" height="160" /></a>
+							<a href="" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt="" width="270" height="160" /></a>
 						</figure>
 						<div class="details">
 							<h4 class="box-title">Earth Moving</h4>
@@ -327,9 +329,9 @@
 					</article>
 				</div>
 				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-padding-small browse-equip-col">
-					<article class="box pointerhover landing-browse">
+					<article class="box pointerhover landing-browse-equip">
 						<figure class="animated fadeInDown" data-animation-type="fadeInDown" data-animation-duration="1">
-							<a href="hotel-list-view.html" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt="" width="270" height="160" /></a>
+							<a href="" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt="" width="270" height="160" /></a>
 						</figure>
 						<div class="details">
 							<h4 class="box-title">Forklifts & Material Handling </h4>
@@ -337,9 +339,9 @@
 					</article>
 				</div>
 				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-padding-small browse-equip-col">
-					<article class="box pointerhover landing-browse">
+					<article class="box pointerhover landing-browse-equip">
 						<figure class="animated fadeInDown" data-animation-type="fadeInDown" data-animation-duration="1">
-							<a href="hotel-list-view.html" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt="" width="270" height="160" /></a>
+							<a href="" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt="" width="270" height="160" /></a>
 						</figure>
 						<div class="details">
 							<h4 class="box-title">Concrete & Masonry</h4>
@@ -349,43 +351,43 @@
 			</div>
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding">
 				<div class="col-lf-3 col-md-3 col-sm-3 col-xs-12 col-padding-small browse-equip-col">
-					<article class="box pointerhover landing-
+					<article class="box pointerhover landing-browse-equip">
 						<figure class="animated fadeInDown" data-animation-type="fadeInDown" data-animation-duration="1">
-							<a href="hotel-list-view.html" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt="" width="270" height="160" /></a>
+							<a href="" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt="" width="270" height="160" /></a>
 						</figure>
 						<div class="details">
 							<h4 class="box-title">Aerial Lifts</h4>
-						</div">>browse
+						</div>
 					</article>
 				</div>
 				<div class="col-lf-3 col-md-3 col-sm-3 col-xs-12 col-padding-small browse-equip-col">
-					<article class="box pointerhover landing-
+					<article class="box pointerhover landing-browse-equip">
 						<figure class="animated fadeInDown" data-animation-type="fadeInDown" data-animation-duration="1">
-							<a href="hotel-list-view.html" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt="" width="270" height="160" /></a>
+							<a href="" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt="" width="270" height="160" /></a>
 						</figure>
 						<div class="details">
 							<h4 class="box-title">Earth Moving</h4>
-						</div">>browse
+						</div>
 					</article>
 				</div>
 				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-padding-small browse-equip-col">
-					<article class="box pointerhover landing-
+					<article class="box pointerhover landing-browse-equip">
 						<figure class="animated fadeInDown" data-animation-type="fadeInDown" data-animation-duration="1">
-							<a href="hotel-list-view.html" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt="" width="270" height="160" /></a>
+							<a href="" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt="" width="270" height="160" /></a>
 						</figure>
 						<div class="details">
 							<h4 class="box-title">Forklifts & Material Handling</h4>
-						</div">>browse
+						</div>
 					</article>
 				</div>
 				<div class="col-lf-3 col-md-3 col-sm-3 col-xs-12 col-padding-small browse-equip-col">
-					<article class="box pointerhover landing-
+					<article class="box pointerhover landing-browse-equip">
 						<figure class="animated fadeInDown" data-animation-type="fadeInDown" data-animation-duration="1">
-							<a href="hotel-list-view.html" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt="" width="270" height="160" /></a>
+							<a href="" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt="" width="270" height="160" /></a>
 						</figure>
 						<div class="details">
 							<h4 class="box-title">Concrete & Masonry</h4>
-						</div">>browse
+						</div>
 					</article>
 				</div>
 			</div>
@@ -454,77 +456,77 @@
 					<li>
 						<article class="box">
 							<figure>
-								<a href="hotel-list-view.html" title="" class="hover-effect yellow"><img src="http://placehold.it/170x160" alt="" width="170" height="160" /></a>
+								<a href="" title="" class="hover-effect yellow"><img src="http://placehold.it/170x160" alt="" width="170" height="160" /></a>
 							</figure>
 							<div class="details">
 								<h4 class="box-title">Majorca<small>(54 reviews)</small></h4>
-								<a href="hotel-list-view.html" title="" class="button">MORE</a>
+								<a href="" title="" class="button">MORE</a>
 							</div>
 						</article>
 					</li>
 					<li>
 						<article class="box">
 							<figure>
-								<a href="hotel-list-view.html" title="" class="hover-effect yellow"><img src="http://placehold.it/170x160" alt="" width="170" height="160" /></a>
+								<a href="" title="" class="hover-effect yellow"><img src="http://placehold.it/170x160" alt="" width="170" height="160" /></a>
 							</figure>
 							<div class="details">
 								<h4 class="box-title">Tenerife<small>(524 reviews)</small></h4>
-								<a href="hotel-list-view.html" title="" class="button">MORE</a>
+								<a href="" title="" class="button">MORE</a>
 							</div>
 						</article>
 					</li>
 					<li>
 						<article class="box">
 							<figure>
-								<a href="hotel-list-view.html" title="" class="hover-effect yellow"><img src="http://placehold.it/170x160" alt="" width="170" height="160" /></a>
+								<a href="" title="" class="hover-effect yellow"><img src="http://placehold.it/170x160" alt="" width="170" height="160" /></a>
 							</figure>
 							<div class="details">
 								<h4 class="box-title">Costa Blanca<small>(24 reviews)</small></h4>
-								<a href="hotel-list-view.html" title="" class="button">MORE</a>
+								<a href="" title="" class="button">MORE</a>
 							</div>
 						</article>
 					</li>
 					<li>
 						<article class="box">
 							<figure>
-								<a href="hotel-list-view.html" title="" class="hover-effect yellow"><img src="http://placehold.it/170x160" alt="" width="170" height="160" /></a>
+								<a href="" title="" class="hover-effect yellow"><img src="http://placehold.it/170x160" alt="" width="170" height="160" /></a>
 							</figure>
 							<div class="details">
 								<h4 class="box-title">Dalaman<small>(12 reviews)</small></h4>
-								<a href="hotel-list-view.html" title="" class="button">MORE</a>
+								<a href="" title="" class="button">MORE</a>
 							</div>
 						</article>
 					</li>
 					<li>
 						<article class="box">
 							<figure>
-								<a href="hotel-list-view.html" title="" class="hover-effect yellow"><img src="http://placehold.it/170x160" alt="" width="170" height="160" /></a>
+								<a href="" title="" class="hover-effect yellow"><img src="http://placehold.it/170x160" alt="" width="170" height="160" /></a>
 							</figure>
 							<div class="details">
 								<h4 class="box-title">Algarve<small>(34 reviews)</small></h4>
-								<a href="hotel-list-view.html" title="" class="button">MORE</a>
+								<a href="" title="" class="button">MORE</a>
 							</div>
 						</article>
 					</li>
 					<li>
 						<article class="box">
 							<figure>
-								<a href="hotel-list-view.html" title="" class="hover-effect yellow"><img src="http://placehold.it/170x160" alt="" width="170" height="160" /></a>
+								<a href="" title="" class="hover-effect yellow"><img src="http://placehold.it/170x160" alt="" width="170" height="160" /></a>
 							</figure>
 							<div class="details">
 								<h4 class="box-title">Ibiza<small>(64 reviews)</small></h4>
-								<a href="hotel-list-view.html" title="" class="button">MORE</a>
+								<a href="" title="" class="button">MORE</a>
 							</div>
 						</article>
 					</li>
 					<li>
 						<article class="box">
 							<figure>
-								<a href="hotel-list-view.html" title="" class="hover-effect yellow"><img src="http://placehold.it/170x160" alt="" width="170" height="160" /></a>
+								<a href="" title="" class="hover-effect yellow"><img src="http://placehold.it/170x160" alt="" width="170" height="160" /></a>
 							</figure>
 							<div class="details">
 								<h4 class="box-title">Majorca<small>(54 reviews)</small></h4>
-								<a href="hotel-list-view.html" title="" class="button">MORE</a>
+								<a href="" title="" class="button">MORE</a>
 							</div>
 						</article>
 					</li>

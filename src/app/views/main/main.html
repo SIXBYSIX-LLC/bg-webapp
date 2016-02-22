@@ -1,5 +1,5 @@
 <div>
-	<header id="header" class="navbar-static-top style2">
+	<header scroll id="header" class="navbar-static-top style2">
 		<div class="topnav">
 			<div class="container">
 				<ul class="quick-menu pull-right clearfix">
@@ -109,191 +109,193 @@
 				</div>
 			</nav>
 		</div> -->
-		<div class="top-header landing-top-header">
-			<nav class="navbar no-border">
-				<div class="container">
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<a class="navbar-brand pointerhover">
-							<img ui-sref="home" src="assets/images/logo.png"  />
-						</a>
-					</div>
-					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			      <div class="main-header-search-bar hidden-xs">
-							<i class="icon soap-icon-search pull-right"></i>
-							<angucomplete-alt	placeholder="Equipment Name, Part Name, etc.." pause="400" initial-value="mainMdl.searchText"	selected-object="mainMdl.searchObj" remote-api-handler="mainMdl.searchHelper" remote-url-data-field="data" title-field="name"	input-changed="mainMdl.inputChanged" input-class="input-text white-bg where"/>
-							<input type="text" ng-model="mainMdl.searchText" name="where" value="" placeholder="Equipment Name, Part Name, etc.." class="input-text white-bg full-width where" />
+		<div class="animated" ng-class="{'fadeInDown header-on-scroll': boolChangeClass}">
+			<div class="top-header landing-top-header">
+				<nav class="navbar no-border">
+					<div class="container">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<a class="navbar-brand pointerhover">
+								<img ui-sref="home" src="assets/images/logo.png"  />
+							</a>
 						</div>
-						<ul class="nav navbar-nav navbar-right">
-							<li class="not-user" ng-if="!isLoggedIn()">
-								<a ng-click="openLogin()" class="soap-popupbox pointerhover">Login</a>
-							</li>
-							<li class="not-user" ng-if="!isLoggedIn()">
-								<a ng-click="openSignUp()" class="soap-popupbox pointerhover">Register</a>
-							</li>
-							<li class="not-user visible-xs search-for-small">
-								<div class="main-header-search-bar no-float full-width">
-									<i class="icon soap-icon-search pull-right"></i>
-									<angucomplete-alt	placeholder="Equipment Name, Part Name, etc.." pause="400" initial-value="mainMdl.searchText"	selected-object="mainMdl.searchObj" remote-api-handler="mainMdl.searchHelper" remote-url-data-field="data" title-field="name"	input-changed="mainMdl.inputChanged" input-class="input-text white-bg where"/>
-									<input type="text" ng-model="mainMdl.searchText" name="where" value="" placeholder="Equipment Name, Part Name, etc.." class="input-text white-bg full-width where" />
-								</div>
-							</li>
-							<li class="not-user visible-xs visible-sm" ng-click="moreEquipments()">
-								<a class="soap-popupbox pointerhover">Equipments</a>
-							</li>
-							<div class="visible-xs account-list-xs" ng-if="isLoggedIn()">
-								<li>
-									<a ui-sref="main.account.dashboard">My Buyer Dashboard</a>
-								</li>
-								<li>
-									<a ui-sref="main.sellerAccount.dashboard">My Seller Dashboard</a>
-								</li>
-								<li>
-									<a ui-sref="main.account.profile.view" title="profile-settings">Account & Setting</a>
-								</li>
-								<li>
-									<a href="" ng-click="logout()" title="signout">Signout</a>
-								</li>
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				      <div class="main-header-search-bar hidden-xs">
+								<i class="icon soap-icon-search pull-right"></i>
+								<angucomplete-alt	placeholder="Equipment Name, Part Name, etc.." pause="400" initial-value="mainMdl.searchText"	selected-object="mainMdl.searchObj" remote-api-handler="mainMdl.searchHelper" remote-url-data-field="data" title-field="name"	input-changed="mainMdl.inputChanged" input-class="input-text white-bg where"/>
+								<input type="text" ng-model="mainMdl.searchText" name="where" value="" placeholder="Equipment Name, Part Name, etc.." class="input-text white-bg full-width where" />
 							</div>
-							<li class="dropdown hidden-xs" ng-if="isLoggedIn()">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-									<img src="/assets/images/avtar.png">&nbsp
-									Account <span class="caret"></span>
-								</a>
-								<ul class="menu mini dropdown-menu">
-									<li><a ui-sref="main.account.dashboard">My Buyer Dashboard</a></li>
-									<li><a ui-sref="main.sellerAccount.dashboard">My Seller Dashboard</a></li>
-									<li><a ui-sref="main.account.profile.view" title="profile-settings">Account & Setting</a></li>
-									<li><a href="" ng-click="logout()" title="signout">Signout</a></li>
-								</ul>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</nav>
-		</div>
-		<div class="top-header landing-top-header landing-submenu hidden-sm hidden-xs">
-			<nav class="navbar no-border">
-				<div class="container">
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle collapsed submenu-toggle-button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2" aria-expanded="false">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-					</div>
-					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
-						<ul class="nav navbar-nav no-float pull-center submenu-ul">
-							<li class="not-user">
-								<a class="soap-popupbox pointerhover">Aerial Lifts</a>
-							</li>
-							<li class="not-user">
-								<a class="soap-popupbox pointerhover">Earth Moving</a>
-							</li>
-							<li class="not-user">
-								<a class="soap-popupbox pointerhover">Power & HVAC</a>
-							</li>
-							<li class="not-user">
-								<a class="soap-popupbox pointerhover">Power tools</a>
-							</li>
-							<li class="not-user">
-								<a class="soap-popupbox pointerhover">Safety & Shoring</a>
-							</li>
-							<li class="not-user">
-								<a class="soap-popupbox pointerhover">Compaction</a>
-							</li>
-							<li class="not-user">
-								<a class="soap-popupbox pointerhover">Concrete & Mason</a>
-							</li>
-							<li class="dropdown" ng-click="moreEquipments()">
-								<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span>
-								</a>
-							</li>
-							<div class="container hide-more top-header more-equip-container" ng-class="{'visible-more': isMore}">
-								<div class="row hidden-sm hidden-xs">
-									<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-center white-color more-equip-col">
-										<h3 class="heading-text">Aerial Lifts</h3>
-										<p>
-											<a href="">
-												Some Name
-											</a>
-										</p>
-										<p>
-											<a href="">
-												Some Name
-											</a>
-										</p>
-										<p>
-											<a href="">
-												Some Name
-											</a>
-										</p>
-										<p>
-											<a href="">
-												Some Name
-											</a>
-										</p>
+							<ul class="nav navbar-nav navbar-right">
+								<li class="not-user" ng-if="!isLoggedIn()">
+									<a ng-click="openLogin()" class="soap-popupbox pointerhover">Login</a>
+								</li>
+								<li class="not-user" ng-if="!isLoggedIn()">
+									<a ng-click="openSignUp()" class="soap-popupbox pointerhover">Register</a>
+								</li>
+								<li class="not-user visible-xs search-for-small">
+									<div class="main-header-search-bar no-float full-width">
+										<i class="icon soap-icon-search pull-right"></i>
+										<angucomplete-alt	placeholder="Equipment Name, Part Name, etc.." pause="400" initial-value="mainMdl.searchText"	selected-object="mainMdl.searchObj" remote-api-handler="mainMdl.searchHelper" remote-url-data-field="data" title-field="name"	input-changed="mainMdl.inputChanged" input-class="input-text white-bg where"/>
+										<input type="text" ng-model="mainMdl.searchText" name="where" value="" placeholder="Equipment Name, Part Name, etc.." class="input-text white-bg full-width where" />
 									</div>
-									<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-center white-color more-equip-col">
-										<h3 class="heading-text">Aerial Lifts</h3>
-										<p>
-											<a href="">
-												Some Name
-											</a>
-										</p>
-										<p>
-											<a href="">
-												Some Name
-											</a>
-										</p>
-										<p>
-											<a href="">
-												Some Name
-											</a>
-										</p>
-										<p>
-											<a href="">
-												Some Name
-											</a>
-										</p>
-									</div>
-									<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-center white-color more-equip-col">
-										<h3 class="heading-text">Aerial Lifts</h3>
-										<p>
-											<a href="">
-												Some Name
-											</a>
-										</p>
-										<p>
-											<a href="">
-												Some Name
-											</a>
-										</p>
-										<p>
-											<a href="">
-												Some Name
-											</a>
-										</p>
-										<p>
-											<a href="">
-												Some Name
-											</a>
-										</p>
+								</li>
+								<li class="not-user visible-xs visible-sm" ng-click="moreEquipments()">
+									<a class="soap-popupbox pointerhover">Equipments</a>
+								</li>
+								<div class="visible-xs account-list-xs" ng-if="isLoggedIn()">
+									<li>
+										<a ui-sref="main.account.dashboard">My Buyer Dashboard</a>
+									</li>
+									<li>
+										<a ui-sref="main.sellerAccount.dashboard">My Seller Dashboard</a>
+									</li>
+									<li>
+										<a ui-sref="main.account.profile.view" title="profile-settings">Account & Setting</a>
+									</li>
+									<li>
+										<a href="" ng-click="logout()" title="signout">Signout</a>
+									</li>
+								</div>
+								<li class="dropdown hidden-xs" ng-if="isLoggedIn()">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+										<img src="/assets/images/avtar.png">&nbsp
+										Account <span class="caret"></span>
+									</a>
+									<ul class="menu mini dropdown-menu">
+										<li><a ui-sref="main.account.dashboard">My Buyer Dashboard</a></li>
+										<li><a ui-sref="main.sellerAccount.dashboard">My Seller Dashboard</a></li>
+										<li><a ui-sref="main.account.profile.view" title="profile-settings">Account & Setting</a></li>
+										<li><a href="" ng-click="logout()" title="signout">Signout</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+			</div>
+			<div class="top-header landing-top-header landing-submenu hidden-sm hidden-xs">
+				<nav class="navbar no-border">
+					<div class="container">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed submenu-toggle-button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2" aria-expanded="false">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+						</div>
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+							<ul class="nav navbar-nav no-float pull-center submenu-ul">
+								<li class="not-user">
+									<a class="soap-popupbox pointerhover">Aerial Lifts</a>
+								</li>
+								<li class="not-user">
+									<a class="soap-popupbox pointerhover">Earth Moving</a>
+								</li>
+								<li class="not-user">
+									<a class="soap-popupbox pointerhover">Power & HVAC</a>
+								</li>
+								<li class="not-user">
+									<a class="soap-popupbox pointerhover">Power tools</a>
+								</li>
+								<li class="not-user">
+									<a class="soap-popupbox pointerhover">Safety & Shoring</a>
+								</li>
+								<li class="not-user">
+									<a class="soap-popupbox pointerhover">Compaction</a>
+								</li>
+								<li class="not-user">
+									<a class="soap-popupbox pointerhover">Concrete & Mason</a>
+								</li>
+								<li class="dropdown" ng-click="moreEquipments()">
+									<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span>
+									</a>
+								</li>
+								<div class="container hide-more top-header more-equip-container" ng-class="{'visible-more': isMore}">
+									<div class="row hidden-sm hidden-xs">
+										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-center white-color more-equip-col">
+											<h3 class="heading-text">Aerial Lifts</h3>
+											<p>
+												<a href="">
+													Some Name
+												</a>
+											</p>
+											<p>
+												<a href="">
+													Some Name
+												</a>
+											</p>
+											<p>
+												<a href="">
+													Some Name
+												</a>
+											</p>
+											<p>
+												<a href="">
+													Some Name
+												</a>
+											</p>
+										</div>
+										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-center white-color more-equip-col">
+											<h3 class="heading-text">Aerial Lifts</h3>
+											<p>
+												<a href="">
+													Some Name
+												</a>
+											</p>
+											<p>
+												<a href="">
+													Some Name
+												</a>
+											</p>
+											<p>
+												<a href="">
+													Some Name
+												</a>
+											</p>
+											<p>
+												<a href="">
+													Some Name
+												</a>
+											</p>
+										</div>
+										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-center white-color more-equip-col">
+											<h3 class="heading-text">Aerial Lifts</h3>
+											<p>
+												<a href="">
+													Some Name
+												</a>
+											</p>
+											<p>
+												<a href="">
+													Some Name
+												</a>
+											</p>
+											<p>
+												<a href="">
+													Some Name
+												</a>
+											</p>
+											<p>
+												<a href="">
+													Some Name
+												</a>
+											</p>
+										</div>
 									</div>
 								</div>
-							</div>
-						</ul>
+							</ul>
+						</div>
 					</div>
-				</div>
-			</nav>
+				</nav>
+			</div>
 		</div>
-		<div class="container-fluid hide-more top-header more-equip-container hidden-lg hidden-md more-equip-xs" ng-class="{'visible-more': isMore}">
+		<div class="container-fluid hide-more top-header more-equip-container hidden-lg hidden-md more-equip-xs header-on-scroll" ng-class="{'visible-more': isMore}">
 			<div class="row">
 				<div class="col-xs-12">
 					<i class="fa fa-times pull-right white-color" ng-click="closeEquipment()"></i>
