@@ -28,7 +28,6 @@ $font-stack:    'Open Sans', Arial, Helvetica, sans-serif;
 $primary-color: #838383;
 $heading-color: #2d3e52;
 $button-color: #E37F1F;
-$primary-button-color: #FA5013;
 $primary-hover-color: #BF6E1F;
 $primary-border-color: #dddddd;
 
@@ -171,3 +170,11 @@ $skin-dark-color: #873ba2;*/
 $back-btn-bg-color: #d9d9d9;
 $back-btn-hover-bg-color: #cccccc;
 $back-btn-hover-color: #666666;
+
+// updated Variables
+$dark-gray-color: #34302B;
+$black-color: #000000;
+$primary-orange-color: #FB4F14;
+$secondary-light-color: #B1BABF;
+
+$primary-button-color: $primary-orange-color; // #FA5013;

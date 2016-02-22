@@ -91,6 +91,8 @@ article, aside, details, figcaption, figure,  footer, header, hgroup, menu, nav,
 .no-padding { padding: 0 !important; }
 .no-lpadding { padding-left: 0 !important; }
 .no-rpadding { padding-right: 0 !important; }
+.no-bpadding {padding-bottom: 0 !important;}
+.no-tpadding {padding-top: 0 !important;}
 .no-border { border: none !important; }
 .full-width { width: 100% !important; }
 img.full-width { height: auto; }
@@ -127,3 +129,77 @@ img.full-width { height: auto; }
 .gray-bg { background-color: #f5f5f5 !important; }
 .bold-font {font-weight: 600;}
 .auto-height {height:auto;}
+
+.pull-center {
+  text-align: center;
+}
+
+.cancel-btn {
+  background-color: $back-btn-bg-color;
+  font-size: 12px;
+  color: #666;
+  &:hover {
+    background-color: $back-btn-hover-bg-color;
+    color: $back-btn-hover-color;
+  }
+}
+
+.text-left {
+  text-align: left;
+}
+
+.primary-btn {
+  background-color: $primary-button-color;
+  color: $white-theme-color;
+}
+
+.all-btn {
+  // height: 34px;
+  // font-size: 13px;
+  // transition: all 0.6s ease;
+  // min-width: 100px;
+  // font-weight: 400;
+  // border-radius: 4px;
+  text-transform: none;
+  transition: background-color 0.23s ease-in-out 0s;
+	padding: 0 18px;
+	border-radius: 3px;
+	font-size: 14px;
+	border: 0 none;
+	height: 34px;
+	line-height: 32px;
+  &:hover {
+    color: #fff;
+    background-color: #BF6E1F;
+  }
+}
+
+.heading-text {
+  font-size: 16px;
+}
+
+.desc-text {
+	font-size: 13px;
+}
+
+.devider {
+  border-bottom: 1px dashed #dddddd;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.devider-bottom {
+  margin-bottom: 25px;
+}
+
+.form-control {
+  font-size: 13px;
+}
+
+button {
+  text-transform: capitalize;
+}
+
+hr {
+	margin: 10px 0;
+}

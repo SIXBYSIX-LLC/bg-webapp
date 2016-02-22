@@ -449,6 +449,9 @@
     ul.tabs { width: 20%; }
     .tab-content { width: 80%; }
   }
+  .border-sm {
+    border-right: 1px solid $primary-border-color;
+  }
 }
 
 @media (min-width: 481px) and (max-width: 767px) {
@@ -754,6 +757,44 @@
       margin-left: 0;
     }
   }
+  .border-sm {
+    border-right: none;
+  }
+  .invoice-cart-total {
+    .total-cost {
+      text-align: right !important;
+      margin-top: 10px !important;
+    }
+  }
+  .description-col-xs {
+    border-bottom: 1px solid $primary-border-color;
+  }
+  .product-name-xs {
+   h4 {
+      text-align: right;
+      padding: 0 10px;
+    } 
+  }
+  .enquiry-name {
+    p {
+      margin: 0;
+    }
+  }
+  .enquiry-subject {
+    p {
+      margin: 0 0 10px;
+    }
+  }
+  .enquiry-action {
+    a {
+      float: left !important;
+      margin-left: 0 !important;
+      margin-right: 10px !important;
+    }
+    button {
+      float: left !important;
+    }
+  }
 }
 
 /* 8. Styles for devices(<=480px ) */
@@ -829,6 +870,18 @@
         margin-bottom: 15px;
         float: none !important;
       }
+    }
+  }
+  .invoices-btn-col {
+    button {
+      margin-bottom: 10px;
+    }
+  }
+  .invoices-edit-btn-col {
+    text-align: center;
+    button {
+      float: none !important;
+      margin-bottom: 10px;
     }
   }
 }

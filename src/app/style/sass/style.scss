@@ -1016,7 +1016,7 @@ ol {  }
           }
         }
       }
-      .tab-content .tab-pane { padding: 30px; }
+      .tab-content .tab-pane { padding: 10px; }
     }
     .tab-content {
       float: left; 
@@ -5292,9 +5292,9 @@ button.ui-button::-moz-focus-inner { border: 0; padding: 0; }
 
 // seller dashboard equipments style
 
-.pull-center {
-  text-align: center;
-}
+// .pull-center {
+//   text-align: center;
+// }
 
 .select-filter {
   margin-top: 10px;
@@ -5408,8 +5408,16 @@ button.btn {
     margin-bottom: 10px;
   }
   a {
-    margin-top: 8px;
+    margin-top: 8px !important;
     margin-left: 10px;
+    font-size: 13px !important;
+  }
+}
+
+.enquiry-subject {
+  p {
+    color: $primary-orange-color;
+    font-style: italic;
   }
 }
 
@@ -5526,15 +5534,15 @@ button.btn {
   }
 }
 
-.cancel-btn {
-  background-color: $back-btn-bg-color;
-  font-size: 12px;
-  color: #666;
-  &:hover {
-    background-color: $back-btn-hover-bg-color;
-    color: $back-btn-hover-color;
-  }
-}
+// .cancel-btn {
+//   background-color: $back-btn-bg-color;
+//   font-size: 12px;
+//   color: #666;
+//   &:hover {
+//     background-color: $back-btn-hover-bg-color;
+//     color: $back-btn-hover-color;
+//   }
+// }
 
 .btn-right {
   margin-left: 4px;
@@ -5728,9 +5736,9 @@ section {
   border-bottom: 1px solid #d9d9d9;
 }
 
-.text-left {
-  text-align: left;
-}
+// .text-left {
+//   text-align: left;
+// }
 
 .landing-img-carousel {
   overflow: hidden;
@@ -5814,10 +5822,10 @@ section {
   }
 }
 
-.primary-btn {
-  background-color: $primary-button-color;
-  color: $white-theme-color;
-}
+// .primary-btn {
+//   background-color: $primary-button-color;
+//   color: $white-theme-color;
+// }
 
 .users-feedback {
   img {
@@ -5878,19 +5886,19 @@ section {
   }
 }
 
-.all-btn {
-  height: 34px;
-  font-size: 13px;
-  transition: all 0.6s ease;
-  min-width: 100px;
-  font-weight: 400;
-  border-radius: 4px;
-  text-transform: none;
-  &:hover {
-    color: #fff;
-    background-color: #BF6E1F;
-  }
-}
+// .all-btn {
+//   height: 34px;
+//   font-size: 13px;
+//   transition: all 0.6s ease;
+//   min-width: 100px;
+//   font-weight: 400;
+//   border-radius: 4px;
+//   text-transform: none;
+//   &:hover {
+//     color: #fff;
+//     background-color: #BF6E1F;
+//   }
+// }
 
 // cart page css start
 .cart-table {
@@ -6091,19 +6099,19 @@ section {
 
 // progress bar end
 
-.heading-text {
-  font-size: 16px;
-}
+// .heading-text {
+//   font-size: 16px;
+// }
 
-.devider {
-  border-bottom: 1px dashed #dddddd;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
+// .devider {
+//   border-bottom: 1px dashed #dddddd;
+//   margin-top: 10px;
+//   margin-bottom: 10px;
+// }
 
-.devider-bottom {
-  margin-bottom: 25px;
-}
+// .devider-bottom {
+//   margin-bottom: 25px;
+// }
 
 .breadcrumb-col {
   padding: 20px 20px;
@@ -6115,9 +6123,9 @@ section {
   }
 }
 
-.form-control {
-  font-size: 13px;
-}
+// .form-control {
+//   font-size: 13px;
+// }
 
 .clickable-icon {
   font-size: 18px;
@@ -6213,9 +6221,9 @@ section {
   color: $skin-active-color;
 }
 
-button {
-  text-transform: capitalize;
-}
+// button {
+//   text-transform: capitalize;
+// }
 
 .more-equip-xs {
   height: auto;

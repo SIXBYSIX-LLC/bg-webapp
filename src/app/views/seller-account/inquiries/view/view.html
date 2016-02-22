@@ -1,47 +1,45 @@
-<div class="booking-information travelo-box" style="margin-bottom: 0px; padding: 20px 30px 1px;">
-    <div class="guest-reviews single-conversation">
-        <h2>Your Conversation with "Jessica Brown"</h2>
-        <div  class="guest-review table-wrapper">
-            <div class="col-xs-3 col-md-2 author table-cell">
-                <p class="name">Inquiry</p>
-            </div>
-            <div class="col-xs-9 col-md-10 table-cell comment-container">
-                <div class="comment-header clearfix">
-                    <h4 class="comment-title">{{mdl.inq.subject}}</h4>
-                </div>
-            </div>
-        </div>
-        <div ng-class="{'my-message':user.id==item.user}" ng-repeat="item in mdl.items" class="guest-review table-wrapper">
-            <div class="col-xs-3 col-md-2 author table-cell">
-                <a href="#"><img src="http://placehold.it/270x263" alt="" width="270" height="263"/></a>
-
-                <p class="name">{{user.id==item.user ? user.fullname : mdl.toUser.fullname}}</p>
-
-                <p class="date">{{item.date_updated_at | date}}</p>
-            </div>
-            <div class="col-xs-9 col-md-10 table-cell comment-container">
-                <div class="comment-content">
-                    <p>{{item.text}}</p>
-                </div>
-            </div>
-
-        </div>
-        <div class="guest-review table-wrapper my-message">
-            <div class="col-xs-3 col-md-2 author table-cell">
-                <a href="#"><img src="http://placehold.it/270x263" alt="" width="270" height="263"/></a>
-
-                <p class="name">David Jhon</p>
-
-                <p class="date">NOV, 12, 2013</p>
-            </div>
-            <div class="col-xs-9 col-md-10 table-cell comment-container">
-                <div class="comment-content">
-                    <textarea ng-model="mdl.message" class="reply-text-area"></textarea>
-                    <a class="btn all-btn primary-btn" ng-click="mdl.sendMessage()" style="margin-bottom: 20px; margin-top: 10px;">Send</a>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding booking-information travelo-box" style="margin-bottom: 0px;">
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding booking-confirmation clearfix">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding message">
+			<h4 class="main-message">Your Conversation with "Jessica Brown"</h4>			
+		</div>
+	</div>
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		<hr>
+	</div>
+	<!-- <div class="guest-reviews single-conversation"> -->
+	<div class="col-lg-2 col-md-2 col-sm-3 col-xs-6 author table-cell">
+		<p class="name">Inquiry</p>
+	</div>
+	<div class="col-lg-10 col-md-10 col-sm-9 col-xs-6 table-cell comment-container">
+		<div class="comment-header clearfix">
+			<h4 class="comment-title skin-color">{{mdl.inq.subject}}</h4>
+		</div>
+	</div>
+	<div ng-class="{'my-message':user.id==item.user}" ng-repeat="item in mdl.items" class="guest-review table-wrapper col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-3 author table-cell">
+			<a href="#"><img src="http://placehold.it/270x263" alt="" width="270" height="263"/></a>
+			<p class="name">{{user.id==item.user ? user.fullname : mdl.toUser.fullname}}</p>
+			<p class="date">{{item.date_updated_at | date}}</p>
+		</div>
+		<div class="col-lg-10 col-md-10 col-sm-10 col-xs-9 table-cell comment-container">
+			<div class="comment-content">
+				<p>{{item.text}}</p>
+			</div>
+		</div>
+	</div>
+	<div class="guest-review table-wrapper my-message col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-3 author table-cell">
+			<a href="#"><img src="http://placehold.it/270x263" alt="" width="270" height="263"/></a>
+			<p class="name">David Jhon</p>
+			<p class="date">NOV, 12, 2013</p>
+		</div>
+		<div class="col-lg-10 col-md-10 col-sm-10 col-xs-9 table-cell comment-container">
+			<div class="comment-content">
+				<textarea ng-model="mdl.message" class="reply-text-area"></textarea>
+				<a class="btn all-btn primary-btn" ng-click="mdl.sendMessage()" style="margin-bottom: 20px; margin-top: 10px;">Send</a>
+			</div>
+		</div>
+	</div>
+	<!-- </div> -->
 </div>
