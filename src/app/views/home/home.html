@@ -49,6 +49,20 @@
 									<a href="" ng-click="logout()" title="signout">Signout</a>
 								</li>
 							</div>
+							<li class="not-user notification-li" ng-if="isLoggedIn()">
+								<a href="">
+									<i class="fa fa-bell-o big-font hidden-xs"></i>
+									<span class="visible-xs">Notifications</span>
+									<div class="notification">1</div>
+								</a>
+							</li>
+							<li class="not-user notification-li" ng-if="isLoggedIn()">
+								<a href="">
+									<i class="fa fa-envelope-o big-font hidden-xs"></i>
+									<span class="visible-xs">Messages</span>
+									<div class="notification">1</div>
+								</a>
+							</li>
 							<li class="dropdown hidden-xs landing-dropdown" ng-if="isLoggedIn()">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 									<img src="/assets/images/avtar.png">&nbsp

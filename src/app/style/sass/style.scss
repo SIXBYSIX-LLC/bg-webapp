@@ -6297,3 +6297,40 @@ section {
     margin-bottom: 15px;
   }
 }
+
+// .hello {
+//   a {
+//     padding: 16px !important;
+//     &:before {
+//       content: "1";
+//       height: 20px;
+//       width: 20px;
+//       position: absolute;
+//       background: #FB4F14;
+//       border-radius: 100%;
+//       right: 8px;
+//       top: 8px;
+//       text-align: center;
+//       font-size: 12px;
+//     }
+//     i {
+//       font-size: 21px;
+//     }
+//   }
+// }
+.notification-li {
+  a {
+    padding: 15px !important;
+  }
+  .notification {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    background: #FB4F14;
+    border-radius: 100%;
+    right: 8px;
+    top: 8px;
+    text-align: center;
+    font-size: 12px;
+  }
+}
