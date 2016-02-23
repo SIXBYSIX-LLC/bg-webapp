@@ -1,20 +1,29 @@
-
-<h2>Manage Your Jobsites <button class="btn all-btn pull-right status primary-btn" ui-sref="main.account.jobsites.add">
-    <i class="fa fa-plus"></i>&nbsp Add Jobsite</button></h2>
-<div class="booking-history">
-    <div class="booking-info clearfix" ng-repeat="site in mdl.sites">
-        <h4 class="box-title">
-            <i class="icon soap-icon-departure yellow-color circle"></i>{{site.name}}
-            <small>{{site.city.name}},{{site.state.name}},{{site.country.name}}</small>
-        </h4>
-        <a ng-click="delete(site)" class="pull-right">
-            <i class="fa fa-archive"></i>
-        </a>
-        <a ui-sref="main.account.jobsites.edit({id:site.id})" class="pull-right">
-            <i class="fa fa-pencil"></i>
-        </a>
-        <!-- <button class="btn all-btn status" ng-click="delete(site)">Archive</button> -->
-        <!-- <button class="btn all-btn status" ui-sref="main.account.jobsites.edit({id:site.id})">Edit</button> -->
-    </div>
-
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 seller-header no-padding">
+	<h1 class="no-margin skin-color seller-heading-font">Manage Your Jobsites
+		<button class="btn all-btn pull-right primary-btn" ui-sref="main.account.jobsites.add"><i class="icon soap-icon-plus"></i> Add Jobsite</button>
+	</h1>
+</div>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 booking-history no-padding">
+	<div class="booking-info clearfix" ng-repeat="site in mdl.sites">
+		<h4 class="box-title">
+			<i class="icon soap-icon-departure yellow-color circle"></i>{{site.name}}
+			<small>{{site.city.name}},{{site.state.name}},{{site.country.name}}</small>
+		</h4>
+		<a ng-click="delete(site)" class="pull-right hidden-xs">
+			<i class="fa fa-archive"></i>
+		</a>
+		<a ui-sref="main.account.jobsites.edit({id:site.id})" class="pull-right hidden-xs">
+			<i class="fa fa-pencil"></i>&nbsp &nbsp &nbsp
+		</a>
+		<div class="col-xs-12 visible-xs buyer-jobsite-btn">
+			<a ui-sref="main.account.jobsites.edit({id:site.id})">
+				<i class="fa fa-pencil"></i>&nbsp &nbsp &nbsp
+			</a>
+			<a ng-click="delete(site)">
+				<i class="fa fa-archive"></i>
+			</a>
+		</div>
+		<!-- <button class="btn all-btn status" ng-click="delete(site)">Archive</button> -->
+		<!-- <button class="btn all-btn status" ui-sref="main.account.jobsites.edit({id:site.id})">Edit</button> -->
+	</div>
 </div>

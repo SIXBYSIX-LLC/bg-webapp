@@ -1,93 +1,92 @@
-<div class="add-equipment" load-indicator>
-	<form validate-form name="mdl.form" novalidate ng-submit="updateProfile()" class="edit-profile-form">
-				<h2>{{editMode ? 'Edit Jobsite' :'Add New Jobsite'}}</h2>
-				<div class="col-sm-9 no-padding no-float">
-						<div class="row form-group">
-								<div class="col-sms-6 col-sm-6">
-										<label>First Name</label>
-										<input ng-model="mdl.data.first_name" type="text" name="firstname" required class="form-control" placeholder="Enter First Name">
-								</div>
-								<div class="col-sms-6 col-sm-6">
-										<label>Last Name</label>
-										<input ng-model="mdl.data.last_name" type="text" name="lastname" required class="form-control" placeholder="Enter Last Name">
-								</div>
-						</div>
-						<div class="row form-group">
-								<div class="col-sms-6 col-sm-6">
-										<label>Company Name</label>
-										<input ng-model="mdl.data.company_name" type="text" name="companyname" required class="form-control" placeholder="Enter Company Name">
-								</div>
-								<div class="col-sms-6 col-sm-6">
-										<label>Phone Number</label>
-										<input ng-model="mdl.data.phone" type="text" name="phonenumber" required class="form-control" placeholder="Enter Phone Name">
-								</div>
-						</div>
-						<div class="row form-group">
-								<div class="col-sms-6 col-sm-6">
-										<label>Jobsite Name</label>
-										<input type="text" ng-model="mdl.data.name" name="jobsitename" required class="form-control" placeholder="Enter Jobsite Name">
-								</div>
-								<div class="col-sms-6 col-sm-6">
-										<label>Kind</label>
-										<div class="selector">
-												<select ng-model="mdl.data.kind" name="kind" required ng-options="key as value for (key,value) in mdl.kinds " class="form-control">
-												</select>
-										</div>
-								</div>
-						</div>
-						<div class="row form-group">
-								<div class="col-sms-6 col-sm-6">
-										<label>Address Line 1</label>
-										<input type="text" name="address_line_1" ng-model="mdl.data.address1" required class="form-control" placeholder="Address Line 1">
-								</div>
-								<div class="col-sms-6 col-sm-6">
-										<label>Address Line 2</label>
-										<input type="text" name="address_line_2" ng-model="mdl.data.address2" class="form-control" placeholder="Address Line 2">
-								</div>
-						</div>
-						<div class="row form-group">
-								<div class="col-sms-6 col-sm-6">
-										<label>Country</label>
-										<div class="selector">
-												<select ng-model="mdl.data.country"  name="country" required class="form-control" ng-options="key as value for (key,value) in mdl.countries">
-												</select>
-										</div>
-								</div>
-								<div class="col-sms-6 col-sm-6">
-										<label>State</label>
-										<div class="selector">
-												<select ng-model="mdl.data.state" name="state" required class="form-control" ng-options="key as value for (key,value) in mdl.states">
-												</select>
-										</div>
-								</div>
-						</div>
-						<hr>
-						<div class="row form-group">
-								<div class="col-sms-6 col-sm-6">
-										<label>City</label>
-										<div class="selector">
-												<select ng-model="mdl.data.city" name="city" required class="form-control" ng-options="key as value for (key,value) in mdl.cities">
-												</select>
-										</div>
-								</div>
-								<div class="col-sms-6 col-sm-6">
-										<label>Zip Code</label>
-										<input ng-model="mdl.data.zip_code" name="zipcode" required type="text" class="form-control">
-								</div>
-						</div>
-						<map></map>
-
-
-
-					 <!-- <div class="from-group">
-								<button type="submit" class="btn-medium col-sms-6 col-sm-4" ng-click="add()">{{editMode ? 'SAVE' : 'ADD JOBSITE'}}</button>
-								<button class="btn-medium btn-default col-sms-6 col-sm-4" ui-sref="main.account.jobsites.list">CANCEL</button>
-						</div>-->
-						<div class="from-group block" style="margin-top: 20px;">
-								<button type="submit" class="btn all-btn primary-btn" ng-click="add()">{{editMode ? 'Save' : 'Add Jobsite'}}</button>
-								<button class="btn all-btn cancel-btn primary-btn" ui-sref="main.account.jobsites.list">Cancel</button>
-						</div>
-
+<div class="add-equipment col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding" load-indicator>
+	<form validate-form name="mdl.form" novalidate ng-submit="updateProfile()" class="edit-profile-form buyer-add-jobsite">
+		<h1 class="no-margin skin-color seller-heading-font">{{editMode ? 'Edit Jobsite' :'Add New Jobsite'}}</h1>
+		<!-- <h2>{{editMode ? 'Edit Jobsite' :'Add New Jobsite'}}</h2> -->
+		<!-- <div class="col-sm-9 no-padding no-float"> -->
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
+			<hr>
+		</div>
+			<div class="row form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label>First Name</label>
+					<input ng-model="mdl.data.first_name" type="text" name="firstname" required class="form-control" placeholder="Enter First Name">
 				</div>
-		</form>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label>Last Name</label>
+					<input ng-model="mdl.data.last_name" type="text" name="lastname" required class="form-control" placeholder="Enter Last Name">
+				</div>
+			</div>
+			<div class="row form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label>Company Name</label>
+					<input ng-model="mdl.data.company_name" type="text" name="companyname" required class="form-control" placeholder="Enter Company Name">
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label>Phone Number</label>
+					<input ng-model="mdl.data.phone" type="text" name="phonenumber" required class="form-control" placeholder="Enter Phone Name">
+				</div>
+			</div>
+			<div class="row form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label>Jobsite Name</label>
+					<input type="text" ng-model="mdl.data.name" name="jobsitename" required class="form-control" placeholder="Enter Jobsite Name">
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label>Kind</label>
+					<!-- <div class="selector"> -->
+						<select ng-model="mdl.data.kind" name="kind" required ng-options="key as value for (key,value) in mdl.kinds " class="form-control">
+						</select>
+					<!-- </div> -->
+				</div>
+			</div>
+			<div class="row form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label>Address Line 1</label>
+					<input type="text" name="address_line_1" ng-model="mdl.data.address1" required class="form-control" placeholder="Address Line 1">
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label>Address Line 2</label>
+					<input type="text" name="address_line_2" ng-model="mdl.data.address2" class="form-control" placeholder="Address Line 2">
+				</div>
+			</div>
+			<div class="row form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label>Country</label>
+					<!-- <div class="selector"> -->
+						<select ng-model="mdl.data.country"  name="country" required class="form-control" ng-options="key as value for (key,value) in mdl.countries">
+						</select>
+					<!-- </div> -->
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label>State</label>
+					<!-- <div class="selector"> -->
+						<select ng-model="mdl.data.state" name="state" required class="form-control" ng-options="key as value for (key,value) in mdl.states">
+						</select>
+					<!-- </div> -->
+				</div>
+			</div>
+			<div class="row form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label>City</label>
+					<!-- <div class="selector"> -->
+						<select ng-model="mdl.data.city" name="city" required class="form-control" ng-options="key as value for (key,value) in mdl.cities">
+						</select>
+					<!-- </div> -->
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label>Zip Code</label>
+					<input ng-model="mdl.data.zip_code" name="zipcode" required type="text" class="form-control">
+				</div>
+			</div>
+			<map></map>
+			<!-- <div class="from-group">
+				<button type="submit" class="btn-medium col-sms-6 col-sm-4" ng-click="add()">{{editMode ? 'SAVE' : 'ADD JOBSITE'}}</button>
+				<button class="btn-medium btn-default col-sms-6 col-sm-4" ui-sref="main.account.jobsites.list">CANCEL</button>
+			</div>-->
+			<div class="from-group block" style="margin-top: 20px;">
+				<button type="submit" class="btn all-btn primary-btn" ng-click="add()">{{editMode ? 'Save' : 'Add Jobsite'}}</button>
+				<button class="btn all-btn cancel-btn primary-btn" ui-sref="main.account.jobsites.list">Cancel</button>
+			</div>
+		<!-- </div> -->
+	</form>
 </div>

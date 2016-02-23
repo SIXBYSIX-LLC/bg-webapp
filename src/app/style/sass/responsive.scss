@@ -446,8 +446,8 @@
 /* 6. Styles for devices(>=768px and <= 991px) */
 @media (min-width: 768px) and (max-width: 991px) {
   .tab-container.full-width-style {
-    ul.tabs { width: 20%; }
-    .tab-content { width: 80%; }
+    // ul.tabs { width: 20%; }
+    // .tab-content { width: 80%; }
   }
   .border-sm {
     border-right: 1px solid $primary-border-color;
@@ -672,6 +672,7 @@
     }
   }
   .invoice-details-col {
+    margin-bottom: 15px;
     .description-col {
       .right-col {
         border-right: 0 !important;
@@ -804,6 +805,21 @@
       }
     }
   }
+
+  .action-btn-xs {
+    padding-top: 10px;
+  }
+
+  .buyer-jobsite-btn {
+    padding-top: 10px;
+    padding-left: 43px !important;
+  }
+
+  .buyer-invoice-btn {
+    button {
+      margin-bottom: 10px;
+    }
+  }
 }
 
 /* 8. Styles for devices(<=480px ) */
@@ -891,6 +907,13 @@
     button {
       float: none !important;
       margin-bottom: 10px;
+    }
+  }
+  .buyer-invoice-btn {
+    button {
+      float: none;
+      width: 100%;
+      margin-right: 0 !important;
     }
   }
 }

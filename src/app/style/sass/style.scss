@@ -6289,3 +6289,11 @@ section {
 // .landing-dropdown:hover + .hide-more {
 //   display: block;
 // }
+
+.buyer-add-jobsite .form-group {
+  margin-bottom: 0 !important;
+  input,
+  select {
+    margin-bottom: 15px;
+  }
+}
