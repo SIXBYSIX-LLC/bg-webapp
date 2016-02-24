@@ -313,6 +313,14 @@
     &.flex-next { right: 10px; }
   }
   html.post-404page.style3 #page-wrapper { background-size: 170% auto; }
+
+  .landing-submenu {
+    .navbar-nav {
+      li {
+        padding: 0 4.2% 0 0 !important;
+      }
+    }
+  }
 }
 
 /* 5. Styles for devices(<=991px ) */
@@ -451,6 +459,16 @@
   }
   .border-sm {
     border-right: 1px solid $primary-border-color;
+  }
+  .main-header-search-bar {
+    margin-left: 2% !important;
+    width: 30% !important;
+  }
+
+  .for-sm {
+    i,h4 {
+      font-size: 16px !important
+    }
   }
 }
 
