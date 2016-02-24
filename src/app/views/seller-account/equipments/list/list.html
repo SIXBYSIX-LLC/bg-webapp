@@ -1,18 +1,23 @@
-<div id="dashboard-equipments" class="tab-pane fade in active col-padding-small col-padding-sm">
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 seller-header no-padding">
-		<h1 class="no-margin skin-color seller-heading-font">My Inventory
-			<button class="btn all-btn pull-right primary-btn"><i class="icon soap-icon-plus"></i> Add New Inventory</button>
+		<h1 class="no-margin skin-color seller-heading-font">My Equipments
+			<button class="btn all-btn pull-right primary-btn" ui-sref="main.sellerAccount.equipments.add"><i class="icon soap-icon-plus"></i> Add New Equipment</button>
 		</h1>
 	</div>
-	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 gray-area select-product">
-		<p>
-			Select Product: 
-			<select class="form-control">
-				<option>Abc</option>
-				<option>Def</option>
-				<option>Xyz</option>
-			</select>
-		</p>
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 gray-area select-filter">
+		<form>
+				<label class="radio radio-inline">
+					<input type="radio" name="filter" />
+					<span class="radio-label">All</span>
+				</label>
+				<label class="radio radio-inline">
+					<input type="radio" name="filter" />
+					<span class="radio-label">On Rent</span>
+				</label>
+				<label class="radio radio-inline">
+					<input type="radio" name="filter" />
+					<span class="radio-label">Vacant</span>
+				</label>
+		</form>
 	</div>
 	<div class="col-lg-12 col-md-12 col-sm-12 hidden-xs">
 		<table class="table equipments-table">
@@ -36,8 +41,9 @@
 						<p>Austin, Texas</p>
 						<p>ID: xxxxxxxx</p>
 					</td>
-					<td class="time-td pull-center vertically-middle">
-						<toggle-switch ng-click="valueChanged(inv)" ng-model="inv.is_active" on-label="Available" off-label="Not-Available"></toggle-switch>
+					<td class="time-td">
+						<h3 class="time-util">Time Utilization: 47%</h3>
+						<h3>Dolar Utilization: 82%</h3>
 					</td>
 					<td class="text-right action-td">
 						<p>
@@ -67,8 +73,9 @@
 						<p>Austin, Texas</p>
 						<p>ID: xxxxxxxx</p>
 					</td>
-					<td class="time-td pull-center vertically-middle">
-						<toggle-switch ng-click="valueChanged(inv)" ng-model="inv.is_active" on-label="Available" off-label="Not-Available"></toggle-switch>
+					<td class="time-td">
+						<h3 class="time-util">Time Utilization: 47%</h3>
+						<h3>Dolar Utilization: 82%</h3>
 					</td>
 					<td class="text-right action-td">
 						<p>
@@ -98,8 +105,9 @@
 						<p>Austin, Texas</p>
 						<p>ID: xxxxxxxx</p>
 					</td>
-					<td class="time-td pull-center vertically-middle">
-						<toggle-switch ng-click="valueChanged(inv)" ng-model="inv.is_active" on-label="Available" off-label="Not-Available"></toggle-switch>
+					<td class="time-td">
+						<h3 class="time-util">Time Utilization: 47%</h3>
+						<h3>Dolar Utilization: 82%</h3>
 					</td>
 					<td class="text-right action-td">
 						<p>
@@ -130,7 +138,7 @@
 				<div class="col-xs-12 no-padding details">
 					<h4 class="box-title bold-font" style="margin-bottom: 5px;">Breaker</h4>
 					<div class="col-xs-12 no-padding amenities">
-						<p>
+						<p class="no-margin">
 							Austin, Texas
 							<span class="pull-right">
 								ID: xxxxxxxx
@@ -138,7 +146,14 @@
 						</p>
 					</div>
 					<div class="col-xs-12 no-padding">
-						<toggle-switch ng-click="valueChanged(inv)" ng-model="inv.is_active" on-label="Available" off-label="Not-Available" class="full-width"></toggle-switch>
+						<p style="margin-bottom: 5px; margin-top: 5px;">
+							Time Utilization:
+							<span class="pull-right">47%</span>
+						</p>
+						<p style="margin-bottom: 5px; margin-top: 5px;">
+							Dolar Utilization:
+							<span class="pull-right">82%</span>
+						</p>
 					</div>
 					<div class="col-xs-12 devider"></div>
 					<div class="col-xs-12 no-padding action pull-center cart-action">
@@ -146,7 +161,7 @@
 							<i class="fa fa-eye"></i>
 						</a>
 						<a href="" class="text">
-							<i class="fa fa-pencil-square-o"></i>
+							<i class="fa fa-pencil"></i>
 						</a>
 						<a href="" class="pull-right">
 							<i class="fa fa-archive"></i>
@@ -162,7 +177,7 @@
 				<div class="col-xs-12 no-padding details">
 					<h4 class="box-title bold-font" style="margin-bottom: 5px;">Breaker</h4>
 					<div class="col-xs-12 no-padding amenities">
-						<p>
+						<p class="no-margin">
 							Austin, Texas
 							<span class="pull-right">
 								ID: xxxxxxxx
@@ -170,7 +185,14 @@
 						</p>
 					</div>
 					<div class="col-xs-12 no-padding">
-						<toggle-switch ng-click="valueChanged(inv)" ng-model="inv.is_active" on-label="Available" off-label="Not-Available" class="full-width"></toggle-switch>
+						<p style="margin-bottom: 5px; margin-top: 5px;">
+							Time Utilization:
+							<span class="pull-right">47%</span>
+						</p>
+						<p style="margin-bottom: 5px; margin-top: 5px;">
+							Dolar Utilization:
+							<span class="pull-right">82%</span>
+						</p>
 					</div>
 					<div class="col-xs-12 devider"></div>
 					<div class="col-xs-12 no-padding action pull-center cart-action">
@@ -178,7 +200,7 @@
 							<i class="fa fa-eye"></i>
 						</a>
 						<a href="" class="text">
-							<i class="fa fa-pencil-square-o"></i>
+							<i class="fa fa-pencil"></i>
 						</a>
 						<a href="" class="pull-right">
 							<i class="fa fa-archive"></i>
@@ -194,7 +216,7 @@
 				<div class="col-xs-12 no-padding details">
 					<h4 class="box-title bold-font" style="margin-bottom: 5px;">Breaker</h4>
 					<div class="col-xs-12 no-padding amenities">
-						<p>
+						<p class="no-margin">
 							Austin, Texas
 							<span class="pull-right">
 								ID: xxxxxxxx
@@ -202,7 +224,14 @@
 						</p>
 					</div>
 					<div class="col-xs-12 no-padding">
-						<toggle-switch ng-click="valueChanged(inv)" ng-model="inv.is_active" on-label="Available" off-label="Not-Available" class="full-width"></toggle-switch>
+						<p style="margin-bottom: 5px; margin-top: 5px;">
+							Time Utilization:
+							<span class="pull-right">47%</span>
+						</p>
+						<p style="margin-bottom: 5px; margin-top: 5px;">
+							Dolar Utilization:
+							<span class="pull-right">82%</span>
+						</p>
 					</div>
 					<div class="col-xs-12 devider"></div>
 					<div class="col-xs-12 no-padding action pull-center cart-action">
@@ -219,4 +248,3 @@
 				</div>
 		</article>
 	</div>
-</div>

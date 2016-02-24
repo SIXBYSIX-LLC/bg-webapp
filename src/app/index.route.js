@@ -227,6 +227,17 @@
         templateUrl: 'app/views/seller-account/equipments/equipments.html'
       })
 
+      .state('main.sellerAccount.equipments.list', {
+        url:'/list',
+        templateUrl: 'app/views/seller-account/equipments/list/list.html'
+      })
+
+      .state('main.sellerAccount.equipments.add',{
+        url:'/add',
+        templateUrl:'app/views/seller-account/equipments/add/add.html',
+        controller:'AddEquipmentCtrl'
+      })
+
       .state('main.sellerAccount.inventory', {
         url:'/inventory',
         templateUrl: 'app/views/seller-account/inventory/inventory.html'

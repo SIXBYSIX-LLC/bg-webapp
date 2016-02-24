@@ -1,0 +1,177 @@
+<div class="add-equipment col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding add-equip-col">
+	<form validate-form name="addEquiMdl.form" novalidate ng-submit="updateProfile()" class="edit-profile-form buyer-add-jobsite">
+		<h1 class="no-margin skin-color seller-heading-font">{{editMode ? 'Edit Equipment' :'Add New Equipment'}}</h1>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
+			<hr>
+		</div>
+		<div class="row form-group">
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+				<div>
+					<label>Equipment Name</label>
+					<input type="text" ng-model="addEquiMdl.data.name" name="equipmentname" required class="form-control" placeholder="Enter Equipment Name">
+				</div>
+			</div>
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+				<div>
+					<label>Brand Name</label>
+					<input type="text" ng-model="addEquiMdl.data.brand" name="brand" required class="form-control" placeholder="Brand Name">
+				</div>
+			</div>
+		</div>
+		<div class="row form-group">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<label>Description</label>
+				<textarea rows="5" ng-model="addEquiMdl.data.description" name="description" class="form-control" placeholder="please tell us about equipment in detail"></textarea>
+			</div>
+		</div>
+		<div class="row form-group">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<label>Tags</label>
+				<span>please put tag values separated by Comma (,)</span>
+				<tags-input ng-model="addEquiMdl.tags" class="tags-input">
+				</tags-input>
+			</div>
+		</div>
+		<div class="row form-group">
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+				<div>
+					<label>Hourly Price</label>
+					<input type="text" name="hourlyprice" ng-model="addEquiMdl.data.hourly_price" required class="form-control" placeholder="Daily Rent Price">
+				</div>
+			</div>
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+				<div>
+					<label>Daily Price</label>
+					<input type="text" name="dailyprice" ng-model="addEquiMdl.data.daily_price" required class="form-control" placeholder="Daily Rent Price">
+				</div>
+			</div>
+		</div>
+		<div class="row form-group">
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+				<div>
+					<label>Weekly Price</label>
+					<input type="text" name="weeklyprice" ng-model="addEquiMdl.data.weekly_price" class="form-control" placeholder="Weekly Rent Price">
+				</div>
+			</div>
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+				<div>
+					<label>Monthly Price</label>
+					<input type="text" name="monthlyprice" ng-model="addEquiMdl.data.monthly_price" required class="form-control" placeholder="Monthly Rent Price ">
+				</div>
+			</div>
+		</div>
+		<div class="row form-group">
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+				<div>
+					<label>Selling Price</label>
+					<input type="text" class="form-control" ng-model="addEquiMdl.data.sell_price" required placeholder="Selling Price for Equipment">
+				</div>
+			</div>
+		</div>
+		<div class="row form-group">
+			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+				<label>Category</label>
+				<!-- <div class="selector"> -->
+					<select ng-model="addEquiMdl.category1" name="catgory1" required ng-options="cat.id as cat.name for cat in addEquiMdl.categories1 " class="form-control">
+					</select>
+				<!-- </div> -->
+			</div>
+			<div ng-show="addEquiMdl.categories2.length" class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+				<label>Sub Category</label>
+				<!-- <div class="selector"> -->
+					<select ng-model="addEquiMdl.category2" ng-options="cat.id as cat.name for cat in addEquiMdl.categories2 " class="form-control">
+					</select>
+				<!-- </div> -->
+			</div>
+			<div ng-show="addEquiMdl.categories3.length" class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+				<label>Super Sub-category</label>
+				<!-- <div class="selector"> -->
+					<select ng-model="addEquiMdl.category3" ng-options="cat.id as cat.name for cat in addEquiMdl.categories3 " class="form-control">
+					</select>
+				<!-- </div> -->
+			</div>
+		</div>
+		<div class="row form-group">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
+				<hr>
+			</div>
+		</div>
+		<div class="row form-group">
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+				<label>Equipment Condition</label>
+				<!-- <div class="selector"> -->
+					<select ng-model="addEquiMdl.data.condition" class="form-control">
+						<option value="used">Used</option>
+						<option value="new">New</option>
+					</select>
+				<!-- </div> -->
+			</div>
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+				<label>SKU</label>
+				<input ng-model="addEquiMdl.data.sku" type="text" class="form-control">
+			</div>
+		</div>
+		<div class="row form-group">
+			<div class="col-sms-6 col-sm-6">
+				<label>Location</label>
+				<!-- <div class="selector"> -->
+					<select name="location" ng-model="addEquiMdl.data.location" required class="form-control" ng-options="site.id as site.name for site in addEquiMdl.sites">
+					</select>
+				<!-- </div> -->
+			</div>
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+				<label>Quantity</label>
+				<input type="text" ng-model="addEquiMdl.data.qty" name="qty" class="form-control" placeholder="Quantaty">
+			</div>
+		</div>
+		<div class="row form-group">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<hr>
+			</div>
+		</div>
+		<div class="row no-bmargin">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<h1 class="no-margin skin-color seller-heading-font">Upload Equipment Images</h1>
+			</div>
+		</div>
+		<div class="row no-bmargin">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<hr>
+			</div>
+		</div>
+		<div class="row form-group">
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 no-float">
+				<div class="fileinput button" ngf-multiple="true" ngf-select ngf-change="addEquiMdl.filesToUpload=$files">Upload Images</div>
+				<br/>
+				<div ngf-drop ng-model="addEquiMdl.filesToUpload" class="upload-drop-zone" ngf-drag-over-class="drop" ngf-multiple="true" ngf-allow-dir="false">Drop Images here</div>
+				<div ng-if="addEquiMdl.filesToUpload.length">
+					Selected File:
+					<div ng-repeat="file in addEquiMdl.filesToUpload">
+						<div>
+							<div>{{file.name}}</div>
+							<div>
+								<progress max="100" value="{{file.progress || 0}}">{{file.status}}</progress>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+			</div>
+		</div>
+		<div ng-if="editMode">
+			<div class="row" ng-repeat="img in addEquiMdl.data.images">
+				<div class="col-sms-6 col-sm-6">
+					<img ng-src="{{img.url}}" style="width:100px">
+				</div>
+				<div class="col-sms-3 col-sm-3">
+					<button ng-click="deleteImage($index)">Remove</button>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<div class="from-group block">
+			<button type="submit" class="btn all-btn primary-btn" ng-click="add()">{{editMode ? 'SAVE' : 'ADD EQUIPMENT'}}</button>
+			<button class="btn all-btn primary-btn" ui-sref="main.account.equipments.list">CANCEL</button>
+		</div>
+	</form>
+</div>
