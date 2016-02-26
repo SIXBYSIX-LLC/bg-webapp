@@ -6374,3 +6374,17 @@ section {
     }
   }
 }
+
+.dropdown-menu {
+  > li {
+    > a:focus {
+      background-color: transparent;
+    }
+  }
+}
+
+.upload-equip-col {
+  h1 {
+    font-size: 20px;
+  }
+}

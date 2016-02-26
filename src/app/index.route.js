@@ -243,6 +243,16 @@
         templateUrl: 'app/views/seller-account/inventory/inventory.html'
       })
 
+      .state('main.sellerAccount.inventory.list', {
+        url:'/list',
+        templateUrl: 'app/views/seller-account/inventory/list/list.html'
+      })
+
+      .state('main.sellerAccount.inventory.add', {
+        url:'/add',
+        templateUrl: 'app/views/seller-account/inventory/add/add.html'
+      })
+
       .state('main.sellerAccount.orders',{
         url:'/orders',
         templateUrl:'app/views/seller-account/orders/orders.html'

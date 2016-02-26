@@ -1,0 +1,51 @@
+<div class="add-equipment col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding add-equip-col">
+	<form validate-form name="mdl.form" novalidate ng-submit="add()" class="edit-profile-form buyer-add-jobsite">
+		<h1 class="no-margin skin-color seller-heading-font">Add Inventory</h1>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
+			<hr>
+		</div>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding no-float">
+			<div class="row form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label>Select Product</label>
+					<!-- <div class="selector"> -->
+						<select name="select-product" class="form-control">
+							<option>Abc</option>
+							<option>Def</option>
+						</select>
+					<!-- </div> -->
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label>Availability</label>
+					<!-- <div class="selector"> -->
+						<select name="availability" required class="form-control">
+							<option value="1">Yes</option>
+							<option value="0">No</option>
+						</select>
+					<!-- </div> -->
+				</div>
+			</div>
+			<div class="row form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label>Source of Equipment</label>
+					<!-- <div class="selector"> -->
+						<select class="form-control">
+							<option>Purchased</option>
+							<option>Rented</option>
+						</select>
+					<!-- </div> -->
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label>Serial Number</label>
+					<input required type="text" name="serial_number" class="form-control" placeholder="Enter Serial Number">
+				</div>
+			</div>
+			<hr>
+			<br />
+			<div class="from-group block">
+				<button type="submit" class="btn all-btn primary-btn">Save Inventory</button>
+				<button class="btn all-btn primary-btn" ui-sref="main.account.inventory.list">Cancel</button>
+			</div>
+		</div>
+	</form>
+</div>
