@@ -1,25 +1,25 @@
-<div id="settings" class="tab-pane col-md-12 col-sm-12">
-    <h2>Account Settings</h2>
-    <div class="settings">
-        <hr />
-
-        <ul class="nav nav-tabs">
-            <li ui-sref-active="active" ui-sref="main.sellerAccount.settings.general">
-                <a class="ng-click-active">General Settings</a>
-            </li>
-            <li ui-sref-active="active" ui-sref="main.sellerAccount.settings.shipping">
-                <a class="ng-click-active">Shipping</a>
-            </li>
-            <li ui-sref-active="active" ui-sref="main.sellerAccount.settings.additionalCharges">
-                <a class="ng-click-active">Additional Charges</a>
-            </li>
-        </ul>
-        <div class="tab-content">
-            <div class="tab-pane active">
-                <ui-view></ui-view>
-            </div>
-        </div>
-
-    </div>
-
+<div id="settings" class="tab-pane col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<h1 class="no-margin skin-color seller-heading-font">Account Settings</h1>
+</div>
+<div class="settings col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
+	<hr />
+</div>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
+	<ul class="nav nav-tabs settings-tabs">
+		<li ui-sref-active="active" ui-sref="main.sellerAccount.settings.general">
+			<a class="ng-click-active hidden-xs">General Settings</a>
+			<a class="ng-click-active visible-xs">General</a>
+		</li>
+		<li ui-sref-active="active" ui-sref="main.sellerAccount.settings.shipping">
+			<a class="ng-click-active">Shipping</a>
+		</li>
+		<li ui-sref-active="active" ui-sref="main.sellerAccount.settings.additionalCharges">
+			<a class="ng-click-active">Additional Charges</a>
+		</li>
+	</ul>
+</div>
+<div class="tab-content col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
+	<div class="tab-pane active col-padding-small col-padding-sm">
+		<ui-view></ui-view>
+	</div>
 </div>

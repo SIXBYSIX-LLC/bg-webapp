@@ -449,6 +449,12 @@
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
+
+  .shipping-xs {
+    select,input {
+      margin-bottom: 10px;
+    }
+  }
 }
 
 /* 6. Styles for devices(>=768px and <= 991px) */
@@ -836,6 +842,22 @@
   .buyer-invoice-btn {
     button {
       margin-bottom: 10px;
+    }
+  }
+
+  .general-setting {
+  input {
+      width: 80% !important;
+      margin-left: 0 !important;
+      margin-bottom: 10px;
+    }
+  }
+
+  .settings-tabs {
+    > li {
+      > a {
+        padding: 10px 5px !important;
+      }
     }
   }
 }

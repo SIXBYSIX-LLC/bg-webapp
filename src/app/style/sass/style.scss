@@ -5652,12 +5652,13 @@ button.btn {
       flex: 0 1 auto;
       padding: 0 5.9% 0 0;
       a {
+        transition: all 0.6s ease;
         &:hover {
-          background-color: transparent !important;
+          background-color: #3E3E3E !important;
           color: $primary-orange-color !important;
         }
         &:focus {
-          background-color: transparent !important;
+          background-color: #3E3E3E !important;
           color: $primary-orange-color !important;
         }
       }
@@ -6386,5 +6387,13 @@ section {
 .upload-equip-col {
   h1 {
     font-size: 20px;
+  }
+}
+
+.general-setting {
+  input {
+    width: 40%;
+    margin-left: 15px;
+    margin-right: 5px;
   }
 }

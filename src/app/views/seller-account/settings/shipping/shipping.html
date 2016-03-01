@@ -1,125 +1,153 @@
 <h5 class="skin-color">Standard Method</h5>
-<div class="row form-group">
-    <div class="col-xs-6 col-sm-2 col-md-2">
-        <label>Origin</label>
-    </div>
-    <div class="col-xs-6 col-sm-2 col-md-2">
-        <label>Destination</label>
-    </div>
-    <div class="col-xs-6 col-sm-2 col-md-2">
-        <label>Zipcode From</label>
-    </div>
-    <div class="col-xs-6 col-sm-2 col-md-2">
-        <label>Zipcode To</label>
-    </div>
-    <div class="col-xs-6 col-sm-3 col-md-2">
-        <label>Cost</label>
-    </div>
+<div class="row form-group no-bmargin hidden-xs hidden-sm">
+	<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+		<label>Origin</label>
+	</div>
+	<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+		<label>Destination</label>
+	</div>
+	<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+		<label>Zipcode From</label>
+	</div>
+	<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+		<label>Zipcode To</label>
+	</div>
+	<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+		<label>Cost</label>
+	</div>
 </div>
-<div ng-repeat="rule in shippingMdl.rules" class="row form-group light-fonts">
-    <div ng-if="!rule.edit">
-        <div class="col-xs-6 col-sm-2 col-md-2">
-            <label>{{shippingMdl.getJobsiteName(rule.origin)}}</label>
-            <!--<div class="selector">-->
-                <!--<select disabled name="location" ng-model="rule.origin" required class="full-width" ng-options="site.id as site.name for site in shippingMdl.jobSites">-->
-                <!--</select>-->
-            <!--</div>-->
-        </div>
-        <div class="col-xs-6 col-sm-2 col-md-2">
-            <label>{{shippingMdl.countries[rule.country]}}</label>
-            <!--<div class="selector">-->
-                <!--<select disabled ng-model="rule.country"  name="country" required class="full-width" ng-options="key as value for (key,value) in shippingMdl.countries">-->
-                <!--</select>-->
-            <!--</div>-->
-        </div>
-
-        <div class="col-xs-6 col-sm-2 col-md-2">
-            <label>{{rule.zipcode_start}}</label>
-        </div>
-        <div class="col-xs-6 col-sm-2 col-md-2">
-            <label>{{rule.zipcode_end}}</label>
-        </div>
-        <div class="col-xs-6 col-sm-3 col-md-2">
-            <label>${{rule.cost}}</label>
-        </div>
-        <div class="col-xs-12 col-sm-3 col-md-1 shipping-list-btn">
-            <!-- <button class="btn all-btn primary-btn" ng-click="shippingMdl.edit(rule)">Edit</button> -->
-            <a class="clickable-icon pointerhover" ng-click="shippingMdl.edit(rule)">
-                <i class="fa fa-pencil-square-o"></i>
-            </a>
-            <a class="clickable-icon pointerhover" ng-click="shippingMdl.delete(rule)">
-                <i class="fa fa-trash"></i>
-            </a>
-            <!-- <br> -->
-            <!-- <button class="btn all-btn primary-btn" ng-click="shippingMdl.delete(rule)">Delete</button> -->
-        </div>
-        <!-- <div class="col-xs-6 col-sm-3 col-md-1">
-        </div> -->
-    </div>
-    <div ng-if="rule.edit">
-        <form novalidate validate-form="validateEditForm" name="shippingMdl.updateForm">
-            <div class="col-xs-6 col-sm-2 col-md-2">
-                <div class="selector">
-                    <select name="location" ng-model="shippingMdl.editData.origin" required class="full-width" ng-options="site.id as site.name for site in shippingMdl.jobSites">
-                    </select>
-                </div>
-            </div>
-            <div class="col-xs-6 col-sm-2 col-md-2">
-                <div class="selector">
-                    <select ng-model="shippingMdl.editData.country"  name="country" required class="full-width" ng-options="key as value for (key,value) in shippingMdl.countries">
-                    </select>
-                </div>
-            </div>
-            <div class="col-xs-6 col-sm-2 col-md-2">
-                <input name="zipcode_start" ng-model="shippingMdl.editData.zipcode_start" type="text" required class="input-text full-width" placeholder="Zipcode From">
-            </div>
-            <div class="col-xs-6 col-sm-2 col-md-2">
-                <input name="zipcode_end" ng-model="shippingMdl.editData.zipcode_end" type="text" required class="input-text full-width" placeholder="Zipcode To">
-            </div>
-            <!--<div class="col-xs-6 col-sm-3 col-md-2">
-                <input name="days" ng-model="shippingMdl.editData.delivery_days" type="text" required class="input-text full-width" placeholder="Delivery days">
-            </div>-->
-            <div class="col-xs-6 col-sm-3 col-md-2">
-                <input name="cost" ng-model="shippingMdl.editData.cost" type="text" required class="input-text full-width" placeholder="cost">
-            </div>
-            <div class="col-xs-12 col-sm-3 col-md-1 shipping-list-btn">
-                <button class="btn all-btn width-auto primary-btn" ng-click="shippingMdl.update(rule)">Update</button>
-                <br>
-                <button class="btn all-btn width-auto primary-btn" ng-click="shippingMdl.cancelEdit(rule)">Cancel</button>
-            </div>
-            <!-- <div class="col-xs-6 col-sm-3 col-md-1">
-            </div> -->
-        </form>
-    </div>
-
+<div class="row form-group no-bmargin visible-xs visible-sm shipping-xs" ng-repeat="rule in shippingMdl.rules">
+	<div class="col-xs-12">
+		<label>Origin:</label>
+		<span class="pull-right" ng-if="!rule.edit">{{shippingMdl.getJobsiteName(rule.origin)}}</span>
+		<select name="location" ng-model="shippingMdl.editData.origin" required class="form-control" ng-options="site.id as site.name for site in shippingMdl.jobSites" ng-if="rule.edit">
+		</select>
+	</div>
+	<div class="col-xs-12">
+		<label>Destination:</label>
+		<span class="pull-right" ng-if="!rule.edit">{{shippingMdl.countries[rule.country]}}</span>
+		<select ng-model="shippingMdl.editData.country"  name="country" required class="form-control" ng-options="key as value for (key,value) in shippingMdl.countries" ng-if="rule.edit">
+		</select>
+	</div>
+	<div class="col-xs-12">
+		<label>Zipcode From:</label>
+		<span class="pull-right" ng-if="!rule.edit">{{rule.zipcode_start}}</span>
+		<input name="zipcode_start" ng-model="shippingMdl.editData.zipcode_start" type="text" required class="form-control" placeholder="Zipcode From" ng-if="rule.edit">
+	</div>
+	<div class="col-xs-12">
+		<label>Zipcode To:</label>
+		<span class="pull-right" ng-if="!rule.edit">{{rule.zipcode_end}}</span>
+		<input name="zipcode_end" ng-model="shippingMdl.editData.zipcode_end" type="text" required class="form-control" placeholder="Zipcode To" ng-if="rule.edit">
+	</div>
+	<div class="col-xs-12">
+		<label>Cost:</label>
+		<span class="pull-right" ng-if="!rule.edit">${{rule.cost}}</span>
+		<input name="cost" ng-model="shippingMdl.editData.cost" type="text" required class="form-control" placeholder="cost" ng-if="rule.edit">
+	</div>
+	<div class="col-xs-12">
+		<div class="devider"></div>
+	</div>
+	<div class="col-xs-12" ng-if="!rule.edit">
+		<a class="clickable-icon pointerhover" ng-click="shippingMdl.edit(rule)">
+			<i class="fa fa-pencil-square-o"></i>
+		</a>
+		<a class="clickable-icon pointerhover pull-right" ng-click="shippingMdl.delete(rule)">
+			<i class="fa fa-trash"></i>
+		</a>
+	</div>
+	<div class="col-xs-12" ng-if="rule.edit">
+		<button class="btn all-btn width-auto primary-btn" ng-click="shippingMdl.update(rule)">Update</button>
+		<button class="btn all-btn width-auto primary-btn pull-right" ng-click="shippingMdl.cancelEdit(rule)">Cancel</button>
+	</div>
+	<div class="col-xs-12">
+		<hr>
+	</div>
 </div>
+<div ng-repeat="rule in shippingMdl.rules" class="row form-group light-fonts hidden-xs hidden-sm">
+	<div ng-if="!rule.edit">
+		<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+			<label>{{shippingMdl.getJobsiteName(rule.origin)}}</label>
+		</div>
+		<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+			<label>{{shippingMdl.countries[rule.country]}}</label>
+		</div>
+		<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+			<label>{{rule.zipcode_start}}</label>
+		</div>
+		<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+			<label>{{rule.zipcode_end}}</label>
+		</div>
+		<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+			<label>${{rule.cost}}</label>
+		</div>
+		<div class="col-xs-12 col-sm-2 col-md-2 col-lg-1 shipping-list-btn">
+			<!-- <button class="btn all-btn primary-btn" ng-click="shippingMdl.edit(rule)">Edit</button> -->
+			<a class="clickable-icon pointerhover" ng-click="shippingMdl.edit(rule)">
+				<i class="fa fa-pencil-square-o"></i>
+			</a>
+			<a class="clickable-icon pointerhover" ng-click="shippingMdl.delete(rule)">
+				<i class="fa fa-trash"></i>
+			</a>
+		</div>
+	</div>
 
-<hr>
-<div class="row form-group">
-    <form novalidate validate-form="validateAddForm" name="shippingMdl.addForm">
-        <div class="col-xs-6 col-sm-2 col-md-2">
-                <select name="location" ng-model="shippingMdl.addData.origin" required class="form-control" ng-options="site.id as site.name for site in shippingMdl.jobSites">
-                </select>
-        </div>
-        <div class="col-xs-6 col-sm-2 col-md-2">
-                <select ng-model="shippingMdl.addData.country"  name="country" required class="form-control" ng-options="key as value for (key,value) in shippingMdl.countries">
-                </select>
-        </div>
-        <div class="col-xs-6 col-sm-2 col-md-2">
-            <input name="zipcode_start" ng-model="shippingMdl.addData.zipcode_start" type="text" required class="form-control" placeholder="Zipcode From">
-        </div>
-        <div class="col-xs-6 col-sm-2 col-md-2">
-            <input name="zipcode_end" ng-model="shippingMdl.addData.zipcode_end" type="text" required class="form-control" placeholder="Zipcode To">
-        </div>
-        <!--<div class="col-xs-6 col-sm-3 col-md-2">
-            <input name="days" ng-model="shippingMdl.addData.delivery_days" type="text" required class="input-text form-control" placeholder="Delivery days">
-        </div>-->
-        <div class="col-xs-6 col-sm-3 col-md-2">
-            <input name="cost" ng-model="shippingMdl.addData.cost" type="text" required class="form-control" placeholder="cost">
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-1">
-            <button class="btn width-auto all-btn primary-btn" style="width: auto;" ng-click="shippingMdl.add()">Add</button>
-        </div>
-    </form>
+
+	<div ng-if="rule.edit">
+		<form novalidate validate-form="validateEditForm" name="shippingMdl.updateForm">
+			<div class="col-xs-6 col-sm-2 col-md-2 col-lg-2">
+				<div class="selector">
+					<select name="location" ng-model="shippingMdl.editData.origin" required class="full-width" ng-options="site.id as site.name for site in shippingMdl.jobSites">
+					</select>
+				</div>
+			</div>
+			<div class="col-xs-6 col-sm-2 col-md-2 col-lg-2">
+				<div class="selector">
+					<select ng-model="shippingMdl.editData.country"  name="country" required class="full-width" ng-options="key as value for (key,value) in shippingMdl.countries">
+					</select>
+				</div>
+			</div>
+			<div class="col-xs-6 col-sm-2 col-md-2 col-lg-2">
+				<input name="zipcode_start" ng-model="shippingMdl.editData.zipcode_start" type="text" required class="input-text full-width" placeholder="Zipcode From">
+			</div>
+			<div class="col-xs-6 col-sm-2 col-md-2 col-lg-2">
+				<input name="zipcode_end" ng-model="shippingMdl.editData.zipcode_end" type="text" required class="input-text full-width" placeholder="Zipcode To">
+			</div>
+			<div class="col-xs-6 col-sm-3 col-md-2 col-lg-2">
+				<input name="cost" ng-model="shippingMdl.editData.cost" type="text" required class="input-text full-width" placeholder="cost">
+			</div>
+			<div class="col-xs-12 col-sm-3 col-md-1 col-lg-1 shipping-list-btn">
+				<button class="btn all-btn width-auto primary-btn" ng-click="shippingMdl.update(rule)">Update</button>
+				<br>
+				<button class="btn all-btn width-auto primary-btn" ng-click="shippingMdl.cancelEdit(rule)">Cancel</button>
+			</div>
+		</form>
+	</div>
+</div>
+<div class="row form-group shipping-xs">
+	<form novalidate validate-form="validateAddForm" name="shippingMdl.addForm">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <h5 class="skin-color">Add New</h5>
+    </div>
+		<div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
+			<select name="location" ng-model="shippingMdl.addData.origin" required class="form-control" ng-options="site.id as site.name for site in shippingMdl.jobSites">
+			</select>
+		</div>
+		<div class="col-xs-12 col-sm-12 col-md-2">
+			<select ng-model="shippingMdl.addData.country"  name="country" required class="form-control" ng-options="key as value for (key,value) in shippingMdl.countries">
+			</select>
+		</div>
+		<div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
+			<input name="zipcode_start" ng-model="shippingMdl.addData.zipcode_start" type="text" required class="form-control" placeholder="Zipcode From">
+		</div>
+		<div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
+			<input name="zipcode_end" ng-model="shippingMdl.addData.zipcode_end" type="text" required class="form-control" placeholder="Zipcode To">
+		</div>
+		<div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
+			<input name="cost" ng-model="shippingMdl.addData.cost" type="text" required class="form-control" placeholder="cost">
+		</div>
+		<div class="col-xs-12 col-sm-12 col-md-1 col-lg-1">
+			<button class="btn width-auto all-btn primary-btn" style="width: auto;" ng-click="shippingMdl.add()">Add</button>
+		</div>
+	</form>
 </div>
 <hr>
