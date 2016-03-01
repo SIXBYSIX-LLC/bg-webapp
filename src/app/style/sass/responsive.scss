@@ -860,6 +860,13 @@
       }
     }
   }
+  .travelo-signup-box, .travelo-login-box {
+    width: auto !important;
+  }
+
+  .modal-dialog {
+    width: auto;
+  }
 }
 
 /* 8. Styles for devices(<=480px ) */

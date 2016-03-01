@@ -12,25 +12,25 @@
     <div ng-show="signUpMdl.emailSignUp" style="display: block;" class="email-signup">
         <form validate-form name="signUpMdl.form" novalidate="">
             <div class="form-group">
-                <input name="name" ng-model="signUpMdl.data.fullname" type="text" required class="input-text full-width" placeholder="first and last name">
+                <input name="name" ng-model="signUpMdl.data.fullname" type="text" required class="form-control" placeholder="first and last name">
             </div>
 
             <div class="form-group">
-                <input name="email" ng-model="signUpMdl.data.email" required type="text" class="input-text full-width" placeholder="email address">
+                <input name="email" ng-model="signUpMdl.data.email" required type="text" class="form-control" placeholder="email address">
             </div>
             <div class="form-group">
-                <input type="text"  name="phone" ng-model="signUpMdl.data.phone" required class="input-text full-width" placeholder="phone">
-            </div>
-
-            <div class="form-group">
-                <input type="text"  name="zipcode" ng-model="signUpMdl.data.zip_code" required class="input-text full-width" placeholder="zipcode">
+                <input type="text"  name="phone" ng-model="signUpMdl.data.phone" required class="form-control" placeholder="phone">
             </div>
 
             <div class="form-group">
-                <input type="password" name="password" ng-model="signUpMdl.data.password" required class="input-text full-width" placeholder="password">
+                <input type="text"  name="zipcode" ng-model="signUpMdl.data.zip_code" required class="form-control" placeholder="zipcode">
+            </div>
+
+            <div class="form-group">
+                <input type="password" name="password" ng-model="signUpMdl.data.password" required class="form-control" placeholder="password">
             </div>
             <div class="form-group">
-                <input type="password" name="confirmPassword" ng-model="signUpMdl.data.confirmPassword" required class="input-text full-width" placeholder="confirm password">
+                <input type="password" name="confirmPassword" ng-model="signUpMdl.data.confirmPassword" required class="form-control" placeholder="confirm password">
             </div>
 
 
@@ -45,7 +45,7 @@
                 <p class="description">By signing up, I agree to Marketplace Terms of Service &amp; Privacy Policy.</p>
             </div>
             <div class="error">{{signUpMdl.errorMessage}}</div>
-            <button type="submit" process-indicator class="full-width btn-medium" ng-click="signUpMdl.signUp()"> SIGNUP</button>
+            <button type="submit" process-indicator class="btn all-btn primary-btn" ng-click="signUpMdl.signUp()"> SIGNUP</button>
         </form>
     </div>
     <div class="seperator"></div>
