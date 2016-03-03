@@ -11,7 +11,7 @@
                    ng-class="{'collapsed':filterEx[0]}">Price</a>
             </h4>
 
-            <div class="panel-collapse" ng-class="{'collapse':filterEx[0]}">
+            <div class="panel-collapse filter-collapse-open" ng-class="{'filter-collapse-close':filterEx[0]}">
                 <div class="panel-content">
                     <div id="price-range"></div>
                     <br/>
@@ -30,7 +30,7 @@
                     Rating</a>
             </h4>
 
-            <div ng-class="{'collapse':filterEx[1]}" class="panel-collapse  filters-container">
+            <div ng-class="{'filter-collapse-close':filterEx[1]}" class="panel-collapse filter-collapse-open filters-container">
                 <div class="panel-content">
                     <div id="rating" class="five-stars-container editable-rating"></div>
                     <br/>
@@ -45,7 +45,7 @@
                     Locations</a>
             </h4>
 
-            <div ng-class="{'collapse':filterEx[2]}" class="panel-collapse">
+            <div ng-class="{'filter-collapse-close':filterEx[2]}" class="panel-collapse availabilty-collapse-open">
                 <div class="panel-content">
                     <ul class="check-square filters-option">
                         <li ng-class="{'active':searchMdl.locationFacets.allSelected}">
@@ -70,7 +70,7 @@
                    >Features</a>
             </h4>
 
-            <div ng-class="{'collapse':filterEx[3]}" class="panel-collapse">
+            <div ng-class="{'features-collapse-close':filterEx[3]}" class="panel-collapse features-collapse-open">
                 <div class="panel-content">
                     <ul class="check-square filters-option">
                         <li ng-class="{'active':feature.selected}" ng-repeat="feature in searchMdl.features">

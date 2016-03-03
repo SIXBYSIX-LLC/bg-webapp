@@ -40,21 +40,21 @@
 								<a href="">
 									<i class="fa fa-bell-o big-font hidden-xs"></i>
 									<span class="visible-xs">Notifications</span>
-									<div class="notification animated hidden-xs" style="right: 15px;"></div>
+									<div class="notification hidden-xs">1</div>
 								</a>
 							</li>
 							<li class="not-user notification-li" ng-if="isLoggedIn()">
 								<a href="">
 									<i class="fa fa-envelope-o big-font hidden-xs"></i>
 									<span class="visible-xs">Messages</span>
-									<div class="notification animated hidden-xs"></div>
+									<div class="notification hidden-xs">2</div>
 								</a>
 							</li>
 							<li class="not-user notification-li" ng-if="isLoggedIn()">
 								<a ui-sref="main.cart">
 									<i class="fa fa-shopping-cart big-font hidden-xs"></i>
 									<span class="visible-xs">Shopping Cart</span>
-									<div class="notification animated hidden-xs"></div>
+									<div class="notification hidden-xs">{{rmodel.cartCount || 0}}</div>
 								</a>
 							</li>
 							<div class="visible-xs account-list-xs" ng-if="isLoggedIn()">
@@ -309,7 +309,7 @@
 							<div class="form-group col-lg-10 col-md-9 col-sm-9 col-xs-12">
 								<angucomplete-alt placeholder="Equipment Name, Part Name, etc.." pause="400" selected-object="mdl.searchObj" remote-api-handler="mdl.searchHelper" remote-url-data-field="data" title-field="name" input-changed="mdl.inputChanged" input-class="input-text full-width"/>
 							</div>
-							<div class="form-group col-lg-2 col-md-3 col-sm-3 col-xs-12">
+							<div class="form-group col-lg-2 col-md-3 col-sm-3 col-xs-12 no-lpadding">
 								<button type="submit" class="full-width btn all-btn search-button" ng-click="mdl.search()">Search Now</button>
 							</div>
 						</div>
@@ -1233,10 +1233,9 @@
 					<h2>Mailing List</h2>
 					<p>Sign up for our mailing list to get latest updates and offers.</p>
 					<br />
-					<div class="icon-check">
+					<div class="icon-check footer-input">
 						<input type="text" class="input-text full-width" placeholder="your email" />
 					</div>
-					<br />
 					<span>We respect your privacy</span>
 				</div>
 				<div class="col-xs-12 visible-xs devider"></div>

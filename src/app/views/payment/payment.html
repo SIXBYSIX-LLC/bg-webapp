@@ -1,42 +1,60 @@
-<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 progress-bar-col">
-        <ul class="progress-indicator">
-            <li class="completed">
-                <span class="bubble"></span>
-                <p>1. Delivery</p>
-            </li>
-            <li class="active">
-                <span class="bubble"></span>
-                <p>2. Payment</p>
-            </li>
-            <li class="">
-                <span class="bubble"></span>
-                <p>3. Complete</p>
-            </li>
-        </ul>
-    </div>
-<div>
-    <form name="payment" id="braintree-payment-form" ng-submit="mdl.pay()">
-        <h2>Braintree Payment Form</h2>
-        <div class="col-sm-9 no-padding no-float shortcode">
-            <braintree-dropin options="mdl.options"></braintree-dropin>
-            <!--<div class="row form-group">-->
-                <!--<div class="col-sms-6 col-sm-6">-->
-                    <!--<label>Card Details</label>-->
-                    <!--<input ng-model="creditCard.number" placeholder="4111111111111111" />-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--<div class="row form-group">-->
-                <!--<div class="col-sms-6 col-sm-6">-->
-                    <!--<label>Date of Expiry</label>-->
-                    <!--<input ng-model="creditCard.expirationDate" placeholder="10/18"/>-->
-                <!--</div>-->
-            <!--</div>-->
-            <div class="row form-group">
-                <div class="col-sms-6 col-sm-6">
-                    <button type="submit" value="Purchase" class="button btn-medium orange">Purchase</button>
-                </div>
-            </div>
-        </div>
-    </form>
-
+<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 no-padding">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 progress-bar-col">
+						<ul class="progress-indicator">
+								<li class="completed">
+										<span class="bubble"></span>
+										<p>1. Delivery</p>
+								</li>
+								<li class="active">
+										<span class="bubble"></span>
+										<p>2. Payment</p>
+								</li>
+								<li class="">
+										<span class="bubble"></span>
+										<p>3. Complete</p>
+								</li>
+						</ul>
+		</div>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-padding-small">
+				<form name="payment" id="braintree-payment-form" ng-submit="mdl.pay()">
+						<h2>Braintree Payment Form</h2>
+						<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 no-padding no-float shortcode">
+								<braintree-dropin options="mdl.options"></braintree-dropin>
+								<div class="row form-group">
+										<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+												<button type="submit" value="Purchase" class="button btn-medium orange">Purchase</button>
+										</div>
+								</div>
+						</div>
+				</form>
+		</div>
+</div>
+<div class="sidebar col-lg-3 col-md-3 col-sm-3 hidden-xs">
+		<div class="booking-details travelo-box">
+			<h4>Cart Summary</h4>
+			<article class="tour-detail">
+				<figure ui-sref="main.equiDetails({id:item.product.id})" ng-repeat="item in mdl.cartData.rental_products" class="clearfix">
+					<a title="" class="middle-block">
+						<img ng-src="{{(item.product.image) || 'http://placehold.it/124x78'}}" alt="">
+					</a>
+					<div class="travel-title">
+						<h5 class="box-title">{{item.product.name}} <small>${{item.cost_breakup.subtotal.amt}}</small></h5>
+					</div>
+				</figure>
+			</article>
+			<dl class="other-details">
+				<dt class="feature" style="border-top: none;">Shipping Cost</dt><dd class="value" style="border-top: none;">${{mdl.carData.shipping_charge || 0}}</dd>
+				<dt class="feature">Additional Charges</dt><dd class="value">${{1}}</dd>
+				<dt class="total-price">Total Price</dt><dd class="total-price-value">${{mdl.cartData.total}}</dd>
+			</dl>
+		</div>
+		<div class="travelo-box contact-box">
+			<h4>Need Marketplace Help?</h4>
+			<p>We would be more than happy to help you. Our team advisor are 24/7 at your service to help you.</p>
+			<address class="contact-details">
+				<span class="contact-phone"><i class="soap-icon-phone"></i> 1-800-123-HELLO</span>
+				<br>
+				<a class="contact-email" href="#">help@marketplace.com</a>
+			</address>
+		</div>
 </div>
