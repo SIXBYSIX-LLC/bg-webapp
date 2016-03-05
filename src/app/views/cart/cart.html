@@ -91,7 +91,7 @@
 									<i class="fa fa-pencil"></i>
 								</a>
 								<a href="">Bookmark and Remove</a>
-								<a href="">
+								<a href="" ng-click="remove(item)">
 									<i class="fa fa-trash"></i>
 								</a>
 							</p>
@@ -110,9 +110,10 @@
 							</select>
 						</td>
 						<td class="cost-td">
-							<p>Cost: <span class="pull-right">$450.00</span></p>
-							<p>Shipping: <span class="pull-right">$120</span></p>
-							<p>Additional: <span class="pull-right">$20</span></p>
+
+							<p>Cost: <span class="pull-right">${{item.cost_breakup.subtotal.amt}}</span></p>
+							<p>Shipping: <span class="pull-right">${{item.cost_breakup.additional_charge[0].amt}}</span></p>
+							<p>Additional: <span class="pull-right">${{item.cost_breakup.shipping.amt}}</span></p>
 							<p>Estimated Rent: <span class="pull-right">${{item.cost_breakup.subtotal.amt}}</span></p>
 						</td>
 					</tr>
@@ -176,7 +177,7 @@
 							<i class="fa fa-pencil"></i>
 						</a>
 						<a href="" class="text">Bookmark and Remove</a>
-						<a href="" class="pull-right">
+						<a href="" class="pull-right" ng-click="remove(item)">
 							<i class="fa fa-trash"></i>
 						</a>
 					</div>

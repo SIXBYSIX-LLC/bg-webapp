@@ -231,7 +231,7 @@
 					<a href="">
 						Some Name
 					</a>
-				</p>		
+				</p>
 			</div>
 			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-center white-color more-equip-col">
 				<h3 class="heading-text">Aerial Lifts</h3>
@@ -254,7 +254,7 @@
 					<a href="">
 						Some Name
 					</a>
-				</p>		
+				</p>
 			</div>
 			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-center white-color more-equip-col">
 				<h3 class="heading-text">Aerial Lifts</h3>
@@ -277,7 +277,7 @@
 					<a href="">
 						Some Name
 					</a>
-				</p>		
+				</p>
 			</div>
 		</div>
 	</div>
@@ -330,48 +330,20 @@
 		</div>
 		<div class="row image-box style10 browse-equip-row">
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding">
-				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-padding-small browse-equip-col">
-					<article class="box pointerhover landing-browse-equip">
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-padding-small browse-equip-col" ng-repeat="item in mdl.categories">
+          <article class="box pointerhover landing-browse-equip">
 						<figure class="animated fadeInDown" data-animation-type="fadeInDown" data-animation-duration="1">
-							<a href="" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt="" width="270" height="160" /></a>
+							<a href="" title="" class="hover-effect"><img ng-src="{{item.image.url}}" alt="" width="270" height="160" /></a>
 						</figure>
 						<div class="details">
-							<h4 class="box-title">Aerial Lifts</h4>
+							<h4 class="box-title">{{item.name}}</h4>
 						</div>
 					</article>
 				</div>
-				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-padding-small browse-equip-col">
-					<article class="box pointerhover landing-browse-equip">
-						<figure class="animated fadeInDown" data-animation-type="fadeInDown" data-animation-duration="1">
-							<a href="" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt="" width="270" height="160" /></a>
-						</figure>
-						<div class="details">
-							<h4 class="box-title">Earth Moving</h4>
-						</div>
-					</article>
-				</div>
-				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-padding-small browse-equip-col">
-					<article class="box pointerhover landing-browse-equip">
-						<figure class="animated fadeInDown" data-animation-type="fadeInDown" data-animation-duration="1">
-							<a href="" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt="" width="270" height="160" /></a>
-						</figure>
-						<div class="details">
-							<h4 class="box-title">Forklifts & Material Handling </h4>
-						</div>
-					</article>
-				</div>
-				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-padding-small browse-equip-col">
-					<article class="box pointerhover landing-browse-equip">
-						<figure class="animated fadeInDown" data-animation-type="fadeInDown" data-animation-duration="1">
-							<a href="" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt="" width="270" height="160" /></a>
-						</figure>
-						<div class="details">
-							<h4 class="box-title">Concrete & Masonry</h4>
-						</div>
-					</article>
-				</div>
+
+
 			</div>
-			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding">
+			<!--<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding">
 				<div class="col-lf-3 col-md-3 col-sm-3 col-xs-12 col-padding-small browse-equip-col">
 					<article class="box pointerhover landing-browse-equip">
 						<figure class="animated fadeInDown" data-animation-type="fadeInDown" data-animation-duration="1">
@@ -412,7 +384,7 @@
 						</div>
 					</article>
 				</div>
-			</div>
+			</div>-->
 		</div>
 	</div>
 </section>
