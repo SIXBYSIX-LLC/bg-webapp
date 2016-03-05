@@ -1,7 +1,15 @@
 angular.module('BG').controller('HomeCtrl',
   /** @ngInject */
-  function($scope,$state,SearchService){
+  function($scope,$state,SearchService,HomeService){
     var mdl = $scope.mdl = {};
+
+    HomeService.getCategories().then(function(response){
+            mdl.categories=response.data.data;
+    });
+    // todo uncomment after recent URL change.
+    /*HomeService.getRecent().then(function(response){
+            mdl.recent=response.data.data;
+    });*/
     mdl.tab="rent";
     $scope.open = function($event,type) {
       $scope.openedStart = false;
@@ -19,7 +27,7 @@ angular.module('BG').controller('HomeCtrl',
       class: 'datepicker'
     };
 
-   
+
     $scope.$on("$viewContentLoaded", function () {
       if (tjq('#mobile-search-tabs').length > 0) {
         var mobile_search_tabs_slider = tjq('#mobile-search-tabs').bxSlider({

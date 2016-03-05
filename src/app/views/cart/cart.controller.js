@@ -31,11 +31,13 @@ angular.module('BG').controller('CartCtrl',
     };
 
     $scope.remove = function (item) {
+      $scope.$broadcast("LI:Loading",true);
       $scope.$broadcast("PI:RemoveItem"+item.id,true);
       CartService.removeItem(currentCartId, item.id).then(function(){
         $scope.$broadcast("PI:RemoveItem"+item.id,false);
         getCart();
       })
+
     };
 
     $scope.update = function (item) {

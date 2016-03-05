@@ -13,6 +13,7 @@ angular.module('BG').controller('EquiDetailsCtrl',
         EquipmentsService.getEquipment($stateParams.id).then(function (response) {
           $scope.$broadcast("LI:Loading", false);
           mdl.equi = response.data.data;
+
         });
       }
     });
