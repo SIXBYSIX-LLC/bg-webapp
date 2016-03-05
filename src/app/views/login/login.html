@@ -20,7 +20,7 @@
             </div>
         </div>
         <div class="error">{{loginMdl.errorMessage}}</div>
-        <button process-indicator type="submit" class="btn all-btn primary-btn full-width" ng-click="loginMdl.login()">Login</button>
+        <button ladda="buttonLoader" type="submit" class="btn all-btn primary-btn full-width" ng-click="loginMdl.login()">Login</button>
     </form>
     <div class="seperator"></div>
     <p>Don't have an account? <a class="goto-signup soap-popupbox pointerhover" ng-click="loginMdl.signUp()">Sign up</a></p>

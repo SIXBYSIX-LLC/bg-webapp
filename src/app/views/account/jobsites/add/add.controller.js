@@ -68,13 +68,16 @@ angular.module('BG').controller('AddJobsiteCtrl',
       $scope.$broadcast("validation", true);
 
       if (mdl.form.$valid) {
+        $scope.buttonLoader = true;
         if($scope.editMode){
           JobsitesService.updateSite($scope.user.id,mdl.data.id, mdl.data).then(function (response) {
             console.log("Response", response);
+            $scope.buttonLoader = false;
             $state.go("main.account.jobsites.list")
           })
         }else{
           JobsitesService.addSite($scope.user.id, mdl.data).then(function (response) {
+            $scope.buttonLoader = false;
             console.log("Response", response);
             $state.go("main.account.jobsites.list")
           })

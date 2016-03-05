@@ -56,7 +56,7 @@
 		</a>
 	</div>
 	<div class="col-xs-12" ng-if="rule.edit">
-		<button class="btn all-btn width-auto primary-btn" ng-click="shippingMdl.update(rule)">Update</button>
+		<button ladda="loadButton" class="btn all-btn width-auto primary-btn" ng-click="shippingMdl.update(rule)">Update</button>
 		<button class="btn all-btn width-auto primary-btn pull-right" ng-click="shippingMdl.cancelEdit(rule)">Cancel</button>
 	</div>
 	<div class="col-xs-12">
@@ -116,7 +116,7 @@
 				<input name="cost" ng-model="shippingMdl.editData.cost" type="text" required class="input-text full-width" placeholder="cost">
 			</div>
 			<div class="col-xs-12 col-sm-3 col-md-1 col-lg-1 shipping-list-btn">
-				<button class="btn all-btn width-auto primary-btn" ng-click="shippingMdl.update(rule)">Update</button>
+				<button ladda="loadButton" class="btn all-btn width-auto primary-btn" ng-click="shippingMdl.update(rule)">Update</button>
 				<br>
 				<button class="btn all-btn width-auto primary-btn" ng-click="shippingMdl.cancelEdit(rule)">Cancel</button>
 			</div>
@@ -146,7 +146,7 @@
 			<input name="cost" ng-model="shippingMdl.addData.cost" type="text" required class="form-control" placeholder="cost">
 		</div>
 		<div class="col-xs-12 col-sm-12 col-md-1 col-lg-1">
-			<button class="btn width-auto all-btn primary-btn" style="width: auto;" ng-click="shippingMdl.add()">Add</button>
+			<button ladda="buttonLoader" class="btn width-auto all-btn primary-btn" style="width: auto;" ng-click="shippingMdl.add()">Add</button>
 		</div>
 	</form>
 </div>

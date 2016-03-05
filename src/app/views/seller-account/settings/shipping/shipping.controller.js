@@ -55,9 +55,11 @@ angular.module('BG').controller('SettingsShippingCtrl',
     shippingMdl.add = function (rule) {
       $scope.$broadcast("validateAddForm", true);
       if(shippingMdl.addForm.$valid){
+        $scope.buttonLoader = true;
         shippingMdl.addData.user = $scope.user.id;
         shippingMdl.addData.delivery_days=2;
         SettingsService.addShippingRule(shippingMdl.addData).then(function(){
+          $scope.buttonLoader = false;
           $scope.$emit('BG:System:TopMessage',{
             text:'Shipping method added successfully !'
           });
@@ -69,7 +71,9 @@ angular.module('BG').controller('SettingsShippingCtrl',
       $scope.$broadcast("validateEditForm", true);
       console.log(shippingMdl.updateForm.$valid,shippingMdl.updateForm.$error);
       if(shippingMdl.updateForm.$valid){
+        $scope.loadButton = true;
         SettingsService.updateShippingRule(rule.id,shippingMdl.editData).then(function(){
+          $scope.loadButton = false;
           $scope.$emit('BG:System:TopMessage',{
             text:'Shipping Method updated successfully !'
           });

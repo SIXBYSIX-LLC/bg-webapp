@@ -85,10 +85,8 @@
         <article class="box">
             <figure class="col-sm-4 col-md-3">
                 <a class="hover-effect popup-gallery"  title="">
-                    <img width="230"
-                                                                                                   height="160"
-                                                                                                     src="http://placehold.it/230x160"
-                                                                                                     alt=""></a>
+                    <img width="230" height="160" src="http://placehold.it/230x160" alt="">
+                </a>
             </figure>
             <div class="details col-xs-12 col-sm-8 col-md-9">
                 <div>
@@ -770,10 +768,10 @@
                 </form>
             </div>
             <!--<p class="description">{{mdl.equi.description}}</p>-->
-            <a process-indicator class="button yellow full-width uppercase btn-small" ng-click="addToCart()">Reserve Equipment</a>
+            <a ladda="buttonLoader" class="button yellow full-width uppercase btn-small" ng-click="addToCart()">Reserve Equipment</a>
 
             <p></p>
-            <a process-indicator="PI:AddToFavorite" ng-click="addToFavorite()" class="button yellow full-width uppercase btn-small">Add to Favourites</a>
+            <a ladda="loadButton" ng-click="addToFavorite()" class="button yellow full-width uppercase btn-small">Add to Favourites</a>
             <p></p>
             <a ui-sref="main.sellerAccount.inquiries.new({id:mdl.equi.id})" class="button yellow full-width uppercase btn-small">Send Inquiry</a>
 
