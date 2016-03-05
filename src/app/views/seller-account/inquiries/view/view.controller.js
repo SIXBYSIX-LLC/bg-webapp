@@ -23,10 +23,12 @@ angular.module('BG').controller('InquiryViewCtrl',
 
 
     mdl.sendMessage=function(){
+      $scope.buttonLoader = true;
       if(mdl.message){
         InquiriesService.sendMessage($stateParams.id,{
           text:mdl.message
         }).then(function(){
+          $scope.buttonLoader = false;
           getMessages();
           mdl.message="";
         })

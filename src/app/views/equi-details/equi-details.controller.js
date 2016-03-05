@@ -21,13 +21,16 @@ angular.module('BG').controller('EquiDetailsCtrl',
     mdl.tab1 = "photos";
     mdl.tab2 = "description";
     $scope.addToFavorite=function(){
+      $scope.loadButton = true;
       $scope.$broadcast("PI:AddToFavorite",true);
       EquipmentsService.addToFavorite($scope.user.id,mdl.equi.id).then(function(){
+        $scope.loadButton = false;
         $scope.$broadcast("PI:AddToFavorite",false);
       });
     };
 
     $scope.addToCart = function () {
+      $scope.buttonLoader = true;
       $scope.$broadcast("validation", true);
       if (mdl.reserveForm.$valid) {
         $scope.$broadcast('PI:Process', true);
@@ -41,9 +44,11 @@ angular.module('BG').controller('EquiDetailsCtrl',
         CartService.getCurrent().then(function (resp) {
             if (resp.data && resp.data.data && resp.data.data.id) {
               CartService.addToCart(resp.data.data.id, data).then(function (response) {
+                $scope.buttonLoader = false;
                 var msg = "Equipment added to cart";
                 $scope.$broadcast('PI:Process', false);
                 if (response.data.error) {
+                  $scope.buttonLoader = false;
                   msg = response.data.error.detail;
                 }
                 $scope.$emit("BG:System:TopMessage", {
@@ -51,12 +56,15 @@ angular.module('BG').controller('EquiDetailsCtrl',
                   type: response.data.error ? 'error' : 'help'});
               });
             } else {
+              $scope.buttonLoader = false;
               $scope.$broadcast('PI:Process', false);
             }
 
           }
-        )
-        ;
+        );
+      }
+      else {
+        $scope.buttonLoader = false;
       }
 
     }

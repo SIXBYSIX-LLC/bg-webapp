@@ -70,6 +70,7 @@ angular.module('BG').controller('SettingsAdditionalChargesCtrl',
     chargesMdl.add = function (rule) {
       $scope.$broadcast("validateAddForm", true);
       if(chargesMdl.addForm.$valid){
+        $scope.buttonLoader = true;
         chargesMdl.addData.categories = [];
         if(chargesMdl.selectedCatsToAdd){
             angular.forEach(chargesMdl.selectedCatsToAdd,function(cat){
@@ -80,6 +81,7 @@ angular.module('BG').controller('SettingsAdditionalChargesCtrl',
         }
 
         SettingsService.addAdditionalCharge(chargesMdl.addData).then(function(){
+          $scope.buttonLoader = false;
           $scope.$emit('BG:System:TopMessage',{
             text:'Charge Added'
           });
@@ -99,6 +101,7 @@ angular.module('BG').controller('SettingsAdditionalChargesCtrl',
     chargesMdl.update = function (charge) {
       $scope.$broadcast("validateEditForm", true);
       if(chargesMdl.editForm.$valid){
+        $scope.loadButton = true;
         chargesMdl.editData.categories = [];
         if(chargesMdl.selectedCatsToEdit){
           angular.forEach(chargesMdl.selectedCatsToEdit,function(cat){
@@ -109,6 +112,7 @@ angular.module('BG').controller('SettingsAdditionalChargesCtrl',
         }
 
         SettingsService.updateAdditionalCharge(charge.id,chargesMdl.editData).then(function(){
+          $scope.loadButton = false;
           $scope.$emit('BG:System:TopMessage',{
             text:'Charge Updated'
           });

@@ -82,10 +82,15 @@ angular.module('BG').controller('ProcessSellerOrderCtrl',
     };
 
     mdl.update=function(){
+      $scope.buttonLoader = true;
       if(mdl.changedStatus){
         SellerOrdersService.updateStatus(mdl.orderLine.id,mdl.item.id,mdl.changedStatus.id,mdl.comment).then(function(){
+          $scope.buttonLoader = false;
           $state.go("main.sellerAccount.orders.view",{id:$stateParams.id});
         });
+      }
+      else {
+        $scope.buttonLoader = false;
       }
 
     };

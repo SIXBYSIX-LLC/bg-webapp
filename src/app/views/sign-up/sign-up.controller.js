@@ -6,6 +6,7 @@ angular.module('BG').controller('SignUpCtrl',
         errorMessage:""
       };
       signUpMdl.signUp=function(){
+        $scope.buttonLoader = true;
         $scope.$broadcast("validation",true);
         if(signUpMdl.form.$valid){
           if(signUpMdl.data.password==signUpMdl.data.confirmPassword){
@@ -14,6 +15,7 @@ angular.module('BG').controller('SignUpCtrl',
             SignUpService.signUp(signUpMdl.data).then(function(response){
               $scope.$broadcast("PI:Process",false);
               if(response.data.error) {
+                $scope.buttonLoader = false;
                 var details=response.data.error.detail;
                 var msg="";
                 angular.forEach(Object.keys(details),function(key){
@@ -21,10 +23,12 @@ angular.module('BG').controller('SignUpCtrl',
                 });
                 signUpMdl.errorMessage=msg;
               }else{
+                $scope.buttonLoader = false;
                 signUpMdl.login();
               }
             });
           }else{
+            $scope.buttonLoader = false;
             signUpMdl.errorMessage="Password and confirm password do not match";
           }
 

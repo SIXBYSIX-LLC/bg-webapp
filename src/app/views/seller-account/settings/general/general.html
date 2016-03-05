@@ -2,6 +2,6 @@
 	<form novalidate name="generalMdl.form" validate-form class="general-setting">
 		<label class="inline-block">Minimum Contract Period</label>
 		<input required name="minimumContract" ng-model="generalMdl.minimumContractPeriod" type="text" class="form-control inline-block" placeholder="number of days"> Days &nbsp
-		<button class="btn all-btn auto-width primary-btn" ng-click="generalMdl.save()">Save</button>
+		<button ladda="buttonLoader" class="btn all-btn auto-width primary-btn" ng-click="generalMdl.save()">Save</button>
 	</form>
 </div>

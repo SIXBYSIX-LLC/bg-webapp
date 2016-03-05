@@ -6,7 +6,8 @@
     .config(config);
 
   /** @ngInject */
-  function config($logProvider,$translateProvider,$httpProvider) {
+  function config($logProvider,$translateProvider,$httpProvider,cfpLoadingBarProvider) {
+    cfpLoadingBarProvider.includeSpinner = false;
     $translateProvider.useStaticFilesLoader({
       prefix: '/app/i18n/',
       suffix: '.json'
