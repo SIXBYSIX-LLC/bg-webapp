@@ -1,27 +1,36 @@
-<div class="travelo-login-box travelo-box">
-    <div class="login-social">
-        <a class="button login-facebook"><i class="soap-icon-facebook"></i>Login with Facebook</a>
-        <a class="button login-googleplus"><i class="soap-icon-googleplus"></i>Login with Google+</a>
-    </div>
-    <div class="seperator"><label>OR</label></div>
-    <form validate-form name="loginMdl.form" novalidate ng-submit="login()">
-        <div class="form-group">
-            <input type="text" name="email" ng-model="loginMdl.data.username" required class="form-control" placeholder="email address">
-        </div>
-        <div class="form-group">
-            <input type="password" name="password" ng-model="loginMdl.data.password" required class="form-control" placeholder="password">
-        </div>
-        <div class="form-group">
-            <a ng-click="loginMdl.forgotPassword()" class="forgot-password pull-right pointerhover">Forgot password?</a>
-            <div ng-click="loginMdl.rememberMe=!loginMdl.rememberMe" ng-class="{checked:loginMdl.rememberMe}" class="checkbox checkbox-inline">
-                <label >
-                    <input type="checkbox">Remember Me
-                </label>
+<div class="col-lg-6 col-md-6 col-sm-6 hidden-xs login-col img-col">
+  <a class="navbar-brand pointerhover" ui-sref="home">
+    <h4 class="big-font">MARKET<span class="orange-color">PLACE</span></h4>
+    <!-- <img ui-sref="home" src="assets/images/logo.png"  /> -->
+  </a>
+</div>
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 login-col no-lpadding">
+    <div class="travelo-login-box travelo-box">
+        <form validate-form name="loginMdl.form" novalidate ng-submit="login()">
+          <i class="fa fa-times close-login"></i>
+            <div class="form-group">
+                <input type="text" name="email" ng-model="loginMdl.data.username" required class="form-control" placeholder="email address">
             </div>
+            <div class="form-group">
+                <input type="password" name="password" ng-model="loginMdl.data.password" required class="form-control" placeholder="password">
+            </div>
+            <div class="form-group">
+                <a ng-click="loginMdl.forgotPassword()" class="forgot-password pull-right pointerhover">Forgot password?</a>
+                <div ng-click="loginMdl.rememberMe=!loginMdl.rememberMe" ng-class="{checked:loginMdl.rememberMe}" class="checkbox checkbox-inline">
+                    <label class="remember">
+                        <input type="checkbox">Remember Me
+                    </label>
+                </div>
+            </div>
+            <div class="error">{{loginMdl.errorMessage}}</div>
+            <button ladda="buttonLoader" type="submit" class="btn all-btn primary-btn full-width" ng-click="loginMdl.login()">Login</button>
+        </form>
+        <div class="seperator"><label>OR</label></div>
+        <div class="login-social">
+            <a class="button login-facebook"><i class="soap-icon-facebook"></i>Login with Facebook</a>
+            <a class="button login-googleplus"><i class="soap-icon-googleplus"></i>Login with Google+</a>
         </div>
-        <div class="error">{{loginMdl.errorMessage}}</div>
-        <button ladda="buttonLoader" type="submit" class="btn all-btn primary-btn full-width" ng-click="loginMdl.login()">Login</button>
-    </form>
-    <div class="seperator"></div>
-    <p>Don't have an account? <a class="goto-signup soap-popupbox pointerhover" ng-click="loginMdl.signUp()">Sign up</a></p>
+        <div class="seperator seperator-bottom"></div>
+        <p>Don't have an account? <a class="goto-signup soap-popupbox pointerhover" ng-click="loginMdl.signUp()">Sign up</a></p>
+    </div>
 </div>
