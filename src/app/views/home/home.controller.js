@@ -4,12 +4,15 @@ angular.module('BG').controller('HomeCtrl',
     var mdl = $scope.mdl = {};
 
     HomeService.getCategories().then(function(response){
+      console.log(response)
             mdl.categories=response.data.data;
     });
     // todo uncomment after recent URL change.
-    /*HomeService.getRecent().then(function(response){
+    HomeService.getRecent().then(function(response){
+      console.log("home",response.data.data)
             mdl.recent=response.data.data;
-    });*/
+
+    });
     mdl.tab="rent";
     $scope.open = function($event,type) {
       $scope.openedStart = false;
@@ -48,7 +51,25 @@ angular.module('BG').controller('HomeCtrl',
         });
       }
     });
+    (function(){
+      angular.element('.carousel-showmanymoveone .item').each(function(){
+        var itemToClone = angular.element(this);
 
+        for (var i=1;i<4;i++) {
+          itemToClone = itemToClone.next();
+
+          // wrap around if at end of item collection
+          if (!itemToClone.length) {
+            itemToClone = angular.element(this).siblings(':first');
+          }
+
+          // grab item, clone, add marker class, add to collection
+          itemToClone.children(':first-child').clone()
+            .addClass("cloneditem-"+(i))
+            .appendTo(angular.element(this));
+        }
+      });
+    }());
     $scope.$watch("mdl.searchObj",function(){
       if(mdl.searchObj){
         $state.go("main.search",{query:mdl.searchObj.title},{ reload: true });

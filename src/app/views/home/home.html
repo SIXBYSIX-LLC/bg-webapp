@@ -330,10 +330,10 @@
 		</div>
 		<div class="row image-box style10 browse-equip-row">
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopadding">
-				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-padding-small browse-equip-col" ng-repeat="item in mdl.categories">
-          <article class="box pointerhover landing-browse-equip">
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-padding-small browse-equip-col" ng-repeat="item in mdl.categories" >
+          <article class="box pointerhover landing-browse-equip" ui-sref="main.search({category:item.id})">
 						<figure class="animated fadeInDown" data-animation-type="fadeInDown" data-animation-duration="1">
-							<a href="" title="" class="hover-effect"><img ng-src="{{item.image.url}}" alt="" width="270" height="160" /></a>
+							<a href="" title="" class="hover-effect"><img ng-src="{{item.image.url || 'http://placehold.it/270x160'}}" alt="" width="270" height="160" /></a>
 						</figure>
 						<div class="details">
 							<h4 class="box-title">{{item.name}}</h4>
@@ -529,149 +529,6 @@
 		</div>
 	</div>
 </section> -->
-<section class="visible-xs">
-	<div class="container section landing-section">
-		<div class="row">
-			<div class="col-lg-12 col-md-12">
-				<div class="pull-center">
-					<h2 class="landing-headings">Recently Added Equipments</h2>
-					<div class="line"></div>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div id="carousel-example-generic" class="carousel slide landing-carousel-slider" data-ride="carousel">
-				<div class="carousel-inner" role="listbox">
-					<div class="item active">
-						<div class="col-xs-12 landing-img-carousel">
-							<article class="box">
-								<figure>
-									<a href="#" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt=""></a>
-								</figure>
-								<div class="details">
-									<h4 class="box-title" style="margin-bottom: 5px;">Breaker</h4>
-									<div class="amenities">
-										<p class="text-left reviews-para">
-											<i class="soap-icon-star"></i>
-											<i class="soap-icon-star"></i>
-											<i class="soap-icon-star"></i>
-											<i class="soap-icon-star"></i>
-											<i class="soap-icon-star"></i>
-											<span class="pull-right">170 Reviews</span>
-										</p>
-									</div>
-									<div>
-										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 price-col">
-											<p>Daily</p>
-											<h3>$12</h3>
-										</div>
-										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 price-col">
-											<p>Weekly</p>
-											<h3>$120</h3>
-										</div>
-										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 price-col">
-											<p>Monthly</p>
-											<h3>$1200</h3>
-										</div>
-									</div>
-									<div class="action">
-										<a href="" class="btn all-btn primary-btn full-width">View & Reserve</a>
-									</div>
-								</div>
-							</article>
-						</div>
-					</div>
-					<div class="item">
-						<div class="col-xs-12 landing-img-carousel">
-							<article class="box">
-								<figure>
-									<a href="#" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt=""></a>
-								</figure>
-								<div class="details">
-									<h4 class="box-title" style="margin-bottom: 5px;">Breaker</h4>
-									<div class="amenities">
-										<p class="text-left reviews-para">
-											<i class="soap-icon-star"></i>
-											<i class="soap-icon-star"></i>
-											<i class="soap-icon-star"></i>
-											<i class="soap-icon-star"></i>
-											<i class="soap-icon-star"></i>
-											<span class="pull-right">170 Reviews</span>
-										</p>
-									</div>
-									<div>
-										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 price-col">
-											<p>Daily</p>
-											<h3>$12</h3>
-										</div>
-										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 price-col">
-											<p>Weekly</p>
-											<h3>$120</h3>
-										</div>
-										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 price-col">
-											<p>Monthly</p>
-											<h3>$1200</h3>
-										</div>
-									</div>
-									<div class="action">
-										<a href="" class="btn all-btn primary-btn full-width">View & Reserve</a>
-									</div>
-								</div>
-							</article>
-						</div>
-					</div>
-					<div class="item">
-						<div class="col-xs-12 landing-img-carousel">
-							<article class="box">
-								<figure>
-									<a href="#" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt=""></a>
-								</figure>
-								<div class="details">
-									<h4 class="box-title" style="margin-bottom: 5px;">Breaker</h4>
-									<div class="amenities">
-										<p class="text-left reviews-para">
-											<i class="soap-icon-star"></i>
-											<i class="soap-icon-star"></i>
-											<i class="soap-icon-star"></i>
-											<i class="soap-icon-star"></i>
-											<i class="soap-icon-star"></i>
-											<span class="pull-right">170 Reviews</span>
-										</p>
-									</div>
-									<div>
-										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 price-col">
-											<p>Daily</p>
-											<h3>$12</h3>
-										</div>
-										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 price-col">
-											<p>Weekly</p>
-											<h3>$120</h3>
-										</div>
-										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 price-col">
-											<p>Monthly</p>
-											<h3>$1200</h3>
-										</div>
-									</div>
-									<div class="action">
-										<a href="" class="btn all-btn primary-btn full-width">View & Reserve</a>
-									</div>
-								</div>
-							</article>
-						</div>
-					</div>
-				</div>
-
-				<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-					<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-					<span class="sr-only">Previous</span>
-				</a>
-				<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-					<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-					<span class="sr-only">Next</span>
-				</a>
-			</div>
-		</div>
-</section>
 <section class="hidden-xs">
 	<div class="container section landing-section">
 		<div class="row">
@@ -683,7 +540,74 @@
 			</div>
 		</div>
 		<div class="row">
-			<div id="carousel-example-generic" class="carousel slide landing-carousel-slider" data-ride="carousel">
+			<div id="carousel-example-generic" class="carousel slide landing-carousel-slider carousel-showmanymoveone" data-ride="carousel" data-type="multi" data-interval="0">
+				<div class="carousel-inner " role="listbox">
+
+            <div class="item"  ng-class="{active:(activeIndex?activeIndex==$index:$first)}" ng-repeat="product in mdl.recent ">
+
+              <div class="col-xs-12 col-sm-6 col-md-3 landing-img-carousel">
+                <article class="box">
+                  <figure>
+                    <a href="#" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt=""></a>
+                  </figure>
+                  <div class="details">
+                    <h4 class="box-title" style="margin-bottom: 5px;">{{product.name}}</h4>
+                    <div class="amenities">
+                      <p class="text-left reviews-para">
+                        <i class="soap-icon-star"></i>
+                        <i class="soap-icon-star"></i>
+                        <i class="soap-icon-star"></i>
+                        <i class="soap-icon-star"></i>
+                        <i class="soap-icon-star"></i>
+                        <span class="pull-right">170 Reviews</span>
+                      </p>
+                    </div>
+                    <div>
+                      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 price-col">
+                        <p>Daily</p>
+                        <h3>{{product.daily_price}}</h3>
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 price-col">
+                        <p>Weekly</p>
+                        <h3>{{product.weekly_price}}</h3>
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 price-col">
+                        <p>Monthly</p>
+                        <h3>{{product.monthly_price}}</h3>
+                      </div>
+                    </div>
+                    <div class="action">
+                      <a href="" class="btn all-btn primary-btn full-width">View & Reserve</a>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+        </div>
+				<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+					<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+					<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
+			</div>
+		</div>
+</section>
+<!--<section class="hidden-xs">
+	<div class="container section landing-section">
+		<div class="row">
+			<div class="col-lg-12 col-md-12">
+				<div class="pull-center">
+					<h2 class="landing-headings">Recently Added Equipments</h2>
+					<div class="line"></div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div id="carousel-example" class="carousel slide landing-carousel-slider" data-ride="carousel">
 				<div class="carousel-inner" role="listbox">
 					<div class="item active">
 						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 landing-img-carousel">
@@ -692,7 +616,7 @@
 									<a href="#" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt=""></a>
 								</figure>
 								<div class="details">
-									<h4 class="box-title" style="margin-bottom: 5px;">Breaker</h4>
+									<h4 class="box-title" style="margin-bottom: 5px;">Breaker1</h4>
 									<div class="amenities">
 										<p class="text-left reviews-para">
 											<i class="soap-icon-star"></i>
@@ -837,17 +761,17 @@
 					</div>
 				</div>
 
-				<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+				<a class="left carousel-control" href="#carousel-example" role="button" data-slide="prev">
 					<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
 					<span class="sr-only">Previous</span>
 				</a>
-				<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+				<a class="right carousel-control" href="#carousel-example" role="button" data-slide="next">
 					<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
 					<span class="sr-only">Next</span>
 				</a>
 			</div>
 		</div>
-		<!-- <div class="car-slideshow image-carousel style2 box landing-img-carousel" data-animation="slide" data-item-width="270" data-item-margin="30">
+		&lt;!&ndash; <div class="car-slideshow image-carousel style2 box landing-img-carousel" data-animation="slide" data-item-width="270" data-item-margin="30">
 			<ul class="slides image-box car listing-style1">
 				<li>
 					<article class="box">
@@ -1109,8 +1033,8 @@
 					</article>
 				</li>
 			</ul>
-		</div> -->
-</section>
+		</div> &ndash;&gt;
+</section>-->
 <section class="gray-area">
 	<div class="container section landing-section">
 		<div class="row">

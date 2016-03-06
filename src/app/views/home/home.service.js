@@ -4,10 +4,10 @@ angular.module('BG').factory('HomeService',
   function (API,$http) {
     return {
       getCategories:function(){
-        return $http.get(API.baseURL+"categories?parent=1&parent__isnull=True");
+        return $http.get(API.baseURL+"categories?parent__isnull=True");
       },
       getRecent:function(){
-        return $http.get(API.baseURL+"categories?parent=1&parent__isnull=True");//ToDO: change url with recent API
+        return $http.get(API.baseURL+"products?is_active=true&order_by=id");//ToDO: change url with recent API
       }
     }
   }

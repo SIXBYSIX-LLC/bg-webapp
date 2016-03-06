@@ -51,6 +51,9 @@ angular.module('BG').controller('SearchCtrl',
         if(searchMdl.locationFacets.allSelected == false && searchMdl.locationFacets.selectedId){
           conf.location = searchMdl.locationFacets.selectedId;
         }
+      if($stateParams.category){
+        conf.category=$stateParams.category;
+      }
         search=SearchService.search(conf);
         searchMdl.working=true;
         $rootScope.$broadcast("PI:SearchProcess",true);

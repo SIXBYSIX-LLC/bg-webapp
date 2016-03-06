@@ -342,7 +342,10 @@
       .state('main.search',{
         url:'/search/{query:.*}',
         templateUrl:'app/views/search/search.html',
-        controller:'SearchCtrl'
+        controller:'SearchCtrl',
+        params:{
+          category:null
+        }
       })
       .state('main.payment',{
         url:'/pay/{invoiceId}',
