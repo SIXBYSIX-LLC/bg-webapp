@@ -6,8 +6,12 @@
     .controller('MainCtrl', MainController);
 
   /** @ngInject */
-  function MainController($scope,$state,SearchService) {
+  function MainController($scope,$state,SearchService,HomeService) {
     var mainMdl=$scope.mainMdl={};
+    HomeService.getCategories().then(function(response){
+      console.log(response)
+      mainMdl.categories=response.data.data;
+    });
     mainMdl.open = function($event,type) {
       mainMdl.openedStart = false;
       mainMdl.openedEnd = false;
