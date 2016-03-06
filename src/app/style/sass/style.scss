@@ -2854,7 +2854,7 @@ ul.menu.mini {
 .travelo-signup-box, .travelo-login-box {
   border: 2px solid $skin-active-color; width: 300px; margin: 0 auto;
   .login-social .button {
-    width: 100%; height: 36px; line-height: 36px; margin-bottom: 10px; font-size: 13px; font-weight: 400; text-align: left; padding-left: 20px; letter-spacing: 0.04em;
+    width: 100%; height: 36px; line-height: 36px; margin-bottom: 10px; font-size: 13px; font-weight: 400; text-align: left; padding-left: 20px; letter-spacing: 0.04em; border-radius: 4px;
     i { font-size: 1.5em; margin-right: 36px; width: 20px; float: left; display: block; }
   }
   .login-facebook { background: #155c92;
@@ -2868,8 +2868,12 @@ ul.menu.mini {
     }
   }
   .seperator {
-    line-height: 0; border-top: 1px solid #f5f5f5; position: relative; margin-top: 10px; margin-bottom: 10px;
+    line-height: 0; border-top: 1px solid #f5f5f5; position: relative; margin-top: 20px; margin-bottom: 20px;
     label { display: block; font-size: 0.9167em; position: absolute; left: 50%; top: 50%; line-height: 1; background: #fff; padding: 0 10px; margin: -1px 0 0; @include transform(translate(-50%, -50%)); font-weight: 400; }
+  }
+  .seperator-bottom {
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
   p { margin-bottom: 0; }
   .description { font-size: 1em; color: #9e9e9e; }
@@ -5795,8 +5799,8 @@ section {
       margin-top: 10px;
       padding-top: 5px;
       padding-bottom: 2px;
-      border-top: 1px solid #dddddd;
-      border-bottom: 1px solid #dddddd;
+      border-top: 1px solid $primary-border-color;
+      border-bottom: 1px solid $primary-border-color;
       margin-bottom: 12px;
       .reviews-para {
         margin-bottom: 0;
@@ -5948,17 +5952,19 @@ section {
   margin-top: 25px;
   margin-bottom: 0px;
   thead {
-    background: $white-theme-color;
+    background: #f2f2f2;
     > tr {
       > th {
         // text-align: center;
-        // border-right: 1px solid $primary-border-color;
+        border-right: 1px solid $primary-border-color;
         font-size: 16px;
-        font-weight: 600;
-        // border-top: 1px solid $primary-border-color !important;
+        font-weight: 400;
+        font-size: 15px;
+        letter-spacing: 0.5px;
+        border-top: 1px solid $primary-border-color !important;
         &:first-child {
           border-right: none;
-          // border-left: 1px solid $primary-border-color;
+          border-left: 1px solid $primary-border-color;
         }
         &:last-child {
           display: none;
@@ -5967,17 +5973,19 @@ section {
     }
   }
   tbody {
+    background-color: #ffffff;
     > tr {
         &:last-child {
           // border-bottom: 1px solid $primary-border-color;
         }
       > td {
-        // border-right: 1px solid $primary-border-color;
+        border-right: 1px solid #eeeeee;
+        padding-top: 15px;
       }
       .img-td {
         width: 10%;
         border-right: none;
-        // border-left: 1px solid $primary-border-color;
+        border-left: 1px solid $primary-border-color;
         img {
           width: 100%;
         }
@@ -5989,13 +5997,16 @@ section {
         }
       }
       .description-td {
-        vertical-align: middle;
+        border-right: 1px solid #eeeeee;
+        // vertical-align: middle;
         h4 {
           font-weight: 600;
           margin-bottom: 5px;
+          color: $primary-orange-color;
         }
         p {
           margin-bottom: 0;
+          font-size: 12px;
           &:first-child {
             margin-bottom: 5px;
           }
@@ -6005,35 +6016,34 @@ section {
             color: #009ddc;
             a {
               &:last-child {
-                margin-left: 30px;
+                // margin-left: 30px;
               }
               &:first-child {
-                margin-right: 30px;
+                margin-right: 10px;
+                float: right;
+                font-size: 16px;
               }
             }
           }
         }
       }
       .qty-td {
+        border-right: 1px solid #eeeeee;
         width: 10%;
-        vertical-align: middle;
+        // vertical-align: middle;
       }
       .details-td {
-        vertical-align: middle;
+        border-right: 1px solid #eeeeee;
+        // vertical-align: middle;
         p {
           margin-bottom: 5px;
         }
       }
       .cost-td {
-        p {
+        border-right: 1px solid $primary-border-color;
+        h4 {
           margin-bottom: 5px;
-          font-size: 15px;
-          &:last-child {
-            border-top: 1px solid $primary-border-color;
-            padding-top: 10px;
-            font-weight: 600;
-            color: #333333;
-          }
+          font-weight: 600;
         }
       }
     }
@@ -6041,14 +6051,13 @@ section {
 }
 
 .total-amount-col {
-  border-bottom: 1px solid $primary-border-color;
-  margin-bottom: 20px;
+  border: 1px solid $primary-border-color;
+  // margin-bottom: 20px;
   padding-top: 10px;
-  background: $white-theme-color;
-  border-top: 1px solid $primary-border-color;
+  background: #f2f2f2;
   p {
     text-align: right;
-    font-size: 16px;
+    font-size: 18px;
     color: #333333;
     span {
       font-weight: 600;
@@ -6090,20 +6099,45 @@ section {
 }
 
 .cart-button {
+  background-color: $white-theme-color;
+  padding-top: 10px;
+  border: 1px solid $primary-border-color;
+  border-top: 0;
   button {
-    float: none !important;
     margin-bottom: 10px;
+  }
+  &.cart-heading {
+    border-top: 1px solid $primary-border-color;
+    border-bottom: 2px solid $dark-gray-color;
+    a {
+      border-bottom-right-radius: 0 !important;
+      border-bottom-left-radius: 0 !important;
+    }
   }
 }
 
 // cart page css end
 // progress bar start
-.flexer,.progress-indicator{display:-webkit-box;display:-moz-box;display:-ms-flexbox;display:-webkit-flex;display:flex}.no-flexer,.progress-indicator.stacked{display:block}.no-flexer-element{-ms-flex:0;-webkit-flex:0;-moz-flex:0;flex:0}.flexer-element,.progress-indicator>li{-ms-flex:1;-webkit-flex:1;-moz-flex:1;flex:1}.progress-indicator{margin:0 0 1em;padding:0;font-size:80%;text-transform:uppercase}.progress-indicator>li{list-style:none;text-align:center;width:auto;padding:0;margin:0;position:relative;text-overflow:ellipsis;color:#bbb;display:block}.progress-indicator>li:hover{color:#6f6f6f}.progress-indicator>li.completed,.progress-indicator>li.completed .bubble{color:#65d074}.progress-indicator>li .bubble{border-radius:1000px;width:20px;height:20px;background-color:#bbb;display:block;margin:0 auto .5em;border-bottom:1px solid #888}.progress-indicator>li .bubble:after,.progress-indicator>li .bubble:before{display:block;position:absolute;top:9px;width:100%;height:3px;content:'';background-color:#bbb}.progress-indicator>li.completed .bubble,.progress-indicator>li.completed .bubble:after,.progress-indicator>li.completed .bubble:before{background-color:#65d074;border-color:#247830}.progress-indicator>li .bubble:before{left:0}.progress-indicator>li .bubble:after{right:0}.progress-indicator>li.active,.progress-indicator>li.active .bubble{color:#337AB7}.progress-indicator>li.active .bubble,.progress-indicator>li.active .bubble:after,.progress-indicator>li.active .bubble:before{background-color:#337AB7;border-color:#122a3f}.progress-indicator>li a:hover .bubble,.progress-indicator>li a:hover .bubble:after,.progress-indicator>li a:hover .bubble:before{background-color:#5671d0;border-color:#1f306e}.progress-indicator>li a:hover .bubble{color:#5671d0}.progress-indicator>li.danger .bubble,.progress-indicator>li.danger .bubble:after,.progress-indicator>li.danger .bubble:before{background-color:#d3140f;border-color:#440605}.progress-indicator>li.danger .bubble{color:#d3140f}.progress-indicator>li.warning .bubble,.progress-indicator>li.warning .bubble:after,.progress-indicator>li.warning .bubble:before{background-color:#edb10a;border-color:#5a4304}.progress-indicator>li.warning .bubble{color:#edb10a}.progress-indicator>li.info .bubble,.progress-indicator>li.info .bubble:after,.progress-indicator>li.info .bubble:before{background-color:#5b32d6;border-color:#25135d}.progress-indicator>li.info .bubble{color:#5b32d6}.progress-indicator.stacked>li{text-indent:-10px;text-align:center;display:block}.progress-indicator.stacked>li .bubble:after,.progress-indicator.stacked>li .bubble:before{left:50%;margin-left:-1.5px;width:3px;height:100%}.progress-indicator.stacked .stacked-text{position:relative;z-index:10;top:0;margin-left:60%!important;width:45%!important;display:inline-block;text-align:left;line-height:1.2em}.progress-indicator.stacked>li a{border:none}.progress-indicator.stacked.nocenter>li .bubble{margin-left:0;margin-right:0}.progress-indicator.stacked.nocenter>li .bubble:after,.progress-indicator.stacked.nocenter>li .bubble:before{left:10px}.progress-indicator.stacked.nocenter .stacked-text{width:auto!important;display:block;margin-left:40px!important}@media handheld,screen and (max-width:400px){.progress-indicator{font-size:60%}}
+.flexer,.progress-indicator{display:-webkit-box;display:-moz-box;display:-ms-flexbox;display:-webkit-flex;display:flex}.no-flexer,.progress-indicator.stacked{display:block}.no-flexer-element{-ms-flex:0;-webkit-flex:0;-moz-flex:0;flex:0}.flexer-element,.progress-indicator>li{-ms-flex:1;-webkit-flex:1;-moz-flex:1;flex:1}.progress-indicator{margin:0 0 1em;padding:0;font-size:80%;text-transform:uppercase}.progress-indicator>li{list-style:none;text-align:center;width:auto;padding:0;margin:0;position:relative;text-overflow:ellipsis;color:#bbb;display:block}.progress-indicator>li:hover{color:#6f6f6f}.progress-indicator>li.completed,.progress-indicator>li.completed .bubble{color:#009CA3}.progress-indicator>li .bubble{border-radius:1000px;width:20px;height:20px;background-color:#A6AAA9;display:block;margin:0 auto .5em;border-bottom:1px solid #888}.progress-indicator>li .bubble:after,.progress-indicator>li .bubble:before{display:block;position:absolute;top:9px;width:100%;height:3px;content:'';background-color:#A6AAA9}.progress-indicator>li.completed .bubble,.progress-indicator>li.completed .bubble:after,.progress-indicator>li.completed .bubble:before{background-color:#009CA3;border-color:#247830}.progress-indicator>li .bubble:before{left:0}.progress-indicator>li .bubble:after{right:0}.progress-indicator>li.active,.progress-indicator>li.active .bubble{color:#A6AAA9}.progress-indicator>li.active .bubble,.progress-indicator>li.active .bubble:after,.progress-indicator>li.active .bubble:before{background-color:#A6AAA9;border-color:#122a3f}.progress-indicator>li a:hover .bubble,.progress-indicator>li a:hover .bubble:after,.progress-indicator>li a:hover .bubble:before{background-color:#5671d0;border-color:#1f306e}.progress-indicator>li a:hover .bubble{color:#5671d0}.progress-indicator>li.danger .bubble,.progress-indicator>li.danger .bubble:after,.progress-indicator>li.danger .bubble:before{background-color:#d3140f;border-color:#440605}.progress-indicator>li.danger .bubble{color:#d3140f}.progress-indicator>li.warning .bubble,.progress-indicator>li.warning .bubble:after,.progress-indicator>li.warning .bubble:before{background-color:#edb10a;border-color:#5a4304}.progress-indicator>li.warning .bubble{color:#edb10a}.progress-indicator>li.info .bubble,.progress-indicator>li.info .bubble:after,.progress-indicator>li.info .bubble:before{background-color:#5b32d6;border-color:#25135d}.progress-indicator>li.info .bubble{color:#5b32d6}.progress-indicator.stacked>li{text-indent:-10px;text-align:center;display:block}.progress-indicator.stacked>li .bubble:after,.progress-indicator.stacked>li .bubble:before{left:50%;margin-left:-1.5px;width:3px;height:100%}.progress-indicator.stacked .stacked-text{position:relative;z-index:10;top:0;margin-left:60%!important;width:45%!important;display:inline-block;text-align:left;line-height:1.2em}.progress-indicator.stacked>li a{border:none}.progress-indicator.stacked.nocenter>li .bubble{margin-left:0;margin-right:0}.progress-indicator.stacked.nocenter>li .bubble:after,.progress-indicator.stacked.nocenter>li .bubble:before{left:10px}.progress-indicator.stacked.nocenter .stacked-text{width:auto!important;display:block;margin-left:40px!important}@media handheld,screen and (max-width:400px){.progress-indicator{font-size:60%}}
+
+.progress-indicator>li.active .active-bubble {
+    border-radius: 1000px;
+    width: 12px;
+    height: 12px;
+    background-color: #009cA3;
+    /* display: block; */
+    top: 0;
+    position: absolute;
+    margin: 0 auto .5em;
+    border-bottom: 1px solid #888;
+    margin-top: 4px;
+    margin-left: -5.8px;
+}
 
 .progress-bar-col {
   padding-top: 30px;
   margin-bottom: 20px;
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid $primary-border-color;
   ul {
     > li {
       p {
@@ -6152,7 +6186,7 @@ section {
 // }
 
 // .devider {
-//   border-bottom: 1px dashed #dddddd;
+//   border-bottom: 1px dashed $primary-border-color;
 //   margin-top: 10px;
 //   margin-bottom: 10px;
 // }
@@ -6293,7 +6327,7 @@ section {
   margin-left: 5%;
   i {
     margin: 8px 10px;
-    font-size: 16px;
+    font-size: 17px;
   }
   input {
     width: 85%;
@@ -6408,7 +6442,7 @@ section {
 
 .angucomplete-dropdown {
   width: 100%;
-  height: 125px;
+  height: 140px;
   overflow: auto;
   margin-top: 0;
 
@@ -6483,4 +6517,53 @@ section {
 .landing-features-section {
   padding-top: 50px;
   padding-bottom: 50px;
+}
+
+.login-col {
+  height: 372px;
+  background-color: $white-theme-color;
+  .travelo-login-box,
+  .travelo-signup-box {
+    border: 0;
+    border-left: 2px solid $primary-orange-color;
+    .close-login {
+      position: absolute;
+      right: 10px;
+      top: 5px;
+      font-size: 15px;
+      cursor: pointer;
+      color: #FB4F14;
+    }
+    .remember {
+      padding-left: 8px;
+    }
+  }
+}
+
+.signup-col {
+  min-height: 257px;
+  background-color: $white-theme-color;
+  height: auto;
+  .travelo-login-box,
+  .travelo-signup-box {
+    border: 0;
+    border-left: 2px solid $primary-orange-color;
+    .close-login {
+      position: absolute;
+      right: 10px;
+      top: 5px;
+      font-size: 15px;
+      cursor: pointer;
+      color: #FB4F14;
+    }
+    .remember {
+      padding-left: 8px;
+    }
+  }
+}
+
+.img-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

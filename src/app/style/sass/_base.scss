@@ -153,6 +153,7 @@ img.full-width { height: auto; }
   color: $white-theme-color;
 }
 
+
 .all-btn {
   height: 34px;
   font-size: 13px;
@@ -161,17 +162,33 @@ img.full-width { height: auto; }
   font-weight: 400;
   border-radius: 3px;
   text-transform: none;
- 	//  transition: background-color 0.23s ease-in-out 0s;
-	// padding: 0 18px;
-	// border-radius: 3px;
-	// font-size: 14px;
-	// border: 0 none;
-	// height: 34px;
-	// line-height: 32px;
-	// width: auto;
+  //  transition: background-color 0.23s ease-in-out 0s;
+  // padding: 0 18px;
+  // border-radius: 3px;
+  // font-size: 14px;
+  // border: 0 none;
+  // height: 34px;
+  // line-height: 32px;
+  // width: auto;
   &:hover {
     color: #fff;
-    background-color: #BF6E1F;
+    background-color: $primary-hover-color;
+  }
+}
+
+.secondary-btn {
+  background-color: $secondary-button-color;
+  color: $white-theme-color;
+  &:hover {
+    background-color: $secondary-button-color;
+  }
+}
+
+.grey-button {
+  background-color: $grey-button-color;
+  color: $white-theme-color;
+  &:hover {
+    background-color: $grey-button-color
   }
 }
 

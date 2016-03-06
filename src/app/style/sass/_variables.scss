@@ -28,7 +28,7 @@ $font-stack:    'Open Sans', Arial, Helvetica, sans-serif;
 $primary-color: #838383;
 $heading-color: #2d3e52;
 $button-color: #E37F1F;
-$primary-hover-color: #BF6E1F;
+$primary-hover-color: #C53D10;
 $primary-border-color: #dddddd;
 
 /* 2. Skin colors */
@@ -178,3 +178,5 @@ $primary-orange-color: #FB4F14;
 $secondary-light-color: #B1BABF;
 
 $primary-button-color: $primary-orange-color; // #FA5013;
+$secondary-button-color: $secondary-light-color;
+$grey-button-color: $dark-gray-color;
