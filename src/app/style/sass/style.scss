@@ -5799,8 +5799,8 @@ section {
       margin-top: 10px;
       padding-top: 5px;
       padding-bottom: 2px;
-      border-top: 1px solid #dddddd;
-      border-bottom: 1px solid #dddddd;
+      border-top: 1px solid $primary-border-color;
+      border-bottom: 1px solid $primary-border-color;
       margin-bottom: 12px;
       .reviews-para {
         margin-bottom: 0;
@@ -5952,17 +5952,19 @@ section {
   margin-top: 25px;
   margin-bottom: 0px;
   thead {
-    background: $white-theme-color;
+    background: #f2f2f2;
     > tr {
       > th {
         // text-align: center;
-        // border-right: 1px solid $primary-border-color;
+        border-right: 1px solid $primary-border-color;
         font-size: 16px;
-        font-weight: 600;
-        // border-top: 1px solid $primary-border-color !important;
+        font-weight: 400;
+        font-size: 15px;
+        letter-spacing: 0.5px;
+        border-top: 1px solid $primary-border-color !important;
         &:first-child {
           border-right: none;
-          // border-left: 1px solid $primary-border-color;
+          border-left: 1px solid $primary-border-color;
         }
         &:last-child {
           display: none;
@@ -5971,17 +5973,19 @@ section {
     }
   }
   tbody {
+    background-color: #ffffff;
     > tr {
         &:last-child {
           // border-bottom: 1px solid $primary-border-color;
         }
       > td {
-        // border-right: 1px solid $primary-border-color;
+        border-right: 1px solid #eeeeee;
+        padding-top: 15px;
       }
       .img-td {
         width: 10%;
         border-right: none;
-        // border-left: 1px solid $primary-border-color;
+        border-left: 1px solid $primary-border-color;
         img {
           width: 100%;
         }
@@ -5993,13 +5997,16 @@ section {
         }
       }
       .description-td {
-        vertical-align: middle;
+        border-right: 1px solid #eeeeee;
+        // vertical-align: middle;
         h4 {
           font-weight: 600;
           margin-bottom: 5px;
+          color: $primary-orange-color;
         }
         p {
           margin-bottom: 0;
+          font-size: 12px;
           &:first-child {
             margin-bottom: 5px;
           }
@@ -6009,35 +6016,34 @@ section {
             color: #009ddc;
             a {
               &:last-child {
-                margin-left: 30px;
+                // margin-left: 30px;
               }
               &:first-child {
-                margin-right: 30px;
+                margin-right: 10px;
+                float: right;
+                font-size: 16px;
               }
             }
           }
         }
       }
       .qty-td {
+        border-right: 1px solid #eeeeee;
         width: 10%;
-        vertical-align: middle;
+        // vertical-align: middle;
       }
       .details-td {
-        vertical-align: middle;
+        border-right: 1px solid #eeeeee;
+        // vertical-align: middle;
         p {
           margin-bottom: 5px;
         }
       }
       .cost-td {
-        p {
+        border-right: 1px solid $primary-border-color;
+        h4 {
           margin-bottom: 5px;
-          font-size: 15px;
-          &:last-child {
-            border-top: 1px solid $primary-border-color;
-            padding-top: 10px;
-            font-weight: 600;
-            color: #333333;
-          }
+          font-weight: 600;
         }
       }
     }
@@ -6045,14 +6051,13 @@ section {
 }
 
 .total-amount-col {
-  border-bottom: 1px solid $primary-border-color;
-  margin-bottom: 20px;
+  border: 1px solid $primary-border-color;
+  // margin-bottom: 20px;
   padding-top: 10px;
-  background: $white-theme-color;
-  border-top: 1px solid $primary-border-color;
+  background: #f2f2f2;
   p {
     text-align: right;
-    font-size: 16px;
+    font-size: 18px;
     color: #333333;
     span {
       font-weight: 600;
@@ -6094,9 +6099,20 @@ section {
 }
 
 .cart-button {
+  background-color: $white-theme-color;
+  padding-top: 10px;
+  border: 1px solid $primary-border-color;
+  border-top: 0;
   button {
-    float: none !important;
     margin-bottom: 10px;
+  }
+  &.cart-heading {
+    border-top: 1px solid $primary-border-color;
+    border-bottom: 2px solid $dark-gray-color;
+    a {
+      border-bottom-right-radius: 0 !important;
+      border-bottom-left-radius: 0 !important;
+    }
   }
 }
 
@@ -6121,7 +6137,7 @@ section {
 .progress-bar-col {
   padding-top: 30px;
   margin-bottom: 20px;
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid $primary-border-color;
   ul {
     > li {
       p {
@@ -6170,7 +6186,7 @@ section {
 // }
 
 // .devider {
-//   border-bottom: 1px dashed #dddddd;
+//   border-bottom: 1px dashed $primary-border-color;
 //   margin-top: 10px;
 //   margin-bottom: 10px;
 // }
