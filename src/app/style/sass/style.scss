@@ -6530,12 +6530,15 @@ section {
 }
 
 .login-col {
-  height: 372px;
+  height: 382px;
   background-color: $white-theme-color;
   .travelo-login-box,
   .travelo-signup-box {
     border: 0;
-    border-left: 2px solid $primary-orange-color;
+    // border-left: 2px solid $primary-orange-color;
+    -webkit-box-shadow: -5px 0px 5px -3px $primary-border-color;
+    box-shadow: -5px 0px 5px -3px $primary-border-color;
+    padding-top: 30px;
     .close-login {
       position: absolute;
       right: 10px;
@@ -6576,4 +6579,16 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.no-lpadding-small {
+  padding-left: 0;
+}
+
+.close-forgot {
+  position: absolute;
+  color: orange;
+  top: 8px;
+  right: 10px;
+  font-size: 16px !important;
 }

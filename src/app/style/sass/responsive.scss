@@ -916,6 +916,10 @@
   .modal-dialog {
     width: auto;
   }
+
+  .no-lpadding-small {
+    padding-left: 15px !important;
+  }
 }
 
 /* 8. Styles for devices(<=480px ) */

@@ -26,6 +26,10 @@ angular.module('BG').controller('LoginCtrl',
       }
     };
 
+    $scope.close = function() {
+      $modalInstance.close();
+    }
+
     loginMdl.signUp=function(){
       $modalInstance.close();
       $scope.openSignUp();
