@@ -1229,7 +1229,7 @@ ol {  }
       padding: 12px 15px;
       > *:last-child { margin-bottom: 0; }
     }
-    .box-title { margin-bottom: 10px; color: $heading-color; }
+    .box-title { margin-bottom: 10px; color: $heading-color; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
   }
   &.style1, &.style10 {
     .box-title { margin-bottom: 0; }
@@ -3283,7 +3283,7 @@ ul.search-tabs {
   }
   .box-title, .price, .feedback { border-bottom: 1px solid #f5f5f5; }
   .box-title {
-    margin-top: 15px; padding-bottom: 10px; letter-spacing: normal;
+    margin-top: 15px; padding-bottom: 10px; letter-spacing: normal; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 18px;
     > small {
       line-height: 1.5em; letter-spacing: 0.04em; font-size: 10px;
       > i { font-size: 1.5em; display: block; float: left; margin-right: 3px; }
@@ -5287,6 +5287,35 @@ button.ui-button::-moz-focus-inner { border: 0; padding: 0; }
 
 // seller dashboard
 
+.search-col {
+  padding: 15px 0 5px !important;
+  text-align: right;
+  h1 {
+    text-align: left;
+    display: inline-block;
+    float: left;
+    padding-top: 5px;
+  }
+  .search-div {
+    display: inline-block;
+    width: 25%;
+    text-align: left;
+    margin-right: 10px;
+    input {
+      border: none;
+      outline: none;
+    }
+    i {
+      float: right;
+      margin-top: 3px;
+    }
+  }
+  .sort-by {
+    display: inline-block;
+    width: 17%;
+  }
+}
+
 .seller-dash-container {
   &.full-width-style {
     ul {
@@ -5702,17 +5731,22 @@ button.btn {
 }
 
 .hide-more {
-  display: none;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.6s ease;
 }
 
 .visible-more {
-  display: block;
+  height: 210px;
+  overflow: hidden;
+  opacity: 1;
+  transition: all 0.6s ease;
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
 }
 
 .more-equip-container {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  height: 210px;
   position: absolute;
   h3 {
     margin-top: 10px;
@@ -5804,6 +5838,14 @@ section {
     padding-right: 10px !important;
     padding-top: 10px !important;
     padding-bottom: 10px !important;
+    h4 {
+      margin-bottom: 5px;
+      text-align: left;
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
     .amenities {
       margin-top: 10px;
       padding-top: 5px;
@@ -5862,10 +5904,12 @@ section {
     &.left {
       background: none;
       width: auto;
+      cursor: pointer;
     }
     &.right {
       background: none;
       width: auto;
+      cursor: pointer;
     }
     .glyphicon-chevron-left {
       left: 15px;
@@ -6318,9 +6362,10 @@ section {
 // }
 
 .more-equip-xs {
-  height: auto;
+  // height: auto;
   position: absolute;
   width: 100%;
+  padding: 0 15px;
   .more-equip-col {
     text-align: left;
   }
@@ -6481,7 +6526,7 @@ section {
 }
 
 .availabilty-collapse-open {
-  height: 120px;
+  height: 244px;
   transition: all 0.6s ease;
 }
 
