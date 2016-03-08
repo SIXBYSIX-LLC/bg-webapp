@@ -7,7 +7,7 @@ angular.module('BG').controller('HomeCtrl',
       console.log(response)
             mdl.categories=response.data.data;
     });
-    // todo uncomment after recent URL change.
+
     HomeService.getRecent().then(function(response){
       console.log("home",response.data.data)
             mdl.recent=response.data.data;
