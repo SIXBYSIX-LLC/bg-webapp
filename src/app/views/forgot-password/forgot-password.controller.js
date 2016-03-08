@@ -24,9 +24,12 @@ angular.module('BG').controller('ForgotPasswordCtrl',
       }
     };
 
+    $scope.close = function() {
+      $modalInstance.close();
+    }
+
     forgotMdl.cancel=function(){
       $modalInstance.close();
-
     };
     forgotMdl.data ={};
   }

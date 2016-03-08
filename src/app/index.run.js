@@ -41,7 +41,7 @@
 
     $rootScope.openSignUp = function(){
       return Dialog.open({
-        animation:false,
+        animation:true,
         templateUrl: 'app/views/sign-up/sign-up.html',
         controller:'SignUpCtrl',
         size:'sm'
@@ -52,7 +52,7 @@
 
     $rootScope.openLogin = function(){
       return Dialog.open({
-        animation:false,
+        animation:true,
         templateUrl: 'app/views/login/login.html',
         controller:'LoginCtrl',
         size:'sm'
@@ -61,7 +61,7 @@
 
     $rootScope.openForgotPassword = function(){
       return Dialog.open({
-        animation:false,
+        animation:true,
         templateUrl: 'app/views/forgot-password/forgot-password.html',
         controller:'ForgotPasswordCtrl',
         size:'sm'

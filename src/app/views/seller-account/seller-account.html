@@ -7,7 +7,7 @@
     <div class="visible-xs">
       <i class="fa fa-bars dashboard-button hotel-color" ng-click="dashboard()"></i>
     </div>
-    <ul class="tabs hide-mobile" ng-class="{'visible-xs': isShow}">
+    <ul class="tabs hide-mobile" ng-class="{'view-mobile': isShow}">
     	<li active-state="main.sellerAccount.dashboard" ui-sref="main.sellerAccount.dashboard" ng-click="closeDashboard()"><a>Dashboard</a></li>
      	<li active-state="main.sellerAccount.equipments" ui-sref="main.sellerAccount.equipments.list" ng-click="closeDashboard()"><a>Equipments</a></li>
      	<li active-state="main.sellerAccount.inventory" ui-sref="main.sellerAccount.inventory.list" ng-click="closeDashboard()"><a>Inventory</a></li>

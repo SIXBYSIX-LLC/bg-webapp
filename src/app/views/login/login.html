@@ -7,7 +7,7 @@
 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 login-col no-lpadding">
     <div class="travelo-login-box travelo-box">
         <form validate-form name="loginMdl.form" novalidate ng-submit="login()">
-          <i class="fa fa-times close-login"></i>
+          <i class="fa fa-times close-login" ng-click="close()"></i>
             <div class="form-group">
                 <input type="text" name="email" ng-model="loginMdl.data.username" required class="form-control" placeholder="email address">
             </div>

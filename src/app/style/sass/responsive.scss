@@ -776,7 +776,24 @@
     font-size: 21px !important;
   }
   .hide-mobile {
-    display: none;
+    height: 0px !important;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.6s ease;
+  }
+
+  .view-mobile {
+    height: 366px !important;
+    overflow: visible;
+    opacity: 1;
+    transition: all 0.6s ease;
+  }
+
+  .view-mobile-buyer {
+    height: 315px !important;
+    overflow: visible;
+    opacity: 1;
+    transition: all 0.6s ease;
   }
 
   .landing-top-header {
@@ -915,6 +932,10 @@
 
   .modal-dialog {
     width: auto;
+  }
+
+  .no-lpadding-small {
+    padding-left: 15px !important;
   }
 }
 

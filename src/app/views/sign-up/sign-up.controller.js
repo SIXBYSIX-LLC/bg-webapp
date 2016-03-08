@@ -38,6 +38,10 @@ angular.module('BG').controller('SignUpCtrl',
          $modalInstance.close();
          $scope.openLogin();
       };
+
+      $scope.close = function() {
+        $modalInstance.close();
+      }
       //console.log("XXX",$scope.modalInstance,$modalInstance);
       signUpMdl.data ={};
   }
