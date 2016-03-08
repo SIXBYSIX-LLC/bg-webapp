@@ -97,9 +97,9 @@ angular.module('BG').controller('HomeCtrl',
       $scope.isMore = false;
     }
 
-    $scope.myInterval = 5000;
-    $scope.noWrapSlides = false;
-    $scope.active = 0;
+    // $scope.myInterval = 5000;
+    // $scope.noWrapSlides = false;
+    // $scope.active = 0;
 
   }
 );

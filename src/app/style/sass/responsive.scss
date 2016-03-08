@@ -710,6 +710,10 @@
 
   .landing-img-carousel {
     padding-left: 15px;
+    article {
+      max-width: 251px;
+      display: inline-block;
+    }
   }
 
   .landing-top-content {

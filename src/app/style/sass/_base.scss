@@ -103,6 +103,7 @@ img.full-width { height: auto; }
 .visible-sms { display: none; } // for max 480 width screen
 .overflow-hidden { overflow: hidden; }
 .no-letter-spacing { letter-spacing: normal !important; }
+.pointer {cursor: pointer !important;}
 
 /* 8) Colors */
 .blue-color { color: $blue-theme-color !important; }
