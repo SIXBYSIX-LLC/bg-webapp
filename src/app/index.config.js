@@ -20,6 +20,7 @@
 
           if(config.url.indexOf(API.baseURL)==0){
             counter++;
+            $rootScope.$broadcast("loader_show");
             $rootScope.rmodel.loader=true;
           }
           if($rootScope.user){
@@ -37,7 +38,9 @@
           if(response.config && response.config.url.indexOf(API.baseURL)==0){
 
             counter--;
+
             if(counter<=0){
+              $rootScope.$broadcast("loader_hide");
               $rootScope.rmodel.loader=false;
             }
 
@@ -65,6 +68,7 @@
       };
     }
     $httpProvider.interceptors.push(interceptor);
+
   }
 
 })();
