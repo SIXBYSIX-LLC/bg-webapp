@@ -1,18 +1,54 @@
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding booking-information travelo-box invoice-details" style="margin-bottom: 0px;">
 	<!-- <div class="row order-details-row"> -->
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 invoices-btn-col buyer-invoice-btn no-padding">
+		<button class="btn all-btn pull-left primary-btn" ui-sref="main.account.invoices.list">
+			<i class="fa fa-chevron-left"></i> &nbsp
+			Back to Invoice List</button>
+		<button class="btn all-btn pull-right btn-right primary-btn">Approve Invoice</button>
+		<button class="btn all-btn pull-right primary-btn">Download PDF</button>
+		<button style="margin-right:4px;" class="btn btn-medium pull-right dark-blue2"  process-indicator ng-click="invoicesMdl.pay(mdl.invoice)">Pay</button>
+	</div>
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
+		<hr />
+	</div>
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
-			<h2 class="heading-text" style="margin-bottom: 8px;">Invoice Details</h2>
 			<p class="bg-danger" style="padding: 8px;">This invoice is not paid. Please pay to get order processed</p>
 		</div>
-		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 no-padding term-description">
-			<p class="orange-text no-margin">Order number:</p>
-		</div>
-		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-			<p class="no-margin" ng-if="mdl.invoice.order.id">{{mdl.invoice.order.id}}</p>
-			<p class="no-margin" ng-if="!mdl.invoice.order.id">--</p>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding term-description">
+			<p class="heading-text no-margin">Order number: &nbsp
+				<span class="no-margin" ng-if="mdl.invoice.order.id">{{mdl.invoice.order.id}}</span>
+				<span class="no-margin" ng-if="!mdl.invoice.order.id">--</span>
+			</p>
 		</div>
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
 			<hr />
+		</div>
+		<div class="row invoice-address align-address" style="margin-bottom: 0;">
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+				<h2 class="heading-text">Shipping Address</h2>
+				<dl class="term-description no-margin">
+					<dd>{{mdl.invoice.order.shipping_address.first_name}} {{mdl.invoice.order.shipping_address.last_name}}</dd>
+					<dd>{{mdl.invoice.order.shipping_address.address1+' '+mdl.invoice.order.shipping_address.address2}}</dd>
+					<dd>{{mdl.invoice.order.shipping_address.city.name}}-{{mdl.invoice.order.shipping_address.zip_code}}</dd>
+					<dd ng-if="mdl.invoice.order.shipping_address.country.name">{{mdl.invoice.order.shipping_address.country.name}}</dd>
+					<dd ng-if="!mdl.invoice.order.shipping_address.country.name">--</dd>
+				</dl>
+			</div>
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+				<h2 class="heading-text">Billing Address</h2>
+				<dl class="term-description no-margin">
+					<dd>{{mdl.invoice.order.billing_address.first_name}} {{mdl.invoice.order.billing_address.last_name}}</dd>
+					<dd>{{mdl.invoice.order.billing_address.address1+' '+order.billing_address.address2}}</dd>
+					<dd>{{mdl.invoice.order.billing_address.city.name}}-{{mdl.invoice.order.billing_address.zip_code}}</dd>
+					<dd ng-if="mdl.invoice.order.billing_address.country.name">{{mdl.invoice.order.billing_address.country.name}}</dd>--</dd>
+				</dl>
+			</div>
+		</div>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
+			<hr />
+		</div>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
+			<h2>Details</h2>
 		</div>
 		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 no-padding">
 			<p class="orange-text">First name:</p>
@@ -36,31 +72,10 @@
 			<p class="no-margin" ng-if="!mdl.invoice.order.billing_address.phone">--</p>
 		</div>
 	<!-- </div> -->
-	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
-		<hr />
-	</div>
-	<div class="row invoice-address align-address" style="margin-bottom: 0;">
-		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-			<h2 class="heading-text">Shipping Address</h2>
-			<dl class="term-description">
-				<dd>{{mdl.invoice.order.shipping_address.first_name}} {{mdl.invoice.order.shipping_address.last_name}}</dd>
-				<dd>{{mdl.invoice.order.shipping_address.address1+' '+mdl.invoice.order.shipping_address.address2}}</dd>
-				<dd>{{mdl.invoice.order.shipping_address.city.name}}-{{mdl.invoice.order.shipping_address.zip_code}}</dd>
-				<dd>{{mdl.invoice.order.shipping_address.country.name}}</dd>
-			</dl>
-		</div>
-		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-			<h2 class="heading-text">Billing Address</h2>
-			<dl class="term-description">
-				<dd>{{mdl.invoice.order.billing_address.first_name}} {{mdl.invoice.order.billing_address.last_name}}</dd>
-				<dd>{{mdl.invoice.order.billing_address.address1+' '+order.billing_address.address2}}</dd>
-				<dd>{{mdl.invoice.order.billing_address.city.name}}-{{mdl.invoice.order.billing_address.zip_code}}</dd>
-				<dd>{{mdl.invoice.order.billing_address.country.name}}</dd>
-			</dl>
-		</div>
-	</div>
 </div>
 <div class="row">
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding devider devider-bottom">
+	</div>
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 invoice-details-col" ng-repeat="item in mdl.invoice.items">
 		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 pull-center">
 			<img src="http://placehold.it/80x80" alt="">
@@ -100,11 +115,5 @@
 				${{mdl.invoice.total | number}}
 			</div>
 		</div>
-	</div>
-	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 invoices-btn-col buyer-invoice-btn">
-		<button class="btn all-btn pull-left primary-btn" ui-sref="main.account.invoices.list">Back to Invoice List</button>
-		<button class="btn all-btn pull-right btn-right primary-btn">Approve Invoice</button>
-		<button class="btn all-btn pull-right primary-btn">Download PDF</button>
-		<button style="margin-right:4px;" class="btn btn-medium pull-right dark-blue2"  process-indicator ng-click="invoicesMdl.pay(mdl.invoice)">Pay</button>
 	</div>
 </div>

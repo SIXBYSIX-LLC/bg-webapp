@@ -291,108 +291,213 @@
 		  <div class="tab-content">
 		    <div role="tabpanel" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tab-pane active jobsite-tab col-padding-small" id="profile">
 		    	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-			    	<select ng-model="mdl.selectedShipping"  required ng-options="site.id as site.name for site in mdl.allSites " class="full-width"></select>
+			    	<select ng-model="mdl.selectedShipping"  required ng-options="site.id as site.name for site in mdl.allSites " class="form-control"></select>
 		    	</div>
 		    	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 		    	</div>
 		    	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 devider devider-bottom"></div>
-		    	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-		    		<input class="form-control" value="Abc" placeholder="First Name">
-		    	</div>
-		    	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-		    		<input class="form-control" value="Company" placeholder="Company Name">
-		    	</div>
-		    	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-		    		<input class="form-control" value="123 456 7890" placeholder="Phone Number">
-		    	</div>
-		    	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-		    		<input class="form-control" value="Address 1" placeholder="Address Line 1">
-		    	</div>
-		    	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-		    		<input class="form-control" value="Address 2" placeholder="Address Line 2">
-		    	</div>
-		    	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-		    		<input class="form-control" value="My Country" placeholder="Country">
-		    	</div>
-		    	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-		    		<input class="form-control" value="My State" placeholder="State">
-		    	</div>
-		    	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-		    		<input class="form-control" value="My City" placeholder="City">
-		    	</div>
-		    	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-		    		<input class="form-control" value="Zip" placeholder="Zip Code">
-		    	</div>
 		    	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 check-same-address">
-		    		<input type="checkbox">
-		    		<span>Billing Address is same as Shipping Address</span>
+		    		<div class="checkbox" ng-class="{'checked':mdl.sameAsShipping}">
+							<label ng-click="mdl.sameAsShipping=!mdl.sameAsShipping">
+								<input type="checkbox" name="shipping_same_as_billing" value="1"> Billing Address is same as Shipping Address
+							</label>
+						</div>
 		    	</div>
 		    	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 devider">
 		    	</div>
-		    	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 shipping-head">
-		    		<p class="heading-text">Billing Address:</p>
-		    	</div>
+		    	<div ng-if="!mdl.sameAsShipping">
+						<div class="row form-group">
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 shipping-head">
+		    				<p class="heading-text">Billing Address:</p>
+		    			</div>
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+								<select ng-model="mdl.selectedBilling"  required ng-options="site.id as site.name for site in mdl.allSites" class="form-control">
+									<option value="">--Add New--</option>
+								</select>
+							</div>
+						</div>
+						<form ng-if="!mdl.selectedBilling" validate-form name="mdl.billing.form" class="person-information">
+							<p class="heading-text">Enter Billing Address</p>
+							<div class="row form-group">
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+									<input ng-disabled="mdl.sameAsShipping" ng-model="mdl.billing.data.first_name" type="text" name="firstname" required class="form-control" placeholder="First Name">
+								</div>
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+									<input ng-disabled="mdl.sameAsShipping" ng-model="mdl.billing.data.last_name" type="text" name="lastname" required class="form-control" placeholder="Last Name">
+								</div>
+							</div>
+							<div class="row form-group">
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+									<input ng-disabled="mdl.sameAsShipping" ng-model="mdl.billing.data.company_name" type="text" name="companyname" required class="form-control" placeholder="Company Name">
+								</div>
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+									<input ng-disabled="mdl.sameAsShipping" ng-model="mdl.billing.data.phone" type="text" name="phonenumber" required class="form-control" placeholder="Phone Name">
+								</div>
+							</div>
+							<div class="row form-group">
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+									<input ng-disabled="mdl.sameAsShipping" type="text" ng-model="mdl.billing.data.name" name="jobsitename" required class="form-control" placeholder="Jobsite Name">
+								</div>
+							</div>
+							<div class="row form-group">
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+									<input ng-disabled="mdl.sameAsShipping"  type="text" name="address_line_1" ng-model="mdl.billing.data.address1" required class="form-control" placeholder="Address Line 1">
+								</div>
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+									<input ng-disabled="mdl.sameAsShipping" type="text" name="address_line_2" ng-model="mdl.billing.data.address2" required class="form-control" placeholder="Address Line 2">
+								</div>
+							</div>
+							<div class="row form-group">
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+									<select ng-disabled="mdl.sameAsShipping"  ng-model="mdl.billing.data.country"  name="country" required class="form-control" ng-options="key as value for (key,value) in mdl.countries">
+									</select>
+								</div>
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+									<select ng-disabled="mdl.sameAsShipping" ng-model="mdl.billing.data.state" name="state" required class="form-control" ng-options="key as value for (key,value) in mdl.billing.states">
+									</select>
+								</div>
+							</div>
+							<div class="row form-group">
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+									<select ng-disabled="mdl.sameAsShipping" ng-model="mdl.billing.data.city"  name="city" required class="form-control" ng-options="key as value for (key,value) in mdl.billing.cities">
+									</select>
+								</div>
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+									<input ng-model="mdl.billing.data.zip_code" required type="text" name="zipcode" class="form-control" placeholder="Zipcode">
+								</div>
+							</div>
+						</form>
+						<hr />
+					</div>
 		    	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 check-same-address">
-		    		<input type="checkbox">
-		    		<span>By Continuing you are agree to the <a href="">Terms and Conditions</a></span>
+		    		<div class="checkbox" ng-class="{checked:mdl.termsAccepted}">
+							<label ng-click="mdl.termsAccepted=!mdl.termsAccepted">
+								<input type="checkbox"> By continuing, you agree to the <a><span class="skin-color">Terms and Conditions</span></a>.
+							</label>
+						</div>
 		    	</div>
 		    	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 pull-center cont-btn-col">
 		    		<button class="btn all-btn primary-btn pull-right" ui-sref="main.payment">Continue with Payment</button>
 		    	</div>
 		    </div>
 		    <div role="tabpanel" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tab-pane jobsite-tab col-padding-small" id="home">
-		    	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-			    	<select class="form-control">
-			    		<option>Jobsite: ABC</option>
-			    		<option>Jobsite: XYZ</option>
-			    		<option>Jobsite: PQR</option>
-			    	</select>
-		    	</div>
-		    	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-padding-small">
-		    	</div>
-		    	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 devider devider-bottom col-padding-small"></div>
-		    	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-		    		<input class="form-control" placeholder="First Name">
-		    	</div>
-		    	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-		    		<input class="form-control" placeholder="Company Name">
-		    	</div>
-		    	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-		    		<input class="form-control" placeholder="Phone Number">
-		    	</div>
-		    	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-		    		<input class="form-control" placeholder="Address Line 1">
-		    	</div>
-		    	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-		    		<input class="form-control" placeholder="Address Line 2">
-		    	</div>
-		    	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-		    		<input class="form-control" placeholder="Country">
-		    	</div>
-		    	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-		    		<input class="form-control" placeholder="State">
-		    	</div>
-		    	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-		    		<input class="form-control" placeholder="City">
-		    	</div>
-		    	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-		    		<input class="form-control" placeholder="Zip Code">
-		    	</div>
+		    	<form validate-form name="mdl.shipping.form">
+			    	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+			    		<input class="form-control" placeholder="First Name" ng-model="mdl.shipping.data.first_name" required>
+			    	</div>
+			    	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+			    		<input class="form-control" placeholder="Company Name" ng-model="mdl.shipping.data.company_name" required>
+			    	</div>
+			    	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+			    		<input class="form-control" placeholder="Phone Number" ng-model="mdl.shipping.data.phone" required>
+			    	</div>
+			    	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+			    		<input type="text" ng-model="mdl.shipping.data.name" required class="form-control" placeholder="Enter Jobsite Name">
+			    	</div>
+			    	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+			    		<input class="form-control" placeholder="Address Line 1" ng-model="mdl.shipping.data.address1" required>
+			    	</div>
+			    	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+			    		<input class="form-control" placeholder="Address Line 2" ng-model="mdl.shipping.data.address2" required>
+			    	</div>
+			    	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+			    		<select ng-model="mdl.shipping.data.country"  name="country" required class="form-control" ng-options="key as value for (key,value) in mdl.countries">
+							</select>
+			    	</div>
+			    	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+			    		<select ng-model="mdl.shipping.data.state" name="state" required class="form-control" ng-options="key as value for (key,value) in mdl.shipping.states">
+							</select>
+			    	</div>
+			    	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+							<select ng-model="mdl.shipping.data.city"  name="city" required class="form-control" ng-options="key as value for (key,value) in mdl.shipping.cities">
+							</select>
+			    	</div>
+			    	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+							<input ng-model="mdl.shipping.data.zip_code" required type="text" name="Zipcode" class="form-control" placeholder="Zipcode">
+			    	</div>
+		    	</form>
 		    	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 check-same-address">
-		    		<input type="checkbox">
-		    		<span>Billing Address is same as Shipping Address</span>
+		    		<div class="checkbox" ng-class="{'checked':mdl.sameAsShipping}">
+							<label ng-click="mdl.sameAsShipping=!mdl.sameAsShipping">
+								<input type="checkbox" name="shipping_same_as_billing" value="1"> Billing Address is same as Shipping Address
+							</label>
+						</div>
 		    	</div>
 		    	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 devider">
 		    	</div>
-		    	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 shipping-head">
-		    		<p class="heading-text">Billing Address:</p>
-		    	</div>
+		    	<div ng-if="!mdl.sameAsShipping">
+						<div class="row form-group">
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 shipping-head">
+		    				<p class="heading-text">Billing Address:</p>
+		    			</div>
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+								<select ng-model="mdl.selectedBilling"  required ng-options="site.id as site.name for site in mdl.allSites" class="form-control">
+									<option value="">--Add New--</option>
+								</select>
+							</div>
+						</div>
+						<form ng-if="!mdl.selectedBilling" validate-form name="mdl.billing.form" class="person-information">
+							<p class="heading-text">Enter Billing Address</p>
+							<div class="row form-group">
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+									<input ng-disabled="mdl.sameAsShipping" ng-model="mdl.billing.data.first_name" type="text" name="firstname" required class="form-control" placeholder="First Name">
+								</div>
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+									<input ng-disabled="mdl.sameAsShipping" ng-model="mdl.billing.data.last_name" type="text" name="lastname" required class="form-control" placeholder="Last Name">
+								</div>
+							</div>
+							<div class="row form-group">
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+									<input ng-disabled="mdl.sameAsShipping" ng-model="mdl.billing.data.company_name" type="text" name="companyname" required class="form-control" placeholder="Company Name">
+								</div>
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+									<input ng-disabled="mdl.sameAsShipping" ng-model="mdl.billing.data.phone" type="text" name="phonenumber" required class="form-control" placeholder="Phone Name">
+								</div>
+							</div>
+							<div class="row form-group">
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+									<input ng-disabled="mdl.sameAsShipping" type="text" ng-model="mdl.billing.data.name" name="jobsitename" required class="form-control" placeholder="Jobsite Name">
+								</div>
+							</div>
+							<div class="row form-group">
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+									<input ng-disabled="mdl.sameAsShipping"  type="text" name="address_line_1" ng-model="mdl.billing.data.address1" required class="form-control" placeholder="Address Line 1">
+								</div>
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+									<input ng-disabled="mdl.sameAsShipping" type="text" name="address_line_2" ng-model="mdl.billing.data.address2" required class="form-control" placeholder="Address Line 2">
+								</div>
+							</div>
+							<div class="row form-group">
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+									<select ng-disabled="mdl.sameAsShipping"  ng-model="mdl.billing.data.country"  name="country" required class="form-control" ng-options="key as value for (key,value) in mdl.countries">
+									</select>
+								</div>
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+									<select ng-disabled="mdl.sameAsShipping" ng-model="mdl.billing.data.state" name="state" required class="form-control" ng-options="key as value for (key,value) in mdl.billing.states">
+									</select>
+								</div>
+							</div>
+							<div class="row form-group">
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+									<select ng-disabled="mdl.sameAsShipping" ng-model="mdl.billing.data.city"  name="city" required class="form-control" ng-options="key as value for (key,value) in mdl.billing.cities">
+									</select>
+								</div>
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+									<input ng-model="mdl.billing.data.zip_code" required type="text" name="zipcode" class="form-control" placeholder="Zipcode">
+								</div>
+							</div>
+						</form>
+						<hr />
+					</div>
 		    	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 check-same-address">
-		    		<input type="checkbox">
-		    		<span>By Continuing you are agree to the <a href="">Terms and Conditions</a></span>
+		    		<div class="checkbox" ng-class="{checked:mdl.termsAccepted}">
+							<label ng-click="mdl.termsAccepted=!mdl.termsAccepted">
+								<input type="checkbox"> By continuing, you agree to the <a><span class="skin-color">Terms and Conditions</span></a>.
+							</label>
+						</div>
 		    	</div>
 		    	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 pull-center cont-btn-col">
-		    		<button class="btn all-btn primary-btn pull-right" ui-sref="main.payment">Continue with Payment</button>
+		    		<button class="btn all-btn primary-btn pull-right" ng-click="continueWithPayment()">Continue with Payment</button>
 		    	</div>
 		    </div>
 		  </div>

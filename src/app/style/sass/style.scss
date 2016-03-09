@@ -5128,15 +5128,15 @@ button.ui-button::-moz-focus-inner { border: 0; padding: 0; }
   }
 }
 .cart-total {
-  background-color: #3E3E3E;
+  background-color: #f2f2f2;
   h4 {
-    color: #FFF;
+    color: #000;
     margin: 16px;
     margin-bottom: 0px;
     font-size: 1.8em;
   }
   dl.term-description {
-    dd { color: #FFF; }
+    dd { color: #000; }
   }
 }
 .alert {
@@ -6329,12 +6329,12 @@ section {
     }
   }
   .add-cost {
-    border-right: 1px solid $white-theme-color;
+    border-right: 1px solid $primary-border-color;
     p {
       color: $primary-button-color;
       margin-bottom: 5px;
       span {
-        color: $white-theme-color;
+        color: $black-color;
       }
     }
   }
@@ -6638,4 +6638,40 @@ section {
   top: 8px;
   right: 10px;
   font-size: 16px !important;
+}
+
+.order-table {
+  > tbody {
+    > tr {
+      > td {
+        p {
+          color: $black-color;
+        }
+        small {
+          margin-left: 39px;
+        }
+      }
+    }
+  }
+}
+
+.loaderDiv {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1100;
+  background-color: rgba(0,0,0,.5) !important;
+  display: flex;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  justify-content: center !important;
+  opacity: 1 !important;
+  .ajax-loader {
+    position: static;
+    width: 10%;
+    margin-left: 0;
+    margin-top: 0;
+  }
 }

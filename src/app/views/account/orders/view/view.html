@@ -1,33 +1,55 @@
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding booking-information travelo-box" style="margin-bottom: 0px;">
+	<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+		<button class="btn all-btn primary-btn" ui-sref="main.account.orders.list">
+			<i class="fa fa-chevron-left"></i> &nbsp
+			Back to Order List</button>
+	</div>
+	<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 no-padding orders-top-button">
+		<button class="btn all-btn pull-right btn-right primary-btn">Cancel Order</button>
+		<button class="btn all-btn pull-right btn-right primary-btn">Return</button>
+		<button class="btn all-btn pull-right primary-btn">Print Details</button>
+	</div>
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
+		<hr />
+	</div>
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding booking-confirmation clearfix">
-		<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 no-padding message">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding message">
 			<i class="soap-icon-insurance icon circle"></i>
 			<h4 class="main-message">Your Order is completed !</h4>
 			<p>Please find your order details below.</p>
-		</div>
-		<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 no-padding orders-top-button">
-			<button class="btn all-btn pull-right btn-right primary-btn">Cancel Order</button>
-			<button class="btn all-btn pull-right btn-right primary-btn">Return</button>
-			<button class="btn all-btn pull-right primary-btn">Print Details</button>
 		</div>
 	</div>
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
 		<hr />
 	</div>
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
-		<h2>Order Details</h2>
-		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 no-padding term-description">
-			<p class="orange-text no-margin">Order number:</p>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding term-description">
+			<p class="no-margin heading-text">Order Number: 
+				<span class="no-margin" ng-if="mdl.order.id">{{mdl.order.id}}</span>
+				<span class="no-margin" ng-if="!mdl.order.id">--</span>
+			</p>
 		</div>
-		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-			<p class="no-margin" ng-if="mdl.order.id">{{mdl.order.id}}</p>
-			<p class="no-margin" ng-if="!mdl.order.id">--</p>
-		</div>
+	</div>
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
+		<hr />
+	</div>
+	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 no-padding">
+		<h2 class="heading-text">Shipping Address</h2>
+		<p ng-if="mdl.order.billing_address.address1" class="no-margin">{{mdl.order.billing_address.address1+' '+order.billing_address.address2}}</p>
+		<p ng-if="!mdl.order.billing_address.address1" class="no-margin">--</p>
+	</div>
+	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+		<h2 class="heading-text">Billing Address</h2>
+		<p ng-if="mdl.order.billing_address.address1" class="no-margin">{{mdl.order.billing_address.address1+' '+order.billing_address.address2}}</p>
+		<p ng-if="!mdl.order.billing_address.address1" class="no-margin">--</p>
 	</div>
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
 		<hr />
 	</div>
 	<div class="row invoice-address" style="margin-bottom: 0;">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<h2 class="heading-text">Details</h2>
+		</div>
 		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
 			<p class="orange-text">Name:</p>
 		</div>
@@ -41,20 +63,6 @@
 		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
 			<p ng-if="mdl.order.billing_address.phone">{{mdl.order.billing_address.phone}}</p>
 			<p ng-if="!mdl.order.billing_address.phone">--</p>
-		</div>
-		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-			<p class="orange-text">Shipping Address:</p>
-		</div>
-		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-			<p ng-if="mdl.order.billing_address.address1">{{mdl.order.billing_address.address1+' '+order.billing_address.address2}}</p>
-			<p ng-if="!mdl.order.billing_address.address1">--</p>
-		</div>
-		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-			<p class="orange-text">Billing Address:</p>
-		</div>
-		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-			<p ng-if="mdl.order.billing_address.address1">{{mdl.order.billing_address.address1+' '+order.billing_address.address2}}</p>
-			<p ng-if="!mdl.order.billing_address.address1">--</p>
 		</div>
 		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
 			<p class="orange-text">Town / City:</p>
@@ -79,6 +87,7 @@
 		</div>
 	</div>
 </div>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 devider devider-bottom"></div>
 <!-- <div id="tour-details" class="travelo-box order-details" load-indicator>
 		<div ng-repeat="item in mdl.order.items" class="intro2 small-box border-box table-wrapper hidden-table-sms">
 				<div class="image-container table-cell"><img src="http://placehold.it/80x80" alt=""></div>
@@ -150,8 +159,5 @@
 				${{mdl.order.total | number}}
 			</div>
 		</div>
-	</div>
-	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-		<button class="btn all-btn pull-right primary-btn" ui-sref="main.account.orders.list">Back to Order List</button>
 	</div>
 </div>

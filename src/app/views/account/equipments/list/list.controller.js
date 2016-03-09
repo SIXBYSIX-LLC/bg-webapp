@@ -40,7 +40,7 @@ angular.module('BG').controller('ListEquipmentsCtrl',
     };
 
     $scope.edit = function(pro){
-      $state.go("main.account.equipments.edit",{id:pro.id});
+      $state.go("main.sellerAccount.equipments.edit",{id:pro.id});
     }
 
   }

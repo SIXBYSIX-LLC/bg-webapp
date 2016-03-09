@@ -88,13 +88,13 @@ angular.module('BG').controller('AddEquipmentCtrl',
         if ($scope.editMode) {
           EquipmentsService.updateEquipment(addEquiMdl.data.id, addEquiMdl.data).then(function (response) {
             uploadImages().then(function(){
-              $state.go('main.account.equipments.list');
+              $state.go('main.sellerAccount.equipments.list');
             })
           });
         } else {
           EquipmentsService.addEquipment(addEquiMdl.data).then(function (response) {
             uploadImages().then(function(){
-              $state.go('main.account.equipments.list');
+              $state.go('main.sellerAccount.equipments.list');
             })
           })
         }
