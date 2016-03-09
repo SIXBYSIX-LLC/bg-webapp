@@ -187,7 +187,7 @@
 				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-padding-small browse-equip-col" ng-repeat="item in mdl.categories| limitTo : 8" >
 					<article class="box pointerhover landing-browse-equip" ui-sref="main.search({category:item.id})">
 						<figure class="animated fadeInDown" data-animation-type="fadeInDown" data-animation-duration="1">
-							<a href="" title="" class="hover-effect"><img ng-src="{{item.image.url || 'http://placehold.it/270x160'}}" alt="" width="270" height="160" /></a>
+							<a href="" title="" class="hover-effect"><img ng-src="{{item.image.url || 'http://dummyimage.com/270x160/afafaf/ffffff.png&text=No+Image+Found'}}" alt="" width="270" height="160" /></a>
 						</figure>
 						<div class="details">
 							<h4 class="box-title">{{item.name}}</h4>
@@ -260,7 +260,7 @@
 					<div class="col-xs-12 col-sm-6 col-md-3 landing-img-carousel" ng-repeat="product in mdl.recent | limitTo:4">
 						<article class="box">
 							<figure>
-								<a href="#" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt=""></a>
+								<a href="#" title="" class="hover-effect"><img src="http://dummyimage.com/270x160/afafaf/ffffff.png&text=No+Image+Found" alt=""></a>
 							</figure>
 							<div class="details">
 								<h4 class="box-title">{{product.name}}</h4>
@@ -289,7 +289,7 @@
 									</div>
 								</div>
 								<div class="action">
-									<a href="" class="btn all-btn primary-btn full-width">View & Reserve</a>
+									<a ui-sref="main.equiDetails({id:product.id})" class="btn all-btn primary-btn full-width">View & Reserve</a>
 								</div>
 							</div>
 						</article>
@@ -299,7 +299,7 @@
 					<div class="col-xs-12 col-sm-6 col-md-3 landing-img-carousel" ng-repeat="product in mdl.recent.slice(4, mdl.recent.length) | limitTo:4">
 						<article class="box">
 							<figure>
-								<a href="#" title="" class="hover-effect"><img src="http://placehold.it/270x160" alt=""></a>
+								<a href="#" title="" class="hover-effect"><img src=”http://dummyimage.com/270x160/afafaf/ffffff.png&text=No+Image+Found” /></a>
 							</figure>
 							<div class="details">
 								<h4 class="box-title">{{product.name}}</h4>
