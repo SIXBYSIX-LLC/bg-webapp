@@ -9,10 +9,8 @@
 				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 					<label>Select Product</label>
 					<!-- <div class="selector"> -->
-						<select name="select-product" class="form-control">
-							<option>Abc</option>
-							<option>Def</option>
-						</select>
+						<select name="select-product" ng-model="invMdl.equiId" class="form-control" ng-options="e.id as e.name for e in invMdl.equis">
+                        </select>
 					<!-- </div> -->
 				</div>
 				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">

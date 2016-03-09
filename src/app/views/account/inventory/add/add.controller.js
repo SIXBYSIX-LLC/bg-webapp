@@ -27,11 +27,11 @@ angular.module('BG').controller('AddInventoryCtrl',
           if($scope.editMode){
             data.product = $scope.invMdl.equiId;
             InventoryService.updateInventory($scope.invMdl.equiId,$stateParams.id,data).then(function(response){
-              $state.go("main.account.inventory.list");
+              $state.go("main.sellerAccount.inventory.list");
             })
           }else{
             InventoryService.addInventory($scope.invMdl.equiId,data).then(function(response){
-              $state.go("main.account.inventory.list");
+              $state.go("main.sellerAccount.inventory.list");
             })
           }
       }

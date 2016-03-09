@@ -27,6 +27,10 @@
         url:'/contact-us',
         templateUrl:'app/views/contact-us/contact-us.html'
       })
+      .state('main.inquiries',{
+        url:'/inquiries',
+        templateUrl:'app/views/inquiries/inquiries.html'
+      })
       .state('main.account.bookings',{
         url:'/bookings',
         templateUrl:'app/views/account/bookings/bookings.html'
@@ -224,33 +228,50 @@
 
       .state('main.sellerAccount.equipments', {
         url:'/equipments',
-        templateUrl: 'app/views/seller-account/equipments/equipments.html'
+        templateUrl: 'app/views/seller-account/equipments/equipments.html',
+        controller: 'EquipmentsCtrl'
       })
 
       .state('main.sellerAccount.equipments.list', {
         url:'/list',
-        templateUrl: 'app/views/seller-account/equipments/list/list.html'
+        templateUrl: 'app/views/seller-account/equipments/list/list.html',
+        controller: 'ListEquipmentsCtrl'
       })
 
       .state('main.sellerAccount.equipments.add',{
         url:'/add',
-        templateUrl:'app/views/seller-account/equipments/add/add.html',
+        templateUrl:'app/views/account/equipments/add/add.html',
+        controller:'AddEquipmentCtrl'
+      })
+
+      .state('main.sellerAccount.equipments.edit',{
+        url:'/edit/{id}',
+        templateUrl:'app/views/account/equipments/add/add.html',
         controller:'AddEquipmentCtrl'
       })
 
       .state('main.sellerAccount.inventory', {
         url:'/inventory',
-        templateUrl: 'app/views/seller-account/inventory/inventory.html'
+        templateUrl: 'app/views/seller-account/inventory/inventory.html',
+        controller: 'InventoryCtrl'
       })
 
       .state('main.sellerAccount.inventory.list', {
         url:'/list',
-        templateUrl: 'app/views/seller-account/inventory/list/list.html'
+        templateUrl: 'app/views/seller-account/inventory/list/list.html',
+        controller: 'ListInventoryCtrl'
       })
 
       .state('main.sellerAccount.inventory.add', {
         url:'/add',
-        templateUrl: 'app/views/seller-account/inventory/add/add.html'
+        templateUrl: 'app/views/seller-account/inventory/add/add.html',
+        controller: 'AddInventoryCtrl'
+      })
+
+      .state('main.sellerAccount.inventory.edit', {
+        url:'/edit/{id}',
+        templateUrl: 'app/views/seller-account/inventory/add/add.html',
+        controller: 'AddInventoryCtrl'
       })
 
       .state('main.sellerAccount.orders',{

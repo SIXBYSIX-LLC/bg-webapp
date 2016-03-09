@@ -7,34 +7,37 @@
 	</div>
 	Sort By &nbsp
 	<select class="form-control sort-by">
-		<option>A-Z</option>
-		<option>Z-A</option>
-		<option>More-Less</option>
-		<option>Less-More</option>
-		<option>Currently Availbility</option>
+		<option>Ascending</option>
+		<option>Descending</option>
+		<option>Lowest Price</option>
+		<option>Highest Price</option>
 	</select>
 </div>
 
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 booking-history no-padding">
-	<div ng-repeat="order in mdl.orders" class="booking-info clearfix">
-		<h4 class="box-title">
-			<i class="icon soap-icon-card yellow-color circle"></i>Order
-			<small>ID : {{order.id}}</small>
-		</h4>
-		<h4 class="box-title col-lg-offset-1">
-			<i class="icon yellow-color circle"></i>{{order.items.length}} items
-		</h4>
-		<!--<h4 class="box-title col-lg-offset-1">
-			<i class="icon soap-icon-departure yellow-color"></i>City,state,California
-		</h4>-->
-		<h4 class="box-title col-lg-offset-1">
-			<i class="icon yellow-color circle"></i>${{order.total | number}}
-		</h4>
-		<!-- <button class="btn all-btn status primary-btn" ui-sref="main.account.orders.view({id:order.id})">Details</button>
-		<button class="btn all-btn status primary-btn" ui-sref="main.account.orders.list">Cancel</button>
-		<button class="btn all-btn status primary-btn" ui-sref="main.account.orders.list">Return</button> -->
-		<a ui-sref="main.account.orders.view({id:order.id})" class="pull-right">
-			<i class="fa fa-eye" ui-sref="main.account.orders.view({id:order.id})"></i>
-		</a>
-	</div>
+	<table class="table order-table">
+		<tbody>
+			<tr ng-repeat="order in mdl.orders">
+				<td>
+					<p class="heading-text no-margin">
+						<i class="icon soap-icon-card yellow-color circle"></i>&nbsp Order
+					</p>
+					<small>ID : {{order.id}}</small>
+				</td>
+				<td class="heading-text">
+					Jan 28, 2015
+				</td>
+				<td class="heading-text">{{order.items.length}} items
+				</td>
+				<td class="heading-text">${{order.total | number}}
+				</td>
+				<td>
+					<a ui-sref="main.account.orders.view({id:order.id})" class="pull-right btn all-btn primary-btn">
+						<!-- <i class="fa fa-eye" ui-sref="main.account.orders.view({id:order.id})"></i> -->
+						View
+					</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
 </div>
