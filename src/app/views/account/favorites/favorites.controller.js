@@ -13,5 +13,11 @@ angular.module('BG').controller('FavoritesCtrl',
       	$scope.searchOpen = !$scope.searchOpen;
       }
 
+      $scope.mobilesearchOpen = false;
+      $scope.mobilesearchBar = function() {
+      	$scope.mobilesearchOpen = !$scope.mobilesearchOpen;
+      	$scope.mobilefilterOpen = false;
+      }
+
 
   });

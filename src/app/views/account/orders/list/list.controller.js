@@ -16,5 +16,17 @@ angular.module('BG').controller('ListOrdersCtrl',
       	$scope.filterOpen = !$scope.filterOpen;
       }
 
+      $scope.mobilesearchOpen = false;
+      $scope.mobilefilterOpen = false;
+      $scope.mobilesearchBar = function() {
+      	$scope.mobilesearchOpen = !$scope.mobilesearchOpen;
+      	$scope.mobilefilterOpen = false;
+      }
+
+      $scope.mobilefilterBar = function() {
+      	$scope.mobilefilterOpen = !$scope.mobilefilterOpen;
+      	$scope.mobilesearchOpen = false;
+      }
+
 
   });

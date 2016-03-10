@@ -11,4 +11,9 @@ angular.module('BG').controller('InquiryListCtrl',
       $scope.searchBar = function() {
       	$scope.searchOpen = !$scope.searchOpen;
       }
+      $scope.mobilesearchOpen = false;
+      $scope.mobilesearchBar = function() {
+      	$scope.mobilesearchOpen = !$scope.mobilesearchOpen;
+      	$scope.mobilefilterOpen = false;
+      }
   });

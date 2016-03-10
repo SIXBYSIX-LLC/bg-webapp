@@ -1,12 +1,20 @@
 <div id="booking" class="tab-pane fade in col-padding-small col-padding-sm">
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 seller-header search-col no-padding">
 		<h1 class="no-margin skin-color seller-heading-font">Favorites</h1>
-		<div id="sb-search" class="sb-search" ng-class="{'sb-search-open': searchOpen}">
+		<div id="sb-search" class="sb-search hidden-xs" ng-class="{'sb-search-open': searchOpen}">
 			<form>
 				<input class="sb-search-input form-control" placeholder="Search" type="text" value="" name="search" id="search" ng-class="{'no-border': !searchOpen}">
 				<input class="sb-search-submit form-control" type="submit" value=""ng-click="searchBar()">
 				<span class="sb-icon-search form-control"ng-click="searchBar()"></span>
 			</form>
+		</div>
+		<div class="visible-xs">
+			<div class="pull-right mobile-icons">
+				<i class="fa fa-search orange-color pull-right" ng-click="mobilesearchBar()"></i>
+			</div>
+			<div class="arrow_box" ng-show="mobilesearchOpen">
+				<input class="form-control" type="text" placeholder="Search">
+			</div>
 		</div>
 	</div>
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 booking-history no-padding">
@@ -27,12 +35,12 @@
 					</a>
 				</div>
 			</h4>
-			<a class="pull-right icon-right hidden-xs">
-				<i class="fa fa-trash"></i>
-			</a>
-			<a class="pull-right icon-right hidden-xs" ui-sref="main.equiDetails({id:pro.id})">
-				<i class="fa fa-eye"></i>&nbsp &nbsp &nbsp
-			</a>
+			<button class="pull-right hidden-xs btn small-btn secondary-btn">
+				Delete
+			</button>
+			<button class="pull-right hidden-xs btn small-btn secondary-btn" ui-sref="main.equiDetails({id:pro.id})" style="margin-right: 10px;">
+				View 
+			</button>
 			<!-- <button class="btn all-btn status">Unfavourite</button> -->
 			<!-- <button class="btn all-btn status" ui-sref="main.equiDetails({id:pro.id})">View</button> -->
 		</div>

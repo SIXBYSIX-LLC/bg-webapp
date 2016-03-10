@@ -24,5 +24,10 @@ angular.module('BG').controller('ListInventoryCtrl',
       $scope.searchOpen = !$scope.searchOpen;
     }
 
+    $scope.mobilesearchOpen = false;
+    $scope.mobilesearchBar = function() {
+      $scope.mobilesearchOpen = !$scope.mobilesearchOpen;
+    }
+
 
   });

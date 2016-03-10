@@ -48,5 +48,10 @@ angular.module('BG').controller('ListEquipmentsCtrl',
       $scope.searchOpen = !$scope.searchOpen;
     }
 
+    $scope.mobilesearchOpen = false;
+    $scope.mobilesearchBar = function() {
+      $scope.mobilesearchOpen = !$scope.mobilesearchOpen;
+    }
+
   }
 );
