@@ -8,5 +8,10 @@ angular.module('BG').controller('FavoritesCtrl',
       mdl.favorites = response.data.data;
     })
 
+    $scope.searchOpen = false;
+      $scope.searchBar = function() {
+      	$scope.searchOpen = !$scope.searchOpen;
+      }
+
 
   });

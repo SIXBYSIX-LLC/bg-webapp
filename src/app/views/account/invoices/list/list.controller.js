@@ -6,5 +6,15 @@ angular.module('BG').controller('ListInvoicesCtrl',
       mdl.invoices=response.data.data;
     });
 
+    $scope.searchOpen = false;
+      $scope.filterOpen = false;
+      $scope.searchBar = function() {
+      	$scope.searchOpen = !$scope.searchOpen;
+      }
+
+      $scope.filterBar = function() {
+      	$scope.filterOpen = !$scope.filterOpen;
+      }
+
 
   });

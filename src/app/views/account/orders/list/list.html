@@ -1,20 +1,24 @@
 
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 seller-header search-col no-padding">
 	<h1 class="no-margin skin-color seller-heading-font">My Orders</h1>
-	<div class="form-control search-div">
-		<input type="text" placeholder="Search">
-		<i class="fa fa-search"></i>
-	</div>
-	Sort By &nbsp
-	<select class="form-control sort-by">
-		<option>Ascending</option>
-		<option>Descending</option>
-		<option>Lowest Price</option>
-		<option>Highest Price</option>
-	</select>
+	<div class="sb-search btn-right" ng-class="{'sb-search-open': filterOpen}">
+			<form>
+				<input date-range-picker class="form-control date-picker sb-search-input" placeholder="Select Dates" type="text" ng-model="date" ng-class="{'no-border': !filterOpen}" />
+				<span class="sb-icon-search filter-icon form-control"ng-click="filterBar()"></span>
+			</form>
+		</div>
+		<div id="sb-search" class="sb-search" ng-class="{'sb-search-open': searchOpen}">
+			<form>
+				<input class="sb-search-input form-control" placeholder="Search" type="text" value="" name="search" id="search" ng-class="{'no-border': !searchOpen}">
+				<input class="sb-search-submit form-control" type="submit" value=""ng-click="searchBar()">
+				<span class="sb-icon-search form-control"ng-click="searchBar()"></span>
+			</form>
+		</div>
 </div>
-
-<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 booking-history no-padding">
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
+	<hr />
+</div>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
 	<table class="table order-table">
 		<tbody>
 			<tr ng-repeat="order in mdl.orders">

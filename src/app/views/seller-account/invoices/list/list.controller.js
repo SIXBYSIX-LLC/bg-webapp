@@ -7,5 +7,15 @@ angular.module('BG').controller('SellerInvoiceListCtrl',
       mdl.items = response.data.data;
     });
 
+    $scope.searchOpen = false;
+    $scope.filterOpen = false;
+    $scope.searchBar = function() {
+    	$scope.searchOpen = !$scope.searchOpen;
+    }
+
+    $scope.filterBar = function() {
+    	$scope.filterOpen = !$scope.filterOpen;
+    }
+
 
   });

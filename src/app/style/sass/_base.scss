@@ -180,6 +180,9 @@ img.full-width { height: auto; }
 .secondary-btn {
   background-color: $secondary-button-color;
   color: $white-theme-color;
+  &:hover {
+    background-color: $primary-button-color;
+  }
 }
 
 .grey-button {
