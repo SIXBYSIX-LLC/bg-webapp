@@ -60,7 +60,7 @@
 							<a ng-click="edit(pro)">
 								<i class="fa fa-pencil-square-o" ng-click="edit(pro)"></i>
 							</a>
-							<a  ng-click="delete(pro)">
+							<a ng-click="delete(pro)">
 								<i class="fa fa-archive" ng-click="delete(pro)"></i>
 							</a>
 						</p>
@@ -72,16 +72,16 @@
 		</table>
 	</div>
 	<div class="col-xs-12 visible-xs no-padding">
-		<article class="col-xs-12 mobile-cart seller-mobile-equip">
+		<article class="col-xs-12 mobile-cart seller-mobile-equip" ng-repeat="pro in listEquiMdl.products">
 				<figure>
 					<a href="#" title="" class="hover-effect pull-center"><img src="http://placehold.it/166x150" alt="" class="inline-block"></a>
 				</figure>
 				<div class="col-xs-12 no-padding devider"></div>
 				<div class="col-xs-12 no-padding details">
-					<h4 class="box-title bold-font" style="margin-bottom: 5px;">Breaker</h4>
+					<h4 class="box-title bold-font" style="margin-bottom: 5px;">{{pro.name}}</h4>
 					<div class="col-xs-12 no-padding amenities">
 						<p class="no-margin">
-							Austin, Texas
+							{{pro.location.city.name}},{{pro.location.state.name}}
 							<span class="pull-right">
 								ID: xxxxxxxx
 							</span>
@@ -99,14 +99,14 @@
 					</div>
 					<div class="col-xs-12 devider"></div>
 					<div class="col-xs-12 no-padding action pull-center cart-action">
-						<a href="" class="pull-left">
-							<i class="fa fa-eye"></i>
+						<a ui-sref="main.equiDetails({id:pro.id})" class="pull-left">
+							<i class="fa fa-eye" ui-sref="main.equiDetails({id:pro.id})"></i>
 						</a>
-						<a ui-sref="main.sellerAccount.equipments.add" class="text">
-							<i class="fa fa-pencil-square-o"></i>
+						<a ng-click="edit(pro)" class="text">
+							<i class="fa fa-pencil-square-o" ng-click="edit(pro)"></i>
 						</a>
-						<a href="" class="pull-right">
-							<i class="fa fa-archive"></i>
+						<a ng-click="delete(pro)" class="pull-right">
+							<i class="fa fa-archive" ng-click="delete(pro)"></i>
 						</a>
 					</div>
 				</div>

@@ -62,18 +62,18 @@
 		</table>
 	</div>
 	<div class="col-xs-12 visible-xs no-padding">
-		<article class="col-xs-12 mobile-cart seller-mobile-equip">
+		<article class="col-xs-12 mobile-cart seller-mobile-equip" ng-repeat="inv in mdl.inventories">
 				<figure>
 					<a href="#" title="" class="hover-effect pull-center"><img src="http://placehold.it/166x150" alt="" class="inline-block"></a>
 				</figure>
 				<div class="col-xs-12 no-padding devider"></div>
 				<div class="col-xs-12 no-padding details">
-					<h4 class="box-title bold-font" style="margin-bottom: 5px;">Breaker</h4>
+					<h4 class="box-title bold-font" style="margin-bottom: 5px;">{{inv.product.name}}</h4>
 					<div class="col-xs-12 no-padding amenities">
 						<p>
 							Austin, Texas
 							<span class="pull-right">
-								ID: xxxxxxxx
+								ID: {{inv.id}}
 							</span>
 						</p>
 					</div>
@@ -85,7 +85,7 @@
 						<a href="" class="pull-left">
 							<i class="fa fa-eye"></i>
 						</a>
-						<a ui-sref="main.sellerAccount.inventory.add" class="text">
+						<a ui-sref="main.sellerAccount.inventory.edit({id:inv.id})" class="text">
 							<i class="fa fa-pencil-square-o"></i>
 						</a>
 						<a href="" class="pull-right">

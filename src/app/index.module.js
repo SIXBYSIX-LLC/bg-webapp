@@ -15,7 +15,8 @@
       'braintree-angular',
       'toggle-switch',
       'angular-ladda',
-      'chieffancypants.loadingBar'
+      'chieffancypants.loadingBar',
+      'daterangepicker'
     ])
     .run(["$rootScope",function($rootScope){
       $rootScope.dateFormat = 'dd-MMMM-yyyy';

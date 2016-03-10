@@ -5288,7 +5288,7 @@ button.ui-button::-moz-focus-inner { border: 0; padding: 0; }
 // seller dashboard
 
 .search-col {
-  padding: 15px 0 5px !important;
+  // padding: 15px 0 5px !important;
   text-align: right;
   h1 {
     text-align: left;
@@ -6643,6 +6643,11 @@ section {
 .order-table {
   > tbody {
     > tr {
+      &:first-child {
+        > td {
+          border-top: 0;
+        }
+      }
       > td {
         p {
           color: $black-color;
@@ -6674,4 +6679,104 @@ section {
     margin-left: 0;
     margin-top: 0;
   }
+}
+
+
+
+
+.sb-search {
+  position: relative;
+  // margin-top: 10px;
+  width: 0%;
+  min-width: 34px;
+  height: 34px;
+  float: right;
+  overflow: hidden;
+  -webkit-transition: width 1s;
+  -moz-transition: width 1s;
+  transition: width 1s;
+  -webkit-backface-visibility: hidden;
+}
+
+.sb-search-input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  // border: none;
+  // outline: none;
+  background: #fff;
+  width: 100%;
+  // height: 60px;
+  margin: 0;
+  z-index: 10;
+  padding: 10px 65px 10px 10px;
+  font-family: inherit;
+  // font-size: 20px;
+  // color: #2c3e50;
+}
+
+.sb-icon-search,
+.sb-search-submit  {
+  width: 34px;
+  height: 34px;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 0;
+  margin: 0;
+  line-height: 34px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.sb-search-submit {
+  background: #fff; /* IE needs this */
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; /* IE 8 */
+    filter: alpha(opacity=0); /* IE 5-7 */
+    opacity: 0;
+  color: transparent;
+  border: none;
+  outline: none;
+  z-index: -1;
+}
+
+.sb-icon-search {
+  color: #fff;
+  background: #e67e22;
+  z-index: 90;
+  font-size: 13px;
+  font-family: 'fontawesome';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+.sb-icon-search:before {
+  content: "\f002";
+}
+
+.filter-icon:before {
+  content: "\f0b0";
+}
+
+/* Open state */
+.sb-search.sb-search-open,
+.no-js .sb-search {
+  width: 25%;
+}
+
+.sb-search.sb-search-open .sb-icon-search,
+.no-js .sb-search .sb-icon-search {
+  background: #da6d0d;
+  color: #fff;
+  z-index: 11;
+}
+
+.sb-search.sb-search-open .sb-search-submit,
+.no-js .sb-search .sb-search-submit {
+  z-index: 90;
 }
