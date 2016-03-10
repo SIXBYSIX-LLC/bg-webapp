@@ -1,21 +1,37 @@
 
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 seller-header search-col no-padding">
 	<h1 class="no-margin skin-color seller-heading-font">My Orders</h1>
-	<div class="form-control search-div">
-		<input type="text" placeholder="Search">
-		<i class="fa fa-search"></i>
+	<div class="sb-search btn-right hidden-xs" ng-class="{'sb-search-open': filterOpen}">
+		<form>
+			<input date-range-picker class="form-control date-picker sb-search-input" placeholder="Select Dates" type="text" ng-model="date" ng-class="{'no-border': !filterOpen}" />
+			<span class="sb-icon-search filter-icon form-control"ng-click="filterBar()"></span>
+		</form>
 	</div>
-	Sort By &nbsp
-	<select class="form-control sort-by">
-		<option>Ascending</option>
-		<option>Descending</option>
-		<option>Lowest Price</option>
-		<option>Highest Price</option>
-	</select>
+	<div id="sb-search" class="sb-search hidden-xs" ng-class="{'sb-search-open': searchOpen}">
+		<form>
+			<input class="sb-search-input form-control" placeholder="Search" type="text" value="" name="search" id="search" ng-class="{'no-border': !searchOpen}">
+			<input class="sb-search-submit form-control" type="submit" value=""ng-click="searchBar()">
+			<span class="sb-icon-search form-control"ng-click="searchBar()"></span>
+		</form>
+	</div>
+	<div class="visible-xs">
+		<div class="pull-right mobile-icons">
+			<i class="fa fa-filter orange-color pull-right btn-right" ng-click="mobilefilterBar()"></i>
+			<i class="fa fa-search orange-color pull-right" ng-click="mobilesearchBar()"></i>
+		</div>
+		<div class="arrow_box" ng-show="mobilesearchOpen">
+			<input class="form-control" type="text" placeholder="Search">
+		</div>
+		<div class="arrow_box filter_arrow_box" ng-show="mobilefilterOpen">
+			<input date-range-picker class="form-control date-picker" placeholder="Select Dates" type="text" ng-model="date" />
+		</div>
+	</div>
 </div>
-
-<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 booking-history no-padding">
-	<table class="table order-table">
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
+	<hr />
+</div>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
+	<table class="table order-table hidden-xs">
 		<tbody>
 			<tr ng-repeat="order in mdl.orders">
 				<td>
@@ -32,7 +48,7 @@
 				<td class="heading-text">${{order.total | number}}
 				</td>
 				<td>
-					<a ui-sref="main.account.orders.view({id:order.id})" class="pull-right btn all-btn primary-btn">
+					<a ui-sref="main.account.orders.view({id:order.id})" class="pull-right btn small-btn secondary-btn">
 						<!-- <i class="fa fa-eye" ui-sref="main.account.orders.view({id:order.id})"></i> -->
 						View
 					</a>
@@ -40,4 +56,13 @@
 			</tr>
 		</tbody>
 	</table>
+	<div ng-repeat="order in mdl.orders" class="visible-xs mobile-list">
+		<p>Order ID: <span class="pull-right">{{order.id}}</span></p>
+		<p>Date: <span class="pull-right">Jan 28, 2015</span></p>
+		<p>{{order.items.length}} items</p>
+		<p>${{order.total | number}} <a ui-sref="main.account.orders.view({id:order.id})" class="pull-right btn small-btn secondary-btn">View</a></p>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
+			<hr style="margin-top: 15px;"/>
+		</div>
+	</div>
 </div>

@@ -48,16 +48,16 @@
 		<div class="devider"></div>
 	</div>
 	<div class="col-xs-12" ng-if="!rule.edit">
-		<a class="clickable-icon pointerhover" ng-click="shippingMdl.edit(rule)">
-			<i class="fa fa-pencil-square-o"></i>
-		</a>
-		<a class="clickable-icon pointerhover pull-right" ng-click="shippingMdl.delete(rule)">
-			<i class="fa fa-trash"></i>
-		</a>
+		<button class="clickable-icon pointerhover btn small-btn secondary-btn" ng-click="shippingMdl.edit(rule)">
+			Edit
+		</button>
+		<button class="clickable-icon pointerhover pull-right btn small-btn secondary-btn" ng-click="shippingMdl.delete(rule)">
+			Delete
+		</button>
 	</div>
 	<div class="col-xs-12" ng-if="rule.edit">
-		<button ladda="loadButton" class="btn all-btn width-auto primary-btn" ng-click="shippingMdl.update(rule)">Update</button>
-		<button class="btn all-btn width-auto primary-btn pull-right" ng-click="shippingMdl.cancelEdit(rule)">Cancel</button>
+		<button ladda="loadButton" class="btn small-btn secondary-btn" ng-click="shippingMdl.update(rule)">Update</button>
+		<button class="btn small-btn secondary-btn pull-right" ng-click="shippingMdl.cancelEdit(rule)">Cancel</button>
 	</div>
 	<div class="col-xs-12">
 		<hr>
@@ -82,12 +82,12 @@
 		</div>
 		<div class="col-xs-12 col-sm-2 col-md-2 col-lg-1 shipping-list-btn">
 			<!-- <button class="btn all-btn primary-btn" ng-click="shippingMdl.edit(rule)">Edit</button> -->
-			<a class="clickable-icon pointerhover" ng-click="shippingMdl.edit(rule)">
-				<i class="fa fa-pencil-square-o"></i>
-			</a>
-			<a class="clickable-icon pointerhover" ng-click="shippingMdl.delete(rule)">
-				<i class="fa fa-trash"></i>
-			</a>
+			<button class="btn small-btn secondary-btn" ng-click="shippingMdl.edit(rule)">
+				Edit
+			</button>
+			<button class="btn small-btn secondary-btn" ng-click="shippingMdl.delete(rule)">
+				Delete
+			</button>
 		</div>
 	</div>
 
@@ -116,9 +116,9 @@
 				<input name="cost" ng-model="shippingMdl.editData.cost" type="text" required class="input-text full-width" placeholder="cost">
 			</div>
 			<div class="col-xs-12 col-sm-3 col-md-1 col-lg-1 shipping-list-btn">
-				<button ladda="loadButton" class="btn all-btn width-auto primary-btn" ng-click="shippingMdl.update(rule)">Update</button>
+				<button ladda="loadButton" class="btn small-btn secondary-btn" ng-click="shippingMdl.update(rule)">Update</button>
 				<br>
-				<button class="btn all-btn width-auto primary-btn" ng-click="shippingMdl.cancelEdit(rule)">Cancel</button>
+				<button class="btn small-btn secondary-btn" ng-click="shippingMdl.cancelEdit(rule)">Cancel</button>
 			</div>
 		</form>
 	</div>
@@ -146,7 +146,7 @@
 			<input name="cost" ng-model="shippingMdl.addData.cost" type="text" required class="form-control" placeholder="cost">
 		</div>
 		<div class="col-xs-12 col-sm-12 col-md-1 col-lg-1">
-			<button ladda="buttonLoader" class="btn width-auto all-btn primary-btn" style="width: auto;" ng-click="shippingMdl.add()">Add</button>
+			<button ladda="buttonLoader" class="btn small-btn secondary-btn" style="width: auto;" ng-click="shippingMdl.add()">Add</button>
 		</div>
 	</form>
 </div>

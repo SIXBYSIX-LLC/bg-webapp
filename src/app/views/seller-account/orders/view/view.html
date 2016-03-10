@@ -32,25 +32,23 @@
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
 	<hr />
 	</div>
-	<div class="row invoice-address" style="margin-bottom: 0;">
-		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-			<h2 class="heading-text order-head-bottom">Shipping Address</h2>
-			<dl class="term-description">
-				<dd>{{mdl.order.order.shipping_address.first_name}} {{mdl.order.order.shipping_address.last_name}}</dd>
-				<dd>{{mdl.order.order.shipping_address.address1+' '+mdl.order.order.shipping_address.address2}}</dd>
-				<dd>{{mdl.order.order.shipping_address.city.name}}-{{mdl.order.order.shipping_address.zip_code}}</dd>
-				<dd>{{mdl.order.order.shipping_address.country.name}}</dd>
-			</dl>
-		</div>
-		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-			<h2 class="heading-text order-head-bottom">Billing Address</h2>
-			<dl class="term-description">
-				<dd>{{mdl.order.order.billing_address.first_name}} {{mdl.order.order.billing_address.last_name}}</dd>
-				<dd>{{mdl.order.order.billing_address.address1+' '+mdl.order.order.billing_address.address2}}</dd>
-				<dd>{{mdl.order.order.billing_address.city.name}}-{{mdl.order.order.billing_address.zip_code}}</dd>
-				<dd>{{mdl.order.order.billing_address.country.name}}</dd>
-			</dl>
-		</div>
+	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 invoice-address no-lpadding">
+		<h2 class="heading-text order-head-bottom">Shipping Address</h2>
+		<dl class="term-description">
+			<dd>{{mdl.order.order.shipping_address.first_name}} {{mdl.order.order.shipping_address.last_name}}</dd>
+			<dd>{{mdl.order.order.shipping_address.address1+' '+mdl.order.order.shipping_address.address2}}</dd>
+			<dd>{{mdl.order.order.shipping_address.city.name}}-{{mdl.order.order.shipping_address.zip_code}}</dd>
+			<dd>{{mdl.order.order.shipping_address.country.name}}</dd>
+		</dl>
+	</div>
+	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 invoice-address">
+		<h2 class="heading-text order-head-bottom">Billing Address</h2>
+		<dl class="term-description">
+			<dd>{{mdl.order.order.billing_address.first_name}} {{mdl.order.order.billing_address.last_name}}</dd>
+			<dd>{{mdl.order.order.billing_address.address1+' '+mdl.order.order.billing_address.address2}}</dd>
+			<dd>{{mdl.order.order.billing_address.city.name}}-{{mdl.order.order.billing_address.zip_code}}</dd>
+			<dd>{{mdl.order.order.billing_address.country.name}}</dd>
+		</dl>
 	</div>
 </div>
 <!-- <div class="row">
@@ -94,7 +92,6 @@
 		</div>
 	</div>
 </div> -->
-<div class="row">
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 invoice-details-col" ng-repeat="item in mdl.order.items">
 		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 pull-center">
 			<img ng-src="{{item.images[0] || 'http://placehold.it/80x80'}}" alt="">
@@ -130,4 +127,3 @@
 			</div>
 		</div>
 	</div>
-</div>

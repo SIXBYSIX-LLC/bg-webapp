@@ -43,5 +43,15 @@ angular.module('BG').controller('ListEquipmentsCtrl',
       $state.go("main.sellerAccount.equipments.edit",{id:pro.id});
     }
 
+    $scope.searchOpen = false;
+    $scope.searchBar = function() {
+      $scope.searchOpen = !$scope.searchOpen;
+    }
+
+    $scope.mobilesearchOpen = false;
+    $scope.mobilesearchBar = function() {
+      $scope.mobilesearchOpen = !$scope.mobilesearchOpen;
+    }
+
   }
 );

@@ -177,9 +177,22 @@ img.full-width { height: auto; }
   }
 }
 
+.small-btn {
+  font-size: 11px;
+  transition: all 0.6s ease;
+  min-width: 60px;
+  font-weight: 400;
+  border-radius: 3px;
+  text-transform: none;
+}
+
 .secondary-btn {
   background-color: $secondary-button-color;
   color: $white-theme-color;
+  &:hover {
+    background-color: $primary-button-color;
+    color: $white-theme-color;
+  }
 }
 
 .grey-button {
