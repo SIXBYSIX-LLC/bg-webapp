@@ -91,9 +91,9 @@
     <div class="sort-by-section clearfix">
         <h4 class="sort-by-title block-sm">Sort results by:</h4>
         <ul class="sort-bar clearfix block-sm">
-            <li ng-class="{'active':searchMdl.sortBy=='name'}" ng-click="searchMdl.sort('name')" class="sort-by-name"><a
+            <li ng-class="{'active':searchMdl.sortBy=='name'}" ng-click="searchMdl.sort(searchMdl.sort_by_name())" class="sort-by-name"><a
                     class="sort-by-container"><span>name</span></a></li>
-            <li ng-class="{'active':searchMdl.sortBy=='daily_price'}" ng-click="searchMdl.sort('daily_price')"
+            <li ng-class="{'active':searchMdl.sortBy=='daily_price'}" ng-click="searchMdl.sort(searchMdl.sort_by_price())"
                 class="sort-by-price"><a class="sort-by-container"><span>price</span></a></li>
             <li class="clearer visible-sms"></li>
             <!--<li class="sort-by-rating"><a class="sort-by-container"><span>rating</span></a>
@@ -188,9 +188,13 @@
 
 
     <a ng-click="searchMdl.next()" class="uppercase full-width button btn-large" ng-show="searchMdl.nextAvailable">
-        <span ng-show="searchMdl.working" class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>
+        <span ng-hide="searchMdl.working" class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>
         load more listing
     </a>
+  <a class="uppercase full-width button btn-large" ng-show="!searchMdl.products.length">
+    <span  class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>
+    No results Found
+  </a>
 </div>
 </div>
 </div>

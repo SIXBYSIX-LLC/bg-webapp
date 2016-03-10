@@ -6,7 +6,7 @@
     .config(config);
 
   /** @ngInject */
-  function config($logProvider,$translateProvider,$httpProvider,cfpLoadingBarProvider) {
+  function config($logProvider,$translateProvider,$httpProvider,cfpLoadingBarProvider,$authProvider) {
     cfpLoadingBarProvider.includeSpinner = false;
     $translateProvider.useStaticFilesLoader({
       prefix: '/app/i18n/',
@@ -68,6 +68,19 @@
       };
     }
     $httpProvider.interceptors.push(interceptor);
+    $authProvider.facebook({
+      clientId: '1045120808860018'
+    });
+    $authProvider.google({
+      clientId: '955626942186-fr7k3nst4a2n2o5ire939767p7kn5cjp.apps.googleusercontent.com'
+    });
+    $authProvider.oauth2({
+      name: 'foursquare',
+      url: '/auth/foursquare',
+      clientId: 'Foursquare Client ID',
+      redirectUri: window.location.origin,
+      authorizationEndpoint: 'https://foursquare.com/oauth2/authenticate',
+    });
 
   }
 

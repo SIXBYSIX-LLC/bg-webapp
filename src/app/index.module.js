@@ -2,7 +2,8 @@
   'use strict';
 
   angular
-    .module('BG', ['ngAnimate',
+    .module('BG', ['satellizer',
+      'ngAnimate',
       'ngSanitize',
       'ngFileUpload',
       'ngResource',

@@ -218,89 +218,26 @@
 								<span class="icon-bar"></span>
 							</button>
 						</div>
-						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
-							<ul class="nav navbar-nav no-float pull-center submenu-ul">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+              <ul class="nav navbar-nav no-float pull-center submenu-ul">
+                <li class="not-user" ng-repeat="item in mainMdl.categories | limitTo : 6" ui-sref="main.search({category:item.id})">
+                  <a class="soap-popupbox pointerhover">{{item.name}}</a>
+                </li>
 
+                <li class="dropdown landing-dropdown" ng-click="moreEquipments()">
+                  <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="padding: 10px 0;">More <span class="caret"></span>
+                  </a>
+                </li>
+              </ul>
+              <div class="container hide-more top-header more-equip-container" ng-class="{'visible-more': isMore}">
+                <div class="row hidden-sm hidden-xs no-margin">
+                  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-center white-color more-equip-col" ng-repeat="item in mainMdl.categories | slice:6:mdl.categories.length" ui-sref="main.search({category:item.id})">
+                    <h3 class="heading-text"><a href="">{{item.name}}</a></h3>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-								<li class="dropdown" ng-click="moreEquipments()">
-									<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="padding: 10px 0;">More <span class="caret"></span>
-									</a>
-								</li>
-							</ul>
-							<div class="container hide-more top-header more-equip-container" ng-class="{'visible-more': isMore}">
-									<div class="row hidden-sm hidden-xs">
-										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-center white-color more-equip-col">
-											<h3 class="heading-text">Aerial Lifts</h3>
-											<p>
-												<a href="">
-													Some Name
-												</a>
-											</p>
-											<p>
-												<a href="">
-													Some Name
-												</a>
-											</p>
-											<p>
-												<a href="">
-													Some Name
-												</a>
-											</p>
-											<p>
-												<a href="">
-													Some Name
-												</a>
-											</p>
-										</div>
-										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-center white-color more-equip-col">
-											<h3 class="heading-text">Aerial Lifts</h3>
-											<p>
-												<a href="">
-													Some Name
-												</a>
-											</p>
-											<p>
-												<a href="">
-													Some Name
-												</a>
-											</p>
-											<p>
-												<a href="">
-													Some Name
-												</a>
-											</p>
-											<p>
-												<a href="">
-													Some Name
-												</a>
-											</p>
-										</div>
-										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-center white-color more-equip-col">
-											<h3 class="heading-text">Aerial Lifts</h3>
-											<p>
-												<a href="">
-													Some Name
-												</a>
-											</p>
-											<p>
-												<a href="">
-													Some Name
-												</a>
-											</p>
-											<p>
-												<a href="">
-													Some Name
-												</a>
-											</p>
-											<p>
-												<a href="">
-													Some Name
-												</a>
-											</p>
-										</div>
-									</div>
-							</div>
-						</div>
 					</div>
 				</nav>
 			</div>

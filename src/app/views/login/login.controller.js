@@ -1,10 +1,14 @@
 angular.module('BG').controller('LoginCtrl',
 
   /** @ngInject */
-    function($scope,LoginService,$modalInstance,$state,$rootScope,Dialog){
+    function($scope,LoginService,$modalInstance,$state,$rootScope,$auth){
     var loginMdl = $scope.loginMdl = {
       errorMessage:""
     };
+    $scope.authenticate = function(provider) {
+      $auth.authenticate(provider);
+    };
+
     loginMdl.rememberMe = true;
     loginMdl.login=function(){
       $scope.buttonLoader = true;

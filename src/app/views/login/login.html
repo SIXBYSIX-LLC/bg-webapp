@@ -27,8 +27,8 @@
         </form>
         <div class="seperator"><label>OR</label></div>
         <div class="login-social">
-            <a class="button login-facebook"><i class="soap-icon-facebook"></i>Login with Facebook</a>
-            <a class="button login-googleplus"><i class="soap-icon-googleplus"></i>Login with Google+</a>
+            <a class="button login-facebook" ng-click="authenticate('facebook')"><i class="soap-icon-facebook"></i>Login with Facebook</a>
+            <a class="button login-googleplus" ng-click="authenticate('google')"><i class="soap-icon-googleplus"></i>Login with Google+</a>
         </div>
         <div class="seperator seperator-bottom"></div>
         <p>Don't have an account? <a class="goto-signup soap-popupbox pointerhover" ng-click="loginMdl.signUp()">Sign up</a></p>

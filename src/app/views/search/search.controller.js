@@ -116,7 +116,30 @@ angular.module('BG').controller('SearchCtrl',
       searchMdl.sortBy=sortBy;
       searchMdl.search();
     };
+    searchMdl.sort_by_name=function(){
 
+      var value=searchMdl.sortBy;
+      if(value.charAt(0)=="-"){
+        searchMdl.sortBy=value.slice(1);
+        return(value.slice(1));
+      }
+      else{
+        searchMdl.sortByPrice="-"+ value;
+        return("-"+ value);
+      }
+    }
+    searchMdl.sortByPrice="daily_price";
+    searchMdl.sort_by_price=function(){
+      var value=searchMdl.sortByPrice;
+      if(value.charAt(0)=="-"){
+        searchMdl.sortByPrice=value.slice(1);
+        return(value.slice(1));
+      }
+      else{
+        searchMdl.sortByPrice="-daily_price";
+        return("-"+ value);
+      }
+    }
     if($stateParams.query){
       mainMdl.searchText=$stateParams.query;
       searchMdl.search();
