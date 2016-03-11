@@ -6858,21 +6858,49 @@ section {
 }
 
 .search-sort-div {
+  position: relative;
+  float: right;
+  margin-left: 5px;
   i {
     position: absolute;
-    right: 9px;
+    right: 11px;
     margin-top: 11px;
     font-size: 13px;
+    background-color: $white-theme-color;
+    color: $primary-orange-color;
+    cursor: pointer;
   }
-  .hide-search {
+  // .hide-search {
+  //   float: right;
+  //   width: 0;
+  //   padding: 10px 14px;
+  //   transition: all 1s ease;
+  // }
+
+  // .show-search {
+  //   width: 100%;
+  //   transition: all 1s ease;
+  // }
+
+  &.hide-search {
     float: right;
-    width: 0;
-    padding: 10px 14px;
+    width: 34px;
+    // padding: 10px 14px;
     transition: all 1s ease;
+    i {
+      width: 30px;
+      margin-top: 2px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      right: 2px;
+    }
   }
 
-  .show-search {
+  &.show-search {
     width: 25%;
     transition: all 1s ease;
+    margin-left: 5px;
   }
 }

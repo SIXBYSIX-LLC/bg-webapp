@@ -7,9 +7,9 @@
 			<span class="sb-icon-search form-control"ng-click="searchBar()"></span>
 		</form>
 	</div> -->
-	<div class="hidden-xs search-sort-div">
-		<i class="fa fa-search orange-color" ng-click="searchBar()"></i>
-		<input type="text" placeholder="Search" class="form-control hide-search" ng-class="{'show-search': searchOpen}">
+	<div class="search-sort-div hide-search hidden-xs" ng-class="{'show-search': searchOpen}">
+		<i class="fa fa-search" ng-click="searchBar()"></i>
+		<input type="text" placeholder="Search" class="form-control">
 	</div>
 	<div class="visible-xs">
 		<div class="pull-right mobile-icons">

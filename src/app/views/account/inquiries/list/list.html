@@ -1,21 +1,18 @@
 <!-- <div class="booking-information travelo-box" style="margin-bottom: 0px; padding: 20px 30px 1px;"> -->
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 seller-header search-col no-padding">
 	<h1 class="no-margin skin-color seller-heading-font">Enquiries</h1>
-	<div id="sb-search" class="sb-search hidden-xs" ng-class="{'sb-search-open': searchOpen}">
-			<form>
-				<input class="sb-search-input form-control" placeholder="Search" type="text" value="" name="search" id="search" ng-class="{'no-border': !searchOpen}">
-				<input class="sb-search-submit form-control" type="submit" value=""ng-click="searchBar()">
-				<span class="sb-icon-search form-control"ng-click="searchBar()"></span>
-			</form>
+	<div class="search-sort-div hide-search hidden-xs" ng-class="{'show-search': searchOpen}">
+		<i class="fa fa-search" ng-click="searchBar()"></i>
+		<input type="text" placeholder="Search" class="form-control">
+	</div>
+	<div class="visible-xs">
+		<div class="pull-right mobile-icons">
+			<i class="fa fa-search orange-color pull-right" ng-click="mobilesearchBar()"></i>
 		</div>
-		<div class="visible-xs">
-			<div class="pull-right mobile-icons">
-				<i class="fa fa-search orange-color pull-right" ng-click="mobilesearchBar()"></i>
-			</div>
-			<div class="arrow_box" ng-show="mobilesearchOpen">
-				<input class="form-control" type="text" placeholder="Search">
-			</div>
+		<div class="arrow_box" ng-show="mobilesearchOpen">
+			<input class="form-control" type="text" placeholder="Search">
 		</div>
+	</div>
 </div>
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 booking-history no-padding">
 	<div ng-repeat="item in mdl.items" class="booking-info clearfix no-lpadding no-rpadding no-bpadding">

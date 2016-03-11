@@ -11,18 +11,26 @@
 			    <li><a href="#">Separated link</a></li>
 			</ul>
 		</div> -->
-		<div class="sb-search btn-right hidden-xs" ng-class="{'sb-search-open': filterOpen}">
+		<!-- <div class="sb-search btn-right hidden-xs" ng-class="{'sb-search-open': filterOpen}">
 			<form>
 				<input date-range-picker class="form-control date-picker sb-search-input" placeholder="Select Dates" type="text" ng-model="date" ng-class="{'no-border': !filterOpen}" />
 				<span class="sb-icon-search filter-icon form-control"ng-click="filterBar()"></span>
 			</form>
-		</div>
-		<div id="sb-search" class="sb-search hidden-xs" ng-class="{'sb-search-open': searchOpen}">
+		</div> -->
+		<!-- <div id="sb-search" class="sb-search hidden-xs" ng-class="{'sb-search-open': searchOpen}">
 			<form>
 				<input class="sb-search-input form-control" placeholder="Search" type="text" value="" name="search" id="search" ng-class="{'no-border': !searchOpen}">
 				<input class="sb-search-submit form-control" type="submit" value=""ng-click="searchBar()">
 				<span class="sb-icon-search form-control"ng-click="searchBar()"></span>
 			</form>
+		</div> -->
+		<div class="search-sort-div hide-search hidden-xs" ng-class="{'show-search': searchOpen}">
+			<i class="fa fa-search" ng-click="searchBar()"></i>
+			<input type="text" placeholder="Search" class="form-control">
+		</div>
+		<div class="search-sort-div hide-search hidden-xs" ng-class="{'show-search': filterOpen}">
+			<i class="fa fa-filter" ng-click="filterBar()"></i>
+			<input date-range-picker class="form-control date-picker" placeholder="Select Dates" type="text" ng-model="date">
 		</div>
 		<div class="visible-xs">
 			<div class="pull-right mobile-icons">
