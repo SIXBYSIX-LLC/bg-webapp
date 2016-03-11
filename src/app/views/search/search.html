@@ -1,6 +1,6 @@
 <div style="margin-top: 45px;">
 <div class="row">
-<div class="col-sm-4 col-md-3">
+<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
     <h4 class="search-results-title"><i class="soap-icon-search"></i><b>{{searchMdl.resultCount}}</b> results found.
     </h4>
 
@@ -87,10 +87,10 @@
 
     </div>
 </div>
-<div class="col-sm-8 col-md-9">
-    <div class="sort-by-section clearfix">
-        <h4 class="sort-by-title block-sm">Sort results by:</h4>
-        <ul class="sort-bar clearfix block-sm">
+<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+    <div class="sort-by-section clearfix hidden-xs">
+        <h4 class="sort-by-title block-xs">Sort results by:</h4>
+        <ul class="sort-bar clearfix block-xs">
             <li ng-class="{'active':searchMdl.sortBy=='name'}" ng-click="searchMdl.sort(searchMdl.sort_by_name())" class="sort-by-name"><a
                     class="sort-by-container"><span>name</span></a></li>
             <li ng-class="{'active':searchMdl.sortBy=='daily_price'}" ng-click="searchMdl.sort(searchMdl.sort_by_price())"
@@ -102,7 +102,7 @@
             </li>-->
         </ul>
 
-        <ul class="swap-tiles clearfix block-sm">
+        <ul class="swap-tiles clearfix block-xs">
 
             <li class="swap-list" ng-class="{'active':searchMdl.display=='list'}">
                 <a ng-click="searchMdl.display='list'"><i class="soap-icon-list"></i></a>
@@ -117,12 +117,12 @@
     </div>
     <div ng-show="searchMdl.display=='list'" class="hotel-list listing-style3 hotel">
         <article class="box" ng-repeat="pro in searchMdl.products track by pro.id">
-            <figure class="col-sm-5 col-md-4">
+            <figure class="col-lg-4 col-md-4 col-sm-12 col-xs-12 search-img">
                 <a ui-sref="main.equiDetails({id:pro.id})" class="hover-effect">
                     <img width="270" height="160" alt="" ng-src="{{(pro.images[0].url) || 'http://placehold.it/270x160'}}">
                 </a>
             </figure>
-            <div class="details col-sm-7 col-md-8">
+            <div class="details col-lg-8 col-md-8 col-sm-12 col-xs-12">
                 <div>
                     <div>
                         <h4 ui-sref="main.equiDetails({id:pro.id})" class="pointerhover box-title">{{pro.name}}
@@ -143,10 +143,9 @@
                         <span class="price"><small>Weekly</small>${{pro.weekly_price}}</span>
                         <span class="price"><small>Monthly</small>${{pro.monthly_price}}</span>
                     </div>
-                    <div>
-
-                        <a class="button btn-small full-width text-center" ui-sref="main.equiDetails({id:pro.id})" title="">Reserve</a>
-                        <a class="button btn-small full-width text-center" ui-sref="main.equiDetails({id:pro.id})" title="">View on Map
+                    <div class="search-btn-div">
+                        <a class="btn small-btn full-width text-center primary-btn" ui-sref="main.equiDetails({id:pro.id})" title="">Reserve</a>
+                        <a class="btn small-btn full-width text-center primary-btn" ui-sref="main.equiDetails({id:pro.id})" title="">View on Map
                         </a>
                     </div>
                 </div>

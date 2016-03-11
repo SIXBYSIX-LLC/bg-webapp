@@ -504,6 +504,14 @@
       margin-bottom: 10px;
     }
   }
+  .search-img {
+    text-align: center;
+    padding-top: 15px !important;
+    img {
+      max-width: 200px;
+      display: inline-block !important;
+    }
+  }
 }
 
 /* 6. Styles for devices(>=768px and <= 991px) */

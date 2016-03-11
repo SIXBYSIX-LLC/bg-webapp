@@ -3510,7 +3510,7 @@ ul.search-tabs {
     .comment-title { color: $skin-active-color; float: left; font-style: italic; }
     .review-score {
       float: right;
-      .score { font-size: 2em; margin-left: 10px; }
+      .score { font-size: 1.4em; margin-left: 10px; }
     }
     .comment-content p { line-height: 1.5em; }
   }
@@ -6385,7 +6385,7 @@ section {
     font-size: 17px;
   }
   input {
-    width: 85%;
+    width: 84%;
     outline: none;
   }
 }
@@ -6912,5 +6912,11 @@ section {
       border-top: 0 !important;
       padding-top: 0 !important
     }
+  }
+}
+
+.search-btn-div {
+  a {
+    margin-top: 10px;
   }
 }
