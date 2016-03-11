@@ -1,531 +1,296 @@
 
 <div class="row" load-indicator>
-<div class="col-md-9">
-<div id="hotel-main-content" class="tab-container style1">
-    <ul class="tabs">
-        <li ng-class="{'active':mdl.tab1=='photos'}"><a ng-click="mdl.tab1='photos'">photos</a></li>
-        <li ng-class="{'active':mdl.tab1=='map'}"><a ng-click="mdl.tab1='map'">Location on Map</a></li>
-        <li ng-class="{'active':mdl.tab1=='calendar'}"><a ng-click="mdl.tab1='calendar'">Availability Calendar</a></li>
-        <li class="pull-right"><a class="button btn-small yellow-bg white-color">Download Brochure</a></li>
-    </ul>
-    <div class="tab-content">
-        <div ng-show="mdl.tab1=='photos'" ng-class="{'fade in active':mdl.tab1=='photos'}" class="tab-pane">
-            <uib-carousel  class="photo-gallery style1" interval="'200'">
-                    <uib-slide ng-repeat="img in mdl.equi.images">
-                        <img ng-src="{{img.url || 'http://dummyimage.com/870x400/cccccc/ffffff&text=No+images+Available'}}" alt="" style="min-height:200px;"/>
-                        <div class="carousel-caption">
-                            <h4>{{$index}}</h4>
-                        </div>
-                    </uib-slide>
-              <uib-slide>
-                <img ng-src='http://dummyimage.com/870x400/cccccc/ffffff&text=No+images+Available' alt="" style="min-height:200px;"/>
-              </uib-slide>
-
-            </uib-carousel>
-        </div>
-        <div class="tab-pane fade in active" ng-class="{'fade in active':mdl.tab1=='map'}" ng-if="mdl.tab1=='map'">
-            <map style="height: 450px;"></map>
-        </div>
-        <div ng-show="mdl.tab1==='calendar'" id="calendar-tab" ng-class="{'fade in active':mdl.tab1=='calendar'}" class="tab-pane">
-            <label>SELECT MONTH</label>
-
-            <div class="col-sm-6 col-md-4 no-float no-padding">
-                <div class="selector">
-                    <select class="full-width" id="select-month">
-                        <option value="2014-6">June 2014</option>
-                        <option value="2014-7">July 2014</option>
-                        <option value="2014-8">August 2014</option>
-                        <option value="2014-9">September 2014</option>
-                        <option value="2014-10">October 2014</option>
-                        <option value="2014-11">November 2014</option>
-                        <option value="2014-12">December 2014</option>
-                    </select>
-                </div>
-            </div>
-            <div class="row" style="margin-top: 30px;">
-                <div class="col-sm-8">
-                    <div class="calendar"></div>
-                    <div class="calendar-legend">
-                        <label class="available">available</label>
-                        <label class="unavailable">unavailable</label>
-                        <label class="past">past</label>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <p class="description">
-                        The calendar is updated every five minutes and is only an approximation of availability.
-                        <br/><br/>
-                        Some hosts set custom pricing for certain days on their calendar, like weekends or holidays. The
-                        rates listed are per day and do not include any cleaning fee or rates for extra people the host
-                        may have for this listing. Please refer to the listing's Description tab for more details.
-                        <br/><br/>
-                        We suggest that you contact the host to confirm availability and rates before submitting a
-                        reservation request.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="tab-container" style="margin-top:80px;">
-<ul class="tabs">
-    <li ng-class="{'active':mdl.tab2=='description'}"><a ng-click="mdl.tab2='description'">Description</a></li>
-    <!--<li ng-class="{'active':mdl.tab2=='similar'}"><a ng-click="mdl.tab2='similar'">Similar Equipments</a></li>
-    --><!--<li ng-class="{'active':mdl.tab2=='features'}"><a ng-click="mdl.tab2='features'">Features</a></li>
-    --><li ng-class="{'active':mdl.tab2=='reviews'}"><a ng-click="mdl.tab2='reviews'">Reviews</a></li>
-    <!--<li ng-class="{'active':mdl.tab2=='faqs'}"><a ng-click="mdl.tab2='faqs'">FAQs</a></li>-->
-    <!--<li ng-class="{'active':mdl.tab2=='write-review'}"><a ng-click="mdl.tab2='write-review'">Write a Review</a></li>
---></ul>
-<div class="tab-content">
-<div ng-show="mdl.tab2=='description'" ng-class="{'fade in active':mdl.tab2=='description'}" class="tab-pane" >
-    {{mdl.equi.description}}
-</div>
-<div ng-show="mdl.tab2=='similar'" ng-class="{'fade in active':mdl.tab2=='similar'}" class="tab-pane" >
-
-    <h2>Available Similar Equipments</h2>
-
-    <div class="room-list listing-style3 hotel">
-        <article class="box">
-            <figure class="col-sm-4 col-md-3">
-                <a class="hover-effect popup-gallery"  title="">
-                    <img width="230" height="160" ng-src="http://dummyimage.com/230x160/cccccc/ffffff&text=No+images+Available" alt="">
-                </a>
-            </figure>
-            <div class="details col-xs-12 col-sm-8 col-md-9">
-                <div>
-                    <div>
-                        <div class="box-title">
-                            <h4 class="box-title">Caterpillar Track Excavator 330CL
-                                <small><i class="soap-icon-departure yellow-color"></i> Nobleiron HQ, Houston</small>
-                            </h4>
-                        </div>
-                        <!--<div class="amenities">
-                            <i class="soap-icon-wifi circle"></i>
-                            <i class="soap-icon-fitnessfacility circle"></i>
-                            <i class="soap-icon-fork circle"></i>
-                            <i class="soap-icon-television circle"></i>
-                        </div>-->
-                    </div>
-                    <div class="price-section">
-                        <span class="price"><small>Available from</small>$121</span>
-                    </div>
-                </div>
-                <div>
-                    <p>Nunc cursus libero purus ac congue ar lorem cursus ut sed vitae pulvinar massa idend porta
-                        nequetiam elerisque mi id, consectetur adipi deese cing elit maus fringilla bibe endum.</p>
-
-                    <div class="action-section">
-                        <a   title="" class="button btn-small full-width text-center">View Details</a>
-                    </div>
-                </div>
-            </div>
-        </article>
-        <article class="box">
-            <figure class="col-sm-4 col-md-3">
-                <a class="hover-effect popup-gallery"  title=""><img width="230"
-                                                                                                     height="160"
-                                                                                                     src="http://placehold.it/230x160"
-                                                                                                     alt=""></a>
-            </figure>
-            <div class="details col-xs-12 col-sm-8 col-md-9">
-                <div>
-                    <div>
-                        <div class="box-title">
-                            <h4 class="box-title">Caterpillar Track Excavator 330CL
-                                <small><i class="soap-icon-departure yellow-color"></i> Nobleiron HQ, Houston</small>
-                            </h4>
-                        </div>
-                        <!--<div class="amenities">
-                            <i class="soap-icon-wifi circle"></i>
-                            <i class="soap-icon-fitnessfacility circle"></i>
-                            <i class="soap-icon-fork circle"></i>
-                            <i class="soap-icon-television circle"></i>
-                        </div>-->
-                    </div>
-                    <div class="price-section">
-                        <span class="price"><small>Available from</small>$121</span>
-                    </div>
-                </div>
-                <div>
-                    <p>Nunc cursus libero purus ac congue ar lorem cursus ut sed vitae pulvinar massa idend porta
-                        nequetiam elerisque mi id, consectetur adipi deese cing elit maus fringilla bibe endum.</p>
-
-                    <div class="action-section">
-                        <a   title="" class="button btn-small full-width text-center">View Details</a>
-                    </div>
-                </div>
-            </div>
-        </article>
-        <article class="box">
-            <figure class="col-sm-4 col-md-3">
-                <a class="hover-effect popup-gallery"  title=""><img width="230"
-                                                                                                     height="160"
-                                                                                                     src="http://placehold.it/230x160"
-                                                                                                     alt=""></a>
-            </figure>
-            <div class="details col-xs-12 col-sm-8 col-md-9">
-                <div>
-                    <div>
-                        <div class="box-title">
-                            <h4 class="box-title">Caterpillar Track Excavator 330CL
-                                <small><i class="soap-icon-departure yellow-color"></i> Nobleiron HQ, Houston</small>
-                            </h4>
-                        </div>
-                        <!--<div class="amenities">
-                            <i class="soap-icon-wifi circle"></i>
-                            <i class="soap-icon-fitnessfacility circle"></i>
-                            <i class="soap-icon-fork circle"></i>
-                            <i class="soap-icon-television circle"></i>
-                        </div>-->
-                    </div>
-                    <div class="price-section">
-                        <span class="price"><small>Available from</small>$121</span>
-                    </div>
-                </div>
-                <div>
-                    <p>Nunc cursus libero purus ac congue ar lorem cursus ut sed vitae pulvinar massa idend porta
-                        nequetiam elerisque mi id, consectetur adipi deese cing elit maus fringilla bibe endum.</p>
-
-                    <div class="action-section">
-                        <a   title="" class="button btn-small full-width text-center">View Details</a>
-                    </div>
-                </div>
-            </div>
-        </article>
-        <article class="box">
-            <figure class="col-sm-4 col-md-3">
-                <a class="hover-effect popup-gallery"  title=""><img width="230"
-                                                                                                     height="160"
-                                                                                                     src="http://placehold.it/230x160"
-                                                                                                     alt=""></a>
-            </figure>
-            <div class="details col-xs-12 col-sm-8 col-md-9">
-                <div>
-                    <div>
-                        <div class="box-title">
-                            <h4 class="box-title">Caterpillar Track Excavator 330CL
-                                <small><i class="soap-icon-departure yellow-color"></i> Nobleiron HQ, Houston</small>
-                            </h4>
-                        </div>
-                        <!--<div class="amenities">
-                            <i class="soap-icon-wifi circle"></i>
-                            <i class="soap-icon-fitnessfacility circle"></i>
-                            <i class="soap-icon-fork circle"></i>
-                            <i class="soap-icon-television circle"></i>
-                        </div>-->
-                    </div>
-                    <div class="price-section">
-                        <span class="price"><small>Available from</small>$121</span>
-                    </div>
-                </div>
-                <div>
-                    <p>Nunc cursus libero purus ac congue ar lorem cursus ut sed vitae pulvinar massa idend porta
-                        nequetiam elerisque mi id, consectetur adipi deese cing elit maus fringilla bibe endum.</p>
-
-                    <div class="action-section">
-                        <a   title="" class="button btn-small full-width text-center">View Details</a>
-                    </div>
-                </div>
-            </div>
-        </article>
-        <a   class="load-more button full-width btn-large fourty-space">LOAD MORE EQUIPMENTS</a>
-    </div>
-
-</div>
-<div ng-show="mdl.tab2=='features'" ng-class="{'fade in active':mdl.tab2=='features'}" class="tab-pane fade">
-    <h2>Equipment Features</h2>
-
-    <p>Maecenas vitae turpis condimentum metus tincidunt semper bibendum ut orci. Donec eget accumsan est. Duis laoreet
-        sagittis elit et vehicula. Cras viverra posuere condimentum. Donec urna arcu, venenatis quis augue sit amet,
-        mattis gravida nunc. Integer faucibus, tortor a tristique adipiscing, arcu metus luctus libero, nec vulputate
-        risus elit id nibh.</p>
-    <ul class="amenities clearfix style1">
-        <li class="col-md-4 col-sm-6">
-            <div class="icon-box style1"><i class="soap-icon-swimming"></i>Feature Name</div>
-        </li>
-        <li class="col-md-4 col-sm-6">
-            <div class="icon-box style1"><i class="soap-icon-television"></i>Featyre Name</div>
-        </li>
-        <li class="col-md-4 col-sm-6">
-            <div class="icon-box style1"><i class="soap-icon-aircon"></i>Feature Name</div>
-        </li>
-        <li class="col-md-4 col-sm-6">
-            <div class="icon-box style1"><i class="soap-icon-swimming"></i>Feature Name</div>
-        </li>
-        <li class="col-md-4 col-sm-6">
-            <div class="icon-box style1"><i class="soap-icon-television"></i>Featyre Name</div>
-        </li>
-        <li class="col-md-4 col-sm-6">
-            <div class="icon-box style1"><i class="soap-icon-aircon"></i>Feature Name</div>
-        </li>
-        <li class="col-md-4 col-sm-6">
-            <div class="icon-box style1"><i class="soap-icon-swimming"></i>Feature Name</div>
-        </li>
-        <li class="col-md-4 col-sm-6">
-            <div class="icon-box style1"><i class="soap-icon-television"></i>Featyre Name</div>
-        </li>
-        <li class="col-md-4 col-sm-6">
-            <div class="icon-box style1"><i class="soap-icon-aircon"></i>Feature Name</div>
-        </li>
-        <li class="col-md-4 col-sm-6">
-            <div class="icon-box style1"><i class="soap-icon-swimming"></i>Feature Name</div>
-        </li>
-        <li class="col-md-4 col-sm-6">
-            <div class="icon-box style1"><i class="soap-icon-television"></i>Featyre Name</div>
-        </li>
-        <li class="col-md-4 col-sm-6">
-            <div class="icon-box style1"><i class="soap-icon-aircon"></i>Feature Name</div>
-        </li>
-    </ul>
-
-</div>
-<div ng-show="mdl.tab2=='reviews'" ng-class="{'fade in active':mdl.tab2=='reviews'}" class="tab-pane" >
-    <div class="intro table-wrapper full-width hidden-table-sms">
-        <div class="rating table-cell col-sm-4">
-            <span class="score">3.9/5.0</span>
-
-            <div class="five-stars-container">
-                <div class="five-stars" style="width: 78%;"></div>
-            </div>
-            <a   class="goto-writereview-pane button green btn-small full-width">WRITE A REVIEW</a>
-        </div>
-        <div class="table-cell col-sm-8">
-           <!-- <div class="detailed-rating">
-                <ul class="clearfix">
-                    <li class="col-md-6">
-                        <div class="each-rating"><label>service</label>
-
-                            <div class="five-stars-container">
-                                <div class="five-stars" style="width: 78%;"></div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="col-md-6">
-                        <div class="each-rating"><label>ease of renting</label>
-
-                            <div class="five-stars-container">
-                                <div class="five-stars" style="width: 78%;"></div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="col-md-6">
-                        <div class="each-rating"><label>after rent support</label>
-
-                            <div class="five-stars-container">
-                                <div class="five-stars" style="width: 78%;"></div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="col-md-6">
-                        <div class="each-rating"><label>brochure</label>
-
-                            <div class="five-stars-container">
-                                <div class="five-stars" style="width: 78%;"></div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="col-md-6">
-                        <div class="each-rating"><label>request processing</label>
-
-                            <div class="five-stars-container">
-                                <div class="five-stars" style="width: 78%;"></div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="col-md-6">
-                        <div class="each-rating"><label>timely delivery</label>
-
-                            <div class="five-stars-container">
-                                <div class="five-stars" style="width: 78%;"></div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="col-md-6">
-                        <div class="each-rating"><label>ease of payment</label>
-
-                            <div class="five-stars-container">
-                                <div class="five-stars" style="width: 78%;"></div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="col-md-6">
-                        <div class="each-rating"><label>Overall</label>
-
-                            <div class="five-stars-container">
-                                <div class="five-stars" style="width: 78%;"></div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>-->
-        </div>
-    </div>
-    <div class="guest-reviews">
-        <h2>Recent User Reviews</h2>
-
-        <div class="guest-review table-wrapper" ng-repeat="review in mdl.reviewList">
-            <div class="col-xs-3 col-md-2 author table-cell">
-                <a  ><img ng-src="{{ review.userImage||'http://placehold.it/270x263'}}" alt="" width="270" height="263"/></a>
-
-                <p class="name">{{review.userName}}</p>
-
-                <p class="date">{{review.date}}</p>
-            </div>
-            <div class="col-xs-9 col-md-10 table-cell comment-container">
-                <div class="comment-header clearfix">
-                    <h4 class="comment-title">{{review.comment}}</h4>
-
-                    <div class="review-score">
-                        <div class="five-stars-container">
-                            <div class="five-stars" style="width: 80%;"></div>
-                        </div>
-                        <span class="score">{{review.rating}}</span>
-                    </div>
-                </div>
-                <div class="comment-content">
-                    <p>{{review.comment}}</p>
-                </div>
-            </div>
-        </div>
-
-    </div>
-    <a   class="button full-width btn-large" ng-show="mdl.equi.reviewList.length>3">LOAD MORE REVIEWS</a>
-     <a   class="button full-width btn-large" ng-show="mdl.equi.reviewList.length==0">NO REVIEWS AVAILABLE</a>
-</div>
-<div ng-show="mdl.tab2=='faqs'" ng-class="{'fade in active':mdl.tab2=='faqs'}" class="tab-pane" >
-    <h2>Frquently Asked Questions</h2>
-
-    <div class="topics">
-        <ul class="check-square clearfix">
-            <li class="col-sm-6 col-md-4"><a  >address &amp; map</a></li>
-            <li class="col-sm-6 col-md-4"><a  >messaging</a></li>
-            <li class="col-sm-6 col-md-4"><a  >refunds</a></li>
-            <li class="col-sm-6 col-md-4"><a  >pricing</a></li>
-            <li class="col-sm-6 col-md-4 active"><a  >reservation requests</a></li>
-            <li class="col-sm-6 col-md-4"><a  >your reservation</a></li>
+<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+    <div id="hotel-main-content" class="tab-container style1">
+        <ul class="tabs">
+            <li ng-class="{'active':mdl.tab1=='photos'}"><a ng-click="mdl.tab1='photos'">photos</a></li>
+            <li ng-class="{'active':mdl.tab1=='map'}"><a ng-click="mdl.tab1='map'">Location on Map</a></li>
+            <li class="hidden-xs" ng-class="{'active':mdl.tab1=='calendar'}"><a ng-click="mdl.tab1='calendar'">Availability Calendar</a></li>
+            <li class="pull-right hidden-xs"><a class="button btn-small yellow-bg white-color">Download Brochure</a></li>
         </ul>
-    </div>
-    <p>Maecenas vitae turpis condimentum metus tincidunt semper bibendum ut orci. Donec eget accumsan est. Duis laoreet
-        sagittis elit et vehicula. Cras viverra posuere condimentum. Donec urna arcu, venenatis quis augue sit amet,
-        mattis gravida nunc. Integer faucibus, tortor a tristique adipiscing, arcu metus luctus libero, nec vulputate
-        risus elit id nibh.</p>
-
-    <div class="toggle-container">
-
-        <div class="panel style1 arrow-right">
-            <h4 class="panel-title">
-                <a class="collapsed"  data-toggle="collapse">Question for the FAQ related to particular
-                    product goes here?</a>
-            </h4>
-
-            <div class="panel-collapse collapse" id="question2">
-                <div class="panel-content">
-                    <p>Sed a justo enim. Vivamus volutpat ipsum ultrices augue porta lacinia. Proin in elementum enim.
-                        <span class="skin-color">Duis suscipit justo</span> non purus consequat molestie. Etiam pharetra
-                        ipsum sagittis sollicitudin ultricies. Praesent luctus, diam ut tempus aliquam, diam ante
-                        euismod risus, euismod viverra quam quam eget turpis. Nam <span class="skin-color">tristique congue</span>
-                        arcu, id bibendum diam. Ut hendrerit, leo a pellentesque porttitor, purus arcu tristique erat,
-                        in faucibus elit leo in turpis vitae luctus enim, a mollis nulla.</p>
-                </div>
+        <ul class="tabs visible-xs">
+            <li ng-class="{'active':mdl.tab1=='calendar'}"><a ng-click="mdl.tab1='calendar'">Availability Calendar</a></li>
+            <li class="pull-right"><a class="button btn-small yellow-bg white-color">Download</a></li>
+        </ul>
+        <div class="tab-content">
+            <div ng-show="mdl.tab1==='photos'" ng-class="{'fade in active':mdl.tab1=='photos'}" class="tab-pane">
+                <carousel  class="photo-gallery style1" interval="'200'">
+                        <slide ng-repeat="img in mdl.equi.images">
+                            <img ng-src="{{img.url || 'http://placehold.it/870x400'}}" alt="" style="min-height:200px;"/>
+                            <div class="carousel-caption">
+                                <h4>{{$index}}</h4>
+                            </div>
+                        </slide>
+                </carousel>
             </div>
-        </div>
-        <div class="panel style1 arrow-right">
-            <h4 class="panel-title">
-                <a class=""  data-toggle="collapse">Question for the FAQ related to particular product
-                    goes here?</a>
-            </h4>
-
-            <div class="panel-collapse collapse in" id="question3">
-                <div class="panel-content">
-                    <p>Sed a justo enim. Vivamus volutpat ipsum ultrices augue porta lacinia. Proin in elementum enim.
-                        <span class="skin-color">Duis suscipit justo</span> non purus consequat molestie. Etiam pharetra
-                        ipsum sagittis sollicitudin ultricies. Praesent luctus, diam ut tempus aliquam, diam ante
-                        euismod risus, euismod viverra quam quam eget turpis. Nam <span class="skin-color">tristique congue</span>
-                        arcu, id bibendum diam. Ut hendrerit, leo a pellentesque porttitor, purus arcu tristique erat,
-                        in faucibus elit leo in turpis vitae luctus enim, a mollis nulla.</p>
-                </div>
+            <div class="tab-pane fade in active" ng-class="{'fade in active':mdl.tab1=='map'}" ng-if="mdl.tab1=='map'">
+                <map style="height: 450px;"></map>
             </div>
-        </div>
-        <div class="panel style1 arrow-right">
-            <h4 class="panel-title">
-                <a class="collapsed"  data-toggle="collapse">Question for the FAQ related to particular
-                    product goes here?</a>
-            </h4>
+            <div ng-show="mdl.tab1==='calendar'" id="calendar-tab" ng-class="{'fade in active':mdl.tab1=='calendar'}" class="tab-pane">
+                <label>SELECT MONTH</label>
 
-            <div class="panel-collapse collapse" id="question4">
-                <div class="panel-content">
-
-                </div>
-            </div>
-        </div>
-        <div class="panel style1 arrow-right">
-            <h4 class="panel-title">
-                <a class="collapsed"  data-toggle="collapse">Question for the FAQ related to particular
-                    product goes here?</a>
-            </h4>
-
-            <div class="panel-collapse collapse" id="question5">
-                <div class="panel-content">
-
-                </div>
-            </div>
-        </div>
-        <div class="panel style1 arrow-right">
-            <h4 class="panel-title">
-                <a class="collapsed"  data-toggle="collapse">Question for the FAQ related to particular
-                    product goes here?</a>
-            </h4>
-
-            <div class="panel-collapse collapse" id="question6">
-                <div class="panel-content">
-
-                </div>
-            </div>
-        </div>
-        <div class="panel style1 arrow-right">
-            <h4 class="panel-title">
-                <a class="collapsed"  data-toggle="collapse">Question for the FAQ related to particular
-                    product goes here?</a>
-            </h4>
-
-            <div class="panel-collapse collapse" id="question7">
-                <div class="panel-content">
-
-                </div>
-            </div>
-        </div>
-
-    </div>
-</div>
-<div ng-show="mdl.tab2=='write-review'" ng-class="{'fade in active':mdl.tab2=='write-review'}" class="tab-pane" >
-    <div class="main-rating table-wrapper full-width hidden-table-sms intro">
-        <article class="image-box box hotel listing-style1 photo table-cell col-sm-4">
-            <figure>
-                <a class="hover-effect" title=""  ><img width="270" height="160" alt=""
-                                                               src="http://placehold.it/270x160"></a>
-            </figure>
-            <div class="details">
-                <h4 class="box-title">Caterpillar Track Excavator 330C
-                    <small><i class="soap-icon-departure"></i> Paris, france</small>
-                </h4>
-                <div class="feedback">
-                    <div title="4 stars" class="five-stars-container" data-toggle="tooltip" data-placement="bottom">
-                        <span class="five-stars" style="width: 80%;"></span></div>
-                    <span class="review">270 reviews</span>
-                </div>
-            </div>
-        </article>
-        <div class="table-cell col-sm-8">
-            <div class="overall-rating">
-                <h4>Your overall Rating of this Equipment</h4>
-
-                <div class="star-rating clearfix">
-                    <div class="five-stars-container">
-                        <div class="five-stars" style="width: 80%;"></div>
+                <div class="col-sm-6 col-md-4 no-float no-padding">
+                    <div class="selector">
+                        <select class="full-width" id="select-month">
+                            <option value="2014-6">June 2014</option>
+                            <option value="2014-7">July 2014</option>
+                            <option value="2014-8">August 2014</option>
+                            <option value="2014-9">September 2014</option>
+                            <option value="2014-10">October 2014</option>
+                            <option value="2014-11">November 2014</option>
+                            <option value="2014-12">December 2014</option>
+                        </select>
                     </div>
-                    <span class="status">VERY GOOD</span>
                 </div>
+                <div class="row" style="margin-top: 30px;">
+                    <div class="col-sm-8">
+                        <div class="calendar"></div>
+                        <div class="calendar-legend">
+                            <label class="available">available</label>
+                            <label class="unavailable">unavailable</label>
+                            <label class="past">past</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <p class="description">
+                            The calendar is updated every five minutes and is only an approximation of availability.
+                            <br/><br/>
+                            Some hosts set custom pricing for certain days on their calendar, like weekends or holidays. The
+                            rates listed are per day and do not include any cleaning fee or rates for extra people the host
+                            may have for this listing. Please refer to the listing's Description tab for more details.
+                            <br/><br/>
+                            We suggest that you contact the host to confirm availability and rates before submitting a
+                            reservation request.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-container" style="margin-top:80px;">
+    <ul class="tabs">
+        <li ng-class="{'active':mdl.tab2=='description'}"><a ng-click="mdl.tab2='description'">Description</a></li>
+        <!--<li ng-class="{'active':mdl.tab2=='similar'}"><a ng-click="mdl.tab2='similar'">Similar Equipments</a></li>
+        --><!--<li ng-class="{'active':mdl.tab2=='features'}"><a ng-click="mdl.tab2='features'">Features</a></li>
+        --><li ng-class="{'active':mdl.tab2=='reviews'}"><a ng-click="mdl.tab2='reviews'">Reviews</a></li>
+        <!--<li ng-class="{'active':mdl.tab2=='faqs'}"><a ng-click="mdl.tab2='faqs'">FAQs</a></li>-->
+        <!--<li ng-class="{'active':mdl.tab2=='write-review'}"><a ng-click="mdl.tab2='write-review'">Write a Review</a></li>
+    --></ul>
+    <div class="tab-content">
+    <div ng-show="mdl.tab2=='description'" ng-class="{'fade in active':mdl.tab2=='description'}" class="tab-pane" >
+        {{mdl.equi.description}}
+    </div>
+    <div ng-show="mdl.tab2=='similar'" ng-class="{'fade in active':mdl.tab2=='similar'}" class="tab-pane" >
+
+        <h2>Available Similar Equipments</h2>
+
+        <div class="room-list listing-style3 hotel">
+            <article class="box">
+                <figure class="col-sm-4 col-md-3">
+                    <a class="hover-effect popup-gallery"  title="">
+                        <img width="230" height="160" src="http://placehold.it/230x160" alt="">
+                    </a>
+                </figure>
+                <div class="details col-xs-12 col-sm-8 col-md-9">
+                    <div>
+                        <div>
+                            <div class="box-title">
+                                <h4 class="box-title">Caterpillar Track Excavator 330CL
+                                    <small><i class="soap-icon-departure yellow-color"></i> Nobleiron HQ, Houston</small>
+                                </h4>
+                            </div>
+                            <!--<div class="amenities">
+                                <i class="soap-icon-wifi circle"></i>
+                                <i class="soap-icon-fitnessfacility circle"></i>
+                                <i class="soap-icon-fork circle"></i>
+                                <i class="soap-icon-television circle"></i>
+                            </div>-->
+                        </div>
+                        <div class="price-section">
+                            <span class="price"><small>Available from</small>$121</span>
+                        </div>
+                    </div>
+                    <div>
+                        <p>Nunc cursus libero purus ac congue ar lorem cursus ut sed vitae pulvinar massa idend porta
+                            nequetiam elerisque mi id, consectetur adipi deese cing elit maus fringilla bibe endum.</p>
+
+                        <div class="action-section">
+                            <a   title="" class="button btn-small full-width text-center">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="box">
+                <figure class="col-sm-4 col-md-3">
+                    <a class="hover-effect popup-gallery"  title=""><img width="230"
+                                                                                                         height="160"
+                                                                                                         src="http://placehold.it/230x160"
+                                                                                                         alt=""></a>
+                </figure>
+                <div class="details col-xs-12 col-sm-8 col-md-9">
+                    <div>
+                        <div>
+                            <div class="box-title">
+                                <h4 class="box-title">Caterpillar Track Excavator 330CL
+                                    <small><i class="soap-icon-departure yellow-color"></i> Nobleiron HQ, Houston</small>
+                                </h4>
+                            </div>
+                            <!--<div class="amenities">
+                                <i class="soap-icon-wifi circle"></i>
+                                <i class="soap-icon-fitnessfacility circle"></i>
+                                <i class="soap-icon-fork circle"></i>
+                                <i class="soap-icon-television circle"></i>
+                            </div>-->
+                        </div>
+                        <div class="price-section">
+                            <span class="price"><small>Available from</small>$121</span>
+                        </div>
+                    </div>
+                    <div>
+                        <p>Nunc cursus libero purus ac congue ar lorem cursus ut sed vitae pulvinar massa idend porta
+                            nequetiam elerisque mi id, consectetur adipi deese cing elit maus fringilla bibe endum.</p>
+
+                        <div class="action-section">
+                            <a   title="" class="button btn-small full-width text-center">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="box">
+                <figure class="col-sm-4 col-md-3">
+                    <a class="hover-effect popup-gallery"  title=""><img width="230"
+                                                                                                         height="160"
+                                                                                                         src="http://placehold.it/230x160"
+                                                                                                         alt=""></a>
+                </figure>
+                <div class="details col-xs-12 col-sm-8 col-md-9">
+                    <div>
+                        <div>
+                            <div class="box-title">
+                                <h4 class="box-title">Caterpillar Track Excavator 330CL
+                                    <small><i class="soap-icon-departure yellow-color"></i> Nobleiron HQ, Houston</small>
+                                </h4>
+                            </div>
+                            <!--<div class="amenities">
+                                <i class="soap-icon-wifi circle"></i>
+                                <i class="soap-icon-fitnessfacility circle"></i>
+                                <i class="soap-icon-fork circle"></i>
+                                <i class="soap-icon-television circle"></i>
+                            </div>-->
+                        </div>
+                        <div class="price-section">
+                            <span class="price"><small>Available from</small>$121</span>
+                        </div>
+                    </div>
+                    <div>
+                        <p>Nunc cursus libero purus ac congue ar lorem cursus ut sed vitae pulvinar massa idend porta
+                            nequetiam elerisque mi id, consectetur adipi deese cing elit maus fringilla bibe endum.</p>
+
+                        <div class="action-section">
+                            <a   title="" class="button btn-small full-width text-center">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="box">
+                <figure class="col-sm-4 col-md-3">
+                    <a class="hover-effect popup-gallery"  title=""><img width="230"
+                                                                                                         height="160"
+                                                                                                         src="http://placehold.it/230x160"
+                                                                                                         alt=""></a>
+                </figure>
+                <div class="details col-xs-12 col-sm-8 col-md-9">
+                    <div>
+                        <div>
+                            <div class="box-title">
+                                <h4 class="box-title">Caterpillar Track Excavator 330CL
+                                    <small><i class="soap-icon-departure yellow-color"></i> Nobleiron HQ, Houston</small>
+                                </h4>
+                            </div>
+                            <!--<div class="amenities">
+                                <i class="soap-icon-wifi circle"></i>
+                                <i class="soap-icon-fitnessfacility circle"></i>
+                                <i class="soap-icon-fork circle"></i>
+                                <i class="soap-icon-television circle"></i>
+                            </div>-->
+                        </div>
+                        <div class="price-section">
+                            <span class="price"><small>Available from</small>$121</span>
+                        </div>
+                    </div>
+                    <div>
+                        <p>Nunc cursus libero purus ac congue ar lorem cursus ut sed vitae pulvinar massa idend porta
+                            nequetiam elerisque mi id, consectetur adipi deese cing elit maus fringilla bibe endum.</p>
+
+                        <div class="action-section">
+                            <a   title="" class="button btn-small full-width text-center">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <a   class="load-more button full-width btn-large fourty-space">LOAD MORE EQUIPMENTS</a>
+        </div>
+
+    </div>
+    <div ng-show="mdl.tab2=='features'" ng-class="{'fade in active':mdl.tab2=='features'}" class="tab-pane fade">
+        <h2>Equipment Features</h2>
+
+        <p>Maecenas vitae turpis condimentum metus tincidunt semper bibendum ut orci. Donec eget accumsan est. Duis laoreet
+            sagittis elit et vehicula. Cras viverra posuere condimentum. Donec urna arcu, venenatis quis augue sit amet,
+            mattis gravida nunc. Integer faucibus, tortor a tristique adipiscing, arcu metus luctus libero, nec vulputate
+            risus elit id nibh.</p>
+        <ul class="amenities clearfix style1">
+            <li class="col-md-4 col-sm-6">
+                <div class="icon-box style1"><i class="soap-icon-swimming"></i>Feature Name</div>
+            </li>
+            <li class="col-md-4 col-sm-6">
+                <div class="icon-box style1"><i class="soap-icon-television"></i>Featyre Name</div>
+            </li>
+            <li class="col-md-4 col-sm-6">
+                <div class="icon-box style1"><i class="soap-icon-aircon"></i>Feature Name</div>
+            </li>
+            <li class="col-md-4 col-sm-6">
+                <div class="icon-box style1"><i class="soap-icon-swimming"></i>Feature Name</div>
+            </li>
+            <li class="col-md-4 col-sm-6">
+                <div class="icon-box style1"><i class="soap-icon-television"></i>Featyre Name</div>
+            </li>
+            <li class="col-md-4 col-sm-6">
+                <div class="icon-box style1"><i class="soap-icon-aircon"></i>Feature Name</div>
+            </li>
+            <li class="col-md-4 col-sm-6">
+                <div class="icon-box style1"><i class="soap-icon-swimming"></i>Feature Name</div>
+            </li>
+            <li class="col-md-4 col-sm-6">
+                <div class="icon-box style1"><i class="soap-icon-television"></i>Feature Name</div>
+            </li>
+            <li class="col-md-4 col-sm-6">
+                <div class="icon-box style1"><i class="soap-icon-aircon"></i>Feature Name</div>
+            </li>
+            <li class="col-md-4 col-sm-6">
+                <div class="icon-box style1"><i class="soap-icon-swimming"></i>Feature Name</div>
+            </li>
+            <li class="col-md-4 col-sm-6">
+                <div class="icon-box style1"><i class="soap-icon-television"></i>Featyre Name</div>
+            </li>
+            <li class="col-md-4 col-sm-6">
+                <div class="icon-box style1"><i class="soap-icon-aircon"></i>Feature Name</div>
+            </li>
+        </ul>
+
+    </div>
+    <div ng-show="mdl.tab2=='reviews'" ng-class="{'fade in active':mdl.tab2=='reviews'}" class="tab-pane" >
+        <div class="intro table-wrapper full-width hidden-table-sms">
+            <div class="rating table-cell col-sm-4">
+                <span class="score">3.9/5.0</span>
+
+                <div class="five-stars-container">
+                    <div class="five-stars" style="width: 78%;"></div>
+                </div>
+                <a   class="goto-writereview-pane button green btn-small full-width">WRITE A REVIEW</a>
+            </div>
+            <div class="table-cell col-sm-8">
                 <div class="detailed-rating">
                     <ul class="clearfix">
                         <li class="col-md-6">
@@ -596,79 +361,314 @@
                 </div>
             </div>
         </div>
+        <div class="guest-reviews">
+            <h2>Recent User Reviews</h2>
+
+        <div class="guest-review table-wrapper" ng-repeat="review in mdl.reviewList">
+            <div class="col-xs-3 col-md-2 author table-cell">
+                <a  ><img ng-src="{{ review.userImage||'http://placehold.it/270x263'}}" alt="" width="270" height="263"/></a>
+
+                <p class="name">{{review.userName}}</p>
+
+                <p class="date">{{review.date}}</p>
+            </div>
+            <div class="col-xs-9 col-md-10 table-cell comment-container">
+                <div class="comment-header clearfix">
+                    <h4 class="comment-title">{{review.comment}}</h4>
+
+                    <div class="review-score">
+                        <div class="five-stars-container">
+                            <div class="five-stars" style="width: 80%;"></div>
+                        </div>
+                        <span class="score">{{review.rating}}</span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>{{review.comment}}</p>
+                </div>
+            </div>
+        </div>
+
     </div>
-    <form class="review-form">
-        <div class="form-group col-md-5 no-float no-padding">
-            <h4 class="title">Title of your review</h4>
-            <input type="text" name="review-title" class="input-text full-width" value=""
-                   placeholder="enter a review title"/>
-        </div>
-        <div class="form-group">
-            <h4 class="title">Your review</h4>
-            <textarea class="input-text full-width" placeholder="enter your review (minimum 200 characters)"
-                      rows="5"></textarea>
-        </div>
-        <div class="form-group">
-            <h4 class="title">What was best thing you like in Renting Journey with us?</h4>
-            <ul class="sort-trip clearfix">
-                <li><a  ><i class="soap-icon-businessbag circle"></i></a><span>Payment Process</span></li>
-                <li><a  ><i class="soap-icon-couples circle"></i></a><span>Quick Delivery</span></li>
-                <li><a  ><i class="soap-icon-family circle"></i></a><span>Care & Support</span></li>
-                <li><a  ><i class="soap-icon-friends circle"></i></a><span>Order Handling</span></li>
-                <li><a  ><i class="soap-icon-user circle"></i></a><span>Ease of Ordering</span></li>
+    <a   class="button full-width btn-large" ng-show="mdl.equi.reviewList.length>3">LOAD MORE REVIEWS</a>
+     <a   class="button full-width btn-large" ng-show="mdl.equi.reviewList.length==0">NO REVIEWS AVAILABLE</a>
+</div>
+<div ng-show="mdl.tab2=='faqs'" ng-class="{'fade in active':mdl.tab2=='faqs'}" class="tab-pane" >
+    <h2>Frquently Asked Questions</h2>
+
+        <div class="topics">
+            <ul class="check-square clearfix">
+                <li class="col-sm-6 col-md-4"><a  >address &amp; map</a></li>
+                <li class="col-sm-6 col-md-4"><a  >messaging</a></li>
+                <li class="col-sm-6 col-md-4"><a  >refunds</a></li>
+                <li class="col-sm-6 col-md-4"><a  >pricing</a></li>
+                <li class="col-sm-6 col-md-4 active"><a  >reservation requests</a></li>
+                <li class="col-sm-6 col-md-4"><a  >your reservation</a></li>
             </ul>
         </div>
-        <div class="form-group col-md-5 no-float no-padding">
-            <h4 class="title">When did you Rented Equipment?</h4>
+        <p>Maecenas vitae turpis condimentum metus tincidunt semper bibendum ut orci. Donec eget accumsan est. Duis laoreet
+            sagittis elit et vehicula. Cras viverra posuere condimentum. Donec urna arcu, venenatis quis augue sit amet,
+            mattis gravida nunc. Integer faucibus, tortor a tristique adipiscing, arcu metus luctus libero, nec vulputate
+            risus elit id nibh.</p>
 
-            <div class="selector">
-                <select class="full-width">
-                    <option value="2014-6">June 2014</option>
-                    <option value="2014-7">July 2014</option>
-                    <option value="2014-8">August 2014</option>
-                    <option value="2014-9">September 2014</option>
-                    <option value="2014-10">October 2014</option>
-                    <option value="2014-11">November 2014</option>
-                    <option value="2014-12">December 2014</option>
-                </select>
+        <div class="toggle-container">
+
+            <div class="panel style1 arrow-right">
+                <h4 class="panel-title">
+                    <a class="collapsed"  data-toggle="collapse">Question for the FAQ related to particular
+                        product goes here?</a>
+                </h4>
+
+                <div class="panel-collapse collapse" id="question2">
+                    <div class="panel-content">
+                        <p>Sed a justo enim. Vivamus volutpat ipsum ultrices augue porta lacinia. Proin in elementum enim.
+                            <span class="skin-color">Duis suscipit justo</span> non purus consequat molestie. Etiam pharetra
+                            ipsum sagittis sollicitudin ultricies. Praesent luctus, diam ut tempus aliquam, diam ante
+                            euismod risus, euismod viverra quam quam eget turpis. Nam <span class="skin-color">tristique congue</span>
+                            arcu, id bibendum diam. Ut hendrerit, leo a pellentesque porttitor, purus arcu tristique erat,
+                            in faucibus elit leo in turpis vitae luctus enim, a mollis nulla.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="panel style1 arrow-right">
+                <h4 class="panel-title">
+                    <a class=""  data-toggle="collapse">Question for the FAQ related to particular product
+                        goes here?</a>
+                </h4>
+
+                <div class="panel-collapse collapse in" id="question3">
+                    <div class="panel-content">
+                        <p>Sed a justo enim. Vivamus volutpat ipsum ultrices augue porta lacinia. Proin in elementum enim.
+                            <span class="skin-color">Duis suscipit justo</span> non purus consequat molestie. Etiam pharetra
+                            ipsum sagittis sollicitudin ultricies. Praesent luctus, diam ut tempus aliquam, diam ante
+                            euismod risus, euismod viverra quam quam eget turpis. Nam <span class="skin-color">tristique congue</span>
+                            arcu, id bibendum diam. Ut hendrerit, leo a pellentesque porttitor, purus arcu tristique erat,
+                            in faucibus elit leo in turpis vitae luctus enim, a mollis nulla.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="panel style1 arrow-right">
+                <h4 class="panel-title">
+                    <a class="collapsed"  data-toggle="collapse">Question for the FAQ related to particular
+                        product goes here?</a>
+                </h4>
+
+                <div class="panel-collapse collapse" id="question4">
+                    <div class="panel-content">
+
+                    </div>
+                </div>
+            </div>
+            <div class="panel style1 arrow-right">
+                <h4 class="panel-title">
+                    <a class="collapsed"  data-toggle="collapse">Question for the FAQ related to particular
+                        product goes here?</a>
+                </h4>
+
+                <div class="panel-collapse collapse" id="question5">
+                    <div class="panel-content">
+
+                    </div>
+                </div>
+            </div>
+            <div class="panel style1 arrow-right">
+                <h4 class="panel-title">
+                    <a class="collapsed"  data-toggle="collapse">Question for the FAQ related to particular
+                        product goes here?</a>
+                </h4>
+
+                <div class="panel-collapse collapse" id="question6">
+                    <div class="panel-content">
+
+                    </div>
+                </div>
+            </div>
+            <div class="panel style1 arrow-right">
+                <h4 class="panel-title">
+                    <a class="collapsed"  data-toggle="collapse">Question for the FAQ related to particular
+                        product goes here?</a>
+                </h4>
+
+                <div class="panel-collapse collapse" id="question7">
+                    <div class="panel-content">
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div ng-show="mdl.tab2=='write-review'" ng-class="{'fade in active':mdl.tab2=='write-review'}" class="tab-pane" >
+        <div class="main-rating table-wrapper full-width hidden-table-sms intro">
+            <article class="image-box box hotel listing-style1 photo table-cell col-sm-4">
+                <figure>
+                    <a class="hover-effect" title=""  ><img width="270" height="160" alt=""
+                                                                   src="http://placehold.it/270x160"></a>
+                </figure>
+                <div class="details">
+                    <h4 class="box-title">Caterpillar Track Excavator 330C
+                        <small><i class="soap-icon-departure"></i> Paris, france</small>
+                    </h4>
+                    <div class="feedback">
+                        <div title="4 stars" class="five-stars-container" data-toggle="tooltip" data-placement="bottom">
+                            <span class="five-stars" style="width: 80%;"></span></div>
+                        <span class="review">270 reviews</span>
+                    </div>
+                </div>
+            </article>
+            <div class="table-cell col-sm-8">
+                <div class="overall-rating">
+                    <h4>Your overall Rating of this Equipment</h4>
+
+                    <div class="star-rating clearfix">
+                        <div class="five-stars-container">
+                            <div class="five-stars" style="width: 80%;"></div>
+                        </div>
+                        <span class="status">VERY GOOD</span>
+                    </div>
+                    <div class="detailed-rating">
+                        <ul class="clearfix">
+                            <li class="col-md-6">
+                                <div class="each-rating"><label>service</label>
+
+                                    <div class="five-stars-container">
+                                        <div class="five-stars" style="width: 78%;"></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="col-md-6">
+                                <div class="each-rating"><label>ease of renting</label>
+
+                                    <div class="five-stars-container">
+                                        <div class="five-stars" style="width: 78%;"></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="col-md-6">
+                                <div class="each-rating"><label>after rent support</label>
+
+                                    <div class="five-stars-container">
+                                        <div class="five-stars" style="width: 78%;"></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="col-md-6">
+                                <div class="each-rating"><label>brochure</label>
+
+                                    <div class="five-stars-container">
+                                        <div class="five-stars" style="width: 78%;"></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="col-md-6">
+                                <div class="each-rating"><label>request processing</label>
+
+                                    <div class="five-stars-container">
+                                        <div class="five-stars" style="width: 78%;"></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="col-md-6">
+                                <div class="each-rating"><label>timely delivery</label>
+
+                                    <div class="five-stars-container">
+                                        <div class="five-stars" style="width: 78%;"></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="col-md-6">
+                                <div class="each-rating"><label>ease of payment</label>
+
+                                    <div class="five-stars-container">
+                                        <div class="five-stars" style="width: 78%;"></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="col-md-6">
+                                <div class="each-rating"><label>Overall</label>
+
+                                    <div class="five-stars-container">
+                                        <div class="five-stars" style="width: 78%;"></div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
-
-        <div class="form-group col-md-5 no-float no-padding">
-            <h4 class="title">Do you have site photos to share?
-                <small>(Optional)</small>
-            </h4>
-            <div class="fileinput full-width">
-                <input type="file" class="input-text" data-placeholder="select image/s"/>
+        <form class="review-form">
+            <div class="form-group col-md-5 no-float no-padding">
+                <h4 class="title">Title of your review</h4>
+                <input type="text" name="review-title" class="input-text full-width" value=""
+                       placeholder="enter a review title"/>
             </div>
-        </div>
-        <div class="form-group">
-            <h4 class="title">Share with friends
-                <small>(Optional)</small>
-            </h4>
-            <p>Share your review with your friends on different social media networks.</p>
-            <ul class="social-icons icon-circle clearfix">
-                <li class="twitter"><a title="Twitter"   data-toggle="tooltip"><i class="soap-icon-twitter"></i></a>
-                </li>
-                <li class="facebook"><a title="Facebook"   data-toggle="tooltip"><i
-                        class="soap-icon-facebook"></i></a></li>
-                <li class="googleplus"><a title="GooglePlus"   data-toggle="tooltip"><i
-                        class="soap-icon-googleplus"></i></a></li>
-                <li class="pinterest"><a title="Pinterest"   data-toggle="tooltip"><i
-                        class="soap-icon-pinterest"></i></a></li>
-            </ul>
-        </div>
-        <div class="form-group col-md-5 no-float no-padding no-margin">
-            <button type="submit" class="btn-large full-width">SUBMIT REVIEW</button>
-        </div>
-    </form>
+            <div class="form-group">
+                <h4 class="title">Your review</h4>
+                <textarea class="input-text full-width" placeholder="enter your review (minimum 200 characters)"
+                          rows="5"></textarea>
+            </div>
+            <div class="form-group">
+                <h4 class="title">What was best thing you like in Renting Journey with us?</h4>
+                <ul class="sort-trip clearfix">
+                    <li><a  ><i class="soap-icon-businessbag circle"></i></a><span>Payment Process</span></li>
+                    <li><a  ><i class="soap-icon-couples circle"></i></a><span>Quick Delivery</span></li>
+                    <li><a  ><i class="soap-icon-family circle"></i></a><span>Care & Support</span></li>
+                    <li><a  ><i class="soap-icon-friends circle"></i></a><span>Order Handling</span></li>
+                    <li><a  ><i class="soap-icon-user circle"></i></a><span>Ease of Ordering</span></li>
+                </ul>
+            </div>
+            <div class="form-group col-md-5 no-float no-padding">
+                <h4 class="title">When did you Rented Equipment?</h4>
 
-</div>
-</div>
+                <div class="selector">
+                    <select class="full-width">
+                        <option value="2014-6">June 2014</option>
+                        <option value="2014-7">July 2014</option>
+                        <option value="2014-8">August 2014</option>
+                        <option value="2014-9">September 2014</option>
+                        <option value="2014-10">October 2014</option>
+                        <option value="2014-11">November 2014</option>
+                        <option value="2014-12">December 2014</option>
+                    </select>
+                </div>
+            </div>
 
+            <div class="form-group col-md-5 no-float no-padding">
+                <h4 class="title">Do you have site photos to share?
+                    <small>(Optional)</small>
+                </h4>
+                <div class="fileinput full-width">
+                    <input type="file" class="input-text" data-placeholder="select image/s"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <h4 class="title">Share with friends
+                    <small>(Optional)</small>
+                </h4>
+                <p>Share your review with your friends on different social media networks.</p>
+                <ul class="social-icons icon-circle clearfix">
+                    <li class="twitter"><a title="Twitter"   data-toggle="tooltip"><i class="soap-icon-twitter"></i></a>
+                    </li>
+                    <li class="facebook"><a title="Facebook"   data-toggle="tooltip"><i
+                            class="soap-icon-facebook"></i></a></li>
+                    <li class="googleplus"><a title="GooglePlus"   data-toggle="tooltip"><i
+                            class="soap-icon-googleplus"></i></a></li>
+                    <li class="pinterest"><a title="Pinterest"   data-toggle="tooltip"><i
+                            class="soap-icon-pinterest"></i></a></li>
+                </ul>
+            </div>
+            <div class="form-group col-md-5 no-float no-padding no-margin">
+                <button type="submit" class="btn-large full-width">SUBMIT REVIEW</button>
+            </div>
+        </form>
+
+    </div>
+    </div>
+
+    </div>
 </div>
-</div>
-<div class="sidebar col-sms-6 col-sm-4 col-md-3">
+<div class="sidebar col-lg-3 col-md-3 col-sm-12 col-xs-12">
     <article class="detailed-logo">
         <figure>
             <img width="114" height="85" src="http://dummyimage.com/114x85/cccccc/ffffff&text=No+images+Available" alt="">
@@ -680,15 +680,15 @@
             </h2>
                                 <span class="price clearfix">
                                     <small class="pull-left">Daily</small>
-                                    <span class="pull-right">${{mdl.equi.daily_price}}</span>
+                                    <span class="pull-right heading-text">${{mdl.equi.daily_price}}</span>
                                 </span>
                                  <span class="price clearfix">
                                     <small class="pull-left">Weekly</small>
-                                    <span class="pull-right">${{mdl.equi.weekly_price}}</span>
+                                    <span class="pull-right heading-text">${{mdl.equi.weekly_price}}</span>
                                 </span>
                                  <span class="price clearfix">
                                     <small class="pull-left">Monthly</small>
-                                    <span class="pull-right">${{mdl.equi.monthly_price}}</span>
+                                    <span class="pull-right heading-text">${{mdl.equi.monthly_price}}</span>
                                 </span>
 
             <div class="feedback clearfix">
@@ -721,12 +721,13 @@
                 </form>
             </div>
             <!--<p class="description">{{mdl.equi.description}}</p>-->
-            <a ladda="buttonLoader" class="button yellow full-width uppercase btn-small" ng-click="addToCart()" ng-disabled="errMessage">Reserve Equipment</a>
+            <a ladda="buttonLoader" class="btn full-width small-btn primary-btn" ng-click="addToCart()">Reserve Equipment</a>
+
 
             <p></p>
-            <a ladda="loadButton" ng-click="addToFavorite()" class="button yellow full-width uppercase btn-small">Add to Favourites</a>
+            <a ladda="loadButton" ng-click="addToFavorite()" class="btn full-width small-btn primary-btn">Add to Favourites</a>
             <p></p>
-            <a ui-sref="main.sellerAccount.inquiries.new({id:mdl.equi.id})" class="button yellow full-width uppercase btn-small">Send Inquiry</a>
+            <a ui-sref="main.sellerAccount.inquiries.new({id:mdl.equi.id})" class="btn full-width small-btn primary-btn">Send Inquiry</a>
 
         </div>
     </article>

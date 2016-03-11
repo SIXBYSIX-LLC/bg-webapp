@@ -152,6 +152,10 @@ img.full-width { height: auto; }
 .primary-btn {
   background-color: $primary-button-color;
   color: $white-theme-color;
+  &:focus {
+    background-color: $primary-button-color;
+    color: $white-theme-color;
+  }
 }
 
 

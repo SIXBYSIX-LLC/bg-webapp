@@ -9,12 +9,9 @@
 				</div>
 			</div>
 			<button class="btn all-btn pull-right primary-btn btn-right" ui-sref="main.sellerAccount.equipments.add"><i class="icon soap-icon-plus"></i> Add New Equipment</button>
-			<div id="sb-search" class="sb-search hidden-xs" ng-class="{'sb-search-open': searchOpen}">
-				<form>
-					<input class="sb-search-input form-control" placeholder="Search" type="text" value="" name="search" id="search" ng-class="{'no-border': !searchOpen}">
-					<input class="sb-search-submit form-control" type="submit" value=""ng-click="searchBar()">
-					<span class="sb-icon-search form-control"ng-click="searchBar()"></span>
-				</form>
+			<div class="search-sort-div hide-search hidden-xs" ng-class="{'show-search': searchOpen}">
+				<i class="fa fa-search" ng-click="searchBar()"></i>
+				<input type="text" placeholder="Search" class="form-control">
 			</div>
 		</h1>
 	</div>

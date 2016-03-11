@@ -8,11 +8,11 @@
 					<input class="form-control" type="text" placeholder="Search">
 				</div>
 			</div>
-			<div class="hidden-xs search-sort-div">
-				<i class="fa fa-search orange-color" ng-click="searchBar()"></i>
-				<input type="text" placeholder="Search" class="form-control hide-search btn-right" ng-class="{'show-search': searchOpen}">
-			</div>
 			<button class="btn all-btn pull-right primary-btn btn-right" ui-sref="main.sellerAccount.inventory.add"><i class="icon soap-icon-plus"></i> Add New Inventory</button>
+			<div class="search-sort-div hide-search hidden-xs" ng-class="{'show-search': searchOpen}">
+				<i class="fa fa-search" ng-click="searchBar()"></i>
+				<input type="text" placeholder="Search" class="form-control">
+			</div>
 		</h1>
 </div>
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 gray-area select-product">
