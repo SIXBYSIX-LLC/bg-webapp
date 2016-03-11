@@ -9,15 +9,19 @@
         <li class="pull-right"><a class="button btn-small yellow-bg white-color">Download Brochure</a></li>
     </ul>
     <div class="tab-content">
-        <div ng-show="mdl.tab1==='photos'" ng-class="{'fade in active':mdl.tab1=='photos'}" class="tab-pane">
-            <carousel  class="photo-gallery style1" interval="'200'">
-                    <slide ng-repeat="img in mdl.equi.images">
-                        <img ng-src="{{img.url || 'http://placehold.it/870x400'}}" alt="" style="min-height:200px;"/>
+        <div ng-show="mdl.tab1=='photos'" ng-class="{'fade in active':mdl.tab1=='photos'}" class="tab-pane">
+            <uib-carousel  class="photo-gallery style1" interval="'200'">
+                    <uib-slide ng-repeat="img in mdl.equi.images">
+                        <img ng-src="{{img.url || 'http://dummyimage.com/870x400/cccccc/ffffff&text=No+images+Available'}}" alt="" style="min-height:200px;"/>
                         <div class="carousel-caption">
                             <h4>{{$index}}</h4>
                         </div>
-                    </slide>
-            </carousel>
+                    </uib-slide>
+              <uib-slide>
+                <img ng-src='http://dummyimage.com/870x400/cccccc/ffffff&text=No+images+Available' alt="" style="min-height:200px;"/>
+              </uib-slide>
+
+            </uib-carousel>
         </div>
         <div class="tab-pane fade in active" ng-class="{'fade in active':mdl.tab1=='map'}" ng-if="mdl.tab1=='map'">
             <map style="height: 450px;"></map>
@@ -85,7 +89,7 @@
         <article class="box">
             <figure class="col-sm-4 col-md-3">
                 <a class="hover-effect popup-gallery"  title="">
-                    <img width="230" height="160" src="http://placehold.it/230x160" alt="">
+                    <img width="230" height="160" ng-src="http://dummyimage.com/230x160/cccccc/ffffff&text=No+images+Available" alt="">
                 </a>
             </figure>
             <div class="details col-xs-12 col-sm-8 col-md-9">
@@ -287,7 +291,7 @@
             <a   class="goto-writereview-pane button green btn-small full-width">WRITE A REVIEW</a>
         </div>
         <div class="table-cell col-sm-8">
-            <div class="detailed-rating">
+           <!-- <div class="detailed-rating">
                 <ul class="clearfix">
                     <li class="col-md-6">
                         <div class="each-rating"><label>service</label>
@@ -354,92 +358,40 @@
                         </div>
                     </li>
                 </ul>
-            </div>
+            </div>-->
         </div>
     </div>
     <div class="guest-reviews">
         <h2>Recent User Reviews</h2>
 
-        <div class="guest-review table-wrapper">
+        <div class="guest-review table-wrapper" ng-repeat="review in mdl.reviewList">
             <div class="col-xs-3 col-md-2 author table-cell">
-                <a  ><img src="http://placehold.it/270x263" alt="" width="270" height="263"/></a>
+                <a  ><img ng-src="{{ review.userImage||'http://placehold.it/270x263'}}" alt="" width="270" height="263"/></a>
 
-                <p class="name">Jessica Brown</p>
+                <p class="name">{{review.userName}}</p>
 
-                <p class="date">NOV, 12, 2013</p>
+                <p class="date">{{review.date}}</p>
             </div>
             <div class="col-xs-9 col-md-10 table-cell comment-container">
                 <div class="comment-header clearfix">
-                    <h4 class="comment-title">We had great experience renting from Marketplace!</h4>
+                    <h4 class="comment-title">{{review.comment}}</h4>
 
                     <div class="review-score">
                         <div class="five-stars-container">
                             <div class="five-stars" style="width: 80%;"></div>
                         </div>
-                        <span class="score">4.0/5.0</span>
+                        <span class="score">{{review.rating}}</span>
                     </div>
                 </div>
                 <div class="comment-content">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        the industry's stand dummy text ever since the 1500s, when an unknown printer took a galley of
-                        type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
+                    <p>{{review.comment}}</p>
                 </div>
             </div>
         </div>
-        <div class="guest-review table-wrapper">
-            <div class="col-xs-3 col-md-2 author table-cell">
-                <a  ><img src="http://placehold.it/270x263" alt="" width="270" height="263"/></a>
 
-                <p class="name">Jessica Brown</p>
-
-                <p class="date">NOV, 12, 2013</p>
-            </div>
-            <div class="col-xs-9 col-md-10 table-cell comment-container">
-                <div class="comment-header clearfix">
-                    <h4 class="comment-title">We had great experience renting from Marketplace!</h4>
-
-                    <div class="review-score">
-                        <div class="five-stars-container">
-                            <div class="five-stars" style="width: 80%;"></div>
-                        </div>
-                        <span class="score">4.0/5.0</span>
-                    </div>
-                </div>
-                <div class="comment-content">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        the industry's stand dummy text ever since the 1500s, when an unknown printer took a galley of
-                        type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
-                </div>
-            </div>
-        </div>
-        <div class="guest-review table-wrapper">
-            <div class="col-xs-3 col-md-2 author table-cell">
-                <a  ><img src="http://placehold.it/270x263" alt="" width="270" height="263"/></a>
-
-                <p class="name">Jessica Brown</p>
-
-                <p class="date">NOV, 12, 2013</p>
-            </div>
-            <div class="col-xs-9 col-md-10 table-cell comment-container">
-                <div class="comment-header clearfix">
-                    <h4 class="comment-title">We had great experience renting from Marketplace!</h4>
-
-                    <div class="review-score">
-                        <div class="five-stars-container">
-                            <div class="five-stars" style="width: 80%;"></div>
-                        </div>
-                        <span class="score">4.0/5.0</span>
-                    </div>
-                </div>
-                <div class="comment-content">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        the industry's stand dummy text ever since the 1500s, when an unknown printer took a galley of
-                        type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
-                </div>
-            </div>
-        </div>
     </div>
-    <a   class="button full-width btn-large">LOAD MORE REVIEWS</a>
+    <a   class="button full-width btn-large" ng-show="mdl.equi.reviewList.length>3">LOAD MORE REVIEWS</a>
+     <a   class="button full-width btn-large" ng-show="mdl.equi.reviewList.length==0">NO REVIEWS AVAILABLE</a>
 </div>
 <div ng-show="mdl.tab2=='faqs'" ng-class="{'fade in active':mdl.tab2=='faqs'}" class="tab-pane" >
     <h2>Frquently Asked Questions</h2>
@@ -719,7 +671,7 @@
 <div class="sidebar col-sms-6 col-sm-4 col-md-3">
     <article class="detailed-logo">
         <figure>
-            <img width="114" height="85" src="http://placehold.it/114x85" alt="">
+            <img width="114" height="85" src="http://dummyimage.com/114x85/cccccc/ffffff&text=No+images+Available" alt="">
         </figure>
         <div class="details">
             <h2 class="box-title">{{mdl.equi.name}}
@@ -762,13 +714,14 @@
                             <input name="endDate" required type="text" class="input-text  full-width" datepicker-popup="{{dateFormat}}" ng-model="mdl.endDate"
                                    is-open="mdl.openedEnd" min-date="mdl.minDate" datepicker-options="mdl.dateOptions"
                                    ng-focus="mdl.open($event,'End')"
-                                   close-text="Close"/>
+                                   close-text="Close" ng-change='mdl.checkErr(mdl.startDate,mdl.endDate)'/>
                         </div>
                     </div>
+                  <span>{{errMessage}}</span>
                 </form>
             </div>
             <!--<p class="description">{{mdl.equi.description}}</p>-->
-            <a ladda="buttonLoader" class="button yellow full-width uppercase btn-small" ng-click="addToCart()">Reserve Equipment</a>
+            <a ladda="buttonLoader" class="button yellow full-width uppercase btn-small" ng-click="addToCart()" ng-disabled="errMessage">Reserve Equipment</a>
 
             <p></p>
             <a ladda="loadButton" ng-click="addToFavorite()" class="button yellow full-width uppercase btn-small">Add to Favourites</a>

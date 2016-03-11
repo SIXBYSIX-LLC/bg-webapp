@@ -1,7 +1,20 @@
 angular.module('BG').controller('EquiDetailsCtrl',
   /** @ngInject */
-    function ($scope, $state, $timeout, $stateParams, EquipmentsService, CartService, Dialog) {
+    function ($scope, $state, $timeout, $stateParams, EquipmentsService, CartService, EquiDetailsService) {
     var mdl = $scope.mdl = {};
+    mdl.checkErr = function(startDate,endDate) {
+      $scope.errMessage = '';
+      var curDate = new Date();
+
+      if(new Date(startDate) > new Date(endDate)){
+        $scope.errMessage = 'End Date should be greater than start date';
+        return false;
+      }
+      if(new Date(startDate) < curDate){
+        $scope.errMessage = 'Start date should not be before today.';
+        return false;
+      }
+    };
     $scope.mainMdl.title = "Equipment Details";
     $scope.addBreadcrumb({title: "Equipment Details"});
     $scope.$on("$destroy", function () {
@@ -13,6 +26,13 @@ angular.module('BG').controller('EquiDetailsCtrl',
         EquipmentsService.getEquipment($stateParams.id).then(function (response) {
           $scope.$broadcast("LI:Loading", false);
           mdl.equi = response.data.data;
+
+        });
+
+
+        EquiDetailsService.getProductReview($stateParams.id).then(function (response) {
+         console.log("review ",response.data);
+          mdl.reviewList = response.data.data;
 
         });
       }
