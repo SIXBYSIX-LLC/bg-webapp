@@ -14,14 +14,17 @@
         </ul>
         <div class="tab-content">
             <div ng-show="mdl.tab1==='photos'" ng-class="{'fade in active':mdl.tab1=='photos'}" class="tab-pane">
-                <carousel  class="photo-gallery style1" interval="'200'">
-                        <slide ng-repeat="img in mdl.equi.images">
-                            <img ng-src="{{img.url || 'http://placehold.it/870x400'}}" alt="" style="min-height:200px;"/>
+                <uib-carousel  class="photo-gallery style1" interval="'200'">
+                        <uib-slide ng-repeat="img in mdl.equi.images">
+                            <img ng-src="{{img.url || 'http://dummyimage.com/870x400/cccccc/ffffff&text=No+images+Availables'}}" alt="" style="min-height:200px;"/>
                             <div class="carousel-caption">
                                 <h4>{{$index}}</h4>
                             </div>
-                        </slide>
-                </carousel>
+                        </uib-slide>
+                  <uib-slide>
+                    <img ng-src='http://dummyimage.com/870x400/cccccc/ffffff&text=No+images+Available' alt="" style="min-height:200px;"/>
+                  </uib-slide>
+                </uib-carousel>
             </div>
             <div class="tab-pane fade in active" ng-class="{'fade in active':mdl.tab1=='map'}" ng-if="mdl.tab1=='map'">
                 <map style="height: 450px;"></map>
