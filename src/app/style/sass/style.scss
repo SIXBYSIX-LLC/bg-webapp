@@ -6904,3 +6904,13 @@ section {
     margin-left: 5px;
   }
 }
+
+.list-view {
+  .booking-info {
+    padding: 10px 0 !important;
+    &:first-child {
+      border-top: 0 !important;
+      padding-top: 0 !important
+    }
+  }
+}
