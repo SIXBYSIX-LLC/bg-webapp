@@ -1,10 +1,9 @@
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding booking-information travelo-box" style="margin-bottom: 0px;">
-	<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 no-padding">
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding invoices-btn-col buyer-invoice-btn">
 		<button class="btn all-btn primary-btn" ui-sref="main.sellerAccount.orders.list">
 			<i class="fa fa-chevron-left"></i> &nbsp
-			Back to Order List</button>
-	</div>
-	<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 no-padding orders-top-button">
+			Back to Order List
+		</button>
 		<button class="btn pull-right btn-right print-button all-btn primary-btn">Cancel Order</button>
 		<button class="btn pull-right print-button all-btn primary-btn">Print Details</button>
 	</div>
@@ -41,7 +40,7 @@
 			<dd>{{mdl.order.order.shipping_address.country.name}}</dd>
 		</dl>
 	</div>
-	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 invoice-address">
+	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 invoice-address no-lpadding">
 		<h2 class="heading-text order-head-bottom">Billing Address</h2>
 		<dl class="term-description">
 			<dd>{{mdl.order.order.billing_address.first_name}} {{mdl.order.order.billing_address.last_name}}</dd>
@@ -99,14 +98,14 @@
 		<div class="col-lg-3 col-md-3 col-sm-2 col-xs-12 product-name">
 			<h4>{{item.detail.name}}</h4>
 		</div>
-		<div class="col-lg-4 col-md-4 col-sm-5 col-xs-12 description-col">
+		<div class="col-lg-4 col-md-4 col-sm-5 col-xs-12 description-col description-col-xs">
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 right-col col-padding-small">
 				<p>Rented For <span class="pull-right">{{mdl.getShippingPeriod(item)}}</span></p>
 				<p>Order Type <span class="pull-right">{{item.shipping_kind}}</span></p>
 				<p>Status <span class="pull-right">{{item.current_status}}</span></p>
 			</div>
 		</div>
-		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 product-name pull-center">
+		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 product-name pull-center product-name-xs no-padding">
 			<h4>${{item.cost_breakup.subtotal.amt}}</h4>
 			<button ui-sref="main.sellerAccount.orders.process({id:mdl.order.id,itemIndex:$index})" class="button btn all-btn primary-btn">Process</button>
 		</div>

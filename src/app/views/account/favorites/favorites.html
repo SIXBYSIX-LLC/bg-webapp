@@ -27,12 +27,12 @@
 			<h4 class="box-title">
 				{{pro.name}}
 				<div class="col-xs-12 visible-xs action-btn-xs">
-					<a class="icon-right">
-						<i class="fa fa-trash"></i>&nbsp &nbsp &nbsp
-					</a>
-					<a class="icon-right" ui-sref="main.equiDetails({id:pro.id})">
-						<i class="fa fa-eye"></i>
-					</a>
+					<button class="btn small-btn secondary-btn">
+						Delete
+					</button>
+					<button class="btn small-btn secondary-btn btn-right" ui-sref="main.equiDetails({id:pro.id})">
+						View
+					</button>
 				</div>
 			</h4>
 			<button class="pull-right hidden-xs btn small-btn secondary-btn">

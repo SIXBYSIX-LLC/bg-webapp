@@ -306,7 +306,7 @@
 		    	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 devider">
 		    	</div>
 		    	<div ng-if="!mdl.sameAsShipping">
-						<div class="row form-group">
+						<div class="row form-group no-margin">
 							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 shipping-head">
 		    				<p class="heading-text">Billing Address:</p>
 		    			</div>
@@ -317,8 +317,10 @@
 							</div>
 						</div>
 						<form ng-if="!mdl.selectedBilling" validate-form name="mdl.billing.form" class="person-information">
-							<p class="heading-text">Enter Billing Address</p>
-							<div class="row form-group">
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<p class="heading-text">Enter Billing Address</p>
+							</div>
+							<div class="row form-group no-margin">
 								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 									<input ng-disabled="mdl.sameAsShipping" ng-model="mdl.billing.data.first_name" type="text" name="firstname" required class="form-control" placeholder="First Name">
 								</div>
@@ -326,7 +328,7 @@
 									<input ng-disabled="mdl.sameAsShipping" ng-model="mdl.billing.data.last_name" type="text" name="lastname" required class="form-control" placeholder="Last Name">
 								</div>
 							</div>
-							<div class="row form-group">
+							<div class="row form-group no-margin">
 								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 									<input ng-disabled="mdl.sameAsShipping" ng-model="mdl.billing.data.company_name" type="text" name="companyname" required class="form-control" placeholder="Company Name">
 								</div>
@@ -334,12 +336,12 @@
 									<input ng-disabled="mdl.sameAsShipping" ng-model="mdl.billing.data.phone" type="text" name="phonenumber" required class="form-control" placeholder="Phone Name">
 								</div>
 							</div>
-							<div class="row form-group">
+							<div class="row form-group no-margin">
 								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 									<input ng-disabled="mdl.sameAsShipping" type="text" ng-model="mdl.billing.data.name" name="jobsitename" required class="form-control" placeholder="Jobsite Name">
 								</div>
 							</div>
-							<div class="row form-group">
+							<div class="row form-group no-margin">
 								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 									<input ng-disabled="mdl.sameAsShipping"  type="text" name="address_line_1" ng-model="mdl.billing.data.address1" required class="form-control" placeholder="Address Line 1">
 								</div>
@@ -347,7 +349,7 @@
 									<input ng-disabled="mdl.sameAsShipping" type="text" name="address_line_2" ng-model="mdl.billing.data.address2" required class="form-control" placeholder="Address Line 2">
 								</div>
 							</div>
-							<div class="row form-group">
+							<div class="row form-group no-margin">
 								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 									<select ng-disabled="mdl.sameAsShipping"  ng-model="mdl.billing.data.country"  name="country" required class="form-control" ng-options="key as value for (key,value) in mdl.countries">
 									</select>
@@ -357,7 +359,7 @@
 									</select>
 								</div>
 							</div>
-							<div class="row form-group">
+							<div class="row form-group no-margin">
 								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 									<select ng-disabled="mdl.sameAsShipping" ng-model="mdl.billing.data.city"  name="city" required class="form-control" ng-options="key as value for (key,value) in mdl.billing.cities">
 									</select>
@@ -426,7 +428,7 @@
 		    	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 devider">
 		    	</div>
 		    	<div ng-if="!mdl.sameAsShipping">
-						<div class="row form-group">
+						<div class="row form-group no-margin">
 							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 shipping-head">
 		    				<p class="heading-text">Billing Address:</p>
 		    			</div>
@@ -437,8 +439,10 @@
 							</div>
 						</div>
 						<form ng-if="!mdl.selectedBilling" validate-form name="mdl.billing.form" class="person-information">
-							<p class="heading-text">Enter Billing Address</p>
-							<div class="row form-group">
+							<div class="col-lg-12 col-md-12 cl-sm-12 col-xs-12">
+								<p class="heading-text">Enter Billing Address</p>
+							</div>
+							<div class="row form-group no-margin">
 								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 									<input ng-disabled="mdl.sameAsShipping" ng-model="mdl.billing.data.first_name" type="text" name="firstname" required class="form-control" placeholder="First Name">
 								</div>
@@ -446,7 +450,7 @@
 									<input ng-disabled="mdl.sameAsShipping" ng-model="mdl.billing.data.last_name" type="text" name="lastname" required class="form-control" placeholder="Last Name">
 								</div>
 							</div>
-							<div class="row form-group">
+							<div class="row form-group no-margin">
 								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 									<input ng-disabled="mdl.sameAsShipping" ng-model="mdl.billing.data.company_name" type="text" name="companyname" required class="form-control" placeholder="Company Name">
 								</div>
@@ -454,12 +458,12 @@
 									<input ng-disabled="mdl.sameAsShipping" ng-model="mdl.billing.data.phone" type="text" name="phonenumber" required class="form-control" placeholder="Phone Name">
 								</div>
 							</div>
-							<div class="row form-group">
+							<div class="row form-group no-margin">
 								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 									<input ng-disabled="mdl.sameAsShipping" type="text" ng-model="mdl.billing.data.name" name="jobsitename" required class="form-control" placeholder="Jobsite Name">
 								</div>
 							</div>
-							<div class="row form-group">
+							<div class="row form-group no-margin">
 								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 									<input ng-disabled="mdl.sameAsShipping"  type="text" name="address_line_1" ng-model="mdl.billing.data.address1" required class="form-control" placeholder="Address Line 1">
 								</div>
@@ -467,7 +471,7 @@
 									<input ng-disabled="mdl.sameAsShipping" type="text" name="address_line_2" ng-model="mdl.billing.data.address2" required class="form-control" placeholder="Address Line 2">
 								</div>
 							</div>
-							<div class="row form-group">
+							<div class="row form-group no-margin">
 								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 									<select ng-disabled="mdl.sameAsShipping"  ng-model="mdl.billing.data.country"  name="country" required class="form-control" ng-options="key as value for (key,value) in mdl.countries">
 									</select>
@@ -477,7 +481,7 @@
 									</select>
 								</div>
 							</div>
-							<div class="row form-group">
+							<div class="row form-group no-margin">
 								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 									<select ng-disabled="mdl.sameAsShipping" ng-model="mdl.billing.data.city"  name="city" required class="form-control" ng-options="key as value for (key,value) in mdl.billing.cities">
 									</select>
@@ -505,10 +509,10 @@
 	</div>
 </div>
 <div class="sidebar col-lg-3 col-md-3 col-sm-3 hidden-xs">
-		<div class="booking-details travelo-box">
-				<h4>Cart Summary</h4>
-				<article class="tour-detail">
-						<figure ui-sref="main.equiDetails({id:item.product.id})" ng-repeat="item in mdl.cartData.rental_products" class="clearfix">
+		<div class="booking-details travelo-box no-lpadding no-rpadding">
+				<h4 style="padding: 0 10px;">Cart Summary</h4>
+				<article class="tour-detail cart-summary">
+						<figure ui-sref="main.equiDetails({id:item.product.id})" ng-repeat="item in mdl.cartData.rental_products" class="clearfix ">
 								<a title="" class="middle-block">
 										<img ng-src="{{(item.product.image) || 'http://placehold.it/124x78'}}" alt="">
 								</a>
@@ -517,7 +521,7 @@
 								</div>
 						</figure>
 				</article>
-				<dl class="other-details">
+				<dl class="other-details" style="padding: 0 10px;">
 						<dt class="feature" style="border-top: none;">Shipping Cost</dt><dd class="value" style="border-top: none;">${{mdl.carData.shipping_charge || 0}}</dd>
 						<dt class="feature">Additional Charges</dt><dd class="value">${{1}}</dd>
 						<dt class="total-price">Total Price</dt><dd class="total-price-value">${{mdl.cartData.total}}</dd>

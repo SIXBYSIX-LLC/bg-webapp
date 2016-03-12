@@ -34,7 +34,7 @@ body { font:75%/150% $font-stack; background-color: #fff; color:$primary-color; 
 iframe, img { border:0; }
 
 a { text-decoration: none; color: inherit; }
-a:hover, a:focus { color: $skin-active-color; text-decoration: none; }
+a:hover, a:focus { color: $primary-orange-color; text-decoration: none; }
 a:focus { outline: none; }
 
 p { font-size: 1.0833em; line-height: 1.6666; margin-bottom: 15px; }
@@ -155,6 +155,10 @@ img.full-width { height: auto; }
   &:focus {
     background-color: $primary-button-color;
     color: $white-theme-color;
+  }
+  &:hover {
+    color: #fff;
+    background-color: $primary-hover-color;
   }
 }
 
