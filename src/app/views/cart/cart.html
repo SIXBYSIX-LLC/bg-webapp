@@ -89,13 +89,13 @@
 							<img ng-src="{{(item.product.image) || 'http://placehold.it/166x150'}}" alt="">
 						</td>
 						<td class="description-td">
-							<h4 ><a ui-sref="main.equiDetails({'id':item.product.id})">{{item.product.name}}</a></h4>
+							<h4 class="pointerhover" ui-sref="main.equiDetails({id:item.product.id})">{{item.product.name}}</h4>
 							<p>
 								<i class="fa fa-calendar"></i>
 							{{item.date_start | date}} to
 							{{item.date_end | date}}
 							</p>
-							<p>
+							<p class="bold-font">
 							Operation: Rented
 							</p>
 							<p>

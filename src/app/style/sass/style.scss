@@ -6066,7 +6066,7 @@ section {
             margin-bottom: 5px;
           }
           &:last-child {
-            margin-top: 30px;
+            margin-top: 8px;
             margin-bottom: 0;
             color: #009ddc;
             text-align: right;
@@ -6935,5 +6935,27 @@ section {
       background-color: #eeeeee;
       cursor: pointer;
     }
+  }
+}
+
+.write-review-div {
+  margin-bottom: 20px !important;
+  h4 {
+    margin-bottom: 5px;
+  }
+}
+
+.type-list {
+  li {
+    margin-bottom: 8px;
+    a {
+      margin-right: 10px;
+    }
+  }
+}
+
+.review-file-input {
+  &:after {
+    padding-top: 6px;
   }
 }
