@@ -33,9 +33,9 @@
 		</div>
 </div>
 <div class="sidebar col-lg-3 col-md-3 col-sm-3 hidden-xs">
-		<div class="booking-details travelo-box">
-			<h4>Cart Summary</h4>
-			<article class="tour-detail">
+		<div class="booking-details travelo-box no-lpadding no-rpadding">
+			<h4 style="padding: 0 10px;">Cart Summary</h4>
+			<article class="tour-detail cart-summary">
 				<figure ui-sref="main.equiDetails({id:item.product.id})" ng-repeat="item in mdl.cartData.rental_products" class="clearfix">
 					<a title="" class="middle-block">
 						<img ng-src="{{(item.product.image) || 'http://placehold.it/124x78'}}" alt="">
@@ -45,7 +45,7 @@
 					</div>
 				</figure>
 			</article>
-			<dl class="other-details">
+			<dl class="other-details" style="padding: 0 10px;">
 				<dt class="feature" style="border-top: none;">Shipping Cost</dt><dd class="value" style="border-top: none;">${{mdl.carData.shipping_charge || 0}}</dd>
 				<dt class="feature">Additional Charges</dt><dd class="value">${{1}}</dd>
 				<dt class="total-price">Total Price</dt><dd class="total-price-value">${{mdl.cartData.total}}</dd>
