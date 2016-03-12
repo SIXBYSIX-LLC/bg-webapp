@@ -28,6 +28,12 @@ angular.module('BG').controller('CheckoutAddressCtrl',
       if (response && response.data && response.data.data) {
         currentCartId = response.data.data.id;
         mdl.cartData = response.data.data;
+        mdl.cartData.total=0;
+        for(var i=0;i< mdl.cartData.rental_products.length; i++){
+
+          mdl.cartData.total+=mdl.cartData.rental_products[i].subtotal;
+        }
+        console.log(mdl.total);
         if (mdl.cartData.billing_address && mdl.cartData.location) {
           var promises;
           if (mdl.cartData.billing_address == mdl.cartData.location) {

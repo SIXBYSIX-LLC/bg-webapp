@@ -119,7 +119,7 @@
         <article class="box" ng-repeat="pro in searchMdl.products track by pro.id">
             <figure class="col-lg-4 col-md-4 col-sm-12 col-xs-12 search-img">
                 <a ui-sref="main.equiDetails({id:pro.id})" class="hover-effect">
-                    <img width="270" height="160" alt="" ng-src="{{(pro.images[0].url) || 'http://placehold.it/270x160'}}">
+                    <img width="270" height="160" alt="" ng-src="{{(pro.images[0].url) || 'http://dummyimage.com/270x160/cccccc/ffffff&text=No+Image+Found'}}">
                 </a>
             </figure>
             <div class="details col-lg-8 col-md-8 col-sm-12 col-xs-12">
@@ -144,8 +144,8 @@
                         <span class="price"><small>Monthly</small>${{pro.monthly_price}}</span>
                     </div>
                     <div class="search-btn-div">
-                        <a class="btn small-btn full-width text-center primary-btn" ui-sref="main.equiDetails({id:pro.id})" title="">Reserve</a>
-                        <a class="btn small-btn full-width text-center primary-btn" ui-sref="main.equiDetails({id:pro.id})" title="">View on Map
+                        <a class="btn small-btn full-width text-center primary-btn" ui-sref="main.equiDetails({id:pro.id, selected:'photos'})" title="">Reserve</a>
+                        <a class="btn small-btn full-width text-center primary-btn" ui-sref="main.equiDetails({id:pro.id, selected:'map'})" title="">View on Map
                         </a>
                     </div>
                 </div>
@@ -185,16 +185,18 @@
         </div>
     </div>
 
+  <div class="loaderDiv" loader>
+    <img src="assets/images/loader.gif" style="height: 100px; width:100px"/>
+  </div>
+      <a ng-click="searchMdl.next()" class="uppercase full-width button btn-large" ng-show="searchMdl.nextAvailable && searchMdl.products.length">
+          <span ng-hide="searchMdl.working" class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>
+          load more listing
+      </a>
+    <div class="uppercase full-width " ng-show="!searchMdl.products.length && !searchMdl.nextAvailable">
 
-    <a ng-click="searchMdl.next()" class="uppercase full-width button btn-large" ng-show="searchMdl.nextAvailable">
-        <span ng-hide="searchMdl.working" class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>
-        load more listing
-    </a>
-  <a class="uppercase full-width button btn-large" ng-show="!searchMdl.products.length">
-    <span  class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>
-    No results Found
-  </a>
-</div>
-</div>
-</div>
+      No results Found
+    </div>
+  </div>
+  </div>
+  </div>
 

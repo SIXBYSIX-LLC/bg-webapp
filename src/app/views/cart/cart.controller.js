@@ -17,6 +17,13 @@ angular.module('BG').controller('CartCtrl',
         if (response && response.data && response.data.data) {
           currentCartId = response.data.data.id;
           mdl.data = response.data.data;
+          console.log(mdl.data);
+          mdl.total=0;
+          for(var i=0;i< mdl.data.rental_products.length; i++){
+
+            mdl.total+=mdl.data.rental_products[i].subtotal;
+            }
+          console.log(mdl.total);
         }
       });
     }

@@ -389,7 +389,10 @@
       .state('main.equiDetails',{
         url:'/equipment/{id}',
         templateUrl:'app/views/equi-details/equi-details.html',
-        controller:'EquiDetailsCtrl'
+        controller:'EquiDetailsCtrl',
+        params:{
+          selected:null
+        }
       })
       .state('main.cart',{
         url:'/cart/{id}',

@@ -29,7 +29,7 @@ angular.module('BG').controller('EquiDetailsCtrl',
 
         });
 
-
+        mdl.tab1=$stateParams.selected || 'photos';
         EquiDetailsService.getProductReview($stateParams.id).then(function (response) {
          console.log("review ",response.data);
           mdl.reviewList = response.data.data;
