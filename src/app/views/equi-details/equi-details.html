@@ -291,7 +291,7 @@
                 <div class="five-stars-container">
                     <div class="five-stars" style="width: 78%;"></div>
                 </div>
-                <a   class="goto-writereview-pane button green btn-small full-width">WRITE A REVIEW</a>
+                <a class="goto-writereview-pane btn small-btn primary-btn full-width" ng-click="mdl.tab2='write-review'">WRITE A REVIEW</a>
             </div>
             <div class="table-cell col-sm-8">
                 <div class="detailed-rating">
@@ -507,7 +507,7 @@
                     <a class="hover-effect" title=""  ><img width="270" height="160" alt=""
                                                                    src="http://placehold.it/270x160"></a>
                 </figure>
-                <div class="details">
+                <div class="details no-lpadding">
                     <h4 class="box-title">Caterpillar Track Excavator 330C
                         <small><i class="soap-icon-departure"></i> Paris, france</small>
                     </h4>
@@ -523,10 +523,10 @@
                     <h4>Your overall Rating of this Equipment</h4>
 
                     <div class="star-rating clearfix">
-                        <div class="five-stars-container">
+                        <div class="five-stars-container big-font">
                             <div class="five-stars" style="width: 80%;"></div>
                         </div>
-                        <span class="status">VERY GOOD</span>
+                        <span class="status no-tmargin">VERY GOOD</span>
                     </div>
                     <div class="detailed-rating">
                         <ul class="clearfix">
@@ -600,19 +600,19 @@
             </div>
         </div>
         <form class="review-form">
-            <div class="form-group col-md-5 no-float no-padding">
+            <div class="form-group col-md-12 no-float no-padding write-review-div">
                 <h4 class="title">Title of your review</h4>
-                <input type="text" name="review-title" class="input-text full-width" value=""
-                       placeholder="enter a review title"/>
+                <input type="text" name="review-title" class="form-control" value=""
+                       placeholder="Enter a review title"/>
             </div>
-            <div class="form-group">
+            <div class="form-group write-review-div">
                 <h4 class="title">Your review</h4>
-                <textarea class="input-text full-width" placeholder="enter your review (minimum 200 characters)"
+                <textarea class="form-control" placeholder="Enter your review (minimum 200 characters)"
                           rows="5"></textarea>
             </div>
-            <div class="form-group">
+            <div class="form-group write-review-div">
                 <h4 class="title">What was best thing you like in Renting Journey with us?</h4>
-                <ul class="sort-trip clearfix">
+                <ul class="sort-trip clearfix type-list">
                     <li><a  ><i class="soap-icon-businessbag circle"></i></a><span>Payment Process</span></li>
                     <li><a  ><i class="soap-icon-couples circle"></i></a><span>Quick Delivery</span></li>
                     <li><a  ><i class="soap-icon-family circle"></i></a><span>Care & Support</span></li>
@@ -620,11 +620,9 @@
                     <li><a  ><i class="soap-icon-user circle"></i></a><span>Ease of Ordering</span></li>
                 </ul>
             </div>
-            <div class="form-group col-md-5 no-float no-padding">
+            <div class="form-group col-md-12 no-float no-padding write-review-div">
                 <h4 class="title">When did you Rented Equipment?</h4>
-
-                <div class="selector">
-                    <select class="full-width">
+                    <select class="form-control">
                         <option value="2014-6">June 2014</option>
                         <option value="2014-7">July 2014</option>
                         <option value="2014-8">August 2014</option>
@@ -633,35 +631,34 @@
                         <option value="2014-11">November 2014</option>
                         <option value="2014-12">December 2014</option>
                     </select>
-                </div>
             </div>
 
-            <div class="form-group col-md-5 no-float no-padding">
+            <div class="form-group col-md-12 no-float no-padding write-review-div">
                 <h4 class="title">Do you have site photos to share?
                     <small>(Optional)</small>
                 </h4>
-                <div class="fileinput full-width">
+                <div class="fileinput form-control review-file-input">
                     <input type="file" class="input-text" data-placeholder="select image/s"/>
                 </div>
             </div>
-            <div class="form-group">
+            <div class="form-group write-review-div">
                 <h4 class="title">Share with friends
                     <small>(Optional)</small>
                 </h4>
                 <p>Share your review with your friends on different social media networks.</p>
                 <ul class="social-icons icon-circle clearfix">
-                    <li class="twitter"><a title="Twitter"   data-toggle="tooltip"><i class="soap-icon-twitter"></i></a>
+                    <li class="twitter pointerhover"><a title="Twitter"   data-toggle="tooltip"><i class="soap-icon-twitter"></i></a>
                     </li>
-                    <li class="facebook"><a title="Facebook"   data-toggle="tooltip"><i
+                    <li class="facebook pointerhover"><a title="Facebook"   data-toggle="tooltip"><i
                             class="soap-icon-facebook"></i></a></li>
-                    <li class="googleplus"><a title="GooglePlus"   data-toggle="tooltip"><i
+                    <li class="googleplus pointerhover"><a title="GooglePlus"   data-toggle="tooltip"><i
                             class="soap-icon-googleplus"></i></a></li>
-                    <li class="pinterest"><a title="Pinterest"   data-toggle="tooltip"><i
+                    <li class="pinterest pointerhover"><a title="Pinterest"   data-toggle="tooltip"><i
                             class="soap-icon-pinterest"></i></a></li>
                 </ul>
             </div>
-            <div class="form-group col-md-5 no-float no-padding no-margin">
-                <button type="submit" class="btn-large full-width">SUBMIT REVIEW</button>
+            <div class="form-group col-md-5 col-xs-12 no-float no-padding no-margin">
+                <button type="submit" class="btn all-btn full-width primary-btn">Submit Review</button>
             </div>
         </form>
 
