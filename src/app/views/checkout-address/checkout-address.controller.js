@@ -1,6 +1,6 @@
 angular.module('BG').controller('CheckoutAddressCtrl',
   /** @ngInject */
-    function ($scope, CartService, $timeout, $state, JobsitesService, SystemService, $q) {
+    function ($scope, CartService, $timeout, $state, JobsitesService, SystemService, $q,$filter) {
     var mdl = $scope.mdl = {};
     mdl.kinds = {
       "job_site": "Job site",
@@ -21,6 +21,9 @@ angular.module('BG').controller('CheckoutAddressCtrl',
     var currentCartId;
     JobsitesService.getAllSites($scope.user.id).then(function (response) {
       mdl.allSites = response.data.data;
+      //{{mdl.allSites | filter:{id:mdl.selectedShipping} }}
+      mdl.selectedSite = $filter('filter')(mdl.allSites, {id:mdl.selectedShipping})[0];
+      console.log(mdl.selectedSite);
     });
 
     CartService.getCurrent().then(function (response) {
@@ -72,6 +75,12 @@ angular.module('BG').controller('CheckoutAddressCtrl',
       if (newValue == true) {
         angular.copy(mdl.shipping, mdl.billing);
         mdl.billing.data.kind = "billing";
+      }
+    });
+    $scope.$watch("mdl.selectedShipping", function () {
+      if (mdl.selectedShipping) {
+        mdl.selectedSite = $filter('filter')(mdl.allSites, {id:mdl.selectedShipping})[0];
+        console.log(mdl.selectedSite);
       }
     });
 
