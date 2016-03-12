@@ -27,12 +27,11 @@
 $font-stack:    'Open Sans', Arial, Helvetica, sans-serif;
 $primary-color: #838383;
 $heading-color: #2d3e52;
-$button-color: #E37F1F;
 $primary-hover-color: #C53D10;
 $primary-border-color: #dddddd;
 
 /* 2. Skin colors */
-$light-blue-color: #E37F1F;
+$light-blue-color: #FB4F14;
 $purple-color: #9f60b5;
 $orange-color: #ff6000;
 $light-orange-color: #f5a77d;
@@ -56,9 +55,9 @@ $skin9-logo: "../images/logo/skin9-logo.png";
 $skin10-logo: "../images/logo/skin10-logo.png";
 
 /* 4. Important colors */
-$yellow-theme-color: #E37F1F;
+$yellow-theme-color: #FB4F14;
 $dark-yellow-theme-color: #efa300;
-$green-theme-color: #E37F1F;
+$green-theme-color: #FB4F14;
 $blue-theme-color: #01b7f2;
 $dark-blue-theme-color: #3E3E3E;
 $red-theme-color: #e01a33;
@@ -180,3 +179,4 @@ $secondary-light-color: #B1BABF;
 $primary-button-color: $primary-orange-color; // #FA5013;
 $secondary-button-color: $secondary-light-color;
 $grey-button-color: $dark-gray-color;
+$button-color: $primary-orange-color;

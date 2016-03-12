@@ -876,7 +876,11 @@
    h4 {
       text-align: right;
       padding: 0 10px;
-    } 
+      margin-bottom: 10px;
+    }
+    button {
+      float: right;
+    }
   }
   .enquiry-name {
     p {
@@ -948,6 +952,40 @@
 
   .no-lpadding-small {
     padding-left: 15px !important;
+  }
+  .users-feedback {
+    padding-top: 15px;
+  }
+
+  #footer .landing-footer .footer-content {
+    min-height: auto !important;
+    max-height: 250px;
+  }
+  .search-menu {
+    padding-bottom: 15px;
+    i {
+      font-size: 21px !important;
+    }
+  }
+  .hide-xs {
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 1s ease;
+  }
+  .show-xs {
+    min-height: 1000px;
+    height: auto;
+    overflow: visible;
+    opacity: 1;
+    transition: all 1s ease;
+  }
+  .no-margin-xs {
+    margin: 0 !important;
+  }
+
+  .billing {
+    margin-top: 10px;
   }
 }
 
@@ -1043,6 +1081,12 @@
       float: none;
       width: 100%;
       margin-right: 0 !important;
+    }
+  }
+  .cart-button {
+    text-align: center !important;
+    button {
+      float: none !important;
     }
   }
 }

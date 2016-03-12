@@ -240,7 +240,7 @@
 
       .state('main.sellerAccount.equipments.add',{
         url:'/add',
-        templateUrl:'app/views/account/equipments/add/add.html',
+        templateUrl:'app/views/seller-account/equipments/add/add.html',
         controller:'AddEquipmentCtrl'
       })
 

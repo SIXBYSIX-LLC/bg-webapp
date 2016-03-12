@@ -1,10 +1,9 @@
-<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding booking-information travelo-box" style="margin-bottom: 0px;">
-	<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding booking-information travelo-box invoice-details" style="margin-bottom: 0px;">
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 invoices-btn-col buyer-invoice-btn">
 		<button class="btn all-btn primary-btn" ui-sref="main.account.orders.list">
 			<i class="fa fa-chevron-left"></i> &nbsp
-			Back to Order List</button>
-	</div>
-	<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 no-padding orders-top-button">
+			Back to Order List
+		</button>
 		<button class="btn all-btn pull-right btn-right primary-btn">Cancel Order</button>
 		<button class="btn all-btn pull-right btn-right primary-btn">Return</button>
 		<button class="btn all-btn pull-right primary-btn">Print Details</button>
@@ -38,8 +37,8 @@
 		<p ng-if="mdl.order.billing_address.address1" class="no-margin">{{mdl.order.billing_address.address1+' '+order.billing_address.address2}}</p>
 		<p ng-if="!mdl.order.billing_address.address1" class="no-margin">--</p>
 	</div>
-	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-		<h2 class="heading-text">Billing Address</h2>
+	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 no-padding">
+		<h2 class="heading-text billing">Billing Address</h2>
 		<p ng-if="mdl.order.billing_address.address1" class="no-margin">{{mdl.order.billing_address.address1+' '+order.billing_address.address2}}</p>
 		<p ng-if="!mdl.order.billing_address.address1" class="no-margin">--</p>
 	</div>
@@ -53,35 +52,35 @@
 		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
 			<p class="orange-text">Name:</p>
 		</div>
-		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 no-lpadding">
 			<p ng-if="mdl.order.billing_address.first_name && mdl.order.billing_address.last_name">{{mdl.order.billing_address.first_name}} {{mdl.order.billing_address.last_name}}</p>
 			<p ng-if="!mdl.order.billing_address.first_name && mdl.order.billing_address.last_name">--</p>
 		</div>
 		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
 			<p class="orange-text">Phone:</p>
 		</div>
-		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 no-lpadding">
 			<p ng-if="mdl.order.billing_address.phone">{{mdl.order.billing_address.phone}}</p>
 			<p ng-if="!mdl.order.billing_address.phone">--</p>
 		</div>
 		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
 			<p class="orange-text">Town / City:</p>
 		</div>
-		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 no-lpadding">
 			<p ng-if="mdl.order.billing_address.city.name">{{mdl.order.billing_address.city.name}}</p>
 			<p ng-if="!mdl.order.billing_address.city.name">--</p>
 		</div>
 		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
 			<p class="orange-text">Zip Code:</p>
 		</div>
-		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 no-lpadding">
 			<p ng-if="mdl.order.billing_address.zip_code">{{mdl.order.billing_address.zip_code}}</p>
 			<p ng-if="!mdl.order.billing_address.zip_code">--</p>
 		</div>
 		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
 			<p class="orange-text">Country:</p>
 		</div>
-		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 no-lpadding">
 			<p ng-if="mdl.order.billing_address.country.name">{{mdl.order.billing_address.country.name}}</p>
 			<p ng-if="!mdl.order.billing_address.country.name">--</p>
 		</div>
@@ -125,7 +124,6 @@
 		</div>
 		<button class="btn all-btn pull-right primary-btn" ui-sref="main.account.orders.list">Back to Order List</button>
 </div> -->
-<div class="row">
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 invoice-details-col" ng-repeat="item in mdl.order.items">
 		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 pull-center">
 			<img src="http://placehold.it/80x80" alt="">
@@ -133,14 +131,14 @@
 		<div class="col-lg-3 col-md-3 col-sm-2 col-xs-12 product-name">
 			<h4>{{item.detail.name}}</h4>
 		</div>
-		<div class="col-lg-4 col-md-4 col-sm-5 col-xs-12 description-col">
+		<div class="col-lg-4 col-md-4 col-sm-5 col-xs-12 description-col description-col-xs">
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 right-col col-padding-small">
 				<p>Rented For <span class="pull-right">{{item.cost_breakup.subtotal.rent_unit_days}} days</span></p>
 				<p>Order Type <span class="pull-right">{{item.shipping_kind}}</span></p>
 				<p>Status <span class="pull-right">Approved</span></p>
 			</div>
 		</div>
-		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 product-name pull-center product-name-xs">
+		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 product-name pull-center product-name-xs no-padding">
 			<h4>${{item.subtotal | number}}</h4>
 		</div>
 	</div>
@@ -160,4 +158,3 @@
 			</div>
 		</div>
 	</div>
-</div>

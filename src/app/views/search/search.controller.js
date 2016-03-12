@@ -202,5 +202,9 @@ angular.module('BG').controller('SearchCtrl',
       });
     });
 
+    $scope.searchMenu = function() {
+      $scope.toggleMenu = !$scope.toggleMenu;
+    }
+
   }
 );
