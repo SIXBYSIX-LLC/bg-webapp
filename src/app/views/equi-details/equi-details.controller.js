@@ -1,6 +1,6 @@
 angular.module('BG').controller('EquiDetailsCtrl',
   /** @ngInject */
-    function ($scope, $state, $timeout, $stateParams, EquipmentsService, CartService, EquiDetailsService,Map) {
+    function ($scope, $state, $timeout, $stateParams, EquipmentsService, CartService, EquiDetailsService) {
     var mdl = $scope.mdl = {};
     mdl.checkErr = function(startDate,endDate) {
       $scope.errMessage = '';
@@ -130,7 +130,6 @@ angular.module('BG').controller('EquiDetailsCtrl',
 
       var input = document.createElement("input");
       input.className = "pac-input";
-
       map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
       var searchBox = new google.maps.places.SearchBox((input));
@@ -188,9 +187,6 @@ angular.module('BG').controller('EquiDetailsCtrl',
         tjq(".calendar").html(cal.getHTML());
       });
     })
-    //Map Search location
-
-
 
   }
 )
