@@ -89,7 +89,7 @@
 							<img ng-src="{{(item.product.image) || 'http://placehold.it/166x150'}}" alt="">
 						</td>
 						<td class="description-td">
-							<h4>{{item.product.name}}</h4>
+							<h4 ><a ui-sref="main.equiDetails({'id':item.product.id})">{{item.product.name}}</a></h4>
 							<p>
 								<i class="fa fa-calendar"></i>
 							{{item.date_start | date}} to
@@ -111,7 +111,7 @@
 						</select>
 						</td>
 						<td class="description-td">
-							<h4 style="color: #2d3e52">${{item.cost_breakup.subtotal.amt}}</h4>
+							<h4 style="color: #2d3e52">${{item.cost_breakup.subtotal.prices.hourly_price * item.cost_breakup.subtotal.rent_period.final.hours}}</h4>
 							<p>Shipping: ${{item.cost_breakup.shipping.amt}}</p>
 							<p>Additional: ${{item.cost_breakup.additional_charge[0].amt}}</p>
 							<p></p>

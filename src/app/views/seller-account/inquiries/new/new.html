@@ -1,5 +1,5 @@
 <div class="booking-information travelo-box" style="margin-bottom: 0px; padding: 20px 30px 1px;">
-    <form ng-submit="mdl.add()" name="mdl.form" load-indicator class="guest-reviews single-conversation">
+    <form  name="mdl.form" load-indicator class="guest-reviews single-conversation">
         <h2>Enquiry</h2>
 
         <div class="guest-review table-wrapper my-message">
@@ -35,7 +35,7 @@
             <div class="col-xs-9 col-md-10 table-cell comment-container">
                 <div class="comment-content">
                     <textarea required name="text" ng-model="mdl.text" class="reply-text-area"></textarea>
-                    <button class="button btn-medium green" style="margin-bottom: 20px; margin-top: 10px;">Send</button>
+                    <button class="button btn-medium green" style="margin-bottom: 20px; margin-top: 10px;" ng-click="mdl.add()">Send</button>
                 </div>
             </div>
 

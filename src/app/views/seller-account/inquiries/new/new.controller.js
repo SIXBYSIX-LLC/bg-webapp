@@ -9,13 +9,21 @@ angular.module('BG').controller('InquiryNewCtrl',
     });
 
     mdl.add = function(){
+      console.dir(InquiriesService.addInquiry);
       $scope.$broadcast("validation", true);
+      //$scope.buttonLoader = true;
       if(mdl.form.$valid){
         InquiriesService.addInquiry({
           product:$stateParams.id,
           subject:mdl.subject,
           text:mdl.text
-        })
+        }).then(function(response){
+          console.log("abc",response);
+        //  $scope.buttonLoader = false;
+          if(response.status==201){
+            alert("Enquiry Sent");
+          }
+        });
       }
 
     }
