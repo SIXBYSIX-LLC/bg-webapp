@@ -3,23 +3,23 @@
 	<h1 class="no-margin skin-color seller-heading-font">My Orders</h1>
 	<div class="search-sort-div hide-search hidden-xs" ng-class="{'show-search': searchOpen}">
 		<i class="fa fa-search" ng-click="searchBar()"></i>
-		<input type="text" placeholder="Search" class="form-control">
+		<input type="text" placeholder="Search" class="form-control"  ng-model="mdl.searchText">
 	</div>
-	<div class="search-sort-div hide-search hidden-xs" ng-class="{'show-search': filterOpen}">
+	<!--<div class="search-sort-div hide-search hidden-xs" ng-class="{'show-search': filterOpen}">
 		<i class="fa fa-filter" ng-click="filterBar()"></i>
 		<input date-range-picker class="form-control date-picker" placeholder="Select Dates" type="text" ng-model="date">
-	</div>
+	</div>-->
 	<div class="visible-xs">
 		<div class="pull-right mobile-icons">
 			<i class="fa fa-filter orange-color pull-right btn-right" ng-click="mobilefilterBar()"></i>
 			<i class="fa fa-search orange-color pull-right" ng-click="mobilesearchBar()"></i>
 		</div>
 		<div class="arrow_box" ng-show="mobilesearchOpen">
-			<input class="form-control" type="text" placeholder="Search">
+			<input class="form-control" type="text" placeholder="Search" ng-model="mdl.searchText">
 		</div>
-		<div class="arrow_box filter_arrow_box" ng-show="mobilefilterOpen">
+		<!--<div class="arrow_box filter_arrow_box" ng-show="mobilefilterOpen">
 			<input date-range-picker class="form-control date-picker" placeholder="Select Dates" type="text" ng-model="date" />
-		</div>
+		</div>-->
 	</div>
 </div>
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
@@ -28,7 +28,7 @@
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
 	<table class="table order-table hidden-xs">
 		<tbody>
-			<tr ng-repeat="order in mdl.orders">
+			<tr ng-repeat="order in mdl.orders| filter:{ id : mdl.searchText}" >
 				<td>
 					<p class="heading-text no-margin">
 						<i class="icon soap-icon-card yellow-color circle"></i>&nbsp Order
