@@ -3964,9 +3964,9 @@ ul.search-tabs {
   .fact {
     color: #fff; margin-bottom: 20px;
     .numbers {
-      padding: 32px 15px;
+      padding: 20px 15px 30px;
       dl { float: right; text-align: right; margin: 0; }
-      dt { font-size: 2em; font-weight: 400; line-height: 1em; }
+      dt { font-size: 30px; font-weight: 400; line-height: 1em; }
       dd { font-size: 14px; }
       .icon { font-size: 3em; }
     }
@@ -3975,20 +3975,40 @@ ul.search-tabs {
       > .icon { float: right; font-size: 2em; }
     }
     &.blue {
-      background: $blue-theme-color;
-      .description { background: #04afe7; }
+      background: $primary-header-color;
+      .description { background: $primary-orange-color;
+        transition: all 0.6s ease;
+        &:hover {
+          background-color: $primary-hover-color;
+        }
+      }
     }
     &.yellow {
-      background: $yellow-theme-color;
-      .description { background: #f5b010; }
+      background: $primary-header-color;
+      .description { background: $primary-orange-color;
+        transition: all 0.6s ease;
+        &:hover {
+          background-color: $primary-hover-color;
+        }
+      }
     }
     &.red {
-      background: $red-theme-color;
-      .description { background: #d51a32; }
+      background: $primary-header-color;
+      .description { background: $primary-orange-color;
+        transition: all 0.6s ease;
+        &:hover {
+          background-color: $primary-hover-color;
+        }
+      }
     }
     &.green {
-      background: $green-theme-color;
-      .description { background: #91c63d; }
+      background: $primary-header-color;
+      .description { background: $primary-orange-color;
+        transition: all 0.6s ease;
+        &:hover {
+          background-color: $primary-hover-color;
+        }
+      }
     }
   }
   
@@ -6958,4 +6978,14 @@ section {
   &:after {
     padding-top: 6px;
   }
+}
+
+.dashboard-cards {
+    i {
+      font-size: 3.4em !important;
+      opacity: 0.6;
+      &:before {
+          line-height: 0.8em !important;
+      }
+    }
 }
