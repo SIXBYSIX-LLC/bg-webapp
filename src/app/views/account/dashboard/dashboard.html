@@ -5,13 +5,13 @@
 	<div class="row block">
 		<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
 			<a class="pointerhover">
-				<div class="fact blue">
+				<div class="fact blue dashboard-cards">
 					<div class="numbers counters-box">
 						<dl>
 							<dt class="display-counter" data-value="3200">{{mdl.rentedCount || 0}}</dt>
 							<dd>Rented</dd>
 						</dl>
-						<i class="icon soap-icon-calendar-check"></i>
+						<i class="fa fa-calendar-check-o"></i>
 					</div>
 					<div class="description">
 						<i class="icon soap-icon-longarrow-right"></i>
@@ -22,13 +22,13 @@
 		</div>
 		<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
 			<a ui-sref="main.account.jobsites.list" >
-				<div class="fact yellow">
+				<div class="fact yellow dashboard-cards">
 					<div class="numbers counters-box">
 						<dl>
 							<dt class="display-counter" data-value="4509">{{mdl.jobSitesCount}}</dt>
 							<dd>Your Jobsites</dd>
 						</dl>
-						<i class="icon soap-icon-departure"></i>
+						<i class="fa fa-map-marker"></i>
 					</div>
 					<div class="description">
 						<i class="icon soap-icon-longarrow-right"></i>
@@ -39,13 +39,13 @@
 		</div>
 		<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
 			<a ui-sref="main.account.favorites">
-				<div class="fact red">
+				<div class="fact red dashboard-cards">
 					<div class="numbers counters-box">
 						<dl>
 							<dt class="display-counter" data-value="3250">{{mdl.favoriteCount || 0}}</dt>
 							<dd>Favourited</dd>
 						</dl>
-						<i class="icon soap-icon-wishlist"></i>
+						<i class="fa fa-heart-o"></i>
 					</div>
 					<div class="description">
 						<i class="icon soap-icon-longarrow-right"></i>
@@ -56,13 +56,13 @@
 		</div>
 		<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
 			<a class="pointerhover">
-				<div class="fact green">
+				<div class="fact green dashboard-cards">
 					<div class="numbers counters-box">
 						<dl>
 							<dt class="display-counter" data-value="1570">0</dt>
 							<dd>Service Tickets</dd>
 						</dl>
-						<i class="icon soap-icon-stories"></i>
+						<i class="fa fa-file-o"></i>
 					</div>
 					<div class="description">
 						<i class="icon soap-icon-longarrow-right"></i>
@@ -143,53 +143,55 @@
 							</a>
 						</li>
 					</ul>
-					<a class="button green full-width">VIEW ALL BOOKINGS</a>
+					<a class="btn all-btn primary-btn full-width">VIEW ALL BOOKINGS</a>
 				</div>
 		</div>
 		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 seller-dash-noti notifications">
 			<h2 class="heading-text">Notifications</h2>
-			<a>
-				<div class="icon-box style1 fourty-space">
-					<i class="fa fa-exclamation-circle takeoff-effect yellow-bg"></i>
-					<span class="time pull-right">JUST NOW</span>
-					<p class="box-title">Payment Made <span class="price">$120</span></p>
-				</div>
-			</a>
-			<a>
-				<div class="icon-box style1 fourty-space">
-					<i class="fa fa-exclamation-circle blue-bg"></i>
-					<span class="time pull-right">10 Mins ago</span>
-					<p class="box-title">Payment Due <span class="price">$247</span></p>
-				</div>
-			</a>
-			<a>
-				<div class="icon-box style1 fourty-space">
-					<i class="fa fa-suitcase red-bg"></i>
-					<span class="time pull-right">39 Mins ago</span>
-					<p class="box-title">Equipment Left the source <span class="price">Track here</span></p>
-				</div>
-			</a>
-			<a>
-				<div class="icon-box style1 fourty-space">
-					<i class="fa fa-exclamation-circle takeoff-effect yellow-bg"></i>
-					<span class="time pull-right">JUST NOW</span>
-					<p class="box-title">Payment Made <span class="price">$120</span></p>
-				</div>
-			</a>
-			<a>
-				<div class="icon-box style1 fourty-space">
-					<i class="fa fa-exclamation-circle blue-bg"></i>
-					<span class="time pull-right">10 Mins ago</span>
-					<p class="box-title">Payment Due <span class="price">$247</span></p>
-				</div>
-			</a>
-			<a>
-				<div class="icon-box style1 fourty-space">
-					<i class="fa fa-suitcase red-bg"></i>
-					<span class="time pull-right">39 Mins ago</span>
-					<p class="box-title">Equipment Left the source <span class="price">Track here</span></p>
-				</div>
-			</a>
+			<div class="recent-activity recent-activity-div">
+				<a>
+					<div class="icon-box style1 fourty-space">
+						<i class="fa fa-exclamation-circle takeoff-effect yellow-bg"></i>
+						<span class="time pull-right">JUST NOW</span>
+						<p class="box-title">Payment Made <span class="price">$120</span></p>
+					</div>
+				</a>
+				<a>
+					<div class="icon-box style1 fourty-space">
+						<i class="fa fa-exclamation-circle blue-bg"></i>
+						<span class="time pull-right">10 Mins ago</span>
+						<p class="box-title">Payment Due <span class="price">$247</span></p>
+					</div>
+				</a>
+				<a>
+					<div class="icon-box style1 fourty-space">
+						<i class="fa fa-suitcase red-bg"></i>
+						<span class="time pull-right">39 Mins ago</span>
+						<p class="box-title">Equipment Left the source <span class="price">Track here</span></p>
+					</div>
+				</a>
+				<a>
+					<div class="icon-box style1 fourty-space">
+						<i class="fa fa-exclamation-circle takeoff-effect yellow-bg"></i>
+						<span class="time pull-right">JUST NOW</span>
+						<p class="box-title">Payment Made <span class="price">$120</span></p>
+					</div>
+				</a>
+				<a>
+					<div class="icon-box style1 fourty-space">
+						<i class="fa fa-exclamation-circle blue-bg"></i>
+						<span class="time pull-right">10 Mins ago</span>
+						<p class="box-title">Payment Due <span class="price">$247</span></p>
+					</div>
+				</a>
+				<a>
+					<div class="icon-box style1 fourty-space">
+						<i class="fa fa-suitcase red-bg"></i>
+						<span class="time pull-right">39 Mins ago</span>
+						<p class="box-title">Equipment Left the source <span class="price">Track here</span></p>
+					</div>
+				</a>
+			</div>
 		</div>
 	</div>
 	<hr>

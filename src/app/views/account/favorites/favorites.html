@@ -18,7 +18,7 @@
 		<hr />
 	</div>
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding list-view">
-		<div class="booking-info clearfix" ng-repeat="pro in mdl.favorites">
+		<!-- <div class="booking-info clearfix" ng-repeat="pro in mdl.favorites">
 			<div class="date">
 				<a class="hover-effect popup-gallery">
 					<img  height="72" ng-src="{{pro.image || 'http://placehold.it/72x72'}}" >
@@ -41,8 +41,30 @@
 			<button class="pull-right hidden-xs btn small-btn secondary-btn" ui-sref="main.equiDetails({id:pro.id})" style="margin-right: 10px;">
 				View 
 			</button>
-			<!-- <button class="btn all-btn status">Unfavourite</button> -->
-			<!-- <button class="btn all-btn status" ui-sref="main.equiDetails({id:pro.id})">View</button> -->
-		</div>
+		</div> -->
+		<table class="table order-table">
+			<tbody>
+				<tr ng-repeat="pro in mdl.favorites">
+					<td style="width: 10%;">
+						<a class="hover-effect popup-gallery">
+							<img  height="72" ng-src="{{pro.image || 'http://placehold.it/72x72'}}" >
+						</a>
+					</td>
+					<td>
+						<h4 class="no-margin" ui-sref="main.equiDetails({id:pro.id})">
+							{{pro.name}}
+						</h4>
+					</td>
+					<td class="text-right">
+						<button class="btn small-btn secondary-btn" ui-sref="main.equiDetails({id:pro.id})">
+							View
+						</button>
+						<button class="btn small-btn secondary-btn btn-right">
+							Unfavorite
+						</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
 	</div>
 </div>

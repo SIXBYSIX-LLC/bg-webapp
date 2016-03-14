@@ -4,12 +4,12 @@
 								<li class="completed">
 										<span class="bubble"></span>
 										<span class="active-bubble"></span>
-										<p>1. Delivery</p>
+										<p><a ui-sref="main.checkoutAddress">1. Delivery</a></p>
 								</li>
 								<li class="active">
 										<span class="bubble"></span>
 										<span class="active-bubble"></span>
-										<p>2. Payment</p>
+										<p><a ui-sref="main.payment">2. Payment</a></p>
 								</li>
 								<li class="">
 										<span class="bubble"></span>
@@ -33,7 +33,7 @@
 		</div>
 </div>
 <div class="sidebar col-lg-3 col-md-3 col-sm-3 hidden-xs">
-		<div class="booking-details travelo-box no-lpadding no-rpadding">
+		<div class="booking-details travelo-box no-lpadding no-rpadding summary-div">
 			<h4 style="padding: 0 10px;">Cart Summary</h4>
 			<article class="tour-detail cart-summary">
 				<figure ui-sref="main.equiDetails({id:item.product.id})" ng-repeat="item in mdl.cartData.rental_products" class="clearfix">
@@ -41,7 +41,11 @@
 						<img ng-src="{{(item.product.image) || 'http://placehold.it/124x78'}}" alt="">
 					</a>
 					<div class="travel-title">
-						<h5 class="box-title">{{item.product.name}} <small>${{item.cost_breakup.subtotal.amt}}</small></h5>
+						<h5 class="box-title">{{item.product.name}}
+						 <p>${{item.cost_breakup.subtotal.amt}}
+						 	<lable class="pull-right">Qty: {{item.qty}}</lable>
+						 </p>
+						</h5>
 					</div>
 				</figure>
 			</article>
@@ -51,13 +55,13 @@
 				<dt class="total-price">Total Price</dt><dd class="total-price-value">${{mdl.cartData.total}}</dd>
 			</dl>
 		</div>
-		<div class="travelo-box contact-box">
+		<div class="travelo-box contact-box summary-contact">
 			<h4>Need Marketplace Help?</h4>
 			<p>We would be more than happy to help you. Our team advisor are 24/7 at your service to help you.</p>
 			<address class="contact-details">
 				<span class="contact-phone"><i class="soap-icon-phone"></i> 1-800-123-HELLO</span>
 				<br>
-				<a class="contact-email" href="#">help@marketplace.com</a>
+				<a class="contact-email no-padding" href="mailto:help@marketplace.com" target="_blank">help@marketplace.com</a>
 			</address>
 		</div>
 </div>

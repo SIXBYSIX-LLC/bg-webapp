@@ -313,7 +313,7 @@ button, a.button {
 }
 button {
   font-size: 0.9167em; font-weight: bold; height: 34px; line-height: 34px;
-  &:hover { background: #E37F1F; }
+  &:hover { background: $primary-hover-color; }
 }
 a.button {
   display: inline-block; background: #797979; font-size: 0.8333em; line-height: 1.8333em; white-space: nowrap; text-align: center;
@@ -341,7 +341,7 @@ button, a.button {
   }
   &.red { background: #e44049; }
   &.light-brown { background: #e6c687; }
-  &.orange { background: #E37F1F; }
+  &.orange { background: $primary-orange-color; }
   &.dull-blue { background: #12a0c3; }
   &.light-orange { background: #f5a77d; }
   &.light-purple { background: #db8df6; }
@@ -587,13 +587,13 @@ blockquote {
 
 /* 2.2.11. Price section */
 .price {
-  color: #E37F1F; font-size: 1.5em; text-transform: uppercase; float: left; text-align: center; line-height: 1; display: block; margin:9px; margin-bottom: 20px;
+  color: $primary-orange-color; font-size: 1.5em; text-transform: uppercase; float: left; text-align: center; line-height: 1; display: block; margin:9px; margin-bottom: 20px;
   small { display: block; color: $primary-color; font-size: 0.6em; margin-bottom: 3px;}
 }
 
 .price-wrapper {
   font-weight: normal; text-transform: uppercase; font-size: 0.8333em; color: inherit; line-height: 1.3333em; margin: 0;
-  .price-per-unit { color: #E37F1F; font-size: 1.4em; padding-right: 5px; }
+  .price-per-unit { color: $primary-orange-color; font-size: 1.4em; padding-right: 5px; }
 }
 
 /* 2.2.12. Time section */
@@ -997,7 +997,7 @@ ol {  }
           &:hover i:before { @include animation(toTopFromBottom, 0.3s, forwards); }
         }
         &.active a, a:hover { color: $heading-color; }
-        a:hover i, &.active a i { color: #fdb714; border-color: #fdb714; }
+        a:hover i, &.active a i { color: $primary-orange-color; border-color: $primary-orange-color; }
         &:last-child.active a { border-bottom: none; }
         &.active a {
           border-right-color: transparent;
@@ -3567,7 +3567,7 @@ ul.search-tabs {
     > .icon { color: $skin-select-color; font-size: 1.5em; float: left; margin-right: 12px; margin-top: 4px; }
     > .message { float: left;
       > i {
-          color: #E37F1F;
+          color: $primary-orange-color;
           font-size: 1.5em;
           float: left;
           margin-right: 12px;
@@ -3964,36 +3964,61 @@ ul.search-tabs {
   .fact {
     color: #fff; margin-bottom: 20px;
     .numbers {
-      padding: 32px 15px;
+      padding: 20px 15px 30px;
       dl { float: right; text-align: right; margin: 0; }
-      dt { font-size: 2em; font-weight: 400; line-height: 1em; }
+      dt { font-size: 30px; font-weight: 400; line-height: 1em; }
       dd { font-size: 14px; }
       .icon { font-size: 3em; }
     }
     .description {
       font-size: 11px; text-transform: uppercase; padding: 0 20px; font-weight: bold; line-height: 3.5em;
-      > .icon { float: right; font-size: 2em; }
+      > .icon { float: right; font-size: 2em; opacity: 1;}
     }
     &.blue {
-      background: $blue-theme-color;
-      .description { background: #04afe7; }
+      background: $primary-header-color;
+      .description { background: $primary-orange-color;
+        transition: all 0.6s ease;
+        &:hover {
+          background-color: $primary-hover-color;
+        }
+      }
     }
     &.yellow {
-      background: $yellow-theme-color;
-      .description { background: #f5b010; }
+      background: $primary-header-color;
+      .description { background: $primary-orange-color;
+        transition: all 0.6s ease;
+        &:hover {
+          background-color: $primary-hover-color;
+        }
+      }
     }
     &.red {
-      background: $red-theme-color;
-      .description { background: #d51a32; }
+      background: $primary-header-color;
+      .description { background: $primary-orange-color;
+        transition: all 0.6s ease;
+        &:hover {
+          background-color: $primary-hover-color;
+        }
+      }
     }
     &.green {
-      background: $green-theme-color;
-      .description { background: #91c63d; }
+      background: $primary-header-color;
+      .description { background: $primary-orange-color;
+        transition: all 0.6s ease;
+        &:hover {
+          background-color: $primary-hover-color;
+        }
+      }
     }
   }
   
   .notifications {
-    .icon-box { background: #f5f5f5; font-size: 1em; padding-right: 15px; margin-bottom: 10px; height: auto; &:after { display: table; content: ""; clear: both; } }
+    .recent-activity-div {
+      a {
+        display: block;
+      }
+    }
+    .icon-box { font-size: 1em; padding-right: 15px; margin-bottom: 10px; height: auto; &:after { display: table; content: ""; clear: both; } &:hover {cursor: pointer; background-color: #f5f5f5} }
     .box-title { line-height: 15px; text-transform: none; color: $heading-color; padding: 6px 5px 0 57px; }
     .price { color: $skin-active-color; float: none; text-align: left; display: inline-block; font-size: inherit; margin: 9px 0; }
     .time { line-height: inherit; }
@@ -4006,7 +4031,7 @@ ul.search-tabs {
       background: #fff; margin-bottom: 15px;
       li > a {
         padding: 15px; border-bottom: 1px solid #f5f5f5; display: block;
-        &:hover { background: #f5f5f5; }
+        &:hover { background: #f5f5f5; cursor: pointer;}
       }
       .icon { float: left; margin-right: 15px; font-size: 1.3333em; }
       .price {margin-top: 0; margin-right: 30px; min-width: 70px;}
@@ -5355,11 +5380,14 @@ button.ui-button::-moz-focus-inner { border: 0; padding: 0; }
       cursor: pointer;
       transition: background-color 0.6s ease;
       &:hover {
-        background-color: #FFF7F7;
+        background-color: #f5f5f5;
+      }
+      &:first-child {
+        border-top: 1px solid #cccccc;
       }
       > td {
         border-top: 0;
-        border-bottom: 1px solid $primary-border-color;
+        border-bottom: 1px solid #cccccc;
         // border-right: 1px solid $primary-border-color;
         padding-top: 15px;
         padding-bottom: 15px;
@@ -5396,6 +5424,7 @@ button.ui-button::-moz-focus-inner { border: 0; padding: 0; }
       }
       .time-td{
         padding-left: 15px;
+        vertical-align: middle;
         .time-util {
           margin-bottom: 10px;
         }
@@ -6356,7 +6385,7 @@ section {
 }
 
 .orange-text {
-  color: $skin-active-color;
+  color: $primary-orange-color !important;
 }
 
 // button {
@@ -6645,12 +6674,19 @@ section {
 .order-table {
   > tbody {
     > tr {
+      transition: all 0.6s ease;
+      cursor: pointer;
+      &:hover {
+        background-color: #f5f5f5;
+      }
       &:first-child {
         > td {
           border-top: 0;
         }
       }
       > td {
+        vertical-align: middle;
+        border-top: 1px solid #cccccc;
         p {
           color: $black-color;
         }
@@ -6658,6 +6694,9 @@ section {
           margin-left: 39px;
         }
       }
+    }
+    &:last-child {
+      border-bottom: 1px solid #cccccc
     }
   }
 }
@@ -6927,17 +6966,6 @@ section {
   margin-top: 18%;
 }
 
-.cart-summary {
-  figure {
-    padding: 10px !important;
-    transition: all 0.6s ease;
-    &:hover {
-      background-color: #eeeeee;
-      cursor: pointer;
-    }
-  }
-}
-
 .write-review-div {
   margin-bottom: 20px !important;
   h4 {
@@ -6957,5 +6985,108 @@ section {
 .review-file-input {
   &:after {
     padding-top: 6px;
+  }
+}
+
+.dashboard-cards {
+    i {
+      font-size: 3.4em !important;
+      opacity: 0.6;
+      &:before {
+          line-height: 0.8em !important;
+      }
+    }
+}
+
+.booking-details {
+  .cart-summary {
+    max-height: 405px;
+    overflow: auto;
+    border-top: 1px solid #ccc;
+    margin-bottom: 0;
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+     
+    /* Track */
+    &::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0.3);
+      box-shadow: inset 0 0 1px rgba(0,0,0,0.3);
+      -webkit-border-radius: 10px;
+      border-radius: 10px;
+    }
+     
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      -webkit-border-radius: 10px;
+      border-radius: 10px;
+      background: rgba(0,0,0,0.1);
+      -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0.1);
+      box-shadow: inset 0 0 1px rgba(0,0,0,0.1);
+    }
+    figure {
+      padding: 10px !important;
+      transition: all 0.6s ease;
+      &:hover {
+        background-color: #eeeeee;
+        cursor: pointer;
+      }
+      a {
+        &:first-child {
+          width: 60px;
+          height: 60px;
+        }
+      }
+      .travel-title {
+        margin-left: 72px;
+        h5 {
+          color: $primary-orange-color;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+          p {
+            color: #838383;
+            font-weight: 600;
+            margin-top: 7px;
+            margin-bottom: 0;
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.summary-div {
+  margin-bottom: 10px;
+  .other-details {
+    font-size: 13px;
+    dt {
+      text-transform: none;
+      padding: 10px 0;
+    }
+    dd {
+      padding: 10px 0;
+    }
+    .total-price {
+      font-size: 15px;
+    }
+    .total-price-value {
+      font-size: 15px;
+      font-weight: 600;
+      padding-bottom: 0;
+    }
+  }
+}
+
+.summary-contact {
+  padding: 20px 10px;
+  p {
+    margin-bottom: 10px;
+  }
+  .contact-details {
+    span {
+      font-size: 16px;
+    }
   }
 }
