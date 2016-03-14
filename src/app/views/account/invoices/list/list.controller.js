@@ -5,6 +5,13 @@ angular.module('BG').controller('ListInvoicesCtrl',
     InvoicesService.getInvoices().then(function(response){
       mdl.invoices=response.data.data;
     });
+    mdl.ranges = {
+      'Today': [moment(), moment()],
+      'Yesterday': [moment().subtract('days', 1), moment().subtract('days', 1)],
+      'Last 7 days': [moment().subtract('days', 7), moment()],
+      'Last 30 days': [moment().subtract('days', 30), moment()],
+      'This month': [moment().startOf('month'), moment().endOf('month')]
+    };
 
     $scope.searchOpen = false;
       $scope.filterOpen = false;

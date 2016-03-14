@@ -6,7 +6,7 @@
 		<h1 class="no-margin skin-color seller-heading-font">Favorites</h1>
 		<div class="search-sort-div hide-search hidden-xs" ng-class="{'show-search': searchOpen}">
 			<i class="fa fa-search" ng-click="searchBar()"></i>
-			<input type="text" placeholder="Search" class="form-control">
+			<input type="text" placeholder="Search" class="form-control" ng-model="mdl.searchText">
 		</div>
 		<div class="visible-xs">
 			<div class="pull-right mobile-icons">
@@ -42,12 +42,12 @@
 				Unfavorite
 			</button>
 			<button class="pull-right hidden-xs btn small-btn secondary-btn" ui-sref="main.equiDetails({id:pro.id})" style="margin-right: 10px;">
-				View 
+				View
 			</button>
 		</div> -->
 		<table class="table order-table">
 			<tbody>
-				<tr ng-repeat="pro in mdl.favorites">
+				<tr ng-repeat="pro in mdl.favorites | filter:{ name : mdl.searchText}">
 					<td style="width: 10%;">
 						<a class="hover-effect popup-gallery">
 							<img  height="72" ng-src="{{pro.image || 'http://placehold.it/72x72'}}" >

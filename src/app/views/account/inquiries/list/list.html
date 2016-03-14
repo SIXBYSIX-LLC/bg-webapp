@@ -6,14 +6,14 @@
 	<h1 class="no-margin skin-color seller-heading-font">Enquiries</h1>
 	<div class="search-sort-div hide-search hidden-xs" ng-class="{'show-search': searchOpen}">
 		<i class="fa fa-search" ng-click="searchBar()"></i>
-		<input type="text" placeholder="Search" class="form-control">
+		<input type="text" placeholder="Search" class="form-control" ng-model="mdl.searchText">
 	</div>
 	<div class="visible-xs">
 		<div class="pull-right mobile-icons">
 			<i class="fa fa-search orange-color pull-right" ng-click="mobilesearchBar()"></i>
 		</div>
 		<div class="arrow_box" ng-show="mobilesearchOpen">
-			<input class="form-control" type="text" placeholder="Search">
+			<input class="form-control" type="text" placeholder="Search" ng-model="mdl.searchText">
 		</div>
 	</div>
 </div>
@@ -46,7 +46,7 @@
 	</div> -->
 	<table class="table order-table">
 		<tbody>
-			<tr ng-repeat="item in mdl.items">
+			<tr ng-repeat="item in mdl.items |filter:{ subject : mdl.searchText}">
 				<td>
 					<p class="heading-text no-margin">Jessica Brown</p>
 				</td>

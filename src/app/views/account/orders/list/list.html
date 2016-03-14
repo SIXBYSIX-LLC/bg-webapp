@@ -5,7 +5,7 @@
 	<h1 class="no-margin skin-color seller-heading-font">My Orders</h1>
 	<div class="search-sort-div hide-search hidden-xs" ng-class="{'show-search': searchOpen}">
 		<i class="fa fa-search" ng-click="searchBar()"></i>
-		<input type="text" placeholder="Enter Order ID" class="form-control"  ng-model="mdl.searchText" ranges="{'Special Range':{'startDate': '2013-09-2', 'endDate': '2013-09-5'}}">
+		<input type="text" placeholder="Enter Order ID" class="form-control"  ng-model="mdl.searchText" >
 
 	</div>
 	<div class="search-sort-div hide-search hidden-xs" ng-class="{'show-search': filterOpen}">
@@ -22,7 +22,7 @@
 			<input class="form-control" type="text" placeholder="Search" ng-model="mdl.searchText">
 		</div>
 		<div class="arrow_box filter_arrow_box" ng-show="mobilefilterOpen">
-			<input date-range-picker class="form-control date-picker" placeholder="Select Dates" type="text" ng-model="date" />
+      <input type="daterange" class="form-control date-picker" ng-model="myDateRange" ranges="mdl.ranges" open="left" />
 		</div>
 	</div>
 </div>
