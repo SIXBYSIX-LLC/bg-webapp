@@ -6962,17 +6962,6 @@ section {
   margin-top: 18%;
 }
 
-.cart-summary {
-  figure {
-    padding: 10px !important;
-    transition: all 0.6s ease;
-    &:hover {
-      background-color: #eeeeee;
-      cursor: pointer;
-    }
-  }
-}
-
 .write-review-div {
   margin-bottom: 20px !important;
   h4 {
@@ -7003,4 +6992,97 @@ section {
           line-height: 0.8em !important;
       }
     }
+}
+
+.booking-details {
+  .cart-summary {
+    max-height: 405px;
+    overflow: auto;
+    border-top: 1px solid #ccc;
+    margin-bottom: 0;
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+     
+    /* Track */
+    &::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0.3);
+      box-shadow: inset 0 0 1px rgba(0,0,0,0.3);
+      -webkit-border-radius: 10px;
+      border-radius: 10px;
+    }
+     
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      -webkit-border-radius: 10px;
+      border-radius: 10px;
+      background: rgba(0,0,0,0.1);
+      -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0.1);
+      box-shadow: inset 0 0 1px rgba(0,0,0,0.1);
+    }
+    figure {
+      padding: 10px !important;
+      transition: all 0.6s ease;
+      &:hover {
+        background-color: #eeeeee;
+        cursor: pointer;
+      }
+      a {
+        &:first-child {
+          width: 60px;
+          height: 60px;
+        }
+      }
+      .travel-title {
+        margin-left: 72px;
+        h5 {
+          color: $primary-orange-color;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+          p {
+            color: #838383;
+            font-weight: 600;
+            margin-top: 7px;
+            margin-bottom: 0;
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.summary-div {
+  margin-bottom: 10px;
+  .other-details {
+    font-size: 13px;
+    dt {
+      text-transform: none;
+      padding: 10px 0;
+    }
+    dd {
+      padding: 10px 0;
+    }
+    .total-price {
+      font-size: 15px;
+    }
+    .total-price-value {
+      font-size: 15px;
+      font-weight: 600;
+      padding-bottom: 0;
+    }
+  }
+}
+
+.summary-contact {
+  padding: 20px 10px;
+  p {
+    margin-bottom: 10px;
+  }
+  .contact-details {
+    span {
+      font-size: 16px;
+    }
+  }
 }
