@@ -1,3 +1,6 @@
+<div class="loader-div" loader>
+    <img src="assets/images/loader.gif" style="height: 100px; width:100px"/>
+</div>
 <div class="add-equipment col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding add-equip-col">
 	<form validate-form name="addEquiMdl.form" novalidate ng-submit="updateProfile()" class="edit-profile-form buyer-add-jobsite">
 		<h1 class="no-margin skin-color seller-heading-font">{{editMode ? 'Edit Equipment' :'Add New Equipment'}}</h1>
@@ -169,9 +172,9 @@
 			</div>
 		</div>
 		<hr>
-		<div class="from-group block">
+		<div class="from-group block text-right">
+			<button class="btn all-btn secondary-btn" ui-sref="main.sellerAccount.equipments.list">Cancel</button>
 			<button type="submit" class="btn all-btn primary-btn" ng-click="add()">{{editMode ? 'Save' : 'Add Equipment'}}</button>
-			<button class="btn all-btn primary-btn" ui-sref="main.sellerAccount.equipments.list">Cancel</button>
 		</div>
 	</form>
 </div>
