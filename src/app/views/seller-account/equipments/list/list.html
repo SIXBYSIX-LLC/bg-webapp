@@ -31,7 +31,7 @@
 				</label>
 		</form>
 	</div>
-	<div class="col-lg-12 col-md-12 col-sm-12 hidden-xs">
+	<div class="col-lg-12 col-md-12 col-sm-12 hidden-xs no-padding">
 		<table class="table equipments-table">
 			<tbody>
 				<tr ng-repeat="pro in listEquiMdl.products">
@@ -41,7 +41,7 @@
 						</a>
 					</td>
 					<td class="equip-desc">
-						<h3>{{pro.name}}</h3>
+						<h3 ui-sref="main.equiDetails({id:pro.id})">{{pro.name}}</h3>
 						<p>{{pro.location.city.name}},{{pro.location.state.name}}</p>
 						<p>ID: xxxxxxxx</p>
 					</td>
