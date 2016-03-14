@@ -7093,11 +7093,19 @@ section {
 
 .loader-div {
   position: absolute;
-  z-index: 100;
+  z-index: 1;
   width: 100%;
   text-align: center;
   background: rgba(255,255,255,.5);
   height: 100%;
   margin-left: -15px;
+  padding-top: 5.8%;
   margin-top: -10px;
+  img {
+    width: 40px !important;
+    height: 40px !important;
+  }
+  &.setting-loader {
+    padding-top: 0;
+  }
 }
