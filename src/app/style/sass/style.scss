@@ -7090,3 +7090,14 @@ section {
     }
   }
 }
+
+.loader-div {
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+  text-align: center;
+  background: rgba(255,255,255,.5);
+  height: 100%;
+  margin-left: -15px;
+  margin-top: -10px;
+}
