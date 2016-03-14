@@ -17,7 +17,7 @@
       'toggle-switch',
       'angular-ladda',
       'chieffancypants.loadingBar',
-      'daterangepicker'
+      'ngBootstrap'
     ])
     .run(["$rootScope",function($rootScope){
       $rootScope.dateFormat = 'dd-MMMM-yyyy';
