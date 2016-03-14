@@ -19,7 +19,7 @@
 	<hr />
 </div>
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding list-view">
-	<div class="booking-info clearfix" ng-repeat="site in mdl.sites">
+	<!-- <div class="booking-info clearfix" ng-repeat="site in mdl.sites">
 		<h4 class="box-title">
 			<i class="icon soap-icon-departure yellow-color circle"></i>{{site.name}}
 			<small>{{site.city.name}},{{site.state.name}},{{site.country.name}}</small>
@@ -38,7 +38,25 @@
 				Delete
 			</button>
 		</div>
-		<!-- <button class="btn all-btn status" ng-click="delete(site)">Archive</button> -->
-		<!-- <button class="btn all-btn status" ui-sref="main.account.jobsites.edit({id:site.id})">Edit</button> -->
-	</div>
+	</div> -->
+	<table class="table order-table">
+		<tbody>
+			<tr ng-repeat="site in mdl.sites">
+				<td>
+					<p class="heading-text no-margin">
+						<i class="icon soap-icon-departure yellow-color circle"></i>&nbsp {{site.name}}
+					</p>
+					<small>{{site.city.name}},{{site.state.name}},{{site.country.name}}</small>
+				</td>
+				<td class="text-right">
+					<button ui-sref="main.account.jobsites.edit({id:site.id})" class=" hidden-xs btn small-btn secondary-btn">
+						Edit
+					</button>
+					<button ng-click="delete(site)" class="hidden-xs btn small-btn secondary-btn btn-right">
+						Delete
+					</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
 </div>

@@ -18,7 +18,7 @@
 	<hr />
 </div>
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding list-view">
-	<div ng-repeat="item in mdl.items" class="booking-info clearfix no-lpadding no-rpadding no-bpadding">
+	<!-- <div ng-repeat="item in mdl.items" class="booking-info clearfix no-lpadding no-rpadding no-bpadding">
 		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 enquiry-name no-padding">
 			<p class="name heading-text">Jessica Brown</p>
 		</div>
@@ -31,14 +31,30 @@
 			<div class="comment-header clearfix">
 				<div class="review-score enquiry-buttons">
 					<a href="" class="pull-right desc-text">Mark as read</a>
-					<button class="btn pull-right small-btn view-btn secondary-btn" ui-sref="main.account.inquiries.view({id:item.id})">View</button>
+					<button class="btn pull-right small-btn view-btn secondary-btn" ui-sref="main.account.inquiries.view({id:item.id})">View</button> -->
 					<!-- <a class="pull-right clickable-icon">
 						<i class="fa fa-eye"></i>
 					</a> -->
 					<!-- <button class="btn pull-right all-btn reply-btn" ui-sref="main.sellerAccount.inquiries.view({id:item.id})">Reply</button>
 					<button class="btn all-btn " ng-click="mdl.delete(item)">Delete</button> -->
-				</div>
+				<!-- </div>
 			</div>
 		</div>
-	</div>
+	</div> -->
+	<table class="table order-table">
+		<tbody>
+			<tr ng-repeat="item in mdl.items">
+				<td>
+					<p class="heading-text no-margin">Jessica Brown</p>
+				</td>
+				<td>
+					<p class="no-margin heading-text orange-text font-italic">{{item.subject}}</p>
+				</td>
+				<td class="text-right">
+					<button class="btn small-btn view-btn secondary-btn" ui-sref="main.account.inquiries.view({id:item.id})">View</button>
+					<a href="" class="desc-text orange-text btn-right">Mark as read</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
 </div>
