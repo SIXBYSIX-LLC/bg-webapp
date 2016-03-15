@@ -30,7 +30,7 @@
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
 	<table class="table order-table hidden-xs">
 		<tbody>
-			<tr ng-repeat="inv in mdl.invoices | filter:{ id : mdl.searchText}">
+			<tr ng-repeat="inv in mdl.invoices | filter:{ id : mdl.searchText}| dateRangeFilter:  myDateRange.startDate: myDateRange.endDate">
 				<td>
 					<p class="heading-text no-margin">
 						<i class="icon soap-icon-card yellow-color circle"></i>&nbsp Invoice
@@ -38,7 +38,7 @@
 					<small>ID : {{inv.id}}</small>
 				</td>
 				<td class="heading-text">
-					Jan 28, 2015
+					{{inv.date_created_at | date:"MMM dd,yyyy"}}
 				</td>
 				<td class="heading-text">{{inv.is_paid ? "Paid" : "Not Paid"}}
 				</td>

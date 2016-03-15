@@ -5,6 +5,7 @@ angular.module('BG').controller('ListInvoicesCtrl',
     InvoicesService.getInvoices().then(function(response){
       mdl.invoices=response.data.data;
     });
+    $scope.myDateRange={startDate:moment(0),endDate:moment()};
     mdl.ranges = {
       'Today': [moment(), moment()],
       'Yesterday': [moment().subtract('days', 1), moment().subtract('days', 1)],

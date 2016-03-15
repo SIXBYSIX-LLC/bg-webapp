@@ -2,7 +2,7 @@ angular.module('BG').controller('ListOrdersCtrl',
   /** @ngInject */
     function ($scope, OrdersService) {
     var mdl = $scope.mdl = {};
-    $scope.myDateRange={startDate:null,endDate:null};
+    $scope.myDateRange={startDate:moment(0),endDate:moment()};
 
     mdl.ranges = {
       'Today': [moment(), moment()],
