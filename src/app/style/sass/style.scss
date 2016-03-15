@@ -3966,48 +3966,48 @@ ul.search-tabs {
     .numbers {
       padding: 20px 15px 30px;
       dl { float: right; text-align: right; margin: 0; }
-      dt { font-size: 30px; font-weight: 400; line-height: 1em; }
+      dt { font-size: 30px; font-weight: 600; line-height: 1em; color: $primary-orange-color; }
       dd { font-size: 14px; }
       .icon { font-size: 3em; }
     }
     .description {
       font-size: 11px; text-transform: uppercase; padding: 0 20px; font-weight: bold; line-height: 3.5em;
-      > .icon { float: right; font-size: 2em; opacity: 1;}
+      > .icon { float: right; font-size: 20px !important; opacity: 1; margin-top: 10px;}
     }
     &.blue {
       background: $primary-header-color;
-      .description { background: $primary-orange-color;
+      .description { 
+        background: $white-theme-color;
+        color: $black-color;
         transition: all 0.6s ease;
-        &:hover {
-          background-color: $primary-hover-color;
-        }
+        border: 1px solid $primary-header-color;
       }
     }
     &.yellow {
       background: $primary-header-color;
-      .description { background: $primary-orange-color;
+      .description { 
+        background: $white-theme-color;
+        color: $black-color;
         transition: all 0.6s ease;
-        &:hover {
-          background-color: $primary-hover-color;
-        }
+        border: 1px solid $primary-header-color;
       }
     }
     &.red {
       background: $primary-header-color;
-      .description { background: $primary-orange-color;
+      .description { 
+        background: $white-theme-color;
+        color: $black-color;
         transition: all 0.6s ease;
-        &:hover {
-          background-color: $primary-hover-color;
-        }
+        border: 1px solid $primary-header-color;
       }
     }
     &.green {
       background: $primary-header-color;
-      .description { background: $primary-orange-color;
+      .description { 
+        background: $white-theme-color;
+        color: $black-color;
         transition: all 0.6s ease;
-        &:hover {
-          background-color: $primary-hover-color;
-        }
+        border: 1px solid $primary-header-color;
       }
     }
   }
@@ -4020,7 +4020,7 @@ ul.search-tabs {
     }
     .icon-box { font-size: 1em; padding-right: 15px; margin-bottom: 10px; height: auto; &:after { display: table; content: ""; clear: both; } &:hover {cursor: pointer; background-color: #f5f5f5} }
     .box-title { line-height: 15px; text-transform: none; color: $heading-color; padding: 6px 5px 0 57px; }
-    .price { color: $skin-active-color; float: none; text-align: left; display: inline-block; font-size: inherit; margin: 9px 0; }
+    .price { color: $skin-active-color; float: none; text-align: left; display: inline-block; font-size: inherit; margin: 9px 0; font-weight: 600; }
     .time { line-height: inherit; }
     .load-more { font-size: 2.5em; text-align: center; color: #d9d9d9; }
   }
@@ -4031,14 +4031,23 @@ ul.search-tabs {
       background: #fff; margin-bottom: 15px;
       li > a {
         padding: 15px; border-bottom: 1px solid #f5f5f5; display: block;
-        &:hover { background: #f5f5f5; cursor: pointer;}
+        &:hover { background: #f5f5f5; cursor: pointer;
+          .price {
+            span {
+              color: $primary-orange-color;
+            }
+          }
+        }
       }
       .icon { float: left; margin-right: 15px; font-size: 1.3333em; }
-      .price {margin-top: 0; margin-right: 30px; min-width: 70px;}
+      .price {margin-top: 0; margin-right: 30px; min-width: 70px; color: $primary-color;}
     }
-    .button {
-      line-height: 3.5em;
-      font-size: 12px;
+    .white-btn {
+      border: 1px solid $primary-orange-color;
+      color: $primary-orange-color;
+      &:hover {
+        color: $white-theme-color;
+      }
     }
   }
 }
@@ -5319,7 +5328,7 @@ button.ui-button::-moz-focus-inner { border: 0; padding: 0; }
     text-align: left;
     display: inline-block;
     float: left;
-    padding-top: 5px;
+    // padding-top: 5px;
   }
   .search-div {
     display: inline-block;
@@ -5381,6 +5390,14 @@ button.ui-button::-moz-focus-inner { border: 0; padding: 0; }
       transition: background-color 0.6s ease;
       &:hover {
         background-color: #f5f5f5;
+        td {
+          p {
+            a {
+              background-color: $primary-orange-color;
+              color: $white-theme-color;
+            }
+          }
+        }
       }
       &:first-child {
         border-top: 1px solid #cccccc;
@@ -5408,7 +5425,7 @@ button.ui-button::-moz-focus-inner { border: 0; padding: 0; }
           margin-bottom: 10px;
         }
          a {
-          margin-right: 15px;
+          margin-right: 10px;
           font-size: 13px;
           &:last-child {
             margin-right: 0;
@@ -6156,7 +6173,7 @@ section {
       }
     }
     span {
-      font-weight: 400;
+      // font-weight: 400;
     }
   }
 }
@@ -6319,7 +6336,8 @@ section {
 .invoice-details {
   h2 {
     font-size: 16px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    font-weight: 600;
   }
 }
 
@@ -6692,6 +6710,10 @@ section {
       cursor: pointer;
       &:hover {
         background-color: #f5f5f5;
+        .btn {
+          background-color: $primary-button-color;
+          color: $white-theme-color;
+        }
       }
       &:first-child {
         > td {
@@ -6922,7 +6944,7 @@ section {
     margin-top: 11px;
     font-size: 13px;
     background-color: $white-theme-color;
-    color: $primary-orange-color;
+    color: $primary-color;
     cursor: pointer;
   }
   // .hide-search {
@@ -7127,5 +7149,14 @@ section {
 .buyer-order-detail {
   p {
     margin-bottom: 5px;
+  }
+}
+
+.mobile-inquiry-list {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  border-bottom: 1px solid $primary-border-color;
+  a {
+    margin-top: 6px;
   }
 }

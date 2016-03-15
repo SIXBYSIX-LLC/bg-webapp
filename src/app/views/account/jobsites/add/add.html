@@ -3,12 +3,15 @@
 </div>
 <div class="add-equipment col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
 	<form validate-form name="mdl.form" novalidate ng-submit="updateProfile()" class="edit-profile-form buyer-add-jobsite">
-		<h1 class="no-margin skin-color seller-heading-font">{{editMode ? 'Edit Jobsite' :'Add New Jobsite'}}</h1>
+		<h1 class="no-margin black-color seller-heading-font">{{editMode ? 'Edit Jobsite' :'Add New Jobsite'}}</h1>
 		<!-- <h2>{{editMode ? 'Edit Jobsite' :'Add New Jobsite'}}</h2> -->
 		<!-- <div class="col-sm-9 no-padding no-float"> -->
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
 			<hr>
 		</div>
+		<map></map>
+		<br>
+		<br>
 			<div class="row form-group">
 				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 					<label>First Name</label>
@@ -81,14 +84,13 @@
 					<input ng-model="mdl.data.zip_code" name="zipcode" required type="text" class="form-control">
 				</div>
 			</div>
-			<map></map>
 			<!-- <div class="from-group">
 				<button type="submit" class="btn-medium col-sms-6 col-sm-4" ng-click="add()">{{editMode ? 'SAVE' : 'ADD JOBSITE'}}</button>
 				<button class="btn-medium btn-default col-sms-6 col-sm-4" ui-sref="main.account.jobsites.list">CANCEL</button>
 			</div>-->
-			<div class="from-group block" style="margin-top: 20px;">
-				<button ladda="buttonLoader" type="submit" class="btn all-btn primary-btn" ng-click="add()">{{editMode ? 'Save' : 'Add Jobsite'}}</button>
-				<button class="btn all-btn cancel-btn primary-btn" ui-sref="main.account.jobsites.list">Cancel</button>
+			<div class="from-group block" style="margin-bottom: 10px;">
+				<button ladda="buttonLoader" type="submit" class="btn all-btn primary-btn pull-right btn-right" ng-click="add()">{{editMode ? 'Save' : 'Add Jobsite'}}</button>
+				<button class="btn all-btn cancel-btn primary-btn pull-right" ui-sref="main.account.jobsites.list">Cancel</button>
 			</div>
 		<!-- </div> -->
 	</form>

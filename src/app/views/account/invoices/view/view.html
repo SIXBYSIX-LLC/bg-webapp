@@ -18,9 +18,9 @@
 			<p class="bg-danger" style="padding: 8px;">This invoice is not paid. Please pay to get order processed</p>
 		</div>
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding term-description">
-			<p class="heading-text no-margin">Order number: &nbsp
-				<span class="no-margin" ng-if="mdl.invoice.order.id">{{mdl.invoice.order.id}}</span>
-				<span class="no-margin" ng-if="!mdl.invoice.order.id">--</span>
+			<p class="font14 no-margin">Order number: &nbsp
+				<span class="no-margin bold-font" ng-if="mdl.invoice.order.id">{{mdl.invoice.order.id}}</span>
+				<span class="no-margin bold-font" ng-if="!mdl.invoice.order.id">--</span>
 			</p>
 		</div>
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
@@ -51,32 +51,32 @@
 			<hr />
 		</div>
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
-			<h2>Details</h2>
+			<h2>Invoice Details</h2>
 		</div>
-		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 no-padding">
+		<div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 no-padding buyer-order-detail">
 			<p class="orange-text">First name:</p>
 		</div>
-		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+		<div class="col-lg-9 col-md-9 col-sm-8 col-xs-6 buyer-order-detail">
 			<p ng-if="mdl.invoice.order.billing_address.first_name">{{mdl.invoice.order.billing_address.first_name}}</p>
 			<p ng-if="!mdl.invoice.order.billing_address.first_name">--</p>
 		</div>
-		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 no-padding">
+		<div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 no-padding buyer-order-detail">
 			<p class="orange-text">Last name:</p>
 		</div>
-		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+		<div class="col-lg-9 col-md-9 col-sm-8 col-xs-6 buyer-order-detail">
 			<p ng-if="mdl.invoice.order.billing_address.last_name">{{mdl.invoice.order.billing_address.last_name}}</p>
 			<p ng-if="!mdl.invoice.order.billing_address.last_name">--</p>
 		</div>
-		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 no-padding">
+		<div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 no-padding buyer-order-detail">
 			<p class="orange-text no-margin">Phone:</p>
 		</div>
-		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+		<div class="col-lg-9 col-md-9 col-sm-8 col-xs-6 buyer-order-detail">
 			<p class="no-margin" ng-if="mdl.invoice.order.billing_address.phone">{{mdl.invoice.order.billing_address.phone}}</p>
 			<p class="no-margin" ng-if="!mdl.invoice.order.billing_address.phone">--</p>
 		</div>
 	<!-- </div> -->
 </div>
-	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding devider devider-bottom">
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding devider-bottom">
 	</div>
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 invoice-details-col" ng-repeat="item in mdl.invoice.items">
 		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 pull-center">
@@ -92,13 +92,13 @@
 				<p>Quantity <span class="pull-right">3</span></p>
 			</div>
 			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 right-col">
-				<p>Shipping <span class="pull-right">$100</span></p>
-				<p>Overuse <span class="pull-right">$178</span></p>
-				<p>Additional <span class="pull-right">$230</span></p>
+				<p>Shipping <span class="pull-right bold-font">$100</span></p>
+				<p>Overuse <span class="pull-right bold-font">$178</span></p>
+				<p>Additional <span class="pull-right bold-font">$230</span></p>
 			</div>
 		</div>
 		<div class="col-lg-1 col-md-1 col-sm-2 col-xs-12 product-name pull-center product-name-xs no-padding">
-			<h4>${{item.subtotal | number}}</h4>
+			<h4 class="bold-font">${{item.subtotal | number}}</h4>
 		</div>
 	</div>
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding devider-solid no-margin"></div>
@@ -108,13 +108,13 @@
 				<h4 style="margin-top: 28px;">Cart Total</h4>
 			</div>
 		</div>
-		<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 add-cost">
-			<p>Shipping Cost <span class="pull-right">${{mdl.invoice.shipping_charge | number}}</span></p>
-			<p>Overusage<span class="pull-right">${{mdl.invoice.shipping_charge | number}}</span></p>
-			<p>Additional<span class="pull-right">${{mdl.invoice.shipping_charge | number}}</span></p>
+		<div class="col-lg-5 col-md-5 col-sm-6 col-xs-12 add-cost">
+			<p>Shipping Cost <span class="pull-right bold-font">${{mdl.invoice.shipping_charge | number}}</span></p>
+			<p>Overusage<span class="pull-right bold-font">${{mdl.invoice.shipping_charge | number}}</span></p>
+			<p>Additional<span class="pull-right bold-font">${{mdl.invoice.shipping_charge | number}}</span></p>
 		</div>
-		<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 total-cost" style="margin-top: 28px;">
-			<div>
+		<div class="col-lg-1 col-md-1 col-sm-2 col-xs-12 total-cost" style="margin-top: 28px;">
+			<div class="bold-font">
 				${{mdl.invoice.total | number}}
 			</div>
 		</div>

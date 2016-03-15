@@ -2,19 +2,19 @@
     <img src="assets/images/loader.gif" style="height: 100px; width:100px"/>
 </div>
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 seller-header no-padding">
-	<h1 class="no-margin skin-color seller-heading-font">Manage Your Jobsites
+	<h1 class="no-margin black-color seller-heading-font">Manage Your Jobsites
 		<div class="visible-xs">
 			<div class="pull-right mobile-icons">
 				<i class="fa fa-search orange-color pull-right" ng-click="mobilesearchBar()" style="margin-top: -20px; margin-right: 0px;"></i>
 			</div>
 			<div class="arrow_box" ng-show="mobilesearchOpen">
-				<input class="form-control" type="text" placeholder="Search" ng-model="mdl.searchText">
+				<input class="form-control" type="text" placeholder="Enter Jobsite Name or Location" ng-model="mdl.searchText">
 			</div>
 		</div>
 		<button class="btn all-btn pull-right primary-btn btn-right" ui-sref="main.account.jobsites.add"><i class="icon soap-icon-plus"></i> Add Jobsite</button>
 		<div class="search-sort-div hide-search hidden-xs" ng-class="{'show-search': searchOpen}">
 			<i class="fa fa-search" ng-click="searchBar()"></i>
-			<input type="text" placeholder="Search" class="form-control" ng-model="mdl.searchText">
+			<input type="text" placeholder="Enter Jobsite Name or Location" class="form-control" ng-model="mdl.searchText">
 		</div>
 	</h1>
 </div>
@@ -42,7 +42,7 @@
 			</button>
 		</div>
 	</div> -->
-	<table class="table order-table">
+	<table class="table order-table hidden-xs">
 		<tbody>
 			<tr ng-repeat="site in mdl.sites |filter:{ $ : mdl.searchText}">
 				<td>
@@ -52,14 +52,22 @@
 					<small>{{site.city.name}},{{site.state.name}},{{site.country.name}}</small>
 				</td>
 				<td class="text-right">
-					<button ui-sref="main.account.jobsites.edit({id:site.id})" class=" hidden-xs btn small-btn secondary-btn">
+					<button ui-sref="main.account.jobsites.edit({id:site.id})" class=" hidden-xs btn all-btn white-btn">
 						Edit
 					</button>
-					<button ng-click="delete(site)" class="hidden-xs btn small-btn secondary-btn btn-right">
+					<button ng-click="delete(site)" class="hidden-xs btn all-btn white-btn btn-right">
 						Delete
 					</button>
 				</td>
 			</tr>
 		</tbody>
 	</table>
+	<div class="col-xs-12 no-padding visible-xs">
+		<div class="col-xs-12 no-padding mobile-inquiry-list" ng-repeat="site in mdl.sites |filter:{ $ : mdl.searchText}">
+			<p class="heading-text" style="margin-bottom: 5px;"><i class="icon soap-icon-departure yellow-color circle"></i>&nbsp {{site.name}}</p>
+			<p class="font14">{{site.city.name}},{{site.state.name}},{{site.country.name}}</p>
+			<button class="btn all-btn view-btn white-btn" ui-sref="main.account.jobsites.edit({id:site.id})">View</button>
+			<button class="btn all-btn view-btn white-btn pull-right" ng-click="delete(site)">Delete</button>
+		</div>
+	</div>
 </div>

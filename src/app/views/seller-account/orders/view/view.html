@@ -25,9 +25,9 @@
 	</div>
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding term-description">
-			<p class="heading-text no-margin">Order number: &nbsp
-				<span class="no-margin" ng-if="mdl.order.id">{{mdl.order.id}}</span>
-				<span ng-if="!mdl.order.id">--</span>
+			<p class="font14 no-margin">Order number: &nbsp
+				<span class="no-margin bold-font" ng-if="mdl.order.id">{{mdl.order.id}}</span>
+				<span class="no-margin bold-font" ng-if="!mdl.order.id">--</span>
 			</p>
 		</div>
 	</div>
@@ -109,23 +109,23 @@
 			</div>
 		</div>
 		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 product-name pull-center product-name-xs no-padding">
-			<h4>${{item.cost_breakup.subtotal.amt}}</h4>
+			<h4 class="bold-font">${{item.cost_breakup.subtotal.amt}}</h4>
 			<button ui-sref="main.sellerAccount.orders.process({id:mdl.order.id,itemIndex:$index})" class="button btn all-btn primary-btn">Process</button>
 		</div>
 	</div>
-	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding devider-solid no-margin"></div>
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding devider-solid no-margin hidden-xs"></div>
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 cart-total invoice-cart-total">
 		<div class="col-lg-6 col-md-6 col-sm-4 col-xs-12">
 			<div class="description">
 				<h4 style="margin-top: 15px;">Cart Total</h4>
 			</div>
 		</div>
-		<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 add-cost">
-			<p>Shipping Cost <span class="pull-right">${{mdl.order.shipping_charge | number}}</span></p>
-			<p>Additional Charges<span class="pull-right">${{mdl.order.additional_charge | number}}</span></p>
+		<div class="col-lg-3 col-md-3 col-sm-5 col-xs-12 add-cost">
+			<p>Shipping Cost <span class="pull-right bold-font">${{mdl.order.shipping_charge | number}}</span></p>
+			<p>Additional Charges<span class="pull-right bold-font">${{mdl.order.additional_charge | number}}</span></p>
 		</div>
-		<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 total-cost" style="margin-top: 15px;">
-			<div>
+		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 total-cost" style="margin-top: 15px;">
+			<div class="bold-font">
 				${{mdl.order.subtotal | number}}
 			</div>
 		</div>
