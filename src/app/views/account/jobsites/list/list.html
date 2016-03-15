@@ -44,7 +44,7 @@
 	</div> -->
 	<table class="table order-table">
 		<tbody>
-			<tr ng-repeat="site in mdl.sites |filter:{ name : mdl.searchText}">
+			<tr ng-repeat="site in mdl.sites |filter:{ $ : mdl.searchText}">
 				<td>
 					<p class="heading-text no-margin">
 						<i class="icon soap-icon-departure yellow-color circle"></i>&nbsp {{site.name}}
