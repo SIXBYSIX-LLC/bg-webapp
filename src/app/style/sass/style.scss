@@ -1016,7 +1016,7 @@ ol {  }
           }
         }
       }
-      .tab-content .tab-pane { padding: 10px 0; }
+      .tab-content .tab-pane { padding: 10px 0; min-height: 480px;}
     }
     .tab-content {
       float: left; 
@@ -6139,13 +6139,24 @@ section {
   // margin-bottom: 20px;
   padding-top: 10px;
   background: #f2f2f2;
+  .total-amount-pay {
+    padding-top: 10px;
+    padding-bottom: 5px;
+    padding-right: 8%;
+  }
   p {
     text-align: right;
-    font-size: 18px;
-    color: #333333;
-    margin-bottom: 10px;
+    font-size: 13px;
+    margin-bottom: 5px;
+    &:last-child {
+      font-size: 16px;
+      color: #000000;
+      span {
+        font-weight: 600 !important;
+      }
+    }
     span {
-      font-weight: 600;
+      font-weight: 400;
     }
   }
 }
@@ -6313,8 +6324,11 @@ section {
 }
 
 .invoice-details-col {
-  border: 1px solid $primary-border-color;
+  border-top: 1px solid $primary-border-color;
   padding: 5px !important;
+  &:last-child {
+    border-bottom: 1px solid $primary-border-color;
+  }
   .term-description {
     dt {
       width: 90px !important;
@@ -7099,7 +7113,7 @@ section {
   background: rgba(255,255,255,.5);
   height: 100%;
   margin-left: -15px;
-  padding-top: 5.8%;
+  padding-top: 6.8%;
   margin-top: -10px;
   img {
     width: 40px !important;
@@ -7107,5 +7121,11 @@ section {
   }
   &.setting-loader {
     padding-top: 0;
+  }
+}
+
+.buyer-order-detail {
+  p {
+    margin-bottom: 5px;
   }
 }

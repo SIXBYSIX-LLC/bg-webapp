@@ -148,7 +148,7 @@ img.full-width { height: auto; }
 }
 
 .text-left {
-  text-align: left;
+  text-align: left !important;
 }
 
 .primary-btn {
@@ -233,6 +233,12 @@ img.full-width { height: auto; }
 
 .devider-bottom {
   margin-bottom: 25px;
+}
+
+.devider-solid {
+  border-bottom: 1px solid $primary-border-color;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .form-control {
