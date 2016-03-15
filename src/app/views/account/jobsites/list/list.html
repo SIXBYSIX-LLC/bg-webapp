@@ -42,7 +42,7 @@
 			</button>
 		</div>
 	</div> -->
-	<table class="table order-table">
+	<table class="table order-table hidden-xs">
 		<tbody>
 			<tr ng-repeat="site in mdl.sites |filter:{ $ : mdl.searchText}">
 				<td>
@@ -62,4 +62,12 @@
 			</tr>
 		</tbody>
 	</table>
+	<div class="col-xs-12 no-padding visible-xs">
+		<div class="col-xs-12 no-padding mobile-inquiry-list" ng-repeat="site in mdl.sites |filter:{ $ : mdl.searchText}">
+			<p class="heading-text" style="margin-bottom: 5px;"><i class="icon soap-icon-departure yellow-color circle"></i>&nbsp {{site.name}}</p>
+			<p class="font14">{{site.city.name}},{{site.state.name}},{{site.country.name}}</p>
+			<button class="btn all-btn view-btn white-btn" ui-sref="main.account.jobsites.edit({id:site.id})">View</button>
+			<button class="btn all-btn view-btn white-btn pull-right" ng-click="delete(site)">Delete</button>
+		</div>
+	</div>
 </div>

@@ -2,7 +2,7 @@
     <img src="assets/images/loader.gif" style="height: 100px; width:100px"/>
 </div>
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 seller-header search-col no-padding">
-		<h1 class="no-margin skin-color seller-heading-font">Orders Received</h1>
+		<h1 class="no-margin black-color seller-heading-font">Orders Received</h1>
 		<!-- <div class="dropdown pull-right btn-right">
 			<i class="fa fa-sort form-control sort-icon" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"></i>
 			<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -69,17 +69,17 @@
 						<p class="heading-text no-margin">
 							<i class="icon soap-icon-card yellow-color circle"></i>&nbsp Order
 						</p>
-						<small>ID : {{order.id}}</small>
+						<small>ID : <span class="bold-font">{{order.id}}</span></small>
 					</td>
 					<td class="heading-text">
 						Jan 28, 2015
 					</td>
 					<td class="heading-text">{{order.items.length}} items
 					</td>
-					<td class="heading-text">${{order.subtotal}}
+					<td class="heading-text bold-font">${{order.subtotal}}
 					</td>
 					<td>
-						<a ui-sref="main.sellerAccount.orders.view({id:order.id})" class="pull-right btn small-btn secondary-btn">
+						<a ui-sref="main.sellerAccount.orders.view({id:order.id})" class="pull-right btn all-btn white-btn">
 							<!-- <i class="fa fa-eye" ui-sref="main.account.orders.view({id:order.id})"></i> -->
 							View
 						</a>
@@ -88,10 +88,10 @@
 			</tbody>
 		</table>
 		<div ng-repeat="order in mdl.orders" class="visible-xs mobile-list">
-			<p>Order ID: <span class="pull-right">{{order.id}}</span></p>
+			<p>Order ID: <span class="pull-right bold-font">{{order.id}}</span></p>
 			<p>Date: <span class="pull-right">Jan 28, 2015</span></p>
 			<p>{{order.items.length}} items</p>
-			<p>${{order.subtotal}} <a ui-sref="main.sellerAccount.orders.view({id:order.id})" class="pull-right btn small-btn secondary-btn">View</a></p>
+			<p class="bold-font">${{order.subtotal}} <a ui-sref="main.sellerAccount.orders.view({id:order.id})" class="pull-right btn all-btn white-btn">View</a></p>
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
 				<hr style="margin-top: 15px;"/>
 			</div>

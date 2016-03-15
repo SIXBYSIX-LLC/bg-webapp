@@ -2,7 +2,7 @@
     <img src="assets/images/loader.gif" style="height: 100px; width:100px"/>
 </div>
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 seller-header no-padding">
-		<h1 class="no-margin skin-color seller-heading-font">My Inventory
+		<h1 class="no-margin black-color seller-heading-font">My Inventory
 			<div class="visible-xs">
 				<div class="pull-right mobile-icons">
 					<i class="fa fa-search orange-color pull-right" ng-click="mobilesearchBar()" style="margin-top: -20px; margin-right: 0px;"></i>
@@ -18,7 +18,7 @@
 			</div>
 		</h1>
 </div>
-	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 gray-area select-product">
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 gray-area select-product" ng-if="mdl.inventories">
 		<p>
 			Select Product: 
 			<select name="select-product" ng-model="invMdl.equiId" class="form-control" ng-options="e.id as e.name for e in invMdl.equis">
@@ -37,7 +37,7 @@
 					<td class="equip-desc">
 						<h3>{{inv.product.name}}</h3>
 						<p>Austin, Texas</p>
-						<p>ID: {{inv.id}}</p>
+						<p>ID: <span class="bold-font">{{inv.id}}</span></p>
 					</td>
 					<td class="time-td pull-center vertically-middle">
 						<toggle-switch ng-click="valueChanged(inv)" ng-model="inv.is_active" on-label="Available" off-label="Not-Available"></toggle-switch>
@@ -45,13 +45,13 @@
 					<td class="text-right action-td">
 						<p>
 							<!-- <button class="btn all-btn primary-btn">View</button> -->
-							<a href="" class="btn small-btn secondary-btn">
+							<a href="" class="btn all-btn white-btn">
 								View
 							</a>
-							<a ui-sref="main.sellerAccount.inventory.edit({id:inv.id})" class="btn small-btn secondary-btn">
+							<a ui-sref="main.sellerAccount.inventory.edit({id:inv.id})" class="btn all-btn white-btn">
 								Edit
 							</a>
-							<a href="" class="btn small-btn secondary-btn">
+							<a href="" class="btn all-btn white-btn">
 								Delete
 							</a>
 						</p>
@@ -74,7 +74,7 @@
 						<p>
 							Austin, Texas
 							<span class="pull-right">
-								ID: {{inv.id}}
+								ID: <span class="bold-font">{{inv.id}}</span>
 							</span>
 						</p>
 					</div>
@@ -83,13 +83,13 @@
 					</div>
 					<div class="col-xs-12 devider"></div>
 					<div class="col-xs-12 no-padding action pull-center cart-action">
-						<a href="" class="pull-left btn small-btn secondary-btn">
+						<a href="" class="pull-left btn all-btn white-btn">
 							View
 						</a>
-						<a ui-sref="main.sellerAccount.inventory.edit({id:inv.id})" class="btn small-btn secondary-btn">
+						<a ui-sref="main.sellerAccount.inventory.edit({id:inv.id})" class="btn all-btn white-btn">
 							Edit
 						</a>
-						<a href="" class="pull-right btn small-btn secondary-btn">
+						<a href="" class="pull-right btn all-btn white-btn">
 							Delete
 						</a>
 					</div>

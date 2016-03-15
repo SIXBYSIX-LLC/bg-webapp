@@ -45,7 +45,7 @@
 				View
 			</button>
 		</div> -->
-		<table class="table order-table">
+		<table class="table order-table hidden-xs">
 			<tbody>
 				<tr ng-repeat="pro in mdl.favorites | filter:{ name : mdl.searchText}">
 					<td style="width: 10%;">
@@ -69,5 +69,21 @@
 				</tr>
 			</tbody>
 		</table>
+		<div class="col-xs-12 no-padding visible-xs">
+			<div class="col-xs-12 no-padding mobile-inquiry-list" ng-repeat="pro in mdl.favorites | filter:{ name : mdl.searchText}">
+				<p class="heading-text pull-center">
+					<a class="hover-effect popup-gallery">
+						<img  height="72" ng-src="{{pro.image || 'http://placehold.it/72x72'}}" >
+					</a>
+				</p>
+				<p class="heading-text">{{pro.name}}</p>
+				<button class="btn all-btn white-btn" ui-sref="main.equiDetails({id:pro.id})">
+					View
+				</button>
+				<button class="btn all-btn white-btn pull-right">
+					Unfavorite
+				</button>
+			</div>
+		</div>
 	</div>
 </div>

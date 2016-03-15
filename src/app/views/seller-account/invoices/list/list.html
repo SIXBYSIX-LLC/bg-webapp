@@ -2,7 +2,7 @@
     <img src="assets/images/loader.gif" style="height: 100px; width:100px"/>
 </div>
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 seller-header search-col no-padding">
-			<h1 class="no-margin skin-color seller-heading-font">Invoices</h1>
+			<h1 class="no-margin black-color seller-heading-font">Invoices</h1>
 			<!-- <div class="sb-search btn-right hidden-xs" ng-class="{'sb-search-open': filterOpen}">
 				<form>
 					<input date-range-picker class="form-control date-picker sb-search-input" placeholder="Select Dates" type="text" ng-model="date" ng-class="{'no-border': !filterOpen}" />
@@ -68,7 +68,7 @@
 						<p class="heading-text no-margin">
 							<i class="icon soap-icon-card yellow-color circle"></i>&nbsp Invoice
 						</p>
-						<small>ID : {{item.id}}</small>
+						<small>ID : <span class="bold-font">{{item.id}}</span></small>
 					</td>
 					<td class="heading-text">
 						Jan 28, 2015
@@ -77,12 +77,12 @@
 					</td>
 					<td class="heading-text">{{item.is_approve ? 'Approved' : 'Not Approved'}}
 					</td>
-					<td class="heading-text">${{item.total}}</td>
+					<td class="heading-text bold-font">${{item.total}}</td>
 					<td>
 						<!-- <a class="pull-right" ng-click="invoicesMdl.pay(inv)">
 							<i class="fa fa-money"></i>
 						</a> -->
-						<a ui-sref="main.sellerAccount.invoices.view({id:item.id})" class="pull-right btn small-btn secondary-btn">
+						<a ui-sref="main.sellerAccount.invoices.view({id:item.id})" class="pull-right btn all-btn white-btn">
 							View
 						</a>
 					</td>
@@ -90,11 +90,11 @@
 			</tbody>
 		</table>
 		<div ng-repeat="item in mdl.items" class="visible-xs mobile-list">
-			<p>Invoice ID: <span class="pull-right">{{item.id}}</span></p>
+			<p>Invoice ID: <span class="pull-right bold-font">{{item.id}}</span></p>
 			<p>Date: <span class="pull-right">Jan 28, 2015</span></p>
 			<p>{{item.invoice.is_paid ? 'Paid' : 'Not Paid'}}</p>
-			<p>${{item.total}}</p>
-			<p>{{item.is_approve ? 'Approved' : 'Not Approved'}} <a ui-sref="main.sellerAccount.invoices.view({id:item.id})" class="pull-right btn small-btn secondary-btn">View</a></p>
+			<p class="bold-font">${{item.total}}</p>
+			<p>{{item.is_approve ? 'Approved' : 'Not Approved'}} <a ui-sref="main.sellerAccount.invoices.view({id:item.id})" class="pull-right btn all-btn white-btn">View</a></p>
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
 				<hr style="margin-top: 15px;"/>
 			</div>

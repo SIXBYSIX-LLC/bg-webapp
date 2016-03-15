@@ -44,7 +44,7 @@
 			</div>
 		</div>
 	</div> -->
-	<table class="table order-table">
+	<table class="table order-table hidden-xs">
 		<tbody>
 			<tr ng-repeat="item in mdl.items |filter:{ subject : mdl.searchText}">
 				<td>
@@ -60,4 +60,12 @@
 			</tr>
 		</tbody>
 	</table>
+	<div class="col-xs-12 no-padding visible-xs">
+		<div class="col-xs-12 no-padding mobile-inquiry-list" ng-repeat="item in mdl.items |filter:{ subject : mdl.searchText}">
+			<p class="heading-text">Jessica Brown</p>
+			<p class="heading-text orange-text font-italic">{{item.subject}}</p>
+			<button class="btn all-btn view-btn white-btn pull-left" ui-sref="main.account.inquiries.view({id:item.id})">View</button>
+			<a href="" class="desc-text orange-text pull-right">Mark as read</a>
+		</div>
+	</div>
 </div>

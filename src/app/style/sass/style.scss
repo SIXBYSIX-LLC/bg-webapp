@@ -3972,7 +3972,7 @@ ul.search-tabs {
     }
     .description {
       font-size: 11px; text-transform: uppercase; padding: 0 20px; font-weight: bold; line-height: 3.5em;
-      > .icon { float: right; font-size: 2.4em !important; opacity: 1; margin-top: 6px;}
+      > .icon { float: right; font-size: 20px !important; opacity: 1; margin-top: 10px;}
     }
     &.blue {
       background: $primary-header-color;
@@ -5417,7 +5417,7 @@ button.ui-button::-moz-focus-inner { border: 0; padding: 0; }
           margin-bottom: 10px;
         }
          a {
-          margin-right: 15px;
+          margin-right: 10px;
           font-size: 13px;
           &:last-child {
             margin-right: 0;
@@ -7141,5 +7141,14 @@ section {
 .buyer-order-detail {
   p {
     margin-bottom: 5px;
+  }
+}
+
+.mobile-inquiry-list {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  border-bottom: 1px solid $primary-border-color;
+  a {
+    margin-top: 6px;
   }
 }

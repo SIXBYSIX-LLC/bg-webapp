@@ -41,16 +41,16 @@
         <div class="devider"></div>
     </div>
     <div class="col-xs-12" ng-if="!charge.edit">
-        <a class="btn small-btn secondary-btn" ng-click="chargesMdl.edit(charge)">
+        <a class="btn all-btn white-btn" ng-click="chargesMdl.edit(charge)">
           Edit
         </a>
-        <a class="btn small-btn secondary-btn pull-right" ng-click="chargesMdl.delete(charge)">
+        <a class="btn all-btn white-btn pull-right" ng-click="chargesMdl.delete(charge)">
           Delete
         </a>
     </div>
     <div class="col-xs-12" ng-if="charge.edit">
-        <button ladda="loadButton" class="btn small-btn update-btn secondary-btn" ng-click="chargesMdl.update(charge)">Update</button>
-        <button class="btn small-btn secondary-btn pull-right" ng-click="chargesMdl.cancelEdit(charge)">Cancel</button>
+        <button ladda="loadButton" class="btn all-btn update-btn white-btn" ng-click="chargesMdl.update(charge)">Update</button>
+        <button class="btn all-btn white-btn pull-right" ng-click="chargesMdl.cancelEdit(charge)">Cancel</button>
     </div>
     <div class="col-xs-12">
         <hr>
@@ -76,13 +76,13 @@
       <td>{{charge.item_kind}}</td>
       <td class="category">{{charge.categoryNames.join(',\n')}}</td>
       <td>
-        <button class="btn small-btn secondary-btn" ng-click="chargesMdl.edit(charge)">
+        <button class="btn all-btn white-btn" ng-click="chargesMdl.edit(charge)">
           Edit
         </button>
         <!-- <button class="btn all-btn primary-btn" ng-click="chargesMdl.edit(charge)">Edit</button> -->
       </td>
       <td>
-        <button class="btn small-btn secondary-btn" ng-click="chargesMdl.delete(charge)">
+        <button class="btn all-btn white-btn" ng-click="chargesMdl.delete(charge)">
           Delete
         </button>
         <!-- <button class="btn all-btn primary-btn" ng-click="chargesMdl.delete(charge)">Delete</button> -->
@@ -161,8 +161,8 @@
                 </tags-input>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
-                <button ladda="loadButton" class="btn small-btn update-btn secondary-btn no-margin" ng-click="chargesMdl.update(charge)">Update</button>
-                <button class="btn small-btn secondary-btn" ng-click="chargesMdl.cancelEdit(charge)">Cancel</button>
+                <button ladda="loadButton" class="btn all-btn update-btn white-btn" ng-click="chargesMdl.update(charge)">Update</button>
+                <button class="btn all-btn white-btn" ng-click="chargesMdl.cancelEdit(charge)">Cancel</button>
             </div>
         </form>
     </div>
@@ -195,7 +195,7 @@
             </tags-input>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
-            <button ladda="buttonLoader" class="btn small-btn secondary-btn" ng-click="chargesMdl.add()">Add</button>
+            <button ladda="buttonLoader" class="btn all-btn white-btn" ng-click="chargesMdl.add()">Add</button>
         </div>
     </form>
 
