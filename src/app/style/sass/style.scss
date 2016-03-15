@@ -4031,10 +4031,16 @@ ul.search-tabs {
       background: #fff; margin-bottom: 15px;
       li > a {
         padding: 15px; border-bottom: 1px solid #f5f5f5; display: block;
-        &:hover { background: #f5f5f5; cursor: pointer;}
+        &:hover { background: #f5f5f5; cursor: pointer;
+          .price {
+            span {
+              color: $primary-orange-color;
+            }
+          }
+        }
       }
       .icon { float: left; margin-right: 15px; font-size: 1.3333em; }
-      .price {margin-top: 0; margin-right: 30px; min-width: 70px;}
+      .price {margin-top: 0; margin-right: 30px; min-width: 70px; color: $primary-color;}
     }
     .white-btn {
       border: 1px solid $primary-orange-color;

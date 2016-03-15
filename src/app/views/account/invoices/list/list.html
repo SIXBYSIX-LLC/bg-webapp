@@ -44,7 +44,7 @@
 				</td>
 				<td class="heading-text">{{inv.is_approve ? "Approved" : "Approved"}}
 				</td>
-				<td class="heading-text">${{inv.total}}</td>
+				<td class="heading-text bold-font">${{inv.total}}</td>
 				<td>
 					<!-- <a class="pull-right" ng-click="invoicesMdl.pay(inv)">
 						<i class="fa fa-money"></i>
@@ -61,7 +61,7 @@
 		<p>Date: <span class="pull-right">Jan 28, 2015</span></p>
 		<p>{{inv.is_paid ? "Paid" : "Not Paid"}}</p>
 		<p>{{inv.is_approve ? "Approved" : "Approved"}}</p>
-		<p>${{inv.total}} <a ui-sref="main.account.invoices.view({id:inv.id})" class="pull-right btn all-btn white-btn">View</a></p>
+		<p class="bold-font">${{inv.total}} <a ui-sref="main.account.invoices.view({id:inv.id})" class="pull-right btn all-btn white-btn">View</a></p>
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
 			<hr style="margin-top: 15px;"/>
 		</div>

@@ -8,13 +8,13 @@
 				<i class="fa fa-search orange-color pull-right" ng-click="mobilesearchBar()" style="margin-top: -20px; margin-right: 0px;"></i>
 			</div>
 			<div class="arrow_box" ng-show="mobilesearchOpen">
-				<input class="form-control" type="text" placeholder="Search" ng-model="mdl.searchText">
+				<input class="form-control" type="text" placeholder="Enter Jobsite Name or Location" ng-model="mdl.searchText">
 			</div>
 		</div>
 		<button class="btn all-btn pull-right primary-btn btn-right" ui-sref="main.account.jobsites.add"><i class="icon soap-icon-plus"></i> Add Jobsite</button>
 		<div class="search-sort-div hide-search hidden-xs" ng-class="{'show-search': searchOpen}">
 			<i class="fa fa-search" ng-click="searchBar()"></i>
-			<input type="text" placeholder="Search" class="form-control" ng-model="mdl.searchText">
+			<input type="text" placeholder="Enter Jobsite Name or Location" class="form-control" ng-model="mdl.searchText">
 		</div>
 	</h1>
 </div>
