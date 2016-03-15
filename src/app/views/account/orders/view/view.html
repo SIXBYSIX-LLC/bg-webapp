@@ -8,7 +8,7 @@
 			Back to Order List
 		</button>
 		<button class="btn all-btn pull-right btn-right primary-btn">Cancel Order</button>
-		<button class="btn all-btn pull-right btn-right primary-btn">Return</button>
+		<!-- <button class="btn all-btn pull-right btn-right primary-btn">Return</button> -->
 		<button class="btn all-btn pull-right primary-btn">Print Details</button>
 	</div>
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
@@ -26,9 +26,9 @@
 	</div>
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding term-description">
-			<p class="no-margin heading-text">Order Number: 
-				<span class="no-margin" ng-if="mdl.order.id">{{mdl.order.id}}</span>
-				<span class="no-margin" ng-if="!mdl.order.id">--</span>
+			<p class="no-margin font14">Order Number: 
+				<span class="no-margin bold-font" ng-if="mdl.order.id">{{mdl.order.id}}</span>
+				<span class="no-margin bold-font" ng-if="!mdl.order.id">--</span>
 			</p>
 		</div>
 	</div>
@@ -50,7 +50,7 @@
 	</div>
 	<div class="row invoice-address buyer-order-detail" style="margin-bottom: 0;">
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-			<h2 class="heading-text">Details</h2>
+			<h2 class="heading-text">Order Details</h2>
 		</div>
 		<div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
 			<p class="orange-text">Name:</p>
@@ -89,7 +89,7 @@
 		</div>
 	</div>
 </div>
-<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 devider devider-bottom"></div>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 devider-bottom"></div>
 <!-- <div id="tour-details" class="travelo-box order-details" load-indicator>
 		<div ng-repeat="item in mdl.order.items" class="intro2 small-box border-box table-wrapper hidden-table-sms">
 				<div class="image-container table-cell"><img src="http://placehold.it/80x80" alt=""></div>

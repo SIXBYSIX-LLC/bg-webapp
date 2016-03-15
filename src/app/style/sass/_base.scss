@@ -205,6 +205,16 @@ img.full-width { height: auto; }
   }
 }
 
+.white-btn {
+  background-color: $white-theme-color;
+  color: $primary-color;
+  border: 1px solid $primary-color;
+  &:hover {
+    background-color: $primary-button-color;
+    color: $white-theme-color;
+  }
+}
+
 .grey-button {
   background-color: $grey-button-color;
   color: $white-theme-color;
@@ -263,4 +273,8 @@ hr {
 
 .font-italic {
   font-style: italic;
+}
+
+.font14 {
+  font-size: 14px;
 }

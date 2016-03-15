@@ -18,9 +18,9 @@
 			<p class="bg-danger" style="padding: 8px;">This invoice is not paid. Please pay to get order processed</p>
 		</div>
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding term-description">
-			<p class="heading-text no-margin">Order number: &nbsp
-				<span class="no-margin" ng-if="mdl.invoice.order.id">{{mdl.invoice.order.id}}</span>
-				<span class="no-margin" ng-if="!mdl.invoice.order.id">--</span>
+			<p class="font14 no-margin">Order number: &nbsp
+				<span class="no-margin bold-font" ng-if="mdl.invoice.order.id">{{mdl.invoice.order.id}}</span>
+				<span class="no-margin bold-font" ng-if="!mdl.invoice.order.id">--</span>
 			</p>
 		</div>
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
@@ -51,32 +51,32 @@
 			<hr />
 		</div>
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
-			<h2>Details</h2>
+			<h2>Invoice Details</h2>
 		</div>
-		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 no-padding">
+		<div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 no-padding buyer-order-detail">
 			<p class="orange-text">First name:</p>
 		</div>
-		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+		<div class="col-lg-9 col-md-9 col-sm-8 col-xs-6 buyer-order-detail">
 			<p ng-if="mdl.invoice.order.billing_address.first_name">{{mdl.invoice.order.billing_address.first_name}}</p>
 			<p ng-if="!mdl.invoice.order.billing_address.first_name">--</p>
 		</div>
-		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 no-padding">
+		<div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 no-padding buyer-order-detail">
 			<p class="orange-text">Last name:</p>
 		</div>
-		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+		<div class="col-lg-9 col-md-9 col-sm-8 col-xs-6 buyer-order-detail">
 			<p ng-if="mdl.invoice.order.billing_address.last_name">{{mdl.invoice.order.billing_address.last_name}}</p>
 			<p ng-if="!mdl.invoice.order.billing_address.last_name">--</p>
 		</div>
-		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 no-padding">
+		<div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 no-padding buyer-order-detail">
 			<p class="orange-text no-margin">Phone:</p>
 		</div>
-		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+		<div class="col-lg-9 col-md-9 col-sm-8 col-xs-6 buyer-order-detail">
 			<p class="no-margin" ng-if="mdl.invoice.order.billing_address.phone">{{mdl.invoice.order.billing_address.phone}}</p>
 			<p class="no-margin" ng-if="!mdl.invoice.order.billing_address.phone">--</p>
 		</div>
 	<!-- </div> -->
 </div>
-	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding devider devider-bottom">
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding devider-bottom">
 	</div>
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 invoice-details-col" ng-repeat="item in mdl.invoice.items">
 		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 pull-center">
