@@ -531,6 +531,16 @@
   #main {
     margin-bottom: 0 !important;
   }
+  .process-progress-bar {
+    li {
+      p {
+        font-size: 13px !important;
+      }
+      .process-date {
+        font-size: 11px !important;
+      }
+    }
+  }
 }
 
 /* 6. Styles for devices(>=768px and <= 991px) */
