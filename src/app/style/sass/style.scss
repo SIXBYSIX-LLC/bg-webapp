@@ -3973,6 +3973,14 @@ ul.search-tabs {
     .description {
       font-size: 11px; text-transform: uppercase; padding: 0 20px; font-weight: bold; line-height: 3.5em;
       > .icon { float: right; font-size: 20px !important; opacity: 1; margin-top: 10px;}
+      &:hover {
+        .icon {
+          animation-duration: 5s;
+          animation-iteration-count: infinite;
+          animation-name: shake;
+          animation-timing-function: ease-in-out;
+        }
+      }
     }
     &.blue {
       background: $primary-header-color;
@@ -6798,7 +6806,7 @@ section {
   bottom: 0;
   left: 0;
   z-index: 1100;
-  background-color: rgba(0,0,0,.5) !important;
+  background-color: rgba(255,255,255,.5) !important;
   display: flex;
   flex-wrap: wrap !important;
   align-items: center !important;
@@ -7005,7 +7013,7 @@ section {
 .write-review-div {
   margin-bottom: 20px !important;
   h4 {
-    margin-bottom: 5px;
+    margin-bottom: 8px;
   }
 }
 
@@ -7158,5 +7166,11 @@ section {
   border-bottom: 1px solid $primary-border-color;
   a {
     margin-top: 6px;
+  }
+}
+
+.contact-equi {
+  .contact-phone {
+    font-size: 16px;
   }
 }
