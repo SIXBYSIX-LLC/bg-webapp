@@ -7146,8 +7146,13 @@ section {
   padding-top: 6.8%;
   margin-top: -10px;
   img {
-    width: 40px !important;
-    height: 40px !important;
+    width: 70px !important;
+    height: 70px !important;
+  }
+  p {
+    color: $black-color;
+    margin-top: 10px;
+    font-size: 26px;
   }
   &.setting-loader {
     padding-top: 0;
