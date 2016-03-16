@@ -3973,14 +3973,14 @@ ul.search-tabs {
     .description {
       font-size: 11px; text-transform: uppercase; padding: 0 20px; font-weight: bold; line-height: 3.5em;
       > .icon { float: right; font-size: 20px !important; opacity: 1; margin-top: 10px;}
-      &:hover {
-        .icon {
-          animation-duration: 5s;
-          animation-iteration-count: infinite;
-          animation-name: shake;
-          animation-timing-function: ease-in-out;
-        }
-      }
+      // &:hover {
+      //   .icon {
+      //     animation-duration: 5s;
+      //     animation-iteration-count: infinite;
+      //     animation-name: shake;
+      //     animation-timing-function: ease-in-out;
+      //   }
+      // }
     }
     &.blue {
       background: $primary-header-color;
