@@ -95,6 +95,10 @@ angular.module('BG').controller('ProcessSellerOrderCtrl',
 
     };
 
+    mdl.cancel=function() {
+      $state.go("main.sellerAccount.orders.view",{id:$stateParams.id});
+    }
+
 
 
 
