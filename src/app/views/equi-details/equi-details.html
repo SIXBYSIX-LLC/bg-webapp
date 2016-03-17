@@ -1,4 +1,8 @@
-
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 breadcrumb-col">
+  <a ui-sref="home">Home /</a>
+  <a ui-sref="main.search({category:mdl.equi.category.id})">{{mdl.equi.category.name}} /</a>
+  <span>{{mdl.equi.name}} </span>
+</div>
 <div class="row" load-indicator>
 <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
     <div id="hotel-main-content" class="tab-container style1">
@@ -14,17 +18,19 @@
         </ul>
         <div class="tab-content">
             <div ng-show="mdl.tab1==='photos'" ng-class="{'fade in active':mdl.tab1=='photos'}" class="tab-pane">
-                <uib-carousel  class="photo-gallery style1" interval="'200'">
-                        <uib-slide ng-repeat="img in mdl.equi.images">
-                            <img ng-src="{{img.url || 'http://dummyimage.com/870x400/cccccc/ffffff&text=No+images+Availables'}}" alt="" style="min-height:200px;"/>
+                <carousel interval="false" class="photo-gallery style1" interval="'200'">
+                        <slide ng-repeat="img in mdl.equi.images">
+                            <img ng-src="{{img.url}}" alt="" style="min-height:200px;"/>
                             <div class="carousel-caption">
                                 <h4>{{$index}}</h4>
                             </div>
-                        </uib-slide>
-                  <uib-slide>
-                    <img ng-src='http://dummyimage.com/870x400/cccccc/ffffff&text=No+images+Available' alt="" style="min-height:200px;"/>
-                  </uib-slide>
-                </uib-carousel>
+                        </slide>
+
+                </carousel>
+
+              <div ng-hide="mdl.equi.images[0]">
+                <img ng-src='http://dummyimage.com/870x400/cccccc/ffffff&text=No+images+Available' alt="" style="min-height:200px;"/>
+              </div>
             </div>
             <div class="tab-pane fade in active" ng-class="{'fade in active':mdl.tab1=='map'}" ng-if="mdl.tab1=='map'">
                 <map style="height: 450px;"></map>
