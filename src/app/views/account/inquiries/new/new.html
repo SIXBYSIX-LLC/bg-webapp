@@ -1,6 +1,10 @@
-<div class="booking-information travelo-box" style="margin-bottom: 0px; padding: 20px 30px 1px;">
+<div class="booking-information travelo-box" style="margin-bottom: 0px;">
+    <div>
+        <button class="btn all-btn primary-btn" ng-click="back()"><i class="fa fa-chevron-left"></i>&nbsp Back</button>
+    </div>
+    <hr>
     <form ng-submit="mdl.add()" name="mdl.form" load-indicator class="guest-reviews single-conversation">
-        <h2>Enquiry</h2>
+        <h2>Inquiry</h2>
 
         <div class="guest-review table-wrapper my-message">
             <div class="col-xs-3 col-md-2 author table-cell">
@@ -19,7 +23,7 @@
             <div class="col-xs-9 col-md-10 table-cell comment-container">
                 <div class="comment-header clearfix">
                     <h4 class="comment-title" style="width: 100%; font-style: normal; font-size: 14px;">
-                        <input required name="subject" ng-model="mdl.subject" type="text" placeholder="Subject" class="subject-line" />
+                        <input required name="subject" ng-model="mdl.subject" type="text" placeholder="Subject" class="subject-line form-control" />
                     </h4>
                 </div>
             </div>
@@ -34,8 +38,8 @@
             </div>
             <div class="col-xs-9 col-md-10 table-cell comment-container">
                 <div class="comment-content">
-                    <textarea required name="text" ng-model="mdl.text" class="reply-text-area"></textarea>
-                    <button class="button btn-medium green" style="margin-bottom: 20px; margin-top: 10px;">Send</button>
+                    <textarea required name="text" ng-model="mdl.text" class="reply-text-area form-control" style="height: 250px;"></textarea>
+                    <button class="btn all-btn primary-btn" style="margin-bottom: 20px; margin-top: 10px;">Send</button>
                 </div>
             </div>
 

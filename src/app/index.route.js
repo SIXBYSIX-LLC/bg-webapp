@@ -27,10 +27,10 @@
         url:'/contact-us',
         templateUrl:'app/views/contact-us/contact-us.html'
       })
-      .state('main.inquiries',{
-        url:'/inquiries',
-        templateUrl:'app/views/inquiries/inquiries.html'
-      })
+      // .state('main.inquiries',{
+      //   url:'/inquiries',
+      //   templateUrl:'app/views/inquiries/inquiries.html'
+      // })
       .state('main.account.bookings',{
         url:'/bookings',
         templateUrl:'app/views/account/bookings/bookings.html'
@@ -172,26 +172,26 @@
 
 
 
-      .state('main.account.inquiries',{
+      .state('main.inquiries',{
         url:'/inquiries',
         templateUrl:'app/views/account/inquiries/inquiries.html'
       })
-      .state('main.account.inquiries.list',{
+      .state('main.inquiries.list',{
         url:'/list',
         templateUrl:'app/views/account/inquiries/list/list.html',
         controller:'InquiryListCtrl'
       })
-      .state('main.account.inquiries.history',{
+      .state('main.inquiries.history',{
         url:'/history/{id}',
         templateUrl:'app/views/account/inquiries/history/history.html',
         controller:'InquiryHistoryCtrl'
       })
-      .state('main.account.inquiries.view',{
+      .state('main.inquiries.view',{
         url:'/view/{id}',
         templateUrl:'app/views/account/inquiries/view/view.html',
         controller:'InquiryViewCtrl'
       })
-      .state('main.account.inquiries.new',{
+      .state('main.inquiries.new',{
         url:'/new/{id}',
         templateUrl:'app/views/account/inquiries/new/new.html',
         controller:'InquiryNewCtrl'

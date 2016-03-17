@@ -2,7 +2,11 @@
     <img src="assets/images/loader.gif"/>
     <p>Excavating Awesomeness</p>
 </div>
-<div class="booking-information travelo-box" style="margin-bottom: 0px; padding: 20px 30px 1px;">
+<div class="booking-information travelo-box" style="margin-bottom: 0px;">
+    <div>
+        <button class="btn all-btn primary-btn" ui-sref="main.inquiries.list"><i class="fa fa-chevron-left"></i> &nbsp Back to inquiries list</button>
+    </div>
+    <hr>
     <div class="guest-reviews single-conversation">
         <h2>Your Conversation with "Jessica Brown"</h2>
         <div  class="guest-review table-wrapper">
@@ -40,7 +44,7 @@
             </div>
             <div class="col-xs-9 col-md-10 table-cell comment-container">
                 <div class="comment-content">
-                    <textarea ng-model="mdl.message" class="reply-text-area"></textarea>
+                    <textarea ng-model="mdl.message" class="reply-text-area form-control" style="height: 250px;"></textarea>
                     <a class="btn all-btn primary-btn" ng-click="mdl.sendMessage()" style="margin-bottom: 20px; margin-top: 10px;">Send</a>
                 </div>
             </div>

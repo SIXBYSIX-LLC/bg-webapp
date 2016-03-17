@@ -1,6 +1,6 @@
 angular.module('BG').controller('InquiryNewCtrl',
   /** @ngInject */
-    function ($scope, $stateParams, InquiriesService, EquipmentsService) {
+    function ($scope, $stateParams, InquiriesService, EquipmentsService, $state) {
 
     var mdl = $scope.mdl = {};
     EquipmentsService.getEquipment($stateParams.id).then(function (response) {
@@ -18,6 +18,10 @@ angular.module('BG').controller('InquiryNewCtrl',
         })
       }
 
+    }
+
+    $scope.back=function() {
+      $state.go("main.equiDetails",{id:$stateParams.id});
     }
 
 
