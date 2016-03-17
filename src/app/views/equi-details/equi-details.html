@@ -79,7 +79,7 @@
         <li ng-class="{'active':mdl.tab2=='description'}"><a ng-click="mdl.tab2='description'">Description</a></li>
         <!--<li ng-class="{'active':mdl.tab2=='similar'}"><a ng-click="mdl.tab2='similar'">Similar Equipments</a></li>
         --><!--<li ng-class="{'active':mdl.tab2=='features'}"><a ng-click="mdl.tab2='features'">Features</a></li>
-        --><li ng-class="{'active':mdl.tab2=='reviews'}"><a ng-click="mdl.tab2='reviews'">Reviews</a></li>
+        --><li ng-class="{'active':mdl.tab2!='description'}"><a ng-click="mdl.tab2='reviews'">Reviews</a></li>
         <!--<li ng-class="{'active':mdl.tab2=='faqs'}"><a ng-click="mdl.tab2='faqs'">FAQs</a></li>-->
         <!--<li ng-class="{'active':mdl.tab2=='write-review'}"><a ng-click="mdl.tab2='write-review'">Write a Review</a></li>
     --></ul>
@@ -522,7 +522,7 @@
                 </div>
             </article>
             <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12 no-mdpadding">
-                <div class="overall-rating no-lpadding no-rpadding no-tpadding">
+                <div class="overall-rating no-lpadding no-rpadding no-mdpadding">
                     <h4>Your overall Rating of this Equipment</h4>
                     <div class="star-rating clearfix">
                         <div class="five-stars-container big-font">
@@ -530,7 +530,7 @@
                         </div>
                         <span class="status no-tmargin">VERY GOOD</span>
                     </div>
-                    <div class="detailed-rating">
+                    <!-- <div class="detailed-rating">
                         <ul class="clearfix">
                             <li class="col-lg-6 col-md-12 col-sm-12 col-xs-12 no-mdpadding">
                                 <div class="each-rating"><label>service</label>
@@ -597,7 +597,7 @@
                                 </div>
                             </li>
                         </ul>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -613,7 +613,7 @@
                 <textarea class="form-control" placeholder="Enter your review (minimum 200 characters)"
                           rows="5"></textarea>
             </div>
-            <div class="form-group write-review-div">
+            <!-- <div class="form-group write-review-div">
                 <h4 class="title">What was best thing you like in Renting Journey with us?</h4>
                 <ul class="sort-trip clearfix type-list">
                     <li><a  ><i class="soap-icon-businessbag circle"></i></a><span>Payment Process</span></li>
@@ -622,7 +622,7 @@
                     <li><a  ><i class="soap-icon-friends circle"></i></a><span>Order Handling</span></li>
                     <li><a  ><i class="soap-icon-user circle"></i></a><span>Ease of Ordering</span></li>
                 </ul>
-            </div>
+            </div> -->
             <div class="form-group col-md-12 no-float no-padding write-review-div">
                 <h4 class="title">When did you Rented Equipment?</h4>
                     <select class="form-control">
@@ -636,14 +636,14 @@
                     </select>
             </div>
 
-            <div class="form-group col-md-12 no-float no-padding write-review-div">
+            <!-- <div class="form-group col-md-12 no-float no-padding write-review-div">
                 <h4 class="title">Do you have site photos to share?
                     <small>(Optional)</small>
                 </h4>
                 <div class="fileinput form-control review-file-input">
                     <input type="file" class="input-text" data-placeholder="select image/s"/>
                 </div>
-            </div>
+            </div> -->
             <div class="form-group write-review-div">
                 <h4 class="title">Share with friends
                     <small>(Optional)</small>

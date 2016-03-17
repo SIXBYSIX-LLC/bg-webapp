@@ -82,8 +82,8 @@
 						<th></th>
 						<th>Item</th>
 						<th>Qty</th>
-						<th>Price</th>
 						<th>Details</th>
+						<th>Price</th>
 						<th>Subtotal<th>
 					</tr>
 				</thead>
@@ -99,26 +99,20 @@
 							{{item.date_start | date}} to
 							{{item.date_end | date}}
 							</p>
-							<p class="bold-font">
+							<p class="bold-font text-left primary-color">
 							Operation: Rented
-							</p>
-							<p>
-								<!-- <a href="">Bookmark and Remove</a> -->
-								<a href="" ng-click="remove(item)">
-									<i class="fa fa-trash"></i>
-								</a>
+								<!-- <p class="pull-right"> -->
+									<!-- <a href="">Bookmark and Remove</a> -->
+									<a href="" ng-click="remove(item)" class="pull-right">
+										<i class="fa fa-trash"></i>
+									</a>
+								<!-- </p> -->
 							</p>
 						</td>
 						<td class="qty-td">
 							<select ng-change="update(item)" ng-model="item.qty" ng-options="qty for qty in mdl.qtys" class="form-control white-bg">
 								<option value="">Select</option>
 						</select>
-						</td>
-						<td class="description-td">
-							<h4 style="color: #2d3e52">${{item.cost_breakup.subtotal.prices.hourly_price * item.cost_breakup.subtotal.rent_period.final.hours}}</h4>
-							<p>Shipping: <span class="bold-font">${{item.cost_breakup.shipping.amt}}</span></p>
-							<p>Additional: <span class="bold-font">${{item.cost_breakup.additional_charge[0].amt}}</span></p>
-							<p></p>
 						</td>
 						<td class="details-td">
 							<p>
@@ -127,6 +121,12 @@
 							<select ng-change="update(item)" ng-model="item.shipping_kind" ng-options="key as value for (key,value) in mdl.shippingKinds" class="form-control white-bg">
 								<option value="">Order Type</option>
 							</select>
+						</td>
+						<td class="description-td">
+							<h4 style="color: #2d3e52">${{item.cost_breakup.subtotal.prices.hourly_price * item.cost_breakup.subtotal.rent_period.final.hours}}</h4>
+							<p>Shipping: <span class="bold-font">${{item.cost_breakup.shipping.amt}}</span></p>
+							<p>Additional: <span class="bold-font">${{item.cost_breakup.additional_charge[0].amt}}</span></p>
+							<p></p>
 						</td>
 						<td class="cost-td">
 
@@ -212,7 +212,7 @@
 		</div>
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" ng-if="rmodel.cartCount > 0">
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 cart-button">
-				<a class="btn all-btn primary-btn" href="#/search/" style="margin-bottom: 10px;"><i class="fa fa-chevron-left"></i> Continue Renting Equipments</a>
+				<a class="btn all-btn secondary-btn" href="#/search/" style="margin-bottom: 10px;"><i class="fa fa-chevron-left"></i>&nbsp Continue Renting Equipments</a>
 				<button class="btn all-btn pull-right primary-btn" ng-click="checkout()">Checkout</button>
 			</div>
 		</div>
