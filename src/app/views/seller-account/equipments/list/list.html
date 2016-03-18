@@ -15,7 +15,7 @@
 			<button class="btn all-btn pull-right primary-btn btn-right" ui-sref="main.sellerAccount.equipments.add"><i class="icon soap-icon-plus"></i> Add New Equipment</button>
 			<div class="search-sort-div hide-search hidden-xs" ng-class="{'show-search': searchOpen}">
 				<i class="fa fa-search" ng-click="searchBar()"></i>
-				<input type="text" placeholder="Search" class="form-control">
+				<input type="text" placeholder="Search" class="form-control" ng-model=" mdl.searchText">
 			</div>
 		</h1>
 	</div>
@@ -38,7 +38,7 @@
 	<div class="col-lg-12 col-md-12 col-sm-12 hidden-xs no-padding">
 		<table class="table equipments-table">
 			<tbody>
-				<tr ng-repeat="pro in listEquiMdl.products">
+				<tr ng-repeat="pro in listEquiMdl.products| filter:{ $ : mdl.searchText}">
 					<td>
 						<a href="" class="hover-effect popup-gallery">
 							<img src="" class="gray-area">
@@ -47,11 +47,11 @@
 					<td class="equip-desc">
 						<h3 ui-sref="main.equiDetails({id:pro.id})">{{pro.name}}</h3>
 						<p>{{pro.location.city.name}},{{pro.location.state.name}}</p>
-						<p>ID: <span class="bold-font">xxxxxxxx</span></p>
+						<p>ID: <span class="bold-font">{{pro.id}}</span></p>
 					</td>
 					<td class="time-td">
 						<h3 class="time-util">Time Utilization: 47%</h3>
-						<h3>Dolar Utilization: 82%</h3>
+						<h3>Dollar Utilization: 82%</h3>
 					</td>
 					<td class="text-right action-td">
 						<p>
@@ -85,7 +85,7 @@
 						<p class="no-margin">
 							{{pro.location.city.name}},{{pro.location.state.name}}
 							<span class="pull-right bold-font">
-								ID: xxxxxxxx
+								ID: {{pro.id}}
 							</span>
 						</p>
 					</div>

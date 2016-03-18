@@ -9,19 +9,19 @@
 					<i class="fa fa-search orange-color pull-right" ng-click="mobilesearchBar()" style="margin-top: -20px; margin-right: 0px;"></i>
 				</div>
 				<div class="arrow_box" ng-show="mobilesearchOpen">
-					<input class="form-control" type="text" placeholder="Search">
+					<input class="form-control" type="text" placeholder="Search" ng-model=" mdl.searchText">
 				</div>
 			</div>
 			<button class="btn all-btn pull-right primary-btn btn-right" ui-sref="main.sellerAccount.inventory.add"><i class="icon soap-icon-plus"></i> Add New Inventory</button>
 			<div class="search-sort-div hide-search hidden-xs" ng-class="{'show-search': searchOpen}">
 				<i class="fa fa-search" ng-click="searchBar()"></i>
-				<input type="text" placeholder="Search" class="form-control">
+				<input type="text" placeholder="Search" class="form-control"ng-model=" mdl.searchText">
 			</div>
 		</h1>
 </div>
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 gray-area select-product" ng-if="mdl.inventories">
 		<p>
-			Select Product: 
+			Select Product:
 			<select name="select-product" ng-model="invMdl.equiId" class="form-control" ng-options="e.id as e.name for e in invMdl.equis">
       </select>
 		</p>
@@ -29,7 +29,7 @@
 	<div class="col-lg-12 col-md-12 col-sm-12 hidden-xs no-padding">
 		<table class="table equipments-table">
 			<tbody>
-				<tr ng-repeat="inv in mdl.inventories">
+				<tr ng-repeat="inv in mdl.inventories|filter:{ $ : mdl.searchText}">
 					<td>
 						<a href="" class="hover-effect popup-gallery">
 							<img src="" class="gray-area">
