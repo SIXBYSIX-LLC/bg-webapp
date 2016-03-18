@@ -99,9 +99,9 @@
         <h4 class="sort-by-title block-xs">Sort results by:</h4>
         <ul class="sort-bar clearfix block-xs">
             <li ng-class="{'active':searchMdl.sortBy=='name'}" ng-click="searchMdl.sort(searchMdl.sort_by_name())" class="sort-by-name"><a
-                    class="sort-by-container"><span>name</span></a></li>
+                    class="sort-by-container"><span>Name</span></a></li>
             <li ng-class="{'active':searchMdl.sortBy=='daily_price'}" ng-click="searchMdl.sort(searchMdl.sort_by_price())"
-                class="sort-by-price"><a class="sort-by-container"><span>price</span></a></li>
+                class="sort-by-price"><a class="sort-by-container"><span>Price</span></a></li>
             <li class="clearer visible-sms"></li>
             <!--<li class="sort-by-rating"><a class="sort-by-container"><span>rating</span></a>
             </li>-->
@@ -161,7 +161,7 @@
     </div>
     <div class="hotel-list" ng-show="searchMdl.display=='grid'">
         <div class="row image-box hotel listing-style1">
-            <div class="col-sm-6 col-md-4" ng-repeat="pro in searchMdl.products track by pro.id">
+            <div class="col-sm-6 col-md-6 col-lg-4" ng-repeat="pro in searchMdl.products track by pro.id">
                 <article class="box">
                     <figure>
                         <a ui-sref="main.equiDetails({id:pro.id})" class="hover-effect popup-gallery">
@@ -176,15 +176,14 @@
                                  title="4 stars"><span style="width: 80%;" class="five-stars"></span></div>
                             <span class="review">170 reviews</span>
                         </div>
-                        <div class="grid-price-panel">
-                            <span class="price"><small>Daily</small>${{pro.daily_price| number : 0}}</span>
-                            <span class="price"><small>Weekly</small>${{pro.weekly_price | number : 0}}</span>
-                            <span class="price"><small>Monthly</small>${{pro.monthly_price | number : 0}}</span>
+                        <div class="grid-price-panel col-md-12 no-padding">
+                            <span class="price"><small>Daily</small><span class="bold-font">${{pro.daily_price| number : 0}}</span></span>
+                            <span class="price"><small>Weekly</small><span class="bold-font">${{pro.weekly_price | number : 0}}</span></span>
+                            <span class="price"><small>Monthly</small><span class="bold-font">${{pro.monthly_price | number : 0}}</span></span>
                         </div>
                         <div class="action">
-                            <a class="button btn-small" ui-sref="main.equiDetails({id:pro.id})">RESERVE</a>
-                            <a class="button btn-small yellow popup-map"  ui-sref="main.equiDetails({id:pro.id})">VIEW
-                                ON MAP</a>
+                            <a class="btn small-btn primary-btn" ui-sref="main.equiDetails({id:pro.id})" style="margin-bottom: 10px;">RESERVE</a>
+                            <a class="btn small-btn primary-btn pull-right"  ui-sref="main.equiDetails({id:pro.id})" style="margin-bottom: 10px;">VIEW ON MAP</a>
                         </div>
                     </div>
                 </article>

@@ -25,7 +25,7 @@
             <div ng-show="mdl.tab1==='photos'" ng-class="{'fade in active':mdl.tab1=='photos'}" class="tab-pane">
                 <carousel interval="false" class="photo-gallery style1" interval="'200'">
                         <slide ng-repeat="img in mdl.equi.images">
-                            <img ng-src="{{img.url}}" alt="" style="min-height:200px;" class="full-width"/>
+                            <img ng-src="{{img.url}}" alt="" style="min-height:200px;"/>
                             <div class="carousel-caption">
                                 <h4>{{$index}}</h4>
                             </div>
@@ -33,7 +33,7 @@
                 </carousel>
 
               <div ng-hide="mdl.equi.images[0]">
-                <img ng-src='http://dummyimage.com/870x400/cccccc/ffffff&text=No+images+Available' alt="" style="min-height:200px;"/>
+                <img ng-src='http://dummyimage.com/870x400/cccccc/ffffff&text=No+images+Available' alt="" style="min-height:200px;" class="full-width"/>
               </div>
             </div>
             <div class="tab-pane fade in active" ng-class="{'fade in active':mdl.tab1=='map'}" ng-if="mdl.tab1=='map'">
@@ -689,15 +689,15 @@
             </h2>
                                 <span class="price clearfix">
                                     <small class="pull-left">Daily</small>
-                                    <span class="pull-right heading-text">${{mdl.equi.daily_price}}</span>
+                                    <span class="pull-right heading-text bold-font">${{mdl.equi.daily_price}}</span>
                                 </span>
                                  <span class="price clearfix">
                                     <small class="pull-left">Weekly</small>
-                                    <span class="pull-right heading-text">${{mdl.equi.weekly_price}}</span>
+                                    <span class="pull-right heading-text bold-font">${{mdl.equi.weekly_price}}</span>
                                 </span>
                                  <span class="price clearfix">
                                     <small class="pull-left">Monthly</small>
-                                    <span class="pull-right heading-text">${{mdl.equi.monthly_price}}</span>
+                                    <span class="pull-right heading-text bold-font">${{mdl.equi.monthly_price}}</span>
                                 </span>
 
             <div class="feedback clearfix">
