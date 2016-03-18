@@ -1,105 +1,106 @@
 <div class="loader-div" loader>
-    <img src="assets/images/loader.gif"/>
-    <p>Excavating Awesomeness</p>
+  <img src="assets/images/loader.gif"/>
+  <p>Excavating Awesomeness</p>
 </div>
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 seller-header search-col no-padding">
-			<h1 class="no-margin black-color seller-heading-font">Invoices</h1>
-			<!-- <div class="sb-search btn-right hidden-xs" ng-class="{'sb-search-open': filterOpen}">
-				<form>
-					<input date-range-picker class="form-control date-picker sb-search-input" placeholder="Select Dates" type="text" ng-model="date" ng-class="{'no-border': !filterOpen}" />
-					<span class="sb-icon-search filter-icon form-control"ng-click="filterBar()"></span>
-				</form>
-			</div>
-			<div id="sb-search" class="sb-search hidden-xs" ng-class="{'sb-search-open': searchOpen}">
-				<form>
-					<input class="sb-search-input form-control" placeholder="Search" type="text" value="" name="search" id="search" ng-class="{'no-border': !searchOpen}">
-					<input class="sb-search-submit form-control" type="submit" value=""ng-click="searchBar()">
-					<span class="sb-icon-search form-control"ng-click="searchBar()"></span>
-				</form>
-			</div> -->
-			<div class="search-sort-div hide-search hidden-xs" ng-class="{'show-search': searchOpen}">
-				<i class="fa fa-search" ng-click="searchBar()"></i>
-				<input type="text" placeholder="Search" class="form-control">
-			</div>
-			<div class="search-sort-div hide-search hidden-xs" ng-class="{'show-search': filterOpen}">
-				<i class="fa fa-filter" ng-click="filterBar()"></i>
-				<input date-range-picker class="form-control date-picker" placeholder="Select Dates" type="text" ng-model="date">
-			</div>
-			<div class="visible-xs">
-				<div class="pull-right mobile-icons">
-					<i class="fa fa-filter orange-color pull-right btn-right" ng-click="mobilefilterBar()"></i>
-					<i class="fa fa-search orange-color pull-right" ng-click="mobilesearchBar()"></i>
-				</div>
-				<div class="arrow_box" ng-show="mobilesearchOpen">
-					<input class="form-control" type="text" placeholder="Search">
-				</div>
-				<div class="arrow_box filter_arrow_box" ng-show="mobilefilterOpen">
-					<input date-range-picker class="form-control date-picker" placeholder="Select Dates" type="text" ng-model="date" />
-				</div>
-			</div>
+  <h1 class="no-margin black-color seller-heading-font">Invoices</h1>
+  <!-- <div class="sb-search btn-right hidden-xs" ng-class="{'sb-search-open': filterOpen}">
+            <form>
+                <input date-range-picker class="form-control date-picker sb-search-input" placeholder="Select Dates" type="text" ng-model="date" ng-class="{'no-border': !filterOpen}" />
+                <span class="sb-icon-search filter-icon form-control"ng-click="filterBar()"></span>
+            </form>
+        </div>
+        <div id="sb-search" class="sb-search hidden-xs" ng-class="{'sb-search-open': searchOpen}">
+            <form>
+                <input class="sb-search-input form-control" placeholder="Search" type="text" value="" name="search" id="search" ng-class="{'no-border': !searchOpen}">
+                <input class="sb-search-submit form-control" type="submit" value=""ng-click="searchBar()">
+                <span class="sb-icon-search form-control"ng-click="searchBar()"></span>
+            </form>
+        </div> -->
+  <div class="search-sort-div hide-search hidden-xs" ng-class="{'show-search': searchOpen}">
+    <i class="fa fa-search" ng-click="searchBar()"></i>
+    <input type="text" placeholder="Search" class="form-control" ng-model="mdl.searchText">
+  </div>
+  <div class="search-sort-div hide-search hidden-xs" ng-class="{'show-search': filterOpen}">
+    <i class="fa fa-filter" ng-click="filterBar()"></i>
+    <input type="daterange" class="form-control date-picker" ng-model="myDateRange" ranges="mdl.ranges" open="left" />
+  </div>
+  <div class="visible-xs">
+    <div class="pull-right mobile-icons">
+      <i class="fa fa-filter orange-color pull-right btn-right" ng-click="mobilefilterBar()"></i>
+      <i class="fa fa-search orange-color pull-right" ng-click="mobilesearchBar()"></i>
+    </div>
+    <div class="arrow_box" ng-show="mobilesearchOpen">
+      <input class="form-control" type="text" placeholder="Search" ng-model="mdl.searchText">
+    </div>
+    <div class="arrow_box filter_arrow_box" ng-show="mobilefilterOpen">
+      <input type="daterange" class="form-control date-picker" ng-model="myDateRange" ranges="mdl.ranges" open="left" />
+    </div>
+  </div>
 </div>
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
-	<hr />
+  <hr />
 </div>
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
-		<!-- <div ng-repeat="item in mdl.items" class="booking-info clearfix no-lpadding no-rpadding">
-			<h5 class="box-title col-lg-3 col-md-3 col-sm-3 col-xs-5 no-padding">
-				<i class="icon soap-icon-card yellow-color circle"></i>Invoice
-				<small>ID : {{item.id}}</small>
-			</h5>
-			<h5 class="box-title col-lg-2 col-md-2 col-sm-2 col-xs-2 no-padding">
-				<i class="icon yellow-color circle"></i>
-				{{item.invoice.is_paid ? 'Paid' : 'Not Paid'}}
-			</h5>
-			<h5 class="box-title col-lg-1 col-md-1 col-sm-1 col-xs-4 no-padding">
-				<i class="icon yellow-color circle"></i>
-				{{item.is_approve ? 'Approved' : 'Not Approved'}}
-			</h5>
-			<h5 class="box-title col-lg-2 col-md-2 col-sm-2 col-xs-1 col-lg-offset-1  col-md-offset-1 no-padding col-sm-offset-1">
-				<i class="icon yellow-color circle"></i>${{item.total}}
-			</h5>
-			<a class="pull-right clickable-icon" ui-sref="main.sellerAccount.invoices.view({id:item.id})">
-				<i class="fa fa-eye"></i>
-			</a>
-		</div> -->
-		<table class="table order-table hidden-xs">
-			<tbody>
-				<tr ng-repeat="item in mdl.items">
-					<td>
-						<p class="heading-text no-margin">
-							<i class="icon soap-icon-card yellow-color circle"></i>&nbsp Invoice
-						</p>
-						<small>ID : <span class="bold-font">{{item.id}}</span></small>
-					</td>
-					<td class="heading-text">
-						Jan 28, 2015
-					</td>
-					<td class="heading-text">{{item.invoice.is_paid ? 'Paid' : 'Not Paid'}}
-					</td>
-					<td class="heading-text">{{item.is_approve ? 'Approved' : 'Not Approved'}}
-					</td>
-					<td class="heading-text bold-font">${{item.total}}</td>
-					<td>
-						<!-- <a class="pull-right" ng-click="invoicesMdl.pay(inv)">
-							<i class="fa fa-money"></i>
-						</a> -->
-						<a ui-sref="main.sellerAccount.invoices.view({id:item.id})" class="pull-right btn all-btn white-btn">
-							View
-						</a>
-					</td>
-				</tr>
-			</tbody>
-		</table>
-		<div ng-repeat="item in mdl.items" class="visible-xs mobile-list">
-			<p>Invoice ID: <span class="pull-right bold-font">{{item.id}}</span></p>
-			<p>Date: <span class="pull-right">Jan 28, 2015</span></p>
-			<p>{{item.invoice.is_paid ? 'Paid' : 'Not Paid'}}</p>
-			<p class="bold-font">${{item.total}}</p>
-			<p>{{item.is_approve ? 'Approved' : 'Not Approved'}} <a ui-sref="main.sellerAccount.invoices.view({id:item.id})" class="pull-right btn all-btn white-btn">View</a></p>
-			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
-				<hr style="margin-top: 15px;"/>
-			</div>
-		</div>
+  <!-- <div ng-repeat="item in mdl.items" class="booking-info clearfix no-lpadding no-rpadding">
+          <h5 class="box-title col-lg-3 col-md-3 col-sm-3 col-xs-5 no-padding">
+              <i class="icon soap-icon-card yellow-color circle"></i>Invoice
+              <small>ID : {{item.id}}</small>
+          </h5>
+          <h5 class="box-title col-lg-2 col-md-2 col-sm-2 col-xs-2 no-padding">
+              <i class="icon yellow-color circle"></i>
+              {{item.invoice.is_paid ? 'Paid' : 'Not Paid'}}
+          </h5>
+          <h5 class="box-title col-lg-1 col-md-1 col-sm-1 col-xs-4 no-padding">
+              <i class="icon yellow-color circle"></i>
+              {{item.is_approve ? 'Approved' : 'Not Approved'}}
+          </h5>
+          <h5 class="box-title col-lg-2 col-md-2 col-sm-2 col-xs-1 col-lg-offset-1  col-md-offset-1 no-padding col-sm-offset-1">
+              <i class="icon yellow-color circle"></i>${{item.total}}
+          </h5>
+          <a class="pull-right clickable-icon" ui-sref="main.sellerAccount.invoices.view({id:item.id})">
+              <i class="fa fa-eye"></i>
+          </a>
+      </div> -->
+  <table class="table order-table hidden-xs">
+    <tbody>
+    <tr ng-repeat="item in mdl.items|filter:{ id : mdl.searchText}">
+      <td>
+        <p class="heading-text no-margin">
+          <i class="icon soap-icon-card yellow-color circle"></i>&nbsp Invoice
+        </p>
+        <small>ID : <span class="bold-font">{{item.id}}</span></small>
+      </td>
+      <td class="heading-text">
+        {{inv.date_created_at | date:"MMM dd,yyyy"}}
+      </td>
+      <td class="heading-text">{{item.invoice.is_paid ? 'Paid' : 'Not Paid'}}
+      </td>
+      <td class="heading-text">{{item.is_approve ? 'Approved' : 'Not Approved'}}
+      </td>
+      <td class="heading-text bold-font">${{item.total}}</td>
+      <td>
+        <!-- <a class="pull-right" ng-click="invoicesMdl.pay(inv)">
+                        <i class="fa fa-money"></i>
+                    </a> -->
+        <a ui-sref="main.sellerAccount.invoices.view({id:item.id})" class="pull-right btn all-btn white-btn">
+          View
+        </a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <div ng-repeat="item in mdl.items|filter:{ id : mdl.searchText}| dateRangeFilter:  myDateRange.startDate: myDateRange.endDate
+" class="visible-xs mobile-list">
+    <p>Invoice ID: <span class="pull-right bold-font">{{item.id}}</span></p>
+    <p>Date: <span class="pull-right">Jan 28, 2015</span></p>
+    <p>{{item.invoice.is_paid ? 'Paid' : 'Not Paid'}}</p>
+    <p class="bold-font">${{item.total}}</p>
+    <p>{{item.is_approve ? 'Approved' : 'Not Approved'}} <a ui-sref="main.sellerAccount.invoices.view({id:item.id})" class="pull-right btn all-btn white-btn">View</a></p>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
+      <hr style="margin-top: 15px;"/>
+    </div>
+  </div>
 </div>
 
 
