@@ -1,8 +1,9 @@
 angular.module('BG').controller('AddEquipmentCtrl',
   /** @ngInject */
-    function ($scope, $q, API, $state, $stateParams, EquipmentsService, JobsitesService, SystemService, Upload) {
+  function ($scope, $q, API, $state, $stateParams, EquipmentsService, JobsitesService, SystemService, Upload) {
 
-    $scope.editMode = $state.current.name == "main.account.equipments.edit";
+    $scope.editMode = ($state.current.name == "main.account.equipments.edit" || $state.current.name == "main.sellerAccount.equipments.edit");
+
     var addEquiMdl = $scope.addEquiMdl = {};
 
     addEquiMdl.category1 = addEquiMdl.category2 = addEquiMdl.category3 = null;
@@ -10,7 +11,7 @@ angular.module('BG').controller('AddEquipmentCtrl',
 
     if ($scope.editMode) {
       EquipmentsService.getEquipment($stateParams.id).then(function (response) {
-        console.log(response.data.data);
+        //console.log(response.data.data);
         addEquiMdl.data = response.data.data;
         addEquiMdl.tags = [];
         angular.forEach(addEquiMdl.data.tags, function (tag) {
@@ -22,7 +23,7 @@ angular.module('BG').controller('AddEquipmentCtrl',
           count++;
         });
         addEquiMdl["category" + count] = addEquiMdl.data.category.id;
-        addEquiMdl.data.location=addEquiMdl.data.location.id;
+        addEquiMdl.data.location = addEquiMdl.data.location.id;
       })
     } else {
       addEquiMdl.data = {
@@ -66,11 +67,11 @@ angular.module('BG').controller('AddEquipmentCtrl',
       }
     });
 
-    $scope.deleteImage=function(i){
-        var img=addEquiMdl.data.images[i];
-        EquipmentsService.deleteImage(img.id).then(function(){
-          addEquiMdl.data.images.splice(i,1);
-        })
+    $scope.deleteImage = function (i) {
+      var img = addEquiMdl.data.images[i];
+      EquipmentsService.deleteImage(img.id).then(function () {
+        addEquiMdl.data.images.splice(i, 1);
+      })
     };
 
     $scope.add = function () {
@@ -87,13 +88,13 @@ angular.module('BG').controller('AddEquipmentCtrl',
 
         if ($scope.editMode) {
           EquipmentsService.updateEquipment(addEquiMdl.data.id, addEquiMdl.data).then(function (response) {
-            uploadImages().then(function(){
+            uploadImages().then(function () {
               $state.go('main.sellerAccount.equipments.list');
             })
           });
         } else {
           EquipmentsService.addEquipment(addEquiMdl.data).then(function (response) {
-            uploadImages().then(function(){
+            uploadImages().then(function () {
               $state.go('main.sellerAccount.equipments.list');
             })
           })
@@ -102,19 +103,20 @@ angular.module('BG').controller('AddEquipmentCtrl',
 
     };
 
-    function uploadImages(){
-      var deferred=$q.defer();
-      var promises=[];
-      angular.forEach(addEquiMdl.filesToUpload,function(file){
-        promises.push(upload(addEquiMdl.data.id,file));
+    function uploadImages() {
+      var deferred = $q.defer();
+      var promises = [];
+      angular.forEach(addEquiMdl.filesToUpload, function (file) {
+        promises.push(upload(addEquiMdl.data.id, file));
       });
-      $q.all(promises).then(function(){
+      $q.all(promises).then(function () {
         deferred.resolve();
       });
       return deferred.promise;
     }
-    function upload(id,file) {
-      var deferred=$q.defer();
+
+    function upload(id, file) {
+      var deferred = $q.defer();
       Upload.upload({
         url: API.baseURL + 'staticfiles',
         fields: {
@@ -123,14 +125,14 @@ angular.module('BG').controller('AddEquipmentCtrl',
         },
         file: file
       }).progress(function (evt) {
-        file.progress=parseInt(100.0 * evt.loaded / evt.total);
-        file.status="Uploading";
+        file.progress = parseInt(100.0 * evt.loaded / evt.total);
+        file.status = "Uploading";
       }).success(function (data, status, headers, config) {
-        file.status="Uploaded";
+        file.status = "Uploaded";
         deferred.resolve();
       }).error(function (data, status, headers, config) {
-        file.status="Error";
-        file.progress=0;
+        file.status = "Error";
+        file.progress = 0;
         deferred.resolve();
       });
       return deferred.promise;
