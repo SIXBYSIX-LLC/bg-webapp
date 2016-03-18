@@ -25,12 +25,11 @@
             <div ng-show="mdl.tab1==='photos'" ng-class="{'fade in active':mdl.tab1=='photos'}" class="tab-pane">
                 <carousel interval="false" class="photo-gallery style1" interval="'200'">
                         <slide ng-repeat="img in mdl.equi.images">
-                            <img ng-src="{{img.url}}" alt="" style="min-height:200px;"/>
+                            <img ng-src="{{img.url}}" alt="" style="min-height:200px;" class="full-width"/>
                             <div class="carousel-caption">
                                 <h4>{{$index}}</h4>
                             </div>
                         </slide>
-
                 </carousel>
 
               <div ng-hide="mdl.equi.images[0]">
@@ -82,7 +81,7 @@
         </div>
     </div>
 
-    <div class="tab-container" style="margin-top:80px;">
+    <div class="tab-container" style="margin-top:15px;">
     <ul class="tabs">
         <li ng-class="{'active':mdl.tab2=='description'}"><a ng-click="mdl.tab2='description'">Description</a></li>
         <!--<li ng-class="{'active':mdl.tab2=='similar'}"><a ng-click="mdl.tab2='similar'">Similar Equipments</a></li>
