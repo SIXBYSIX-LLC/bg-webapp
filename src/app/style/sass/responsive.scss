@@ -856,7 +856,7 @@
   }
 
   .view-mobile-buyer {
-    height: 315px !important;
+    height: 270px !important;
     overflow: visible;
     opacity: 1;
     transition: all 0.6s ease;
@@ -1067,9 +1067,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
   }
   .invoice-cart-total {
     margin: 0 !important;
+  }
+  .focus {
+    width: 320px !important;
+    .focus--mask-inner {
+      width: 320px !important;
+    }
   }
 }
 
