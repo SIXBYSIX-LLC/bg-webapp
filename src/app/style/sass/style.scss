@@ -7341,7 +7341,7 @@ section {
     }
     a {
       color: #009ddc; 
-      font-size: 15px;  
+      font-size: 13px;  
       font-weight: 400;
     }
     .form-control {
@@ -7357,10 +7357,10 @@ section {
     }
     .location-p {
       margin-bottom: 5px; 
-      font-size: 14px;
+      font-size: 13px;
       i {
         margin-right: 5px;
-        font-size: 18px;
+        font-size: 15px;
       }
     }
   }
@@ -7368,6 +7368,35 @@ section {
     textarea {
       height: 250px; 
       margin-bottom: 15px;
+    }
+  }
+  .action-div {
+    a {
+      float: left;
+      margin-top: 8px;
+      font-size: 13px;
+      color: #009ddc;
+    }
+  }
+}
+
+.view-inquiry {
+  padding: 10px 15px;
+  border-bottom: 1px solid #cccccc;
+  &.my-message {
+    margin-bottom: 8px;
+  }
+  .image-div {
+    img {
+      width: 10%;
+      min-width: auto;
+      border-radius: 100%;
+    }
+  }
+  .content-div {
+    padding-top: 12px;
+    p {
+      color: $black-color;
     }
   }
 }
