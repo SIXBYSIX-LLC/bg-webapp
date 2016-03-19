@@ -16,9 +16,8 @@
 				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 					<label>Availability</label>
 					<!-- <div class="selector"> -->
-						<select name="availability" required class="form-control">
-							<option value="1">Yes</option>
-							<option value="0">No</option>
+						<select name="availability" required class="form-control" ng-model="invMdl.is_active" ng-options="value for (key,value) in invMdl.options">
+
 						</select>
 					<!-- </div> -->
 				</div>
