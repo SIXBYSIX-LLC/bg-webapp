@@ -2,7 +2,7 @@
     <img src="assets/images/loader.gif"/>
     <p>Excavating Awesomeness</p>
 </div>
-<div class="booking-information travelo-box" style="margin-bottom: 0px;">
+<!-- <div class="booking-information travelo-box" style="margin-bottom: 0px;">
     <div>
         <button class="btn all-btn primary-btn" ng-click="back()"><i class="fa fa-chevron-left"></i>&nbsp Back</button>
     </div>
@@ -50,4 +50,34 @@
         </div>
 
     </form>
-</div>
+</div> -->
+<!-- mdl.equi -->
+<form ng-submit="mdl.add()" name="mdl.form" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 inquiry-form">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
+        <div class="image-div">
+            <img ng-src="{{(mdl.equi.images[0].url) || 'http://dummyimage.com/270x160/cccccc/ffffff&text=No+Image+Found'}}">
+        </div>
+        <div class="content-div">
+            <h4 ng-model="mdl.subject" ng-if="!editSubject">{{mdl.equi.name}}
+                <a class="pull-right pointerhover" ng-click="editSub()">Edit Subject</a>
+            </h4>
+            <input type="text" value="{{mdl.equi.name}}" placeholder="Subject" ng-model="mdl.subject" class="form-control" ng-if="editSubject" style="width: 50%; display: inline-block; margin-bottom: 5px;">
+            <a class="pull-right pointerhover" ng-click="editSub()" ng-if="editSubject">Cancel</a>
+            <p class="location-p">
+                <i class="fa fa-map-marker orange-color"></i> 
+                {{mdl.equi.location.city.name}}, {{mdl.equi.location.state.name}}, {{mdl.equi.location.country.name}}
+            </p>
+            <!-- <p>Zip Code: <span class="bold-font">{{mdl.equi.location.zip_code}}</span></p> -->
+            <p class="font14">
+                <i class="fa fa-clock-o orange-color"></i> 
+                Local Time: 04: 27 PM March 12, 2016
+            </p>
+        </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding message-area">
+        <textarea class="form-control" ng-model="mdl.text"></textarea>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding text-right">
+        <button class="btn all-btn primary-btn">Send</button>
+    </div>
+</form>
