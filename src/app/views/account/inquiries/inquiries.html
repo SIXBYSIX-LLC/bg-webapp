@@ -2,6 +2,22 @@
 <button ui-sref="main.sellerAccount.inquiries.view({id:0})">View</button>
 <button ui-sref="main.sellerAccount.inquiries.list">List</button>-->
 
-<div id="booking" class="tab-pane fade in col-lg-12 white-bg" style="margin-top: 30px; padding-top: 15px; padding-bottom: 15px;">
+<!-- <div id="booking" class="tab-pane fade in col-lg-12 white-bg" style="margin-top: 30px; padding-top: 15px; padding-bottom: 15px;">
     <ui-view></ui-view>
+</div> -->
+<div class="tab-container full-width-style arrow-left dashboard">
+	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 no-padding">
+    <div class="visible-xs">
+      <i class="fa fa-bars dashboard-button hotel-color" ng-click="dashboard()"></i>
+    </div>
+		<ul class="tabs hide-mobile" ng-class="{'view-mobile-buyer': isShow}">
+			<li ui-sref-active="active" ui-sref="main.inquiries.list" ng-click="closeDashboard()"><a>All</a></li>
+			<li active-state="" ui-sref="" ng-click="closeDashboard()"><a>Unread</a></li>
+			<li active-state="" ui-sref="" ng-click="closeDashboard()"><a>Archived</a></li>
+			<li active-state="" ui-sref="" ng-click="closeDashboard()"><a>Sent</a></li>
+		</ul>
+	</div>
+	<div class="tab-content col-lg-10 col-md-10 col-sm-10 col-xs-12">
+    	<ui-view/>
+  </div>
 </div>

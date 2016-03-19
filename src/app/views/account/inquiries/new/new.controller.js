@@ -16,6 +16,7 @@ angular.module('BG').controller('InquiryNewCtrl',
           subject:mdl.subject,
           text:mdl.text
         })
+        $state.go("main.inquiries.list");
       }
 
     }
@@ -24,6 +25,8 @@ angular.module('BG').controller('InquiryNewCtrl',
       $state.go("main.equiDetails",{id:$stateParams.id});
     }
 
-
+    $scope.editSub=function() {
+      $scope.editSubject=!$scope.editSubject;
+    }
 
   });

@@ -3,12 +3,12 @@
     <p>Excavating Awesomeness</p>
 </div>
 <div class="booking-information travelo-box" style="margin-bottom: 0px;">
-    <div>
+    <!-- <div>
         <button class="btn all-btn primary-btn" ui-sref="main.inquiries.list"><i class="fa fa-chevron-left"></i> &nbsp Back to inquiries list</button>
     </div>
-    <hr>
+    <hr> -->
     <div class="guest-reviews single-conversation">
-        <h2>Your Conversation with "Jessica Brown"</h2>
+        <!-- <h2>Your Conversation with "Jessica Brown"</h2>
         <div  class="guest-review table-wrapper">
             <div class="col-xs-3 col-md-2 author table-cell">
                 <p class="name">Inquiry</p>
@@ -18,8 +18,45 @@
                     <h4 class="comment-title">{{mdl.inq.subject}}</h4>
                 </div>
             </div>
+        </div> -->
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 inquiry-form no-bpadding">
+            <div class="image-div">
+                <img ng-src="{{(mdl.inq.images[0].url) || 'http://dummyimage.com/270x160/cccccc/ffffff&text=No+Image+Found'}}">
+            </div>
+            <div class="content-div">
+                <h4>{{mdl.inq.subject}}</h4>
+                <p class="location-p">
+                    <i class="fa fa-map-marker orange-color"></i> 
+                    Not Available
+                </p>
+                <p>
+                    <i class="fa fa-clock-o orange-color"></i> 
+                    <span class="bold-font">Local Time:</span> 04: 27 PM March 12, 2016
+                </p>
+            </div>
+            <hr>
         </div>
-        <div ng-class="{'my-message':user.id==item.user}" ng-repeat="item in mdl.items" class="guest-review table-wrapper">
+        <div ng-class="{'my-message':user.id==item.user}" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 inquiry-form view-inquiry" ng-repeat="item in mdl.items">
+            <div class="image-div">
+                <img src="../assets/images/avtar.png">
+            </div>
+            <div class="content-div">
+                <h4>{{user.id==item.user ? user.fullname : mdl.toUser.fullname}}</h4>
+                <p class="location-p">
+                    {{item.text}}
+                </p>
+            </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 inquiry-form">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding message-area">
+                <textarea class="form-control" ng-model="mdl.message" placeholder="Your message..."></textarea>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding action-div">
+                <a href="">Book this Equipment</a>
+                <button class="btn all-btn primary-btn pull-right" ng-click="mdl.sendMessage()">Send</button>
+            </div>
+        </div>
+        <!-- <div ng-class="{'my-message':user.id==item.user}" ng-repeat="item in mdl.items" class="guest-review table-wrapper">
             <div class="col-xs-3 col-md-2 author table-cell">
                 <a href="#"><img src="http://placehold.it/270x263" alt="" width="270" height="263"/></a>
 
@@ -49,7 +86,7 @@
                 </div>
             </div>
 
-        </div>
+        </div> -->
 
     </div>
 </div>
