@@ -6058,7 +6058,7 @@ section {
 
 // cart page css start
 .cart-table {
-  margin-top: 25px;
+  margin-top: 0px;
   margin-bottom: 0px;
   thead {
     background: #f2f2f2;
@@ -6339,8 +6339,14 @@ section {
   font-size: 14px;
   background: #ffffff;
   margin-bottom: 10px;
+  margin-top: 10px;
   a {
     color: #009ddc;
+    cursor: pointer;
+    &:last-child {
+      color: $primary-color;
+      cursor: auto;
+    }
   }
 }
 
@@ -7334,7 +7340,7 @@ section {
     }
   }
   .content-div {
-    padding-left: 14%;
+    padding-left: 15%;
     h4 {
       margin-bottom: 5px; 
       font-weight: 600;
@@ -7389,12 +7395,13 @@ section {
   .image-div {
     img {
       width: 10%;
-      min-width: auto;
+      min-width: 66px;
       border-radius: 100%;
     }
   }
   .content-div {
     padding-top: 12px;
+    padding-left: 14%;
     p {
       color: $black-color;
     }

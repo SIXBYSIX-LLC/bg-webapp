@@ -587,6 +587,12 @@
       padding-right: 5% !important;
     }
   }
+
+  .inquiry-form {
+    .content-div {
+      padding-left: 120px !important;
+    }
+  }
 }
 
 @media (min-width: 481px) and (max-width: 767px) {
@@ -1076,6 +1082,24 @@
     width: 320px !important;
     .focus--mask-inner {
       width: 320px !important;
+    }
+  }
+
+  .inquiry-form-xs {
+    .image-div {
+      width: 100%;
+      img {
+        float: none !important;
+      }
+    }
+    .content-div {
+      width: 100%;
+      padding: 10px 0 0 !important;
+    }
+  }
+  .view-inquiry {
+    .content-div {
+      padding-left: 80px !important;
     }
   }
 }

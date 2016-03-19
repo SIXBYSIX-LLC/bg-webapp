@@ -340,13 +340,14 @@
 				</div>
 		</div> -->
 
-  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 breadcrumb-col">
-    <a ui-sref="home">Home </a>
-    <a  ng-repeat="bc in mainMdl.breadcrumbs">
-      <span ui-sref="{{bc.state}}"> / {{bc.title}}</span></a>
-  </div>
 		<section id="content" class="gray-area">
 			<div class="container">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 breadcrumb-col">
+				    <a ui-sref="home">Home </a>
+				    <a  ng-repeat="bc in mainMdl.breadcrumbs">
+				      <span ui-sref="{{bc.state}}"> / {{bc.title}}</span>
+				  	</a>
+				</div>
 				<div ng-show="rmodel.message.show" class="alert alert-{{rmodel.message.type}} success-msg">
 					{{rmodel.message.text}}
 					<span class="close" ng-click="rmodel.message.show=false"></span>
