@@ -10,7 +10,7 @@
 	</div>
 	<div class="search-sort-div hide-search hidden-xs" ng-class="{'show-search': filterOpen}">
 		<i class="fa fa-filter" ng-click="filterBar()"></i>
-    <input type="daterange" class="form-control date-picker" ng-model="myDateRange" ranges="mdl.ranges" open="left" />
+    <input type="daterange" class="form-control date-picker" ng-model="myDateRange" ranges="mdl.ranges" open="right" separator="' To '" />
 	</div>
 	<div class="visible-xs">
 		<div class="pull-right mobile-icons">
@@ -21,7 +21,7 @@
 			<input class="form-control" type="text" placeholder="Search" ng-model="mdl.searchText">
 		</div>
 		<div class="arrow_box filter_arrow_box" ng-show="mobilefilterOpen">
-      <input type="daterange" class="form-control date-picker" ng-model="myDateRange" ranges="mdl.ranges" open="left" />
+      <input type="daterange" class="form-control date-picker" ng-model="myDateRange" ranges="mdl.ranges" open="right" />
 		</div>
 	</div>
 </div>

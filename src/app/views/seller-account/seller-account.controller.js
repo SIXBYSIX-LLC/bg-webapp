@@ -5,7 +5,7 @@ angular.module('BG').controller('SellerAccountCtrl',
     var mdl = $scope.mdl = {};
     $scope.mainMdl.title = "Seller Account";
     $scope.mainMdl.showToggle = true;
-    $scope.addBreadcrumb({title: "Account"});
+    $scope.addBreadcrumb({title: "Seller Account",state:"main.sellerAccount.dashboard"});
     $scope.$on("$destroy", function () {
       $scope.mainMdl.showToggle = false;
       $scope.popBreadcrumb();
