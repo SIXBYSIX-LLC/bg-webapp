@@ -27,7 +27,8 @@ angular.module('BG').controller('CheckoutAddressCtrl',
       mdl.allSites = response.data.data;
       //{{mdl.allSites | filter:{id:mdl.selectedShipping} }}
       mdl.selectedSite = $filter('filter')(mdl.allSites, {id:mdl.selectedShipping})[0];
-      console.log(mdl.selectedSite);
+
+      console.log(mdl.billingSite);
     });
 
     CartService.getCurrent().then(function (response) {
@@ -40,7 +41,7 @@ angular.module('BG').controller('CheckoutAddressCtrl',
 
           mdl.cartData.total+=mdl.cartData.rental_products[i].subtotal;
         }
-        
+
         if (mdl.cartData.billing_address && mdl.cartData.location) {
           var promises;
           if (mdl.cartData.billing_address == mdl.cartData.location) {
@@ -85,6 +86,12 @@ angular.module('BG').controller('CheckoutAddressCtrl',
       if (mdl.selectedShipping) {
         mdl.selectedSite = $filter('filter')(mdl.allSites, {id:mdl.selectedShipping})[0];
         console.log(mdl.selectedSite);
+      }
+    });
+    $scope.$watch("mdl.selectedBilling", function () {
+      if (mdl.selectedBilling) {
+        mdl.billingSite = $filter('filter')(mdl.allSites, {id:mdl.selectedBilling})[0];
+        console.log(mdl.billingSite);
       }
     });
 

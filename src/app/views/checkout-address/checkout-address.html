@@ -332,7 +332,24 @@
 									<select ng-model="mdl.selectedBilling"  required ng-options="site.id as site.name for site in mdl.allSites" class="form-control">
 										<option value="">--Add New--</option>
 									</select>
+
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <p class="no-margin bold-font" ng-if="mdl.billingSite.address1">
+                      <i class="fa fa-map-marker orange-color"></i> &nbsp
+                      {{mdl.billingSite.address1}}, <span ng-if="mdl.billingSite.address2">{{mdl.billingSite.address2}},</span>
+                    </p>
+                    <p class="no-margin bold-font" ng-if="mdl.billingSite.city.name" style="margin-left: 4px !important;">
+                      &nbsp &nbsp {{mdl.billingSite.city.name}}, {{mdl.billingSite.state.name}},
+                    </p>
+                    <p class="no-margin bold-font" ng-if="mdl.billingSite.country.name" style="margin-left: 4px !important;">
+                      &nbsp &nbsp {{mdl.billingSite.country.name}}
+                    </p>
+                    <p class="no-margin bold-font" ng-if="mdl.billingSite.zip_code" style="margin-left: 4px !important;">
+                      &nbsp &nbsp Zip code: {{mdl.billingSite.zip_code}}
+                    </p>
+                  </div>
 								</div>
+
 		    				</div>
 						</div>
 						<form ng-if="!mdl.selectedBilling" validate-form name="mdl.billing.form" class="person-information">
