@@ -9,12 +9,19 @@ angular.module('BG').controller('SearchCtrl',
     var mainMdl = $scope.mainMdl;
 
     mainMdl.title="Search Results";
+    if(!$stateParams.category) {
+      $scope.addBreadcrumb({title: "Search"});
+      $scope.$on("$destroy", function () {
+        $scope.popBreadcrumb();
+      });
 
-    $scope.addBreadcrumb({title: "Search"});
-    $scope.$on("$destroy", function () {
-      $scope.popBreadcrumb();
-    });
-
+    }
+    else{
+      $scope.addBreadcrumb({title: $stateParams.categoryName});
+      $scope.$on("$destroy", function () {
+        $scope.popBreadcrumb();
+      });
+    }
     searchMdl.display = "list";
 
     var search=null;

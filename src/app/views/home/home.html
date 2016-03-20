@@ -102,7 +102,7 @@
 					</div>
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
 						<ul class="nav navbar-nav no-float pull-center submenu-ul">
-							<li class="not-user" ng-repeat="item in mdl.categories | limitTo : 6" ui-sref="main.search({category:item.id})">
+							<li class="not-user" ng-repeat="item in mdl.categories | limitTo : 6" ui-sref="main.search({category:item.id, categoryName:item.name})">
 								<a class="soap-popupbox pointerhover">{{item.name}}</a>
 							</li>
 

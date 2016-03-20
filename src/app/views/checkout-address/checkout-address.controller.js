@@ -2,6 +2,10 @@ angular.module('BG').controller('CheckoutAddressCtrl',
   /** @ngInject */
     function ($scope, CartService, $timeout, $state, JobsitesService, SystemService, $q,$filter) {
     var mdl = $scope.mdl = {};
+    $scope.addBreadcrumb({title: "Checkout",state:"main.checkoutAddress"});
+    $scope.$on("$destroy", function () {
+      $scope.popBreadcrumb();
+    });
     mdl.kinds = {
       "job_site": "Job site",
       "billing": "Billing"
@@ -36,7 +40,7 @@ angular.module('BG').controller('CheckoutAddressCtrl',
 
           mdl.cartData.total+=mdl.cartData.rental_products[i].subtotal;
         }
-        console.log(mdl.total);
+        
         if (mdl.cartData.billing_address && mdl.cartData.location) {
           var promises;
           if (mdl.cartData.billing_address == mdl.cartData.location) {

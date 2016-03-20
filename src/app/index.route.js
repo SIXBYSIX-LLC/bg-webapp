@@ -365,7 +365,8 @@
         templateUrl:'app/views/search/search.html',
         controller:'SearchCtrl',
         params:{
-          category:null
+          category:null,
+          categoryName:null,
         }
       })
       .state('main.payment',{
