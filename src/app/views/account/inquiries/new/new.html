@@ -52,7 +52,7 @@
     </form>
 </div> -->
 <!-- mdl.equi -->
-<form ng-submit="mdl.add()" name="mdl.form" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 inquiry-form">
+<form ng-submit="mdl.add()" name="mdl.form" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 inquiry-form inquiry-form-xs">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
         <div class="image-div">
             <img ng-src="{{(mdl.equi.images[0].url) || 'http://dummyimage.com/270x160/cccccc/ffffff&text=No+Image+Found'}}">
@@ -61,7 +61,7 @@
             <h4 ng-model="mdl.subject" ng-if="!editSubject">{{mdl.equi.name}}
                 <a class="pull-right pointerhover" ng-click="editSub()">Edit Subject</a>
             </h4>
-            <input type="text" value="{{mdl.equi.name}}" placeholder="Subject" ng-model="mdl.subject" class="form-control" ng-if="editSubject" style="width: 50%; display: inline-block; margin-bottom: 5px;">
+            <input type="text" value="{{mdl.equi.name}}" placeholder="Subject" ng-model="mdl.subject" class="form-control" ng-if="editSubject" style="width: 50%; display: inline-block; margin-bottom: 5px; min-width: 200px;">
             <a class="pull-right pointerhover" ng-click="editSub()" ng-if="editSubject">Cancel</a>
             <p class="location-p">
                 <i class="fa fa-map-marker orange-color"></i> 
