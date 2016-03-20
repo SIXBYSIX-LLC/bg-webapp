@@ -2,7 +2,7 @@ angular.module('BG')
   .controller('PaymentCtrl',
 
   /** @ngInject */
-    function ($scope, $state, $braintree, InvoicesService, PaymentService, $stateParams, $http, JobsitesService, CartService) {
+    function ($scope, $state,$q, $braintree, InvoicesService, PaymentService, $stateParams, $http, JobsitesService, CartService) {
     var mdl = $scope.mdl = {};
     InvoicesService.getInvoice($stateParams.invoiceId).then(function (response) {
       mdl.invoice = response.data.data;
@@ -10,13 +10,18 @@ angular.module('BG')
 
     mdl.options={
       paymentMethodNonceReceived:function(event,nonce){
+        console.log("Payment Method",nonce);
         PaymentService.payInvoice($stateParams.invoiceId, nonce).then(function () {
-          $state.go("main.account.invoices.list");
+          $scope.$emit("BG:System:TopMessage", {
+            text: "Payment Successful",
+            });
+
+          $state.go("main.orderConfirmation");
         });
       },
       onError:function(error,message){
         $scope.$emit("BG:System:TopMessage", {
-          text: msg,
+          text: message,
           type: response.data.error ? 'error' : 'help'});
       }
     };
@@ -25,7 +30,7 @@ angular.module('BG')
       return false;
     }
 
-    var mdl = $scope.mdl = {};
+
     mdl.kinds = {
       "job_site": "Job site",
       "billing": "Billing"

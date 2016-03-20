@@ -38,7 +38,7 @@
 	</li>
 </ul> -->
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 progress-bar-col col-padding-small no-tpadding hidden-xs">
-	<ul class="progress-indicator process-progress-bar">
+	<ul class="progress-indicator process-progress-bar" ng-show="mdl.item.shipping_kind!='pickup'">
 		<li class="active" ng-class="{'completed':mdl.currentStatusIndex>=1}">
 			<span class="bubble"></span>
 			<span class="active-bubble"></span>
@@ -60,6 +60,40 @@
 			<span class="bubble"></span>
 			<span class="active-bubble"></span>
 			<p><a href="">4. Dispatched</a></p>
+		</li>
+		<li class="" ng-class="{'completed':mdl.currentStatusIndex>=7}">
+			<span class="bubble"></span>
+			<span class="active-bubble"></span>
+			<p><a href="">5. Delivered</a></p>
+		</li>
+		<li class="" ng-class="{'completed':mdl.currentStatusIndex>=8}">
+			<span class="bubble"></span>
+			<span class="active-bubble"></span>
+			<p><a href="">6. End Contract</a></p>
+		</li>
+	</ul>
+  <ul class="progress-indicator process-progress-bar" ng-show="mdl.item.shipping_kind=='pickup'">
+		<li class="active" ng-class="{'completed':mdl.currentStatusIndex>=1}">
+			<span class="bubble"></span>
+			<span class="active-bubble"></span>
+			<p><a href="">1. Confirmed</a></p>
+			<p class="process-date">21 Aug, 2015 03:44:44</p>
+		</li>
+		<li class="" ng-class="{'completed':mdl.currentStatusIndex>=2}">
+			<span class="bubble"></span>
+			<span class="active-bubble"></span>
+			<p><a href="">2. Approved</a></p>
+			<p class="process-date">21 Aug, 2015 03:44:44</p>
+		</li>
+		<li class="" ng-class="{'completed':mdl.currentStatusIndex>=4}">
+			<span class="bubble"></span>
+			<span class="active-bubble"></span>
+			<p><a href="">3. Ready to Pick</a></p>
+		</li>
+		<li class="" ng-class="{'completed':mdl.currentStatusIndex>=6}">
+			<span class="bubble"></span>
+			<span class="active-bubble"></span>
+			<p><a href="">4. Picked up</a></p>
 		</li>
 		<li class="" ng-class="{'completed':mdl.currentStatusIndex>=7}">
 			<span class="bubble"></span>

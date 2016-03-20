@@ -12,6 +12,7 @@ angular.module('BG').controller('ProcessSellerOrderCtrl',
       'picked_up',
       'delivered',
       'end_contract'];
+    //mdl.shippingKind=$stateParams.shippingKind;
     SellerOrdersService.getOrder($stateParams.id).then(function(response){
       mdl.orderLine = response.data.data;
       mdl.item=response.data.data.items[$stateParams.itemIndex];
@@ -24,7 +25,7 @@ angular.module('BG').controller('ProcessSellerOrderCtrl',
           mdl.inventories = response.data.data;
         });
       }
-
+      console.log(mdl.item);
     });
 
 
