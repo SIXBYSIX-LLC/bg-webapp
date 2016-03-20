@@ -10,17 +10,16 @@ angular.module('BG').controller('SearchCtrl',
 
     mainMdl.title="Search Results";
     if(!$stateParams.category) {
-      $scope.addBreadcrumb({title: "Search"});
+      $scope.addBreadcrumb({title: "Search", state:"main.search"});
       $scope.$on("$destroy", function () {
         $scope.popBreadcrumb();
       });
 
     }
     else{
-      $scope.addBreadcrumb({title: $stateParams.categoryName});
-      $scope.$on("$destroy", function () {
-        $scope.popBreadcrumb();
-      });
+      var c= JSON.stringify({category:$stateParams.category});
+      $scope.addBreadcrumb({title: $stateParams.categoryName, state:"main.search("+c+")"});
+
     }
     searchMdl.display = "list";
 
