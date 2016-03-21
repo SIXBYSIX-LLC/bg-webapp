@@ -1102,6 +1102,20 @@
       padding-left: 80px !important;
     }
   }
+  .no-lpadding-xs {
+    padding-left: 15px !important;
+  }
+  .order-confirm-xs {
+    h4,p {
+      margin-bottom: 10px !important;
+    }
+  }
+  .order-action-xs {
+    text-align: center !important;
+    a {
+      width: 100%;
+    }
+  }
 }
 
 /* 8. Styles for devices(<=480px ) */

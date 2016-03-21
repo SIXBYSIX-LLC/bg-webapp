@@ -2,7 +2,7 @@
   <img src="assets/images/loader.gif"/>
   <p>Excavating Awesomeness</p>
 </div>
-<div class="col-lg-9 col-md-9 col-sm-8 col-xs-12 no-padding">
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 progress-bar-col">
     <ul class="progress-indicator">
       <li class="completed">
@@ -22,38 +22,110 @@
       </li>
     </ul>
   </div>
-<div class="booking-information travelo-box">
-    <h2>Order Confirmation</h2>
+<div class="booking-information travelo-box col-lg-12 col-md-12 col-sm-12 col-xs-12 order-confirmation-col invoice-details">
+    <h2 class="no-margin heading-text">Order Confirmation</h2>
     <hr />
-    <div class="booking-confirmation clearfix">
+    <!-- <div class="booking-confirmation clearfix">
         <i class="soap-icon-recommend icon circle"></i>
         <div class="message">
             <h4 class="main-message">Thank You! Your Order Booking is Confirmed.</h4>
             <p>A confirmation email has been sent to your provided email address.</p>
         </div>
-        <a href="#" class="button print-button btn-small uppercase">Print Details</a>
-
+        <a href="#" class="btn small-btn primary-btn pull-right">Print Details</a>
     </div>
-    <hr />
-    <h2>Order Information</h2>
-    <dl class="term-description">
-        <dt>Order number:</dt><dd>5784-BD245</dd>
-        <dt>First name:</dt><dd>Fawad</dd>
-        <dt>Last name:</dt><dd>Hasan</dd>
-        <dt>E-mail address:</dt><dd>fawad.hasan@gmail.com</dd>
-        <dt>Street Address and number:</dt><dd>353 Third floor Avenue</dd>
-        <dt>Town / City:</dt><dd>Houston,Texas</dd>
-        <dt>ZIP code:</dt><dd>22480</dd>
-        <dt>Country:</dt><dd>United States of America</dd>
-    </dl>
-    <hr />
-    <h2>Payment</h2>
-    <p>Praesent dolor lectus, rutrum sit amet risus vitae, imperdiet cursus neque. Nulla tempor nec lorem eu suscipit. Donec dignissim lectus a nunc molestie consectetur. Nulla eu urna in nisi adipiscing placerat. Nam vel scelerisque magna. Donec justo urna, posuere ut dictum quis.</p>
-    <br />
-    <p class="red-color">Payment is made by Credit Card Via Paypal.</p>
-    <hr />
-    <h2>View Booking Details</h2>
-    <p>Praesent dolor lectus, rutrum sit amet risus vitae, imperdiet cursus neque. Nulla tempor nec lorem eu suscipit. Donec dignissim lectus a nunc molestie consectetur. Nulla eu urna in nisi adipiscing placerat. Nam vel scelerisque magna. Donec justo urna, posuere ut dictum quis.</p>
-    <br />
-    <a href="#" class="red-color underline view-link">View Details of the Order</a>
+    <hr /> -->
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding booking-confirmation clearfix">
+        <div class="col-lg-6 col-md-6 col-sm-8 col-xs-12 no-padding message order-confirm-xs">
+            <i class="soap-icon-recommend icon circle"></i>
+            <h4 class="main-message">Thank You! Your Order Booking is Confirmed.</h4>
+            <p>A confirmation email has been sent to your provided email address.</p>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-4 col-xs-12 no-padding text-right order-action-xs">
+            <a href="#" class="btn small-btn primary-btn">Print Details</a>
+        </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
+        <hr />
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding term-description">
+            <p class="no-margin font14">Order Number: 
+                <span class="no-margin bold-font">5784-BD245</span>
+                <!-- <span class="no-margin bold-font" ng-if="!mdl.order.id">--</span> -->
+            </p>
+        </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
+        <hr>
+    </div>
+    <div class="row invoice-address buyer-order-detail" style="margin-bottom: 0;">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <h2 class="heading-text">Order Information</h2>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
+            <p class="orange-text">First Name:</p>
+        </div>
+        <div class="col-lg-9 col-md-9 col-sm-8 col-xs-6 no-lpadding">
+            <p>Fawad</p>
+            <!-- <p ng-if="!mdl.order.billing_address.first_name && mdl.order.billing_address.last_name">--</p> -->
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
+            <p class="orange-text">Last Name:</p>
+        </div>
+        <div class="col-lg-9 col-md-9 col-sm-8 col-xs-6 no-lpadding">
+            <p>Hasan</p>
+            <!-- <p ng-if="!mdl.order.billing_address.phone">--</p> -->
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
+            <p class="orange-text">Email address:</p>
+        </div>
+        <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12 no-lpadding">
+            <p class="no-lpadding-xs">fawad.hasan@gmail.com</p>
+            <!-- <p ng-if="!mdl.order.billing_address.phone">--</p> -->
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
+            <p class="orange-text">Street Address and number::</p>
+        </div>
+        <div class="col-lg-9 col-md-9 col-sm-8 col-xs-6 no-lpadding">
+            <p>353 Third floor Avenue</p>
+            <!-- <p ng-if="!mdl.order.billing_address.phone">--</p> -->
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
+            <p class="orange-text">Town / City:</p>
+        </div>
+        <div class="col-lg-9 col-md-9 col-sm-8 col-xs-6 no-lpadding">
+            <p>Houston,Texas</p>
+            <!-- <p ng-if="!mdl.order.billing_address.city.name">--</p> -->
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
+            <p class="orange-text">Zip Code:</p>
+        </div>
+        <div class="col-lg-9 col-md-9 col-sm-8 col-xs-6 no-lpadding">
+            <p>22480</p>
+            <!-- <p ng-if="!mdl.order.billing_address.zip_code">--</p> -->
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
+            <p class="orange-text">Country:</p>
+        </div>
+        <div class="col-lg-9 col-md-9 col-sm-8 col-xs-6 no-lpadding">
+            <p>United States of America</p>
+            <!-- <p ng-if="!mdl.order.billing_address.country.name">--</p> -->
+        </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
+        <hr />
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
+        <h2>Payment</h2>
+        <p>Praesent dolor lectus, rutrum sit amet risus vitae, imperdiet cursus neque. Nulla tempor nec lorem eu suscipit. Donec dignissim lectus a nunc molestie consectetur. Nulla eu urna in nisi adipiscing placerat. Nam vel scelerisque magna. Donec justo urna, posuere ut dictum quis.</p>
+        <p class="orange-color">Payment is made by Credit Card Via Paypal.</p>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
+        <hr />
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
+        <h2>View Booking Details</h2>
+        <p>Praesent dolor lectus, rutrum sit amet risus vitae, imperdiet cursus neque. Nulla tempor nec lorem eu suscipit. Donec dignissim lectus a nunc molestie consectetur. Nulla eu urna in nisi adipiscing placerat. Nam vel scelerisque magna. Donec justo urna, posuere ut dictum quis.</p>
+        <a href="#" class="orange-color">View Details of the Order</a>
+    </div>
 </div>

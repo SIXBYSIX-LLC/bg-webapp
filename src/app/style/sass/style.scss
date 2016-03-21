@@ -6337,9 +6337,10 @@ section {
 .breadcrumb-col {
   padding: 20px 20px;
   font-size: 14px;
-  background: #ffffff;
+  // background: #ffffff;
   margin-bottom: 10px;
-  margin-top: 10px;
+  border-bottom: 1px solid #dddddd;
+  // margin-top: 10px;
   a {
     color: #009ddc;
     cursor: pointer;
@@ -7405,5 +7406,17 @@ section {
     p {
       color: $black-color;
     }
+  }
+}
+
+.order-confirmation-col {
+  padding: 15px;
+}
+
+.favourite-btn-div {
+  a {
+    border: 1px solid $primary-orange-color;
+    color: $primary-orange-color;
+    transition: all 0.1s ease;
   }
 }
