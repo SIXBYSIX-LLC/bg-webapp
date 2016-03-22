@@ -4,11 +4,13 @@ angular.module('BG').controller('AccountCtrl',
     var mdl = $scope.mdl = {};
     $scope.mainMdl.title = "Account";
     $scope.mainMdl.showToggle = true;
-    $scope.addBreadcrumb({title: "Account"});
+    //$scope.popAll();
+    $scope.addBreadcrumb({title: "Buyer Dashboard",state:"main.account.dashboard"});
     $scope.$on("$destroy", function () {
       $scope.mainMdl.showToggle = false;
       $scope.popBreadcrumb();
     });
+    $scope.disableBreadcrumb(false);
     $scope.dashboard = function() {
       $scope.isShow = !$scope.isShow;
     }

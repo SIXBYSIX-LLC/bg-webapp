@@ -21,6 +21,7 @@ angular.module('BG').controller('SearchCtrl',
       $scope.addBreadcrumb({title: $stateParams.categoryName, state:"main.search("+c+")"});
 
     }
+    $scope.disableBreadcrumb(true);
     searchMdl.display = "list";
 
     var search=null;

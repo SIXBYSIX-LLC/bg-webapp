@@ -32,9 +32,15 @@
     $scope.addBreadcrumb=function(value){
       mainMdl.breadcrumbs.push(value);
     };
-
+    mainMdl.disableBreadcrumb=false;
+    $scope.disableBreadcrumb=function(t){
+      mainMdl.disableBreadcrumb=t;
+    };
     $scope.popBreadcrumb=function(){
       return mainMdl.breadcrumbs.pop();
+    };
+    $scope.popAll=function(){
+      mainMdl.breadcrumbs=[];
     };
 
     $scope.$watch("mainMdl.searchObj",function(){
