@@ -726,17 +726,17 @@
                 </form>
             </div>
             <!--<p class="description">{{mdl.equi.description}}</p>-->
-            <a ladda="buttonLoader" class="btn full-width small-btn primary-btn" ng-click="addToCart()">Reserve Equipment</a>
-
-
+            <a ladda="buttonLoader" class="btn full-width all-btn primary-btn" ng-click="addToCart()">Reserve Equipment</a>
             <p></p>
-            <a ladda="loadButton" ng-click="addToFavorite()" class="btn full-width small-btn primary-btn">Add to Favourites</a>
-            <p></p>
-            <a ui-sref="main.inquiries.new({id:mdl.equi.id})" class="btn full-width small-btn primary-btn">Send Inquiry</a>
-
+            <a ui-sref="main.inquiries.new({id:mdl.equi.id})" class="btn full-width all-btn secondary-btn">Send Inquiry</a>
         </div>
     </article>
-    <div class="travelo-box contact-box">
+    <div class="travelo-box contact-box favourite-btn-div" style="margin-bottom: 20px;">
+        <a ladda="loadButton" ng-click="addToFavorite()" class="btn full-width all-btn white-btn">
+            <i class="fa fa-heart-o"></i> &nbsp
+            Add to Favourites</a>
+    </div>
+    <div class="travelo-box contact-box" style="margin-bottom: 20px;">
         <h4>Need Help or Support?</h4>
 
         <p>We would be more than happy to help you. Our team advisor are 24/7 at your service to help you.</p>
