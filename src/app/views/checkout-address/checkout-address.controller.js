@@ -2,10 +2,7 @@ angular.module('BG').controller('CheckoutAddressCtrl',
   /** @ngInject */
     function ($scope, CartService, $timeout, $state, JobsitesService, SystemService, $q,$filter) {
     var mdl = $scope.mdl = {};
-    $scope.addBreadcrumb({title: "Checkout",state:"main.checkoutAddress"});
-    $scope.$on("$destroy", function () {
-      $scope.popBreadcrumb();
-    });
+    $scope.disableBreadcrumb(true);
     mdl.kinds = {
       "job_site": "Job site",
       "billing": "Billing"

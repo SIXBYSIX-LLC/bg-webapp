@@ -7,7 +7,7 @@ angular.module('BG')
     InvoicesService.getInvoice($stateParams.invoiceId).then(function (response) {
       mdl.invoice = response.data.data;
     });
-
+    $scope.disableBreadcrumb(true);
     mdl.options={
       paymentMethodNonceReceived:function(event,nonce){
         console.log("Payment Method",nonce);

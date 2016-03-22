@@ -16,10 +16,7 @@ angular.module('BG').controller('EquiDetailsCtrl',
       }
     };
     $scope.mainMdl.title = "Equipment Details";
-    $scope.addBreadcrumb({title: "Equipment Details"});
-    $scope.$on("$destroy", function () {
-      $scope.popBreadcrumb();
-    });
+    $scope.disableBreadcrumb(true);
     $scope.$on("$viewContentLoaded", function () {
       if ($stateParams.id) {
         $scope.$broadcast("LI:Loading", true);
