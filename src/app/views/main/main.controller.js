@@ -48,6 +48,7 @@
         $state.go("main.search",{query:mainMdl.searchObj.title},{ reload: true });
       }
     });
+
     mainMdl.search=function(){
       //if(mainMdl.searchText){
       $state.go("main.search",{query:(mainMdl.searchObj ? mainMdl.searchObj.title :mainMdl.searchText ) || ""},{ reload: true });

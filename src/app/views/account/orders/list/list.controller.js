@@ -4,12 +4,13 @@ angular.module('BG').controller('ListOrdersCtrl',
     var mdl = $scope.mdl = {};
     $scope.myDateRange={startDate:moment(0),endDate:moment()};
 
-    $scope.mainMdl.showToggle = true;
-    //$scope.popAll();
+
     $scope.addBreadcrumb({title: "Orders",state:"main.account.orders"});
-    $scope.$on("$destroy", function () {
-      $scope.mainMdl.showToggle = false;
+
+    $scope.$on("$stateChangeStart", function () {
+
       $scope.popBreadcrumb();
+
     });
     $scope.disableBreadcrumb(false);
 

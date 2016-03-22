@@ -2,12 +2,12 @@ angular.module('BG').controller('FavoritesCtrl',
   /** @ngInject */
     function ($scope, EquipmentsService) {
     var mdl = $scope.mdl = {};
-    $scope.mainMdl.showToggle = true;
 
     $scope.addBreadcrumb({title: "Favourites",state:"main.account.favorites"});
-    $scope.$on("$destroy", function () {
-      $scope.mainMdl.showToggle = false;
+    $scope.$on("$stateChangeStart", function () {
+
       $scope.popBreadcrumb();
+
     });
     $scope.disableBreadcrumb(false);
 
