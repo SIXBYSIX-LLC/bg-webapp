@@ -3,6 +3,11 @@ angular.module('BG').controller('InquiryListCtrl',
     function ($scope,InquiriesService) {
 
     var mdl = $scope.mdl = {};
+    $scope.addBreadcrumb({title: "Enquiry",state:"main.sellerAccount.inquiries.list"});
+    $scope.$on("$stateChangeStart", function () {
+
+      $scope.popBreadcrumb();
+    });
     InquiriesService.getInquiries().then(function(response){
       mdl.items =  response.data.data;
     });

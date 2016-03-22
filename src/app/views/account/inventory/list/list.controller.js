@@ -2,7 +2,11 @@ angular.module('BG').controller('ListInventoryCtrl',
   /** @ngInject */
     function ($scope, $state, $stateParams, EquipmentsService, InventoryService) {
     var mdl = $scope.mdl = {};
+    $scope.addBreadcrumb({title: "Inventory",state:"main.sellerAccount.inventory.list"});
+    $scope.$on("$stateChangeStart", function () {
 
+      $scope.popBreadcrumb();
+    });
 
 
     $scope.$watch("invMdl.equiId",function(newValue){

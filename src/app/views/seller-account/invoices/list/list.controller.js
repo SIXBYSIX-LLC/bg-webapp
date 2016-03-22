@@ -3,6 +3,11 @@ angular.module('BG').controller('SellerInvoiceListCtrl',
   function ($scope, SellerInvoicesService) {
 
     var mdl = $scope.mdl = {};
+    $scope.addBreadcrumb({title: "Invoices",state:"main.sellerAccount.invoices.list"});
+    $scope.$on("$stateChangeStart", function () {
+
+      $scope.popBreadcrumb();
+    });
 
     $scope.myDateRange = {startDate: moment(0), endDate: moment()};
     mdl.ranges = {

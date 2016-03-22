@@ -3,6 +3,11 @@ angular.module('BG').controller('ListSellerOrdersCtrl',
   function ($scope, SellerOrdersService) {
 
     var mdl = $scope.mdl = {};
+    $scope.addBreadcrumb({title: "Orders",state:"main.sellerAccount.orders.list"});
+    $scope.$on("$stateChangeStart", function () {
+
+      $scope.popBreadcrumb();
+    });
     $scope.myDateRange = {startDate: moment(0), endDate: moment()};
     mdl.ranges = {
       'Today': [moment(), moment()],
