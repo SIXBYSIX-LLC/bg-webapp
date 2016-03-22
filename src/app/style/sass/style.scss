@@ -5398,14 +5398,14 @@ button.ui-button::-moz-focus-inner { border: 0; padding: 0; }
       transition: background-color 0.6s ease;
       &:hover {
         background-color: #f5f5f5;
-        td {
-          p {
-            a {
-              background-color: $primary-orange-color;
-              color: $white-theme-color;
-            }
-          }
-        }
+        // td {
+        //   p {
+        //     a {
+        //       background-color: $primary-orange-color;
+        //       color: $white-theme-color;
+        //     }
+        //   }
+        // }
       }
       &:first-child {
         border-top: 1px solid #cccccc;
@@ -6743,11 +6743,11 @@ section {
       cursor: pointer;
       &:hover {
         background-color: #f5f5f5;
-        .btn {
-          background-color: $primary-button-color;
-          color: $white-theme-color;
-          border: 1px solid $primary-button-color;
-        }
+        // .btn {
+        //   background-color: $primary-button-color;
+        //   color: $white-theme-color;
+        //   border: 1px solid $primary-button-color;
+        // }
       }
       &:first-child {
         > td {
@@ -7418,5 +7418,16 @@ section {
     border: 1px solid $primary-orange-color;
     color: $primary-orange-color;
     transition: all 0.1s ease;
+  }
+}
+
+.close-icon {
+  cursor: pointer;
+  font-size: 24px !important;
+  float: right;
+  color: $primary-color;
+  transition: all 0.6s ease;
+  &:hover {
+    color: $primary-orange-color;
   }
 }
