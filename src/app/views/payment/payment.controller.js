@@ -4,6 +4,7 @@ angular.module('BG')
   /** @ngInject */
     function ($scope, $state,$q, $braintree, InvoicesService, PaymentService, $stateParams, $http, JobsitesService, CartService) {
     var mdl = $scope.mdl = {};
+    console.log("$stateParams.invoiceId",$stateParams.invoiceId)
     InvoicesService.getInvoice($stateParams.invoiceId).then(function (response) {
       mdl.invoice = response.data.data;
     });

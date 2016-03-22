@@ -217,19 +217,20 @@ angular.module('BG').controller('CheckoutAddressCtrl',
 
     function checkout() {
       CartService.checkout(currentCartId).then(function(response){
-        console.log("Res",response);
+        console.log("Res",response.data.data.invoice);
         if(response.data.data.invoice){
-          $state.go("main.payment",{invoiceId:response.data.data.invoiceId});
+          $state.go("main.payment",{invoiceId:response.data.data.invoice});
         }
       });
     }
 
     $scope.continueWithPayment = function () {
-      //if(mdl.cartData.location==null || mdl.cartData.billing_address==null){
+     // checkout();
+      if(mdl.cartData.location==null || mdl.cartData.billing_address==null){
       add();
-      //}else{
-      //checkout();
-      //}
+      }else{
+      checkout();
+      }
     };
   }
 );

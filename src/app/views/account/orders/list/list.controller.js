@@ -4,6 +4,15 @@ angular.module('BG').controller('ListOrdersCtrl',
     var mdl = $scope.mdl = {};
     $scope.myDateRange={startDate:moment(0),endDate:moment()};
 
+    $scope.mainMdl.showToggle = true;
+    //$scope.popAll();
+    $scope.addBreadcrumb({title: "Orders",state:"main.account.orders"});
+    $scope.$on("$destroy", function () {
+      $scope.mainMdl.showToggle = false;
+      $scope.popBreadcrumb();
+    });
+    $scope.disableBreadcrumb(false);
+
     mdl.ranges = {
       'Today': [moment(), moment()],
       'Yesterday': [moment().subtract('days', 1), moment().subtract('days', 1)],
