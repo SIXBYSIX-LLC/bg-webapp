@@ -47,10 +47,10 @@ angular.module('BG').controller('EditProfileCtrl',
         ProfileService.updateUser($scope.user.id,data).then(function(){
           if(editProfileMdl.fileToUpload){
             upload(usr.id,editProfileMdl.fileToUpload).then(function(){
-              $state.go("main.account.profile.view");
+              $state.go("main.profile.view");
             });
           }else{
-            $state.go("main.account.profile.view");
+            $state.go("main.profile.view");
           }
         });
       }
