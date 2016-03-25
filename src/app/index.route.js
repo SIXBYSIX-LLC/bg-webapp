@@ -136,27 +136,27 @@
         templateUrl:'app/views/account/orders/view/view.html',
         controller:'ViewOrderCtrl'
       })
-      .state('main.account.profile',{
-        abstract:true,
-        url:'/profile',
-        templateUrl:'app/views/account/profile/profile.html',
-        controller:'ProfileCtrl'
-      })
-      .state('main.account.profile.edit',{
-        url:'/edit',
-        templateUrl:'app/views/account/profile/edit/edit.html',
-        controller:'EditProfileCtrl'
-      })
-      .state('main.account.profile.view',{
-        url:'/view',
-        templateUrl:'app/views/account/profile/view/view.html',
-        controller:'ViewProfileCtrl'
-      })
-      .state('main.account.profile.changePassword',{
-        url:'/change-password',
-        templateUrl:'app/views/account/profile/change-password/change-password.html',
-        controller:'ChangePasswordCtrl'
-      })
+      // .state('main.account.profile',{
+      //   abstract:true,
+      //   url:'/profile',
+      //   templateUrl:'app/views/account/profile/profile.html',
+      //   controller:'ProfileCtrl'
+      // })
+      // .state('main.account.profile.edit',{
+      //   url:'/edit',
+      //   templateUrl:'app/views/account/profile/edit/edit.html',
+      //   controller:'EditProfileCtrl'
+      // })
+      // .state('main.account.profile.view',{
+      //   url:'/view',
+      //   templateUrl:'app/views/account/profile/view/view.html',
+      //   controller:'ViewProfileCtrl'
+      // })
+      // .state('main.account.profile.changePassword',{
+      //   url:'/change-password',
+      //   templateUrl:'app/views/account/profile/change-password/change-password.html',
+      //   controller:'ChangePasswordCtrl'
+      // })
       .state('main.account.requests',{
         url:'/requests',
         templateUrl:'app/views/account/requests/requests.html'
@@ -164,6 +164,31 @@
 
 
 
+
+
+
+
+      .state('main.profile',{
+        abstract:true,
+        url:'/profile',
+        templateUrl:'app/views/profile/profile.html',
+        controller:'ProfileCtrl'
+      })
+      .state('main.profile.edit',{
+        url:'/edit',
+        templateUrl:'app/views/profile/edit/edit.html',
+        controller:'EditProfileCtrl'
+      })
+      .state('main.profile.view',{
+        url:'/view',
+        templateUrl:'app/views/profile/view/view.html',
+        controller:'ViewProfileCtrl'
+      })
+      .state('main.profile.changePassword',{
+        url:'/change-password',
+        templateUrl:'app/views/profile/change-password/change-password.html',
+        controller:'ChangePasswordCtrl'
+      })
 
 
 

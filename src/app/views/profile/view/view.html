@@ -1,0 +1,75 @@
+<!-- <div class="view-profile">
+    <article class="image-box style2 box innerstyle personal-details">
+        <div >
+            <button style="margin:0px 5px" ui-sref="main.profile.edit" class="btn pull-right all-btn">EDIT PROFILE</button>
+            <button ui-sref="main.profile.changePassword" class="btn pull-right all-btn">CHANGE PASSWORD</button>
+            <h2 class="box-title fullname">{{mdl.user.fullname}}</h2>
+            <dl class="term-description col-lg-6">
+                <dt>user name:</dt><dd>{{mdl.user.email}}</dd>
+                <dt>phone number:</dt><dd>{{mdl.user.phone}}</dd>
+                <dt>store name:</dt><dd>{{mdl.user.store_name}}</dd>
+                <dt>time zone:</dt><dd>{{mdl.user.timezone}}</dd>
+                <dt>ZIP code:</dt><dd>{{mdl.user.zip_code}}</dd>
+                <dt>Credit Form</dt>
+                <dd>
+                    <a ng-if="mdl.user.credit_form.url" ng-href="{{mdl.user.credit_form.url}}">Download</a>
+                </dd>
+            </dl>
+        </div>
+    </article>
+</div> -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding image-box box" style="padding-bottom: 15px !important;">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 setting-heading">
+        <h4>{{mdl.user.fullname}}</h4>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right setting-heading">
+        <button ui-sref="main.profile.edit" class="btn all-btn primary-btn">Edit Profile</button>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
+        <hr class="no-tmargin">
+    </div>
+    <div class="invoice-address buyer-order-detail col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding" style="margin-bottom: 0;">
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+            <p class="orange-text">User Name:</p>
+        </div>
+        <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12 no-lpadding">
+            <p ng-if="mdl.user.email" class=" no-lpadding-xs">{{mdl.user.email}}</p>
+            <p ng-if="!mdl.user.email" class=" no-lpadding-xs">--</p>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
+            <p class="orange-text">Phone Number:</p>
+        </div>
+        <div class="col-lg-9 col-md-9 col-sm-8 col-xs-6 no-lpadding">
+            <p ng-if="mdl.user.phone">{{mdl.user.phone}}</p>
+            <p ng-if="!mdl.user.phone">--</p>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
+            <p class="orange-text">Store Name:</p>
+        </div>
+        <div class="col-lg-9 col-md-9 col-sm-8 col-xs-6 no-lpadding">
+            <p ng-if="mdl.user.store_name">{{mdl.user.store_name}}</p>
+            <p ng-if="!mdl.user.store_name">--</p>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
+            <p class="orange-text">Time Zone:</p>
+        </div>
+        <div class="col-lg-9 col-md-9 col-sm-8 col-xs-6 no-lpadding">
+            <p ng-if="mdl.user.timezone">{{mdl.user.timezone}}</p>
+            <p ng-if="!mdl.user.timezone">--</p>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
+            <p class="orange-text">Zip Code:</p>
+        </div>
+        <div class="col-lg-9 col-md-9 col-sm-8 col-xs-6 no-lpadding">
+            <p ng-if="mdl.user.zip_code">{{mdl.user.zip_code}}</p>
+            <p ng-if="!mdl.user.zip_code">--</p>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
+            <p class="orange-text">Credit Form:</p>
+        </div>
+        <div class="col-lg-9 col-md-9 col-sm-8 col-xs-6 no-lpadding">
+            <a ng-if="mdl.user.credit_form.url" ng-href="{{mdl.user.credit_form.url}}">Download</a>
+            <p ng-if="!mdl.user.credit_form.url">--</p>
+        </div>
+    </div>
+</div>

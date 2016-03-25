@@ -1116,6 +1116,24 @@
       width: 100%;
     }
   }
+  .recent-review-col {
+    padding-top: 15px;
+    border-top: 0 !important;
+    .author {
+      padding: 0;
+      .date {
+        margin: 0;
+      }
+    }
+    .review-comment-col {
+      padding-top: 10px !important;
+      h4 {
+        float: none !important;
+        width: 100% !important;
+        text-align: center;
+      }
+    }
+  }
 }
 
 /* 8. Styles for devices(<=480px ) */

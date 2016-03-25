@@ -7431,3 +7431,33 @@ section {
     color: $primary-orange-color;
   }
 }
+
+.recent-review-col {
+  padding-top: 15px;
+  .author {
+    padding: 0;
+  }
+  .review-comment-col {
+    h4 {
+      width: 60%;
+    }
+  }
+}
+
+.setting-heading {
+  padding: 10px;
+  h4 {
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+}
+
+.setting-edit-form {
+  .form-control {
+    margin-bottom: 15px;
+  }
+}
+
+.edit-action-btn {
+  padding-bottom: 15px;
+}
