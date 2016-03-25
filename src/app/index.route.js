@@ -376,7 +376,8 @@
       })
       .state('main.orderConfirmation',{
         url:'/order-confirmation',
-        templateUrl:'app/views/order-confirmation/order-confirmation.html'
+        templateUrl:'app/views/order-confirmation/order-confirmation.html',
+        controller:'orderConfirmCtrl'
       })
       .state('main.checkoutAddress',{
         url:'/checkout-address/{carId}',

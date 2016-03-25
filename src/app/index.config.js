@@ -22,6 +22,7 @@
             counter++;
             $rootScope.$broadcast("loader_show");
             $rootScope.rmodel.loader=true;
+
           }
           if($rootScope.user){
             config.headers.AUTHORIZATION='Token '+$rootScope.user.token;
@@ -46,11 +47,13 @@
 
           }
           if(response.config.url.indexOf("braintree/actions/generate_token")>0){
+
             console.log("Response",response);
             return {data: response.data.data.client_token,
                     status: 200,
                     statusText: "OK"};
           }else{
+
             return response;
           }
         },

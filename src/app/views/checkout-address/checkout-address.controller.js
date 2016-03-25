@@ -1,6 +1,6 @@
 angular.module('BG').controller('CheckoutAddressCtrl',
   /** @ngInject */
-    function ($scope, CartService, $timeout, $state, JobsitesService, SystemService, $q,$filter) {
+    function ($scope, CartService, $timeout, $state, JobsitesService, SystemService, $q,$filter,PaymentService ) {
     var mdl = $scope.mdl = {};
     $scope.disableBreadcrumb(true);
     mdl.kinds = {
@@ -80,13 +80,13 @@ angular.module('BG').controller('CheckoutAddressCtrl',
       }
     });
     $scope.$watch("mdl.selectedShipping", function () {
-      if (mdl.selectedShipping) {
+      if (mdl.selectedShipping && mdl.allSites) {
         mdl.selectedSite = $filter('filter')(mdl.allSites, {id:mdl.selectedShipping})[0];
         console.log(mdl.selectedSite);
       }
     });
     $scope.$watch("mdl.selectedBilling", function () {
-      if (mdl.selectedBilling) {
+      if (mdl.selectedBilling && mdl.allSites) {
         mdl.billingSite = $filter('filter')(mdl.allSites, {id:mdl.selectedBilling})[0];
         console.log(mdl.billingSite);
       }
@@ -217,9 +217,20 @@ angular.module('BG').controller('CheckoutAddressCtrl',
 
     function checkout() {
       CartService.checkout(currentCartId).then(function(response){
-        console.log("Res",response.data.data.invoice);
-        if(response.data.data.invoice){
+
+        /*if(response.data.data.invoice){
           $state.go("main.payment",{invoiceId:response.data.data.invoice});
+        }
+        else*/ if(!response.data.data.payable_amount){
+          console.log("Res",response);
+          PaymentService.payInvoice(response.data.data.invoice).then(function (response) {
+            /*$scope.$emit("BG:System:TopMessage", {
+              text: "Payment Successful",
+            });
+
+            $state.go("main.orderConfirmation");*/
+            console.log(response);
+          });
         }
       });
     }

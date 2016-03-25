@@ -4,15 +4,14 @@ angular.module('BG')
   /** @ngInject */
     function ($scope, $state,$q, $braintree, InvoicesService, PaymentService, $stateParams, $http, JobsitesService, CartService) {
     var mdl = $scope.mdl = {};
-    console.log("$stateParams.invoiceId",$stateParams.invoiceId)
-    InvoicesService.getInvoice($stateParams.invoiceId).then(function (response) {
+
+    /*InvoicesService.getInvoice($stateParams.invoiceId).then(function (response) {
       mdl.invoice = response.data.data;
-    });
+    });*/
     $scope.disableBreadcrumb(true);
     mdl.options={
       paymentMethodNonceReceived:function(event,nonce){
-        console.log("Payment Method",nonce);
-        PaymentService.payInvoice($stateParams.invoiceId, nonce).then(function () {
+          PaymentService.payInvoice($stateParams.invoiceId, nonce).then(function () {
           $scope.$emit("BG:System:TopMessage", {
             text: "Payment Successful",
             });
