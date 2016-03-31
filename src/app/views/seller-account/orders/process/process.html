@@ -129,7 +129,7 @@
 	<div ng-repeat="item in mdl.inventories">
 		<div class="row">
 			<div class="col-sm-1">
-				<input type="checkbox" ng-model="itm.selected">
+				<input type="checkbox" ng-model="mdl.selectedInventory[item.id]">
 			</div>
 			<div class="col-sm-11">
 				<label>ID:{{item.id}}</label>
@@ -137,6 +137,7 @@
 			</div>
 		</div>
 	</div>
+  {{mdl.selectedInventory}}
 	<div ng-show="mdl.inventories.length==0">
 		<h2>Not inventory available</h2>
 	</div>

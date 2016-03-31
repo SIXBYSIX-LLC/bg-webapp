@@ -16,7 +16,7 @@ angular.module('BG').controller('ProcessSellerOrderCtrl',
     SellerOrdersService.getOrder($stateParams.id).then(function(response){
       mdl.orderLine = response.data.data;
       mdl.item=response.data.data.items[$stateParams.itemIndex];
-
+      //mdl.selectedInventory=null;
       mdl.currentStatusIndex = status.indexOf(mdl.item.current_status);
       getOptionStatus(mdl.item.current_status);
 
@@ -85,7 +85,7 @@ angular.module('BG').controller('ProcessSellerOrderCtrl',
     mdl.update=function(){
       $scope.buttonLoader = true;
       if(mdl.changedStatus){
-        SellerOrdersService.updateStatus(mdl.orderLine.id,mdl.item.id,mdl.changedStatus.id,mdl.comment).then(function(){
+        SellerOrdersService.updateStatus(mdl.orderLine.id,mdl.item.id,mdl.changedStatus.id,mdl.comment,mdl.selectedInventory).then(function(){
           $scope.buttonLoader = false;
           $state.go("main.sellerAccount.orders.view",{id:$stateParams.id});
         });

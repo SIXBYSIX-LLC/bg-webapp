@@ -30,7 +30,11 @@ angular.module('BG').factory('EquipmentsService',
         return $http.patch(API.baseURL + "products/" + id, data);
       },
       deleteEquipment: function (id) {
-        return $http.delete(API.baseURL + "products/" + id);
+        return $http.delete(API.baseURL + "products/" + id).success(function(){
+
+        }).error(function(data, status) {
+          console.error('Repos error', status, data);
+        });
       },
       deleteImage: function (id) {
         return $http.delete(API.baseURL + "staticfiles/" + id);

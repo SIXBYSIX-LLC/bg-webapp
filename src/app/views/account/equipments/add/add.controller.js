@@ -89,12 +89,19 @@ angular.module('BG').controller('AddEquipmentCtrl',
         if ($scope.editMode) {
           EquipmentsService.updateEquipment(addEquiMdl.data.id, addEquiMdl.data).then(function (response) {
             uploadImages().then(function () {
+              $scope.$emit("BG:System:TopMessage", {
+                text: "Equipment Updated Successfully",
+                type: response.data.error ? 'error' : 'help'});
               $state.go('main.sellerAccount.equipments.list');
+
             })
           });
         } else {
           EquipmentsService.addEquipment(addEquiMdl.data).then(function (response) {
             uploadImages().then(function () {
+              $scope.$emit("BG:System:TopMessage", {
+                text: "Equipment Added Successfully",
+                type: response.data.error ? 'error' : 'help'});
               $state.go('main.sellerAccount.equipments.list');
             })
           })
