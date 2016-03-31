@@ -5,7 +5,7 @@ angular.module('BG')
     function ($scope, $rootScope) {
       var mdl = $scope.mdl = {};
 
-      $rootScope.$broadcast("loader_hide");
+      //$rootScope.$broadcast("loader_hide");
 
 
 

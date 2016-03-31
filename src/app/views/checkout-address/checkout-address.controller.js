@@ -218,19 +218,20 @@ angular.module('BG').controller('CheckoutAddressCtrl',
     function checkout() {
       CartService.checkout(currentCartId).then(function(response){
 
-        /*if(response.data.data.invoice){
+        if(response.data.data.payable_amount){
           $state.go("main.payment",{invoiceId:response.data.data.invoice});
         }
-        else*/ if(!response.data.data.payable_amount){
+        else if(!response.data.data.payable_amount){
           console.log("Res",response);
           PaymentService.payInvoice(response.data.data.invoice).then(function (response) {
-            /*$scope.$emit("BG:System:TopMessage", {
+            $scope.$emit("BG:System:TopMessage", {
               text: "Payment Successful",
             });
 
-            $state.go("main.orderConfirmation");*/
-            console.log(response);
+           //setTimeout($state.go("main.orderConfirmation"),2000);
+            //console.log(response);
           });
+          $state.go("main.orderConfirmation");
         }
       });
     }
