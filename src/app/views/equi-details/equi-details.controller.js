@@ -69,6 +69,8 @@ angular.module('BG').controller('EquiDetailsCtrl',
                   $scope.buttonLoader = false;
                   msg = response.data.error.detail;
                 }
+                mdl.startDate=null;
+                mdl.endDate=null;
                 $scope.$emit("BG:System:TopMessage", {
                   text: msg,
                   type: response.data.error ? 'error' : 'help'});
