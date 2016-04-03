@@ -25,6 +25,18 @@ angular.module('BG').controller('ListOrdersCtrl',
     };
     OrdersService.getOrders().then(function(response){
       mdl.orders=response.data.data;
+
+      mdl.rentedCount=0;
+      for(var i=0; i<mdl.orders.length;i++){
+        mdl.rentedCount+=mdl.orders[i].items.length;
+        for(var j=0;j<mdl.orders[i].items.length;j++){
+          //console.log(mdl.orders[i].items[j]);
+          mdl.orders[i].total+=mdl.orders[i].items[j].subtotal;
+
+        }
+      }
+
+
     });
 
     $scope.searchOpen = false;
